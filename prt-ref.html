@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A free European Portuguese grammar and vocabulary reference for A1/A2 learners. Covers pronunciation, grammar, verbs, vocabulary and more.">
+<meta property="og:title" content="Portuguese Reference — European Portuguese A1/A2">
+<meta property="og:description" content="Free grammar and vocabulary reference for European Portuguese learners. Pronunciation, verbs, articles, numbers and more.">
+<meta property="og:type" content="website">
+<title>Portuguese Reference — European Portuguese A1/A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f4f0;
+  --surface: #ffffff;
+  --surface-2: #f0ede7;
+  --border: #e2ddd6;
+  --border-2: #ccc8c0;
+  --text: #1c1a2e;
+  --text-2: #4a4868;
+  --text-3: #8e8ba8;
+  --primary: #1a4f7e;
+  --primary-dk: #123658;
+  --primary-lt: #e8f0f8;
+  --primary-lt2: #d0e3f4;
+  --accent: #b03a2e;
+  --accent-lt: #fdf0ee;
+  --green: #1a7a45;
+  --green-lt: #e8f7ee;
+  --gold: #b7860d;
+  --gold-lt: #fdf6e3;
+  --purple: #6b3fa0;
+  --purple-lt: #f3ecfc;
+  --mono: 'Courier New', Courier, monospace;
+  --radius: 10px;
+  --shadow: 0 1px 4px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-lg: 0 4px 24px rgba(0,0,0,0.12);
+  --sidebar-w: 220px;
+  --header-h: 64px;
+  --transition: 0.18s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; min-height: 100vh; }
+
+/* ── HEADER ── */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--header-h);
+  background: var(--primary-dk);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  display: flex; align-items: center;
+}
+.header-inner {
+  width: 100%; display: flex; align-items: center; gap: 16px;
+  padding: 0 16px;
+}
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
+.logo-flag { font-size: 26px; line-height: 1; }
+.logo-title { display: block; font-size: 16px; font-weight: 800; color: #fff; line-height: 1.1; }
+.logo-sub { display: block; font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; text-transform: uppercase; }
+.search-wrap {
+  flex: 1; max-width: 460px; position: relative;
+}
+.search-wrap input {
+  width: 100%; padding: 9px 14px 9px 38px;
+  border: none; border-radius: 24px;
+  background: rgba(255,255,255,0.12);
+  color: #fff; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 600;
+  outline: none; transition: background var(--transition);
+}
+.search-wrap input::placeholder { color: rgba(255,255,255,0.45); }
+.search-wrap input:focus { background: rgba(255,255,255,0.2); }
+.search-icon {
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  color: rgba(255,255,255,0.5); font-size: 16px; pointer-events: none;
+}
+.search-clear {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: rgba(255,255,255,0.6); font-size: 18px;
+  cursor: pointer; line-height: 1; display: none; padding: 4px;
+}
+.menu-btn {
+  display: none; background: none; border: none; color: #fff;
+  font-size: 22px; cursor: pointer; padding: 6px; flex-shrink: 0;
+  border-radius: 6px;
+}
+.menu-btn:hover { background: rgba(255,255,255,0.1); }
+
+/* ── LAYOUT ── */
+.app-layout {
+  display: flex; padding-top: var(--header-h); min-height: 100vh;
+}
+.sidebar {
+  position: fixed; top: var(--header-h); left: 0; bottom: 0;
+  width: var(--sidebar-w); background: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; z-index: 50;
+  transition: transform var(--transition);
+}
+.content-area {
+  flex: 1; margin-left: var(--sidebar-w);
+  padding: 28px 32px; max-width: 960px; min-width: 0;
+}
+.sidebar-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+  z-index: 49; backdrop-filter: blur(2px);
+}
+
+/* ── SIDEBAR NAV ── */
+.nav-group { padding: 16px 0 8px; }
+.nav-group:not(:last-child) { border-bottom: 1px solid var(--border); }
+.nav-group-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--text-3);
+  padding: 0 16px 6px;
+}
+.nav-btn {
+  display: block; width: 100%; text-align: left;
+  padding: 8px 16px; background: none; border: none;
+  font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 600;
+  color: var(--text-2); cursor: pointer; border-radius: 0;
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+}
+.nav-btn:hover { background: var(--primary-lt); color: var(--primary); }
+.nav-btn.active {
+  background: var(--primary-lt); color: var(--primary); font-weight: 800;
+}
+.nav-btn.active::before {
+  content: ''; position: absolute; left: 0; top: 4px; bottom: 4px;
+  width: 3px; background: var(--primary); border-radius: 0 3px 3px 0;
+}
+
+/* ── CONTENT ── */
+.section-header {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 26px; font-weight: 800; color: var(--primary);
+}
+.session-badge {
+  font-size: 11px; font-weight: 700; color: var(--primary);
+  background: var(--primary-lt); border-radius: 20px;
+  padding: 3px 10px; letter-spacing: 0.3px;
+}
+.section-intro {
+  background: var(--gold-lt); border: 1px solid #e8d48a;
+  border-radius: var(--radius); padding: 14px 18px;
+  font-size: 14px; color: #6b5a00; line-height: 1.7;
+  margin-bottom: 24px;
+}
+.section-intro strong { color: #4a3d00; }
+h3.sub-heading {
+  font-size: 16px; font-weight: 800; color: var(--text);
+  margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;
+}
+h3.sub-heading::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 20px;
+  box-shadow: var(--shadow); margin-bottom: 10px;
+}
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px; margin-bottom: 20px;
+}
+.card-sm {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* ── TABLES ── */
+.tbl-wrap { overflow-x: auto; margin-bottom: 20px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 14px; }
+thead tr { background: var(--primary); }
+thead th { padding: 10px 14px; text-align: left; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+tbody tr:nth-child(even) { background: var(--surface-2); }
+tbody tr:hover { background: var(--primary-lt); }
+tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+
+/* ── INLINE ELEMENTS ── */
+.pt { font-weight: 700; color: var(--primary); font-size: 15px; }
+.en { color: var(--text-2); font-size: 13px; }
+.pron { font-family: var(--mono); font-size: 12px; color: var(--accent); background: var(--accent-lt); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+.note { font-size: 12px; color: var(--text-3); font-style: italic; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; border-radius: 20px; padding: 2px 9px; }
+.tag-m { background: var(--primary-lt); color: var(--primary); }
+.tag-f { background: #fce4ec; color: #c2185b; }
+.tag-info { background: var(--primary-lt2); color: var(--primary-dk); }
+.tag-warn { background: #fff3e0; color: #e65100; }
+.tag-good { background: var(--green-lt); color: var(--green); }
+.rule-box {
+  background: var(--primary-lt); border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 16px; margin-bottom: 10px; font-size: 14px;
+}
+.warn-box {
+  background: #fff8e1; border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 16px; margin-bottom: 16px; font-size: 14px; color: #5d4037;
+}
+.warn-box strong { color: #3e2723; }
+
+/* ── VERB CONJUGATION ── */
+.conj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.conj-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.conj-header { padding: 10px 16px; font-weight: 800; font-size: 15px; color: #fff; }
+.conj-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; padding: 8px 16px; border-bottom: 1px solid var(--border); font-size: 14px; align-items: baseline; }
+.conj-row:last-child { border-bottom: none; }
+.conj-row:nth-child(even) { background: var(--surface-2); }
+.conj-pronoun { color: var(--text-3); font-size: 12px; }
+.conj-form { font-weight: 800; font-size: 16px; color: var(--text); }
+.conj-pron { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+
+/* ── ALPHABET ── */
+.alpha-row td:first-child { font-family: var(--mono); font-weight: 800; font-size: 16px; letter-spacing: 2px; }
+.alpha-row.highlight td { background: #fff9e6 !important; }
+
+/* ── SEARCH RESULTS ── */
+.search-results-header { margin-bottom: 20px; }
+.search-results-header h2 { font-size: 22px; font-weight: 800; color: var(--primary); }
+.search-results-header p { color: var(--text-2); font-size: 14px; margin-top: 4px; }
+.search-group-title {
+  font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--primary); border-bottom: 2px solid var(--primary-lt);
+  padding-bottom: 6px; margin: 20px 0 10px;
+}
+.search-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px; margin-bottom: 8px;
+  cursor: pointer; transition: box-shadow var(--transition), border-color var(--transition);
+}
+.search-item:hover { border-color: var(--primary-lt2); box-shadow: var(--shadow); }
+.search-no-results { text-align: center; padding: 60px 20px; color: var(--text-3); }
+.search-no-results .no-results-icon { font-size: 40px; margin-bottom: 12px; }
+mark { background: #fff176; color: inherit; border-radius: 2px; padding: 0 1px; }
+
+/* ── PRACTICE ── */
+.practice-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px; margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.practice-q { font-size: 18px; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+.practice-q-pron { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-bottom: 4px; }
+.practice-q-en { font-size: 13px; color: var(--text-3); margin-bottom: 12px; }
+.practice-textarea {
+  width: 100%; min-height: 56px; padding: 10px 14px; resize: vertical;
+  border: 2px solid var(--border); border-radius: 8px; font-family: 'Nunito', sans-serif;
+  font-size: 15px; color: var(--text); background: var(--surface-2);
+  transition: border-color var(--transition); outline: none;
+}
+.practice-textarea:focus { border-color: var(--primary); background: var(--surface); }
+.practice-model { font-size: 12px; color: var(--text-3); margin-top: 6px; font-style: italic; }
+.practice-paragraph { background: var(--primary-lt); border-radius: var(--radius); padding: 20px; margin-top: 10px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay.active { display: block; }
+  .content-area { margin-left: 0; padding: 20px 16px; }
+  .menu-btn { display: block; }
+  .logo-sub { display: none; }
+  .search-wrap { max-width: none; }
+  .conj-grid { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+  .content-area { max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .section-title { font-size: 20px; }
+  .header-inner { gap: 10px; }
+  .logo-title { font-size: 14px; }
+  .conj-row { grid-template-columns: 1fr 1fr; }
+  .conj-row .conj-pron { display: none; }
+}
+@media print {
+  .site-header, .sidebar, .menu-btn, .sidebar-overlay { display: none !important; }
+  .content-area { margin: 0; padding: 16px; max-width: 100%; }
+  .card, .card-sm { box-shadow: none; border: 1px solid #ccc; }
+  .tbl-wrap { box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#alphabet">
+      <span class="logo-flag">🇵🇹</span>
+      <span>
+        <span class="logo-title">Portuguese Reference</span>
+        <span class="logo-sub">PLA A1/A2 · European Portuguese</span>
+      </span>
+    </a>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="search-input" placeholder="Search words, rules, examples…" autocomplete="off" spellcheck="false">
+      <button class="search-clear" id="search-clear" title="Clear search">✕</button>
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-label="Open navigation">☰</button>
+  </div>
+</header>
+
+<div class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <nav id="sidebar-nav"></nav>
+  </aside>
+  <main class="content-area" id="content-area"></main>
+</div>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<script>
+// ─────────────────────────────────────────────
+// NAVIGATION STRUCTURE
+// ─────────────────────────────────────────────
+const NAV = [
+  { group: "📚 Grammar", tabs: [
+    { id:"alphabet",      title:"Alphabet" },
+    { id:"pronunciation", title:"Pronunciation" },
+    { id:"pronouns",      title:"Pronouns" },
+    { id:"articles",      title:"Articles" },
+    { id:"gender",        title:"Gender" },
+    { id:"plurals",       title:"Singular/Plural" },
+    { id:"questions",     title:"Questions" },
+  ]},
+  { group: "🔧 Verbs", tabs: [
+    { id:"ser-estar",     title:"Ser vs Estar" },
+    { id:"verb-patterns", title:"Verb Patterns" },
+    { id:"core-verbs",    title:"Core Verbs" },
+  ]},
+  { group: "📖 Vocabulary", tabs: [
+    { id:"numbers",     title:"Numbers" },
+    { id:"days",        title:"Days & Months" },
+    { id:"identity",    title:"Identity" },
+    { id:"family",      title:"Family" },
+    { id:"house",       title:"House & Home" },
+    { id:"description", title:"Description" },
+    { id:"expressions", title:"Expressions" },
+    { id:"survival",    title:"Survival Phrases" },
+  ]},
+  { group: "✏️ Practice", tabs: [
+    { id:"practice", title:"Practice" },
+  ]},
+];
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+const pr = s => s ? `<span class="pron">${s}</span>` : '';
+const en_ = s => s ? `<span class="en">${s}</span>` : '';
+const ptSpan = s => `<span class="pt">${s}</span>`;
+
+function tbl(headers, rows, rowFn) {
+  const ths = headers.map(h => `<th>${h}</th>`).join('');
+  const trs = rows.map(r => `<tr>${rowFn(r)}</tr>`).join('');
+  return `<div class="tbl-wrap"><table><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
+}
+function infoBox(text) { return `<div class="rule-box">${text}</div>`; }
+function warnBox(text) { return `<div class="warn-box">${text}</div>`; }
+function tag(text, type) { return `<span class="tag tag-${type}">${text}</span>`; }
+
+// ─────────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────────
+
+const D_ALPHABET = [
+  { letter:"A a", name:"á", pron:"[a / ɐ]", rule:"Stressed → [a] father; unstressed → [ɐ] reduced", example:"amigo [ɐ-MEE-goo]" },
+  { letter:"B b", name:"bê", pron:"[be]", rule:"Like English 'b'", example:"bom [bong]" },
+  { letter:"C c", name:"cê", pron:"[se]", rule:"Before e/i → [s]; before a/o/u → [k]", example:"carro [KA-hroo] / cidade [see-DA-d]" },
+  { letter:"D d", name:"dê", pron:"[de]", rule:"Like English 'd'", example:"dia [DEE-ɐ]" },
+  { letter:"E e", name:"é", pron:"[e/ɛ/ɨ]", rule:"Stressed → [e]; unstressed/end → nearly silent", example:"escola [ish-KOH-lɐ]" },
+  { letter:"F f", name:"efe", pron:"[f]", rule:"Same as English 'f'", example:"falar [fɐ-LAR]" },
+  { letter:"G g", name:"gê", pron:"[ge/ʒe]", rule:"Before e/i → [zh] measure; before a/o/u → [g]", example:"gosto [GOHSH-too] / gente [ZHENT]" },
+  { letter:"H h", name:"agá", pron:"[silent]", rule:"ALWAYS SILENT on its own. Only active in LH and NH", example:"hoje [OH-zhɐ]", highlight: true },
+  { letter:"I i", name:"i", pron:"[i]", rule:"Like 'ee' in see", example:"ilha [EEL-yɐ]" },
+  { letter:"J j", name:"jota", pron:"[ʒ]", rule:"Always [zh] like French 'j' or 'measure'", example:"jantar [zhun-TAR]" },
+  { letter:"K k", name:"capa", pron:"[k]", rule:"Foreign words only", example:"karaoke, kit" },
+  { letter:"L l", name:"ele", pron:"[l]", rule:"Like English 'l'; at word end → dark [ɫ] like 'w'", example:"livro [LEEV-roo]" },
+  { letter:"M m", name:"eme", pron:"[m]", rule:"Like English 'm'; at word end nasalises preceding vowel", example:"mãe [mɐ-yng]" },
+  { letter:"N n", name:"ene", pron:"[n]", rule:"Like English 'n'; at word end nasalises preceding vowel", example:"nome [NOH-m]" },
+  { letter:"O o", name:"ó", pron:"[o/ɔ/u]", rule:"Stressed → [o/ɔ]; unstressed → [u] like 'foot'", example:"obrigado [oh-bree-GA-doo]" },
+  { letter:"P p", name:"pê", pron:"[p]", rule:"Like English 'p' but less aspirated (no air puff)", example:"pai [pai]" },
+  { letter:"Q q", name:"quê", pron:"[k/kw]", rule:"Always followed by u; qu+e/i → [k]; qu+a/o → [kw]", example:"que [kɐ] / quando [KWAN-doo]" },
+  { letter:"R r", name:"erre", pron:"[χ/ɾ]", rule:"Start/double → guttural [χ] like Russian х; middle → soft tap [ɾ]", example:"rua [KHOO-ɐ] / caro [KA-roo]", highlight: true },
+  { letter:"S s", name:"esse", pron:"[s/z/ʃ]", rule:"Start → [s]; between vowels → [z]; end of syllable → [sh]", example:"sol/casa/está", highlight: true },
+  { letter:"T t", name:"tê", pron:"[t]", rule:"Like English 't' but less aspirated", example:"tarde [TAR-d]" },
+  { letter:"U u", name:"u", pron:"[u]", rule:"Like 'oo' in food; silent after qu before e/i", example:"um [oong]" },
+  { letter:"V v", name:"vê", pron:"[v]", rule:"Like English 'v'", example:"viver [vee-VEHR]" },
+  { letter:"W w", name:"dáblio", pron:"[w]", rule:"Foreign words only", example:"wifi, whisky" },
+  { letter:"X x", name:"xis", pron:"[ʃ/ks/z]", rule:"Usually [sh]; sometimes [ks] in Latin words; sometimes [z]", example:"baixo [BAI-shoo] / táxi [TAK-see]", highlight: true },
+  { letter:"Y y", name:"ípsilon", pron:"[i]", rule:"Foreign words only", example:"yoga" },
+  { letter:"Z z", name:"zê", pron:"[z/ʃ]", rule:"Like English 'z'; at word end → [sh]", example:"zero [ZEH-roo] / luz [loosh]" },
+  { letter:"LH", name:"digraph", pron:"[ʎ]", rule:"Like 'lli' in million — Russian ль. Essential sound.", example:"filha [FEEL-yɐ] / trabalho [trɐ-BAL-yoo]", highlight: true },
+  { letter:"NH", name:"digraph", pron:"[ɲ]", rule:"Like 'ny' in canyon — Russian нь", example:"tenho [TAYN-yoo] / amanhã [ɐ-mɐ-NYUNG]", highlight: true },
+];
+
+const D_PRONUNCIATION = {
+  vowels:[
+    { sound:"a (stressed)", ipa:"[a]", like:"f-a-ther", example:"casa [KA-za]" },
+    { sound:"a (unstressed)", ipa:"[ɐ]", like:"comm-a — very reduced", example:"falar [fɐ-LAR]" },
+    { sound:"e (stressed)", ipa:"[e] or [ɛ]", like:"b-e-d", example:"mesa [MEH-za]" },
+    { sound:"e (unstressed/end)", ipa:"[ɨ] ≈ silent", like:"almost swallowed", example:"tarde [TAR-d]" },
+    { sound:"o (stressed)", ipa:"[o] or [ɔ]", like:"s-o-ft", example:"bola [BOH-la]" },
+    { sound:"o (unstressed)", ipa:"[u]", like:"f-oo-t", example:"morar [moo-RAR]" },
+    { sound:"ão", ipa:"[ɐ̃w̃]", like:"nasal 'owng'", example:"não [nowng]" },
+    { sound:"ã", ipa:"[ɐ̃]", like:"nasal 'ung'", example:"amanhã [ɐ-mɐ-NYUNG]" },
+    { sound:"em / en", ipa:"[ɐ̃j̃]", like:"nasal 'ayng'", example:"bem [bayng]" },
+  ],
+  consonants:[
+    { sound:"ch", rule:"[sh] like shop", example:"chamo [SHA-moo]" },
+    { sound:"x (common)", rule:"[sh] like shop", example:"baixo [BAI-shoo]" },
+    { sound:"j", rule:"[zh] like measure", example:"jantar [zhun-TAR]" },
+    { sound:"lh", rule:"[ʎ] like million — Russian ль", example:"filha [FEEL-yɐ]" },
+    { sound:"nh", rule:"[ɲ] like canyon — Russian нь", example:"tenho [TAYN-yoo]" },
+    { sound:"s (start)", rule:"[s] like sun", example:"sol [sol]" },
+    { sound:"s (between vowels)", rule:"[z] like zone", example:"casa [KA-za]" },
+    { sound:"s (end of syllable)", rule:"[sh] like shop", example:"está [ish-TA]" },
+    { sound:"r (start / rr)", rule:"[χ] guttural — Russian х", example:"rua [KHOO-ɐ]" },
+    { sound:"r (middle)", rule:"[ɾ] soft tap — Russian р", example:"morar [moo-RAR]" },
+    { sound:"ç", rule:"[s] always — never [k]", example:"graça [GRA-sɐ]" },
+  ],
+  tips:[
+    { icon:"⚡", text:"Unstressed vowels nearly disappear. 'Obrigado' = [oh-bree-GA-doo], not [oh-bree-GAH-doh]." },
+    { icon:"👁", text:"End-of-word 'e' is almost silent. 'Tarde' = [TAR-d], not [TAR-day]." },
+    { icon:"👁", text:"End-of-word 'o' becomes [oo]. 'Livro' = [LEEV-roo]." },
+    { icon:"🔊", text:"'s' at end of syllable → [sh]. 'Está' sounds like [ish-TA]. The 'e' is swallowed AND the 's' becomes 'sh'." },
+    { icon:"🔊", text:"Words run together. 'Não está' → [now-ish-TA]. This is why spoken Portuguese sounds so different from written." },
+    { icon:"💡", text:"Shadowing technique: find a 30-second clip, play it, and speak simultaneously copying rhythm and sound — not meaning. This trains your ear faster than passive listening." },
+  ]
+};
+
+const D_PRONOUNS = {
+  personal:[
+    { p:"Eu", pron:"[eh-oo]", en:"I", use:"1st sg", note:"Often dropped: 'Tenho 30 anos' not 'Eu tenho 30 anos'" },
+    { p:"Tu", pron:"[too]", en:"you", use:"2nd sg INFORMAL", note:"Friends, family, peers. Very common in Portugal." },
+    { p:"Ele", pron:"[ehl]", en:"he", use:"3rd sg masc.", note:"" },
+    { p:"Ela", pron:"[EH-lɐ]", en:"she", use:"3rd sg fem.", note:"" },
+    { p:"Você", pron:"[voh-SEH]", en:"you (formal)", use:"2nd sg FORMAL", note:"⚠ Takes 3rd person verb: 'Você TEM' not 'Você TENS'" },
+    { p:"Nós", pron:"[nosh]", en:"we", use:"1st plural", note:"Informal: replaced by 'a gente' + 3rd sg verb" },
+    { p:"Vocês", pron:"[voh-SESH]", en:"you all", use:"2nd plural (any register)", note:"Covers formal AND informal plural 'you'" },
+    { p:"Eles", pron:"[EH-lɐsh]", en:"they (m)", use:"3rd pl masc.", note:"Used for all-male or mixed groups" },
+    { p:"Elas", pron:"[EH-lɐsh]", en:"they (f)", use:"3rd pl fem.", note:"Only all-female groups" },
+  ],
+  address:[
+    { form:"tu", pron:"[too]", level:"Informal", color:"good", when:"Friends, family, colleagues, most everyday situations in Portugal", ex:"Tens tempo? — Do you have time?" },
+    { form:"você", pron:"[voh-SEH]", level:"Formal", color:"info", when:"Strangers, older people, professional contexts. Takes 3rd person verb.", ex:"Você mora aqui? — Do you live here?" },
+    { form:"o senhor / a senhora", pron:"[oo sɐ-NYOR]", level:"Very formal", color:"warn", when:"Elderly, officials, high authority. 3rd person singular.", ex:"O senhor fala português?" },
+    { form:"vocês", pron:"[voh-SESH]", level:"All registers (plural)", color:"info", when:"Addressing multiple people — formal and informal", ex:"Vocês são de onde?" },
+  ],
+  notes:[
+    "Subject pronouns are frequently DROPPED. The verb ending contains the person. 'Falo português' is more natural than 'Eu falo português'.",
+    "Você takes 3rd person verb forms (same as ele/ela). Never say 'Você estás' — it must be 'Você está'.",
+    "'A gente' (the people) informally replaces Nós and takes 3rd person singular: 'A gente vai ao cinema' = We are going to the cinema.",
+    "In Portugal, 'tu' is widely used even with people you've just met. Don't overthink formality in everyday situations.",
+  ]
+};
+
+const D_NUMBERS = {
+  basic:[
+    [0,"zero","[ZEH-roo]"],[1,"um / uma","[oong / OO-mɐ] ← masc/fem"],
+    [2,"dois / duas","[doysh / DOO-ɐsh] ← masc/fem"],[3,"três","[traysh]"],
+    [4,"quatro","[KWA-troo]"],[5,"cinco","[SINK-oo]"],[6,"seis","[saysh]"],
+    [7,"sete","[SET]"],[8,"oito","[OY-too]"],[9,"nove","[NOV]"],
+    [10,"dez","[desh]"],[11,"onze","[ON-z]"],[12,"doze","[DOH-z]"],
+    [13,"treze","[TREH-z]"],[14,"catorze","[kɐ-TOR-z]"],[15,"quinze","[KEEN-z]"],
+    [16,"dezasseis","[dɐ-zɐ-SAYSH]"],[17,"dezassete","[dɐ-zɐ-SET]"],
+    [18,"dezoito","[dɐ-ZOY-too]"],[19,"dezanove","[dɐ-zɐ-NOV]"],[20,"vinte","[VINT]"],
+  ],
+  tens:[
+    [30,"trinta","[TRINT-ɐ]"],[40,"quarenta","[kwɐ-RENT-ɐ]"],
+    [50,"cinquenta","[sink-WENT-ɐ]"],[60,"sessenta","[sɐ-SENT-ɐ]"],
+    [70,"setenta","[sɐ-TENT-ɐ]"],[80,"oitenta","[oy-TENT-ɐ]"],
+    [90,"noventa","[noo-VENT-ɐ]"],
+    [100,"cem / cento","[sayng / SENT-oo] — cem = exactly 100; cento = 100+"],
+    [200,"duzentos/as","[doo-ZENT-oosh] — agrees with gender!"],
+    [500,"quinhentos/as","[keen-YENT-oosh]"],
+    [1000,"mil","[meel]"],[1000000,"um milhão","[oong meel-YOWNG]"],
+  ],
+  ordinals:[
+    ["1st","primeiro/a","[pree-MAY-roo]"],["2nd","segundo/a","[sɐ-GOON-doo]"],
+    ["3rd","terceiro/a","[ter-SAY-roo]"],["4th","quarto/a","[KWAR-too]"],
+    ["5th","quinto/a","[KEEN-too]"],["last","último/a","[OOL-tee-moo]"],
+  ]
+};
+
+const D_ARTICLES = {
+  definite:[
+    { art:"o", pron:"[oo]", use:"Masc. singular", ex:"o livro [oo LEEV-roo]", en:"the book" },
+    { art:"a", pron:"[ɐ]", use:"Fem. singular", ex:"a mesa [ɐ MEH-zɐ]", en:"the table" },
+    { art:"os", pron:"[oosh]", use:"Masc. plural", ex:"os livros", en:"the books" },
+    { art:"as", pron:"[ɐsh]", use:"Fem. plural", ex:"as mesas", en:"the tables" },
+  ],
+  indefinite:[
+    { art:"um", pron:"[oong]", use:"Masc. singular", ex:"um carro [oong KA-hroo]", en:"a car" },
+    { art:"uma", pron:"[OO-mɐ]", use:"Fem. singular", ex:"uma casa", en:"a house" },
+    { art:"uns", pron:"[oonsh]", use:"Masc. plural", ex:"uns livros", en:"some books" },
+    { art:"umas", pron:"[OO-mɐsh]", use:"Fem. plural", ex:"umas casas", en:"some houses" },
+  ],
+  contractions:[
+    { prep:"em", art:"o → no [noo]", ex:"Moro no Porto", en:"I live in Porto" },
+    { prep:"em", art:"a → na [nɐ]", ex:"Estou na escola", en:"I am at school" },
+    { prep:"em", art:"os → nos [noosh]", ex:"nos jardins", en:"in the gardens" },
+    { prep:"em", art:"as → nas [nɐsh]", ex:"nas lojas", en:"in the shops" },
+    { prep:"de", art:"o → do [doo]", ex:"Sou do Porto", en:"I'm from Porto" },
+    { prep:"de", art:"a → da [dɐ]", ex:"Sou da Rússia", en:"I'm from Russia" },
+    { prep:"de", art:"os → dos [doosh]", ex:"o livro dos alunos", en:"the students' book" },
+    { prep:"de", art:"as → das [dɐsh]", ex:"das cidades", en:"of the cities" },
+    { prep:"a", art:"o → ao [ow]", ex:"Vou ao cinema", en:"I'm going to the cinema" },
+    { prep:"a", art:"a → à [a]", ex:"Vou à escola", en:"I'm going to school" },
+    { prep:"a", art:"os → aos [owsh]", ex:"Vou aos museus", en:"I'm going to the museums" },
+    { prep:"a", art:"as → às [ɐsh]", ex:"às 8 horas", en:"at 8 o'clock" },
+  ],
+  rules:[
+    "Portuguese uses the definite article MORE than English. You say 'o Pedro', not just 'Pedro' as subject.",
+    "Professions after SER drop the article: 'Sou professor' (not 'Sou um professor') — UNLESS modified: 'Sou um bom professor'.",
+    "Countries mostly take articles: o Brasil, a França, a Rússia — but Portugal does not: 'Sou de Portugal'.",
+    "Body parts use definite article, not possessive: 'Lavei as mãos' = I washed my hands (lit. the hands).",
+  ]
+};
+
+const D_GENDER = [
+  { end:"-o", gen:"M", rule:"Almost always masculine", ex:["o livro [LEEV-roo] — book","o carro [KA-hroo] — car","o filho [FEEL-yoo] — son"] },
+  { end:"-a", gen:"F", rule:"Almost always feminine", ex:["a casa [KA-zɐ] — house","a filha [FEEL-yɐ] — daughter","a mesa [MEH-zɐ] — table"] },
+  { end:"-ção", gen:"F", rule:"Always feminine (-tion words)", ex:["a nação [na-SOWNG] — nation","a profissão [proo-fee-SOWNG]","a situação [see-too-ɐ-SOWNG]"] },
+  { end:"-dade", gen:"F", rule:"Always feminine (-ty words)", ex:["a cidade [see-DA-d] — city","a liberdade [lee-ber-DA-d]","a universidade"] },
+  { end:"-gem", gen:"F", rule:"Always feminine", ex:["a viagem [vyɐ-ZHAYNG] — trip","a linguagem [lin-GWA-zhayng]"] },
+  { end:"-ema", gen:"M", rule:"Masculine — Greek origin TRAP", ex:["o problema [proo-BLEH-mɐ]","o sistema [sees-TEH-mɐ]","o tema [TEH-mɐ]"] },
+  { end:"Exceptions", gen:"!", rule:"Learn these individually", ex:["a mão [mowng] — hand (F, ends -ão)","o dia [DEE-ɐ] — day (M, ends -a)","o mapa [MA-pɐ] — map (M, ends -a)"] },
+];
+
+const D_PLURALS = [
+  { end:"vowel", rule:"add -s", ex:["casa → casas [KA-zɐsh]","livro → livros [LEEV-roosh]","tribo → tribos"] },
+  { end:"-m", rule:"-m → -ns", ex:["homem → homens [OH-mayngsh]","viagem → viagens"] },
+  { end:"-r or -z", rule:"add -es", ex:["mulher → mulheres [mool-YEH-rɐsh]","luz → luzes [LOO-zɐsh]"] },
+  { end:"-l", rule:"-l → -is", ex:["animal → animais [ɐ-nee-MAISH]","hotel → hotéis [oh-TAYSH]"] },
+  { end:"-ão (3 patterns!)", rule:"varies — memorise each", ex:["pão → pães (bread) [payngsh]","mão → mãos (hand)","cão → cães (dog)","irmão → irmãos (brother)"] },
+  { end:"-s (already ends)", rule:"no change if unstressed", ex:["o lápis → os lápis [LA-peesh]"] },
+];
+
+const D_SER_ESTAR = {
+  ser_conj:[
+    ["Eu (I)","sou","[soh]"],["Tu (you)","és","[esh]"],
+    ["Ele/Ela/Você (he/she/you-formal)","é","[eh]"],["Nós (we)","somos","[SOH-moosh]"],
+    ["Vocês (you all)","são","[sowng]"],["Eles/Elas (they)","são","[sowng]"],
+  ],
+  estar_conj:[
+    ["Eu (I)","estou","[ish-TOH]"],["Tu (you)","estás","[ish-TASH]"],
+    ["Ele/Ela/Você","está","[ish-TA]"],["Nós (we)","estamos","[ish-TAH-moosh]"],
+    ["Vocês (you all)","estão","[ish-TOWNG]"],["Eles/Elas (they)","estão","[ish-TOWNG]"],
+  ],
+  ser_past:[
+    ["Eu","fui","[FWEE]"],["Tu","foste","[FOHSH-t]"],
+    ["Ele/Ela","foi","[foy]"],["Nós","fomos","[FOH-moosh]"],
+    ["Vocês/Eles","foram","[FOH-rowng]"],
+  ],
+  ser_uses:[
+    { use:"Name / identity", pt:"Eu sou a Maria", pron:"[eh-oo soh ɐ mɐ-REE-ɐ]", en:"I am Maria" },
+    { use:"Nationality", pt:"Ele é russo", pron:"[ehl eh HROO-soo]", en:"He is Russian" },
+    { use:"Profession", pt:"Ela é professora", pron:"[EH-lɐ eh proo-feh-SOH-rɐ]", en:"She is a teacher" },
+    { use:"Origin", pt:"Somos de Lisboa", pron:"[SOH-moosh duh leezh-BOH-ɐ]", en:"We are from Lisbon" },
+    { use:"Permanent characteristic", pt:"O carro é azul", pron:"[oo KA-hroo eh ɐ-ZOOL]", en:"The car is blue (its actual colour)" },
+    { use:"Telling time", pt:"São duas horas", pron:"[sowng DOO-ɐsh OH-rɐsh]", en:"It is two o'clock" },
+  ],
+  estar_uses:[
+    { use:"Feeling / mood", pt:"Estou cansado", pron:"[ish-TOH kan-SAH-doo]", en:"I am tired (right now)" },
+    { use:"Health", pt:"Ela está doente", pron:"[EH-lɐ ish-TA doo-ENT]", en:"She is sick (currently)" },
+    { use:"Location", pt:"Estamos em Lisboa", pron:"[ish-TAH-moosh ayng leezh-BOH-ɐ]", en:"We are in Lisbon" },
+    { use:"Ongoing action", pt:"Estou a estudar", pron:"[ish-TOH ɐ ish-too-DAR]", en:"I am studying" },
+    { use:"Temporary state", pt:"O café está quente", pron:"[oo kɐ-FEH ish-TA KENT]", en:"The coffee is hot" },
+  ],
+  tricky:[
+    { title:"Past tense of SER = FOI (was)", note:"The table above is PRESENT tense only. Foi is past tense. 'Ele foi um grande poeta' = He was a great poet. 'um' here = 'a' (indefinite article), not a verb." },
+    { title:"Location → always ESTAR", note:"Even for immovable things: 'O museu está na cidade' — The museum is in the city." },
+    { title:"Geographic fact → SER", note:"'Lisboa é em Portugal' — Lisbon is in Portugal (classification/fact)." },
+    { title:"Colours: SER = actual / ESTAR = looks", note:"'Ela é branca' (she is white — skin) vs 'Ela está branca' (she looks pale right now)." },
+  ]
+};
+
+const D_CORE_VERBS = [
+  { verb:"TER", pron:"[TEHR]", en:"to have", note:"Used for AGE: 'Tenho 30 anos' = I am 30 (lit. 'I have 30 years'). Same logic as Russian мне 30 лет.",
+    conj:[["Eu (I)","tenho","[TAYN-yoo]"],["Tu (you)","tens","[tayngsh]"],["Ele/Ela","tem","[tayng]"],["Nós","temos","[TEH-moosh]"],["Vocês","têm","[tayng]"],["Eles","têm","[tayng]"]],
+    ex:[["Tenho dois filhos","[TAYN-yoo doysh FEEL-yoosh]","I have two children"],["Tens tempo?","[tayngsh TEMP-oo]","Do you have time?"]]
+  },
+  { verb:"IR", pron:"[eer]", en:"to go", note:"Also used as future tense: 'Vou estudar' = I am going to study.",
+    conj:[["Eu (I)","vou","[voh]"],["Tu (you)","vais","[vaish]"],["Ele/Ela","vai","[vai]"],["Nós","vamos","[VAH-moosh]"],["Vocês","vão","[vowng]"],["Eles","vão","[vowng]"]],
+    ex:[["Vou a Lisboa","[voh ɐ leezh-BOH-ɐ]","I'm going to Lisbon"],["Vamos estudar","[VAH-moosh ish-too-DAR]","We're going to study"]]
+  },
+  { verb:"FALAR", pron:"[fɐ-LAR]", en:"to speak", note:"Model -AR verb. Learn this pattern and you can conjugate hundreds of -AR verbs.",
+    conj:[["Eu (I)","falo","[FA-loo]"],["Tu (you)","falas","[FA-lɐsh]"],["Ele/Ela","fala","[FA-lɐ]"],["Nós","falamos","[fɐ-LAH-moosh]"],["Vocês","falam","[FA-lowng]"],["Eles","falam","[FA-lowng]"]],
+    ex:[["Falo russo e inglês","[FA-loo HROO-soo ee ing-GLESH]","I speak Russian and English"],["Falas português?","[FA-lɐsh poor-too-GESH]","Do you speak Portuguese?"]]
+  },
+  { verb:"MORAR", pron:"[moo-RAR]", en:"to live / reside", note:"Follows -AR pattern exactly like falar.",
+    conj:[["Eu (I)","moro","[MOH-roo]"],["Tu (you)","moras","[MOH-rɐsh]"],["Ele/Ela","mora","[MOH-rɐ]"],["Nós","moramos","[moo-RAH-moosh]"],["Vocês","moram","[MOH-rowng]"],["Eles","moram","[MOH-rowng]"]],
+    ex:[["Moro em Lisboa","[MOH-roo ayng leezh-BOH-ɐ]","I live in Lisbon"],["Onde moras?","[OND MOH-rɐsh]","Where do you live?"]]
+  },
+  { verb:"GOSTAR", pron:"[goosh-TAR]", en:"to like", note:"ALWAYS followed by 'de'. You like OF something: 'Gosto DE música'. Never omit the DE.",
+    conj:[["Eu (I)","gosto","[GOHSH-too]"],["Tu (you)","gostas","[GOHSH-tɐsh]"],["Ele/Ela","gosta","[GOHSH-tɐ]"],["Nós","gostamos","[goosh-TAH-moosh]"],["Vocês","gostam","[GOHSH-towng]"],["Eles","gostam","[GOHSH-towng]"]],
+    ex:[["Gosto de música","[GOHSH-too dɐ moo-ZEE-kɐ]","I like music"],["Não gosto de acordar cedo","[nowng GOHSH-too dɐ ɐ-koor-DAR]","I don't like waking up early"]]
+  },
+  { verb:"QUERER", pron:"[keh-REHR]", en:"to want", note:"Essential for ordering food, asking for things.",
+    conj:[["Eu (I)","quero","[KEH-roo]"],["Tu (you)","queres","[KEH-rɐsh]"],["Ele/Ela","quer","[kehr]"],["Nós","queremos","[keh-REH-moosh]"],["Vocês","querem","[KEH-rayng]"],["Eles","querem","[KEH-rayng]"]],
+    ex:[["Quero um café","[KEH-roo oong kɐ-FEH]","I want a coffee"],["Queres vir?","[KEH-rɐsh veer]","Do you want to come?"]]
+  },
+  { verb:"PODER", pron:"[poo-DEHR]", en:"can / to be able", note:"For permission and ability.",
+    conj:[["Eu (I)","posso","[POH-soo]"],["Tu (you)","podes","[POH-dɐsh]"],["Ele/Ela","pode","[POH-d]"],["Nós","podemos","[poo-DEH-moosh]"],["Vocês","podem","[POH-dayng]"],["Eles","podem","[POH-dayng]"]],
+    ex:[["Posso ajudar?","[POH-soo ɐ-zhoo-DAR]","Can I help?"],["Não posso falar agora","[nowng POH-soo fɐ-LAR ɐ-GOH-rɐ]","I can't talk right now"]]
+  },
+  { verb:"CHAMAR-SE", pron:"[shɐ-MAR-sɐ]", en:"to be called", note:"Reflexive verb (see Reflexive tab). The -se means 'oneself'. Same concept as Russian -ся.",
+    conj:[["Eu (I)","chamo-me","[SHA-moo-mɐ]"],["Tu (you)","chamas-te","[SHA-mɐsh-tɐ]"],["Ele/Ela","chama-se","[SHA-mɐ-sɐ]"],["Nós","chamamo-nos",""],["Vocês","chamam-se",""],["Eles","chamam-se",""]],
+    ex:[["Como te chamas?","[KOH-moo tɐ SHA-mɐsh]","What is your name?"],["Chamo-me [name]","[SHA-moo-mɐ]","My name is…"]]
+  },
+];
+
+const D_REFLEXIVE = {
+  comparison:"In Russian, -ся/-сь glues to the verb end: умываюсь, умываешься, умывается. Portuguese works the same in principle, but the reflexive part is a SEPARATE pronoun that changes form AND moves position depending on context.",
+  pronouns:[
+    ["Eu (I)","me","[mɐ]","myself"],
+    ["Tu (you)","te","[tɐ]","yourself"],
+    ["Ele/Ela/Você","se","[sɐ]","himself/herself"],
+    ["Nós","nos","[noosh]","ourselves"],
+    ["Vocês/Eles","se","[sɐ]","themselves"],
+  ],
+  positions:[
+    { context:"Infinitive (dictionary)", ex:"chamar-se", note:"Pronoun hyphenated at end" },
+    { context:"Normal statement", ex:"Chamo-me Pedro", note:"Pronoun AFTER verb with hyphen" },
+    { context:"After negation", ex:"Não me chamo Pedro", note:"Pronoun jumps BEFORE verb" },
+    { context:"After question word", ex:"Como te chamas?", note:"Pronoun comes before verb" },
+  ],
+  common:[
+    ["chamar-se","to be called","Chamo-me Ana [SHA-moo-mɐ AH-nɐ]"],
+    ["levantar-se","to get up","Levanto-me às 7h [lɐ-VAN-too-mɐ]"],
+    ["deitar-se","to go to bed","Deito-me tarde [DAY-too-mɐ TAR-d]"],
+    ["sentir-se","to feel","Sinto-me bem [SINT-too-mɐ bayng]"],
+    ["lembrar-se","to remember","Lembro-me de ti [LEM-broo-mɐ dɐ tee]"],
+    ["esquecer-se","to forget","Esqueci-me [ish-kɐ-SEE-mɐ]"],
+  ]
+};
+
+const D_DAYS = [
+  { n:"2ª", pt:"segunda-feira", short:"segunda", pron:"[sɐ-GOON-dɐ-FAY-rɐ]", en:"Monday" },
+  { n:"3ª", pt:"terça-feira", short:"terça", pron:"[TER-sɐ-FAY-rɐ]", en:"Tuesday" },
+  { n:"4ª", pt:"quarta-feira", short:"quarta", pron:"[KWAR-tɐ-FAY-rɐ]", en:"Wednesday" },
+  { n:"5ª", pt:"quinta-feira", short:"quinta", pron:"[KEEN-tɐ-FAY-rɐ]", en:"Thursday" },
+  { n:"6ª", pt:"sexta-feira", short:"sexta", pron:"[SESH-tɐ-FAY-rɐ]", en:"Friday" },
+  { n:"—", pt:"sábado", short:"sábado", pron:"[SA-bɐ-doo]", en:"Saturday" },
+  { n:"—", pt:"domingo", short:"domingo", pron:"[doo-MING-oo]", en:"Sunday" },
+];
+const D_MONTHS = [
+  [1,"janeiro","[zhɐ-NAY-roo]"],[2,"fevereiro","[fɐ-vɐ-RAY-roo]"],
+  [3,"março","[MAR-soo]"],[4,"abril","[ɐ-BREEL]"],
+  [5,"maio","[MAI-oo]"],[6,"junho","[ZHOON-yoo]"],
+  [7,"julho","[ZHOOL-yoo]"],[8,"agosto","[ɐ-GOHSH-too]"],
+  [9,"setembro","[sɐ-TEM-broo]"],[10,"outubro","[oh-TOO-broo]"],
+  [11,"novembro","[noo-VEM-broo]"],[12,"dezembro","[dɐ-ZEM-broo]"],
+];
+
+const D_IDENTITY = {
+  fields:[
+    ["o nome","[oo NOH-m]","first name"],["o apelido","[oo ɐ-pɐ-LEE-doo]","surname"],
+    ["a morada","[ɐ moo-RA-dɐ]","address"],["o código postal","[KO-dee-goo poosh-TAL]","postal code"],
+    ["o número de telemóvel","[NOO-mɐ-roo dɐ tɐ-lɐ-MO-vel]","mobile number"],
+    ["a data de nascimento","[DA-tɐ dɐ nɐsh-see-MENT-oo]","date of birth"],
+    ["a naturalidade","[nɐ-too-rɐ-lee-DA-d]","place of birth"],
+    ["a nacionalidade","[nɐ-see-oh-nɐ-lee-DA-d]","nationality"],
+    ["as habilitações","[ɐ-bee-lee-tɐ-SOYSH]","qualifications / education level"],
+    ["a profissão","[proo-fee-SOWNG]","profession"],["o sexo","[SEH-ksoo]","sex / gender"],
+    ["o estado civil","[ish-TA-doo see-VEEL]","marital status"],["a idade","[ee-DA-d]","age"],
+  ],
+  civil:[
+    ["solteiro/a","[sol-TAY-roo]","single"],["casado/a","[kɐ-ZA-doo]","married"],
+    ["divorciado/a","[dee-vor-see-A-doo]","divorced"],["separado/a","[sɐ-pɐ-RA-doo]","separated"],
+    ["viúvo/a","[vee-OO-voo]","widowed"],["em união de facto","[oo-nee-OWNG dɐ FA-too]","domestic partnership"],
+  ],
+  countries:[
+    ["Portugal","—","[poor-too-GAL]","português","portuguesa","português"],
+    ["Brasil","o","[brɐ-ZEEL]","brasileiro","brasileira","português"],
+    ["Rússia","a","[HROO-syɐ]","russo","russa","russo"],
+    ["França","a","[FRAN-sɐ]","francês","francesa","francês"],
+    ["Espanha","a","[ish-PAN-yɐ]","espanhol","espanhola","espanhol"],
+    ["Reino Unido","o","[HRAY-noo oo-NEE-doo]","britânico","britânica","inglês"],
+    ["Alemanha","a","[ɐ-lɐ-MAN-yɐ]","alemão","alemã","alemão"],
+    ["China","a","[SHEE-nɐ]","chinês","chinesa","chinês"],
+    ["Itália","a","[ee-TAL-yɐ]","italiano","italiana","italiano"],
+    ["Ucrânia","a","[oo-KRAN-yɐ]","ucraniano","ucraniana","ucraniano"],
+    ["Estados Unidos","os","[ish-TA-doosh oo-NEE-doosh]","americano","americana","inglês"],
+    ["Canadá","o","[kɐ-nɐ-DA]","canadiano","canadiana","inglês/francês"],
+    ["Angola","—","[ɐng-GOH-lɐ]","angolano","angolana","português"],
+  ],
+  routine:[
+    ["bom","[bong]","good"],["fantástico","[fan-TASH-tee-koo]","fantastic"],
+    ["excelente","[esh-sɐ-LENT]","excellent"],["agradável","[ɐ-grɐ-DA-vel]","pleasant"],
+    ["perfeito","[per-FAY-too]","perfect"],["mau","[mow]","bad"],
+    ["péssimo","[PEH-see-moo]","terrible"],["horrível","[oh-HREE-vel]","horrible"],
+    ["desagradável","[dɐ-zɐ-grɐ-DA-vel]","unpleasant"],["difícil","[dee-FEE-seel]","difficult"],
+    ["mais ou menos","[maish oh MEH-noosh]","so-so"],
+  ]
+};
+
+const D_DESCRIPTION = {
+  hair:[
+    ["liso/a","[LEE-zoo]","straight"],["encaracolado/a","[en-kɐ-rɐ-koo-LA-doo]","curly"],
+    ["ondulado/a","[on-doo-LA-doo]","wavy"],["comprido/a","[kom-PREE-doo]","long"],
+    ["curto/a","[KOOR-too]","short"],["castanho/a","[kɐsh-TAN-yoo]","brown"],
+    ["loiro/a","[LOY-roo]","blonde"],["preto/a","[PREH-too]","black"],
+    ["ruivo/a","[HWEE-voo]","red / ginger"],["branco/a","[BRANK-oo]","white / grey"],
+    ["calvo/a","[KAL-voo]","bald"],
+  ],
+  eyes:[
+    ["castanhos","[kɐsh-TAN-yoosh]","brown"],["azuis","[ɐ-ZWEEISH]","blue"],
+    ["verdes","[VEHR-dɐsh]","green"],["pretos","[PREH-toosh]","black"],
+    ["grandes / pequenos","","big / small"],
+  ],
+  body:[
+    ["alto/a","[AL-too]","tall"],["baixo/a","[BAI-shoo]","short"],
+    ["de estatura média","[ish-tɐ-TOO-rɐ MEH-dyɐ]","medium height"],
+    ["gordo/a","[GOR-doo]","overweight"],["magro/a","[MA-groo]","slim"],
+    ["robusto/a","[hoo-BOOSH-too]","sturdy"],["elegante","[ɐ-lɐ-GANT]","elegant"],
+    ["jovem","[ZHOH-vayng]","young"],["idoso/a","[ee-DOH-zoo]","elderly"],
+  ],
+  personality:[
+    ["inteligente","[in-tɐ-lee-ZHENT]","intelligent"],["calmo/a","[KAL-moo]","calm"],
+    ["trabalhador/a","[trɐ-bɐl-yɐ-DOR]","hardworking"],["teimoso/a","[tay-MOH-zoo]","stubborn"],
+    ["alegre","[ɐ-LEH-grɐ]","cheerful"],["feliz","[fɐ-LEESH]","happy"],
+    ["simpático/a","[sim-PA-tee-koo]","friendly"],["antipático/a","[an-tee-PA-tee-koo]","unfriendly"],
+    ["tímido/a","[TEE-mee-doo]","shy"],["honesto/a","[oh-NESH-too]","honest"],
+    ["divertido/a","[dee-ver-TEE-doo]","fun"],["criativo/a","[kree-ɐ-TEE-voo]","creative"],
+  ],
+  adj_rules:[
+    { end:"Masc. ends -o", rule:"-o → -a", ex:["alto → alta","bonito → bonita","calvo → calva"] },
+    { end:"Ends in -or", rule:"add -a", ex:["trabalhador → trabalhadora","encantador → encantadora"] },
+    { end:"Ends in -ão", rule:"-ão → -ona", ex:["comilão → comilona","valentão → valentona"] },
+    { end:"Ends in -ês", rule:"-ês → -esa", ex:["português → portuguesa","francês → francesa"] },
+    { end:"Ends in -e (same form)", rule:"no change", ex:["alegre → alegre","elegante → elegante"] },
+    { end:"Ends in -l or -z (same form)", rule:"no change", ex:["fiel → fiel","feliz → feliz"] },
+    { end:"Irregular — memorise", rule:"unpredictable", ex:["bom → boa","mau → má","alemão → alemã"] },
+  ],
+  model:"A Maria Joana tem um ar feliz [fɐ-LEESH]. Ela é elegante [ɐ-lɐ-GANT] e de estatura média [MEH-dyɐ]. É jovem [ZHOH-vayng], tem um longo cabelo castanho [kɐsh-TAN-yoo] e liso [LEE-zoo]. Tem um sorriso radiante e uns olhos grandes e castanhos. Usa roupa descontraída [dɐsh-kon-trɐ-EE-dɐ] e jovial."
+};
+
+const D_VERB_PATTERNS = {
+  note: "Portuguese verbs belong to one of 3 families, determined by the infinitive ending. Learn ONE model verb per family and you can conjugate hundreds. The vós form (*) is archaic — you will almost never use it in modern European Portuguese.",
+  families: [
+    {
+      num:"1st", end:"-AR", color:"#1a4f7e", model:"ANDAR [ɐn-DAR] (to walk)",
+      pronouns:["eu","tu","ele/ela/você","nós","vós *","eles/elas/vocês"],
+      forms:["ando [AN-doo]","andas [AN-dɐsh]","anda [AN-dɐ]","andamos [ɐn-DAH-moosh]","andais [ɐn-DAISH] ← archaic","andam [AN-downg]"],
+      endings:["-o","-as","-a","-amos","-ais","-am"],
+      more:["falar → falo/falas/fala…","morar → moro/moras/mora…","gostar → gosto/gostas/gosta…","trabalhar → trabalho/trabalhas…","estudar → estudo/estudas…","acordar → acordo/acordas…"],
+    },
+    {
+      num:"2nd", end:"-ER", color:"#1a7a45", model:"ESCREVER [ish-krɐ-VEHR] (to write)",
+      pronouns:["eu","tu","ele/ela/você","nós","vós *","eles/elas/vocês"],
+      forms:["escrevo [ish-KREH-voo]","escreves [ish-KREH-vɐsh]","escreve [ish-KREH-v]","escrevemos [ish-krɐ-VEH-moosh]","escreveis [ish-krɐ-VAISH] ← archaic","escrevem [ish-KREH-vayng]"],
+      endings:["-o","-es","-e","-emos","-eis","-em"],
+      more:["comer → como/comes/come…","beber → bebo/bebes/bebe…","correr → corro/corres/corre…","viver → vivo/vives/vive…","poder → posso/podes/pode… (irregular!)","querer → quero/queres/quer… (irregular!)"],
+    },
+    {
+      num:"3rd", end:"-IR", color:"#b03a2e", model:"PARTIR [pɐr-TEER] (to leave/depart)",
+      pronouns:["eu","tu","ele/ela/você","nós","vós *","eles/elas/vocês"],
+      forms:["parto [PAR-too]","partes [PAR-tɐsh]","parte [PAR-t]","partimos [pɐr-TEE-moosh]","partis [pɐr-TEESH] ← archaic","partem [PAR-tayng]"],
+      endings:["-o","-es","-e","-imos","-is","-em"],
+      more:["abrir → abro/abres/abre…","partir → parto/partes/parte…","assistir → assisto/assistes…","decidir → decido/decides…","sentir → sinto/sentes/sente… (stem change!)","vir → venho/vens/vem… (irregular!)"],
+    },
+  ],
+  sentences: {
+    intro: "Frases afirmativas, negativas e interrogativas — the same verb form is used in all three. Word order and particles do the work.",
+    types: [
+      { type:"Affirmative (afirmativa)", rule:"Subject + Verb + Rest", ex:[["A Joana escreve um artigo.","[ɐ zhoo-AN-ɐ ish-KREH-v oon ɐr-TEE-goo]","Joana writes an article."],["O avião parte às dez.","[oo ɐ-vyOWNG PAR-t ɐsh desh]","The plane leaves at ten."]] },
+      { type:"Negative (negativa)", rule:"Subject + NÃO + Verb + Rest — não always comes directly before the verb", ex:[["Eu e o Carlos não bebemos álcool.","[nowng bɐ-BEH-moosh]","We don't drink alcohol."],["A Maria não fala inglês.","[nowng FA-lɐ]","Maria doesn't speak English."]] },
+      { type:"Interrogative (interrogativa)", rule:"Question word + Verb + Subject? OR just raise intonation", ex:[["Onde é que ele mora?","[OND eh kɐ EHL MOH-rɐ]","Where does he live?"],["Tu bebes chá ou café?","[too BEH-bɐsh sha oh kɐ-FEH]","Do you drink tea or coffee?"]] },
+    ]
+  }
+};
+
+const D_FAMILY = {
+  nuclear:[
+    ["o pai / a mãe","[oo pai / ɐ mɐ-yng]","father / mother"],
+    ["os pais","[oosh paish]","parents"],
+    ["o marido / a mulher","[oo mɐ-REE-doo / ɐ mool-YEHR]","husband / wife"],
+    ["o filho / a filha","[oo FEEL-yoo / ɐ FEEL-yɐ]","son / daughter"],
+    ["os filhos","[oosh FEEL-yoosh]","children (sons/children)"],
+    ["o irmão / a irmã","[oo eer-MOWNG / ɐ eer-MƐ]","brother / sister"],
+    ["os irmãos gémeos","[oosh eer-MOWNGSH ZHEH-myoosh]","twins"],
+  ],
+  extended:[
+    ["o avô / a avó","[oo ɐ-VOH / ɐ ɐ-VO]","grandfather / grandmother"],
+    ["os avós","[oosh ɐ-VOSH]","grandparents"],
+    ["o neto / a neta","[oo NEH-too / ɐ NEH-tɐ]","grandson / granddaughter"],
+    ["o tio / a tia","[oo TEE-oo / ɐ TEE-ɐ]","uncle / aunt"],
+    ["o primo / a prima","[oo PREE-moo / ɐ PREE-mɐ]","cousin (m/f)"],
+    ["o sobrinho / a sobrinha","[oo soo-BREEN-yoo / ɐ soo-BREEN-yɐ]","nephew / niece"],
+    ["o sogro / a sogra","[oo SOH-groo / ɐ SOH-grɐ]","father-in-law / mother-in-law"],
+    ["o genro / a nora","[oo ZHEHN-roo / ɐ NOH-rɐ]","son-in-law / daughter-in-law"],
+    ["o cunhado / a cunhada","[oo koon-YA-doo / ɐ koon-YA-dɐ]","brother-in-law / sister-in-law"],
+    ["o padrinho / a madrinha","[oo pɐ-DREEN-yoo / ɐ mɐ-DREEN-yɐ]","godfather / godmother"],
+    ["o afilhado / a afilhada","[oo ɐ-feel-YA-doo]","godson / goddaughter"],
+  ],
+  stepFamily:[
+    ["o padrasto / a madrasta","[oo pɐ-DRASH-too / ɐ mɐ-DRASH-tɐ]","stepfather / stepmother"],
+    ["o meio-irmão / a meia-irmã","[oo MAY-oo eer-MOWNG]","half-brother / half-sister"],
+    ["o ex-marido / a ex-mulher","[oo ex mɐ-REE-doo]","ex-husband / ex-wife"],
+  ],
+  types:[
+    { type:"Família nuclear", desc:"The immediate family: parents and children living together.", members:"mãe, pai, filho/a, irmão/ã" },
+    { type:"Família alargada", desc:"Extended family including grandparents, aunts, uncles, cousins.", members:"avô/ó, tio/a, primo/a, sogro/a, cunhado/a…" },
+    { type:"Família reconstituída", desc:"Blended/reconstituted family after separation or divorce.", members:"padrasto, madrasta, meio-irmão, meia-irmã" },
+  ],
+  sentences:[
+    ["O Pedro é filho de António e Helena.","[oo PEH-droo eh FEEL-yoo dɐ ɐn-TOH-nyoo ee ɐ-LEH-nɐ]","Pedro is the son of António and Helena."],
+    ["A Carolina é irmã do Miguel.","[ɐ kɐ-roo-LEE-nɐ eh eer-MƐ doo mee-GEL]","Carolina is Miguel's sister."],
+    ["O João é primo da Matilde.","[oo zhoo-OWNG eh PREE-moo dɐ mɐ-TEEL-d]","João is Matilde's cousin."],
+    ["Tenho dois irmãos e uma irmã.","[TAYN-yoo doysh eer-MOWNGSH ee OO-mɐ eer-MƐ]","I have two brothers and one sister."],
+    ["Os meus avós moram em Lisboa.","[oosh MEH-oosh ɐ-VOSH MOH-rowng ayng leezh-BOH-ɐ]","My grandparents live in Lisbon."],
+  ]
+};
+
+const D_HOUSE = {
+  exterior:[
+    ["a casa","[ɐ KA-zɐ]","house"],
+    ["o apartamento","[oo ɐ-pɐr-tɐ-MENT-oo]","apartment"],
+    ["o telhado","[oo tɐl-YA-doo]","roof"],
+    ["a chaminé","[ɐ shɐ-mee-NEH]","chimney"],
+    ["o sótão","[oo SO-towng]","attic"],
+    ["a cave (c/v)","[ɐ KA-v]","basement / cellar"],
+    ["a varanda","[ɐ vɐ-RAN-dɐ]","balcony / veranda"],
+    ["a janela","[ɐ zhɐ-NEH-lɐ]","window"],
+    ["a porta principal","[ɐ POR-tɐ preen-see-PAL]","front door"],
+    ["a parede","[ɐ pɐ-REH-d]","wall"],
+    ["a garagem","[ɐ gɐ-RA-zhayng]","garage"],
+  ],
+  floors:[
+    ["a cave (c/v)","[ɐ KA-v]","basement — marked C/V"],
+    ["o rés do chão (r/c)","[oo hesh doo showng]","ground floor — marked R/C"],
+    ["o 1º andar","[oo pree-MAY-roo ɐn-DAR]","1st floor (= 2nd floor in US)"],
+    ["o 2º andar","[oo sɐ-GOON-doo ɐn-DAR]","2nd floor (= 3rd floor in US)"],
+  ],
+  rooms:[
+    ["a sala de estar","[ɐ SA-lɐ dɐ ish-TAR]","living room"],
+    ["a cozinha","[ɐ koo-ZEEN-yɐ]","kitchen"],
+    ["o quarto","[oo KWAR-too]","bedroom"],
+    ["a casa de banho","[ɐ KA-zɐ dɐ BAN-yoo]","bathroom"],
+    ["o escritório","[oo ish-kree-TO-ryoo]","study / home office"],
+    ["a garagem","[ɐ gɐ-RA-zhayng]","garage"],
+    ["o corredor","[oo koo-hɐ-DOR]","corridor / hallway"],
+    ["a sala de jantar","[ɐ SA-lɐ dɐ zhɐn-TAR]","dining room"],
+  ],
+  note:"⚠ Portuguese floor numbering differs from North American: rés do chão (R/C) = ground floor. The 1º andar is one floor above ground. Always check the floor number in Portugal — it is not what you expect from North American habits.",
+};
+
+const D_QUESTIONS = {
+  pronouns:[
+    { word:"Quem", pron:"[kayng]", en:"Who", use:"People ONLY", ex:"Quem é este senhor? — Who is this gentleman?", ans:"É o amigo da professora. — He is the teacher's friend." },
+    { word:"Como", pron:"[KOH-moo]", en:"How / What (name)", use:"Name, manner, state", ex:"Como é que ele se chama? — What is his name?", ans:"Chama-se Pedro. — His name is Pedro." },
+    { word:"Qual / Quais", pron:"[kwal / kwaish]", en:"Which / What", use:"Selection among options", ex:"Qual é a profissão do Pedro? — What is Pedro's profession?", ans:"É músico. — He is a musician." },
+    { word:"Que / O que", pron:"[kɐ / oo kɐ]", en:"What", use:"Things, actions", ex:"Que instrumento toca? / O que é que ele toca?", ans:"Toca violoncelo. — He plays cello." },
+    { word:"Quantos / Quantas", pron:"[KWAN-toosh / KWAN-tɐsh]", en:"How many", use:"Countable things — agrees in gender", ex:"Quantos anos tem? — How old is he?", ans:"Tem 32 anos. — He is 32." },
+    { word:"Onde", pron:"[OND]", en:"Where", use:"Location", ex:"Onde é que ele mora? — Where does he live?", ans:"Mora em Lisboa. — He lives in Lisbon." },
+    { word:"De onde", pron:"[dɐ OND]", en:"Where from", use:"Origin", ex:"De onde é o Ahmed? — Where is Ahmed from?", ans:"É de Marrocos. — He is from Morocco." },
+    { word:"Quando", pron:"[KWAN-doo]", en:"When", use:"Time", ex:"Quando é que ele trabalha? — When does he work?", ans:"Trabalha todos os dias. — He works every day." },
+    { word:"Porque", pron:"[poor-KÊ]", en:"Why", use:"Reason", ex:"Porque é que estás em Portugal? — Why are you in Portugal?", ans:"Porque gosto de Portugal. — Because I like Portugal." },
+    { word:"Quê", pron:"[keh]", en:"What (alone)", use:"Used alone or after preposition", ex:"Com quê? — With what? / A que hora? — At what time?", ans:"" },
+  ],
+  ekeConstruction: "The construction 'é que' [eh kɐ] is very commonly inserted after question words to make questions sound more natural in European Portuguese. 'Onde mora?' and 'Onde é que mora?' mean the same thing — the second is more colloquial and frequent.",
+  sentenceTypes:[
+    { type:"✅ Afirmativa", color:"var(--green)", structure:"[Subject] + [Verb] + [Rest]", rules:["Normal word order","No special particles needed"], examples:[["A Joana escreve um artigo.","Joana writes an article."],["O avião parte às dez.","The plane leaves at ten."],["Eu como cereais ao pequeno-almoço.","I eat cereal for breakfast."]] },
+    { type:"❌ Negativa", color:"var(--accent)", structure:"[Subject] + NÃO + [Verb] + [Rest]", rules:["NÃO always comes DIRECTLY before the verb","Never separated by another word","Double negative is possible: 'Não como nada' = I don't eat anything"], examples:[["Não bebemos bebidas alcoólicas.","We don't drink alcohol."],["A Maria não fala inglês.","Maria doesn't speak English."],["Não como carne.","I don't eat meat."]] },
+    { type:"❓ Interrogativa", color:"var(--primary)", structure:"[Q-word] + é que + [Verb] + [Subject]? OR just ↑ intonation", rules:["Yes/no questions: same word order as affirmative, just raise intonation","Question word questions: Q-word first, then 'é que' (optional but common)","Subject often comes AFTER verb in questions"], examples:[["Onde é que ele mora?","Where does he live?"],["Tu bebes chá ou café?","Do you drink tea or coffee?"],["A professora abre a porta?","Does the teacher open the door?"]] },
+  ]
+};
+
+const D_EXPRESSIONS = [
+  { cat:"Agreement & Disagreement", items:[
+    ["Concordo","[kon-KOR-doo]","I agree"],["Não concordo","[nowng kon-KOR-doo]","I disagree"],
+    ["Tens razão","[tayngsh hɐ-ZOWNG]","You're right"],["Não tens razão","","You're wrong"],
+    ["Talvez","[tal-VESH]","Maybe"],["Depende","[dɐ-PEND]","It depends"],
+    ["Exatamente","[ee-za-tɐ-MENT]","Exactly"],["Claro que sim!","[KLA-roo kɐ seeng]","Of course!"],
+  ]},
+  { cat:"Asking for Things", items:[
+    ["Queria…","[kɐ-REE-ɐ]","I would like… (polite)"],
+    ["Pode dar-me…?","[POH-d DAR-mɐ]","Can you give me…?"],
+    ["Quanto custa?","[KWAN-too KOOSH-tɐ]","How much does it cost?"],
+    ["Onde fica…?","[OND FEE-kɐ]","Where is…?"],
+    ["A que horas…?","[ɐ kɐ OH-rɐsh]","At what time…?"],
+    ["Tem…?","[tayng]","Do you have…?"],
+  ]},
+  { cat:"Expressing Opinions", items:[
+    ["Acho que…","[A-shoo kɐ]","I think that…"],
+    ["Na minha opinião…","[nɐ MEEN-yɐ oh-peen-YOWNG]","In my opinion…"],
+    ["Para mim…","[PA-rɐ meeng]","For me…"],
+    ["Parece-me que…","[pɐ-RES-mɐ kɐ]","It seems to me that…"],
+    ["Não sei","[nowng say]","I don't know"],
+    ["Tenho a certeza","[TAYN-yoo ɐ ser-TEH-zɐ]","I'm certain"],
+  ]},
+  { cat:"Emotions & Reactions", items:[
+    ["Que pena!","[kɐ PAY-nɐ]","What a shame!"],
+    ["Que bom!","[kɐ bong]","How great!"],
+    ["Que fixe!","[kɐ FEESH]","How cool! (very Portuguese slang)"],
+    ["Que saudade!","[kɐ sow-DA-d]","I miss it so much! (untranslatable longing)"],
+    ["Fico contente","[FEE-koo kon-TENT]","I'm glad"],
+    ["Estou farto/a de…","[ish-TOH FAR-too]","I'm fed up with…"],
+  ]},
+  { cat:"Connectors (link your sentences)", items:[
+    ["e","[ee]","and"],["mas","[mɐsh]","but"],["porque","[poor-KÊ]","because"],
+    ["então","[en-TOWNG]","so / then"],["também","[tɐm-BAYNG]","also / too"],
+    ["só","[so]","only / just"],["ainda","[ɐ-IND-ɐ]","still / yet"],
+    ["já","[zha]","already / now"],["logo","[LOH-goo]","soon / later"],
+    ["quando","[KWAN-doo]","when"],["se","[sɐ]","if"],
+  ]},
+  { cat:"At the Café & Table", items:[
+    ["Uma bica, por favor","[OO-mɐ BEE-kɐ]","An espresso, please (Lisbon)"],
+    ["Um galão, por favor","[oong gɐ-LOWNG]","Large milky coffee, please"],
+    ["A conta, por favor","[ɐ KON-tɐ]","The bill, please"],
+    ["Está ótimo","[ish-TA O-tee-moo]","It's great / delicious"],
+    ["Bom apetite!","[bong ɐ-pɐ-TEET]","Enjoy your meal!"],
+  ]},
+];
+
+const D_SURVIVAL = [
+  { pt:"Bom dia", pron:"[bong DEE-ɐ]", en:"Good morning (until noon)", cat:"Greetings" },
+  { pt:"Boa tarde", pron:"[BOH-ɐ TAR-d]", en:"Good afternoon", cat:"Greetings" },
+  { pt:"Boa noite", pron:"[BOH-ɐ NOYT]", en:"Good evening / night", cat:"Greetings" },
+  { pt:"Olá", pron:"[oh-LA]", en:"Hello (anytime, informal)", cat:"Greetings" },
+  { pt:"Tudo bem?", pron:"[TOO-doo bayng]", en:"How's everything?", cat:"Greetings" },
+  { pt:"Tudo bem, obrigado/a", pron:"[oh-bree-GA-doo/dɐ]", en:"All good, thanks — obrigado (m) / obrigada (f)", cat:"Greetings" },
+  { pt:"Até amanhã / logo", pron:"[ɐ-TEH ɐ-mɐ-NYUNG / LOH-goo]", en:"See you tomorrow / soon", cat:"Greetings" },
+  { pt:"Adeus / Tchau", pron:"[ɐ-DEH-oosh / chow]", en:"Goodbye / Bye", cat:"Greetings" },
+  { pt:"Por favor", pron:"[poor fɐ-VOR]", en:"Please", cat:"Politeness" },
+  { pt:"De nada", pron:"[dɐ NAH-dɐ]", en:"You're welcome", cat:"Politeness" },
+  { pt:"Desculpe", pron:"[dɐsh-KOOL-pɐ]", en:"Excuse me / Sorry", cat:"Politeness" },
+  { pt:"Com licença", pron:"[kong lee-SEN-sɐ]", en:"Excuse me (to pass through)", cat:"Politeness" },
+  { pt:"Não percebo", pron:"[nowng pɐr-SEH-boo]", en:"I don't understand", cat:"Classroom" },
+  { pt:"Pode repetir?", pron:"[POH-d hɐ-pɐ-TEER]", en:"Can you repeat?", cat:"Classroom" },
+  { pt:"Fale mais devagar, por favor", pron:"[FA-lɐ maish dɐ-vɐ-GAR]", en:"Speak more slowly, please", cat:"Classroom" },
+  { pt:"Não falo bem português", pron:"[nowng FA-loo bayng poor-too-GESH]", en:"I don't speak Portuguese well", cat:"Classroom" },
+  { pt:"Como se diz… em português?", pron:"[KOH-moo sɐ deesh ayng poor-too-GESH]", en:"How do you say… in Portuguese?", cat:"Classroom" },
+  { pt:"Sim / Não", pron:"[seeng / nowng]", en:"Yes / No", cat:"Basics" },
+  { pt:"Obrigado/a", pron:"[oh-bree-GA-doo/dɐ]", en:"Thank you — obrigado (m) / obrigada (f)", cat:"Basics" },
+];
+
+const D_PRACTICE = [
+  { q:"Como te chamas?", pron:"[KOH-moo tɐ SHA-mɐsh]", en:"What is your name?", model:"Chamo-me [name]." },
+  { q:"De onde és?", pron:"[dɐ OND esh]", en:"Where are you from?", model:"Sou de [country]. / Sou [nationality]." },
+  { q:"Onde moras?", pron:"[OND MOH-rɐsh]", en:"Where do you live?", model:"Moro em [city]." },
+  { q:"Quantos anos tens?", pron:"[KWAN-toosh AH-noosh tayngsh]", en:"How old are you?", model:"Tenho [number] anos." },
+  { q:"Qual é a tua língua materna?", pron:"[kwal eh ɐ TOO-ɐ LING-gwɐ mɐ-TER-nɐ]", en:"What is your mother tongue?", model:"A minha língua materna é o russo." },
+  { q:"És casado/a?", pron:"[esh kɐ-ZA-doo/dɐ]", en:"Are you married?", model:"Sou casado/a. / Sou solteiro/a." },
+  { q:"Qual é a tua profissão?", pron:"[kwal eh ɐ TOO-ɐ proo-fee-SOWNG]", en:"What is your profession?", model:"Sou [profession]." },
+  { q:"Como é que te descreves fisicamente?", pron:"[KOH-moo eh kɐ tɐ dɐsh-KREH-vɐsh]", en:"How would you describe yourself physically?", model:"Sou alto/a e tenho cabelo castanho." },
+];
+
+// ─────────────────────────────────────────────
+// SEARCH INDEX
+// ─────────────────────────────────────────────
+const SEARCH_INDEX = [];
+
+function indexItem(section, sectionTitle, pt, pron, en, extra) {
+  const text = [pt, pron, en, extra].filter(Boolean).join(' ').toLowerCase();
+  SEARCH_INDEX.push({ section, sectionTitle, pt, pron, en, extra, text });
+}
+
+function buildIndex() {
+  D_ALPHABET.forEach(r => indexItem('alphabet','Alphabet', r.letter + ' ' + r.name, r.pron, r.rule, r.example));
+  D_PRONUNCIATION.vowels.forEach(r => indexItem('pronunciation','Pronunciation', r.sound, r.ipa, r.like, r.example));
+  D_PRONUNCIATION.consonants.forEach(r => indexItem('pronunciation','Pronunciation', r.sound, '', r.rule, r.example));
+  D_PRONOUNS.personal.forEach(r => indexItem('pronouns','Pronouns', r.p, r.pron, r.en, r.note));
+  D_NUMBERS.basic.forEach(r => indexItem('numbers','Numbers', r[0]+' — '+r[1], r[2], '', ''));
+  D_NUMBERS.tens.forEach(r => indexItem('numbers','Numbers', r[0]+' — '+r[1], r[2], '', ''));
+  D_ARTICLES.contractions.forEach(r => indexItem('articles','Articles', r.art, '', r.en, r.ex));
+  D_GENDER.forEach(r => indexItem('gender','Gender', r.end, '', r.rule, r.ex.join(' ')));
+  D_PLURALS.forEach(r => indexItem('plurals','Singular/Plural', r.end, '', r.rule, r.ex.join(' ')));
+  D_SER_ESTAR.ser_uses.forEach(r => indexItem('ser-estar','Ser vs Estar', r.pt, r.pron, r.en, 'ser'));
+  D_SER_ESTAR.estar_uses.forEach(r => indexItem('ser-estar','Ser vs Estar', r.pt, r.pron, r.en, 'estar'));
+  D_CORE_VERBS.forEach(v => {
+    v.ex.forEach(e => indexItem('core-verbs','Core Verbs', e[0], e[1], e[2], v.verb));
+    v.conj.forEach(c => indexItem('core-verbs','Core Verbs', v.verb+' — '+c[0]+': '+c[1], c[2], '', v.en));
+  });
+  D_VERB_PATTERNS.families.forEach(f => f.more.forEach(m => indexItem('verb-patterns','Verb Patterns', m, '', f.end+' verb', f.model)));
+  D_DAYS.forEach(r => indexItem('days','Days & Months', r.pt, r.pron, r.en, ''));
+  D_MONTHS.forEach(r => indexItem('days','Days & Months', r[1], r[2], 'month ' + r[0], ''));
+  D_IDENTITY.fields.forEach(r => indexItem('identity','Identity', r[0], r[1], r[2], ''));
+  D_IDENTITY.civil.forEach(r => indexItem('identity','Identity', r[0], r[1], r[2], 'marital status'));
+  D_IDENTITY.countries.forEach(r => indexItem('identity','Identity', r[0], r[2], r[3]+' / '+r[4], r[5]));
+  D_FAMILY.nuclear.forEach(r => indexItem('family','Family', r[0], r[1], r[2], 'family'));
+  D_FAMILY.extended.forEach(r => indexItem('family','Family', r[0], r[1], r[2], 'family'));
+  D_FAMILY.stepFamily.forEach(r => indexItem('family','Family', r[0], r[1], r[2], 'family'));
+  D_HOUSE.rooms.forEach(r => indexItem('house','House & Home', r[0], r[1], r[2], 'room'));
+  D_HOUSE.exterior.forEach(r => indexItem('house','House & Home', r[0], r[1], r[2], 'house'));
+  D_HOUSE.floors.forEach(r => indexItem('house','House & Home', r[0], r[1], r[2], 'floor'));
+  D_QUESTIONS.pronouns.forEach(r => indexItem('questions','Questions', r.word, r.pron, r.en+' — '+r.ex, ''));
+  const descSections = [D_DESCRIPTION.hair, D_DESCRIPTION.eyes, D_DESCRIPTION.body, D_DESCRIPTION.personality];
+  descSections.forEach(sec => sec.forEach(r => indexItem('description','Description', r[0], r[1], r[2], '')));
+  D_EXPRESSIONS.forEach(cat => cat.items.forEach(r => indexItem('expressions','Expressions', r[0], r[1], r[2], cat.cat)));
+  D_SURVIVAL.forEach(r => indexItem('survival','Survival Phrases', r.pt, r.pron, r.en, r.cat));
+}
+
+// ─────────────────────────────────────────────
+// RENDERERS
+// ─────────────────────────────────────────────
+function sectionHead(title, session, intro) {
+  return `<div class="section-header">
+    <h2 class="section-title">${title}</h2>
+    ${session ? `<span class="session-badge">${session}</span>` : ''}
+  </div>
+  ${intro ? `<div class="section-intro">${intro}</div>` : ''}`;
+}
+
+function vocabGrid(items) {
+  return `<div class="card-grid">${items.map(([pt, pron, en]) => `
+    <div class="card-sm">
+      <div class="pt">${pt}</div>
+      ${pron ? `<div style="margin:3px 0">${pr(pron)}</div>` : ''}
+      <div class="en">${en}</div>
+    </div>`).join('')}</div>`;
+}
+
+function conjBox(title, color, rows) {
+  return `<div class="conj-box">
+    <div class="conj-header" style="background:${color}">${title}</div>
+    ${rows.map(([pronoun, form, pron]) => `
+      <div class="conj-row">
+        <span class="conj-pronoun">${pronoun}</span>
+        <span class="conj-form">${form}</span>
+        <span class="conj-pron">${pron||''}</span>
+      </div>`).join('')}
+  </div>`;
+}
+
+const RENDERERS = {
+
+alphabet: () => `
+  ${sectionHead('Alphabet','Session 1','The Portuguese alphabet has 26 letters — same as English. K, W, Y exist but only appear in foreign words. The differences are in <strong>how letters sound</strong>, especially C, G, H, J, R, S, X, and the digraphs LH and NH.')}
+  ${warnBox('<strong>5 letters that will trip you up:</strong> H (always silent) · R at start (guttural, like Russian х) · S (3 different sounds by position) · X (usually [sh] but not always) · LH and NH (single sounds, not two letters)')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Letter</th><th>Name</th><th>Phonetic</th><th>Key Rule</th><th>Example</th></tr></thead>
+    <tbody>${D_ALPHABET.map(r => `<tr class="alpha-row${r.highlight?' highlight':''}">
+      <td><strong>${r.letter}</strong></td>
+      <td style="color:var(--text-3);font-style:italic">${r.name}</td>
+      <td>${pr(r.pron)}</td>
+      <td style="font-size:13px">${r.rule}</td>
+      <td style="font-size:13px;color:var(--primary);font-style:italic">${r.example}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+pronunciation: () => `
+  ${sectionHead('Pronunciation','Sessions 1–3','European Portuguese swallows unstressed vowels — this is why it sounds like Polish or Russian. Brazilians sing vowels open; Portuguese people compress them. Once you hear this pattern, you cannot unhear it.')}
+  <h3 class="sub-heading">Vowel Sounds</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Sound</th><th>Phonetic</th><th>Sounds like</th><th>Example</th></tr></thead>
+    <tbody>${D_PRONUNCIATION.vowels.map(r => `<tr>
+      <td><strong>${r.sound}</strong></td><td>${pr(r.ipa)}</td>
+      <td style="font-size:13px">${r.like}</td>
+      <td style="color:var(--primary);font-style:italic">${r.example}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Consonant Rules</h3>
+  <div class="card-grid">${D_PRONUNCIATION.consonants.map(r => `
+    <div class="card-sm">
+      <div style="font-size:18px;font-weight:800;color:var(--primary);font-family:var(--mono);margin-bottom:4px">${r.sound}</div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:4px">${r.rule}</div>
+      <div style="font-size:13px;font-style:italic;color:var(--text-3)">${r.example}</div>
+    </div>`).join('')}</div>
+  <h3 class="sub-heading">Tips for Comprehension</h3>
+  ${D_PRONUNCIATION.tips.map(t => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join('')}`,
+
+pronouns: () => `
+  ${sectionHead('Pronouns','Session 2','Unlike Russian, Portuguese subject pronouns are often DROPPED — the verb ending tells you the person. But you must know the full table because verbs conjugate by subject.')}
+  <h3 class="sub-heading">Personal Pronouns</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Pronoun</th><th>Pron.</th><th>English</th><th>Usage</th><th>Note</th></tr></thead>
+    <tbody>${D_PRONOUNS.personal.map(r => `<tr>
+      <td><strong style="font-size:16px">${r.p}</strong></td>
+      <td>${pr(r.pron)}</td>
+      <td>${r.en}</td>
+      <td><span class="tag ${r.use.includes('INFORMAL')?'tag-good':r.use.includes('FORMAL')?'tag-warn':'tag-info'}">${r.use}</span></td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Forms of Address</h3>
+  ${D_PRONOUNS.address.map(r => `<div class="card" style="margin-bottom:10px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+      <span style="font-size:18px;font-weight:800">${r.form}</span>
+      ${pr(r.pron)}
+      <span class="tag tag-${r.color}" style="margin-left:auto">${r.level}</span>
+    </div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:6px">${r.when}</div>
+    <div style="font-size:14px;font-style:italic;color:var(--primary)">${r.ex}</div>
+  </div>`).join('')}
+  <h3 class="sub-heading">Key Notes</h3>
+  ${D_PRONOUNS.notes.map(n => `<div class="rule-box" style="margin-bottom:8px">→ ${n}</div>`).join('')}`,
+
+articles: () => `
+  ${sectionHead('Articles & Contractions','Session 3','Portuguese uses articles more than English AND automatically merges them with prepositions. These contractions are mandatory — you cannot say "em o Porto", it MUST be "no Porto".')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+    ${['definite','indefinite'].map(type => `<div>
+      <h3 class="sub-heading">${type==='definite'?'Definite (the)':'Indefinite (a/an/some)'}</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Article</th><th>Pron.</th><th>Use</th><th>Example</th></tr></thead>
+        <tbody>${D_ARTICLES[type].map(r => `<tr>
+          <td><strong style="font-size:22px">${r.art}</strong></td>
+          <td>${pr(r.pron)}</td>
+          <td style="font-size:12px">${r.use}</td>
+          <td><span style="font-style:italic;color:var(--primary)">${r.ex}</span><br><span class="en">${r.en}</span></td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">Contractions — Preposition + Article (mandatory)</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Preposition</th><th>+ Article =</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_ARTICLES.contractions.map(r => `<tr>
+      <td style="color:var(--purple);font-weight:700">${r.prep}</td>
+      <td><strong style="font-size:16px;color:var(--primary)">${r.art}</strong></td>
+      <td style="font-style:italic;color:var(--text)">${r.ex}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Special Rules</h3>
+  ${D_ARTICLES.rules.map(r => `<div class="rule-box" style="margin-bottom:8px">→ ${r}</div>`).join('')}`,
+
+gender: () => `
+  ${sectionHead('Noun Gender','Sessions 1–3','Portuguese gender is more predictable than Russian — the word ending usually tells you. Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.')}
+  ${D_GENDER.map(r => `<div class="card" style="margin-bottom:10px;border-left:4px solid ${r.gen==='M'?'var(--primary)':r.gen==='F'?'#e91e8c':'var(--gold)'}">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">
+      <span style="font-family:var(--mono);font-size:18px;font-weight:800;color:var(--primary)">${r.end}</span>
+      <span class="tag ${r.gen==='M'?'tag-m':r.gen==='F'?'tag-f':'tag-warn'}">${r.gen==='M'?'MASCULINE':r.gen==='F'?'FEMININE':'⚠ EXCEPTIONS'}</span>
+      <span style="font-size:13px;color:var(--text-2)">${r.rule}</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${r.ex.map(e => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:13px;font-style:italic;color:var(--primary)">${e}</span>`).join('')}
+    </div>
+  </div>`).join('')}`,
+
+plurals: () => `
+  ${sectionHead('Singular / Plural','Session 3','Portuguese plurals are more predictable than Russian cases — no case system, just one plural form per word. The word ending determines the rule.')}
+  <h3 class="sub-heading">Plural Rules by Ending</h3>
+  ${D_PLURALS.map(r => `<div class="card" style="margin-bottom:10px">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:8px">
+      <span style="background:var(--primary-lt2);color:var(--primary-dk);padding:3px 12px;border-radius:20px;font-family:var(--mono);font-weight:700;font-size:14px">${r.end}</span>
+      <span style="font-size:15px;font-weight:800;color:var(--green)">→ ${r.rule}</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${r.ex.map(e => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:13px;font-style:italic">${e}</span>`).join('')}
+    </div>
+  </div>`).join('')}
+  <h3 class="sub-heading">Adjective Agreement — Gender & Number</h3>
+  ${warnBox('Adjectives agree with the noun in BOTH gender AND number. Learn the ending rule once, apply it everywhere.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Adjective ending</th><th>Feminine rule</th><th>Examples</th></tr></thead>
+    <tbody>${D_DESCRIPTION.adj_rules.map(r => `<tr>
+      <td><code style="font-size:13px">${r.end}</code></td>
+      <td style="font-weight:700;color:var(--green)">${r.rule}</td>
+      <td style="font-size:13px">${r.ex.join(' · ')}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+'ser-estar': () => `
+  ${sectionHead('Ser vs Estar','Sessions 2–3','Both mean "to be" but are not interchangeable. <strong>SER</strong> = permanent identity (your passport). <strong>ESTAR</strong> = temporary state or condition (today\'s mood). Russian has neither in present tense, so this is genuinely new mental territory.')}
+  <div class="conj-grid">
+    ${conjBox('SER — permanent identity','var(--primary)', D_SER_ESTAR.ser_conj)}
+    ${conjBox('ESTAR — temporary state','#2e7d6b', D_SER_ESTAR.estar_conj)}
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+    <div>
+      <h3 class="sub-heading">SER — when to use</h3>
+      ${D_SER_ESTAR.ser_uses.map(r => `<div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+        <div style="font-size:11px;font-weight:700;color:var(--text-3);text-transform:uppercase;margin-bottom:3px">${r.use}</div>
+        <div class="pt">${r.pt}</div>
+        <div style="margin:2px 0">${pr(r.pron)}</div>
+        <div class="en">${r.en}</div>
+      </div>`).join('')}
+    </div>
+    <div>
+      <h3 class="sub-heading">ESTAR — when to use</h3>
+      ${D_SER_ESTAR.estar_uses.map(r => `<div class="card-sm" style="margin-bottom:8px;border-left:3px solid #2e7d6b">
+        <div style="font-size:11px;font-weight:700;color:var(--text-3);text-transform:uppercase;margin-bottom:3px">${r.use}</div>
+        <div class="pt">${r.pt}</div>
+        <div style="margin:2px 0">${pr(r.pron)}</div>
+        <div class="en">${r.en}</div>
+      </div>`).join('')}
+    </div>
+  </div>
+  <h3 class="sub-heading">⚠ Tricky Cases & Past Tense</h3>
+  ${D_SER_ESTAR.tricky.map(r => `<div class="warn-box" style="margin-bottom:8px"><strong>${r.title}</strong><br>${r.note}</div>`).join('')}
+  <div class="card" style="margin-top:16px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:10px">📌 Past tense of SER — foi = "was"</div>
+    <div class="conj-grid">${conjBox('SER past tense (pretérito perfeito)','#555', D_SER_ESTAR.ser_past)}</div>
+  </div>`,
+
+'core-verbs': () => `
+  ${sectionHead('Core Verbs','Sessions 2–3','Master these 8 verbs and you can express almost anything at A1 level. Each verb is shown with full conjugation and real examples. Click/tap any verb to expand.')}
+  ${infoBox('<strong>-AR pattern (falar):</strong> -o / -as / -a / -amos / -am / -am &nbsp;|&nbsp; <strong>-ER pattern (comer):</strong> -o / -es / -e / -emos / -em / -em &nbsp;|&nbsp; <strong>-IR pattern (partir):</strong> -o / -es / -e / -imos / -em / -em')}
+  ${D_CORE_VERBS.map((v, i) => `
+  <div class="card" style="margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none" onclick="this.parentElement.querySelector('.verb-body').style.display=this.parentElement.querySelector('.verb-body').style.display==='none'?'block':'none'">
+      <span style="font-size:20px;font-weight:800;color:var(--primary);min-width:120px">${v.verb}</span>
+      ${pr(v.pron)}
+      <span style="color:var(--text-2)">— ${v.en}</span>
+      <span style="margin-left:auto;color:var(--text-3);font-size:18px">⌄</span>
+    </div>
+    <div class="verb-body">
+      <div class="warn-box" style="margin:12px 0 12px">💡 ${v.note}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Conjugation</div>
+          ${v.conj.map(c => `<div class="conj-row">${'<span class="conj-pronoun">'+c[0]+'</span><span class="conj-form">'+c[1]+'</span><span class="conj-pron">'+c[2]+'</span>'}</div>`).join('')}
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Examples</div>
+          ${v.ex.map(e => `<div style="border-left:3px solid var(--primary);padding-left:10px;margin-bottom:12px">
+            <div class="pt">${e[0]}</div>
+            <div style="margin:2px 0">${pr(e[1])}</div>
+            <div class="en">${e[2]}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>`).join('')}`,
+
+'verb-patterns': () => `
+  ${sectionHead('Verb Patterns — -AR, -ER, -IR','Session 4','Every Portuguese verb belongs to one of 3 conjugation families. Learn the endings for one model verb in each family and you can conjugate hundreds. The vós (*) form is archaic — you will almost never encounter it in modern spoken Portuguese.')}
+  ${infoBox(D_VERB_PATTERNS.note)}
+  ${D_VERB_PATTERNS.families.map(f => `
+  <div class="card" style="margin-bottom:20px;border-top:4px solid ${f.color}">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+      <span style="font-size:22px;font-weight:800;color:${f.color};font-family:var(--mono)">${f.end}</span>
+      <span style="font-size:15px;font-weight:700;color:var(--text-2)">${f.num} conjugação</span>
+      <span style="font-size:14px;color:var(--text-3)">Model: <strong style="color:${f.color}">${f.model}</strong></span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Conjugation</div>
+        <table style="width:100%;border-collapse:collapse;font-size:14px">
+          ${f.pronouns.map((p,i) => `<tr style="border-bottom:1px solid var(--border);${p.includes('*')?'opacity:0.55':''}">
+            <td style="padding:6px 10px;color:var(--text-3);font-size:12px">${p}</td>
+            <td style="padding:6px 10px;font-weight:800;font-size:16px;color:${f.color}">${f.forms[i].split(' ')[0]}</td>
+            <td style="padding:6px 10px">${pr(f.forms[i].includes('[')?f.forms[i].match(/\[.*?\]/)[0]:'')}</td>
+            <td style="padding:6px 10px;font-size:11px;color:var(--text-3);font-style:italic">${f.forms[i].includes('←')?f.forms[i].split('←')[1].trim():''}</td>
+          </tr>`).join('')}
+          <tr style="background:var(--surface-2);border-top:2px solid var(--border)">
+            <td colspan="4" style="padding:8px 10px;font-size:12px;color:var(--text-3)">
+              <strong>Ending pattern:</strong> ${f.endings.join(' / ')}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">More ${f.end} verbs</div>
+        ${f.more.map(m => `<div style="background:var(--surface-2);border-radius:6px;padding:7px 12px;margin-bottom:6px;font-size:13px;font-style:italic;color:var(--text-2)">${m}</div>`).join('')}
+      </div>
+    </div>
+  </div>`).join('')}
+  <h3 class="sub-heading">Affirmative · Negative · Interrogative</h3>
+  ${warnBox('The verb form itself does NOT change between affirmative, negative and interrogative. Only word order and particles change.')}
+  ${D_VERB_PATTERNS.sentences.types.map(t => `
+  <div class="card" style="margin-bottom:14px;border-left:4px solid ${t.type.includes('✅')?'var(--green)':t.type.includes('❌')?'var(--accent)':'var(--primary)'}">
+    <div style="font-size:16px;font-weight:800;margin-bottom:4px">${t.type}</div>
+    <div style="font-size:13px;font-family:var(--mono);color:var(--primary);margin-bottom:8px">${t.rule}</div>
+    <ul style="font-size:13px;color:var(--text-2);margin:0 0 10px 16px">${t.rules.map(r=>`<li>${r}</li>`).join('')}</ul>
+    ${t.ex.map(e => `<div style="display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:8px;margin-top:8px">
+      <div style="flex:1"><div class="pt">${e[0]}</div><div class="en">${e[1]}</div></div>
+    </div>`).join('')}
+  </div>`).join('')}`,
+
+questions: () => `
+  ${sectionHead('Questions & Interrogatives','Session 4','Interrogative pronouns (pronomes interrogativos) are the words that start questions. They never change form except Quanto/Quantos/Quantas which agree in gender and number.')}
+  ${infoBox('The construction <strong>é que</strong> [eh kɐ] is inserted after the question word in colloquial European Portuguese: "Onde mora?" and "Onde é que mora?" mean exactly the same thing — the second is more natural in everyday speech.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Word</th><th>Pron.</th><th>Meaning</th><th>Use</th><th>Example → Answer</th></tr></thead>
+    <tbody>${D_QUESTIONS.pronouns.map(r => `<tr>
+      <td><strong style="font-size:18px;color:var(--primary)">${r.word}</strong></td>
+      <td>${pr(r.pron)}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.use}</td>
+      <td style="font-size:13px"><em style="color:var(--text)">${r.ex}</em>${r.ans?`<br><span style="color:var(--green)">${r.ans}</span>`:''}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+family: () => `
+  ${sectionHead('Family & Relationships','Session 4','Portuguese has three distinct vocabulary sets for family types. All family nouns have masculine and feminine forms — learn them in pairs. Note the irregular plural: o irmão → os irmãos, a mãe → as mães.')}
+  ${D_FAMILY.types.map(t => `<div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+    <div style="font-weight:800;color:var(--primary)">${t.type}</div>
+    <div style="font-size:13px;color:var(--text-2);margin:3px 0">${t.desc}</div>
+    <div style="font-size:12px;font-style:italic;color:var(--text-3)">${t.members}</div>
+  </div>`).join('')}
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:20px">
+    <div>
+      <h3 class="sub-heading">🏠 Família Nuclear</h3>
+      ${vocabGrid(D_FAMILY.nuclear)}
+    </div>
+    <div>
+      <h3 class="sub-heading">👨‍👩‍👧‍👦 Família Alargada</h3>
+      ${vocabGrid(D_FAMILY.extended)}
+    </div>
+    <div>
+      <h3 class="sub-heading">🔄 Família Reconstituída</h3>
+      ${vocabGrid(D_FAMILY.stepFamily)}
+      <h3 class="sub-heading" style="margin-top:20px">📝 Model Sentences</h3>
+      ${D_FAMILY.sentences.map(s => `<div style="border-left:3px solid var(--primary);padding-left:10px;margin-bottom:10px">
+        <div class="pt" style="font-size:14px">${s[0]}</div>
+        <div style="margin:2px 0">${pr(s[1])}</div>
+        <div class="en">${s[2]}</div>
+      </div>`).join('')}
+    </div>
+  </div>`,
+
+house: () => `
+  ${sectionHead('House & Home','Session 4','Portuguese homes are described by floor (andar) and room (divisão/assoalho). Portuguese floor numbering differs from North American — the ground floor is rés do chão (R/C), not the 1st floor.')}
+  ${warnBox(D_HOUSE.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🏠 Exterior & Structure</h3>
+      ${vocabGrid(D_HOUSE.exterior)}
+    </div>
+    <div>
+      <h3 class="sub-heading">🛋️ Rooms (Divisões)</h3>
+      ${vocabGrid(D_HOUSE.rooms)}
+      <h3 class="sub-heading" style="margin-top:16px">🔢 Floors (Andares)</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Portuguese</th><th>Pron.</th><th>English equivalent</th></tr></thead>
+        <tbody>${D_HOUSE.floors.map((r,i) => `<tr>
+          <td class="pt">${r[0]}</td><td>${pr(r[1])}</td><td class="en">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>`,
+
+numbers: () => `
+  ${sectionHead('Numbers','Session 2','Numbers 1 and 2 have gender forms: um/uma, dois/duas. All other cardinal numbers are invariable. Ordinals (1st, 2nd…) agree in gender like adjectives.')}
+  ${warnBox('<strong>⚠ 200–900 also have gender:</strong> duzentos (m) / duzentas (f), trezentos / trezentas, etc.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div>
+      <h3 class="sub-heading">0 – 20</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Portuguese</th><th>Pronunciation</th></tr></thead>
+        <tbody>${D_NUMBERS.basic.map(r => `<tr>
+          <td style="font-weight:700;color:var(--text-3)">${r[0]}</td>
+          <td class="pt">${r[1]}</td>
+          <td>${pr(r[2])}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">Tens, Hundreds & More</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Portuguese</th><th>Pronunciation</th></tr></thead>
+        <tbody>${D_NUMBERS.tens.map(r => `<tr>
+          <td style="font-weight:700;color:var(--text-3);font-size:12px">${r[0].toLocaleString()}</td>
+          <td class="pt">${r[1]}</td>
+          <td style="font-size:12px">${pr(r[2])}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+      <h3 class="sub-heading">Ordinals</h3>
+      ${vocabGrid(D_NUMBERS.ordinals.map(r => [r[1], r[2], r[0]]))}
+    </div>
+  </div>
+  ${infoBox('Compound numbers use <strong>e</strong> (and) between each part: 21 = vinte e um · 101 = cento e um · 1999 = mil novecentos e noventa e nove')}`,
+
+days: () => `
+  ${sectionHead('Days & Months','Session 2','Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Once you know numbers 2–6, you know the weekdays. Months are never capitalised in Portuguese.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div>
+      <h3 class="sub-heading">Days of the Week</h3>
+      ${infoBox('Drop -feira in casual speech: just say segunda, terça, quarta…')}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Full form</th><th>Pron.</th><th>English</th></tr></thead>
+        <tbody>${D_DAYS.map(r => `<tr>
+          <td style="color:var(--text-3);font-weight:700">${r.n}</td>
+          <td><strong>${r.short}</strong></td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">Months of the Year</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Mês</th><th>Pron.</th></tr></thead>
+        <tbody>${D_MONTHS.map(r => `<tr>
+          <td style="color:var(--text-3);font-weight:700">${r[0]}</td>
+          <td class="pt">${r[1]}</td>
+          <td>${pr(r[2])}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">Time Expressions</h3>
+  ${vocabGrid([
+    ["hoje [OH-zhɐ]","","today"],["amanhã [ɐ-mɐ-NYUNG]","","tomorrow"],
+    ["ontem [ON-tayng]","","yesterday"],["agora [ɐ-GOH-rɐ]","","now"],
+    ["depois [dɐ-POYSH]","","after / later"],["antes [AN-tɐsh]","","before"],
+    ["sempre [SEM-prɐ]","","always"],["nunca [NOONK-ɐ]","","never"],
+    ["às vezes [ash VEH-zɐsh]","","sometimes"],["normalmente [nor-mal-MENT]","","usually"],
+  ])}`,
+
+identity: () => `
+  ${sectionHead('Identity & Personal Info','Session 2','Vocabulary for filling in forms (formulários), visa applications, and introducing yourself — exactly what the PLA course requires.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
+    <div>
+      <h3 class="sub-heading">Personal ID Fields</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Portuguese</th><th>Pron.</th><th>English</th></tr></thead>
+        <tbody>${D_IDENTITY.fields.map(r => `<tr>
+          <td class="pt">${r[0]}</td><td>${pr(r[1])}</td><td class="en">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">Estado Civil (Marital Status)</h3>
+      ${vocabGrid(D_IDENTITY.civil)}
+      <h3 class="sub-heading">O meu dia foi… (My day was…)</h3>
+      ${vocabGrid(D_IDENTITY.routine)}
+    </div>
+  </div>
+  <h3 class="sub-heading">Countries, Nationalities & Languages</h3>
+  ${warnBox('Nationalities are adjectives — they agree in gender. Masculine and feminine forms shown. Months and nationalities are <strong>NOT capitalised</strong> in Portuguese.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Country</th><th>Art.</th><th>Pron.</th><th>Nationality (M)</th><th>Nationality (F)</th><th>Language</th></tr></thead>
+    <tbody>${D_IDENTITY.countries.map(r => `<tr>
+      <td><strong>${r[0]}</strong></td><td style="color:var(--text-3)">${r[1]}</td>
+      <td>${pr(r[2])}</td>
+      <td style="font-style:italic;color:var(--primary)">${r[3]}</td>
+      <td style="font-style:italic;color:var(--accent)">${r[4]}</td>
+      <td style="color:var(--green)">${r[5]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+description: () => `
+  ${sectionHead('Physical Description','Session 3','Describing people uses nouns (naming things) and adjectives (characterising them). Adjectives agree in gender AND number with the noun. Model text from Session 3 below.')}
+  <div class="card" style="background:var(--primary-lt);margin-bottom:20px">
+    <div style="font-weight:800;color:var(--primary-dk);margin-bottom:8px;font-size:13px">📄 Model text — Session 3</div>
+    <div style="font-size:14px;line-height:1.9;font-style:italic;color:var(--text)">${D_DESCRIPTION.model}</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">💇 Cabelo (Hair)</h3>${vocabGrid(D_DESCRIPTION.hair)}
+      <h3 class="sub-heading">👁 Olhos (Eyes)</h3>${vocabGrid(D_DESCRIPTION.eyes)}
+    </div>
+    <div>
+      <h3 class="sub-heading">📏 Corpo (Body)</h3>${vocabGrid(D_DESCRIPTION.body)}
+      <h3 class="sub-heading">🧠 Personalidade</h3>${vocabGrid(D_DESCRIPTION.personality)}
+    </div>
+  </div>
+  <h3 class="sub-heading">Adjective Agreement Rules (Flexão em género)</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Adjective ending</th><th>Feminine rule</th><th>Examples</th></tr></thead>
+    <tbody>${D_DESCRIPTION.adj_rules.map(r => `<tr>
+      <td><code>${r.end}</code></td>
+      <td style="font-weight:700;color:var(--green)">${r.rule}</td>
+      <td style="font-size:13px">${r.ex.join(' · ')}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+expressions: () => `
+  ${sectionHead('Expressions','Sessions 1–3','These go beyond survival phrases. The Connectors category especially — mas, porque, então, também — is what lets you link sentences together and raises your level immediately.')}
+  ${D_EXPRESSIONS.map(cat => `
+    <h3 class="sub-heading">${cat.cat}</h3>
+    <div class="card-grid">${cat.items.map(r => `
+      <div class="card-sm">
+        <div class="pt">${r[0]}</div>
+        ${r[1] ? `<div style="margin:3px 0">${pr(r[1])}</div>` : ''}
+        <div class="en">${r[2]}</div>
+      </div>`).join('')}
+    </div>`).join('')}`,
+
+survival: () => `
+  ${sectionHead('Survival Phrases','Session 1','Use Não percebo and Pode repetir? in class without hesitation. Asking for repetition is not weakness — it is how you learn. Use these from day one.')}
+  ${['Greetings','Politeness','Classroom','Basics'].map(cat => `
+    <h3 class="sub-heading">${cat}</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+      <tbody>${D_SURVIVAL.filter(r=>r.cat===cat).map(r => `<tr>
+        <td class="pt">${r.pt}</td>
+        <td>${pr(r.pron)}</td>
+        <td class="en">${r.en}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>`).join('')}`,
+
+practice: () => `
+  ${sectionHead('Practice','All sessions','Answer each question about yourself in Portuguese. Grammar mistakes are fine — the goal is to produce output, not perfection. Use all the vocabulary you\'ve learned above.')}
+  ${D_PRACTICE.map((q, i) => `
+    <div class="practice-card">
+      <div class="practice-q">${q.q}</div>
+      <div class="practice-q-pron">${q.pron}</div>
+      <div class="practice-q-en">${q.en}</div>
+      <textarea class="practice-textarea" placeholder="Write your answer here…" id="ans_${i}"></textarea>
+      <div class="practice-model">Model: ${q.model}</div>
+    </div>`).join('')}
+  <div class="practice-paragraph">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:8px">📋 Your introduction paragraph — combine all answers</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:12px">Model: <em>"Chamo-me António. Sou português, de Coimbra. Moro em Lisboa. Tenho 65 anos. A minha língua materna é o português. Sou casado. Sou advogado."</em></div>
+    <textarea class="practice-textarea" placeholder="Write your full introduction paragraph here…" style="min-height:120px"></textarea>
+  </div>`,
+};
+
+// ─────────────────────────────────────────────
+// NAVIGATION & RENDERING
+// ─────────────────────────────────────────────
+let currentSection = 'alphabet';
+
+function buildNav() {
+  const nav = document.getElementById('sidebar-nav');
+  nav.innerHTML = NAV.map(group => `
+    <div class="nav-group">
+      <div class="nav-group-label">${group.group}</div>
+      ${group.tabs.map(tab => `
+        <button class="nav-btn" id="nav_${tab.id}" onclick="navigate('${tab.id}')">${tab.title}</button>
+      `).join('')}
+    </div>`).join('');
+}
+
+function navigate(id) {
+  if (!RENDERERS[id]) return;
+  currentSection = id;
+  document.getElementById('content-area').innerHTML = RENDERERS[id]();
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('nav_'+id);
+  if (btn) { btn.classList.add('active'); btn.scrollIntoView({block:'nearest'}); }
+  history.replaceState(null,'','#'+id);
+  if (window.innerWidth <= 860) closeSidebar();
+  document.querySelector('.content-area').scrollTop = 0;
+  window.scrollTo(0,0);
+  // clear search
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-clear').style.display = 'none';
+}
+
+// ─────────────────────────────────────────────
+// SEARCH
+// ─────────────────────────────────────────────
+function hl(text, q) {
+  if (!q || !text) return text;
+  const re = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return String(text).replace(re,'<mark>$1</mark>');
+}
+
+function doSearch(q) {
+  q = q.trim().toLowerCase();
+  if (q.length < 2) { navigate(currentSection); return; }
+  const matches = SEARCH_INDEX.filter(item => item.text.includes(q));
+  const bySection = {};
+  matches.forEach(item => {
+    if (!bySection[item.section]) bySection[item.section] = { title: item.sectionTitle, items: [] };
+    bySection[item.section].items.push(item);
+  });
+  const total = matches.length;
+  const secCount = Object.keys(bySection).length;
+  let html = `<div class="search-results-header">
+    <h2>Search: "${q}"</h2>
+    <p>${total} result${total!==1?'s':''} across ${secCount} section${secCount!==1?'s':''}</p>
+  </div>`;
+  if (total === 0) {
+    html += `<div class="search-no-results"><div class="no-results-icon">🔍</div><strong>No results for "${q}"</strong><br><span style="font-size:14px;margin-top:8px;display:block">Try a different word, or browse a section from the menu</span></div>`;
+  } else {
+    Object.entries(bySection).forEach(([secId, sec]) => {
+      html += `<div class="search-group-title" style="cursor:pointer" onclick="navigate('${secId}')">
+        ${sec.title} <span style="font-weight:400;font-size:11px">(click to open section →)</span>
+      </div>`;
+      sec.items.slice(0,12).forEach(item => {
+        html += `<div class="search-item" onclick="navigate('${secId}')">
+          <div style="font-weight:700;font-size:15px;color:var(--primary)">${hl(item.pt, q)}</div>
+          ${item.pron ? `<div style="margin:2px 0">${pr(hl(item.pron, q))}</div>` : ''}
+          <div class="en">${hl(item.en, q)}</div>
+          ${item.extra ? `<div class="note">${hl(item.extra, q)}</div>` : ''}
+        </div>`;
+      });
+      if (sec.items.length > 12) html += `<div style="font-size:13px;color:var(--text-3);padding:8px 0">…and ${sec.items.length-12} more in <a href="#" onclick="navigate('${secId}');return false">${sec.title}</a></div>`;
+    });
+  }
+  document.getElementById('content-area').innerHTML = html;
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+}
+
+// ─────────────────────────────────────────────
+// SIDEBAR TOGGLE
+// ─────────────────────────────────────────────
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebar-overlay').classList.add('active');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('active');
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildNav();
+  buildIndex();
+
+  const startId = location.hash.slice(1) || 'alphabet';
+  navigate(startId);
+
+  const searchInput = document.getElementById('search-input');
+  const searchClear = document.getElementById('search-clear');
+  let searchTimer;
+  searchInput.addEventListener('input', e => {
+    clearTimeout(searchTimer);
+    searchClear.style.display = e.target.value ? 'block' : 'none';
+    searchTimer = setTimeout(() => doSearch(e.target.value), 220);
+  });
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    searchClear.style.display = 'none';
+    navigate(currentSection);
+  });
+  document.getElementById('menu-btn').addEventListener('click', openSidebar);
+  document.getElementById('sidebar-overlay').addEventListener('click', closeSidebar);
+  window.addEventListener('hashchange', () => {
+    const id = location.hash.slice(1);
+    if (id && RENDERERS[id]) navigate(id);
+  });
+});
+</script>
+</body>
+</html>
