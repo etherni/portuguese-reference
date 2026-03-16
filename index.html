@@ -757,21 +757,42 @@ const D_VERB_PATTERNS = {
     {
       num:"1st", end:"-AR", color:"#1a4f7e", model:"ANDAR [ɐn-DAR] (to walk)",
       pronouns:["eu","tu","ele/ela/você","nós","vós *","eles/elas/vocês"],
-      forms:["ando [AN-doo]","andas [AN-dɐsh]","anda [AN-dɐ]","andamos [ɐn-DAH-moosh]","andais [ɐn-DAISH] ← archaic","andam [AN-downg]"],
+      forms:[
+        {w:"ando",    p:"[AN-doo]",         note:""},
+        {w:"andas",   p:"[AN-dɐsh]",        note:""},
+        {w:"anda",    p:"[AN-dɐ]",          note:""},
+        {w:"andamos", p:"[ɐn-DAH-moosh]",   note:""},
+        {w:"andais",  p:"[ɐn-DAISH]",       note:"archaic"},
+        {w:"andam",   p:"[AN-downg]",        note:""},
+      ],
       endings:["-o","-as","-a","-amos","-ais","-am"],
       more:["falar → falo/falas/fala…","morar → moro/moras/mora…","gostar → gosto/gostas/gosta…","trabalhar → trabalho/trabalhas…","estudar → estudo/estudas…","acordar → acordo/acordas…"],
     },
     {
       num:"2nd", end:"-ER", color:"#1a7a45", model:"ESCREVER [ish-krɐ-VEHR] (to write)",
       pronouns:["eu","tu","ele/ela/você","nós","vós *","eles/elas/vocês"],
-      forms:["escrevo [ish-KREH-voo]","escreves [ish-KREH-vɐsh]","escreve [ish-KREH-v]","escrevemos [ish-krɐ-VEH-moosh]","escreveis [ish-krɐ-VAISH] ← archaic","escrevem [ish-KREH-vayng]"],
+      forms:[
+        {w:"escrevo",    p:"[ish-KREH-voo]",      note:""},
+        {w:"escreves",   p:"[ish-KREH-vɐsh]",     note:""},
+        {w:"escreve",    p:"[ish-KREH-v]",         note:""},
+        {w:"escrevemos", p:"[ish-krɐ-VEH-moosh]", note:""},
+        {w:"escreveis",  p:"[ish-krɐ-VAISH]",     note:"archaic"},
+        {w:"escrevem",   p:"[ish-KREH-vayng]",    note:""},
+      ],
       endings:["-o","-es","-e","-emos","-eis","-em"],
       more:["comer → como/comes/come…","beber → bebo/bebes/bebe…","correr → corro/corres/corre…","viver → vivo/vives/vive…","poder → posso/podes/pode… (irregular!)","querer → quero/queres/quer… (irregular!)"],
     },
     {
       num:"3rd", end:"-IR", color:"#b03a2e", model:"PARTIR [pɐr-TEER] (to leave/depart)",
       pronouns:["eu","tu","ele/ela/você","nós","vós *","eles/elas/vocês"],
-      forms:["parto [PAR-too]","partes [PAR-tɐsh]","parte [PAR-t]","partimos [pɐr-TEE-moosh]","partis [pɐr-TEESH] ← archaic","partem [PAR-tayng]"],
+      forms:[
+        {w:"parto",    p:"[PAR-too]",        note:""},
+        {w:"partes",   p:"[PAR-tɐsh]",       note:""},
+        {w:"parte",    p:"[PAR-t]",           note:""},
+        {w:"partimos", p:"[pɐr-TEE-moosh]",  note:""},
+        {w:"partis",   p:"[pɐr-TEESH]",      note:"archaic"},
+        {w:"partem",   p:"[PAR-tayng]",       note:""},
+      ],
       endings:["-o","-es","-e","-imos","-is","-em"],
       more:["abrir → abro/abres/abre…","partir → parto/partes/parte…","assistir → assisto/assistes…","decidir → decido/decides…","sentir → sinto/sentes/sente… (stem change!)","vir → venho/vens/vem… (irregular!)"],
     },
@@ -1132,7 +1153,7 @@ articles: () => `
   ${D_ARTICLES.rules.map(r => `<div class="rule-box" style="margin-bottom:8px">→ ${r}</div>`).join('')}`,
 
 gender: () => `
-  ${sectionHead('Noun Gender','Sessions 1–3','Portuguese gender is more predictable than Russian — the word ending usually tells you. Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.')}
+  ${sectionHead('Noun Gender','Sessions 1–3','Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.')}
   ${D_GENDER.map(r => `<div class="card" style="margin-bottom:10px;border-left:4px solid ${r.gen==='M'?'var(--primary)':r.gen==='F'?'#e91e8c':'var(--gold)'}">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:18px;font-weight:800;color:var(--primary)">${r.end}</span>
@@ -1246,9 +1267,9 @@ plurals: () => `
         <table style="width:100%;border-collapse:collapse;font-size:14px">
           ${f.pronouns.map((p,i) => `<tr style="border-bottom:1px solid var(--border);${p.includes('*')?'opacity:0.55':''}">
             <td style="padding:6px 10px;color:var(--text-3);font-size:12px">${p}</td>
-            <td style="padding:6px 10px;font-weight:800;font-size:16px;color:${f.color}">${f.forms[i].split(' ')[0]}</td>
-            <td style="padding:6px 10px">${pr(f.forms[i].includes('[')?f.forms[i].match(/\[.*?\]/)[0]:'')}</td>
-            <td style="padding:6px 10px;font-size:11px;color:var(--text-3);font-style:italic">${f.forms[i].includes('←')?f.forms[i].split('←')[1].trim():''}</td>
+            <td style="padding:6px 10px;font-weight:800;font-size:16px;color:${f.color}">${f.forms[i].w}</td>
+            <td style="padding:6px 10px">${pr(f.forms[i].p)}</td>
+            <td style="padding:6px 10px;font-size:11px;color:var(--text-3);font-style:italic">${f.forms[i].note}</td>
           </tr>`).join('')}
           <tr style="background:var(--surface-2);border-top:2px solid var(--border)">
             <td colspan="4" style="padding:8px 10px;font-size:12px;color:var(--text-3)">
