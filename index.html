@@ -395,7 +395,7 @@ const D_ALPHABET = [
   { letter:"O o", name:"ó", pron:"[o/ɔ/u]", rule:"Stressed → [o/ɔ]; unstressed → [u] like 'foot'", example:"obrigado [oh-bree-GA-doo]" },
   { letter:"P p", name:"pê", pron:"[p]", rule:"Like English 'p' but less aspirated (no air puff)", example:"pai [pai]" },
   { letter:"Q q", name:"quê", pron:"[k/kw]", rule:"Always followed by u; qu+e/i → [k]; qu+a/o → [kw]", example:"que [kɐ] / quando [KWAN-doo]" },
-  { letter:"R r", name:"erre", pron:"[χ/ɾ]", rule:"Start/double → guttural [χ] like Russian х; middle → soft tap [ɾ]", example:"rua [KHOO-ɐ] / caro [KA-roo]", highlight: true },
+  { letter:"R r", name:"erre", pron:"[χ/ɾ]", rule:"Start/double rr → guttural [χ], deep in throat (like French r or German ch in Bach); middle → soft tap [ɾ]", example:"rua [KHOO-ɐ] / caro [KA-roo]", highlight: true },
   { letter:"S s", name:"esse", pron:"[s/z/ʃ]", rule:"Start → [s]; between vowels → [z]; end of syllable → [sh]", example:"sol/casa/está", highlight: true },
   { letter:"T t", name:"tê", pron:"[t]", rule:"Like English 't' but less aspirated", example:"tarde [TAR-d]" },
   { letter:"U u", name:"u", pron:"[u]", rule:"Like 'oo' in food; silent after qu before e/i", example:"um [oong]" },
@@ -404,8 +404,8 @@ const D_ALPHABET = [
   { letter:"X x", name:"xis", pron:"[ʃ/ks/z]", rule:"Usually [sh]; sometimes [ks] in Latin words; sometimes [z]", example:"baixo [BAI-shoo] / táxi [TAK-see]", highlight: true },
   { letter:"Y y", name:"ípsilon", pron:"[i]", rule:"Foreign words only", example:"yoga" },
   { letter:"Z z", name:"zê", pron:"[z/ʃ]", rule:"Like English 'z'; at word end → [sh]", example:"zero [ZEH-roo] / luz [loosh]" },
-  { letter:"LH", name:"digraph", pron:"[ʎ]", rule:"Like 'lli' in million — Russian ль. Essential sound.", example:"filha [FEEL-yɐ] / trabalho [trɐ-BAL-yoo]", highlight: true },
-  { letter:"NH", name:"digraph", pron:"[ɲ]", rule:"Like 'ny' in canyon — Russian нь", example:"tenho [TAYN-yoo] / amanhã [ɐ-mɐ-NYUNG]", highlight: true },
+  { letter:"LH", name:"digraph", pron:"[ʎ]", rule:"Like 'lli' in million or 'gli' in Italian. A single palatal sound — not L+H. Essential.", example:"filha [FEEL-yɐ] / trabalho [trɐ-BAL-yoo]", highlight: true },
+  { letter:"NH", name:"digraph", pron:"[ɲ]", rule:"Like 'ny' in canyon (Spanish ñ, Italian gn). A single palatal sound — not N+H.", example:"tenho [TAYN-yoo] / amanhã [ɐ-mɐ-NYUNG]", highlight: true },
 ];
 
 const D_PRONUNCIATION = {
@@ -424,13 +424,13 @@ const D_PRONUNCIATION = {
     { sound:"ch", rule:"[sh] like shop", example:"chamo [SHA-moo]" },
     { sound:"x (common)", rule:"[sh] like shop", example:"baixo [BAI-shoo]" },
     { sound:"j", rule:"[zh] like measure", example:"jantar [zhun-TAR]" },
-    { sound:"lh", rule:"[ʎ] like million — Russian ль", example:"filha [FEEL-yɐ]" },
-    { sound:"nh", rule:"[ɲ] like canyon — Russian нь", example:"tenho [TAYN-yoo]" },
+    { sound:"lh", rule:"[ʎ] like 'lli' in million (Italian: gli)", example:"filha [FEEL-yɐ]" },
+    { sound:"nh", rule:"[ɲ] like 'ny' in canyon (Spanish: ñ)", example:"tenho [TAYN-yoo]" },
     { sound:"s (start)", rule:"[s] like sun", example:"sol [sol]" },
     { sound:"s (between vowels)", rule:"[z] like zone", example:"casa [KA-za]" },
     { sound:"s (end of syllable)", rule:"[sh] like shop", example:"está [ish-TA]" },
-    { sound:"r (start / rr)", rule:"[χ] guttural — Russian х", example:"rua [KHOO-ɐ]" },
-    { sound:"r (middle)", rule:"[ɾ] soft tap — Russian р", example:"morar [moo-RAR]" },
+    { sound:"r (start / rr)", rule:"[χ] deep guttural — like French r or German ch in Bach", example:"rua [KHOO-ɐ]" },
+    { sound:"r (middle)", rule:"[ɾ] soft tap — like tt in American English butter", example:"morar [moo-RAR]" },
     { sound:"ç", rule:"[s] always — never [k]", example:"graça [GRA-sɐ]" },
   ],
   tips:[
@@ -591,7 +591,7 @@ const D_SER_ESTAR = {
 };
 
 const D_CORE_VERBS = [
-  { verb:"TER", pron:"[TEHR]", en:"to have", note:"Used for AGE: 'Tenho 30 anos' = I am 30 (lit. 'I have 30 years'). Same logic as Russian мне 30 лет.",
+  { verb:"TER", pron:"[TEHR]", en:"to have", note:"Used for AGE: 'Tenho 30 anos' = I am 30 (lit. 'I have 30 years'). Portuguese expresses age as 'having years', like Spanish, French and Italian.",
     conj:[["Eu (I)","tenho","[TAYN-yoo]"],["Tu (you)","tens","[tayngsh]"],["Ele/Ela","tem","[tayng]"],["Nós","temos","[TEH-moosh]"],["Vocês","têm","[tayng]"],["Eles","têm","[tayng]"]],
     ex:[["Tenho dois filhos","[TAYN-yoo doysh FEEL-yoosh]","I have two children"],["Tens tempo?","[tayngsh TEMP-oo]","Do you have time?"]]
   },
@@ -619,7 +619,7 @@ const D_CORE_VERBS = [
     conj:[["Eu (I)","posso","[POH-soo]"],["Tu (you)","podes","[POH-dɐsh]"],["Ele/Ela","pode","[POH-d]"],["Nós","podemos","[poo-DEH-moosh]"],["Vocês","podem","[POH-dayng]"],["Eles","podem","[POH-dayng]"]],
     ex:[["Posso ajudar?","[POH-soo ɐ-zhoo-DAR]","Can I help?"],["Não posso falar agora","[nowng POH-soo fɐ-LAR ɐ-GOH-rɐ]","I can't talk right now"]]
   },
-  { verb:"CHAMAR-SE", pron:"[shɐ-MAR-sɐ]", en:"to be called", note:"Reflexive verb (see Reflexive tab). The -se means 'oneself'. Same concept as Russian -ся.",
+  { verb:"CHAMAR-SE", pron:"[shɐ-MAR-sɐ]", en:"to be called", note:"Reflexive verb (see Reflexive tab). The -se means 'oneself'. Identical in concept to Spanish llamarse, Italian chiamarsi.",
     conj:[["Eu (I)","chamo-me","[SHA-moo-mɐ]"],["Tu (you)","chamas-te","[SHA-mɐsh-tɐ]"],["Ele/Ela","chama-se","[SHA-mɐ-sɐ]"],["Nós","chamamo-nos",""],["Vocês","chamam-se",""],["Eles","chamam-se",""]],
     ex:[["Como te chamas?","[KOH-moo tɐ SHA-mɐsh]","What is your name?"],["Chamo-me [name]","[SHA-moo-mɐ]","My name is…"]]
   },
@@ -1064,7 +1064,7 @@ const RENDERERS = {
 
 alphabet: () => `
   ${sectionHead('Alphabet','Session 1','The Portuguese alphabet has 26 letters — same as English. K, W, Y exist but only appear in foreign words. The differences are in <strong>how letters sound</strong>, especially C, G, H, J, R, S, X, and the digraphs LH and NH.')}
-  ${warnBox('<strong>5 letters that will trip you up:</strong> H (always silent) · R at start (guttural, like Russian х) · S (3 different sounds by position) · X (usually [sh] but not always) · LH and NH (single sounds, not two letters)')}
+  ${warnBox('<strong>5 letters that will trip you up:</strong> H (always silent) · R at start (guttural, deep guttural sound) · S (3 different sounds by position) · X (usually [sh] but not always) · LH and NH (single sounds, not two letters)')}
   <div class="tbl-wrap"><table>
     <thead><tr><th>Letter</th><th>Name</th><th>Phonetic</th><th>Key Rule</th><th>Example</th></tr></thead>
     <tbody>${D_ALPHABET.map(r => `<tr class="alpha-row${r.highlight?' highlight':''}">
@@ -1077,7 +1077,7 @@ alphabet: () => `
   </table></div>`,
 
 pronunciation: () => `
-  ${sectionHead('Pronunciation','Sessions 1–3','European Portuguese swallows unstressed vowels — this is why it sounds like Polish or Russian. Brazilians sing vowels open; Portuguese people compress them. Once you hear this pattern, you cannot unhear it.')}
+  ${sectionHead('Pronunciation','Sessions 1–3','European Portuguese swallows unstressed vowels — this is why it sounds compressed and reduced compared to many European languages. Brazilians open their vowels wide; Portuguese people swallow them. Once you hear this pattern, you cannot unhear it. Once you hear this pattern, you cannot unhear it.')}
   <h3 class="sub-heading">Vowel Sounds</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Sound</th><th>Phonetic</th><th>Sounds like</th><th>Example</th></tr></thead>
@@ -1098,7 +1098,7 @@ pronunciation: () => `
   ${D_PRONUNCIATION.tips.map(t => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join('')}`,
 
 pronouns: () => `
-  ${sectionHead('Pronouns','Session 2','Unlike Russian, Portuguese subject pronouns are often DROPPED — the verb ending tells you the person. But you must know the full table because verbs conjugate by subject.')}
+  ${sectionHead('Pronouns','Session 2','Portuguese subject pronouns are often DROPPED — the verb ending tells you the person. But you must know the full table because verbs conjugate by subject.')}
   <h3 class="sub-heading">Personal Pronouns</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Pronoun</th><th>Pron.</th><th>English</th><th>Usage</th><th>Note</th></tr></thead>
@@ -1153,7 +1153,7 @@ articles: () => `
   ${D_ARTICLES.rules.map(r => `<div class="rule-box" style="margin-bottom:8px">→ ${r}</div>`).join('')}`,
 
 gender: () => `
-  ${sectionHead('Noun Gender','Sessions 1–3','Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.')}
+  ${sectionHead('Noun Gender','Sessions 1–3','Portuguese noun gender is largely predictable from the word ending. Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.')}
   ${D_GENDER.map(r => `<div class="card" style="margin-bottom:10px;border-left:4px solid ${r.gen==='M'?'var(--primary)':r.gen==='F'?'#e91e8c':'var(--gold)'}">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:18px;font-weight:800;color:var(--primary)">${r.end}</span>
@@ -1166,7 +1166,7 @@ gender: () => `
   </div>`).join('')}`,
 
 plurals: () => `
-  ${sectionHead('Singular / Plural','Session 3','Portuguese plurals are more predictable than Russian cases — no case system, just one plural form per word. The word ending determines the rule.')}
+  ${sectionHead('Singular / Plural','Session 3','Portuguese plurals are straightforward — no case system, just one plural form per word. The word ending determines the rule.')}
   <h3 class="sub-heading">Plural Rules by Ending</h3>
   ${D_PLURALS.map(r => `<div class="card" style="margin-bottom:10px">
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:8px">
@@ -1189,7 +1189,7 @@ plurals: () => `
   </table></div>`,
 
 'ser-estar': () => `
-  ${sectionHead('Ser vs Estar','Sessions 2–3','Both mean "to be" but are not interchangeable. <strong>SER</strong> = permanent identity (your passport). <strong>ESTAR</strong> = temporary state or condition (today\'s mood). Russian has neither in present tense, so this is genuinely new mental territory.')}
+  ${sectionHead('Ser vs Estar','Sessions 2–3','Both mean "to be" but are not interchangeable. <strong>SER</strong> = permanent identity (your passport). <strong>ESTAR</strong> = temporary state or condition (today\'s mood). Many languages have just one verb for 'to be' — Portuguese makes a meaningful distinction between permanent identity and temporary state.')}
   <div class="conj-grid">
     ${conjBox('SER — permanent identity','var(--primary)', D_SER_ESTAR.ser_conj)}
     ${conjBox('ESTAR — temporary state','#2e7d6b', D_SER_ESTAR.estar_conj)}
@@ -1290,7 +1290,6 @@ plurals: () => `
   <div class="card" style="margin-bottom:14px;border-left:4px solid ${t.type.includes('✅')?'var(--green)':t.type.includes('❌')?'var(--accent)':'var(--primary)'}">
     <div style="font-size:16px;font-weight:800;margin-bottom:4px">${t.type}</div>
     <div style="font-size:13px;font-family:var(--mono);color:var(--primary);margin-bottom:8px">${t.rule}</div>
-    <ul style="font-size:13px;color:var(--text-2);margin:0 0 10px 16px">${t.rules.map(r=>`<li>${r}</li>`).join('')}</ul>
     ${t.ex.map(e => `<div style="display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:8px;margin-top:8px">
       <div style="flex:1"><div class="pt">${e[0]}</div><div class="en">${e[1]}</div></div>
     </div>`).join('')}
