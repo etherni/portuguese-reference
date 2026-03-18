@@ -332,7 +332,7 @@ const NAV = [
     { id:"alphabet",      title:"Alphabet" },
     { id:"pronunciation", title:"Pronunciation" },
     { id:"pronouns",      title:"Pronouns" },
-    { id:"articles",      title:"Articles" },
+    { id:"articles",      title:"Prepositions & Articles" },
     { id:"gender",        title:"Gender" },
     { id:"plurals",       title:"Singular/Plural" },
     { id:"questions",     title:"Questions" },
@@ -410,28 +410,28 @@ const D_ALPHABET = [
 
 const D_PRONUNCIATION = {
   vowels:[
-    { sound:"a (stressed)", ipa:"[a]", like:"f-a-ther", example:"casa [KA-za]" },
-    { sound:"a (unstressed)", ipa:"[ɐ]", like:"comm-a — very reduced", example:"falar [fɐ-LAR]" },
-    { sound:"e (stressed)", ipa:"[e] or [ɛ]", like:"b-e-d", example:"mesa [MEH-za]" },
-    { sound:"e (unstressed/end)", ipa:"[ɨ] ≈ silent", like:"almost swallowed", example:"tarde [TAR-d]" },
-    { sound:"o (stressed)", ipa:"[o] or [ɔ]", like:"s-o-ft", example:"bola [BOH-la]" },
-    { sound:"o (unstressed)", ipa:"[u]", like:"f-oo-t", example:"morar [moo-RAR]" },
-    { sound:"ão", ipa:"[ɐ̃w̃]", like:"nasal 'owng'", example:"não [nowng]" },
-    { sound:"ã", ipa:"[ɐ̃]", like:"nasal 'ung'", example:"amanhã [ɐ-mɐ-NYUNG]" },
-    { sound:"em / en", ipa:"[ɐ̃j̃]", like:"nasal 'ayng'", example:"bem [bayng]" },
+    { sound:"a (stressed)", ipa:"[a]", like:"f-a-ther", example:"casa [KA-za]", en:"house" },
+    { sound:"a (unstressed)", ipa:"[ɐ]", like:"comm-a — very reduced", example:"falar [fɐ-LAR]", en:"to speak" },
+    { sound:"e (stressed)", ipa:"[e] or [ɛ]", like:"b-e-d", example:"mesa [MEH-za]", en:"table" },
+    { sound:"e (unstressed/end)", ipa:"[ɨ] ≈ silent", like:"almost swallowed", example:"tarde [TAR-d]", en:"afternoon" },
+    { sound:"o (stressed)", ipa:"[o] or [ɔ]", like:"s-o-ft", example:"bola [BOH-la]", en:"ball" },
+    { sound:"o (unstressed)", ipa:"[u]", like:"f-oo-t", example:"morar [moo-RAR]", en:"to live" },
+    { sound:"ão", ipa:"[ɐ̃w̃]", like:"nasal 'owng'", example:"não [nowng]", en:"no / not" },
+    { sound:"ã", ipa:"[ɐ̃]", like:"nasal 'ung'", example:"amanhã [ɐ-mɐ-NYUNG]", en:"tomorrow" },
+    { sound:"em / en", ipa:"[ɐ̃j̃]", like:"nasal 'ayng'", example:"bem [bayng]", en:"well / good" },
   ],
   consonants:[
-    { sound:"ch", rule:"[sh] like shop", example:"chamo [SHA-moo]" },
-    { sound:"x (common)", rule:"[sh] like shop", example:"baixo [BAI-shoo]" },
-    { sound:"j", rule:"[zh] like measure", example:"jantar [zhun-TAR]" },
-    { sound:"lh", rule:"[ʎ] like 'lli' in million (Italian: gli)", example:"filha [FEEL-yɐ]" },
-    { sound:"nh", rule:"[ɲ] like 'ny' in canyon (Spanish: ñ)", example:"tenho [TAYN-yoo]" },
-    { sound:"s (start)", rule:"[s] like sun", example:"sol [sol]" },
-    { sound:"s (between vowels)", rule:"[z] like zone", example:"casa [KA-za]" },
-    { sound:"s (end of syllable)", rule:"[sh] like shop", example:"está [ish-TA]" },
-    { sound:"r (start / rr)", rule:"[χ] deep guttural — like French r or German ch in Bach", example:"rua [KHOO-ɐ]" },
-    { sound:"r (middle)", rule:"[ɾ] soft tap — like tt in American English butter", example:"morar [moo-RAR]" },
-    { sound:"ç", rule:"[s] always — never [k]", example:"graça [GRA-sɐ]" },
+    { sound:"ch", rule:"[sh] like shop", example:"chamo [SHA-moo]", en:"I am called" },
+    { sound:"x (common)", rule:"[sh] like shop", example:"baixo [BAI-shoo]", en:"low / short" },
+    { sound:"j", rule:"[zh] like measure", example:"jantar [zhun-TAR]", en:"dinner" },
+    { sound:"lh", rule:"[ʎ] like 'lli' in million (Italian: gli)", example:"filha [FEEL-yɐ]", en:"daughter" },
+    { sound:"nh", rule:"[ɲ] like 'ny' in canyon (Spanish: ñ)", example:"tenho [TAYN-yoo]", en:"I have" },
+    { sound:"s (start)", rule:"[s] like sun", example:"sol [sol]", en:"sun" },
+    { sound:"s (between vowels)", rule:"[z] like zone", example:"casa [KA-za]", en:"house" },
+    { sound:"s (end of syllable)", rule:"[sh] like shop", example:"está [ish-TA]", en:"is / are (location/state)" },
+    { sound:"r (start / rr)", rule:"[χ] deep guttural — like French r or German ch in Bach", example:"rua [KHOO-ɐ]", en:"street" },
+    { sound:"r (middle)", rule:"[ɾ] soft tap — like tt in American English butter", example:"morar [moo-RAR]", en:"to live" },
+    { sound:"ç", rule:"[s] always — never [k]", example:"graça [GRA-sɐ]", en:"grace / thank you (in obrigado)" },
   ],
   tips:[
     { icon:"⚡", text:"Unstressed vowels nearly disappear. 'Obrigado' = [oh-bree-GA-doo], not [oh-bree-GAH-doh]." },
@@ -494,6 +494,39 @@ const D_NUMBERS = {
     ["1st","primeiro/a","[pree-MAY-roo]"],["2nd","segundo/a","[sɐ-GOON-doo]"],
     ["3rd","terceiro/a","[ter-SAY-roo]"],["4th","quarto/a","[KWAR-too]"],
     ["5th","quinto/a","[KEEN-too]"],["last","último/a","[OOL-tee-moo]"],
+  ]
+};
+
+
+const D_PREPOSITIONS = {
+  simple: [
+    { prep:"em",   pron:"[ayng]",    en:"in / at / on",       note:"Location and state",                    ex:[["Estou em casa","[ish-TOH ayng KA-zɐ]","I am at home"],["Moro em Lisboa","[MOH-roo ayng leezh-BOH-ɐ]","I live in Lisbon"],["Estou em Portugal","","I am in Portugal"]] },
+    { prep:"de",   pron:"[dɐ]",      en:"of / from",           note:"Origin, possession, material",          ex:[["Sou de Lisboa","[soh dɐ leezh-BOH-ɐ]","I am from Lisbon"],["o livro de português","[oo LEEV-roo dɐ poor-too-GESH]","the Portuguese book"],["um copo de água","[oong KO-poo dɐ A-gwɐ]","a glass of water"]] },
+    { prep:"a",    pron:"[ɐ]",       en:"to / at",             note:"Direction, time, indirect object",       ex:[["Vou a Lisboa","[voh ɐ leezh-BOH-ɐ]","I am going to Lisbon"],["às 8 horas","[ɐsh OY-too OH-rɐsh]","at 8 o'clock"],["Dou o livro à professora","","I give the book to the teacher"]] },
+    { prep:"por",  pron:"[poor]",     en:"for / by / through",  note:"Duration, cause, exchange, agent",      ex:[["Estudo por duas horas","[ish-TOO-doo poor DOO-ɐsh OH-rɐsh]","I study for two hours"],["Obrigado por tudo","[oh-bree-GA-doo poor TOO-doo]","Thank you for everything"],["Passo por Lisboa","","I pass through Lisbon"]] },
+    { prep:"para", pron:"[PA-rɐ]",   en:"for / to / in order to", note:"Purpose, destination, recipient",    ex:[["Este livro é para ti","[ESH-tɐ LEEV-roo eh PA-rɐ tee]","This book is for you"],["Vou para Lisboa","[voh PA-rɐ leezh-BOH-ɐ]","I am going to Lisbon (permanently)"],["Estudo para aprender","","I study in order to learn"]] },
+    { prep:"com",  pron:"[kong]",     en:"with",                note:"Company, instrument",                   ex:[["Vivo com a minha família","[VEE-voo kong ɐ MEEN-yɐ fɐ-MEEL-yɐ]","I live with my family"],["Escrevo com uma caneta","[ish-KREH-voo kong OO-mɐ kɐ-NEH-tɐ]","I write with a pen"]] },
+    { prep:"sem",  pron:"[sayng]",    en:"without",             note:"Absence",                               ex:[["café sem açúcar","[kɐ-FEH sayng ɐ-SOO-kɐr]","coffee without sugar"],["Não saio sem dinheiro","","I don't go out without money"]] },
+    { prep:"entre",pron:"[EN-trɐ]",  en:"between / among",     note:"Position, time range",                  ex:[["entre as 8 e as 10","[EN-trɐ ɐsh OY-too ee ɐsh DESH]","between 8 and 10"],["Fica entre o banco e a loja","","It is between the bank and the shop"]] },
+    { prep:"sobre",pron:"[SOH-brɐ]", en:"about / on top of",   note:"Subject matter or position above",      ex:[["um livro sobre Portugal","[oong LEEV-roo SOH-brɐ poor-too-GAL]","a book about Portugal"],["O gato está sobre a mesa","","The cat is on top of the table"]] },
+    { prep:"até",  pron:"[ɐ-TEH]",   en:"until / up to",       note:"Limit in time or space",                ex:[["Fico até às 6","[FEE-koo ɐ-TEH ɐsh SAYSH]","I stay until 6"],["Caminho até à estação","","I walk to the station"]] },
+    { prep:"desde",pron:"[DEZH-dɐ]", en:"since / from",        note:"Starting point in time or space",       ex:[["Moro aqui desde 2020","[MOH-roo ɐ-KEE DEZH-dɐ]","I have lived here since 2020"],["desde Lisboa até Porto","","from Lisbon to Porto"]] },
+  ],
+  por_vs_para: [
+    { case:"Duration of time", por:"Estudo português por duas horas.", para:"", en_por:"I study Portuguese for two hours." },
+    { case:"Cause / reason (because of)", por:"Obrigado por tudo.", para:"", en_por:"Thank you for everything." },
+    { case:"Exchange / price", por:"Paguei 10€ por este livro.", para:"", en_por:"I paid 10€ for this book." },
+    { case:"Movement through a place", por:"Passei por Lisboa.", para:"", en_por:"I passed through Lisbon." },
+    { case:"Purpose / goal", por:"", para:"Estudo para aprender.", en_para:"I study in order to learn." },
+    { case:"Destination (permanent/intended)", por:"", para:"Parto para Lisboa amanhã.", en_para:"I leave for Lisbon tomorrow." },
+    { case:"Recipient", por:"", para:"Este presente é para ti.", en_para:"This gift is for you." },
+  ],
+  em_vs_a: [
+    { case:"Location (where something IS)", em:"Estou em casa. / Moro em Lisboa.", a:"" },
+    { case:"Direction (where something GOES — transient)", em:"", a:"Vou a Lisboa. (I'll come back)" },
+    { case:"Direction (permanent move)", em:"", a:"— use PARA instead: Vou para Lisboa." },
+    { case:"Time — at a specific hour", em:"", a:"às 8 horas / ao meio-dia" },
+    { case:"After verb GOSTAR / ESTAR A + infinitive", em:"Estou a estudar (I am studying)", a:"" },
   ]
 };
 
@@ -1000,7 +1033,8 @@ function buildIndex() {
   D_PRONOUNS.personal.forEach(r => indexItem('pronouns','Pronouns', r.p, r.pron, r.en, r.note));
   D_NUMBERS.basic.forEach(r => indexItem('numbers','Numbers', r[0]+' — '+r[1], r[2], '', ''));
   D_NUMBERS.tens.forEach(r => indexItem('numbers','Numbers', r[0]+' — '+r[1], r[2], '', ''));
-  D_ARTICLES.contractions.forEach(r => indexItem('articles','Articles', r.art, '', r.en, r.ex));
+  D_PREPOSITIONS.simple.forEach(r => indexItem('articles','Prepositions & Articles', r.prep, r.pron, r.en, r.ex.map(e=>e[0]).join(' ')));
+  D_ARTICLES.contractions.forEach(r => indexItem('articles','Prepositions & Articles', r.art, '', r.en, r.ex));
   D_GENDER.forEach(r => indexItem('gender','Gender', r.end, '', r.rule, r.ex.join(' ')));
   D_PLURALS.forEach(r => indexItem('plurals','Singular/Plural', r.end, '', r.rule, r.ex.join(' ')));
   D_SER_ESTAR.ser_uses.forEach(r => indexItem('ser-estar','Ser vs Estar', r.pt, r.pron, r.en, 'ser'));
@@ -1077,14 +1111,15 @@ alphabet: () => `
   </table></div>`,
 
 pronunciation: () => `
-  ${sectionHead('Pronunciation','Sessions 1–3','European Portuguese swallows unstressed vowels — this is why it sounds compressed and reduced compared to many European languages. Brazilians open their vowels wide; Portuguese people swallow them. Once you hear this pattern, you cannot unhear it. Once you hear this pattern, you cannot unhear it.')}
+  ${sectionHead('Pronunciation','Sessions 1–3','European Portuguese swallows unstressed vowels — this is why it sounds so compressed and different from what you read on the page. Brazilians open their vowels wide; Portuguese people swallow them. Once you hear this pattern, you cannot unhear it.')}
   <h3 class="sub-heading">Vowel Sounds</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Sound</th><th>Phonetic</th><th>Sounds like</th><th>Example</th></tr></thead>
+    <thead><tr><th>Sound</th><th>Phonetic</th><th>Sounds like</th><th>Example</th><th>English</th></tr></thead>
     <tbody>${D_PRONUNCIATION.vowels.map(r => `<tr>
       <td><strong>${r.sound}</strong></td><td>${pr(r.ipa)}</td>
       <td style="font-size:13px">${r.like}</td>
       <td style="color:var(--primary);font-style:italic">${r.example}</td>
+      <td class="en">${r.en}</td>
     </tr>`).join('')}</tbody>
   </table></div>
   <h3 class="sub-heading">Consonant Rules</h3>
@@ -1092,7 +1127,8 @@ pronunciation: () => `
     <div class="card-sm">
       <div style="font-size:18px;font-weight:800;color:var(--primary);font-family:var(--mono);margin-bottom:4px">${r.sound}</div>
       <div style="font-size:13px;color:var(--text-2);margin-bottom:4px">${r.rule}</div>
-      <div style="font-size:13px;font-style:italic;color:var(--text-3)">${r.example}</div>
+      <div style="font-size:13px;font-style:italic;color:var(--primary)">${r.example}</div>
+      <div class="en" style="font-size:12px;margin-top:2px">${r.en}</div>
     </div>`).join('')}</div>
   <h3 class="sub-heading">Tips for Comprehension</h3>
   ${D_PRONUNCIATION.tips.map(t => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join('')}`,
@@ -1124,10 +1160,51 @@ pronouns: () => `
   ${D_PRONOUNS.notes.map(n => `<div class="rule-box" style="margin-bottom:8px">→ ${n}</div>`).join('')}`,
 
 articles: () => `
-  ${sectionHead('Articles & Contractions','Session 3','Portuguese uses articles more than English AND automatically merges them with prepositions. These contractions are mandatory — you cannot say "em o Porto", it MUST be "no Porto".')}
+  ${sectionHead('Prepositions & Articles','Session 3','Prepositions link words together. Portuguese has a set of core prepositions, each with a distinct meaning. Crucially, three of them — em, de, a — automatically merge with articles to form contractions. These contractions are mandatory grammar, not optional.')}
+
+  <h3 class="sub-heading">Simple Prepositions</h3>
+  ${D_PREPOSITIONS.simple.map(p => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px">
+      <span style="font-size:24px;font-weight:800;color:var(--primary);min-width:60px">${p.prep}</span>
+      ${pr(p.pron)}
+      <span style="font-size:15px;font-weight:700">${p.en}</span>
+      <span style="font-size:12px;color:var(--text-3);margin-left:auto">${p.note}</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${p.ex.map(e => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+        <div style="font-weight:700;color:var(--primary);font-size:14px">${e[0]}</div>
+        ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ''}
+        <div class="en">${e[2]}</div>
+      </div>`).join('')}
+    </div>
+  </div>`).join('')}
+
+  <h3 class="sub-heading">POR vs PARA — the most confusing pair</h3>
+  ${infoBox('Both can mean <strong>for</strong> in English but they are NOT interchangeable. POR looks backward (cause, duration, exchange). PARA looks forward (purpose, destination, recipient).')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Use case</th><th>POR example</th><th>PARA example</th></tr></thead>
+    <tbody>${D_PREPOSITIONS.por_vs_para.map(r => `<tr>
+      <td style="font-size:12px;color:var(--text-3);font-weight:700">${r.case}</td>
+      <td>${r.por ? `<div style="font-style:italic;color:var(--primary)">${r.por}</div><div class="en">${r.en_por}</div>` : '<span style="color:var(--border)">—</span>'}</td>
+      <td>${r.para ? `<div style="font-style:italic;color:var(--green)">${r.para}</div><div class="en">${r.en_para}</div>` : '<span style="color:var(--border)">—</span>'}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">EM vs A — location vs direction</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Use case</th><th>EM</th><th>A</th></tr></thead>
+    <tbody>${D_PREPOSITIONS.em_vs_a.map(r => `<tr>
+      <td style="font-size:12px;color:var(--text-3);font-weight:700">${r.case}</td>
+      <td style="font-style:italic;color:var(--primary)">${r.em}</td>
+      <td style="font-style:italic;color:var(--green)">${r.a}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Articles</h3>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
     ${['definite','indefinite'].map(type => `<div>
-      <h3 class="sub-heading">${type==='definite'?'Definite (the)':'Indefinite (a/an/some)'}</h3>
+      <h3 class="sub-heading">${type==='definite'?'Definite — the':'Indefinite — a / an / some'}</h3>
       <div class="tbl-wrap"><table>
         <thead><tr><th>Article</th><th>Pron.</th><th>Use</th><th>Example</th></tr></thead>
         <tbody>${D_ARTICLES[type].map(r => `<tr>
@@ -1139,16 +1216,20 @@ articles: () => `
       </table></div>
     </div>`).join('')}
   </div>
+
   <h3 class="sub-heading">Contractions — Preposition + Article (mandatory)</h3>
+  ${warnBox('These are not optional contractions. Portuguese grammar requires them. You cannot say <em>em o Porto</em> — it must be <em>no Porto</em>. Learn these as fixed forms.')}
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Preposition</th><th>+ Article =</th><th>Example</th><th>English</th></tr></thead>
+    <thead><tr><th>Preposition</th><th>+ Article =</th><th>Pronunciation</th><th>Example</th><th>English</th></tr></thead>
     <tbody>${D_ARTICLES.contractions.map(r => `<tr>
-      <td style="color:var(--purple);font-weight:700">${r.prep}</td>
-      <td><strong style="font-size:16px;color:var(--primary)">${r.art}</strong></td>
-      <td style="font-style:italic;color:var(--text)">${r.ex}</td>
+      <td style="color:var(--purple);font-weight:800;font-size:16px">${r.prep}</td>
+      <td><strong style="font-size:18px;color:var(--primary)">${r.art}</strong></td>
+      <td>${pr(r.art.match(/\[.*?\]/) ? r.art.match(/\[.*?\]/)[0] : '')}</td>
+      <td style="font-style:italic">${r.ex}</td>
       <td class="en">${r.en}</td>
     </tr>`).join('')}</tbody>
   </table></div>
+
   <h3 class="sub-heading">Special Rules</h3>
   ${D_ARTICLES.rules.map(r => `<div class="rule-box" style="margin-bottom:8px">→ ${r}</div>`).join('')}`,
 
