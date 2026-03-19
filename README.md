@@ -67,7 +67,7 @@ Write-in questions to practice self-introduction in Portuguese.
 
 ## About this reference
 
-Built alongside a **PLA — Português Língua de Acolhimento** (A1/A2) course at [NIALP — Associação Intercultural Lisboa](https://nialp.pt), as part of a Portuguese Golden Visa language requirement. The course runs for 150 hours across 7 units and concludes with an official A2 certificate.
+Built alongside a **PLA — Português Língua de Acolhimento** (A1/A2) course at [NIALP — Associação Intercultural Lisboa](https://nialp.pt). The course runs for 150 hours across 7 units and concludes with an official A2 certificate.
 
 ### Course structure
 
