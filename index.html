@@ -329,22 +329,25 @@ mark { background: #fff176; color: inherit; border-radius: 2px; padding: 0 1px; 
 // ─────────────────────────────────────────────
 const NAV = [
   { group: "📚 Grammar", tabs: [
-    { id:"alphabet",      title:"Alphabet" },
-    { id:"pronunciation", title:"Pronunciation" },
-    { id:"pronouns",      title:"Pronouns" },
-    { id:"articles",      title:"Prepositions & Articles" },
-    { id:"gender",        title:"Gender" },
-    { id:"plurals",       title:"Singular/Plural" },
-    { id:"questions",     title:"Questions" },
+    { id:"alphabet",       title:"Alphabet" },
+    { id:"pronunciation",  title:"Pronunciation" },
+    { id:"pronouns",       title:"Pronouns" },
+    { id:"articles",       title:"Prepositions & Articles" },
+    { id:"gender",         title:"Gender" },
+    { id:"plurals",        title:"Singular/Plural" },
+    { id:"possessives",    title:"Possessives" },
+    { id:"demonstratives", title:"Demonstratives" },
+    { id:"questions",      title:"Questions" },
   ]},
   { group: "🔧 Verbs", tabs: [
     { id:"ser-estar",     title:"Ser vs Estar" },
+    { id:"estar-patterns",title:"Estar Patterns" },
     { id:"verb-patterns", title:"Verb Patterns" },
     { id:"core-verbs",    title:"Core Verbs" },
   ]},
   { group: "📖 Vocabulary", tabs: [
     { id:"numbers",     title:"Numbers" },
-    { id:"days",        title:"Days & Months" },
+    { id:"days",        title:"Days, Time & Seasons" },
     { id:"identity",    title:"Identity" },
     { id:"family",      title:"Family" },
     { id:"house",       title:"House & Home" },
@@ -680,6 +683,169 @@ const D_REFLEXIVE = {
     ["sentir-se","to feel","Sinto-me bem [SINT-too-mɐ bayng]"],
     ["lembrar-se","to remember","Lembro-me de ti [LEM-broo-mɐ dɐ tee]"],
     ["esquecer-se","to forget","Esqueci-me [ish-kɐ-SEE-mɐ]"],
+  ]
+};
+
+
+const D_POSSESSIVES = {
+  note: "Possessives agree in gender and number with the THING POSSESSED, not with the owner. Always use the definite article before the possessive in European Portuguese: A MINHA casa, not MINHA casa.",
+  seu_note: "SEU/SUA is ambiguous — it can mean his/her/your/their. To avoid confusion, Portuguese speakers often use DELE/DELA (of him/of her) instead of seu/sua for third person.",
+  determiners: [
+    { owner:"Eu (I)", m:"meu [MEH-oo]", f:"minha [MEEN-yɐ]", mp:"meus [MEH-oosh]", fp:"minhas [MEEN-yɐsh]", en:"my" },
+    { owner:"Tu (you)", m:"teu [TEH-oo]", f:"tua [TOO-ɐ]", mp:"teus [TEH-oosh]", fp:"tuas [TOO-ɐsh]", en:"your" },
+    { owner:"Ele/Ela (he/she)", m:"seu [SEH-oo] / dele [DEH-l]", f:"sua [SOO-ɐ] / dela [DEH-lɐ]", mp:"seus / deles", fp:"suas / delas", en:"his / her" },
+    { owner:"Nós (we)", m:"nosso [NOH-soo]", f:"nossa [NOH-sɐ]", mp:"nossos", fp:"nossas", en:"our" },
+    { owner:"Vocês/Eles (they/you all)", m:"seu [SEH-oo] / deles", f:"sua [SOO-ɐ] / delas", mp:"seus / deles", fp:"suas / delas", en:"their / your" },
+  ],
+  determiner_vs_pronoun: [
+    { type:"Determinante possessivo", rule:"Comes BEFORE a noun — determines/modifies it", ex:"A minha mãe é professora.", en:"My mother is a teacher." },
+    { type:"Pronome possessivo", rule:"Replaces the noun entirely — stands alone", ex:"A minha mãe e a tua são professoras.", en:"My mother and yours are teachers. ('tua' replaces 'tua mãe')" },
+  ],
+  examples: [
+    ["o meu livro","[oo MEH-oo LEEV-roo]","my book (masc. singular)"],
+    ["a minha casa","[ɐ MEEN-yɐ KA-zɐ]","my house (fem. singular)"],
+    ["os meus amigos","[oosh MEH-oosh ɐ-MEE-goosh]","my friends (masc. plural)"],
+    ["o livro dele","[oo LEEV-roo DEH-l]","his book (unambiguous)"],
+    ["a casa dela","[ɐ KA-zɐ DEH-lɐ]","her house (unambiguous)"],
+    ["o nosso professor","[oo NOH-soo proo-feh-SOR]","our teacher"],
+    ["a vossa cidade","[ɐ VOH-sɐ see-DA-d]","your city (plural/formal)"],
+  ]
+};
+
+const D_DEMONSTRATIVES = {
+  note: "Demonstratives point to something in space. Distance is relative to the SPEAKER (este), the LISTENER (esse), or FAR FROM BOTH (aquele). The neutro forms (isto/isso/aquilo) are used for unidentified things or abstract concepts — they never change form.",
+  determiners: [
+    { dist:"Near speaker", m:"este [ESH-t]", f:"esta [ESH-tɐ]", mp:"estes [ESH-tɐsh]", fp:"estas [ESH-tɐsh]", en:"this / these" },
+    { dist:"Near listener", m:"esse [EH-sɐ]", f:"essa [EH-sɐ]", mp:"esses [EH-sɐsh]", fp:"essas [EH-sɐsh]", en:"that / those (near you)" },
+    { dist:"Far from both", m:"aquele [ɐ-KEH-l]", f:"aquela [ɐ-KEH-lɐ]", mp:"aqueles [ɐ-KEH-lɐsh]", fp:"aquelas [ɐ-KEH-lɐsh]", en:"that / those (over there)" },
+  ],
+  neutros: [
+    { form:"isto [EESH-too]", dist:"Near speaker", use:"Unidentified thing near you", ex:"O que é isto? — What is this?" },
+    { form:"isso [EE-soo]", dist:"Near listener", use:"Unidentified thing near the other person", ex:"O que é isso? — What is that (near you)?" },
+    { form:"aquilo [ɐ-KEE-loo]", dist:"Far from both", use:"Unidentified thing far away", ex:"O que é aquilo? — What is that (over there)?" },
+  ],
+  este_vs_isto: [
+    { word:"este/esta/estes/estas", rule:"Has gender and number — ALWAYS used with a known noun", ex:"Este livro é meu. / Esta caneta é tua.", en:"This book is mine. / This pen is yours." },
+    { word:"isto", rule:"No gender/number — used when you DON'T know or name the thing", ex:"O que é isto? / Isto é português.", en:"What is this? / This is Portuguese." },
+    { word:"KEY RULE", rule:"If you can replace it with a noun → use este/esta. If not (pointing at unknown thing) → use isto.", ex:"Isto é uma caneta. → Esta caneta é cara.", en:"This is a pen. → This pen is expensive." },
+  ],
+  determiner_vs_pronoun: [
+    { type:"Determinante demonstrativo", rule:"Comes BEFORE a noun", ex:"Aqueles meninos são simpáticos.", en:"Those boys (over there) are nice." },
+    { type:"Pronome demonstrativo", rule:"Replaces the noun", ex:"Aqueles meninos e estes são da escola.", en:"Those boys and these (ones) are from the school." },
+  ],
+  contraction: [
+    ["em + este = neste","[NESH-t]","in/at this"],
+    ["em + esse = nesse","[NEH-sɐ]","in/at that"],
+    ["em + aquele = naquele","[nɐ-KEH-l]","in/at that (far)"],
+    ["em + isto = nisto","[NEESH-too]","in this"],
+    ["de + este = deste","[DESH-t]","of/from this"],
+    ["de + esse = desse","[DEH-sɐ]","of/from that"],
+    ["de + aquele = daquele","[dɐ-KEH-l]","of/from that (far)"],
+  ]
+};
+
+const D_ESTAR_PATTERNS = {
+  patterns: [
+    {
+      title:"Estar + EM — temporary location",
+      color:"#1a4f7e",
+      note:"Where something or someone physically IS right now. Always ESTAR for location, never SER.",
+      ex:[
+        ["Nós estamos em casa.","[NOH-sh ish-TAH-moosh ayng KA-zɐ]","We are at home."],
+        ["O livro está na mesa.","[oo LEEV-roo ish-TA nɐ MEH-zɐ]","The book is on the table."],
+        ["Estou em Portugal há dois anos.","[ish-TOH ayng poor-too-GAL a doysh AH-noosh]","I have been in Portugal for two years."],
+      ]
+    },
+    {
+      title:"Estar + Adjetivo — temporary characteristic",
+      color:"#1a7a45",
+      note:"A quality the person/thing has RIGHT NOW but not permanently. Compare: Ela É alta (SER — permanent height) vs Ela ESTÁ cansada (ESTAR — tired right now).",
+      ex:[
+        ["O Miguel está triste.","[oo mee-GEL ish-TA TREESH-t]","Miguel is sad (right now)."],
+        ["Estou cansado/a.","[ish-TOH kan-SAH-doo]","I am tired (right now)."],
+        ["A sopa está quente.","[ɐ SOH-pɐ ish-TA KENT]","The soup is hot."],
+        ["Estás bem?","[ish-TASH bayng]","Are you well?"],
+      ]
+    },
+    {
+      title:"Estar + COM + nome — feelings as physical sensations",
+      color:"#b7860d",
+      note:"Estar com + noun = ter + noun. Both are correct. This pattern treats feelings as physical states you 'have'.",
+      ex:[
+        ["Estou com fome. = Tenho fome.","[ish-TOH kong FOH-m]","I am hungry. (lit. I am with hunger)"],
+        ["Estou com sede. = Tenho sede.","[ish-TOH kong SEH-d]","I am thirsty."],
+        ["Estou com sono. = Tenho sono.","[ish-TOH kong SOH-noo]","I am sleepy."],
+        ["Estou com calor. = Tenho calor.","[ish-TOH kong kɐ-LOR]","I am hot."],
+        ["Estou com frio. = Tenho frio.","[ish-TOH kong FREE-oo]","I am cold."],
+        ["Estou com medo. = Tenho medo.","[ish-TOH kong MEH-doo]","I am afraid."],
+        ["Estou com pressa. = Tenho pressa.","[ish-TOH kong PREH-sɐ]","I am in a hurry."],
+        ["Estou com saudades. = Tenho saudades.","[ish-TOH kong sow-DA-dɐsh]","I am missing someone/something."],
+      ]
+    },
+    {
+      title:"Estar A + Infinitivo — action in progress RIGHT NOW",
+      color:"#b03a2e",
+      note:"European Portuguese uses ESTAR A + infinitive for ongoing actions. This is the equivalent of the English -ing form. Brazilian Portuguese uses ESTAR + gerund (-ando/-endo) instead — one of the clearest EU/BR differences.",
+      ex:[
+        ["Estou a estudar português.","[ish-TOH ɐ ish-too-DAR]","I am studying Portuguese."],
+        ["O Filipe está a jogar futebol.","[oo fee-LEEP ish-TA ɐ zhoo-GAR]","Filipe is playing football."],
+        ["Estamos a comer.","[ish-TAH-moosh ɐ koo-MEHR]","We are eating."],
+        ["O que estás a fazer?","[oo kɐ ish-TASH ɐ fɐ-SEHR]","What are you doing?"],
+        ["Ela está a ler um livro.","[EH-lɐ ish-TA ɐ lehr]","She is reading a book."],
+      ],
+      contrast: [
+        { label:"Habit (present simple)", ex:"À noite vejo sempre televisão.", en:"In the evenings I always watch TV." },
+        { label:"Right now (estar a)", ex:"Mas hoje estou a ler um livro.", en:"But today I am reading a book." },
+      ]
+    },
+  ],
+  ter_infinitive: {
+    title:"TER DE / TER QUE + Infinitivo — obligation",
+    note:"Expresses obligation or necessity — like 'have to' or 'must' in English. TER DE is slightly more formal; TER QUE is more colloquial. Both are widely used.",
+    ex:[
+      ["Tenho de estudar hoje.","[TAYN-yoo dɐ ish-too-DAR]","I have to study today."],
+      ["Tens que ir ao médico.","[tayngsh kɐ eer ow MEH-dee-koo]","You have to go to the doctor."],
+      ["Ela tem de trabalhar amanhã.","[EH-lɐ tayng dɐ trɐ-bɐl-YAR]","She has to work tomorrow."],
+      ["Não tenho de ir.","[nowng TAYN-yoo dɐ eer]","I do not have to go."],
+    ]
+  }
+};
+
+const D_SEASONS = {
+  seasons: [
+    { pt:"a primavera", pron:"[ɐ pree-mɐ-VEH-rɐ]", en:"spring", months:"março, abril, maio" },
+    { pt:"o verão", pron:"[oo vɐ-ROWNG]", en:"summer", months:"junho, julho, agosto" },
+    { pt:"o outono", pron:"[oo oh-TOH-noo]", en:"autumn / fall", months:"setembro, outubro, novembro" },
+    { pt:"o inverno", pron:"[oo in-VEHR-noo]", en:"winter", months:"dezembro, janeiro, fevereiro" },
+  ],
+  timeOfDay: [
+    { pt:"a manhã", pron:"[ɐ mɐ-NYUNG]", en:"morning", hours:"~6h–12h" },
+    { pt:"a tarde", pron:"[ɐ TAR-d]", en:"afternoon", hours:"~12h–19h" },
+    { pt:"a noite", pron:"[ɐ NOYT]", en:"evening / night", hours:"~19h–24h" },
+    { pt:"a madrugada", pron:"[ɐ mɐ-droo-GA-dɐ]", en:"early morning / dawn", hours:"~0h–6h" },
+  ],
+  clock: [
+    { q:"Que horas são?", pron:"[kɐ OH-rɐsh sowng]", en:"What time is it?" },
+    { q:"A que horas...?", pron:"[ɐ kɐ OH-rɐsh]", en:"At what time...?" },
+    { q:"São duas horas.", pron:"[sowng DOO-ɐsh OH-rɐsh]", en:"It is two o'clock." },
+    { q:"É uma hora.", pron:"[eh OO-mɐ OH-rɐ]", en:"It is one o'clock. (singular!)" },
+    { q:"São meio-dia.", pron:"[sowng MAY-oo DEE-ɐ]", en:"It is midday / noon." },
+    { q:"É meia-noite.", pron:"[eh MAY-ɐ NOYT]", en:"It is midnight." },
+    { q:"São três e meia.", pron:"[sowng traysh ee MAY-ɐ]", en:"It is half past three." },
+    { q:"São quatro e um quarto.", pron:"[sowng KWA-troo ee oong KWAR-too]", en:"It is quarter past four." },
+    { q:"São cinco menos um quarto.", pron:"[sowng SINK-oo MEH-noosh]", en:"It is quarter to five." },
+    { q:"São dez e vinte.", pron:"[sowng desh ee VINT]", en:"It is twenty past ten." },
+  ],
+  prepositions: [
+    ["de manhã","[dɐ mɐ-NYUNG]","in the morning"],
+    ["à tarde","[a TAR-d]","in the afternoon"],
+    ["à noite","[a NOYT]","in the evening / at night"],
+    ["de madrugada","[dɐ mɐ-droo-GA-dɐ]","in the early hours"],
+    ["ao meio-dia","[ow MAY-oo DEE-ɐ]","at midday"],
+    ["na primavera","[nɐ pree-mɐ-VEH-rɐ]","in spring"],
+    ["no verão","[noo vɐ-ROWNG]","in summer"],
+    ["no outono","[noo oh-TOH-noo]","in autumn"],
+    ["no inverno","[noo in-VEHR-noo]","in winter"],
   ]
 };
 
@@ -1044,7 +1210,12 @@ function buildIndex() {
     v.conj.forEach(c => indexItem('core-verbs','Core Verbs', v.verb+' — '+c[0]+': '+c[1], c[2], '', v.en));
   });
   D_VERB_PATTERNS.families.forEach(f => f.more.forEach(m => indexItem('verb-patterns','Verb Patterns', m, '', f.end+' verb', f.model)));
-  D_DAYS.forEach(r => indexItem('days','Days & Months', r.pt, r.pron, r.en, ''));
+  D_POSSESSIVES.examples.forEach(r => indexItem('possessives','Possessives', r[0], r[1], r[2], ''));
+  D_DEMONSTRATIVES.neutros.forEach(r => indexItem('demonstratives','Demonstratives', r.form, '', r.use, r.ex));
+  D_ESTAR_PATTERNS.patterns.forEach(p => p.ex.forEach(e => indexItem('estar-patterns','Estar Patterns', e[0], e[1], e[2], p.title)));
+  D_SEASONS.seasons.forEach(r => indexItem('days','Days, Time & Seasons', r.pt, r.pron, r.en, r.months));
+  D_SEASONS.timeOfDay.forEach(r => indexItem('days','Days, Time & Seasons', r.pt, r.pron, r.en, r.hours));
+  D_DAYS.forEach(r => indexItem('days','Days, Time & Seasons', r.pt, r.pron, r.en, ''));
   D_MONTHS.forEach(r => indexItem('days','Days & Months', r[1], r[2], 'month ' + r[0], ''));
   D_IDENTITY.fields.forEach(r => indexItem('identity','Identity', r[0], r[1], r[2], ''));
   D_IDENTITY.civil.forEach(r => indexItem('identity','Identity', r[0], r[1], r[2], 'marital status'));
@@ -1439,6 +1610,102 @@ house: () => `
     </div>
   </div>`,
 
+
+possessives: () => `
+  ${sectionHead('Possessives','Session 5','Possessives agree in gender and number with the THING POSSESSED, not the owner. In European Portuguese, the definite article is always used before the possessive: <em>a minha casa</em>, never <em>minha casa</em>.')}
+  ${warnBox('<strong>SEU/SUA is ambiguous</strong> — it can mean his, her, your, or their. To be clear about who owns something, use <strong>DELE</strong> (his) or <strong>DELA</strong> (her) instead: <em>o livro dele</em> = his book.')}
+  <h3 class="sub-heading">Possessive Determiners (before a noun)</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Owner</th><th>Masc. sg</th><th>Fem. sg</th><th>Masc. pl</th><th>Fem. pl</th><th>Meaning</th></tr></thead>
+    <tbody>${D_POSSESSIVES.determiners.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:700;font-size:13px">${r.owner}</td>
+      <td class="pt">${r.m}</td><td class="pt">${r.f}</td>
+      <td style="color:var(--text-2)">${r.mp}</td><td style="color:var(--text-2)">${r.fp}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Determiner vs Pronoun</h3>
+  ${D_POSSESSIVES.determiner_vs_pronoun.map(r => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:6px">${r.type}</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${r.rule}</div>
+    <div class="pt">${r.ex}</div>
+    <div class="en">${r.en}</div>
+  </div>`).join('')}
+  <h3 class="sub-heading">Examples</h3>
+  ${vocabGrid(D_POSSESSIVES.examples)}`,
+
+demonstratives: () => `
+  ${sectionHead('Demonstratives','Session 5','Point to things by distance from the speaker. ESTE = near me. ESSE = near you. AQUELE = far from both. The neutro forms (isto/isso/aquilo) are used for unidentified things — they have no gender or number.')}
+  <h3 class="sub-heading">Demonstrative Determiners</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Distance</th><th>Masc. sg</th><th>Fem. sg</th><th>Masc. pl</th><th>Fem. pl</th><th>English</th></tr></thead>
+    <tbody>${D_DEMONSTRATIVES.determiners.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:700;font-size:13px;color:${i===0?'var(--primary)':i===1?'var(--green)':'var(--accent)'}">${r.dist}</td>
+      <td class="pt">${r.m}</td><td class="pt">${r.f}</td>
+      <td style="color:var(--text-2)">${r.mp}</td><td style="color:var(--text-2)">${r.fp}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Neutro Forms — Isto / Isso / Aquilo</h3>
+  ${D_DEMONSTRATIVES.neutros.map(r => `
+  <div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--gold)">
+    <div style="font-size:18px;font-weight:800;color:var(--primary)">${r.form}</div>
+    <div style="font-size:12px;color:var(--text-3);margin:2px 0">${r.dist} — ${r.use}</div>
+    <div style="font-style:italic;color:var(--text);font-size:13px">${r.ex}</div>
+  </div>`).join('')}
+  <h3 class="sub-heading">⚠ Este vs Isto — the key distinction</h3>
+  ${D_DEMONSTRATIVES.este_vs_isto.map(r => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid ${r.word==='KEY RULE'?'var(--gold)':'var(--primary)'}">
+    <div style="font-weight:800;color:${r.word==='KEY RULE'?'var(--gold)':'var(--primary)'};margin-bottom:4px">${r.word}</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:6px">${r.rule}</div>
+    <div class="pt">${r.ex}</div>
+    <div class="en">${r.en}</div>
+  </div>`).join('')}
+  <h3 class="sub-heading">Determiner vs Pronoun</h3>
+  ${D_DEMONSTRATIVES.determiner_vs_pronoun.map(r => `
+  <div class="card" style="margin-bottom:8px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:4px">${r.type}</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:6px">${r.rule}</div>
+    <div class="pt">${r.ex}</div><div class="en">${r.en}</div>
+  </div>`).join('')}
+  <h3 class="sub-heading">Contractions with EM and DE</h3>
+  ${vocabGrid(D_DEMONSTRATIVES.contraction)}`,
+
+'estar-patterns': () => `
+  ${sectionHead('Estar Patterns','Session 5','ESTAR has four key construction patterns beyond simple conjugation. Each expresses something different — location, temporary state, physical sensation, or ongoing action.')}
+  ${D_ESTAR_PATTERNS.patterns.map(p => `
+  <div class="card" style="margin-bottom:20px;border-top:4px solid ${p.color}">
+    <h3 style="color:${p.color};font-size:16px;font-weight:800;margin-bottom:8px">${p.title}</h3>
+    <div class="section-intro" style="margin-bottom:12px">${p.note}</div>
+    <div class="card-grid">
+      ${p.ex.map(e => `<div class="card-sm">
+        <div class="pt">${e[0]}</div>
+        <div style="margin:2px 0">${pr(e[1])}</div>
+        <div class="en">${e[2]}</div>
+      </div>`).join('')}
+    </div>
+    ${p.contrast ? `<h4 style="color:var(--text-2);margin:12px 0 8px;font-size:13px">Habit vs Right Now:</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      ${p.contrast.map(x => `<div class="card-sm" style="border-left:3px solid var(--primary)">
+        <div style="font-size:11px;font-weight:800;color:var(--text-3);text-transform:uppercase;margin-bottom:4px">${x.label}</div>
+        <div class="pt">${x.ex}</div>
+        <div class="en">${x.en}</div>
+      </div>`).join('')}
+    </div>` : ''}
+  </div>`).join('')}
+  <div class="card" style="border-top:4px solid var(--purple)">
+    <h3 style="color:var(--purple);font-size:16px;font-weight:800;margin-bottom:8px">${D_ESTAR_PATTERNS.ter_infinitive.title}</h3>
+    <div class="section-intro" style="margin-bottom:12px">${D_ESTAR_PATTERNS.ter_infinitive.note}</div>
+    <div class="card-grid">
+      ${D_ESTAR_PATTERNS.ter_infinitive.ex.map(e => `<div class="card-sm">
+        <div class="pt">${e[0]}</div>
+        <div style="margin:2px 0">${pr(e[1])}</div>
+        <div class="en">${e[2]}</div>
+      </div>`).join('')}
+    </div>
+  </div>`,
+
 numbers: () => `
   ${sectionHead('Numbers','Session 2','Numbers 1 and 2 have gender forms: um/uma, dois/duas. All other cardinal numbers are invariable. Ordinals (1st, 2nd…) agree in gender like adjectives.')}
   ${warnBox('<strong>⚠ 200–900 also have gender:</strong> duzentos (m) / duzentas (f), trezentos / trezentas, etc.')}
@@ -1471,7 +1738,7 @@ numbers: () => `
   ${infoBox('Compound numbers use <strong>e</strong> (and) between each part: 21 = vinte e um · 101 = cento e um · 1999 = mil novecentos e noventa e nove')}`,
 
 days: () => `
-  ${sectionHead('Days & Months','Session 2','Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Once you know numbers 2–6, you know the weekdays. Months are never capitalised in Portuguese.')}
+  ${sectionHead('Days, Time & Seasons','Sessions 2 & 5','Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Months are never capitalised in Portuguese.')}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div>
       <h3 class="sub-heading">Days of the Week</h3>
@@ -1498,6 +1765,36 @@ days: () => `
       </table></div>
     </div>
   </div>
+  <h3 class="sub-heading">Seasons (Estações do Ano)</h3>
+  <div class="card-grid">${D_SEASONS.seasons.map(s => `
+    <div class="card-sm" style="border-left:3px solid var(--primary)">
+      <div class="pt">${s.pt}</div>
+      <div style="margin:2px 0">${pr(s.pron)}</div>
+      <div class="en">${s.en}</div>
+      <div style="font-size:11px;color:var(--text-3);margin-top:4px">${s.months}</div>
+    </div>`).join('')}</div>
+
+  <h3 class="sub-heading">Parts of the Day (Partes do Dia)</h3>
+  <div class="card-grid">${D_SEASONS.timeOfDay.map(t => `
+    <div class="card-sm">
+      <div class="pt">${t.pt}</div>
+      <div style="margin:2px 0">${pr(t.pron)}</div>
+      <div class="en">${t.en}</div>
+      <div style="font-size:11px;color:var(--text-3);margin-top:4px">${t.hours}</div>
+    </div>`).join('')}</div>
+
+  <h3 class="sub-heading">Telling the Time (As Horas)</h3>
+  ${infoBox('Use <strong>São</strong> for all hours except 1 o clock and midday/midnight which use <strong>É</strong>. Minutes: X e Y = X:Y past. X menos Y = Y to X. Meia = half. Um quarto = quarter.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_SEASONS.clock.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.q}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Time & Season Prepositions</h3>
+  ${vocabGrid(D_SEASONS.prepositions)}
+
   <h3 class="sub-heading">Time Expressions</h3>
   ${vocabGrid([
     ["hoje [OH-zhɐ]","","today"],["amanhã [ɐ-mɐ-NYUNG]","","tomorrow"],
