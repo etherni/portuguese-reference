@@ -56,6 +56,7 @@ Write-in questions to practice self-introduction in Portuguese.
 
 ## Features
 
+- 🔊 **Listen button** — every Portuguese word and phrase has a 🔊 button. Click to hear it spoken. Uses the browser's built-in Web Speech API with European Portuguese (`pt-PT`) voice. Falls back to Brazilian Portuguese with a notice if EU voice is not installed. Works offline, no API key required.
 - 🔍 **Full-text search** — searches across all sections simultaneously with match highlighting and results grouped by section
 - 📱 **Mobile-friendly** — sidebar navigation on desktop, hamburger drawer on mobile, responsive layout throughout
 - ⚡ **Instant load** — pure HTML/CSS/JS, no frameworks, no blank screen delay, works offline
