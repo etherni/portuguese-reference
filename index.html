@@ -190,6 +190,24 @@ tbody tr:last-child td { border-bottom: none; }
 
 /* ── INLINE ELEMENTS ── */
 .pt { font-weight: 700; color: var(--primary); font-size: 15px; }
+.speak-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: 1px solid var(--border); border-radius: 50%;
+  width: 22px; height: 22px; cursor: pointer; margin-left: 5px;
+  color: var(--text-3); font-size: 11px; padding: 0; vertical-align: middle;
+  transition: all var(--transition); flex-shrink: 0;
+}
+.speak-btn:hover { background: var(--primary-lt); border-color: var(--primary); color: var(--primary); }
+.speak-btn.speaking { background: var(--primary); border-color: var(--primary); color: #fff; animation: pulse 0.8s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+.voice-banner {
+  position: fixed; bottom: 16px; right: 16px; z-index: 200;
+  background: var(--primary-dk); color: #fff; padding: 10px 16px;
+  border-radius: 8px; font-size: 13px; font-family: inherit;
+  box-shadow: var(--shadow-lg); display: none; max-width: 280px; line-height: 1.5;
+}
+.voice-banner a { color: #88ccff; }
+.voice-banner button { background: none; border: none; color: #aaa; float: right; cursor: pointer; margin-left: 8px; font-size: 16px; }
 .en { color: var(--text-2); font-size: 13px; }
 .pron { font-family: var(--mono); font-size: 12px; color: var(--accent); background: var(--accent-lt); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
 .note { font-size: 12px; color: var(--text-3); font-style: italic; }
@@ -2257,10 +2275,111 @@ function buildNav() {
     </div>`).join('');
 }
 
+
+// ─────────────────────────────────────────────
+// TEXT-TO-SPEECH ENGINE
+// ─────────────────────────────────────────────
+let ttsVoice = null;
+let ttsVoiceQuality = 'none'; // 'pt-PT', 'pt-BR', 'none'
+let currentSpeakBtn = null;
+
+function initTTS() {
+  function findVoice() {
+    const voices = window.speechSynthesis.getVoices();
+    if (!voices.length) return;
+    // Prefer pt-PT (European)
+    ttsVoice = voices.find(v => v.lang === 'pt-PT') ||
+               voices.find(v => v.lang.startsWith('pt-PT')) ||
+               voices.find(v => v.lang === 'pt') ||
+               voices.find(v => v.lang.startsWith('pt-BR')) ||
+               voices.find(v => v.lang.startsWith('pt'));
+    if (ttsVoice) {
+      ttsVoiceQuality = ttsVoice.lang.startsWith('pt-PT') ? 'pt-PT' : 'pt-BR';
+      if (ttsVoiceQuality === 'pt-BR') {
+        showVoiceBanner('European Portuguese voice not found on this device. Using Brazilian Portuguese voice instead — accent will differ. <a href="https://support.microsoft.com/en-us/topic/download-languages-and-voices-for-immersive-reader-one-note-and-read-aloud-4c83a8d8-7486-42f7-8e46-2b0fdf08ae83" target="_blank">Download EU Portuguese voice</a>');
+      }
+    } else {
+      ttsVoiceQuality = 'none';
+      showVoiceBanner('No Portuguese voice found on this device. Install a Portuguese (Portugal) language pack in your system settings to enable audio.');
+    }
+  }
+  if (window.speechSynthesis.getVoices().length) { findVoice(); }
+  window.speechSynthesis.onvoiceschanged = findVoice;
+}
+
+function showVoiceBanner(msg) {
+  const b = document.getElementById('voice-banner');
+  document.getElementById('voice-banner-text').innerHTML = msg;
+  b.style.display = 'block';
+  setTimeout(() => { b.style.display = 'none'; }, 8000);
+}
+
+function cleanForSpeech(text) {
+  return text
+    .replace(/\[.*?\]/g, '')          // remove [pronunciation] brackets
+    .replace(/←.*$/g, '')             // remove ← archaic notes
+    .replace(/[→·•]/g, ', ')          // replace separators with pause
+    .replace(/\/[\w]+/g, '')          // remove slash alternatives
+    .replace(/\(.*?\)/g, '')          // remove parenthetical notes
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function speak(text, btn) {
+  if (!window.speechSynthesis) { showVoiceBanner('Your browser does not support text-to-speech.'); return; }
+  window.speechSynthesis.cancel();
+  if (currentSpeakBtn) { currentSpeakBtn.classList.remove('speaking'); }
+  const clean = cleanForSpeech(text);
+  if (!clean) return;
+  const utt = new SpeechSynthesisUtterance(clean);
+  utt.lang = 'pt-PT';
+  utt.rate = 0.85;
+  utt.pitch = 1;
+  if (ttsVoice) utt.voice = ttsVoice;
+  if (btn) {
+    btn.classList.add('speaking');
+    currentSpeakBtn = btn;
+    utt.onend = () => { btn.classList.remove('speaking'); currentSpeakBtn = null; };
+    utt.onerror = () => { btn.classList.remove('speaking'); currentSpeakBtn = null; };
+  }
+  window.speechSynthesis.speak(utt);
+}
+
+function addSpeakButtons() {
+  if (!window.speechSynthesis) return;
+  const area = document.getElementById('content-area');
+  // Add to all .pt elements that don't already have a button
+  area.querySelectorAll('.pt').forEach(el => {
+    if (el.querySelector('.speak-btn')) return;
+    const text = el.textContent.trim();
+    if (text.length < 2) return;
+    const btn = document.createElement('button');
+    btn.className = 'speak-btn';
+    btn.title = 'Listen';
+    btn.innerHTML = '🔊';
+    btn.setAttribute('aria-label', 'Listen to pronunciation');
+    btn.onclick = (e) => { e.stopPropagation(); speak(text, btn); };
+    el.appendChild(btn);
+  });
+  // Also add to conjugation forms (conj-form cells)
+  area.querySelectorAll('.conj-form').forEach(el => {
+    if (el.querySelector('.speak-btn')) return;
+    const text = el.textContent.trim();
+    if (text.length < 2) return;
+    const btn = document.createElement('button');
+    btn.className = 'speak-btn';
+    btn.title = 'Listen';
+    btn.innerHTML = '🔊';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text, btn); };
+    el.appendChild(btn);
+  });
+}
+
 function navigate(id) {
   if (!RENDERERS[id]) return;
   currentSection = id;
   document.getElementById('content-area').innerHTML = RENDERERS[id]();
+  addSpeakButtons();
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   const btn = document.getElementById('nav_'+id);
   if (btn) { btn.classList.add('active'); btn.scrollIntoView({block:'nearest'}); }
@@ -2316,6 +2435,7 @@ function doSearch(q) {
     });
   }
   document.getElementById('content-area').innerHTML = html;
+  addSpeakButtons();
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 }
 
@@ -2337,6 +2457,7 @@ function closeSidebar() {
 document.addEventListener('DOMContentLoaded', () => {
   buildNav();
   buildIndex();
+  initTTS();
 
   const startId = location.hash.slice(1) || 'alphabet';
   navigate(startId);
@@ -2362,5 +2483,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<div class="voice-banner" id="voice-banner">
+  <button onclick="document.getElementById('voice-banner').style.display='none'">✕</button>
+  <span id="voice-banner-text"></span>
+</div>
 </body>
 </html>
