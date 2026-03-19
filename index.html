@@ -351,10 +351,12 @@ const NAV = [
     { id:"questions",      title:"Questions" },
   ]},
   { group: "🔧 Verbs", tabs: [
-    { id:"ser-estar",     title:"Ser vs Estar" },
-    { id:"estar-patterns",title:"Estar Patterns" },
-    { id:"verb-patterns", title:"Verb Patterns" },
-    { id:"core-verbs",    title:"Core Verbs" },
+    { id:"ser-estar",      title:"Ser vs Estar" },
+    { id:"estar-patterns", title:"Estar Patterns" },
+    { id:"verb-patterns",  title:"Verb Patterns" },
+    { id:"core-verbs",     title:"Core Verbs" },
+    { id:"reflexive-verbs",title:"Reflexive Verbs" },
+    { id:"irregular-verbs",title:"Irregular Verbs" },
   ]},
   { group: "📖 Vocabulary", tabs: [
     { id:"numbers",     title:"Numbers" },
@@ -363,6 +365,8 @@ const NAV = [
     { id:"family",      title:"Family" },
     { id:"house",       title:"House & Home" },
     { id:"description", title:"Description" },
+    { id:"money",       title:"Money & Prices" },
+    { id:"transport",   title:"Transport" },
     { id:"expressions", title:"Expressions" },
     { id:"survival",    title:"Survival Phrases" },
   ]},
@@ -499,10 +503,18 @@ const D_NUMBERS = {
     [50,"cinquenta","[sink-WENT-ɐ]"],[60,"sessenta","[sɐ-SENT-ɐ]"],
     [70,"setenta","[sɐ-TENT-ɐ]"],[80,"oitenta","[oy-TENT-ɐ]"],
     [90,"noventa","[noo-VENT-ɐ]"],
-    [100,"cem / cento","[sayng / SENT-oo] — cem = exactly 100; cento = 100+"],
-    [200,"duzentos/as","[doo-ZENT-oosh] — agrees with gender!"],
-    [500,"quinhentos/as","[keen-YENT-oosh]"],
     [1000,"mil","[meel]"],[1000000,"um milhão","[oong meel-YOWNG]"],
+  ],
+  hundreds:[
+    [100, "cem",         "cento",         "[sayng]",         "[SENT-oo]",         "Use CEM for exactly 100. Use CENTO before more digits: 101 = cento e um."],
+    [200, "duzentos",    "duzentas",       "[doo-ZENT-oosh]", "[doo-ZENT-ɐsh]",    ""],
+    [300, "trezentos",   "trezentas",      "[trɐ-ZENT-oosh]", "[trɐ-ZENT-ɐsh]",    ""],
+    [400, "quatrocentos","quatrocentas",   "[kwɐ-troo-SENT-oosh]","[kwɐ-troo-SENT-ɐsh]",""],
+    [500, "quinhentos",  "quinhentas",     "[keen-YENT-oosh]","[keen-YENT-ɐsh]",   ""],
+    [600, "seiscentos",  "seiscentas",     "[saysh-SENT-oosh]","[saysh-SENT-ɐsh]",  ""],
+    [700, "setecentos",  "setecentas",     "[set-SENT-oosh]", "[set-SENT-ɐsh]",    ""],
+    [800, "oitocentos",  "oitocentas",     "[oy-too-SENT-oosh]","[oy-too-SENT-ɐsh]",""],
+    [900, "novecentos",  "novecentas",     "[nov-SENT-oosh]", "[nov-SENT-ɐsh]",    ""],
   ],
   ordinals:[
     ["1st","primeiro/a","[pree-MAY-roo]"],["2nd","segundo/a","[sɐ-GOON-doo]"],
@@ -857,6 +869,173 @@ const D_SEASONS = {
     ["no verão","[noo vɐ-ROWNG]","in summer"],
     ["no outono","[noo oh-TOH-noo]","in autumn"],
     ["no inverno","[noo in-VEHR-noo]","in winter"],
+  ]
+};
+
+
+const D_REFLEXIVE_VERBS = {
+  note: "Reflexive verbs describe actions the subject does TO THEMSELVES. The reflexive pronoun (me/te/se/nos) changes based on subject. PLACEMENT RULE: after the verb in affirmative statements (Levanto-me), but BEFORE the verb after trigger words: não, nunca, também, já, quem, como, que.",
+  pronouns: [
+    ["Eu","me [mɐ]","Levanto-me.","I get up."],
+    ["Tu","te [tɐ]","Levantas-te.","You get up."],
+    ["Ele/Ela/Você","se [sɐ]","Levanta-se.","He/She gets up."],
+    ["Nós","nos [noosh]","Levantamo-nos. ← drop the final S of verb","We get up."],
+    ["Eles/Elas/Vocês","se [sɐ]","Levantam-se.","They get up."],
+  ],
+  placement: [
+    { rule:"Affirmative statement", pos:"AFTER verb (hyphenated)", ex:"Chamo-me Ana.", en:"My name is Ana." },
+    { rule:"Negation (não)", pos:"BEFORE verb", ex:"Não me chamo Pedro.", en:"My name is not Pedro." },
+    { rule:"Trigger words (nunca, também, já, quem, como, que)", pos:"BEFORE verb", ex:"Nunca me levanto tarde.", en:"I never get up late." },
+    { rule:"Question with question word", pos:"BEFORE verb", ex:"Como te chamas?", en:"What is your name?" },
+  ],
+  nós_rule: "The NÓS form drops the final -s of the verb before adding -nos: levantamos + nos → levantamo-nos. This applies to all reflexive verbs.",
+  common: [
+    { verb:"chamar-se",    pron:"[shɐ-MAR-sɐ]",    en:"to be called",        daily:"daily routine",
+      ex:[["Chamo-me Ana.","[SHA-moo-mɐ AH-nɐ]","My name is Ana."],["Como te chamas?","[KOH-moo tɐ SHA-mɐsh]","What is your name?"]] },
+    { verb:"levantar-se",  pron:"[lɐ-van-TAR-sɐ]", en:"to get up",           daily:"morning routine",
+      ex:[["Levanto-me às 7h.","[lɐ-VAN-too-mɐ ɐsh SET-ɐ]","I get up at 7."],["A que horas te levantas?","","What time do you get up?"]] },
+    { verb:"deitar-se",    pron:"[day-TAR-sɐ]",     en:"to go to bed",        daily:"evening routine",
+      ex:[["Deito-me às 11h.","[DAY-too-mɐ ɐsh OH-n-zɐ]","I go to bed at 11."],["Deitamo-nos cedo.","","We go to bed early."]] },
+    { verb:"vestir-se",    pron:"[vɐsh-TEER-sɐ]",   en:"to get dressed",      daily:"morning routine",
+      ex:[["Visto-me rapidamente.","[VEESH-too-mɐ]","I get dressed quickly."],["Veste-se sempre bem.","","She always dresses well."]] },
+    { verb:"lavar-se",     pron:"[lɐ-VAR-sɐ]",      en:"to wash (oneself)",   daily:"hygiene",
+      ex:[["Lavo-me de manhã.","[LA-voo-mɐ dɐ mɐ-NYUNG]","I wash in the morning."],["Lava-se antes de sair.","","He washes before going out."]] },
+    { verb:"pentear-se",   pron:"[pen-tyAR-sɐ]",    en:"to comb/brush hair",  daily:"hygiene",
+      ex:[["Penteio-me ao espelho.","[pen-TAY-oo-mɐ]","I brush my hair in the mirror."],["Penteias-te sozinho?","","Do you brush your own hair?"]] },
+    { verb:"barbear-se",   pron:"[bar-byAR-sɐ]",    en:"to shave",            daily:"hygiene",
+      ex:[["Barbeia-se todos os dias.","[bar-BAY-ɐ-sɐ]","He shaves every day."],["Não me barbeio ao fim de semana.","","I don't shave on weekends."]] },
+    { verb:"sentir-se",    pron:"[sen-TEER-sɐ]",    en:"to feel",             daily:"health/emotion",
+      ex:[["Como te sentes?","[KOH-moo tɐ SEN-tɐsh]","How do you feel?"],["Sinto-me bem.","[SINT-too-mɐ bayng]","I feel well."]] },
+    { verb:"lembrar-se",   pron:"[lem-BRAR-sɐ]",    en:"to remember",         daily:"cognition",
+      ex:[["Lembro-me do teu nome.","[LEM-broo-mɐ]","I remember your name."],["Não te lembras?","","Don't you remember?"]] },
+    { verb:"esquecer-se",  pron:"[ish-kɐ-SEHR-sɐ]", en:"to forget",           daily:"cognition",
+      ex:[["Esqueci-me das chaves.","[ish-kɐ-SEE-mɐ]","I forgot the keys."],["Não te esqueças!","","Don't forget!"]] },
+  ]
+};
+
+const D_IRREGULAR_VERBS = [
+  { verb:"IR", pron:"[eer]", en:"to go", note:"Completely irregular. Also used as near future: Vou estudar = I am going to study.",
+    conj:[["Eu","vou","[voh]"],["Tu","vais","[vaish]"],["Ele/Ela/Você","vai","[vai]"],["Nós","vamos","[VAH-moosh]"],["Vocês/Eles","vão","[vowng]"]],
+    ex:[["Vou ao supermercado.","[voh ow soo-per-mer-KA-doo]","I am going to the supermarket."],["Onde vais?","[OND vaish]","Where are you going?"]]
+  },
+  { verb:"VIR", pron:"[veer]", en:"to come", note:"Note: NÓS form = VIMOS not venimos. First person EU is VENHO (irregular stem).",
+    conj:[["Eu","venho","[VAYN-yoo]"],["Tu","vens","[vayngsh]"],["Ele/Ela/Você","vem","[vayng]"],["Nós","vimos","[VEE-moosh]"],["Vocês/Eles","vêm","[vayng]"]],
+    ex:[["Venho a pé.","[VAYN-yoo ɐ peh]","I come on foot."],["A que horas vens?","[ɐ kɐ OH-rɐsh vayngsh]","What time are you coming?"]]
+  },
+  { verb:"VER", pron:"[vehr]", en:"to see", note:"EU form: VEJO. Note the J that appears in first person only.",
+    conj:[["Eu","vejo","[VAY-zhoo]"],["Tu","vês","[vaysh]"],["Ele/Ela/Você","vê","[veh]"],["Nós","vemos","[VEH-moosh]"],["Vocês/Eles","vêem","[VAY-ayng]"]],
+    ex:[["Vejo televisão à noite.","[VAY-zhoo]","I watch TV at night."],["Não te vejo há dias!","","I haven't seen you in days!"]]
+  },
+  { verb:"LER", pron:"[lehr]", en:"to read", note:"EU form: LEIO (diphthong). Stem changes in EU and ELES.",
+    conj:[["Eu","leio","[LAY-oo]"],["Tu","lês","[laysh]"],["Ele/Ela/Você","lê","[leh]"],["Nós","lemos","[LEH-moosh]"],["Vocês/Eles","lêem","[LAY-ayng]"]],
+    ex:[["Leio muito.","[LAY-oo MWEE-too]","I read a lot."],["Lês o jornal?","[laysh oo zhor-NAL]","Do you read the newspaper?"]]
+  },
+  { verb:"SAIR", pron:"[sɐ-EER]", en:"to leave / go out", note:"EU form: SAIO. The I is stressed in all forms except NÓS.",
+    conj:[["Eu","saio","[SAI-oo]"],["Tu","sais","[saish]"],["Ele/Ela/Você","sai","[sai]"],["Nós","saímos","[sɐ-EE-moosh]"],["Vocês/Eles","saem","[SA-ayng]"]],
+    ex:[["Saio às 8h.","[SAI-oo ɐsh OY-too]","I leave at 8."],["A que horas saem?","","What time do they go out?"]]
+  },
+  { verb:"DORMIR", pron:"[dor-MEER]", en:"to sleep", note:"Stem vowel change: O→U in EU form only (dormir → durmo). Pattern shared with similar verbs.",
+    conj:[["Eu","durmo","[DOOR-moo]"],["Tu","dormes","[DOR-mɐsh]"],["Ele/Ela/Você","dorme","[DOR-m]"],["Nós","dormimos","[dor-MEE-moosh]"],["Vocês/Eles","dormem","[DOR-mayng]"]],
+    ex:[["Durmo 8 horas por noite.","[DOOR-moo OY-too OH-rɐsh]","I sleep 8 hours a night."],["Dormes bem?","[DOR-mɐsh bayng]","Do you sleep well?"]]
+  },
+  { verb:"HAVER", pron:"[ɐ-VEHR]", en:"to have / there is / there are", note:"Mostly used as HÁ = there is/there are. Full conjugation is archaic/literary. HÁ is essential daily vocabulary.",
+    conj:[["Eu","hei","[ay]"],["Tu","hás","[ash]"],["Ele/Ela/Você (= HÁ)","há","[a]"],["Nós","havemos","[ɐ-VEH-moosh]"],["Vocês/Eles","hão","[owng]"]],
+    ex:[["Há um problema.","[a oong proo-BLEH-mɐ]","There is a problem."],["Há cafés perto daqui?","[a kɐ-FEHSH PER-too dɐ-KEE]","Are there any cafés near here?"],["Há quanto tempo?","[a KWAN-too TEMP-oo]","How long ago? / How long has it been?"]]
+  },
+  { verb:"DAR", pron:"[dar]", en:"to give", note:"EU form: DOU (not daro). Irregular but short — just memorise DOU.",
+    conj:[["Eu","dou","[doh]"],["Tu","dás","[dash]"],["Ele/Ela/Você","dá","[da]"],["Nós","damos","[DAH-moosh]"],["Vocês/Eles","dão","[downg]"]],
+    ex:[["Dou-te o número.","[doh-tɐ oo NOO-mɐ-roo]","I give you the number."],["Pode dar-me a conta?","[POH-d DAR-mɐ ɐ KON-tɐ]","Can you give me the bill?"]]
+  },
+  { verb:"TRAZER", pron:"[trɐ-ZEHR]", en:"to bring", note:"EU form: TRAGO (irregular G). Rest follows -ER pattern.",
+    conj:[["Eu","trago","[TRA-goo]"],["Tu","trazes","[TRA-zɐsh]"],["Ele/Ela/Você","traz","[trash]"],["Nós","trazemos","[trɐ-ZEH-moosh]"],["Vocês/Eles","trazem","[TRA-zayng]"]],
+    ex:[["Trago o meu passaporte.","[TRA-goo oo MEH-oo pɐ-sɐ-POR-t]","I bring my passport."],["Traz o casaco!","[trash oo kɐ-ZA-koo]","Bring your coat!"]]
+  },
+  { verb:"DIZER", pron:"[dee-ZEHR]", en:"to say / tell", note:"EU form: DIGO (irregular G). Rest follows -ER pattern.",
+    conj:[["Eu","digo","[DEE-goo]"],["Tu","dizes","[DEE-zɐsh]"],["Ele/Ela/Você","diz","[deesh]"],["Nós","dizemos","[dee-ZEH-moosh]"],["Vocês/Eles","dizem","[DEE-zayng]"]],
+    ex:[["O que dizes?","[oo kɐ DEE-zɐsh]","What are you saying?"],["Diga, por favor.","[DEE-gɐ poor fɐ-VOR]","Tell me / Go ahead, please."]]
+  },
+  { verb:"OUVIR", pron:"[oh-VEER]", en:"to hear / listen", note:"EU form: OUÇO (irregular Ç). Similar pattern to pedir, servir.",
+    conj:[["Eu","ouço","[OH-soo]"],["Tu","ouves","[OH-vɐsh]"],["Ele/Ela/Você","ouve","[OH-v]"],["Nós","ouvimos","[oh-VEE-moosh]"],["Vocês/Eles","ouvem","[OH-vayng]"]],
+    ex:[["Ouço música todos os dias.","[OH-soo moo-ZEE-kɐ]","I listen to music every day."],["Ouves o que digo?","[OH-vɐsh oo kɐ DEE-goo]","Do you hear what I am saying?"]]
+  },
+];
+
+const D_MONEY = {
+  currency: [
+    ["euro","[EH-oo-roo]","€ — currency of Portugal (and EU)"],
+    ["cêntimo/s","[SEN-tee-moo]","cent(s) — 100 cêntimos = 1 euro"],
+    ["tostão","[toosh-TOWNG]","old slang for small coin, still used colloquially"],
+    ["pagar","[pɐ-GAR]","to pay"],
+    ["cobrar","[koo-BRAR]","to charge"],
+    ["troco","[TROH-koo]","change (money returned)"],
+    ["nota","[NOH-tɐ]","banknote"],
+    ["moeda","[moo-EH-dɐ]","coin"],
+    ["cartão de crédito","[kar-TOWNG dɐ KREH-dee-too]","credit card"],
+    ["multibanco","[mool-tee-BAN-koo]","ATM / debit card payment (Portugal-specific term)"],
+    ["talão","[tɐ-LOWNG]","receipt"],
+    ["desconto","[dɐsh-KON-too]","discount"],
+  ],
+  phrases: [
+    { pt:"Quanto custa?",           pron:"[KWAN-too KOOSH-tɐ]",       en:"How much does it cost?" },
+    { pt:"Quanto é?",               pron:"[KWAN-too eh]",              en:"How much is it?" },
+    { pt:"Qual é o preço?",         pron:"[kwal eh oo PRAY-soo]",      en:"What is the price?" },
+    { pt:"É muito caro/barato.",    pron:"[eh MWEE-too KA-roo / bɐ-RA-too]", en:"It is very expensive/cheap." },
+    { pt:"Tem mais barato?",        pron:"[tayng maish bɐ-RA-too]",    en:"Do you have anything cheaper?" },
+    { pt:"Posso pagar com cartão?", pron:"[POH-soo pɐ-GAR kong kar-TOWNG]", en:"Can I pay by card?" },
+    { pt:"Aceita multibanco?",      pron:"[ɐ-SAY-tɐ mool-tee-BAN-koo]", en:"Do you accept card/multibanco?" },
+    { pt:"Pode dar-me um talão?",   pron:"[POH-d DAR-mɐ oong tɐ-LOWNG]", en:"Can you give me a receipt?" },
+    { pt:"Tem troco?",              pron:"[tayng TROH-koo]",            en:"Do you have change?" },
+    { pt:"Fico com o troco.",       pron:"[FEE-koo kong oo TROH-koo]", en:"Keep the change." },
+  ],
+  reading: [
+    { written:"1,50€",  spoken:"um euro e cinquenta (cêntimos)",  note:"Comma = decimal in Portuguese. 1,50 = one euro fifty." },
+    { written:"2,99€",  spoken:"dois euros e noventa e nove",      note:"" },
+    { written:"0,75€",  spoken:"setenta e cinco cêntimos",         note:"Under 1€ — just say the cents" },
+    { written:"10,00€", spoken:"dez euros",                        note:"" },
+    { written:"1.000€", spoken:"mil euros",                        note:"Period = thousands separator in Portuguese." },
+    { written:"25.000€",spoken:"vinte e cinco mil euros",          note:"" },
+  ]
+};
+
+const D_TRANSPORT = {
+  vocabulary: [
+    ["a paragem","[ɐ pɐ-RA-zhayng]","stop (bus/tram)"],
+    ["a estação","[ɐ ish-tɐ-SOWNG]","station (train/metro)"],
+    ["o comboio","[oo kom-BOY-oo]","train (European Portuguese — NOT trem)"],
+    ["o autocarro","[oo ow-too-KA-hroo]","bus"],
+    ["o metro","[oo MEH-troo]","metro / subway"],
+    ["o elétrico","[oo ee-LEH-tree-koo]","tram"],
+    ["o táxi","[oo TAK-see]","taxi"],
+    ["o aeroporto","[oo ɐ-ee-roo-POR-too]","airport"],
+    ["a linha","[ɐ LEEN-yɐ]","line (metro/train)"],
+    ["a plataforma","[ɐ plɐ-tɐ-FOR-mɐ]","platform"],
+    ["a bilheteira","[ɐ beel-yɐ-TAY-rɐ]","ticket office"],
+    ["o bilhete","[oo beel-YET]","ticket"],
+    ["a carreira","[ɐ kɐ-HAY-rɐ]","bus route/number"],
+    ["o horário","[oo oh-RA-ryoo]","timetable / schedule"],
+    ["a chegada","[ɐ shɐ-GA-dɐ]","arrival"],
+    ["a partida","[ɐ pɐr-TEE-dɐ]","departure"],
+    ["atrasado/a","[ɐ-trɐ-ZA-doo]","late / delayed"],
+    ["a tempo","[ɐ TEMP-oo]","on time"],
+  ],
+  phrases: [
+    { pt:"A que horas parte o comboio?",          pron:"[ɐ kɐ OH-rɐsh PAR-t oo kom-BOY-oo]",    en:"What time does the train leave?" },
+    { pt:"A que horas chega o autocarro?",         pron:"[ɐ kɐ OH-rɐsh SHEH-gɐ]",               en:"What time does the bus arrive?" },
+    { pt:"Onde posso apanhar o metro?",            pron:"[OND POH-soo ɐ-pɐ-NYAR oo MEH-troo]",  en:"Where can I catch the metro?" },
+    { pt:"Qual é a paragem para...?",              pron:"[kwal eh ɐ pɐ-RA-zhayng PA-rɐ]",        en:"Which stop is it for...?" },
+    { pt:"Um bilhete para Lisboa, por favor.",     pron:"[oong beel-YET PA-rɐ leezh-BOH-ɐ]",    en:"One ticket to Lisbon, please." },
+    { pt:"Ida e volta / Só de ida.",               pron:"[EE-dɐ ee VOL-tɐ / so dɐ EE-dɐ]",      en:"Return / Single (one-way)." },
+    { pt:"Quanto tempo demora?",                   pron:"[KWAN-too TEMP-oo dɐ-MOH-rɐ]",          en:"How long does it take?" },
+    { pt:"O comboio está atrasado?",               pron:"[oo kom-BOY-oo ish-TA ɐ-trɐ-ZA-doo]",  en:"Is the train delayed?" },
+    { pt:"Tenho de fazer correspondência?",        pron:"[TAYN-yoo dɐ fɐ-SEHR koo-rɐsh-pon-DEN-syɐ]", en:"Do I need to change (transfer)?" },
+    { pt:"Às nove e meia.",                        pron:"[ɐsh NOH-v ee MAY-ɐ]",                  en:"At half past nine (9:30)." },
+  ],
+  br_vs_eu: [
+    ["comboio [kom-BOY-oo]","trem","train — completely different word"],
+    ["autocarro [ow-too-KA-hroo]","ônibus","bus"],
+    ["paragem [pɐ-RA-zhayng]","parada","stop"],
+    ["metro [MEH-troo]","metrô","metro/subway (same word, different accent)"],
+    ["bilheteira [beel-yɐ-TAY-rɐ]","bilheteria","ticket office"],
   ]
 };
 
@@ -1224,6 +1403,12 @@ function buildIndex() {
   D_POSSESSIVES.examples.forEach(r => indexItem('possessives','Possessives', r[0], r[1], r[2], ''));
   D_DEMONSTRATIVES.neutros.forEach(r => indexItem('demonstratives','Demonstratives', r.form, '', r.use, r.ex));
   D_ESTAR_PATTERNS.patterns.forEach(p => p.ex.forEach(e => indexItem('estar-patterns','Estar Patterns', e[0], e[1], e[2], p.title)));
+  D_REFLEXIVE_VERBS.common.forEach(v => indexItem('reflexive-verbs','Reflexive Verbs', v.verb, v.pron, v.en, 'reflexive'));
+  D_IRREGULAR_VERBS.forEach(v => v.ex.forEach(e => indexItem('irregular-verbs','Irregular Verbs', e[0], e[1], e[2], v.verb)));
+  D_MONEY.phrases.forEach(r => indexItem('money','Money & Prices', r.pt, r.pron, r.en, ''));
+  D_MONEY.currency.forEach(r => indexItem('money','Money & Prices', r[0], r[1], r[2], ''));
+  D_TRANSPORT.vocabulary.forEach(r => indexItem('transport','Transport', r[0], r[1], r[2], ''));
+  D_TRANSPORT.phrases.forEach(r => indexItem('transport','Transport', r.pt, r.pron, r.en, ''));
   D_SEASONS.seasons.forEach(r => indexItem('days','Days, Time & Seasons', r.pt, r.pron, r.en, r.months));
   D_SEASONS.timeOfDay.forEach(r => indexItem('days','Days, Time & Seasons', r.pt, r.pron, r.en, r.hours));
   D_DAYS.forEach(r => indexItem('days','Days, Time & Seasons', r.pt, r.pron, r.en, ''));
@@ -1717,9 +1902,128 @@ demonstratives: () => `
     </div>
   </div>`,
 
+
+'reflexive-verbs': () => `
+  ${sectionHead('Reflexive Verbs','Session 6','Reflexive verbs describe actions the subject does to themselves. The reflexive pronoun changes with the subject and MOVES POSITION depending on sentence type.')}
+  ${warnBox('<strong>NÓS rule:</strong> Drop the final -s of the verb before adding -nos. levantamos + nos → <strong>levantamo-nos</strong>. This applies to all reflexive verbs.')}
+  <h3 class="sub-heading">Pronoun Position Rules</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+    ${D_REFLEXIVE_VERBS.placement.map(r => `<div class="card-sm" style="border-left:3px solid ${r.rule.includes('Affirmative')?'var(--green)':'var(--accent)'}">
+      <div style="font-weight:800;font-size:13px;margin-bottom:4px">${r.rule}</div>
+      <div style="font-size:12px;color:var(--text-3);margin-bottom:6px">${r.pos}</div>
+      <div class="pt">${r.ex}</div>
+      <div class="en">${r.en}</div>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">Conjugation Pattern — using LEVANTAR-SE</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject</th><th>Pronoun</th><th>Form</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_REFLEXIVE_VERBS.pronouns.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:700">${r[0]}</td>
+      <td><strong style="color:var(--accent);font-size:16px">${r[1]}</strong></td>
+      <td class="pt">${r[2]}</td>
+      <td>${pr('')}</td>
+      <td class="en">${r[3]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Common Reflexive Verbs</h3>
+  ${D_REFLEXIVE_VERBS.common.map(v => `
+  <div class="card" style="margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;cursor:pointer" onclick="this.parentElement.querySelector('.rv-body').style.display=this.parentElement.querySelector('.rv-body').style.display==='none'?'block':'none'">
+      <span style="font-size:18px;font-weight:800;color:var(--primary)">${v.verb}</span>
+      ${pr(v.pron)}
+      <span style="color:var(--text-2)">— ${v.en}</span>
+      <span style="font-size:11px;background:var(--primary-lt);color:var(--primary);border-radius:20px;padding:2px 8px;margin-left:auto">${v.daily}</span>
+      <span style="color:var(--text-3)">⌄</span>
+    </div>
+    <div class="rv-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        ${v.ex.map(e => `<div style="border-left:3px solid var(--primary);padding-left:10px">
+          <div class="pt">${e[0]}</div>
+          <div style="margin:2px 0">${pr(e[1])}</div>
+          <div class="en">${e[2]}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </div>`).join('')}`,
+
+'irregular-verbs': () => `
+  ${sectionHead('Irregular Verbs','Session 6','These high-frequency verbs do not follow the regular -AR/-ER/-IR patterns. Each must be memorised individually. The EU form is almost always the most irregular — if you learn that one, the rest often follow a pattern.')}
+  ${infoBox('Pattern: most irregular verbs are only irregular in the <strong>EU</strong> form (1st person singular). The other forms often follow regular endings. Focus on EU first.')}
+  ${D_IRREGULAR_VERBS.map(v => `
+  <div class="card" style="margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:0;cursor:pointer" onclick="var b=this.parentElement.querySelector('.iv-body');b.style.display=b.style.display==='none'?'block':'none'">
+      <span style="font-size:20px;font-weight:800;color:var(--primary);min-width:100px">${v.verb}</span>
+      ${pr(v.pron)}
+      <span style="color:var(--text-2)">— ${v.en}</span>
+      <span style="margin-left:auto;color:var(--text-3)">⌄</span>
+    </div>
+    <div class="iv-body">
+      <div class="warn-box" style="margin:10px 0 12px;font-size:13px">${v.note}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <table style="border-collapse:collapse;font-size:14px;width:100%">
+          ${v.conj.map((row,i) => `<tr style="border-bottom:1px solid var(--border);${i===0?'background:var(--primary-lt)':''}">
+            <td style="padding:6px 10px;color:var(--text-3);font-size:12px">${row[0]}</td>
+            <td style="padding:6px 10px;font-weight:800;font-size:16px;color:var(--primary)">${row[1]}</td>
+            <td style="padding:6px 10px">${pr(row[2])}</td>
+          </tr>`).join('')}
+        </table>
+        <div>
+          ${v.ex.map(e => `<div style="border-left:3px solid var(--primary);padding-left:10px;margin-bottom:10px">
+            <div class="pt">${e[0]}</div>
+            <div style="margin:2px 0">${pr(e[1])}</div>
+            <div class="en">${e[2]}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>`).join('')}`,
+
+money: () => `
+  ${sectionHead('Money & Prices','Session 6','Portugal uses the Euro (€). Prices are written with a comma as the decimal separator: 1,50€ = one euro fifty. The period is the thousands separator: 1.000 = one thousand.')}
+  <h3 class="sub-heading">Key Phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_MONEY.phrases.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Reading Prices Aloud</h3>
+  ${infoBox('Comma = decimal (1,50€ = um euro e cinquenta). Period = thousands (1.000€ = mil euros). Always read amounts as: euros + E + cents.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Written</th><th>Spoken in Portuguese</th><th>Note</th></tr></thead>
+    <tbody>${D_MONEY.reading.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:800;font-size:18px;color:var(--primary)">${r.written}</td>
+      <td style="font-style:italic">${r.spoken}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Money Vocabulary</h3>
+  ${vocabGrid(D_MONEY.currency)}`,
+
+transport: () => `
+  ${sectionHead('Transport & Schedules','Session 6','Key vocabulary for getting around in Portugal. Note: European Portuguese uses COMBOIO for train (not trem) and AUTOCARRO for bus (not ônibus) — major differences from Brazilian Portuguese.')}
+  <h3 class="sub-heading">EU Portuguese vs Brazilian Portuguese</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>European Portuguese</th><th>Brazilian Portuguese</th><th>English</th></tr></thead>
+    <tbody>${D_TRANSPORT.br_vs_eu.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r[0]}</td>
+      <td style="color:var(--text-3);font-style:italic">${r[1]}</td>
+      <td class="en">${r[2]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Essential Phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_TRANSPORT.phrases.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Transport Vocabulary</h3>
+  ${vocabGrid(D_TRANSPORT.vocabulary)}`,
+
 numbers: () => `
-  ${sectionHead('Numbers','Session 2','Numbers 1 and 2 have gender forms: um/uma, dois/duas. All other cardinal numbers are invariable. Ordinals (1st, 2nd…) agree in gender like adjectives.')}
-  ${warnBox('<strong>⚠ 200–900 also have gender:</strong> duzentos (m) / duzentas (f), trezentos / trezentas, etc.')}
+  ${sectionHead('Numbers','Sessions 2 & 6','Numbers 1 and 2 have gender forms. Tens (30–90) are invariable. Hundreds (200–900) have GENDER forms like adjectives. 1000 (mil) is invariable.')}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div>
       <h3 class="sub-heading">0 – 20</h3>
@@ -1733,7 +2037,7 @@ numbers: () => `
       </table></div>
     </div>
     <div>
-      <h3 class="sub-heading">Tens, Hundreds & More</h3>
+      <h3 class="sub-heading">Tens (30–90) — invariable</h3>
       <div class="tbl-wrap"><table>
         <thead><tr><th>#</th><th>Portuguese</th><th>Pronunciation</th></tr></thead>
         <tbody>${D_NUMBERS.tens.map(r => `<tr>
@@ -1742,11 +2046,33 @@ numbers: () => `
           <td style="font-size:12px">${pr(r[2])}</td>
         </tr>`).join('')}</tbody>
       </table></div>
-      <h3 class="sub-heading">Ordinals</h3>
-      ${vocabGrid(D_NUMBERS.ordinals.map(r => [r[1], r[2], r[0]]))}
     </div>
   </div>
-  ${infoBox('Compound numbers use <strong>e</strong> (and) between each part: 21 = vinte e um · 101 = cento e um · 1999 = mil novecentos e noventa e nove')}`,
+  <h3 class="sub-heading">Hundreds (100–900) — gender agreement ⚠</h3>
+  ${warnBox('<strong>Hundreds 200–900 agree in gender with the noun they describe</strong> — unlike tens which are invariable. 200 chairs (feminine) = duzentas cadeiras. 200 books (masculine) = duzentos livros. 100 uses CEM alone, CENTO before more digits.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>Masculine</th><th>Pron. (m)</th><th>Feminine</th><th>Pron. (f)</th><th>Note</th></tr></thead>
+    <tbody>${D_NUMBERS.hundreds.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:700;color:var(--text-3)">${r[0]}</td>
+      <td class="pt">${r[1]}</td>
+      <td>${pr(r[2])}</td>
+      <td style="color:var(--accent);font-weight:700">${r[3]}</td>
+      <td>${pr(r[4])}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[5]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Thousands & More · Ordinals</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>#</th><th>Portuguese</th><th>Pronunciation</th></tr></thead>
+      <tbody>${[[1000,'mil','[meel]'],[1000000,'um milhão','[oong meel-YOWNG]']].map(r => `<tr>
+        <td style="font-weight:700;color:var(--text-3);font-size:12px">${r[0].toLocaleString()}</td>
+        <td class="pt">${r[1]}</td><td>${pr(r[2])}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+    <div>${vocabGrid(D_NUMBERS.ordinals.map(r => [r[1], r[2], r[0]]))}</div>
+  </div>
+  ${infoBox('Compound numbers use <strong>e</strong> between each part: 21 = vinte e um · 101 = cento e um · 250 livros = duzentos e cinquenta livros · 250 casas = duzentas e cinquenta casas')}`,
 
 days: () => `
   ${sectionHead('Days, Time & Seasons','Sessions 2 & 5','Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Months are never capitalised in Portuguese.')}
