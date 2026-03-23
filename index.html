@@ -2969,6 +2969,301 @@
         ],
       };
 
+      const D_TIME_PREPS = {
+        note: "The prepositions A, DE, EM govern time references. The choice depends on WHAT type of time reference it is: hours, parts of day, days of week, months, years, seasons.",
+        preps: [
+          {
+            prep: "A",
+            pron: "[ɐ / ɐsh (às)]",
+            color: "var(--primary)",
+            uses: [
+              {
+                type: "Hours",
+                ex: [
+                  [
+                    "Cheguei ao Porto às nove e meia.",
+                    "",
+                    "I arrived in Porto at half past nine.",
+                  ],
+                  ["Hoje chego à uma.", "", "Today I arrive at one o'clock."],
+                ],
+              },
+              {
+                type: "Parts of day (tarde / noite)",
+                ex: [
+                  [
+                    "Esta tarde não fui trabalhar.",
+                    "",
+                    "This afternoon I didn't go to work.",
+                  ],
+                  [
+                    "Ontem à noite fomos jantar fora.",
+                    "",
+                    "Last night we went out for dinner.",
+                  ],
+                  [
+                    "Costumo correr à tarde / à noite.",
+                    "",
+                    "I usually run in the afternoon / in the evening.",
+                  ],
+                ],
+              },
+              {
+                type: "Days of week — habitual recurring action",
+                ex: [
+                  [
+                    "À quinta-feira nunca tenho aulas.",
+                    "",
+                    "On Thursdays I never have classes. (every Thursday)",
+                  ],
+                  [
+                    "Aos domingos, acordo tarde.",
+                    "",
+                    "On Sundays I wake up late. (every Sunday)",
+                  ],
+                ],
+              },
+              {
+                type: "Dates — day of the month",
+                ex: [
+                  [
+                    "Vou para Cabo Verde a 15 de Julho.",
+                    "",
+                    "I am going to Cape Verde on 15th July.",
+                  ],
+                ],
+              },
+            ],
+          },
+          {
+            prep: "DE",
+            pron: "[dɐ]",
+            color: "var(--accent)",
+            uses: [
+              {
+                type: "Parts of day (manhã / madrugada)",
+                ex: [
+                  [
+                    "Hoje de manhã fui ao médico.",
+                    "",
+                    "This morning I went to the doctor.",
+                  ],
+                  [
+                    "Saímos de casa às 8:00 da manhã.",
+                    "",
+                    "We left home at 8:00 in the morning.",
+                  ],
+                  [
+                    "Costumo correr de manhã.",
+                    "",
+                    "I usually run in the morning.",
+                  ],
+                ],
+              },
+              {
+                type: "Dates — month of year (in full dates)",
+                ex: [
+                  [
+                    "A Andreia faz anos a 26 de Julho.",
+                    "",
+                    "Andreia's birthday is on 26th July.",
+                  ],
+                ],
+              },
+              {
+                type: "Dates — year (in full dates)",
+                ex: [
+                  [
+                    "Ela nasceu a 6 de agosto de 1980.",
+                    "",
+                    "She was born on 6th August 1980.",
+                  ],
+                  [
+                    "De manhã, costumo correr antes de ir para o trabalho.",
+                    "",
+                    "In the morning, I usually run before going to work.",
+                  ],
+                ],
+              },
+            ],
+          },
+          {
+            prep: "EM",
+            pron: "[ayng → no/na/nos/nas]",
+            color: "var(--green)",
+            uses: [
+              {
+                type: "Days of week — specific / one-time event",
+                ex: [
+                  [
+                    "No sábado vou ao Porto.",
+                    "",
+                    "On Saturday I am going to Porto. (this coming Saturday)",
+                  ],
+                  [
+                    "Na sexta-feira estive doente e não fui trabalhar.",
+                    "",
+                    "On Friday I was sick. (last Friday)",
+                  ],
+                ],
+              },
+              {
+                type: "Dates — with 'dia'",
+                ex: [
+                  [
+                    "O exame de Português foi no dia 25 de Junho.",
+                    "",
+                    "The Portuguese exam was on the 25th of June.",
+                  ],
+                ],
+              },
+              {
+                type: "Months",
+                ex: [
+                  [
+                    "Em Maio fui para Madrid e fiquei lá duas semanas.",
+                    "",
+                    "In May I went to Madrid and stayed two weeks.",
+                  ],
+                ],
+              },
+              {
+                type: "Years",
+                ex: [
+                  [
+                    "Em 2002 estive a fazer um curso em Londres.",
+                    "",
+                    "In 2002 I was doing a course in London.",
+                  ],
+                ],
+              },
+              {
+                type: "Seasons",
+                ex: [
+                  [
+                    "No Inverno choveu muito.",
+                    "",
+                    "In winter it rained a lot.",
+                  ],
+                  [
+                    "Na Primavera as flores abrem.",
+                    "",
+                    "In spring the flowers open.",
+                  ],
+                ],
+              },
+            ],
+          },
+          {
+            prep: "DE … A",
+            pron: "[dɐ … ɐ / ɐsh]",
+            color: "var(--purple)",
+            uses: [
+              {
+                type: "Time interval — from … to",
+                ex: [
+                  [
+                    "Trabalho de segunda a sexta-feira.",
+                    "",
+                    "I work from Monday to Friday.",
+                  ],
+                  [
+                    "Das 10:00 às 14:00 estou no escritório.",
+                    "",
+                    "From 10:00 to 14:00 I am in the office.",
+                  ],
+                  [
+                    "Eles tiveram uma reunião das dez ao meio-dia.",
+                    "",
+                    "They had a meeting from ten to midday.",
+                  ],
+                ],
+              },
+            ],
+          },
+          {
+            prep: "POR VOLTA DE",
+            pron: "[poor VOL-tɐ dɐ]",
+            color: "var(--gold)",
+            uses: [
+              {
+                type: "Approximate time",
+                ex: [
+                  [
+                    "Começo a trabalhar por volta das 8h00.",
+                    "",
+                    "I start work at around 8:00.",
+                  ],
+                  [
+                    "Ele chega por volta do meio-dia.",
+                    "",
+                    "He arrives at around midday.",
+                  ],
+                ],
+              },
+            ],
+          },
+        ],
+        dayOfWeekRule: {
+          note: "KEY DISTINCTION — Days of the week: A/Ao/Aos (habitual, every week) vs No/Na (specific, one particular day).",
+          rows: [
+            {
+              prep: "À / Aos",
+              ex: "À quinta-feira nunca tenho aulas.",
+              en: "On Thursdays I never have classes. (every Thursday — habitual)",
+            },
+            {
+              prep: "No / Na",
+              ex: "No sábado vou ao Porto.",
+              en: "On Saturday I am going to Porto. (this specific Saturday)",
+            },
+          ],
+        },
+      };
+
+      const D_FREQUENCY = {
+        scale: [
+          { pct: "100%", word: "sempre", pron: "[SEM-prɐ]", en: "always" },
+          {
+            pct: "~80%",
+            word: "frequentemente",
+            pron: "[frɐ-kwen-tɐ-MENT]",
+            en: "frequently",
+          },
+          {
+            pct: "~25%",
+            word: "às vezes",
+            pron: "[ash VEH-zɐsh]",
+            en: "sometimes",
+          },
+          {
+            pct: "~5%",
+            word: "raramente",
+            pron: "[hrɐ-rɐ-MENT]",
+            en: "rarely",
+          },
+          {
+            pct: "~1%",
+            word: "quase nunca",
+            pron: "[KWA-zɐ NOONK-ɐ]",
+            en: "almost never",
+          },
+          { pct: "0%", word: "nunca", pron: "[NOONK-ɐ]", en: "never" },
+        ],
+        note: "Advérbios ou expressões adverbiais give information about time, manner, place, etc. They do not agree in gender or number — they are invariable.",
+        more: [
+          ["diariamente", "[dyɐ-ryɐ-MENT]", "daily (= todos os dias)"],
+          ["normalmente", "[nor-mɐl-MENT]", "normally / usually"],
+          ["geralmente", "[zhɐ-rɐl-MENT]", "generally"],
+          ["depois", "[dɐ-POYSH]", "afterwards / later (sequence)"],
+          ["a seguir", "[ɐ sɐ-GEER]", "next / immediately after"],
+          ["antes", "[AN-tɐsh]", "before"],
+          ["já", "[zha]", "already / right now"],
+          ["ainda", "[ɐ-EEN-dɐ]", "still / yet"],
+          ["logo", "[LOH-goo]", "soon / right away"],
+        ],
+      };
+
       const D_REFLEXIVE_VERBS = {
         note: "Reflexive verbs describe actions the subject does TO THEMSELVES. The reflexive pronoun (me/te/se/nos) changes based on subject. PLACEMENT RULE: after the verb in affirmative statements (Levanto-me), but BEFORE the verb after trigger words: não, nunca, também, já, quem, como, que.",
         pronouns: [
@@ -3824,23 +4119,37 @@
           [
             "para",
             "[PA-rɐ]",
-            "towards / to (direction of movement)",
+            "towards / to (long stay or permanent destination)",
             "Vou para o trabalho.",
             "I am going to work.",
           ],
           [
+            "a",
+            "[ɐ]",
+            "to (short visit — you will return)",
+            "Fui à loja.",
+            "I went to the shop (and came back).",
+          ],
+          [
             "de",
             "[dɐ]",
-            "from (starting point)",
-            "Venho de casa.",
-            "I come from home.",
+            "from (origin) · by (unspecified transport)",
+            "Venho de casa. / Vou de carro.",
+            "I come from home. / I go by car.",
           ],
           [
             "por",
             "[poor]",
-            "through / via / along",
-            "Passo pelo centro.",
-            "I pass through the centre.",
+            "through / via · near / past",
+            "Passámos pelo museu.",
+            "We passed by the museum.",
+          ],
+          [
+            "em",
+            "[ayng/noo/nɐ]",
+            "entering a space · specific/identified vehicle",
+            "Fomos no carro do João.",
+            "We went in João's car. (specific vehicle)",
           ],
           [
             "até",
@@ -3877,6 +4186,162 @@
             "Siga em frente.",
             "Go straight ahead.",
           ],
+        ],
+      };
+
+      const D_MOVEMENT_PREPS = {
+        detail: [
+          {
+            prep: "a",
+            pron: "[ɐ]",
+            color: "var(--primary)",
+            meaning: "direction — short visit / return trip",
+            note: "Use when you will return. Implies a short period of time at the destination.",
+            ex: [
+              [
+                "Tive de regressar a casa porque me esqueci dos documentos.",
+                "",
+                "I had to go back home because I forgot the documents.",
+              ],
+              [
+                "Foste à festa de aniversário da Joana?",
+                "",
+                "Did you go to Joana's birthday party?",
+              ],
+            ],
+          },
+          {
+            prep: "para",
+            pron: "[PA-rɐ]",
+            color: "var(--green)",
+            meaning: "direction — long stay or permanent destination",
+            note: "Use for long periods or permanent relocation. Also marks destination on transport tickets.",
+            ex: [
+              [
+                "Eles vieram morar para Lisboa há quinze anos.",
+                "",
+                "They came to live in Lisbon fifteen years ago.",
+              ],
+              [
+                "O avião para o Porto parte às 7h45.",
+                "",
+                "The plane to Porto departs at 7:45.",
+              ],
+            ],
+          },
+          {
+            prep: "por",
+            pron: "[poor]",
+            color: "var(--purple)",
+            meaning: "through / via · near / past",
+            note: "Movement that passes through a place, or movement near/by something.",
+            ex: [
+              [
+                "Nós não viemos pela auto-estrada.",
+                "",
+                "We did not come via the motorway.",
+              ],
+              [
+                "O autocarro n.º 31 passa pelo museu.",
+                "",
+                "Bus no. 31 passes by the museum.",
+              ],
+            ],
+          },
+          {
+            prep: "de",
+            pron: "[dɐ]",
+            color: "var(--accent)",
+            meaning: "origin (from) · unspecified mode of transport",
+            note: "Starting point of movement. Also marks a generic/unspecified means of transport.",
+            ex: [
+              [
+                "Quando é que regressa do Algarve?",
+                "",
+                "When are you coming back from the Algarve?",
+              ],
+              [
+                "Vocês foram de carro?",
+                "",
+                "Did you go by car? (any car, unspecified)",
+              ],
+            ],
+          },
+          {
+            prep: "em",
+            pron: "[ayng → no/na/nos/nas]",
+            color: "var(--gold)",
+            meaning: "entering a space · specific/identified vehicle",
+            note: "Entering into a defined space (room, building), or travelling in a SPECIFIC identified vehicle. Contrasts with DE which marks any vehicle of that type.",
+            ex: [
+              [
+                "Fomos no carro do João.",
+                "",
+                "We went in João's car. (that specific car)",
+              ],
+              [
+                "Entrámos no edifício pela porta traseira.",
+                "",
+                "We entered the building through the back door.",
+              ],
+            ],
+          },
+        ],
+        transport: [
+          {
+            pattern: "ir + de + transport",
+            color: "var(--primary)",
+            note: "Generic/unspecified transport — any car, any bus, the metro in general",
+            ex: [
+              ["Eu vou para o trabalho de carro.", "", "I go to work by car."],
+              [
+                "Tu vais de comboio ao ginásio.",
+                "",
+                "You go to the gym by train.",
+              ],
+              [
+                "Ele vai sempre de metro para casa.",
+                "",
+                "He always goes home by metro.",
+              ],
+              [
+                "Nós vamos de autocarro ao restaurante.",
+                "",
+                "We go to the restaurant by bus.",
+              ],
+              [
+                "Eles vão de bicicleta para a universidade.",
+                "",
+                "They cycle to university.",
+              ],
+            ],
+          },
+          {
+            pattern: "ir + em (no/na) + transport",
+            color: "var(--green)",
+            note: "Specific, identified vehicle — you know whose car or which exact vehicle",
+            ex: [
+              ["Fomos no carro do João.", "", "We went in João's car."],
+              [
+                "Vieste no autocarro da empresa?",
+                "",
+                "Did you come in the company bus?",
+              ],
+            ],
+          },
+          {
+            pattern: "ir + a pé",
+            color: "var(--accent)",
+            note: "On foot — special case: uses A, never DE",
+            ex: [
+              [
+                "Eles vão para o trabalho a pé.",
+                "",
+                "They walk to work. (NOT *de pé)",
+              ],
+              ["Venho a pé.", "[VAYN-yoo ɐ peh]", "I come on foot."],
+            ],
+          },
         ],
       };
 
@@ -6176,7 +6641,7 @@
   ${vocabGrid(D_TRANSPORT.vocabulary)}`,
 
         location: () => `
-  ${sectionHead("Location Expressions", "Session 7", "Locuções de lugar tell you WHERE something is. They pair opposites (inside/outside, above/below, in front/behind) and always contract with the article that follows.")}
+  ${sectionHead("Location Expressions", "Sessions 7–8", "Locuções de lugar tell you WHERE something is. They pair opposites (inside/outside, above/below, in front/behind) and always contract with the article that follows. Session 8 adds a full treatment of movement prepositions and transport prepositions.")}
   ${infoBox("These expressions always combine with <strong>de</strong> and contract with the article: em frente + de + a = <strong>em frente da</strong> · debaixo + de + o = <strong>debaixo do</strong> · ao lado + de + a = <strong>ao lado da</strong>")}
   <h3 class="sub-heading">Location Expressions — with opposites</h3>
   <div class="tbl-wrap"><table>
@@ -6208,23 +6673,59 @@
   </div>`,
     )
     .join("")}
-  <h3 class="sub-heading">Movement Prepositions</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Expression</th><th>Pron.</th><th>Meaning</th><th>Example</th><th>English</th></tr></thead>
-    <tbody>${D_LOCATION.movement
-      .map(
-        (
-          r,
-          i,
-        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
-      <td class="pt">${r[0]}</td><td>${pr(r[1])}</td>
-      <td style="font-weight:700">${r[2]}</td>
-      <td class="pt">${r[3]}</td>
-      <td class="en">${r[4]}</td>
-    </tr>`,
-      )
-      .join("")}</tbody>
-  </table></div>`,
+  <h3 class="sub-heading">Preposições de Movimento — detailed breakdown</h3>
+  ${warnBox("<strong>A vs PARA:</strong> A = short visit (you return). PARA = long stay / permanent destination.<br><strong>DE vs EM:</strong> DE + transport = any/generic vehicle. EM (no/na) + transport = specific, identified vehicle.<br><strong>A PÉ:</strong> on foot always uses A, never DE.")}
+  ${D_MOVEMENT_PREPS.detail
+    .map(
+      (p) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid ${p.color}">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px">
+      <span style="font-size:24px;font-weight:800;color:${p.color};min-width:80px">${p.prep}</span>
+      ${pr(p.pron)}
+      <span style="font-size:15px;font-weight:700">${p.meaning}</span>
+    </div>
+    <div style="font-size:13px;color:var(--text-3);margin-bottom:8px">${p.note}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${p.ex
+        .map(
+          (
+            e,
+          ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+        <div class="pt">${e[0]}</div>
+        ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ""}
+        <div class="en">${e[2]}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">Transport Prepositions — IR + DE / EM / A PÉ</h3>
+  ${D_MOVEMENT_PREPS.transport
+    .map(
+      (t) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid ${t.color}">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px">
+      <span style="font-size:16px;font-weight:800;color:${t.color}">${t.pattern}</span>
+    </div>
+    <div style="font-size:13px;color:var(--text-3);margin-bottom:8px">${t.note}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${t.ex
+        .map(
+          (
+            e,
+          ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+        <div class="pt">${e[0]}</div>
+        ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ""}
+        <div class="en">${e[2]}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>`,
+    )
+    .join("")}`,
 
         food: () => `
   ${sectionHead("Food & Meals", "Session 7", "Portuguese meal culture differs from Northern Europe — lunch is the main meal of the day, dinner is late (20h+). The verb COSTUMAR + infinitive is used to describe food habits.")}
@@ -6369,7 +6870,7 @@
   ${infoBox("Compound numbers use <strong>e</strong> between each part: 21 = vinte e um · 101 = cento e um · 250 livros = duzentos e cinquenta livros · 250 casas = duzentas e cinquenta casas")}`,
 
         days: () => `
-  ${sectionHead("Days, Time & Seasons", "Sessions 2 & 5", "Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Months are never capitalised in Portuguese.")}
+  ${sectionHead("Days, Time & Seasons", "Sessions 2, 5 & 8", "Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Months are never capitalised in Portuguese. Session 8 adds a full treatment of time prepositions.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div>
       <h3 class="sub-heading">Days of the Week</h3>
@@ -6442,7 +6943,82 @@
       .join("")}</tbody>
   </table></div>
 
-  <h3 class="sub-heading">Time & Season Prepositions</h3>
+  <h3 class="sub-heading">Preposições de Tempo — A, DE, EM, DE…A, POR VOLTA DE</h3>
+  ${warnBox(D_TIME_PREPS.note)}
+  ${D_TIME_PREPS.preps
+    .map(
+      (p) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid ${p.color}">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-size:24px;font-weight:800;color:${p.color};min-width:130px">${p.prep}</span>
+      ${pr(p.pron)}
+    </div>
+    ${p.uses
+      .map(
+        (u) => `
+      <div style="margin-bottom:12px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:6px">${u.type}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${u.ex
+            .map(
+              (
+                e,
+              ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+            <div class="pt">${e[0]}</div>
+            ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ""}
+            <div class="en">${e[2]}</div>
+          </div>`,
+            )
+            .join("")}
+        </div>
+      </div>`,
+      )
+      .join("")}
+  </div>`,
+    )
+    .join("")}
+
+  <h3 class="sub-heading">Days of Week: Habitual (A) vs Specific (EM/NO/NA)</h3>
+  ${infoBox(D_TIME_PREPS.dayOfWeekRule.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Preposition</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_TIME_PREPS.dayOfWeekRule.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary);font-size:16px">${r.prep}</td>
+      <td class="pt">${r.ex}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Expressões Adverbiais — Frequency Scale</h3>
+  ${infoBox(D_FREQUENCY.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Frequency</th><th>Adverb / Expression</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_FREQUENCY.scale
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary);font-size:14px">${r.pct}</td>
+      <td class="pt">${r.word}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">More Time Adverbials</h3>
+  ${vocabGrid(D_FREQUENCY.more)}
+
+  <h3 class="sub-heading">Time & Season Prepositions (quick reference)</h3>
   ${vocabGrid(D_SEASONS.prepositions)}
 
   <h3 class="sub-heading">Time Expressions</h3>
@@ -6453,6 +7029,7 @@
     ["agora [ɐ-GOH-rɐ]", "", "now"],
     ["depois [dɐ-POYSH]", "", "after / later"],
     ["antes [AN-tɐsh]", "", "before"],
+    ["a seguir [ɐ sɐ-GEER]", "", "next / immediately after"],
     ["sempre [SEM-prɐ]", "", "always"],
     ["nunca [NOONK-ɐ]", "", "never"],
     ["às vezes [ash VEH-zɐsh]", "", "sometimes"],
