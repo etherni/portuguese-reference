@@ -5380,7 +5380,7 @@
       <td style="color:var(--text-3);font-style:italic">${r.name}</td>
       <td>${pr(r.pron)}</td>
       <td style="font-size:13px">${r.rule}</td>
-      <td style="font-size:13px;color:var(--primary);font-style:italic">${r.example}</td>
+      <td class="pt" style="font-size:13px">${r.example}</td>
     </tr>`,
     ).join("")}</tbody>
   </table></div>`,
@@ -5395,7 +5395,7 @@
         (r) => `<tr>
       <td><strong>${r.sound}</strong></td><td>${pr(r.ipa)}</td>
       <td style="font-size:13px">${r.like}</td>
-      <td style="color:var(--primary);font-style:italic">${r.example}</td>
+      <td class="pt">${r.example}</td>
       <td class="en">${r.en}</td>
     </tr>`,
       )
@@ -5408,7 +5408,7 @@
     <div class="card-sm">
       <div style="font-size:18px;font-weight:800;color:var(--primary);font-family:var(--mono);margin-bottom:4px">${r.sound}</div>
       <div style="font-size:13px;color:var(--text-2);margin-bottom:4px">${r.rule}</div>
-      <div style="font-size:13px;font-style:italic;color:var(--primary)">${r.example}</div>
+      <div class="pt" style="font-size:13px">${r.example}</div>
       <div class="en" style="font-size:12px;margin-top:2px">${r.en}</div>
     </div>`,
     )
@@ -5443,7 +5443,7 @@
       <span class="tag tag-${r.color}" style="margin-left:auto">${r.level}</span>
     </div>
     <div style="font-size:13px;color:var(--text-2);margin-bottom:6px">${r.when}</div>
-    <div style="font-size:14px;font-style:italic;color:var(--primary)">${r.ex}</div>
+    <div class="pt">${r.ex}</div>
   </div>`,
     )
     .join("")}
@@ -5470,7 +5470,7 @@
           (
             e,
           ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
-        <div style="font-weight:700;color:var(--primary);font-size:14px">${e[0]}</div>
+        <div class="pt">${e[0]}</div>
         ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ""}
         <div class="en">${e[2]}</div>
       </div>`,
@@ -5489,8 +5489,8 @@
       .map(
         (r) => `<tr>
       <td style="font-size:12px;color:var(--text-3);font-weight:700">${r.case}</td>
-      <td>${r.por ? `<div style="font-style:italic;color:var(--primary)">${r.por}</div><div class="en">${r.en_por}</div>` : '<span style="color:var(--border)">—</span>'}</td>
-      <td>${r.para ? `<div style="font-style:italic;color:var(--green)">${r.para}</div><div class="en">${r.en_para}</div>` : '<span style="color:var(--border)">—</span>'}</td>
+      <td>${r.por ? `<div class="pt">${r.por}</div><div class="en">${r.en_por}</div>` : '<span style="color:var(--border)">—</span>'}</td>
+      <td>${r.para ? `<div class="pt" style="color:var(--green)">${r.para}</div><div class="en">${r.en_para}</div>` : '<span style="color:var(--border)">—</span>'}</td>
     </tr>`,
       )
       .join("")}</tbody>
@@ -5503,8 +5503,8 @@
       .map(
         (r) => `<tr>
       <td style="font-size:12px;color:var(--text-3);font-weight:700">${r.case}</td>
-      <td style="font-style:italic;color:var(--primary)">${r.em}</td>
-      <td style="font-style:italic;color:var(--green)">${r.a}</td>
+      <td class="pt">${r.em}</td>
+      <td class="pt" style="color:var(--green)">${r.a}</td>
     </tr>`,
       )
       .join("")}</tbody>
@@ -5524,7 +5524,7 @@
           <td><strong style="font-size:22px">${r.art}</strong></td>
           <td>${pr(r.pron)}</td>
           <td style="font-size:12px">${r.use}</td>
-          <td><span style="font-style:italic;color:var(--primary)">${r.ex}</span><br><span class="en">${r.en}</span></td>
+          <td><span class="pt">${r.ex}</span><br><span class="en">${r.en}</span></td>
         </tr>`,
           )
           .join("")}</tbody>
@@ -5760,7 +5760,7 @@
       <td>${pr(r.pron)}</td>
       <td style="font-weight:700">${r.en}</td>
       <td style="font-size:12px;color:var(--text-3)">${r.use}</td>
-      <td style="font-size:13px"><em style="color:var(--text)">${r.ex}</em>${r.ans ? `<br><span style="color:var(--green)">${r.ans}</span>` : ""}</td>
+      <td style="font-size:13px"><span class="pt" style="font-weight:normal">${r.ex}</span>${r.ans ? `<br><span style="color:var(--green)">${r.ans}</span>` : ""}</td>
     </tr>`,
       )
       .join("")}</tbody>
@@ -6119,7 +6119,7 @@
           i,
         ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
       <td style="font-weight:800;font-size:18px;color:var(--primary)">${r.written}</td>
-      <td style="font-style:italic">${r.spoken}</td>
+      <td class="pt">${r.spoken}</td>
       <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
     </tr>`,
       )
@@ -6191,7 +6191,7 @@
       <td>${pr(r.pron)}</td>
       <td style="font-weight:700">${r.en}</td>
       <td style="font-size:12px;color:var(--accent);font-style:italic">${r.opposite || "—"}</td>
-      <td style="font-size:13px;color:var(--text-2);font-style:italic">${r.ex}</td>
+      <td class="pt" style="font-size:13px;color:var(--text)">${r.ex}</td>
     </tr>`,
       )
       .join("")}</tbody>
@@ -6203,7 +6203,7 @@
   <div class="card-sm" style="margin-bottom:8px">
     <div class="pt">${r.q}</div>
     <div class="en" style="margin-bottom:4px">${r.en_q}</div>
-    <div style="color:var(--green);font-style:italic">${r.a}</div>
+    <div class="pt" style="color:var(--green)">${r.a}</div>
     <div class="en">${r.en_a}</div>
   </div>`,
     )
@@ -6219,7 +6219,7 @@
         ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
       <td class="pt">${r[0]}</td><td>${pr(r[1])}</td>
       <td style="font-weight:700">${r[2]}</td>
-      <td style="font-style:italic;color:var(--text-2)">${r[3]}</td>
+      <td class="pt">${r[3]}</td>
       <td class="en">${r[4]}</td>
     </tr>`,
       )
@@ -6241,7 +6241,7 @@
       <td>${pr(r.pron)}</td>
       <td style="font-weight:700">${r.en}</td>
       <td style="color:var(--text-3);font-size:12px">${r.time}</td>
-      <td style="font-size:12px;font-style:italic;color:var(--primary)">${r.verb}</td>
+      <td class="pt" style="font-size:12px;font-weight:normal">${r.verb}</td>
     </tr>`,
       )
       .join("")}</tbody>
@@ -6703,11 +6703,17 @@
       function addSpeakButtons() {
         if (!window.speechSynthesis) return;
         const area = document.getElementById("content-area");
-        // Add to all .pt elements that don't already have a button
-        area.querySelectorAll(".pt").forEach((el) => {
+        // Target all .pt elements (divs, spans, tds) and .conj-form cells
+        const targets = area.querySelectorAll(".pt, .conj-form");
+        targets.forEach((el) => {
           if (el.querySelector(".speak-btn")) return;
-          const text = el.textContent.trim();
+          // Get only direct text, stripping any nested speak button text
+          const clone = el.cloneNode(true);
+          clone.querySelectorAll(".speak-btn").forEach((b) => b.remove());
+          const text = clone.textContent.trim();
           if (text.length < 2) return;
+          // Skip elements that are just labels/headers (short uppercase words)
+          if (text.length < 3 && text === text.toUpperCase()) return;
           const btn = document.createElement("button");
           btn.className = "speak-btn";
           btn.title = "Listen";
@@ -6717,21 +6723,7 @@
             e.stopPropagation();
             speak(text, btn);
           };
-          el.appendChild(btn);
-        });
-        // Also add to conjugation forms (conj-form cells)
-        area.querySelectorAll(".conj-form").forEach((el) => {
-          if (el.querySelector(".speak-btn")) return;
-          const text = el.textContent.trim();
-          if (text.length < 2) return;
-          const btn = document.createElement("button");
-          btn.className = "speak-btn";
-          btn.title = "Listen";
-          btn.innerHTML = "🔊";
-          btn.onclick = (e) => {
-            e.stopPropagation();
-            speak(text, btn);
-          };
+          // For td elements, append inline; for block elements, append at end
           el.appendChild(btn);
         });
       }
