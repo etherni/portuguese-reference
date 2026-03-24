@@ -4519,6 +4519,435 @@
         },
       };
 
+      const D_FOOD_SHOPS = [
+        {
+          pt: "o talho",
+          pron: "[oo TAL-yoo]",
+          en: "butcher's",
+          note: "buy: carne, frango, borrego…",
+        },
+        {
+          pt: "a padaria",
+          pron: "[ɐ pɐ-dɐ-REE-ɐ]",
+          en: "bakery",
+          note: "buy: pão, bolo, croissant…",
+        },
+        {
+          pt: "a pastelaria",
+          pron: "[ɐ pɐsh-tɐ-lɐ-REE-ɐ]",
+          en: "pastry shop / café",
+          note: "buy: pastel de nata, bolo, café…",
+        },
+        {
+          pt: "a peixaria",
+          pron: "[ɐ pay-shɐ-REE-ɐ]",
+          en: "fishmonger's",
+          note: "buy: peixe, marisco, bacalhau…",
+        },
+        {
+          pt: "a frutaria",
+          pron: "[ɐ froo-tɐ-REE-ɐ]",
+          en: "fruit shop / greengrocer",
+          note: "buy: fruta, legumes, verduras…",
+        },
+        {
+          pt: "a mercearia",
+          pron: "[ɐ mer-syɐ-REE-ɐ]",
+          en: "grocer / general food shop",
+          note: "buy: produtos secos, conservas, laticínios…",
+        },
+        {
+          pt: "o supermercado",
+          pron: "[oo soo-per-mer-KA-doo]",
+          en: "supermarket",
+          note: "general shopping",
+        },
+        {
+          pt: "o mercado",
+          pron: "[oo mer-KA-doo]",
+          en: "market",
+          note: "fresh produce, local vendors",
+        },
+      ];
+
+      const D_IR_SHOPS = {
+        note: "Verbo IR no Presente + preposição A — to go to a place for a short visit. A + definite article = mandatory contraction. Shops are masculine (o talho → ao talho) or feminine (a padaria → à padaria).",
+        conj: [
+          ["eu", "vou", "[voh]"],
+          ["tu", "vais", "[vaish]"],
+          ["ele/ela/você", "vai", "[vai]"],
+          ["nós", "vamos", "[VAH-moosh]"],
+          ["eles/elas/vocês", "vão", "[vowng]"],
+        ],
+        contractions: [
+          {
+            art: "o (masc. sg.)",
+            result: "ao",
+            formula: "a + o",
+            ex: "Vou ao talho.",
+            en: "I am going to the butcher's.",
+          },
+          {
+            art: "a (fem. sg.)",
+            result: "à",
+            formula: "a + a",
+            ex: "Vais à padaria.",
+            en: "You are going to the bakery.",
+          },
+          {
+            art: "os (masc. pl.)",
+            result: "aos",
+            formula: "a + os",
+            ex: "Vai aos correios.",
+            en: "She is going to the post office.",
+          },
+          {
+            art: "as (fem. pl.)",
+            result: "às",
+            formula: "a + as",
+            ex: "Vamos às lojas.",
+            en: "We are going to the shops.",
+          },
+        ],
+        shopExs: [
+          [
+            "Vou ao talho comprar carne.",
+            "",
+            "I am going to the butcher's to buy meat.",
+          ],
+          [
+            "Ela vai à padaria todas as manhãs.",
+            "",
+            "She goes to the bakery every morning.",
+          ],
+          [
+            "Vamos à mercearia buscar leite e ovos.",
+            "",
+            "We are going to the grocer's to get milk and eggs.",
+          ],
+          [
+            "Vais à peixaria hoje?",
+            "",
+            "Are you going to the fishmonger's today?",
+          ],
+          [
+            "Ele vai ao supermercado à tarde.",
+            "",
+            "He is going to the supermarket in the afternoon.",
+          ],
+        ],
+      };
+
+      const D_COOKING_VERBS = {
+        core: [
+          {
+            verb: "GOSTAR (DE)",
+            pron: "[goosh-TAR]",
+            en: "to like",
+            note: "ALWAYS followed by DE. Gosto de peixe = I like fish. Never omit DE.",
+            conj: [
+              ["eu", "gosto", "[GOHSH-too]"],
+              ["tu", "gostas", "[GOHSH-tɐsh]"],
+              ["ele/ela", "gosta", "[GOHSH-tɐ]"],
+              ["nós", "gostamos", "[goosh-TAH-moosh]"],
+              ["vocês/eles", "gostam", "[GOHSH-towng]"],
+            ],
+            ex: [
+              ["Gosto de peixe grelhado.", "", "I like grilled fish."],
+              ["Gostas de sobremesa?", "", "Do you like dessert?"],
+            ],
+          },
+          {
+            verb: "PREFERIR",
+            pron: "[prɐ-fɐ-REER]",
+            en: "to prefer",
+            note: "Irregular: EU form = PREFIRO. Followed by infinitive or noun + A (rather than). Prefiro fruta a bolo.",
+            conj: [
+              ["eu", "prefiro", "[prɐ-FEE-roo]"],
+              ["tu", "preferes", "[prɐ-FEH-rɐsh]"],
+              ["ele/ela", "prefere", "[prɐ-FEH-r]"],
+              ["nós", "preferimos", "[prɐ-fɐ-REE-moosh]"],
+              ["vocês/eles", "preferem", "[prɐ-FEH-rayng]"],
+            ],
+            ex: [
+              ["Prefiro carne a peixe.", "", "I prefer meat to fish."],
+              ["Preferes chá ou café?", "", "Do you prefer tea or coffee?"],
+            ],
+          },
+          {
+            verb: "COMER",
+            pron: "[koo-MEHR]",
+            en: "to eat",
+            note: "-ER verb. Regular.",
+            conj: [
+              ["eu", "como", "[KOH-moo]"],
+              ["tu", "comes", "[KOH-mɐsh]"],
+              ["ele/ela", "come", "[KOH-m]"],
+              ["nós", "comemos", "[koo-MEH-moosh]"],
+              ["vocês/eles", "comem", "[KOH-mayng]"],
+            ],
+            ex: [
+              [
+                "Como peixe duas vezes por semana.",
+                "",
+                "I eat fish twice a week.",
+              ],
+              ["O que comes ao almoço?", "", "What do you eat for lunch?"],
+            ],
+          },
+          {
+            verb: "BEBER",
+            pron: "[bɐ-BEHR]",
+            en: "to drink",
+            note: "-ER verb. Regular.",
+            conj: [
+              ["eu", "bebo", "[BEH-boo]"],
+              ["tu", "bebes", "[BEH-bɐsh]"],
+              ["ele/ela", "bebe", "[BEH-b]"],
+              ["nós", "bebemos", "[bɐ-BEH-moosh]"],
+              ["vocês/eles", "bebem", "[BEH-bayng]"],
+            ],
+            ex: [
+              ["Bebo água com as refeições.", "", "I drink water with meals."],
+              [
+                "Não bebo bebidas alcoólicas.",
+                "",
+                "I don't drink alcoholic drinks.",
+              ],
+            ],
+          },
+        ],
+        cooking: [
+          {
+            verb: "cozer",
+            pron: "[koo-ZEHR]",
+            en: "to boil / cook (in water)",
+            ex: "cozer arroz, batatas, ovos",
+          },
+          {
+            verb: "assar",
+            pron: "[ɐ-SAR]",
+            en: "to roast / bake (in oven)",
+            ex: "assar frango no forno",
+          },
+          {
+            verb: "grelhar",
+            pron: "[grɐl-YAR]",
+            en: "to grill",
+            ex: "grelhar peixe, bife",
+          },
+          {
+            verb: "fritar",
+            pron: "[free-TAR]",
+            en: "to fry",
+            ex: "fritar batatas, ovos",
+          },
+          {
+            verb: "estufar",
+            pron: "[ish-too-FAR]",
+            en: "to braise / stew (with lid)",
+            ex: "estufar carne com legumes",
+          },
+          {
+            verb: "refogar",
+            pron: "[hɐ-foo-GAR]",
+            en: "to sauté (base fry)",
+            ex: "refogar cebola e alho",
+          },
+          {
+            verb: "amassar",
+            pron: "[ɐ-mɐ-SAR]",
+            en: "to knead / mash",
+            ex: "amassar massa do pão",
+          },
+          {
+            verb: "misturar",
+            pron: "[mish-too-RAR]",
+            en: "to mix / stir",
+            ex: "misturar os ingredientes",
+          },
+          {
+            verb: "cortar",
+            pron: "[koor-TAR]",
+            en: "to cut / chop",
+            ex: "cortar legumes, carne",
+          },
+          {
+            verb: "picar",
+            pron: "[pee-KAR]",
+            en: "to chop finely / mince",
+            ex: "picar alho, salsa",
+          },
+          {
+            verb: "ralar",
+            pron: "[hɐ-LAR]",
+            en: "to grate",
+            ex: "ralar queijo, cenoura",
+          },
+          {
+            verb: "moer",
+            pron: "[moo-EHR]",
+            en: "to grind",
+            ex: "moer café, pimenta",
+          },
+          {
+            verb: "descascar",
+            pron: "[dɐsh-kɐsh-KAR]",
+            en: "to peel",
+            ex: "descascar batatas, laranja",
+          },
+          {
+            verb: "aquecer",
+            pron: "[ɐ-kɐ-SEHR]",
+            en: "to heat / warm up",
+            ex: "aquecer a sopa, o leite",
+          },
+        ],
+      };
+
+      const D_FOOD_ADJECTIVES = {
+        taste: [
+          {
+            pt: "doce/s",
+            pron: "[DOH-sɐsh]",
+            en: "sweet",
+            ex: "o bolo está muito doce",
+          },
+          {
+            pt: "azedo/a",
+            pron: "[ɐ-ZEH-doo]",
+            en: "sour / acidic",
+            ex: "o iogurte está azedo",
+          },
+          {
+            pt: "salgado/a",
+            pron: "[sal-GA-doo]",
+            en: "salty",
+            ex: "a sopa está salgada",
+          },
+          {
+            pt: "amargo/a",
+            pron: "[ɐ-MAR-goo]",
+            en: "bitter",
+            ex: "o café amargo",
+          },
+          {
+            pt: "picante",
+            pron: "[pee-KANT]",
+            en: "spicy / hot",
+            ex: "o molho está picante",
+          },
+          {
+            pt: "suave",
+            pron: "[SWA-v]",
+            en: "mild / gentle",
+            ex: "um sabor suave",
+          },
+        ],
+        texture: [
+          {
+            pt: "crocante",
+            pron: "[kroo-KANT]",
+            en: "crunchy / crispy",
+            ex: "a torrada está crocante",
+          },
+          {
+            pt: "mastigável",
+            pron: "[mɐsh-tee-GA-vel]",
+            en: "chewy",
+            ex: "a carne está mastigável",
+          },
+          {
+            pt: "suculento/a",
+            pron: "[soo-koo-LENT-oo]",
+            en: "juicy",
+            ex: "o bife está suculento",
+          },
+          {
+            pt: "seco/a",
+            pron: "[SEH-koo]",
+            en: "dry",
+            ex: "o frango está seco",
+          },
+          {
+            pt: "mole",
+            pron: "[MOH-l]",
+            en: "soft / mushy",
+            ex: "as batatas estão moles",
+          },
+          {
+            pt: "duro/a",
+            pron: "[DOO-roo]",
+            en: "hard / tough",
+            ex: "a carne está dura",
+          },
+        ],
+        ripeness: [
+          {
+            pt: "maduro/a",
+            pron: "[mɐ-DOO-roo]",
+            en: "ripe",
+            ex: "a banana está madura",
+          },
+          {
+            pt: "passado/a",
+            pron: "[pɐ-SA-doo]",
+            en: "overripe / gone off",
+            ex: "a fruta está passada",
+          },
+          {
+            pt: "fresco/a",
+            pron: "[FRESH-koo]",
+            en: "fresh",
+            ex: "o peixe está fresco",
+          },
+          {
+            pt: "cozido/a",
+            pron: "[koo-ZEE-doo]",
+            en: "cooked / boiled",
+            ex: "os legumes estão cozidos",
+          },
+          {
+            pt: "cru/crua",
+            pron: "[kroo / KROO-ɐ]",
+            en: "raw",
+            ex: "os legumes estão crus",
+          },
+        ],
+        estado: [
+          {
+            pt: "com fome",
+            pron: "[kong FOH-m]",
+            en: "hungry",
+            note: "Estou com fome. = Tenho fome.",
+          },
+          {
+            pt: "com sede",
+            pron: "[kong SEH-d]",
+            en: "thirsty",
+            note: "Estou com sede. = Tenho sede.",
+          },
+          {
+            pt: "cheio/a",
+            pron: "[SHAY-oo / SHAY-ɐ]",
+            en: "full (after eating)",
+            note: "Estou cheio/a. (after a meal)",
+          },
+          {
+            pt: "quente",
+            pron: "[KENT]",
+            en: "hot (temperature)",
+            note: "A sopa está quente. Use ESTAR.",
+          },
+          {
+            pt: "malcheiroso/a",
+            pron: "[mal-shay-ROH-zoo]",
+            en: "smelly / off",
+            note: "O peixe está malcheiroso.",
+          },
+        ],
+      };
+
       const D_DAYS = [
         {
           n: "2ª",
@@ -6728,7 +7157,8 @@
     .join("")}`,
 
         food: () => `
-  ${sectionHead("Food & Meals", "Session 7", "Portuguese meal culture differs from Northern Europe — lunch is the main meal of the day, dinner is late (20h+). The verb COSTUMAR + infinitive is used to describe food habits.")}
+  ${sectionHead("Food & Meals", "Sessions 7 & UFCD 6453", "Meal culture, vocabulary, shopping, cooking verbs, and food adjectives. Includes UFCD 6453 (Hábitos alimentares) content.")}
+
   <h3 class="sub-heading">The Five Meals (As Refeições)</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Meal</th><th>Pronunciation</th><th>English</th><th>Time</th><th>Verb</th></tr></thead>
@@ -6747,6 +7177,206 @@
       )
       .join("")}</tbody>
   </table></div>
+
+  <h3 class="sub-heading">IR A + Shop — going shopping</h3>
+  ${warnBox(D_IR_SHOPS.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">IR — conjugation</div>
+      <table style="border-collapse:collapse;width:100%;font-size:14px">
+        ${D_IR_SHOPS.conj
+          .map(
+            (r, i) => `<tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:6px 10px;color:var(--text-3);font-size:12px">${r[0]}</td>
+          <td style="padding:6px 10px;font-weight:800;font-size:16px;color:var(--primary)">${r[1]}</td>
+          <td style="padding:6px 10px">${pr(r[2])}</td>
+        </tr>`,
+          )
+          .join("")}
+      </table>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">A + artigo definido = contração</div>
+      <table style="border-collapse:collapse;width:100%;font-size:14px">
+        <thead><tr style="background:var(--primary)"><th style="padding:8px 10px;color:#fff;font-size:12px">Artigo</th><th style="padding:8px 10px;color:#fff;font-size:12px">Resultado</th><th style="padding:8px 10px;color:#fff;font-size:12px">Fórmula</th></tr></thead>
+        <tbody>${D_IR_SHOPS.contractions
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="padding:6px 10px;font-size:12px;color:var(--text-3)">${r.art}</td>
+          <td style="padding:6px 10px;font-weight:800;font-size:18px;color:var(--primary)">${r.result}</td>
+          <td style="padding:6px 10px;font-size:12px;color:var(--text-3)">${r.formula}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    ${D_IR_SHOPS.shopExs
+      .map(
+        (
+          e,
+        ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+      <div class="pt">${e[0]}</div>
+      <div class="en">${e[2]}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Lojas de Alimentação — food shops</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Shop</th><th>Pronunciation</th><th>English</th><th>What you buy there</th></tr></thead>
+    <tbody>${D_FOOD_SHOPS.map(
+      (
+        r,
+        i,
+      ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+    ).join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Verbos de Alimentação — food verbs</h3>
+  ${D_COOKING_VERBS.core
+    .map(
+      (v) => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:0;cursor:pointer" onclick="var b=this.parentElement.querySelector('.fv-body');b.style.display=b.style.display==='none'?'block':'none'">
+      <span style="font-size:18px;font-weight:800;color:var(--primary);min-width:140px">${v.verb}</span>
+      ${pr(v.pron)}
+      <span style="color:var(--text-2)">— ${v.en}</span>
+      <span style="margin-left:auto;color:var(--text-3)">⌄</span>
+    </div>
+    <div class="fv-body">
+      <div class="warn-box" style="margin:10px 0 10px;font-size:13px">💡 ${v.note}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <table style="border-collapse:collapse;font-size:14px">
+          ${v.conj
+            .map(
+              (
+                c,
+                i,
+              ) => `<tr style="border-bottom:1px solid var(--border)${i === 0 ? ";background:var(--primary-lt)" : ""}">
+            <td style="padding:6px 10px;color:var(--text-3);font-size:12px">${c[0]}</td>
+            <td style="padding:6px 10px;font-weight:800;font-size:16px;color:var(--primary)">${c[1]}</td>
+            <td style="padding:6px 10px">${pr(c[2])}</td>
+          </tr>`,
+            )
+            .join("")}
+        </table>
+        <div>
+          ${v.ex
+            .map(
+              (
+                e,
+              ) => `<div style="border-left:3px solid var(--primary);padding-left:10px;margin-bottom:10px">
+            <div class="pt">${e[0]}</div>
+            ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ""}
+            <div class="en">${e[2]}</div>
+          </div>`,
+            )
+            .join("")}
+        </div>
+      </div>
+    </div>
+  </div>`,
+    )
+    .join("")}
+
+  <h3 class="sub-heading">Verbos de Cozinha — cooking methods</h3>
+  ${infoBox("All are regular -AR or -ER verbs unless noted. Used in recipes and describing how food is prepared.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>Pronunciation</th><th>English</th><th>Example use</th></tr></thead>
+    <tbody>${D_COOKING_VERBS.cooking
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.verb}</td>
+      <td>${pr(r.pron)}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3);font-style:italic">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Adjetivos de Alimentação — food adjectives</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Sabor (Taste)</div>
+      ${D_FOOD_ADJECTIVES.taste
+        .map(
+          (r) => `<div class="card-sm" style="margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="pt" style="min-width:110px">${r.pt}</span>
+          ${pr(r.pron)}
+          <span style="font-weight:700;margin-left:4px">${r.en}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:3px">${r.ex}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Textura (Texture)</div>
+      ${D_FOOD_ADJECTIVES.texture
+        .map(
+          (r) => `<div class="card-sm" style="margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="pt" style="min-width:110px">${r.pt}</span>
+          ${pr(r.pron)}
+          <span style="font-weight:700;margin-left:4px">${r.en}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:3px">${r.ex}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Maturação (Ripeness / State)</div>
+      ${D_FOOD_ADJECTIVES.ripeness
+        .map(
+          (r) => `<div class="card-sm" style="margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="pt" style="min-width:110px">${r.pt}</span>
+          ${pr(r.pron)}
+          <span style="font-weight:700;margin-left:4px">${r.en}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:3px">${r.ex}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Estado físico (How you feel)</div>
+      ${D_FOOD_ADJECTIVES.estado
+        .map(
+          (
+            r,
+          ) => `<div class="card-sm" style="margin-bottom:6px;border-left:3px solid var(--green)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="pt" style="min-width:110px">${r.pt}</span>
+          ${pr(r.pron)}
+          <span style="font-weight:700;margin-left:4px">${r.en}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:3px">${r.note}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>
+
   <h3 class="sub-heading">Meal Verbs</h3>
   ${vocabGrid(D_FOOD.mealVerbs)}
   <h3 class="sub-heading">DEVER + Infinitivo — should / must (health/advice)</h3>
