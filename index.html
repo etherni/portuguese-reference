@@ -848,6 +848,7 @@
             { id: "possessives", title: "Possessives" },
             { id: "demonstratives", title: "Demonstratives" },
             { id: "questions", title: "Questions" },
+            { id: "comparatives", title: "Comparatives" },
           ],
         },
         {
@@ -872,6 +873,7 @@
             { id: "description", title: "Description" },
             { id: "money", title: "Money & Prices" },
             { id: "transport", title: "Transport" },
+            { id: "typical-dishes", title: "Typical Dishes" },
             { id: "food", title: "Food & Meals" },
             { id: "expressions", title: "Expressions" },
             { id: "survival", title: "Survival Phrases" },
@@ -4524,51 +4526,471 @@
           pt: "o talho",
           pron: "[oo TAL-yoo]",
           en: "butcher's",
-          note: "buy: carne, frango, borrego…",
+          note: "Carne — carne de vaca, frango, borrego, porco",
+        },
+        {
+          pt: "a charcutaria",
+          pron: "[ɐ shar-koo-tɐ-REE-ɐ]",
+          en: "deli / charcuterie",
+          note: "Fiambre, queijo, enchidos, presunto",
         },
         {
           pt: "a padaria",
           pron: "[ɐ pɐ-dɐ-REE-ɐ]",
           en: "bakery",
-          note: "buy: pão, bolo, croissant…",
+          note: "Pão, bolo, croissant",
         },
         {
           pt: "a pastelaria",
           pron: "[ɐ pɐsh-tɐ-lɐ-REE-ɐ]",
           en: "pastry shop / café",
-          note: "buy: pastel de nata, bolo, café…",
+          note: "Pastel de nata, bolo, café",
         },
         {
           pt: "a peixaria",
           pron: "[ɐ pay-shɐ-REE-ɐ]",
           en: "fishmonger's",
-          note: "buy: peixe, marisco, bacalhau…",
+          note: "Peixe e marisco — peixe fresco, bacalhau, marisco",
         },
         {
           pt: "a frutaria",
           pron: "[ɐ froo-tɐ-REE-ɐ]",
           en: "fruit shop / greengrocer",
-          note: "buy: fruta, legumes, verduras…",
+          note: "Frutas e legumes — fruta fresca, verduras",
         },
         {
           pt: "a mercearia",
           pron: "[ɐ mer-syɐ-REE-ɐ]",
           en: "grocer / general food shop",
-          note: "buy: produtos secos, conservas, laticínios…",
+          note: "Arroz, massa, leite, enlatados — produtos secos e conservas",
         },
         {
           pt: "o supermercado",
           pron: "[oo soo-per-mer-KA-doo]",
           en: "supermarket",
-          note: "general shopping",
+          note: "All sections — see secções do supermercado below",
         },
         {
           pt: "o mercado",
           pron: "[oo mer-KA-doo]",
           en: "market",
-          note: "fresh produce, local vendors",
+          note: "Fresh produce, local vendors",
         },
       ];
+
+      const D_SUPERMARKET = {
+        note: "As secções do supermercado — supermarkets in Portugal are divided into these named sections. Useful for asking 'Onde fica a secção de…?'",
+        sections: [
+          {
+            pt: "Mercearia",
+            pron: "[mer-syɐ-REE-ɐ]",
+            en: "Dry goods / groceries",
+            what: "Arroz, massa, azeite, conservas, produtos secos",
+          },
+          {
+            pt: "Bebidas",
+            pron: "[bɐ-BEE-dɐsh]",
+            en: "Drinks",
+            what: "Água, sumos, refrigerantes, vinho, cerveja",
+          },
+          {
+            pt: "Laticínios e ovos",
+            pron: "[lɐ-tee-SEEN-yoosh ee OH-voosh]",
+            en: "Dairy and eggs",
+            what: "Leite, iogurte, manteiga, queijo, ovos",
+          },
+          {
+            pt: "Padaria e pastelaria",
+            pron: "[pɐ-dɐ-REE-ɐ]",
+            en: "Bakery and pastry",
+            what: "Pão, bolos, tostas",
+          },
+          {
+            pt: "Legumes",
+            pron: "[lɐ-GOO-mɐsh]",
+            en: "Vegetables",
+            what: "Batatas, cenouras, alface, tomates, cebolas",
+          },
+          {
+            pt: "Frutas",
+            pron: "[FROO-tɐsh]",
+            en: "Fruit",
+            what: "Maçãs, laranjas, bananas, uvas",
+          },
+          {
+            pt: "Charcutaria",
+            pron: "[shar-koo-tɐ-REE-ɐ]",
+            en: "Deli / charcuterie",
+            what: "Fiambre, queijo, enchidos, presunto",
+          },
+          {
+            pt: "Congelados",
+            pron: "[kong-zhɐ-LA-doosh]",
+            en: "Frozen foods",
+            what: "Peixe congelado, legumes congelados, gelados",
+          },
+          {
+            pt: "Peixaria",
+            pron: "[pay-shɐ-REE-ɐ]",
+            en: "Fish counter",
+            what: "Peixe fresco, marisco, bacalhau",
+          },
+          {
+            pt: "Talho",
+            pron: "[TAL-yoo]",
+            en: "Butcher counter",
+            what: "Carne de vaca, frango, porco, borrego",
+          },
+          {
+            pt: "Garrafeira",
+            pron: "[gɐ-hrɐ-FAY-rɐ]",
+            en: "Wine / spirits",
+            what: "Vinhos, espumantes, licores",
+          },
+          {
+            pt: "Refeições prontas",
+            pron: "[hɐ-fay-SOYSH PRON-tɐsh]",
+            en: "Ready meals",
+            what: "Pratos prontos, sandes, saladas",
+          },
+          {
+            pt: "Alimentação alternativa",
+            pron: "[ɐ-lee-men-tɐ-SOWNG]",
+            en: "Alternative / health food",
+            what: "Produtos vegetarianos, vegan, biológicos",
+          },
+          {
+            pt: "Cuidados e beleza",
+            pron: "[kwee-DA-doosh ee bɐ-LEH-zɐ]",
+            en: "Health and beauty",
+            what: "Shampoo, creme, perfume",
+          },
+          {
+            pt: "Parafarmácia",
+            pron: "[pɐ-rɐ-far-MA-syɐ]",
+            en: "Parapharmacy",
+            what: "Medicamentos sem receita, vitaminas",
+          },
+          {
+            pt: "Cuidados do lar",
+            pron: "[kwee-DA-doosh doo lar]",
+            en: "Household",
+            what: "Detergente, papel higiénico, produtos de limpeza",
+          },
+          {
+            pt: "Animais",
+            pron: "[ɐ-nee-MAISH]",
+            en: "Pets",
+            what: "Ração, acessórios para animais",
+          },
+          {
+            pt: "Bazar",
+            pron: "[bɐ-ZAR]",
+            en: "General merchandise",
+            what: "Utensílios, artigos domésticos",
+          },
+          {
+            pt: "Bebé",
+            pron: "[bɐ-BEH]",
+            en: "Baby",
+            what: "Fraldas, comida para bebé, brinquedos",
+          },
+        ],
+      };
+
+      const D_TYPICAL_DISHES = {
+        bacalhau: {
+          note: "Portugal has over 365 bacalhau recipes — one for every day of the year. Bacalhau is dried and salted cod that must be soaked in water for 24–48 hours before cooking.",
+          dishes: [
+            {
+              pt: "Bacalhau à Gomes de Sá",
+              en: "Baked cod with potatoes, onions, olives and eggs — Porto classic",
+            },
+            {
+              pt: "Bacalhau à Brás",
+              en: "Shredded cod with fried potatoes, scrambled eggs and olives",
+            },
+            {
+              pt: "Bacalhau à Zé do Pipo",
+              en: "Baked cod with creamy mashed potato and mayonnaise topping",
+            },
+            {
+              pt: "Bacalhau assado com batatas a murro",
+              en: "Roasted cod with crushed potatoes roasted with garlic and olive oil",
+            },
+            {
+              pt: "Bacalhau com natas",
+              en: "Cod baked in cream sauce with potatoes — rich and popular",
+            },
+            {
+              pt: "Pastel de bacalhau / Bolinho de bacalhau",
+              en: "Cod fritter — fried oval-shaped cake of cod and potato",
+            },
+            {
+              pt: "Bacalhau à lagareiro",
+              en: "Cod roasted in abundant olive oil with smashed potatoes",
+            },
+            {
+              pt: "Bacalhau espiritual",
+              en: "Baked cod with carrots and cream sauce",
+            },
+            {
+              pt: "Bacalhau à portuguesa",
+              en: "Cod stewed with tomato, onion and potato",
+            },
+            {
+              pt: "Pataniscas de bacalhau",
+              en: "Bacalhau fritters — flat fried cod and egg patties",
+            },
+            {
+              pt: "Bacalhau à Narcisa",
+              en: "Cod baked with potatoes and vegetables",
+            },
+            {
+              pt: "Bacalhau à minhota",
+              en: "Cod from the Minho region, cooked with cabbage",
+            },
+            {
+              pt: "Bacalhau suado à Lisboa",
+              en: "Slowly steamed cod, Lisbon style",
+            },
+            {
+              pt: "Bacalhau com todos",
+              en: "Boiled cod served with boiled vegetables and eggs — traditional",
+            },
+            { pt: "Bacalhau albardado", en: "Battered and fried cod fillet" },
+            { pt: "Fritada de bacalhau", en: "Fried cod mix" },
+            { pt: "Bacalhau frito", en: "Simply fried cod fillet" },
+            {
+              pt: "Sopa de bacalhau dos campinos",
+              en: "Cod soup from the Ribatejo region",
+            },
+            { pt: "Chetnim de bacalhau", en: "Layered cod dish" },
+            {
+              pt: "Bacalhau à baiana",
+              en: "Cod with coconut milk — Brazilian-influenced",
+            },
+          ],
+        },
+        carnes: [
+          {
+            pt: "Cozido à portuguesa",
+            en: "Boiled meat and vegetable stew — Portugal's national dish; includes different meats, chouriço, vegetables and chickpeas",
+          },
+          {
+            pt: "Cozido das Furnas",
+            en: "Cozido cooked underground using geothermal heat in the Azores",
+          },
+          {
+            pt: "Espetadas da Madeira",
+            en: "Beef kebabs on laurel wood skewers — Madeiran speciality",
+          },
+          {
+            pt: "Cozido de grão à alentejana",
+            en: "Chickpea stew from Alentejo",
+          },
+          {
+            pt: "Migas de Évora",
+            en: "Bread-based side dish from Évora, Alentejo",
+          },
+          { pt: "Ensopado de Arraiolos", en: "Lamb stew from Arraiolos" },
+          {
+            pt: "Chanfana",
+            en: "Goat or lamb slowly braised in red wine — Coimbra region",
+          },
+          {
+            pt: "Leitão assado",
+            en: "Roast suckling pig — famous from Mealhada, Bairrada",
+          },
+          {
+            pt: "Francesinha",
+            en: "Porto sandwich — meat layers in bread, covered in hot spicy tomato-beer sauce and melted cheese",
+          },
+          {
+            pt: "Feijoada",
+            en: "Bean and meat stew — includes chouriço, pig ear, trotter",
+          },
+          {
+            pt: "Alheiras",
+            en: "Smoked sausage made with bread and poultry — originally created by Jews to appear to eat pork",
+          },
+          { pt: "Rancho", en: "Thick chickpea, pasta and meat stew" },
+          { pt: "Bucho", en: "Stuffed pig stomach — Trás-os-Montes" },
+        ],
+        sopas: [
+          {
+            pt: "Caldo-verde",
+            en: "Kale soup with chouriço — Portugal's most famous soup, from Minho",
+          },
+          {
+            pt: "Canja de galinha",
+            en: "Chicken broth with rice — comforting, given to the sick",
+          },
+          {
+            pt: "Sopa da Pedra",
+            en: "Stone soup — bean and meat soup from Almeirim; named after the folk tale",
+          },
+          { pt: "Sopa de legumes", en: "Vegetable soup — everyday staple" },
+          {
+            pt: "Gaspacho",
+            en: "Cold tomato and vegetable soup — Alentejo version (chunky, not blended like Spanish gazpacho)",
+          },
+        ],
+        sobremesas: [
+          {
+            pt: "Pastéis de Belém",
+            en: "Custard tarts from Belém, Lisbon — the original, made since 1837 at Pastéis de Belém bakery",
+          },
+          {
+            pt: "Arroz-doce",
+            en: "Rice pudding with cinnamon — served cold, often with a cinnamon pattern on top",
+          },
+          {
+            pt: "Pudim Abade de Priscos",
+            en: "Rich caramel custard from Braga — made with egg yolks, bacon fat and port wine",
+          },
+          { pt: "Sericaia", en: "Egg and cinnamon pudding from Alentejo" },
+          {
+            pt: "Pão-de-ló de Ovar",
+            en: "Very moist sponge cake from Ovar — underbaked by design",
+          },
+          {
+            pt: "Bolo-rei",
+            en: "King cake — eaten at Christmas and Epiphany; ring-shaped with crystallised fruit",
+          },
+          { pt: "Salada de fruta", en: "Fruit salad" },
+        ],
+      };
+
+      const D_COMPARATIVES = {
+        note: "Grau comparativo do adjetivo — comparing two things. Portuguese uses three structures: superior (more than), equal (as … as), inferior (less than). Adjective agrees in gender and number with the noun it describes.",
+        structures: [
+          {
+            type: "Comparativo de superioridade",
+            formula: "mais + adjetivo + do que",
+            en: "more … than",
+            color: "var(--primary)",
+            ex: [
+              {
+                pt: "A maçã é mais doce do que as limas.",
+                en: "The apple is sweeter than the limes.",
+              },
+              {
+                pt: "O bife está mais salgado do que a sopa.",
+                en: "The steak is saltier than the soup.",
+              },
+              {
+                pt: "O frango é mais barato do que o borrego.",
+                en: "Chicken is cheaper than lamb.",
+              },
+            ],
+          },
+          {
+            type: "Comparativo de igualdade",
+            formula: "tão + adjetivo + como",
+            en: "as … as",
+            color: "var(--green)",
+            ex: [
+              {
+                pt: "A laranja é tão doce como as tangerinas.",
+                en: "The orange is as sweet as the tangerines.",
+              },
+              {
+                pt: "A tangerina é tão saborosa como a laranja.",
+                en: "The tangerine is as tasty as the orange.",
+              },
+              {
+                pt: "Este peixe é tão fresco como aquele.",
+                en: "This fish is as fresh as that one.",
+              },
+            ],
+          },
+          {
+            type: "Comparativo de inferioridade",
+            formula: "menos + adjetivo + do que",
+            en: "less … than",
+            color: "var(--accent)",
+            ex: [
+              {
+                pt: "As ervilhas são menos tenras do que os bróculos.",
+                en: "Peas are less tender than broccoli.",
+              },
+              {
+                pt: "Os bróculos são menos caros do que as ervilhas.",
+                en: "Broccoli is less expensive than peas.",
+              },
+              {
+                pt: "Este iogurte é menos doce do que o outro.",
+                en: "This yoghurt is less sweet than the other one.",
+              },
+            ],
+          },
+        ],
+        irregular: [
+          {
+            adj: "bom / boa",
+            comp: "melhor",
+            en_adj: "good",
+            en_comp: "better",
+            warn: "NOT mais bom / mais boa",
+          },
+          {
+            adj: "mau / má",
+            comp: "pior",
+            en_adj: "bad",
+            en_comp: "worse",
+            warn: "NOT mais mau / mais má",
+          },
+          {
+            adj: "grande",
+            comp: "maior",
+            en_adj: "big",
+            en_comp: "bigger / greater",
+            warn: "NOT mais grande (for abstract size)",
+          },
+          {
+            adj: "pequeno/a",
+            comp: "menor",
+            en_adj: "small",
+            en_comp: "smaller / lesser",
+            warn: "NOT mais pequeno (for abstract)",
+          },
+        ],
+        irregularEx: [
+          {
+            wrong: "A maçã é mais boa do que as limas.",
+            right: "A maçã é melhor do que as limas.",
+            en: "The apple is better than the limes.",
+          },
+          {
+            wrong: "A maçã é mais grande do que as limas.",
+            right: "A maçã é maior do que as limas.",
+            en: "The apple is bigger than the limes.",
+          },
+          {
+            wrong: "A carne gorda é mais má do que a carne magra.",
+            right: "A carne gorda é pior do que a carne magra para a saúde.",
+            en: "Fatty meat is worse than lean meat for health.",
+          },
+        ],
+        superlative: {
+          note: "Superlativo relativo — the most / the least. Structure: o/a/os/as + mais/menos + adjetivo + de.",
+          ex: [
+            {
+              pt: "O bacalhau é o prato mais popular de Portugal.",
+              en: "Bacalhau is the most popular dish in Portugal.",
+            },
+            {
+              pt: "O Alentejo produz o azeite de melhor qualidade.",
+              en: "Alentejo produces the best quality olive oil.",
+            },
+            {
+              pt: "O caldo-verde é a sopa mais conhecida.",
+              en: "Caldo-verde is the best-known soup.",
+            },
+          ],
+        },
+      };
 
       const D_IR_SHOPS = {
         note: "Verbo IR no Presente + preposição A — to go to a place for a short visit. A + definite article = mandatory contraction. Shops are masculine (o talho → ao talho) or feminine (a padaria → à padaria).",
@@ -7792,6 +8214,163 @@
     <div style="font-size:13px;color:var(--text-2);margin-bottom:12px">Model: <em>"Chamo-me António. Sou português, de Coimbra. Moro em Lisboa. Tenho 65 anos. A minha língua materna é o português. Sou casado. Sou advogado."</em></div>
     <textarea class="practice-textarea" placeholder="Write your full introduction paragraph here…" style="min-height:120px"></textarea>
   </div>`,
+
+        comparatives: () => `
+  ${sectionHead("Comparatives", "UFCD 6453 Session 2", "Grau comparativo do adjetivo — comparing two things. Three structures: superior (more than), equal (as…as), inferior (less than). Adjective agrees in gender and number with the noun.")}
+  ${D_COMPARATIVES.structures
+    .map(
+      (s) => `
+  <div class="card" style="margin-bottom:16px;border-left:4px solid ${s.color}">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-size:16px;font-weight:800;color:${s.color}">${s.type}</span>
+    </div>
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:10px;display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <span style="font-family:var(--mono);font-size:14px;font-weight:800;color:${s.color}">${s.formula}</span>
+      <span style="font-size:13px;color:var(--text-3)">${s.en}</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${s.ex
+        .map(
+          (
+            e,
+          ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+        <div class="pt">${e.pt}</div>
+        <div class="en">${e.en}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>`,
+    )
+    .join("")}
+
+  <h3 class="sub-heading">⚠ Formas irregulares — irregular comparatives</h3>
+  ${warnBox("These adjectives have IRREGULAR comparatives — do NOT use mais/menos with them.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Adjective</th><th>English</th><th>Comparative</th><th>English</th><th>Common mistake</th></tr></thead>
+    <tbody>${D_COMPARATIVES.irregular
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.adj}</td>
+      <td class="en">${r.en_adj}</td>
+      <td style="font-weight:800;font-size:16px;color:var(--green)">${r.comp}</td>
+      <td class="en">${r.en_comp}</td>
+      <td style="font-size:12px;color:var(--accent);text-decoration:line-through">${r.warn}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Formas irregulares — exemplos corrigidos</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>❌ Errado</th><th>✅ Correto</th><th>English</th></tr></thead>
+    <tbody>${D_COMPARATIVES.irregularEx
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="color:var(--accent);text-decoration:line-through;font-size:13px">${r.wrong}</td>
+      <td class="pt" style="color:var(--green);font-weight:800">${r.right}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Superlativo relativo — the most / the least</h3>
+  ${infoBox(D_COMPARATIVES.superlative.note)}
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    ${D_COMPARATIVES.superlative.ex
+      .map(
+        (
+          e,
+        ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
+      <div class="pt">${e.pt}</div>
+      <div class="en">${e.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+
+        "typical-dishes": () => `
+  ${sectionHead("Pratos Típicos", "UFCD 6453 Session 2", "Portuguese regional cuisine. Bacalhau is the national icon with over 365 recipes. Dishes are grouped by category.")}
+  ${infoBox("<strong>Bacalhau</strong> = dried and salted cod. Must be soaked 24–48 hours before cooking. Portugal is the world's largest consumer of bacalhau per capita despite not producing it domestically — most comes from Norway and Iceland.")}
+
+  <h3 class="sub-heading">Pratos de Bacalhau — bacalhau dishes</h3>
+  <div style="font-size:13px;color:var(--text-3);margin-bottom:10px">${D_TYPICAL_DISHES.bacalhau.note}</div>
+  <div class="card-grid">
+    ${D_TYPICAL_DISHES.bacalhau.dishes
+      .map(
+        (d) => `
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800">${d.pt}</div>
+      <div class="en" style="margin-top:4px">${d.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Pratos de Carne — meat dishes</h3>
+  <div class="card-grid">
+    ${D_TYPICAL_DISHES.carnes
+      .map(
+        (d) => `
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800">${d.pt}</div>
+      <div class="en" style="margin-top:4px">${d.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Sopas — soups</h3>
+  <div class="card-grid">
+    ${D_TYPICAL_DISHES.sopas
+      .map(
+        (d) => `
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800">${d.pt}</div>
+      <div class="en" style="margin-top:4px">${d.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Sobremesas — desserts</h3>
+  <div class="card-grid">
+    ${D_TYPICAL_DISHES.sobremesas
+      .map(
+        (d) => `
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800">${d.pt}</div>
+      <div class="en" style="margin-top:4px">${d.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Secções do Supermercado</h3>
+  ${infoBox(D_SUPERMARKET.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Secção</th><th>Pronunciation</th><th>English</th><th>What's there</th></tr></thead>
+    <tbody>${D_SUPERMARKET.sections
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.what}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
       };
 
       // ─────────────────────────────────────────────
