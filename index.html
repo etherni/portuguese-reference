@@ -874,9 +874,12 @@
             { id: "money", title: "Money & Prices" },
             { id: "transport", title: "Transport" },
             { id: "typical-dishes", title: "Typical Dishes" },
+            { id: "kitchen-utensils", title: "Kitchen & Table" },
             { id: "food", title: "Food & Meals" },
             { id: "expressions", title: "Expressions" },
             { id: "survival", title: "Survival Phrases" },
+            { id: "idioms", title: "Idioms" },
+            { id: "social-etiquette", title: "Social Etiquette" },
           ],
         },
         { group: "✏️ Practice", tabs: [{ id: "practice", title: "Practice" }] },
@@ -2598,6 +2601,7 @@
         determiners: [
           {
             dist: "Near speaker",
+            adv: "aqui",
             m: "este [ESH-t]",
             f: "esta [ESH-tɐ]",
             mp: "estes [ESH-tɐsh]",
@@ -2606,6 +2610,7 @@
           },
           {
             dist: "Near listener",
+            adv: "aí",
             m: "esse [EH-sɐ]",
             f: "essa [EH-sɐ]",
             mp: "esses [EH-sɐsh]",
@@ -2614,11 +2619,44 @@
           },
           {
             dist: "Far from both",
+            adv: "ali",
             m: "aquele [ɐ-KEH-l]",
             f: "aquela [ɐ-KEH-lɐ]",
             mp: "aqueles [ɐ-KEH-lɐsh]",
             fp: "aquelas [ɐ-KEH-lɐsh]",
             en: "that / those (over there)",
+          },
+          {
+            dist: "The other(s)",
+            adv: "—",
+            m: "o outro [oo OH-troo]",
+            f: "a outra [ɐ OH-trɐ]",
+            mp: "os outros",
+            fp: "as outras",
+            en: "the other(s)",
+          },
+        ],
+        adverbs: [
+          {
+            dem: "este / esta",
+            adv: "aqui",
+            en_dem: "this (near me)",
+            en_adv: "here",
+            ex: "Este casaco que eu tenho vestido é quente. — Aqui perto.",
+          },
+          {
+            dem: "esse / essa",
+            adv: "aí",
+            en_dem: "that (near you)",
+            en_adv: "there (near you)",
+            ex: "Esse casaco que tu tens vestido é quente. — Aí perto.",
+          },
+          {
+            dem: "aquele / aquela",
+            adv: "ali",
+            en_dem: "that (far)",
+            en_adv: "over there",
+            ex: "Aquele casaco que ele tem vestido é quente. — Ali longe.",
           },
         ],
         neutros: [
@@ -2641,6 +2679,22 @@
             ex: "O que é aquilo? — What is that (over there)?",
           },
         ],
+        pronounUse: {
+          note: "Demonstratives can replace a noun to avoid repetition. The demonstrative takes the gender and number of the noun it replaces.",
+          ex: [
+            {
+              with: "Esta flor é da minha mãe e aquela flor é da minha tia Clara.",
+              without:
+                "Esta flor é da minha mãe e aquela é da minha tia Clara.",
+              note: "aquela replaces 'flor' (feminine singular)",
+            },
+            {
+              with: "Quais são as embalagens de plástico?",
+              without: "É aquela.",
+              note: "aquela stands alone as pronoun",
+            },
+          ],
+        },
         este_vs_isto: [
           {
             word: "este/esta/estes/estas",
@@ -2676,13 +2730,64 @@
           },
         ],
         contraction: [
-          ["em + este = neste", "[NESH-t]", "in/at this"],
-          ["em + esse = nesse", "[NEH-sɐ]", "in/at that"],
-          ["em + aquele = naquele", "[nɐ-KEH-l]", "in/at that (far)"],
-          ["em + isto = nisto", "[NEESH-too]", "in this"],
-          ["de + este = deste", "[DESH-t]", "of/from this"],
-          ["de + esse = desse", "[DEH-sɐ]", "of/from that"],
-          ["de + aquele = daquele", "[dɐ-KEH-l]", "of/from that (far)"],
+          ["em + este = neste", "[NESH-t]", "in/at this", "Neste restaurante"],
+          [
+            "em + esta = nesta",
+            "[NESH-tɐ]",
+            "in/at this (f)",
+            "Nesta loja aqui",
+          ],
+          ["em + esse = nesse", "[NEH-sɐ]", "in/at that", "Nesse provador aí"],
+          [
+            "em + aquele = naquele",
+            "[nɐ-KEH-l]",
+            "in/at that (far)",
+            "Naquele café ali",
+          ],
+          ["de + este = deste", "[DESH-t]", "of/from this", "Deste vinho"],
+          ["de + esse = desse", "[DEH-sɐ]", "of/from that", "Desse produto"],
+          [
+            "de + aquele = daquele",
+            "[dɐ-KEH-l]",
+            "of/from that (far)",
+            "Daquele senhor",
+          ],
+          [
+            "de + aquela = daquela",
+            "[dɐ-KEH-lɐ]",
+            "of/from that (far f)",
+            "Daquela pastelaria",
+          ],
+          [
+            "de + aquelas = daquelas",
+            "[dɐ-KEH-lɐsh]",
+            "of/from those (far f)",
+            "Daquelas calças ali",
+          ],
+          [
+            "de + aquilo = daquilo",
+            "[dɐ-KEE-loo]",
+            "of/from that (neut)",
+            "Lembras-te daquilo?",
+          ],
+          [
+            "a + aquele = àquele",
+            "[ɐ-KEH-l]",
+            "to that (far)",
+            "Fui àquele café",
+          ],
+          [
+            "a + aquela = àquela",
+            "[ɐ-KEH-lɐ]",
+            "to that (far f)",
+            "Fui àquela pastelaria",
+          ],
+          [
+            "em + isto = nisto",
+            "[NEESH-too]",
+            "in this (neut)",
+            "Nisto não concordo",
+          ],
         ],
       };
 
@@ -5370,6 +5475,505 @@
         ],
       };
 
+      const D_UTENSILS = {
+        cookware: [
+          {
+            e: "🍳",
+            pt: "a frigideira",
+            pron: "[ɐ free-zhee-DAY-rɐ]",
+            en: "frying pan",
+          },
+          {
+            e: "🥘",
+            pt: "a panela",
+            pron: "[ɐ pɐ-NEH-lɐ]",
+            en: "pot / saucepan (large)",
+          },
+          {
+            e: "🥘",
+            pt: "o tacho",
+            pron: "[oo TA-shoo]",
+            en: "saucepan / stew pot",
+          },
+          {
+            e: "🥘",
+            pt: "a caçarola",
+            pron: "[ɐ kɐ-sɐ-ROH-lɐ]",
+            en: "casserole dish",
+          },
+          { e: "🫖", pt: "a chaleira", pron: "[ɐ shɐ-LAY-rɐ]", en: "kettle" },
+          {
+            e: "🫖",
+            pt: "o fervedor",
+            pron: "[oo fer-vɐ-DOR]",
+            en: "small milk/water heater",
+          },
+        ],
+        tools: [
+          { e: "🔪", pt: "a faca", pron: "[ɐ FA-kɐ]", en: "knife" },
+          { e: "🍴", pt: "o garfo", pron: "[oo GAR-foo]", en: "fork" },
+          { e: "🥄", pt: "a colher", pron: "[ɐ kool-YEHR]", en: "spoon" },
+          {
+            e: "🥄",
+            pt: "a colher de pau",
+            pron: "[ɐ kool-YEHR dɐ pow]",
+            en: "wooden spoon",
+          },
+          { e: "🥄", pt: "a concha", pron: "[ɐ KON-shɐ]", en: "ladle" },
+          {
+            e: "🥄",
+            pt: "a escumadeira",
+            pron: "[ɐ ish-koo-mɐ-DAY-rɐ]",
+            en: "skimmer / slotted spoon",
+          },
+          {
+            e: "🥄",
+            pt: "a espátula",
+            pron: "[ɐ ish-PA-too-lɐ]",
+            en: "spatula",
+          },
+          { e: "🔪", pt: "o cutelo", pron: "[oo koo-TEH-loo]", en: "cleaver" },
+          { e: "🧀", pt: "o ralador", pron: "[oo hɐ-lɐ-DOR]", en: "grater" },
+          {
+            e: "🍞",
+            pt: "o rolo da massa",
+            pron: "[oo HOH-loo dɐ MA-sɐ]",
+            en: "rolling pin",
+          },
+          {
+            e: "📏",
+            pt: "o copo/jarro medidor",
+            pron: "[oo KO-poo mɐ-dee-DOR]",
+            en: "measuring cup/jug",
+          },
+          {
+            e: "🪚",
+            pt: "a tábua de cozinha",
+            pron: "[ɐ TA-bwɐ dɐ koo-ZEEN-yɐ]",
+            en: "chopping board",
+          },
+          {
+            e: "🍳",
+            pt: "a varinha de claras",
+            pron: "[ɐ vɐ-REEN-yɐ dɐ KLA-rɐsh]",
+            en: "whisk",
+          },
+          {
+            e: "🧤",
+            pt: "a pega / luva de cozinha",
+            pron: "[ɐ PEH-gɐ / LOO-vɐ dɐ koo-ZEEN-yɐ]",
+            en: "oven glove / mitt",
+          },
+          { e: "👨‍🍳", pt: "o avental", pron: "[oo ɐ-ven-TAL]", en: "apron" },
+          {
+            e: "🍴",
+            pt: "o faqueiro",
+            pron: "[oo fɐ-KAY-roo]",
+            en: "cutlery set",
+          },
+          {
+            e: "🍷",
+            pt: "o saca-rolhas",
+            pron: "[oo SA-kɐ-ROL-yɐsh]",
+            en: "corkscrew",
+          },
+        ],
+        crockery: [
+          {
+            e: "🍽️",
+            pt: "o prato raso",
+            pron: "[oo PRA-too RA-zoo]",
+            en: "flat plate / dinner plate",
+          },
+          {
+            e: "🍲",
+            pt: "o prato fundo / de sopa",
+            pron: "[oo PRA-too FOON-doo]",
+            en: "soup plate / bowl",
+          },
+          {
+            e: "🍽️",
+            pt: "o prato de sobremesa",
+            pron: "[oo PRA-too dɐ soh-brɐ-MEH-zɐ]",
+            en: "dessert / side plate",
+          },
+          {
+            e: "☕",
+            pt: "a chávena",
+            pron: "[ɐ SHA-vɐ-nɐ]",
+            en: "cup (for coffee/tea)",
+          },
+          { e: "🫖", pt: "o pires", pron: "[oo PEE-rɐsh]", en: "saucer" },
+          { e: "🍵", pt: "a caneca", pron: "[ɐ kɐ-NEH-kɐ]", en: "mug" },
+          { e: "🥣", pt: "a tigela", pron: "[ɐ tee-ZHEH-lɐ]", en: "bowl" },
+          { e: "🫖", pt: "o bule", pron: "[oo BOO-l]", en: "teapot" },
+          {
+            e: "🥛",
+            pt: "o jarro",
+            pron: "[oo ZHA-hroo]",
+            en: "jug / pitcher",
+          },
+          { e: "🥤", pt: "o copo", pron: "[oo KO-poo]", en: "glass / cup" },
+          {
+            e: "🥂",
+            pt: "o copo de água",
+            pron: "[oo KO-poo dɐ A-gwɐ]",
+            en: "water glass",
+          },
+          {
+            e: "🍷",
+            pt: "o copo de vinho",
+            pron: "[oo KO-poo dɐ VEEN-yoo]",
+            en: "wine glass",
+          },
+          {
+            e: "🥂",
+            pt: "o copo de champanhe",
+            pron: "[oo KO-poo dɐ sham-PAN-yɐ]",
+            en: "champagne flute",
+          },
+          {
+            e: "🍽️",
+            pt: "a travessa / prato de servir",
+            pron: "[ɐ trɐ-VEH-sɐ]",
+            en: "serving platter / dish",
+          },
+          {
+            e: "🥗",
+            pt: "a saladeira",
+            pron: "[ɐ sɐ-lɐ-DAY-rɐ]",
+            en: "salad bowl",
+          },
+          {
+            e: "🍽️",
+            pt: "o tabuleiro",
+            pron: "[oo tɐ-boo-LAY-roo]",
+            en: "tray / baking tray",
+          },
+        ],
+        table: [
+          {
+            e: "🍴",
+            pt: "a colher de sopa",
+            pron: "[ɐ kool-YEHR dɐ SOH-pɐ]",
+            en: "soup spoon",
+          },
+          {
+            e: "🍴",
+            pt: "a colher de sobremesa",
+            pron: "[ɐ kool-YEHR dɐ soh-brɐ-MEH-zɐ]",
+            en: "dessert spoon",
+          },
+          {
+            e: "☕",
+            pt: "a colher de café",
+            pron: "[ɐ kool-YEHR dɐ kɐ-FEH]",
+            en: "coffee spoon / teaspoon",
+          },
+          {
+            e: "🔪",
+            pt: "a faca de carne",
+            pron: "[ɐ FA-kɐ dɐ KAR-n]",
+            en: "meat knife",
+          },
+          {
+            e: "🔪",
+            pt: "a faca de peixe",
+            pron: "[ɐ FA-kɐ dɐ PAY-sh]",
+            en: "fish knife",
+          },
+          {
+            e: "🍴",
+            pt: "o garfo de carne",
+            pron: "[oo GAR-foo dɐ KAR-n]",
+            en: "meat fork",
+          },
+          {
+            e: "🍴",
+            pt: "o garfo de peixe",
+            pron: "[oo GAR-foo dɐ PAY-sh]",
+            en: "fish fork",
+          },
+          {
+            e: "🧂",
+            pt: "o saleiro",
+            pron: "[oo sɐ-LAY-roo]",
+            en: "salt shaker",
+          },
+          {
+            e: "🌶️",
+            pt: "o pimenteiro",
+            pron: "[oo pee-men-TAY-roo]",
+            en: "pepper shaker",
+          },
+          {
+            e: "🧻",
+            pt: "o guardanapo",
+            pron: "[oo gwar-dɐ-NA-poo]",
+            en: "napkin",
+          },
+          {
+            e: "🪡",
+            pt: "a toalha de mesa",
+            pron: "[ɐ too-AL-yɐ dɐ MEH-zɐ]",
+            en: "tablecloth",
+          },
+        ],
+        appliances: [
+          {
+            e: "📡",
+            pt: "o micro-ondas",
+            pron: "[oo MEE-kroo ON-dɐsh]",
+            en: "microwave",
+          },
+          {
+            e: "❄️",
+            pt: "o frigorífico",
+            pron: "[oo free-goo-REE-fee-koo]",
+            en: "fridge / refrigerator",
+          },
+          {
+            e: "🍞",
+            pt: "a torradeira",
+            pron: "[ɐ too-hrɐ-DAY-rɐ]",
+            en: "toaster",
+          },
+          {
+            e: "☕",
+            pt: "a máquina de café",
+            pron: "[ɐ MA-keen-ɐ dɐ kɐ-FEH]",
+            en: "coffee machine",
+          },
+          {
+            e: "🫧",
+            pt: "a máquina de lavar louça",
+            pron: "[ɐ MA-keen-ɐ dɐ lɐ-VAR LOH-sɐ]",
+            en: "dishwasher",
+          },
+          {
+            e: "🌀",
+            pt: "a máquina de lavar roupa",
+            pron: "[ɐ MA-keen-ɐ dɐ lɐ-VAR HROH-pɐ]",
+            en: "washing machine",
+          },
+        ],
+      };
+
+      const D_IDIOMS = [
+        {
+          pt: "Estar feito ao bife",
+          pron: "[ish-TAR fay-TOO ow BEEF]",
+          en: "To be in big trouble / done for",
+          lit: "To be done like a steak",
+          ex: "Esqueci o trabalho de casa. Estou feito ao bife! — I forgot my homework. I'm done for!",
+        },
+        {
+          pt: "Não vai ser pera doce",
+          pron: "[nowng vai sehr PEH-rɐ DOH-sɐ]",
+          en: "It won't be easy / it won't be a walk in the park",
+          lit: "It won't be a sweet pear",
+          ex: "Aprender português não vai ser pera doce. — Learning Portuguese won't be easy.",
+        },
+        {
+          pt: "Canja de galinha",
+          pron: "[KAN-zhɐ dɐ gɐ-LEEN-yɐ]",
+          en: "A piece of cake / very easy",
+          lit: "Chicken broth",
+          ex: "Este exercício é canja! — This exercise is a piece of cake!",
+        },
+        {
+          pt: "Dar água pela barba",
+          pron: "[dar A-gwɐ PEH-lɐ BAR-bɐ]",
+          en: "To be a tough challenge",
+          lit: "To give water by the beard",
+          ex: "Este exame vai dar água pela barba. — This exam will be a real challenge.",
+        },
+        {
+          pt: "Engolir o sapo",
+          pron: "[en-goo-LEER oo SA-poo]",
+          en: "To swallow one's pride / put up with something",
+          lit: "To swallow the toad",
+          ex: "Tive de engolir o sapo e pedir desculpa. — I had to swallow my pride and apologize.",
+        },
+        {
+          pt: "Não há bela sem senão",
+          pron: "[nowng a BEH-lɐ sayng sɐ-NOWNG]",
+          en: "Every rose has its thorn / nothing is perfect",
+          lit: "There is no beauty without a but",
+          ex: "Adoro Lisboa mas o trânsito é horrível. Não há bela sem senão. — I love Lisbon but the traffic is terrible. Nothing is perfect.",
+        },
+        {
+          pt: "Deitar fora o bebé com a água do banho",
+          pron: "[day-TAR FOH-rɐ]",
+          en: "To throw out the baby with the bathwater",
+          lit: "To throw out the baby with the bath water",
+          ex: "Não deites fora o bebé com a água do banho — guarda o que é útil. — Don't throw the baby out with the bathwater — keep what is useful.",
+        },
+        {
+          pt: "Custar os olhos da cara",
+          pron: "[koosh-TAR oosh OH-lyoosh dɐ KA-rɐ]",
+          en: "To cost an arm and a leg",
+          lit: "To cost the eyes from your face",
+          ex: "Aquele restaurante custa os olhos da cara! — That restaurant costs an arm and a leg!",
+        },
+        {
+          pt: "Meter os pés pelas mãos",
+          pron: "[mɐ-TEHR oosh pesh PEH-lɐsh mowngsh]",
+          en: "To make a mess of things / put your foot in it",
+          lit: "To put feet through hands",
+          ex: "Fui ajudar e meti os pés pelas mãos. — I tried to help and made a mess of it.",
+        },
+        {
+          pt: "À mesa de bons amigos, sabe tudo bem",
+          pron: "",
+          en: "Good food tastes even better in good company",
+          lit: "At the table of good friends, everything tastes good",
+          ex: "Proverb — often said before a meal.",
+        },
+      ];
+
+      const D_SOCIAL_ETIQUETTE = {
+        restaurantNote:
+          "In Portuguese restaurants, use the IMPERFEITO (past) of QUERER — QUERIA — instead of the present QUERO for polite requests. QUERIA softens the request from 'I want' to 'I would like'. The same applies to DESEJAR → DESEJAVA. This is one of the most important markers of politeness in Portuguese service interactions.",
+        queria: [
+          {
+            context: "Ordering food",
+            rude: "Quero um café.",
+            polite: "Queria um café.",
+            en: "I would like a coffee.",
+          },
+          {
+            context: "Ordering drink",
+            rude: "Quero água.",
+            polite: "Queria água, se faz favor.",
+            en: "I would like water, please.",
+          },
+          {
+            context: "At a hotel",
+            rude: "Quero um quarto.",
+            polite: "Queria um quarto individual com vista para o mar.",
+            en: "I would like a single room with a sea view.",
+          },
+          {
+            context: "In a shop",
+            rude: "Quero ver aquele vestido.",
+            polite: "Queria ver aquele vestido, se faz favor.",
+            en: "I would like to see that dress, please.",
+          },
+        ],
+        dialogues: [
+          {
+            emp: "A senhora DESEJA mais alguma coisa?",
+            cli: "Queria também uma garrafa de vinho verde, bem fresco, se faz favor.",
+            note: "DESEJA = formal present; QUERIA = polite request",
+          },
+          {
+            emp: "A Sra. quer mais alguma coisa?",
+            cli: "QUERIA também uma sopa de legumes. Não, um creme de marisco, por favor.",
+            note: "QUERIA replaces 'quero'",
+          },
+          {
+            emp: "QUERIA tomar alguma coisa?",
+            cli: "DESEJO um café, se faz favor.",
+            note: "Waiter also uses QUERIA; DESEJO = formal present",
+          },
+          {
+            emp: "POSSO AJUDAR A SENHORA?",
+            cli: "QUERIA um quarto individual com vista para o mar.",
+            note: "POSSO = can I; QUERIA = I would like",
+          },
+          {
+            emp: "POSSO / PODEREI ajudar?",
+            cli: "IMPORTA-SE de nos mostrar aquela revista de desporto, por favor?",
+            note: "IMPORTA-SE = would you mind (very polite, reflexive)",
+          },
+          {
+            emp: "OS SENHORES QUERIAM mais alguma coisa?",
+            cli: "IMPORTA-SE de nos dizer o preço do quilo dos morangos?",
+            note: "QUERIAM = plural polite; IMPORTA-SE = would you mind",
+          },
+        ],
+        phrases: [
+          {
+            pt: "O que é a sopa, hoje?",
+            pron: "[oo kɐ eh ɐ SOH-pɐ OH-zhɐ]",
+            en: "What's the soup today?",
+          },
+          {
+            pt: "O almoço estava delicioso!",
+            pron: "[oo al-MOH-soo ish-TA-vɐ dɐ-lee-syOH-zoo]",
+            en: "Lunch was delicious!",
+          },
+          {
+            pt: "Pode passar-me o pão, por favor?",
+            pron: "[POH-d pɐ-SAR-mɐ oo powng]",
+            en: "Pass the bread, please.",
+          },
+          {
+            pt: "Prefiro o meu bife bem passado.",
+            pron: "[prɐ-FEE-roo oo MEH-oo BEEF bayng pɐ-SA-doo]",
+            en: "I prefer my steak well done.",
+          },
+          {
+            pt: "Gosto do meu café sem açúcar.",
+            pron: "[GOHSH-too doo MEH-oo kɐ-FEH sayng ɐ-SOO-kɐr]",
+            en: "I like my coffee without sugar.",
+          },
+          {
+            pt: "Apetece-me uma sobremesa bem doce...",
+            pron: "[ɐ-pɐ-TEH-sɐ-mɐ OO-mɐ soh-brɐ-MEH-zɐ]",
+            en: "I'm in the mood for a very sweet dessert...",
+          },
+          {
+            pt: "O cozinheiro está de parabéns!",
+            pron: "[oo koo-zee-NYAY-roo ish-TA dɐ pɐ-rɐ-BAYNGSH]",
+            en: "Congratulations to the chef!",
+          },
+          {
+            pt: "Este frango está muito picante.",
+            pron: "[ESH-t FRAN-goo ish-TA MWEE-too pee-KANT]",
+            en: "This chicken is very spicy.",
+          },
+          {
+            pt: "Preferia que o peixe fosse grelhado.",
+            pron: "[prɐ-fɐ-REE-ɐ kɐ oo PAY-sh FOH-sɐ grɐl-YA-doo]",
+            en: "I'd prefer the fish to be grilled.",
+          },
+        ],
+        mesaExpressions: [
+          {
+            pt: "Pôr a mesa",
+            en: "To set / lay the table",
+            note: "Preparar a mesa para a refeição — pôr os pratos, os talheres e os copos",
+          },
+          {
+            pt: "Estar à mesa",
+            en: "To be at the table",
+            note: "Estar sentado para comer a refeição",
+          },
+          {
+            pt: "Levantar a mesa",
+            en: "To clear the table",
+            note: "Retirar os pratos e talheres depois da refeição",
+          },
+          {
+            pt: "Conhecer a boa mesa",
+            en: "To know good food / gastronomy",
+            note: "Conhecer a boa gastronomia — ser conhecedor de boa comida e vinhos",
+          },
+          {
+            pt: "Sentar-se à mesa",
+            en: "To sit down at the table",
+            note: "Tomar lugar na mesa para comer",
+          },
+          {
+            pt: "A mesa está posta",
+            en: "The table is set",
+            note: "A mesa já está preparada para a refeição",
+          },
+        ],
+      };
+
       const D_DAYS = [
         {
           n: "2ª",
@@ -7183,17 +7787,18 @@
   ${vocabGrid(D_POSSESSIVES.examples)}`,
 
         demonstratives: () => `
-  ${sectionHead("Demonstratives", "Session 5", "Point to things by distance from the speaker. ESTE = near me. ESSE = near you. AQUELE = far from both. The neutro forms (isto/isso/aquilo) are used for unidentified things — they have no gender or number.")}
-  <h3 class="sub-heading">Demonstrative Determiners</h3>
+  ${sectionHead("Demonstratives", "Sessions 5 & UFCD 6453 S3", "Point to things by distance from the speaker. ESTE = near me (aqui). ESSE = near you (aí). AQUELE = far from both (ali). Can stand alone as pronouns to replace nouns and avoid repetition.")}
+  <h3 class="sub-heading">Full Table — Determiners + o outro</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Distance</th><th>Masc. sg</th><th>Fem. sg</th><th>Masc. pl</th><th>Fem. pl</th><th>English</th></tr></thead>
+    <thead><tr><th>Distance</th><th>Location adverb</th><th>Masc. sg</th><th>Fem. sg</th><th>Masc. pl</th><th>Fem. pl</th><th>English</th></tr></thead>
     <tbody>${D_DEMONSTRATIVES.determiners
       .map(
         (
           r,
           i,
         ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
-      <td style="font-weight:700;font-size:13px;color:${i === 0 ? "var(--primary)" : i === 1 ? "var(--green)" : "var(--accent)"}">${r.dist}</td>
+      <td style="font-weight:700;font-size:13px;color:${["var(--primary)", "var(--green)", "var(--accent)", "var(--text-3)"][i]}">${r.dist}</td>
+      <td style="font-weight:800;color:${["var(--primary)", "var(--green)", "var(--accent)", "var(--text-3)"][i]}">${r.adv}</td>
       <td class="pt">${r.m}</td><td class="pt">${r.f}</td>
       <td style="color:var(--text-2)">${r.mp}</td><td style="color:var(--text-2)">${r.fp}</td>
       <td class="en">${r.en}</td>
@@ -7201,6 +7806,34 @@
       )
       .join("")}</tbody>
   </table></div>
+  <h3 class="sub-heading">Distance + Associated Adverb</h3>
+  <div class="card-grid">${D_DEMONSTRATIVES.adverbs
+    .map(
+      (r, i) => `
+    <div class="card-sm" style="border-left:3px solid ${["var(--primary)", "var(--green)", "var(--accent)"][i]}">
+      <div style="display:flex;gap:12px;align-items:baseline;margin-bottom:6px">
+        <span style="font-size:20px;font-weight:800;color:${["var(--primary)", "var(--green)", "var(--accent)"][i]}">${r.dem}</span>
+        <span style="font-size:16px;font-weight:800;color:var(--gold)">→ ${r.adv}</span>
+      </div>
+      <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">${r.en_dem} — ${r.en_adv}</div>
+      <div style="font-size:13px;font-style:italic;color:var(--text)">${r.ex}</div>
+    </div>`,
+    )
+    .join("")}</div>
+  <h3 class="sub-heading">As Pronomes — replacing nouns to avoid repetition</h3>
+  ${infoBox("Demonstratives can replace a noun entirely. The demonstrative takes the gender and number of the noun it replaces — just like in Russian where pronouns agree with the noun they substitute.")}
+  ${D_DEMONSTRATIVES.pronounUse.ex
+    .map(
+      (r) => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="font-size:12px;font-weight:800;color:var(--text-3);text-transform:uppercase;margin-bottom:6px">With noun repeated</div>
+    <div class="pt" style="color:var(--accent);text-decoration:line-through">${r.with}</div>
+    <div style="font-size:12px;font-weight:800;color:var(--text-3);text-transform:uppercase;margin:8px 0 4px">Pronoun replaces noun ✓</div>
+    <div class="pt" style="color:var(--green)">${r.without}</div>
+    <div style="font-size:12px;color:var(--text-3);margin-top:4px;font-style:italic">${r.note}</div>
+  </div>`,
+    )
+    .join("")}
   <h3 class="sub-heading">Neutro Forms — Isto / Isso / Aquilo</h3>
   ${D_DEMONSTRATIVES.neutros
     .map(
@@ -7235,8 +7868,23 @@
   </div>`,
     )
     .join("")}
-  <h3 class="sub-heading">Contractions with EM and DE</h3>
-  ${vocabGrid(D_DEMONSTRATIVES.contraction)}`,
+  <h3 class="sub-heading">Contractions — EM, DE, A + demonstrative</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Contraction</th><th>Pronunciation</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_DEMONSTRATIVES.contraction
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td>${pr(r[1])}</td>
+      <td class="en">${r[2]}</td>
+      <td style="font-size:13px;font-style:italic;color:var(--text-2)">${r[3]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
 
         "estar-patterns": () => `
   ${sectionHead("Estar Patterns", "Session 5", "ESTAR has four key construction patterns beyond simple conjugation. Each expresses something different — location, temporary state, physical sensation, or ongoing action.")}
@@ -8371,6 +9019,176 @@
       )
       .join("")}</tbody>
   </table></div>`,
+
+        "kitchen-utensils": () => `
+  ${sectionHead("Kitchen & Table", "UFCD 6453 Session 3", "Utensílios de cozinha, louça e talheres, e equipamentos. Emojis are shown to help memorise each item.")}
+  <h3 class="sub-heading">🍳 Equipamentos de Cozinha — appliances</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_UTENSILS.appliances
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🔪 Utensílios de Cozinha — tools</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_UTENSILS.tools
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🥘 Tachos e Panelas — cookware</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_UTENSILS.cookware
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🍽️ Louça — crockery</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_UTENSILS.crockery
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🍴 Talheres e Mesa — cutlery and table</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_UTENSILS.table
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        idioms: () => `
+  ${sectionHead("Idioms — Expressões Idiomáticas", "UFCD 6453 Session 3", "Food and everyday idioms. Many Portuguese idioms use food, body parts, or everyday objects. Understanding them passively is more important than producing them at A1/A2.")}
+  ${infoBox("Expressões idiomáticas cannot be translated literally — the meaning is figurative. They are important for comprehension and cultural understanding, even if you do not use them actively yet.")}
+  ${D_IDIOMS.map(
+    (r, i) => `
+  <div class="card" style="margin-bottom:12px;border-left:4px solid var(--${i % 3 === 0 ? "primary" : i % 3 === 1 ? "green" : "gold"})">
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+      <span style="font-size:16px;font-weight:800;color:var(--primary)">${r.pt}</span>
+      ${r.pron ? pr(r.pron) : ""}
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:2px">Meaning</div>
+        <div style="font-weight:700">${r.en}</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:2px">Literal</div>
+        <div style="font-size:13px;color:var(--text-3);font-style:italic">${r.lit}</div>
+      </div>
+    </div>
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:13px">
+      <span style="font-size:10px;font-weight:800;text-transform:uppercase;color:var(--text-3);margin-right:8px">Example</span>
+      <span class="pt">${r.ex}</span>
+    </div>
+  </div>`,
+  ).join("")}`,
+
+        "social-etiquette": () => `
+  ${sectionHead("Social Etiquette", "UFCD 6453 Session 3", "Fórmulas de cortesia — polite language in restaurants, shops and service situations. The key rule: use QUERIA (imperfect) not QUERO (present) when making requests.")}
+  <h3 class="sub-heading">The QUERIA Rule — polite requests</h3>
+  ${warnBox('<strong>QUERIA</strong> (imperfect of QUERER) = "I would like" — use it instead of QUERO ("I want") in service contexts. This is one of the most important markers of politeness in European Portuguese. The imperfect makes the request more tentative and respectful.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Context</th><th style="color:var(--accent)">❌ Direct</th><th style="color:var(--green)">✅ Polite</th><th>English</th></tr></thead>
+    <tbody>${D_SOCIAL_ETIQUETTE.queria
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:12px;color:var(--text-3)">${r.context}</td>
+      <td style="color:var(--accent);text-decoration:line-through;font-size:13px">${r.rude}</td>
+      <td class="pt" style="color:var(--green)">${r.polite}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Restaurant Dialogues — fórmulas de cortesia</h3>
+  ${D_SOCIAL_ETIQUETTE.dialogues
+    .map(
+      (r, i) => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:8px;margin-bottom:6px;align-items:baseline">
+      <span style="font-size:11px;font-weight:800;color:var(--text-3);text-transform:uppercase;min-width:80px">Empregado</span>
+      <span class="pt">${r.emp}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:baseline">
+      <span style="font-size:11px;font-weight:800;color:var(--green);text-transform:uppercase;min-width:80px">Cliente</span>
+      <span class="pt" style="color:var(--green)">${r.cli}</span>
+    </div>
+    <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:6px;padding-top:6px;border-top:1px solid var(--border)">${r.note}</div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">Frases à Mesa — meal phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_SOCIAL_ETIQUETTE.phrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Expressões da Mesa — table expressions</h3>
+  ${D_SOCIAL_ETIQUETTE.mesaExpressions
+    .map(
+      (r) => `
+  <div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <span class="pt" style="font-weight:800">${r.pt}</span>
+      <span style="font-weight:700;color:var(--text-2)">— ${r.en}</span>
+    </div>
+    <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:3px">${r.note}</div>
+  </div>`,
+    )
+    .join("")}`,
       };
 
       // ─────────────────────────────────────────────
