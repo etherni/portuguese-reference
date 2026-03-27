@@ -849,6 +849,7 @@
             { id: "demonstratives", title: "Demonstratives" },
             { id: "questions", title: "Questions" },
             { id: "comparatives", title: "Comparatives" },
+            { id: "muito-pouco", title: "Muito / Pouco" },
           ],
         },
         {
@@ -860,6 +861,7 @@
             { id: "core-verbs", title: "Core Verbs" },
             { id: "reflexive-verbs", title: "Reflexive Verbs" },
             { id: "irregular-verbs", title: "Irregular Verbs" },
+            { id: "future-plans", title: "Future Plans (IR + inf.)" },
           ],
         },
         {
@@ -876,6 +878,7 @@
             { id: "typical-dishes", title: "Typical Dishes" },
             { id: "kitchen-utensils", title: "Kitchen & Table" },
             { id: "food", title: "Food & Meals" },
+            { id: "leisure", title: "Leisure & Free Time" },
             { id: "expressions", title: "Expressions" },
             { id: "survival", title: "Survival Phrases" },
             { id: "idioms", title: "Idioms" },
@@ -1988,21 +1991,376 @@
           ex: ["animal → animais [ɐ-nee-MAISH]", "hotel → hotéis [oh-TAYSH]"],
         },
         {
-          end: "-ão (3 patterns!)",
-          rule: "varies — memorise each",
+          end: "-ão — GROUP 1: -ãos",
+          rule: "Words of 1–2 syllables, body parts, borrowed words",
           ex: [
-            "pão → pães (bread) [payngsh]",
             "mão → mãos (hand)",
-            "cão → cães (dog)",
             "irmão → irmãos (brother)",
+            "corrimão → corrimãos (handrail)",
+            "órgão → órgãos",
+          ],
+        },
+        {
+          end: "-ão — GROUP 2: -ões (MOST COMMON)",
+          rule: "Most -ão words; especially abstract/augmentatives",
+          ex: [
+            "coração → corações (heart)",
+            "canção → canções (song)",
+            "ação → ações (action)",
+            "avião → aviões (plane)",
+            "limão → limões (lemon)",
+          ],
+        },
+        {
+          end: "-ão — GROUP 3: -ães (RAREST)",
+          rule: "A small set — must memorise individually",
+          ex: [
+            "pão → pães (bread)",
+            "cão → cães (dog)",
+            "alemão → alemães (German)",
+            "capitão → capitães (captain)",
           ],
         },
         {
           end: "-s (already ends)",
-          rule: "no change if unstressed",
-          ex: ["o lápis → os lápis [LA-peesh]"],
+          rule: "no change if unstressed final syllable",
+          ex: ["o lápis → os lápis [LA-peesh]", "o cais → os cais"],
         },
       ];
+
+      const D_GENDER_IRREGULAR = [
+        {
+          m: "o rei [oo HRAY]",
+          f: "a rainha [ɐ hɐ-EEN-yɐ]",
+          en_m: "king",
+          en_f: "queen",
+          note: "Completely different roots",
+        },
+        {
+          m: "o pai [oo pai]",
+          f: "a mãe [ɐ mɐ-yng]",
+          en_m: "father",
+          en_f: "mother",
+          note: "Completely different words",
+        },
+        {
+          m: "o homem [oo OH-mayng]",
+          f: "a mulher [ɐ mool-YEHR]",
+          en_m: "man",
+          en_f: "woman",
+          note: "Unrelated roots",
+        },
+        {
+          m: "o ator [oo ɐ-TOR]",
+          f: "a atriz [ɐ ɐ-TREESH]",
+          en_m: "actor",
+          en_f: "actress",
+          note: "-or → -iz (Latin pattern)",
+        },
+        {
+          m: "o avô [oo ɐ-VOH]",
+          f: "a avó [ɐ ɐ-VO]",
+          en_m: "grandfather",
+          en_f: "grandmother",
+          note: "Accent changes only: ô → ó",
+        },
+        {
+          m: "o deus [oo DEH-oosh]",
+          f: "a deusa [ɐ DEH-oo-zɐ]",
+          en_m: "god",
+          en_f: "goddess",
+          note: "Add -a (irregular form)",
+        },
+        {
+          m: "o bode [oo BOH-d]",
+          f: "a cabra [ɐ KA-brɐ]",
+          en_m: "male goat",
+          en_f: "female goat/goat",
+          note: "Different words for animals",
+        },
+        {
+          m: "o carneiro [oo kɐr-NAY-roo]",
+          f: "a ovelha [ɐ oh-VEL-yɐ]",
+          en_m: "ram",
+          en_f: "ewe/sheep",
+          note: "Different words for animals",
+        },
+      ];
+
+      const D_MUITO_POUCO = {
+        note: "MUITO and POUCO work differently depending on what they modify. This is the most common source of mistakes at A1/A2.",
+        rule1: {
+          label: "Before a NOUN — agree in gender (M/F) and number (sg/pl)",
+          color: "var(--primary)",
+          table: [
+            {
+              form: "muito",
+              gen: "M sg",
+              ex: "muito trabalho",
+              en: "a lot of work",
+            },
+            {
+              form: "muita",
+              gen: "F sg",
+              ex: "muita atividade",
+              en: "a lot of activity",
+            },
+            {
+              form: "muitos",
+              gen: "M pl",
+              ex: "muitos quilos",
+              en: "many kilos",
+            },
+            {
+              form: "muitas",
+              gen: "F pl",
+              ex: "muitas horas",
+              en: "many hours",
+            },
+            {
+              form: "pouco",
+              gen: "M sg",
+              ex: "pouco tempo",
+              en: "little time",
+            },
+            {
+              form: "pouca",
+              gen: "F sg",
+              ex: "pouca água",
+              en: "little water",
+            },
+            {
+              form: "poucos",
+              gen: "M pl",
+              ex: "poucos legumes",
+              en: "few vegetables",
+            },
+            {
+              form: "poucas",
+              gen: "F pl",
+              ex: "poucas horas",
+              en: "few hours",
+            },
+          ],
+        },
+        rule2: {
+          label:
+            "After a VERB — invariable (always muito / pouco, never agrees)",
+          color: "var(--green)",
+          ex: [
+            {
+              pt: "Ele trabalha muito.",
+              en: "He works a lot. (NOT trabalha muita/muitos)",
+            },
+            {
+              pt: "Andas a estudar pouco.",
+              en: "You are studying little. (NOT estudar pouca)",
+            },
+            {
+              pt: "A Inês trabalha muito!",
+              en: "Inês works a lot! (NOT trabalha muita)",
+            },
+          ],
+        },
+        decisionRule:
+          "ASK: Is muito/pouco describing a NOUN (before it)? → agree with the noun. Is it describing a VERB or ADJECTIVE (after it)? → use muito/pouco unchanged.",
+        worked: [
+          {
+            sent: "Ele trabalha ___ horas.",
+            ans: "muitas",
+            why: "horas = F pl noun → muitas",
+          },
+          {
+            sent: "Vocês comem ___ legumes.",
+            ans: "poucos",
+            why: "legumes = M pl noun → poucos",
+          },
+          {
+            sent: "Nós fazemos ___ atividade física.",
+            ans: "muita",
+            why: "atividade = F sg noun → muita",
+          },
+          {
+            sent: "Tens ___ trabalho?",
+            ans: "muito",
+            why: "trabalho = M sg noun → muito",
+          },
+          {
+            sent: "A Inês trabalha ___!",
+            ans: "muito",
+            why: "modifies verb trabalha → invariable",
+          },
+          {
+            sent: "Andas a estudar ___.",
+            ans: "pouco",
+            why: "modifies verb estudar → invariable",
+          },
+          {
+            sent: "Ele estuda ___ horas por dia.",
+            ans: "poucas",
+            why: "horas = F pl noun → poucas",
+          },
+          {
+            sent: "O senhor tem ___ tempo livre?",
+            ans: "pouco",
+            why: "tempo = M sg noun → pouco",
+          },
+          {
+            sent: "A Rita tem de perder ___ quilos.",
+            ans: "muitos",
+            why: "quilos = M pl noun → muitos",
+          },
+        ],
+      };
+
+      const D_FUTURE_IR = {
+        note: "Verbo IR + infinitivo — used to express plans or intentions for the future. Equivalent to English 'going to'. This is the most common future tense structure at A1/A2. The verb IR is conjugated; the main verb stays in the infinitive.",
+        formula: "IR (conjugated) + infinitive",
+        conj: [
+          ["Eu", "vou", "[voh]", "Eu vou estudar para um exame."],
+          ["Tu", "vais", "[vaish]", "Tu vais sair com os teus amigos."],
+          ["Ele/Ela/Você", "vai", "[vai]", "Ele vai ver um filme com a Ana."],
+          ["Nós", "vamos", "[VAH-moosh]", "Nós vamos fazer desporto."],
+          ["Eles/Elas/Vocês", "vão", "[vowng]", "Eles vão passear no campo."],
+        ],
+        timeExpressions: [
+          ["amanhã", "[ɐ-mɐ-NYUNG]", "tomorrow"],
+          ["na próxima segunda", "[nɐ PRO-see-mɐ sɐ-GOON-dɐ]", "next Monday"],
+          [
+            "no próximo fim de semana",
+            "[oo PRO-see-moo feeng dɐ sɐ-MAN-ɐ]",
+            "next weekend",
+          ],
+          ["na próxima semana", "[nɐ PRO-see-mɐ sɐ-MAN-ɐ]", "next week"],
+          ["no próximo mês", "[oo PRO-see-moo mesh]", "next month"],
+          ["no próximo ano", "[oo PRO-see-moo AN-oo]", "next year"],
+          ["este fim de semana", "[ESH-t feeng dɐ sɐ-MAN-ɐ]", "this weekend"],
+          ["esta tarde", "[ESH-tɐ TAR-d]", "this afternoon"],
+          ["esta noite", "[ESH-tɐ NOYT]", "tonight"],
+          ["em breve", "[ayng BREHV]", "soon"],
+        ],
+        vs_costumar: {
+          note: "IR + infinitivo = what you ARE GOING TO DO (future plan, one-time or upcoming). COSTUMAR + infinitivo = what you USUALLY DO (habitual, recurring). The choice between them depends on whether you are describing a habit or a specific future intention.",
+          rows: [
+            {
+              verb: "IR + inf",
+              ex: "Amanhã vou ao ginásio.",
+              en: "Tomorrow I am going to the gym. (specific future plan)",
+              color: "var(--primary)",
+            },
+            {
+              verb: "COSTUMAR + inf",
+              ex: "Costumo ir ao ginásio às terças.",
+              en: "I usually go to the gym on Tuesdays. (recurring habit)",
+              color: "var(--green)",
+            },
+            {
+              verb: "IR + inf",
+              ex: "No próximo mês vamos viajar para o Algarve.",
+              en: "Next month we are going to travel to the Algarve.",
+              color: "var(--primary)",
+            },
+            {
+              verb: "COSTUMAR + inf",
+              ex: "Costumamos viajar no verão.",
+              en: "We usually travel in summer.",
+              color: "var(--green)",
+            },
+          ],
+        },
+      };
+
+      const D_LEISURE = {
+        ruralUrban: {
+          note: "A zona rural é uma zona de campo, onde há mais natureza, se cultivam alimentos e se criam animais. A zona urbana é onde encontramos mais desenvolvimento e agitação — o espaço das cidades.",
+          rural: [
+            ["acampar", "[ɐ-kam-PAR]", "to camp"],
+            ["fazer caminhadas", "[fɐ-SEHR kɐ-meen-YA-dɐsh]", "to go hiking"],
+            ["pescar", "[pɐsh-KAR]", "to fish"],
+            ["andar a cavalo", "[ɐn-DAR ɐ kɐ-VA-loo]", "to horse-ride"],
+            [
+              "apanhar cogumelos",
+              "[ɐ-pɐ-NYAR koo-goo-MEH-loosh]",
+              "to pick mushrooms",
+            ],
+            ["conviver com a natureza", "", "to enjoy nature"],
+          ],
+          urban: [
+            ["ir às compras", "[eer ɐsh KOM-prɐsh]", "to go shopping"],
+            ["ver as montras", "[vehr ɐsh MON-trɐsh]", "to window-shop"],
+            ["ir ao ginásio", "[eer ow zhee-NA-zyoo]", "to go to the gym"],
+            ["ir a um bar", "[eer ɐ oong bar]", "to go to a bar"],
+            ["ir à discoteca", "[eer a deesh-koo-TEH-kɐ]", "to go clubbing"],
+            ["ir ao cinema", "[eer ow see-NEH-mɐ]", "to go to the cinema"],
+            ["ir ao teatro", "[eer ow tyA-troo]", "to go to the theatre"],
+            [
+              "assistir a um festival de música",
+              "[ɐ-seesh-TEER]",
+              "to attend a music festival",
+            ],
+            [
+              "ir a um concerto",
+              "[eer ɐ oong kon-SEHR-too]",
+              "to go to a concert",
+            ],
+          ],
+        },
+        general: [
+          ["ver televisão", "[vehr tɐ-lɐ-vee-ZOWNG]", "to watch television"],
+          ["ouvir música", "[OH-veer moo-ZEE-kɐ]", "to listen to music"],
+          ["ler", "[lehr]", "to read"],
+          ["passear", "[pɐ-syAR]", "to go for a walk / stroll"],
+          ["conversar", "[kong-vɐr-SAR]", "to chat / socialise"],
+          ["dançar", "[dɐn-SAR]", "to dance"],
+          ["viajar", "[vyɐ-ZHAR]", "to travel"],
+          ["ir à praia", "[eer a PRAi-ɐ]", "to go to the beach"],
+          ["fazer desporto", "[fɐ-SEHR dɐsh-POR-too]", "to do sport"],
+          ["fazer exercício", "[fɐ-SEHR ɐ-zer-SEE-zyoo]", "to exercise"],
+          ["jogar futebol", "[zhoo-GAR foo-tɐ-BOL]", "to play football"],
+          [
+            "tirar fotografias",
+            "[tee-RAR foo-too-grɐ-FEE-ɐsh]",
+            "to take photos",
+          ],
+          [
+            "fazer voluntariado",
+            "[fɐ-SEHR voo-loon-tɐ-RYA-doo]",
+            "to volunteer",
+          ],
+        ],
+        phrases: [
+          {
+            pt: "O que é que costumas fazer nos tempos livres?",
+            pron: "[oo kɐ ish-kɐ koosh-TOO-mɐsh]",
+            en: "What do you usually do in your free time?",
+          },
+          {
+            pt: "O que é que vais fazer este fim de semana?",
+            pron: "[oo kɐ ish-kɐ vaish fɐ-SEHR]",
+            en: "What are you going to do this weekend?",
+          },
+          {
+            pt: "Prefiro atividades ao ar livre.",
+            pron: "[prɐ-FEE-roo ow ar LEEV-r]",
+            en: "I prefer outdoor activities.",
+          },
+          {
+            pt: "Não tenho muito tempo livre.",
+            pron: "[nowng TAYN-yoo MWEE-too TEMP-oo LEEV-r]",
+            en: "I don't have much free time.",
+          },
+          {
+            pt: "A ocupação do tempo livre depende da idade e dos recursos.",
+            pron: "",
+            en: "How people spend free time depends on age and available resources.",
+          },
+          {
+            pt: "As cidades têm mais equipamentos de lazer.",
+            pron: "",
+            en: "Cities generally have more leisure facilities.",
+          },
+        ],
+      };
 
       const D_SER_ESTAR = {
         ser_conj: [
@@ -7492,12 +7850,15 @@
   ).join("")}`,
 
         plurals: () => `
-  ${sectionHead("Singular / Plural", "Session 3", "Portuguese plurals are straightforward — no case system, just one plural form per word. The word ending determines the rule.")}
+  ${sectionHead("Singular / Plural", "Sessions 3 & UFCD 6453 S5", "Portuguese plurals are mostly predictable. The hardest part is -ão, which has three different plural endings. The rule for which one to use must be memorised per word — but the groups below cover the most common cases.")}
   <h3 class="sub-heading">Plural Rules by Ending</h3>
   ${D_PLURALS.map(
-    (r) => `<div class="card" style="margin-bottom:10px">
+    (
+      r,
+      i,
+    ) => `<div class="card" style="margin-bottom:10px;border-left:4px solid ${i >= 2 && i <= 4 ? "var(--accent)" : "var(--border)"}">
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:8px">
-      <span style="background:var(--primary-lt2);color:var(--primary-dk);padding:3px 12px;border-radius:20px;font-family:var(--mono);font-weight:700;font-size:14px">${r.end}</span>
+      <span style="background:${i >= 2 && i <= 4 ? "var(--accent-lt)" : "var(--primary-lt2)"};color:${i >= 2 && i <= 4 ? "var(--accent)" : "var(--primary-dk)"};padding:3px 12px;border-radius:20px;font-family:var(--mono);font-weight:700;font-size:14px">${r.end}</span>
       <span style="font-size:15px;font-weight:800;color:var(--green)">→ ${r.rule}</span>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -7505,6 +7866,26 @@
     </div>
   </div>`,
   ).join("")}
+  ${warnBox("<strong>-ão plural groups recap:</strong> Group 1 (-ãos): mão, irmão, corrimão, órgão — short/borrowed words. Group 2 (-ões): most -ão words including planes, actions, songs. Group 3 (-ães): pão, cão, alemão — a small set to memorise. When in doubt, -ões is the most common.")}
+
+  <h3 class="sub-heading">Irregular Gender Pairs — completely different words</h3>
+  ${infoBox("These nouns do not follow the -o → -a rule. Masculine and feminine are unrelated words. They must be memorised individually.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Masculine</th><th>English</th><th>Feminine</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_GENDER_IRREGULAR.map(
+      (
+        r,
+        i,
+      ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.m}</td>
+      <td class="en">${r.en_m}</td>
+      <td class="pt" style="font-weight:800;color:var(--accent)">${r.f}</td>
+      <td class="en">${r.en_f}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+    ).join("")}</tbody>
+  </table></div>
+
   <h3 class="sub-heading">Adjective Agreement — Gender & Number</h3>
   ${warnBox("Adjectives agree with the noun in BOTH gender AND number. Learn the ending rule once, apply it everywhere.")}
   <div class="tbl-wrap"><table>
@@ -9189,6 +9570,132 @@
   </div>`,
     )
     .join("")}`,
+
+        "muito-pouco": () => `
+  ${sectionHead("Muito / Pouco", "UFCD 6453 Session 5", "The single most common source of mistakes at A1/A2. The rule is simple but must be applied consistently: agree when before a noun; invariable when after a verb.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div class="card" style="border-top:4px solid var(--primary)">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:12px;font-size:15px">RULE 1 — Before a NOUN: agree</div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:12px">${D_MUITO_POUCO.rule1.label}</div>
+      <table style="border-collapse:collapse;width:100%;font-size:14px">
+        <thead><tr style="background:var(--primary)"><th style="padding:6px 10px;color:#fff;font-size:12px">Form</th><th style="padding:6px 10px;color:#fff;font-size:12px">When</th><th style="padding:6px 10px;color:#fff;font-size:12px">Example</th><th style="padding:6px 10px;color:#fff;font-size:12px">English</th></tr></thead>
+        <tbody>${D_MUITO_POUCO.rule1.table
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="padding:6px 10px;font-weight:800;font-size:16px;color:var(--primary)">${r.form}</td>
+          <td style="padding:6px 10px;font-size:12px;color:var(--text-3)">${r.gen}</td>
+          <td class="pt" style="padding:6px 10px;font-size:13px">${r.ex}</td>
+          <td class="en" style="padding:6px 10px">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table>
+    </div>
+    <div class="card" style="border-top:4px solid var(--green)">
+      <div style="font-weight:800;color:var(--green);margin-bottom:12px;font-size:15px">RULE 2 — After a VERB: invariable</div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:12px">${D_MUITO_POUCO.rule2.label}</div>
+      ${D_MUITO_POUCO.rule2.ex
+        .map(
+          (
+            r,
+          ) => `<div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--green)">
+        <div class="pt">${r.pt}</div>
+        <div class="en" style="margin-top:3px">${r.en}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>
+  ${warnBox("<strong>Decision rule:</strong> " + D_MUITO_POUCO.decisionRule)}
+  <h3 class="sub-heading">Worked Examples — from the exercises</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Sentence</th><th>Answer</th><th>Why</th></tr></thead>
+    <tbody>${D_MUITO_POUCO.worked
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="padding:8px 14px;font-size:13px">${r.sent.replace("___", '<span style="color:var(--text-3);font-style:italic">___</span>')}</td>
+      <td style="padding:8px 14px;font-weight:800;font-size:16px;color:var(--primary)">${r.ans}</td>
+      <td style="padding:8px 14px;font-size:12px;color:var(--text-3)">${r.why}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        "future-plans": () => `
+  ${sectionHead("Future Plans — IR + Infinitivo", "UFCD 6453 Session 5", 'Verbo IR + infinitivo expresses plans or intentions for the future. Equivalent to English "going to". IR is conjugated; the main verb stays in the infinitive. Compare with COSTUMAR + infinitivo which expresses habits, not future plans.')}
+  ${infoBox('<strong>Formula:</strong> <span style="font-family:var(--mono);color:var(--primary)">IR (conjugated) + infinitive</span> — Example: <span class="pt">Eu <strong>vou</strong> estudar amanhã.</span> = I am going to study tomorrow.')}
+  <h3 class="sub-heading">Conjugation — IR no Presente</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject</th><th>IR form</th><th>Pronunciation</th><th>Example sentence</th></tr></thead>
+    <tbody>${D_FUTURE_IR.conj
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="color:var(--text-3);font-size:13px">${r[0]}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--primary)">${r[1]}</td>
+      <td>${pr(r[2])}</td>
+      <td class="pt" style="font-size:13px">${r[3]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Expressões de tempo — time expressions for future plans</h3>
+  ${vocabGrid(D_FUTURE_IR.timeExpressions)}
+  <h3 class="sub-heading">IR + inf. vs COSTUMAR + inf. — the key difference</h3>
+  ${warnBox(D_FUTURE_IR.vs_costumar.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>Example</th><th>English / meaning</th></tr></thead>
+    <tbody>${D_FUTURE_IR.vs_costumar.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:${r.color};white-space:nowrap">${r.verb}</td>
+      <td class="pt">${r.ex}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        leisure: () => `
+  ${sectionHead("Leisure & Free Time", "UFCD 6453 Session 5", "Atividades de tempos livres. Activities vary by context — urban areas have more facilities; rural areas offer outdoor activities. Use COSTUMAR + inf. for habits and IR + inf. for plans.")}
+  ${infoBox("<strong>Zona rural</strong> = campo, natureza, agricultura, animais, menos desenvolvimento. <strong>Zona urbana</strong> = cidades, mais equipamentos de lazer, mais agitação.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🌿 Zona Rural</h3>
+      ${vocabGrid(D_LEISURE.ruralUrban.rural)}
+    </div>
+    <div>
+      <h3 class="sub-heading">🏙️ Zona Urbana</h3>
+      ${vocabGrid(D_LEISURE.ruralUrban.urban)}
+    </div>
+  </div>
+  <h3 class="sub-heading">Atividades gerais — general leisure</h3>
+  ${vocabGrid(D_LEISURE.general)}
+  <h3 class="sub-heading">Frases úteis</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_LEISURE.phrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
       };
 
       // ─────────────────────────────────────────────
