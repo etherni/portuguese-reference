@@ -85,7 +85,7 @@ Built alongside a **PLA — Português Língua de Acolhimento** (A1/A2) course a
 **Nível A1**
 
 - UFCD 6452 — Eu e a minha rotina diária _(Sessions 1–8 covered)_
-- UFCD 6453 — Hábitos alimentares, cultura e lazer _(Sessions 1–5 covered: food shops, cooking verbs, food adjectives, IR a + shop, pratos típicos, secções do supermercado, comparativos, utensílios de cozinha/louça/talheres, idiomas, fórmulas de cortesia, demonstrativos, muito/pouco agreement, IR + infinitivo (future plans), leisure vocabulary)_
+- UFCD 6453 — Hábitos alimentares, cultura e lazer _(Sessions 1–5 covered (S4 inserted): food shops, cooking verbs, food adjectives, IR a + shop, pratos típicos, secções do supermercado, comparativos, utensílios de cozinha/louça/talheres, idiomas, fórmulas de cortesia, demonstrativos, unidades de medida, formas de pagamento, documentos fiscais, muito/pouco agreement, IR + infinitivo (future plans), leisure vocabulary)_
 - UFCD 6453 — Hábitos alimentares, cultura e lazer
 - UFCD 6454 — O corpo humano, saúde e serviços
 

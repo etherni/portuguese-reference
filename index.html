@@ -874,6 +874,8 @@
             { id: "house", title: "House & Home" },
             { id: "description", title: "Description" },
             { id: "money", title: "Money & Prices" },
+            { id: "payments", title: "Payments & Documents" },
+            { id: "measurements", title: "Units of Measure" },
             { id: "transport", title: "Transport" },
             { id: "typical-dishes", title: "Typical Dishes" },
             { id: "kitchen-utensils", title: "Kitchen & Table" },
@@ -4290,6 +4292,466 @@
             note: "Period = thousands separator in Portuguese.",
           },
           { written: "25.000€", spoken: "vinte e cinco mil euros", note: "" },
+        ],
+      };
+
+      const D_MEASUREMENTS = {
+        mass: {
+          note: "A unidade principal de massa é o quilograma (kg). 1 kg = 1000 g. In everyday use: receitas use grama (g) and quilograma (kg). The comma is the decimal separator: 1,5 kg = one and a half kilograms.",
+          units: [
+            {
+              pt: "quilograma",
+              abbr: "kg",
+              val: "1 000 g",
+              note: "unidade principal — used in shops, recipes, weight",
+            },
+            {
+              pt: "hectograma",
+              abbr: "hg",
+              val: "100 g",
+              note: "rarely used in everyday life",
+            },
+            { pt: "decagrama", abbr: "dag", val: "10 g", note: "rarely used" },
+            {
+              pt: "grama",
+              abbr: "g",
+              val: "1 g",
+              note: "used in recipes for small quantities",
+            },
+            {
+              pt: "decigrama",
+              abbr: "dg",
+              val: "0,1 g (1/10)",
+              note: "scientific / pharmacy use",
+            },
+            {
+              pt: "centigrama",
+              abbr: "cg",
+              val: "0,01 g (1/100)",
+              note: "scientific use",
+            },
+            {
+              pt: "miligrama",
+              abbr: "mg",
+              val: "0,001 g (1/1000)",
+              note: "medicine / nutrition labels",
+            },
+          ],
+          conversions: [
+            "1 kg = 1 000 g",
+            "1 hg = 100 g",
+            "500 g = 0,5 kg (meio quilo)",
+            "250 g = 0,25 kg (um quarto de quilo)",
+            "1 g = 1 000 mg",
+          ],
+        },
+        capacity: {
+          note: "A unidade principal de capacidade é o litro (l). Multiply ×10 for each step towards submúltiplos. 1 l = 10 dl = 100 cl = 1000 ml.",
+          units: [
+            {
+              pt: "quilolitro",
+              abbr: "kl",
+              val: "1 000 l",
+              note: "very large volumes",
+            },
+            {
+              pt: "hectolitro",
+              abbr: "hl",
+              val: "100 l",
+              note: "wine production, large tanks",
+            },
+            { pt: "decalitro", abbr: "dal", val: "10 l", note: "rarely used" },
+            {
+              pt: "litro",
+              abbr: "l",
+              val: "1 l",
+              note: "unidade principal — water bottles, milk cartons",
+            },
+            {
+              pt: "decilitro",
+              abbr: "dl",
+              val: "0,1 l (1/10)",
+              note: "recipes — 1 dl = 100 ml",
+            },
+            {
+              pt: "centilitro",
+              abbr: "cl",
+              val: "0,01 l (1/100)",
+              note: "drinks — wine glasses (~15 cl), beer",
+            },
+            {
+              pt: "mililitro",
+              abbr: "ml",
+              val: "0,001 l (1/1000)",
+              note: "medicine, precise recipes",
+            },
+          ],
+          conversions: [
+            "1 l = 10 dl = 100 cl = 1 000 ml",
+            "1 dl = 100 ml",
+            "1 garrafa de água = 0,5 l = 500 ml",
+            "1 copo de vinho ≈ 15 cl = 150 ml",
+          ],
+        },
+        length: {
+          note: "A unidade principal de comprimento é o metro (m). Used for height, distance, fabric, property dimensions.",
+          units: [
+            {
+              pt: "quilómetro",
+              abbr: "km",
+              val: "1 000 m",
+              note: "distances between cities",
+            },
+            { pt: "hectómetro", abbr: "hm", val: "100 m", note: "rarely used" },
+            { pt: "decâmetro", abbr: "dam", val: "10 m", note: "rarely used" },
+            {
+              pt: "metro",
+              abbr: "m",
+              val: "1 m",
+              note: "unidade principal — height, room size",
+            },
+            {
+              pt: "decímetro",
+              abbr: "dm",
+              val: "0,1 m (10 cm)",
+              note: "school use",
+            },
+            {
+              pt: "centímetro",
+              abbr: "cm",
+              val: "0,01 m",
+              note: "clothing sizes, body measurements",
+            },
+            {
+              pt: "milímetro",
+              abbr: "mm",
+              val: "0,001 m",
+              note: "engineering, precise measurement",
+            },
+          ],
+          conversions: [
+            "1 km = 1 000 m",
+            "1 m = 100 cm = 1 000 mm",
+            "Eu medo 1,75 m (= 175 cm)",
+          ],
+        },
+        time: {
+          note: "Tempo — time units used in schedules, recipes, and everyday conversation.",
+          units: [
+            {
+              pt: "segundo",
+              abbr: "s",
+              val: "unidade base",
+              note: "1 min = 60 s",
+            },
+            {
+              pt: "minuto",
+              abbr: "min",
+              val: "60 s",
+              note: "1 h = 60 min = 3 600 s",
+            },
+            {
+              pt: "hora",
+              abbr: "h",
+              val: "60 min = 3 600 s",
+              note: "A aula dura 1 hora e meia",
+            },
+            {
+              pt: "dia",
+              abbr: "dia",
+              val: "24 h = 1 440 min",
+              note: "1 dia = 24 h",
+            },
+            {
+              pt: "semana",
+              abbr: "sem",
+              val: "7 dias",
+              note: "1 semana = 7 dias",
+            },
+            {
+              pt: "mês",
+              abbr: "mês",
+              val: "28–31 dias",
+              note: "1 ano = 12 meses",
+            },
+            {
+              pt: "ano",
+              abbr: "ano",
+              val: "365 dias = 8 760 h",
+              note: "1 ano = 52 semanas",
+            },
+          ],
+        },
+        temperature: {
+          note: "A temperatura mede o grau de agitação das partículas de um corpo. Portugal uses Celsius (°C). Fahrenheit is used in the USA. Kelvin is used in science.",
+          scales: [
+            {
+              scale: "Celsius",
+              symbol: "°C",
+              freeze: "0 °C",
+              boil: "100 °C",
+              absZero: "-273 °C",
+              note: "Used in Portugal and Europe — used in all everyday and cooking contexts",
+            },
+            {
+              scale: "Fahrenheit",
+              symbol: "°F",
+              freeze: "32 °F",
+              boil: "212 °F",
+              absZero: "-459 °F",
+              note: "Used in the USA, Belize, Cayman Islands",
+            },
+            {
+              scale: "Kelvin",
+              symbol: "K",
+              freeze: "273 K",
+              boil: "373 K",
+              absZero: "0 K",
+              note: "Scientific use — zero Kelvin = absolute zero, no negative values",
+            },
+          ],
+          formulas: [
+            {
+              name: "°C → °F",
+              formula: "°F = (°C × 9/5) + 32",
+              ex: "100 °C → (100 × 1,8) + 32 = 212 °F",
+            },
+            {
+              name: "°F → °C",
+              formula: "°C = (°F − 32) × 5/9",
+              ex: "212 °F → (212 − 32) × 5/9 = 100 °C",
+            },
+            { name: "°C → K", formula: "K = °C + 273", ex: "0 °C → 273 K" },
+          ],
+          oven: [
+            { f: "225 °F", c: "110 °C", knob: "1/4", label: "Mínimo" },
+            { f: "275 °F", c: "140 °C", knob: "1", label: "Baixo" },
+            { f: "325 °F", c: "160 °C", knob: "3", label: "Médio Baixo" },
+            { f: "350 °F", c: "180 °C", knob: "4", label: "Médio" },
+            { f: "375 °F", c: "190 °C", knob: "5", label: "Médio Alto" },
+            { f: "425 °F", c: "220 °C", knob: "7", label: "Alto" },
+            { f: "475 °F", c: "240 °C", knob: "9", label: "Máximo" },
+          ],
+          phrases: [
+            [
+              "Que temperatura está lá fora?",
+              "[kɐ tem-pɐ-rɐ-TOO-rɐ ish-TA la FOH-rɐ]",
+              "What is the temperature outside?",
+            ],
+            [
+              "Está a 22 graus.",
+              "[ish-TA ɐ VINT-ee-DOO-ash GRAH-oosh]",
+              "It is 22 degrees.",
+            ],
+            [
+              "O forno deve estar a 180 graus.",
+              "",
+              "The oven should be at 180 degrees.",
+            ],
+            [
+              "Tenho febre — estou a 38,5.",
+              "",
+              "I have a fever — I am at 38.5.",
+            ],
+            [
+              "A água ferve a 100 graus Celsius.",
+              "",
+              "Water boils at 100 degrees Celsius.",
+            ],
+          ],
+        },
+      };
+
+      const D_PAYMENTS = {
+        methods: [
+          {
+            pt: "dinheiro / numerário",
+            pron: "[deen-YAYE-roo / noo-mɐ-RA-ryoo]",
+            en: "cash",
+            note: "Notas e moedas",
+          },
+          {
+            pt: "cartão de débito",
+            pron: "[kar-TOWNG dɐ DEH-bee-too]",
+            en: "debit card",
+            note: "Linked directly to your bank account",
+          },
+          {
+            pt: "cartão de crédito",
+            pron: "[kar-TOWNG dɐ KREH-dee-too]",
+            en: "credit card",
+            note: "Pay later; interest if not cleared monthly",
+          },
+          {
+            pt: "multibanco / MB",
+            pron: "[mool-tee-BAN-koo]",
+            en: "ATM / card payment (Portugal)",
+            note: "Portugal's own card payment network — ubiquitous",
+          },
+          {
+            pt: "MB Way",
+            pron: "[em-BEH way]",
+            en: "mobile payment app",
+            note: "Portuguese mobile payment: transfer money via phone number",
+          },
+          {
+            pt: "transferência bancária",
+            pron: "[trɐnsh-fɐ-REN-syɐ bɐn-KA-ryɐ]",
+            en: "bank transfer",
+            note: "Requires IBAN of recipient",
+          },
+          {
+            pt: "débito direto",
+            pron: "[DEH-bee-too dee-REH-too]",
+            en: "direct debit",
+            note: "Automatic monthly payment (utilities, subscriptions)",
+          },
+          {
+            pt: "cheque",
+            pron: "[SHEK]",
+            en: "cheque",
+            note: "Rare — mostly replaced by transfers",
+          },
+        ],
+        card: [
+          {
+            n: "1",
+            pt: "chip EMV",
+            en: "EMV chip (Europay, Mastercard, Visa)",
+            note: "Transmits encrypted transaction data; generates a unique code per transaction",
+          },
+          {
+            n: "2",
+            pt: "número do cartão",
+            en: "card number",
+            note: "16 digits in groups of 4 — used for payments and identification",
+          },
+          {
+            n: "3",
+            pt: "nome do titular",
+            en: "cardholder name",
+            note: "Full name of the account holder",
+          },
+          {
+            n: "4",
+            pt: "contactless",
+            en: "contactless payment",
+            note: "Pagamentos até 50€ sem PIN (sem contacto)",
+          },
+          {
+            n: "5",
+            pt: "validade (válido até)",
+            en: "expiry date (valid until)",
+            note: "Format: MÊS/ANO — MM/AA. Card invalid after this date.",
+          },
+          {
+            n: "6",
+            pt: "rede de pagamento",
+            en: "payment network",
+            note: "Mastercard, Visa, Amex, etc.",
+          },
+          {
+            n: "7",
+            pt: "assinatura do titular",
+            en: "holder's signature",
+            note: "On the back — used for signature-based verification",
+          },
+          {
+            n: "8",
+            pt: "holograma de segurança",
+            en: "security hologram",
+            note: "Anti-cloning feature — changes appearance at different angles",
+          },
+          {
+            n: "9",
+            pt: "banda magnética",
+            en: "magnetic stripe",
+            note: "Older technology — stores card data (being phased out)",
+          },
+          {
+            n: "10",
+            pt: "código de segurança / CVV",
+            en: "security code / CVV",
+            note: "3 digits on back — required for online purchases",
+          },
+        ],
+        documents: [
+          {
+            pt: "o talão",
+            pron: "[oo tɐ-LOWNG]",
+            en: "till receipt / slip",
+            note: "Não é um documento legal — comprova apenas a transação comercial. Dado automaticamente.",
+          },
+          {
+            pt: "a fatura",
+            pron: "[ɐ fɐ-TOO-rɐ]",
+            en: "invoice / tax receipt",
+            note: "Documento comprovativo de transação comercial. Necessária para declaração de IRS (e-fatura). Pedida ao dar o NIF.",
+          },
+          {
+            pt: "o recibo",
+            pron: "[oo hɐ-SEE-boo]",
+            en: "receipt (proof of payment)",
+            note: "Comprova que o pagamento foi efectuado. Emitido com a fatura quando o pagamento é realizado.",
+          },
+          {
+            pt: "a fatura-recibo",
+            pron: "[ɐ fɐ-TOO-rɐ hɐ-SEE-boo]",
+            en: "combined invoice+receipt",
+            note: "Documento único que serve como fatura e recibo em simultâneo — comum em prestação de serviços.",
+          },
+        ],
+        at: {
+          name: "Autoridade Tributária (AT)",
+          note: "A AT é a entidade pública portuguesa que controla a autenticidade e faz a coleta tributária de todos os documentos fiscais. Gere o sistema e-fatura, IRS (imposto sobre rendimento de pessoas singulares) e IRC (imposto sobre o rendimento das pessoas coletivas — empresas).",
+          terms: [
+            [
+              "NIF",
+              "Número de Identificação Fiscal",
+              "Your Portuguese tax number — required when requesting a fatura. Present it at shops to accumulate tax deductions.",
+            ],
+            [
+              "IRS",
+              "Imposto sobre o Rendimento das Pessoas Singulares",
+              "Personal income tax — filed annually by individuals",
+            ],
+            [
+              "IRC",
+              "Imposto sobre o Rendimento das Pessoas Coletivas",
+              "Corporate tax — paid by companies",
+            ],
+            [
+              "e-fatura",
+              "Portal de faturas electrónicas",
+              "Online AT portal where all your received faturas are registered — used for IRS deductions",
+            ],
+            [
+              "IVA",
+              "Imposto sobre o Valor Acrescentado",
+              "VAT — 23% standard rate in Portugal (6% food, 13% intermediate)",
+            ],
+          ],
+        },
+        iban: {
+          note: "IBAN = International Bank Account Number. Required for bank transfers within Portugal and internationally. Portuguese IBANs start with PT50 followed by 21 digits. NIB = Número de Identificação Bancária = the Portuguese domestic account number embedded inside the IBAN.",
+          structure:
+            "PT50 XXXX XXXX XXXXXXXXXXXXX XX — PT = country, 50 = check digits, then NIB (21 digits)",
+        },
+        troco: [
+          { pt: "O meu troco, por favor.", en: "My change, please." },
+          { pt: "Fico com o troco.", en: "Keep the change." },
+          { pt: "Não tem troco?", en: "Don't you have change?" },
+          {
+            pt: "Pode passar-me a fatura com NIF?",
+            en: "Can you give me the invoice with my NIF?",
+          },
+          {
+            pt: "Preciso de uma fatura para o IRS.",
+            en: "I need an invoice for my tax return.",
+          },
+          { pt: "Pago com cartão.", en: "I'll pay by card." },
+          { pt: "Aceita MB Way?", en: "Do you accept MB Way?" },
+          { pt: "Qual é o IBAN?", en: "What is the IBAN?" },
         ],
       };
 
@@ -8438,7 +8900,7 @@
   ).join("")}`,
 
         money: () => `
-  ${sectionHead("Money & Prices", "Session 6", "Portugal uses the Euro (€). Prices are written with a comma as the decimal separator: 1,50€ = one euro fifty. The period is the thousands separator: 1.000 = one thousand.")}
+  ${sectionHead("Money & Prices", "Session 6", "Portugal uses the Euro (€). Prices use comma as decimal separator: 1,50€ = one euro fifty. Period is the thousands separator: 1.000 = one thousand. See also the Payments & Documents section.")}
   <h3 class="sub-heading">Key Phrases</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
@@ -8472,6 +8934,251 @@
   </table></div>
   <h3 class="sub-heading">Money Vocabulary</h3>
   ${vocabGrid(D_MONEY.currency)}`,
+
+        payments: () => `
+  ${sectionHead("Payments & Documents", "UFCD 6453 Session 4", "Formas de pagamento, documentos fiscais, cartão de crédito, MB Way, IBAN e a Autoridade Tributária.")}
+  <h3 class="sub-heading">Formas de Pagamento — payment methods</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Method</th><th>Pronunciation</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_PAYMENTS.methods
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Cartão de Crédito / Débito — card anatomy</h3>
+  ${infoBox("Understanding what each part of a bank card is called in Portuguese — useful for customer service calls, filling in forms, and understanding card reader prompts.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>Portuguese</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_PAYMENTS.card
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;font-size:18px;color:var(--primary);text-align:center">${r.n}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">MB Way & IBAN</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div class="card" style="border-left:4px solid var(--accent)">
+      <div style="font-size:16px;font-weight:800;color:var(--accent);margin-bottom:8px">MB Way</div>
+      <div style="font-size:13px;color:var(--text-2)">Portugal's mobile payment system. Link your bank card to the MB Way app, then pay or transfer money using just a phone number. Widely accepted for transfers between individuals and at many terminals. Operated by SIBS (the same entity that runs Multibanco).</div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--primary)">
+      <div style="font-size:16px;font-weight:800;color:var(--primary);margin-bottom:8px">IBAN / NIB</div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${D_PAYMENTS.iban.note}</div>
+      <div style="font-family:var(--mono);font-size:13px;background:var(--surface-2);border-radius:6px;padding:8px 12px">${D_PAYMENTS.iban.structure}</div>
+    </div>
+  </div>
+
+  <h3 class="sub-heading">Documentos — talão, fatura, recibo</h3>
+  ${warnBox("These three words are often confused. The key: a <strong>talão</strong> is not a legal document — it is a transaction slip. A <strong>fatura</strong> is a tax document you request by giving your NIF. A <strong>recibo</strong> proves the payment was made.")}
+  ${D_PAYMENTS.documents
+    .map(
+      (r) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid var(--primary)">
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+      <span style="font-size:18px;font-weight:800;color:var(--primary)">${r.pt}</span>
+      ${pr(r.pron)}
+      <span style="font-weight:700;color:var(--text-2)">— ${r.en}</span>
+    </div>
+    <div style="font-size:13px;color:var(--text-3)">${r.note}</div>
+  </div>`,
+    )
+    .join("")}
+
+  <h3 class="sub-heading">Autoridade Tributária (AT) — tax authority</h3>
+  ${infoBox(D_PAYMENTS.at.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Sigla</th><th>Nome completo</th><th>English / explanation</th></tr></thead>
+    <tbody>${D_PAYMENTS.at.terms
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary);font-size:16px">${r[0]}</td>
+      <td class="pt">${r[1]}</td>
+      <td class="en" style="font-size:13px">${r[2]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Frases úteis — useful payment phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>English</th></tr></thead>
+    <tbody>${D_PAYMENTS.troco
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        measurements: () => `
+  ${sectionHead("Units of Measure", "UFCD 6453 Session 4", "Unidades de medida e abreviaturas: massa, capacidade, comprimento, tempo e temperatura. Used constantly in recipes, shopping, health, and everyday conversation.")}
+
+  <h3 class="sub-heading">⚖️ Massa — weight/mass</h3>
+  ${infoBox(D_MEASUREMENTS.mass.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Name</th><th>Abbr.</th><th>Value</th><th>Common use</th></tr></thead>
+    <tbody>${D_MEASUREMENTS.mass.units
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i === 0 ? "var(--primary-lt)" : i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="${i === 0 ? "font-weight:800" : ""}">${r.pt}</td>
+      <td style="font-weight:800;font-size:16px;color:var(--primary)">${r.abbr}</td>
+      <td style="font-family:var(--mono);font-size:13px">${r.val}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    ${D_MEASUREMENTS.mass.conversions.map((c) => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-family:var(--mono);font-size:13px">${c}</span>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">🧴 Capacidade — volume/capacity</h3>
+  ${infoBox(D_MEASUREMENTS.capacity.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Name</th><th>Abbr.</th><th>Value</th><th>Common use</th></tr></thead>
+    <tbody>${D_MEASUREMENTS.capacity.units
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i === 3 ? "var(--primary-lt)" : i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="${i === 3 ? "font-weight:800" : ""}">${r.pt}</td>
+      <td style="font-weight:800;font-size:16px;color:var(--primary)">${r.abbr}</td>
+      <td style="font-family:var(--mono);font-size:13px">${r.val}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    ${D_MEASUREMENTS.capacity.conversions.map((c) => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-family:var(--mono);font-size:13px">${c}</span>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">📏 Comprimento — length</h3>
+  ${infoBox(D_MEASUREMENTS.length.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Name</th><th>Abbr.</th><th>Value</th><th>Common use</th></tr></thead>
+    <tbody>${D_MEASUREMENTS.length.units
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i === 3 ? "var(--primary-lt)" : i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="${i === 3 ? "font-weight:800" : ""}">${r.pt}</td>
+      <td style="font-weight:800;font-size:16px;color:var(--primary)">${r.abbr}</td>
+      <td style="font-family:var(--mono);font-size:13px">${r.val}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    ${D_MEASUREMENTS.length.conversions.map((c) => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-family:var(--mono);font-size:13px">${c}</span>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">⏱️ Tempo — time units</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Unit</th><th>Abbr.</th><th>Value</th><th>Note</th></tr></thead>
+    <tbody>${D_MEASUREMENTS.time.units
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td>
+      <td style="font-weight:800;font-size:16px;color:var(--primary)">${r.abbr}</td>
+      <td style="font-family:var(--mono);font-size:13px">${r.val}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🌡️ Temperatura — temperature scales</h3>
+  ${infoBox(D_MEASUREMENTS.temperature.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Scale</th><th>Symbol</th><th>Water freezes</th><th>Water boils</th><th>Absolute zero</th><th>Used where</th></tr></thead>
+    <tbody>${D_MEASUREMENTS.temperature.scales
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary)">${r.scale}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--accent)">${r.symbol}</td>
+      <td style="font-family:var(--mono)">${r.freeze}</td>
+      <td style="font-family:var(--mono)">${r.boil}</td>
+      <td style="font-family:var(--mono)">${r.absZero}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">Conversion formulas</h3>
+      ${D_MEASUREMENTS.temperature.formulas
+        .map(
+          (r) => `
+      <div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+        <div style="font-weight:800;margin-bottom:4px">${r.name}</div>
+        <div style="font-family:var(--mono);color:var(--primary);font-size:14px;margin-bottom:4px">${r.formula}</div>
+        <div style="font-size:12px;color:var(--text-3)">${r.ex}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+    <div>
+      <h3 class="sub-heading">Temperatura do forno — oven temperatures</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>°F</th><th>°C</th><th>Knob</th><th>Heat level</th></tr></thead>
+        <tbody>${D_MEASUREMENTS.temperature.oven
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:12px;color:var(--text-3)">${r.f}</td>
+          <td style="font-weight:800;color:var(--accent)">${r.c}</td>
+          <td style="font-weight:800;color:var(--primary)">${r.knob}</td>
+          <td style="font-size:13px">${r.label}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">Frases sobre temperatura</h3>
+  ${vocabGrid(D_MEASUREMENTS.temperature.phrases)}`,
 
         transport: () => `
   ${sectionHead("Transport & Schedules", "Sessions 6–7", "Getting around Portugal. Key difference from Brazilian Portuguese: comboio (not trem), autocarro (not ônibus), paragem (not parada).")}
