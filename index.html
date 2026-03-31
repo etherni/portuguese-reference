@@ -58,6 +58,30 @@
         --header-h: 64px;
         --transition: 0.18s ease;
       }
+      [data-theme="dark"] {
+        --bg: #111218;
+        --surface: #1c1e2a;
+        --surface-2: #252736;
+        --border: #2e3044;
+        --border-2: #3a3d55;
+        --text: #e8e6f0;
+        --text-2: #a8a5c0;
+        --text-3: #6a6890;
+        --primary: #5b9bd5;
+        --primary-dk: #1a3a5c;
+        --primary-lt: #1a2d42;
+        --primary-lt2: #1e3350;
+        --accent: #e06a60;
+        --accent-lt: #2e1a18;
+        --green: #3db870;
+        --green-lt: #12291e;
+        --gold: #d4a030;
+        --gold-lt: #2a2010;
+        --purple: #9b72d4;
+        --purple-lt: #1e1530;
+        --shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+        --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.4);
+      }
       *,
       *::before,
       *::after {
@@ -178,6 +202,27 @@
         border-radius: 6px;
       }
       .menu-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .theme-btn {
+        background: none;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 6px 10px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        transition: background var(--transition);
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: "Nunito", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .theme-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
 
@@ -818,6 +863,14 @@
         </div>
         <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
           ☰
+        </button>
+        <button
+          class="theme-btn"
+          id="theme-btn"
+          title="Toggle dark/light theme"
+          aria-label="Toggle theme"
+        >
+          🌙
         </button>
       </div>
     </header>
@@ -4335,6 +4388,8 @@
           {
             verb: "DAR",
             eu: "dou",
+            eu_pron: "[doh]",
+            en: "to give",
             tu: "dás",
             ele: "dá",
             nos: "damos",
@@ -4344,6 +4399,8 @@
           {
             verb: "VER",
             eu: "vejo",
+            eu_pron: "[VAY-zhoo]",
+            en: "to see",
             tu: "vês",
             ele: "vê",
             nos: "vemos",
@@ -4353,6 +4410,8 @@
           {
             verb: "LER",
             eu: "leio",
+            eu_pron: "[LAY-oo]",
+            en: "to read",
             tu: "lês",
             ele: "lê",
             nos: "lemos",
@@ -4362,6 +4421,8 @@
           {
             verb: "FAZER",
             eu: "faço",
+            eu_pron: "[FA-soo]",
+            en: "to do / make",
             tu: "fazes",
             ele: "faz",
             nos: "fazemos",
@@ -4371,6 +4432,8 @@
           {
             verb: "DIZER",
             eu: "digo",
+            eu_pron: "[DEE-goo]",
+            en: "to say / tell",
             tu: "dizes",
             ele: "diz",
             nos: "dizemos",
@@ -4380,6 +4443,8 @@
           {
             verb: "TRAZER",
             eu: "trago",
+            eu_pron: "[TRA-goo]",
+            en: "to bring",
             tu: "trazes",
             ele: "traz",
             nos: "trazemos",
@@ -4389,6 +4454,8 @@
           {
             verb: "SABER",
             eu: "sei",
+            eu_pron: "[say]",
+            en: "to know (fact)",
             tu: "sabes",
             ele: "sabe",
             nos: "sabemos",
@@ -4398,6 +4465,8 @@
           {
             verb: "PODER",
             eu: "posso",
+            eu_pron: "[POH-soo]",
+            en: "can / to be able",
             tu: "podes",
             ele: "pode",
             nos: "podemos",
@@ -4407,6 +4476,8 @@
           {
             verb: "QUERER",
             eu: "quero",
+            eu_pron: "[KEH-roo]",
+            en: "to want",
             tu: "queres",
             ele: "quer",
             nos: "queremos",
@@ -4416,6 +4487,8 @@
           {
             verb: "PÔR",
             eu: "ponho",
+            eu_pron: "[POHN-yoo]",
+            en: "to put / place",
             tu: "pões",
             ele: "põe",
             nos: "pomos",
@@ -4427,6 +4500,8 @@
           {
             verb: "PEDIR",
             eu: "peço",
+            eu_pron: "[PEH-soo]",
+            en: "to ask for / order",
             tu: "pedes",
             ele: "pede",
             nos: "pedimos",
@@ -4436,6 +4511,8 @@
           {
             verb: "OUVIR",
             eu: "ouço/oiço",
+            eu_pron: "[OH-soo]",
+            en: "to hear / listen",
             tu: "ouves",
             ele: "ouve",
             nos: "ouvimos",
@@ -4445,6 +4522,8 @@
           {
             verb: "DORMIR",
             eu: "durmo",
+            eu_pron: "[DOOR-moo]",
+            en: "to sleep",
             tu: "dormes",
             ele: "dorme",
             nos: "dormimos",
@@ -4454,15 +4533,19 @@
           {
             verb: "SUBIR",
             eu: "subo",
+            eu_pron: "[SOO-boo]",
+            en: "to go up / climb",
             tu: "sobes",
             ele: "sobe",
             nos: "subimos",
             eles: "sobem",
-            key: "TU/ELE: o→o (vowel shift)",
+            key: "TU/ELE: vowel shift",
           },
           {
             verb: "IR",
             eu: "vou",
+            eu_pron: "[voh]",
+            en: "to go",
             tu: "vais",
             ele: "vai",
             nos: "vamos",
@@ -4472,6 +4555,8 @@
           {
             verb: "VIR",
             eu: "venho",
+            eu_pron: "[VAYN-yoo]",
+            en: "to come",
             tu: "vens",
             ele: "vem",
             nos: "vimos",
@@ -9381,7 +9466,9 @@
     <table style="border-collapse:collapse;width:100%;font-size:13px">
       <thead><tr style="background:var(--primary)">
         <th style="padding:8px 10px;color:#fff;text-align:left">Verb</th>
+        <th style="padding:8px 10px;color:#fff;text-align:left;font-size:11px">English</th>
         <th style="padding:8px 10px;color:#fff;font-weight:800">EU ⚡</th>
+        <th style="padding:8px 10px;color:#fff;font-size:11px">Pron.</th>
         <th style="padding:8px 10px;color:#fff">TU</th>
         <th style="padding:8px 10px;color:#fff">ELE/ELA</th>
         <th style="padding:8px 10px;color:#fff">NÓS</th>
@@ -9389,7 +9476,7 @@
         <th style="padding:8px 10px;color:#fff;font-size:11px">Key irregularity</th>
       </tr></thead>
       <tbody>
-        <tr style="background:var(--surface-2)"><td colspan="7" style="padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3)">-AR and -ER verbs</td></tr>
+        <tr style="background:var(--surface-2)"><td colspan="9" style="padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3)">-AR and -ER verbs</td></tr>
         ${D_IRREGULAR_TABLE.ar_er
           .map(
             (
@@ -9397,16 +9484,18 @@
               i,
             ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
           <td style="padding:6px 10px;font-weight:800;color:var(--text)">${r.verb}</td>
-          <td style="padding:6px 10px;font-weight:800;font-size:15px;color:var(--primary);background:var(--primary-lt)">${r.eu}</td>
-          <td style="padding:6px 10px">${r.tu}</td>
-          <td style="padding:6px 10px">${r.ele}</td>
-          <td style="padding:6px 10px">${r.nos}</td>
-          <td style="padding:6px 10px">${r.eles}</td>
+          <td style="padding:6px 10px;font-size:12px;color:var(--text-3)">${r.en}</td>
+          <td style="padding:6px 10px;font-weight:800;font-size:15px;color:var(--primary);background:var(--primary-lt)" class="pt">${r.eu}</td>
+          <td style="padding:6px 10px">${pr(r.eu_pron)}</td>
+          <td style="padding:6px 10px" class="pt">${r.tu}</td>
+          <td style="padding:6px 10px" class="pt">${r.ele}</td>
+          <td style="padding:6px 10px" class="pt">${r.nos}</td>
+          <td style="padding:6px 10px" class="pt">${r.eles}</td>
           <td style="padding:6px 10px;font-size:11px;color:var(--text-3);font-style:italic">${r.key}</td>
         </tr>`,
           )
           .join("")}
-        <tr style="background:var(--surface-2)"><td colspan="7" style="padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3)">-IR verbs</td></tr>
+        <tr style="background:var(--surface-2)"><td colspan="9" style="padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3)">-IR verbs</td></tr>
         ${D_IRREGULAR_TABLE.ir
           .map(
             (
@@ -9414,11 +9503,13 @@
               i,
             ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
           <td style="padding:6px 10px;font-weight:800;color:var(--text)">${r.verb}</td>
-          <td style="padding:6px 10px;font-weight:800;font-size:15px;color:var(--primary);background:var(--primary-lt)">${r.eu}</td>
-          <td style="padding:6px 10px">${r.tu}</td>
-          <td style="padding:6px 10px">${r.ele}</td>
-          <td style="padding:6px 10px">${r.nos}</td>
-          <td style="padding:6px 10px">${r.eles}</td>
+          <td style="padding:6px 10px;font-size:12px;color:var(--text-3)">${r.en}</td>
+          <td style="padding:6px 10px;font-weight:800;font-size:15px;color:var(--primary);background:var(--primary-lt)" class="pt">${r.eu}</td>
+          <td style="padding:6px 10px">${pr(r.eu_pron)}</td>
+          <td style="padding:6px 10px" class="pt">${r.tu}</td>
+          <td style="padding:6px 10px" class="pt">${r.ele}</td>
+          <td style="padding:6px 10px" class="pt">${r.nos}</td>
+          <td style="padding:6px 10px" class="pt">${r.eles}</td>
           <td style="padding:6px 10px;font-size:11px;color:var(--text-3);font-style:italic">${r.key}</td>
         </tr>`,
           )
@@ -11345,6 +11436,34 @@
         document
           .getElementById("sidebar-overlay")
           .addEventListener("click", closeSidebar);
+
+        // ── THEME TOGGLE ──
+        const themeBtn = document.getElementById("theme-btn");
+        const applyTheme = (dark) => {
+          document.documentElement.setAttribute(
+            "data-theme",
+            dark ? "dark" : "light",
+          );
+          themeBtn.textContent = dark ? "☀️" : "🌙";
+          try {
+            localStorage.setItem("prt-ref-theme", dark ? "dark" : "light");
+          } catch (e) {}
+        };
+        let isDark = false;
+        try {
+          isDark = localStorage.getItem("prt-ref-theme") === "dark";
+        } catch (e) {}
+        if (
+          !isDark &&
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        )
+          isDark = true;
+        applyTheme(isDark);
+        themeBtn.addEventListener("click", () => {
+          isDark = !isDark;
+          applyTheme(isDark);
+        });
         window.addEventListener("hashchange", () => {
           const id = location.hash.slice(1);
           if (id && RENDERERS[id]) navigate(id);
