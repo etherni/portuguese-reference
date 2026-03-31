@@ -9574,10 +9574,10 @@
         (
           r,
           i,
-        ) => `<tr style="background:${r.result.startsWith("com") ? "var(--surface-2)" : "var(--primary-lt)"}">
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
       <td style="font-family:var(--mono);font-size:13px;color:var(--text-3)">${r.combo}</td>
       <td style="color:var(--text-3)">→</td>
-      <td style="font-weight:800;font-size:${r.result.startsWith("com") && !r.result.includes("(") ? "15" : "17"}px;color:${r.result.startsWith("com") && !r.result.includes("connosco") ? "var(--text)" : "var(--primary)"}">${r.result}</td>
+      <td class="pt" style="font-weight:800;font-size:16px">${r.result}</td>
       <td>${pr(r.pron)}</td>
       <td class="en">${r.en}</td>
       <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
