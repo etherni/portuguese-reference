@@ -752,7 +752,7 @@
         }
         .content-area {
           margin-left: 0;
-          padding: 20px 16px;
+          padding: 16px 12px;
         }
         .menu-btn {
           display: block;
@@ -762,6 +762,7 @@
         }
         .search-wrap {
           max-width: none;
+          flex: 1;
         }
         .conj-grid {
           grid-template-columns: 1fr;
@@ -772,22 +773,110 @@
         .content-area {
           max-width: 100%;
         }
+        /* Stack two-column grids on tablet */
+        div[style*="grid-template-columns:1fr 1fr"] {
+          display: block !important;
+        }
+        div[style*="grid-template-columns: 1fr 1fr"] {
+          display: block !important;
+        }
+        /* Table: force horizontal scroll, add label for narrow context */
+        .tbl-wrap {
+          border-radius: 6px;
+          -webkit-overflow-scrolling: touch;
+        }
+        .tbl-wrap table {
+          min-width: 440px;
+        }
+        /* Reduce section title size */
+        .section-title {
+          font-size: 22px;
+        }
+        h3.sub-heading {
+          font-size: 15px;
+        }
+        /* Nav buttons larger touch target */
+        .nav-btn {
+          padding: 11px 16px;
+          font-size: 15px;
+        }
+        /* Cards full width */
+        .card,
+        .card-sm {
+          border-radius: 8px;
+        }
+        /* Theme button — hide text on small screens */
+        .theme-btn {
+          padding: 6px 8px;
+        }
       }
       @media (max-width: 520px) {
+        .content-area {
+          padding: 12px 10px;
+        }
         .section-title {
-          font-size: 20px;
+          font-size: 19px;
         }
         .header-inner {
-          gap: 10px;
+          gap: 8px;
+          padding: 0 10px;
         }
         .logo-title {
-          font-size: 14px;
+          font-size: 13px;
         }
+        .logo svg {
+          width: 28px;
+          height: 19px;
+        }
+        /* Conjugation rows: two columns only (pronoun + form) */
         .conj-row {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: auto 1fr;
         }
         .conj-row .conj-pron {
           display: none;
+        }
+        /* Tables: tighter padding */
+        tbody td,
+        thead th {
+          padding: 8px 10px;
+          font-size: 13px;
+        }
+        /* Cards: less padding */
+        .card {
+          padding: 12px 14px;
+        }
+        .card-sm {
+          padding: 10px 12px;
+        }
+        /* Verb body grids → single column */
+        .verb-body > div[style*="grid-template-columns:1fr 1fr"],
+        .iv-body > div[style*="grid-template-columns:1fr 1fr"],
+        .rv-body > div[style*="grid-template-columns:1fr 1fr"],
+        .fv-body > div[style*="grid-template-columns:1fr 1fr"] {
+          display: block !important;
+        }
+        /* Section intro padding */
+        .section-intro {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+        /* Warn/info boxes */
+        .warn-box,
+        .rule-box {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+        /* Hide speak button pronunciation column in very narrow tables where it squeezes */
+        .hide-mobile {
+          display: none;
+        }
+        /* Alphabet table — show only letter + pron + rule, hide name */
+        .alpha-row td:nth-child(2) {
+          display: none;
+        }
+        /* Search input placeholder shorter */
+        .search-wrap input {
+          font-size: 13px;
         }
       }
       @media print {
@@ -923,6 +1012,8 @@
           tabs: [
             { id: "numbers", title: "Numbers" },
             { id: "days", title: "Days, Time & Seasons" },
+            { id: "celebrations", title: "Celebrations & Holidays" },
+            { id: "weather", title: "Weather" },
             { id: "identity", title: "Identity" },
             { id: "family", title: "Family" },
             { id: "house", title: "House & Home" },
@@ -1560,6 +1651,98 @@
       };
 
       const D_PREPOSITIONS = {
+        fullList: [
+          {
+            prep: "a",
+            en: "to / at",
+            note: "Direction (short), time, indirect object",
+          },
+          {
+            prep: "ante",
+            en: "before / in front of",
+            note: "Formal/literary: ante o tribunal (before the court)",
+          },
+          {
+            prep: "após",
+            en: "after",
+            note: "Após o jantar (after dinner) — more formal than depois de",
+          },
+          {
+            prep: "até",
+            en: "until / up to",
+            note: "Limit in time or space: até às 6h, até casa",
+          },
+          {
+            prep: "com",
+            en: "with",
+            note: "Company, instrument: com a família, com uma faca",
+          },
+          {
+            prep: "contra",
+            en: "against",
+            note: "Opposition: contra a lei, votar contra",
+          },
+          {
+            prep: "de",
+            en: "of / from",
+            note: "Origin, possession, material, transport",
+          },
+          {
+            prep: "desde",
+            en: "since / from",
+            note: "Starting point: desde 2020, desde Lisboa",
+          },
+          {
+            prep: "em",
+            en: "in / at / on",
+            note: "Location, state, months/years, specific transport",
+          },
+          {
+            prep: "entre",
+            en: "between / among",
+            note: "Position or time range: entre as árvores",
+          },
+          {
+            prep: "para",
+            en: "for / to / in order to",
+            note: "Purpose, destination (long stay), recipient",
+          },
+          {
+            prep: "perante",
+            en: "before / faced with",
+            note: "Formal: perante o juiz (before the judge)",
+          },
+          {
+            prep: "por",
+            en: "for / by / through",
+            note: "Duration, cause, exchange, route, agent",
+          },
+          {
+            prep: "segundo",
+            en: "according to",
+            note: "Segundo o professor… (according to the teacher…)",
+          },
+          {
+            prep: "sem",
+            en: "without",
+            note: "Absence: sem dinheiro, sem açúcar",
+          },
+          {
+            prep: "sob",
+            en: "under / beneath",
+            note: "Position below: sob a cama, sob a chuva",
+          },
+          {
+            prep: "sobre",
+            en: "about / on top of",
+            note: "Subject matter or above: sobre a mesa, um livro sobre Portugal",
+          },
+          {
+            prep: "trás",
+            en: "behind / after (archaic)",
+            note: "Mainly used in para trás (backwards) or por trás de (behind)",
+          },
+        ],
         simple: [
           {
             prep: "em",
@@ -1688,9 +1871,23 @@
                 "between 8 and 10",
               ],
               [
-                "Fica entre o banco e a loja",
+                "Vi um lobo entre as árvores",
                 "",
-                "It is between the bank and the shop",
+                "I saw a wolf among the trees",
+              ],
+            ],
+          },
+          {
+            prep: "sob",
+            pron: "[sob]",
+            en: "under / beneath",
+            note: "Position below something",
+            ex: [
+              ["O gato dorme sob a cama", "", "The cat sleeps under the bed"],
+              [
+                "Caminharam sob uma chuva intensa",
+                "",
+                "They walked in intense rain",
               ],
             ],
           },
@@ -1706,9 +1903,9 @@
                 "a book about Portugal",
               ],
               [
-                "O gato está sobre a mesa",
+                "Pousa o livro sobre a mesa",
                 "",
-                "The cat is on top of the table",
+                "Place the book on top of the table",
               ],
             ],
           },
@@ -1719,7 +1916,7 @@
             note: "Limit in time or space",
             ex: [
               ["Fico até às 6", "[FEE-koo ɐ-TEH ɐsh SAYSH]", "I stay until 6"],
-              ["Caminho até à estação", "", "I walk to the station"],
+              ["Caminho até ao ginásio", "", "I walk as far as the gym"],
             ],
           },
           {
@@ -1758,9 +1955,9 @@
           },
           {
             case: "Movement through a place",
-            por: "Passei por Lisboa.",
+            por: "Passo por tua casa a caminho.",
             para: "",
-            en_por: "I passed through Lisbon.",
+            en_por: "I pass by your house on the way.",
           },
           {
             case: "Purpose / goal",
@@ -1806,6 +2003,195 @@
             case: "After verb GOSTAR / ESTAR A + infinitive",
             em: "Estou a estudar (I am studying)",
             a: "",
+          },
+        ],
+        sob_sobre: [
+          {
+            prep: "sob",
+            en: "under / beneath — physical position",
+            ex: [
+              ["sob a cama", "", "under the bed"],
+              ["sob a chuva", "", "in/under the rain"],
+              ["sob pressão", "", "under pressure"],
+            ],
+          },
+          {
+            prep: "sobre",
+            en: "on top of / about — above or subject",
+            ex: [
+              ["sobre a mesa", "", "on top of the table"],
+              ["um livro sobre Portugal", "", "a book about Portugal"],
+              ["falar sobre política", "", "to talk about politics"],
+            ],
+          },
+          {
+            prep: "debaixo de",
+            en: "under / below (locução prepositiva)",
+            ex: [
+              ["debaixo da cama", "", "under the bed"],
+              ["debaixo da mesa", "", "under the table"],
+            ],
+          },
+          {
+            prep: "em cima de",
+            en: "on top of (locução prepositiva)",
+            ex: [
+              ["em cima da mesa", "", "on top of the table"],
+              ["em cima do armário", "", "on top of the wardrobe"],
+            ],
+          },
+        ],
+      };
+
+      const D_VERB_PREPS = {
+        note: "Preposições exigidas por verbos — some verbs always require a specific preposition. The preposition is fixed — it does not change with context. Must be memorised with the verb.",
+        verbs: [
+          {
+            verb: "acreditar",
+            prep: "em",
+            pron: "[ɐ-krɐ-dee-TAR]",
+            en: "to believe in",
+            ex: "Acredito em ti.",
+          },
+          {
+            verb: "apaixonar-se",
+            prep: "por",
+            pron: "[ɐ-pai-shoo-NAR]",
+            en: "to fall in love with",
+            ex: "Ela apaixonou-se pelo Filipe.",
+          },
+          {
+            verb: "chegar",
+            prep: "a",
+            pron: "[shɐ-GAR]",
+            en: "to arrive at/to",
+            ex: "Chego a casa às 18h.",
+          },
+          {
+            verb: "colocar",
+            prep: "em",
+            pron: "[koo-loo-KAR]",
+            en: "to place in/on",
+            ex: "Coloca o livro na mochila.",
+          },
+          {
+            verb: "concordar",
+            prep: "com",
+            pron: "[kong-kor-DAR]",
+            en: "to agree with",
+            ex: "Todos concordaram com a proposta.",
+          },
+          {
+            verb: "confiar",
+            prep: "em",
+            pron: "[kong-fyAR]",
+            en: "to trust in",
+            ex: "O professor confia em todos os alunos.",
+          },
+          {
+            verb: "cuidar",
+            prep: "de",
+            pron: "[kwee-DAR]",
+            en: "to take care of",
+            ex: "Ela cuida do irmão mais novo.",
+          },
+          {
+            verb: "desistir",
+            prep: "de",
+            pron: "[dɐ-zeesh-TEER]",
+            en: "to give up on",
+            ex: "Não desistas dos teus sonhos!",
+          },
+          {
+            verb: "discordar",
+            prep: "de",
+            pron: "[deesh-kor-DAR]",
+            en: "to disagree with",
+            ex: "Discordo da tua opinião.",
+          },
+          {
+            verb: "duvidar",
+            prep: "de",
+            pron: "[doo-vee-DAR]",
+            en: "to doubt",
+            ex: "Duvido da notícia.",
+          },
+          {
+            verb: "entrar",
+            prep: "em",
+            pron: "[en-TRAR]",
+            en: "to enter (into)",
+            ex: "Entrou no edifício.",
+          },
+          {
+            verb: "esquecer-se",
+            prep: "de",
+            pron: "[ish-kɐ-SEHR-sɐ]",
+            en: "to forget",
+            ex: "Esqueci-me das chaves.",
+          },
+          {
+            verb: "falar",
+            prep: "de / com",
+            pron: "[fɐ-LAR]",
+            en: "to talk about / to talk with",
+            ex: "Falei com ela. / Falou de um filme.",
+          },
+          {
+            verb: "gostar",
+            prep: "de",
+            pron: "[goosh-TAR]",
+            en: "to like",
+            ex: "Gosto de peixe. (NEVER omit DE)",
+          },
+          {
+            verb: "interessar-se",
+            prep: "por",
+            pron: "[in-tɐ-rɐ-SAR]",
+            en: "to be interested in",
+            ex: "Interesso-me por música.",
+          },
+          {
+            verb: "lembrar-se",
+            prep: "de",
+            pron: "[lem-BRAR-sɐ]",
+            en: "to remember",
+            ex: "Lembro-me do teu nome.",
+          },
+          {
+            verb: "morar",
+            prep: "em",
+            pron: "[moo-RAR]",
+            en: "to live in",
+            ex: "Moro em Lisboa.",
+          },
+          {
+            verb: "participar",
+            prep: "em",
+            pron: "[pɐr-tee-see-PAR]",
+            en: "to take part in",
+            ex: "A turma participou no concurso.",
+          },
+          {
+            verb: "pensar",
+            prep: "em",
+            pron: "[pen-SAR]",
+            en: "to think about",
+            ex: "Penso em ti todos os dias.",
+          },
+          {
+            verb: "precisar",
+            prep: "de",
+            pron: "[prɐ-see-ZAR]",
+            en: "to need",
+            ex: "Preciso de ajuda.",
+          },
+          {
+            verb: "reparar",
+            prep: "em",
+            pron: "[hɐ-pɐ-RAR]",
+            en: "to notice / to repair",
+            ex: "Reparei no teu novo corte de cabelo.",
           },
         ],
       };
@@ -1897,6 +2283,30 @@
             en: "in the shops",
           },
           {
+            prep: "em",
+            art: "um → num [noong]",
+            ex: "num restaurante",
+            en: "in a restaurant",
+          },
+          {
+            prep: "em",
+            art: "uma → numa [NOO-mɐ]",
+            ex: "numa caixa",
+            en: "in a box",
+          },
+          {
+            prep: "em",
+            art: "uns → nuns [noonsh]",
+            ex: "nuns casos",
+            en: "in some cases",
+          },
+          {
+            prep: "em",
+            art: "umas → numas [NOO-mɐsh]",
+            ex: "numas horas",
+            en: "in a few hours",
+          },
+          {
             prep: "de",
             art: "o → do [doo]",
             ex: "Sou do Porto",
@@ -1921,6 +2331,30 @@
             en: "of the cities",
           },
           {
+            prep: "de",
+            art: "um → dum [doong]",
+            ex: "Vim dum país distante",
+            en: "I came from a distant country",
+          },
+          {
+            prep: "de",
+            art: "uma → duma [DOO-mɐ]",
+            ex: "duma vez para sempre",
+            en: "once and for all",
+          },
+          {
+            prep: "de",
+            art: "uns → duns [doonsh]",
+            ex: "duns anos para cá",
+            en: "in recent years",
+          },
+          {
+            prep: "de",
+            art: "umas → dumas [DOO-mɐsh]",
+            ex: "dumas semanas",
+            en: "of some weeks",
+          },
+          {
             prep: "a",
             art: "o → ao [ow]",
             ex: "Vou ao cinema",
@@ -1943,6 +2377,30 @@
             art: "as → às [ɐsh]",
             ex: "às 8 horas",
             en: "at 8 o'clock",
+          },
+          {
+            prep: "por",
+            art: "o → pelo [PEH-loo]",
+            ex: "Passo pelo parque",
+            en: "I pass through the park",
+          },
+          {
+            prep: "por",
+            art: "a → pela [PEH-lɐ]",
+            ex: "Vim pela auto-estrada",
+            en: "I came via the motorway",
+          },
+          {
+            prep: "por",
+            art: "os → pelos [PEH-loosh]",
+            ex: "pelos campos",
+            en: "through the fields",
+          },
+          {
+            prep: "por",
+            art: "as → pelas [PEH-lɐsh]",
+            ex: "pelas ruas de Lisboa",
+            en: "through the streets of Lisbon",
           },
         ],
         rules: [
@@ -7400,6 +7858,439 @@
         ],
       };
 
+      const D_CELEBRATIONS = {
+        annual: [
+          {
+            date: "1 de janeiro",
+            name: "Ano Novo / Passagem de Ano",
+            icon: "🎆",
+            en: "New Year",
+            desc: "A data mais esperada do ano. Reunimo-nos para celebrar um novo começo e dar as boas-vindas a um ano novinho em folha, que se espera próspero e feliz.",
+          },
+          {
+            date: "Fevereiro/março (variável)",
+            name: "Carnaval / Entrudo",
+            icon: "🎭",
+            en: "Carnival",
+            desc: "Não tem data fixa. Comemora-se 40 dias antes do Domingo de Páscoa e marca o início da Quaresma. Época de excessos, desfiles, folia e máscaras. O Carnaval de Podence (Trás-os-Montes) é Património Imaterial da Humanidade pela UNESCO.",
+          },
+          {
+            date: "Março/abril (variável)",
+            name: "Páscoa",
+            icon: "🐣",
+            en: "Easter",
+            desc: "Assinala a morte e ressurreição de Jesus Cristo. O Domingo de Páscoa não tem data fixa — acontece no primeiro domingo depois da primeira lua cheia do equinócio da primavera.",
+          },
+          {
+            date: "13 de junho",
+            name: "Santo António (Lisboa)",
+            icon: "🎉",
+            en: "Saint Anthony's Day — Lisbon",
+            desc: "A maior festa popular de Lisboa. Festas dos Santos Populares acontecem em junho em todo o país.",
+          },
+          {
+            date: "24 de junho",
+            name: "São João (Porto)",
+            icon: "🔨",
+            en: "Saint John's Day — Porto",
+            desc: "A maior festa popular do Porto. Tradicional bater de cabeças com martelos de plástico (alho-porro).",
+          },
+          {
+            date: "29 de junho",
+            name: "São Pedro",
+            icon: "🎊",
+            en: "Saint Peter's Day",
+            desc: "Terceiro dos Santos Populares de junho. Celebrado em várias regiões de Portugal.",
+          },
+          {
+            date: "1 de novembro",
+            name: "Dia de Todos os Santos",
+            icon: "🕯️",
+            en: "All Saints' Day",
+            desc: "Honra todos os santos. É tradição as crianças saírem à rua para pedir o 'Pão por Deus', de porta em porta — dizem versos e recebem pão, broas, romã e frutos secos.",
+          },
+          {
+            date: "25 de dezembro",
+            name: "Natal",
+            icon: "🎄",
+            en: "Christmas",
+            desc: "Uma das mais importantes datas festivas do cristianismo. Comemora o nascimento de Jesus Cristo em Belém, na Palestina, no ano 1 d.C.",
+          },
+        ],
+        public: [
+          {
+            date: "25 de abril",
+            name: "Dia da Liberdade",
+            icon: "🌹",
+            en: "Freedom Day",
+            desc: "Celebra a Revolução dos Cravos de 1974 — a revolta dos militares portugueses que pôs fim ao regime ditatorial do Estado Novo (liderado por António de Oliveira Salazar). Um dos momentos mais importantes da história moderna de Portugal.",
+          },
+          {
+            date: "1 de maio",
+            name: "Dia do Trabalhador",
+            icon: "✊",
+            en: "International Workers' Day",
+            desc: "Feriado internacional dedicado aos trabalhadores, celebrado em quase todos os países do mundo.",
+          },
+          {
+            date: "10 de junho",
+            name: "Dia de Portugal, de Camões e das Comunidades Portuguesas",
+            icon: "🇵🇹",
+            en: "Portugal Day",
+            desc: "Data da morte do poeta Luís de Camões. Presta homenagem a Portugal, aos portugueses, à cultura lusófona e à presença portuguesa por todo o mundo.",
+          },
+          {
+            date: "5 de outubro",
+            name: "Implantação da República",
+            icon: "🏛️",
+            en: "Republic Day",
+            desc: "Assinala o dia em que, em 1910, foi proclamada a República em Portugal.",
+          },
+        ],
+        personal: [
+          {
+            name: "Casamento",
+            icon: "💍",
+            en: "Wedding / marriage",
+            desc: "União formal de duas pessoas que decidem partilhar a vida. Pode ser religioso ou civil.",
+          },
+          {
+            name: "Aniversário",
+            icon: "🎂",
+            en: "Birthday",
+            desc: "Comemoração de mais um ano de vida. Celebração junto de amigos e familiares.",
+          },
+          {
+            name: "Batizado",
+            icon: "👶",
+            en: "Baptism / christening",
+            desc: "Cerimónia de entrada na comunidade cristã.",
+          },
+          {
+            name: "Formatura",
+            icon: "🎓",
+            en: "Graduation",
+            desc: "Celebração do fim de um percurso académico.",
+          },
+        ],
+        vocab: [
+          ["o feriado", "[oo fɐ-ryA-doo]", "public holiday"],
+          ["a festa", "[ɐ FESH-tɐ]", "party / festival / celebration"],
+          [
+            "a data comemorativa",
+            "[DA-tɐ koo-mɐ-moo-rɐ-TEE-vɐ]",
+            "commemorative date",
+          ],
+          ["a tradição", "[ɐ trɐ-dee-SOWNG]", "tradition"],
+          ["celebrar", "[sɐ-lɐ-BRAR]", "to celebrate"],
+          ["comemorar", "[koo-mɐ-moo-RAR]", "to commemorate"],
+          [
+            "festejar",
+            "[fɐsh-tɐ-ZHAR]",
+            "to celebrate / to mark (an occasion)",
+          ],
+          ["reunir-se", "[hɐ-oo-NEER-sɐ]", "to gather / get together"],
+          ["dar as boas-vindas", "", "to welcome"],
+          ["o desfile", "[oo dɐsh-FEEL]", "parade"],
+          ["a máscara", "[ɐ MASH-kɐ-rɐ]", "mask"],
+          [
+            "os fogos de artifício",
+            "[FOHG-oosh dɐ ar-tee-FEE-syoo]",
+            "fireworks",
+          ],
+          ["a Quaresma", "[ɐ kwɐ-REZH-mɐ]", "Lent"],
+          ["a ressurreição", "[ɐ hɐ-soo-hɐy-SOWNG]", "resurrection"],
+          ["o equinócio", "[oo ɐ-kwee-NO-syoo]", "equinox"],
+          ["o século", "[oo SEH-koo-loo]", "century"],
+          ["d.C. (depois de Cristo)", "", "AD (Anno Domini)"],
+          ["a.C. (antes de Cristo)", "", "BC (Before Christ)"],
+        ],
+      };
+
+      const D_WEATHER = {
+        note: "Estado do tempo — weather. In Portugal: verão is hot and dry (25–35°C), inverno is mild and rainy (8–16°C). Weather forecasts use Celsius.",
+        states: [
+          {
+            e: "☀️",
+            pt: "sol / está sol",
+            pron: "[sol]",
+            en: "sun / it's sunny",
+            adj: "ensolarado/a",
+          },
+          {
+            e: "🌤️",
+            pt: "parcialmente nublado",
+            pron: "[noo-BLA-doo]",
+            en: "partly cloudy",
+            adj: "",
+          },
+          {
+            e: "☁️",
+            pt: "nublado / está nublado",
+            pron: "[noo-BLA-doo]",
+            en: "cloudy / overcast",
+            adj: "nublado/a",
+          },
+          {
+            e: "🌧️",
+            pt: "chuva / está a chover",
+            pron: "[SHOH-vɐ]",
+            en: "rain / it is raining",
+            adj: "chuvoso/a",
+          },
+          {
+            e: "⛈️",
+            pt: "trovoada",
+            pron: "[troo-voo-A-dɐ]",
+            en: "thunderstorm",
+            adj: "",
+          },
+          {
+            e: "❄️",
+            pt: "neve / está a nevar",
+            pron: "[NEH-v]",
+            en: "snow / it is snowing",
+            adj: "nevado/a",
+          },
+          {
+            e: "💨",
+            pt: "vento / está vento",
+            pron: "[VENT-oo]",
+            en: "wind / it's windy",
+            adj: "ventoso/a",
+          },
+          {
+            e: "🌫️",
+            pt: "nevoeiro",
+            pron: "[nɐ-voo-AY-roo]",
+            en: "fog / mist",
+            adj: "",
+          },
+          {
+            e: "🌈",
+            pt: "arco-íris",
+            pron: "[AR-koo EE-reesh]",
+            en: "rainbow",
+            adj: "",
+          },
+          {
+            e: "🌡️",
+            pt: "temperatura",
+            pron: "[tem-pɐ-rɐ-TOO-rɐ]",
+            en: "temperature",
+            adj: "",
+          },
+        ],
+        verbs: [
+          [
+            "chover",
+            "[shoo-VEHR]",
+            "to rain — Está a chover. (EU Pt: ESTAR A + inf.)",
+          ],
+          ["nevar", "[nɐ-VAR]", "to snow — Está a nevar."],
+          ["fazer sol", "[fɐ-SEHR sol]", "to be sunny — Faz sol hoje."],
+          [
+            "fazer frio",
+            "[fɐ-SEHR FREE-oo]",
+            "to be cold — Hoje faz muito frio.",
+          ],
+          [
+            "fazer calor",
+            "[fɐ-SEHR kɐ-LOR]",
+            "to be hot — Faz imenso calor no verão.",
+          ],
+          [
+            "estar nublado",
+            "[ish-TAR noo-BLA-doo]",
+            "to be cloudy — Está nublado.",
+          ],
+          ["estar ventoso", "[ish-TAR ven-TOH-zoo]", "to be windy"],
+          ["trovoar", "[troo-voo-AR]", "to thunder — Está a trovoar."],
+        ],
+        phrases: [
+          {
+            pt: "Que tempo faz hoje?",
+            pron: "[kɐ TEMP-oo fash OH-zhɐ]",
+            en: "What is the weather like today?",
+          },
+          {
+            pt: "Como está o tempo?",
+            pron: "[KOH-moo ish-TA oo TEMP-oo]",
+            en: "What is the weather like?",
+          },
+          {
+            pt: "Está um dia lindo!",
+            pron: "[ish-TA oong DEE-ɐ LEEN-doo]",
+            en: "It is a lovely day!",
+          },
+          {
+            pt: "Está a chover muito.",
+            pron: "[ish-TA ɐ shoo-VEHR MWEE-too]",
+            en: "It is raining a lot.",
+          },
+          {
+            pt: "A previsão do tempo diz que vai nevar.",
+            pron: "",
+            en: "The weather forecast says it will snow.",
+          },
+          {
+            pt: "Está a fazer muito frio lá fora.",
+            pron: "",
+            en: "It is very cold outside.",
+          },
+          {
+            pt: "Qual é a temperatura máxima hoje?",
+            pron: "",
+            en: "What is the maximum temperature today?",
+          },
+          {
+            pt: "No Porto chove muito no inverno.",
+            pron: "",
+            en: "It rains a lot in Porto in winter.",
+          },
+        ],
+      };
+
+      const D_PREP_TEMPO_FULL = {
+        note: "Preposições de tempo — systematic guide. The choice of A, DE, or EM depends on WHAT type of time reference is being expressed, not just on intuition.",
+        preps: [
+          {
+            prep: "A",
+            pron: "[ɐ → à / às / ao / aos]",
+            color: "var(--primary)",
+            uses: [
+              {
+                type: "horas — clock times",
+                note: "A + definite article; use às for plural (8 horas), ao for noon",
+                ex: [
+                  "Eu começo as aulas às oito horas e acabo ao meio-dia.",
+                  "Levanto-me às sete horas e almoço ao meio-dia.",
+                ],
+              },
+              {
+                type: "partes do dia — afternoon / night",
+                note: "À tarde, à noite — but DE manhã (morning uses DE!)",
+                ex: [
+                  "À tarde eu vou ao cinema e à noite vou jantar ao restaurante.",
+                  "Ele trabalha à tarde e à noite. [mas de manhã]",
+                ],
+              },
+              {
+                type: "dias da semana — habitual / recurring action",
+                note: "Aos domingos = every Sunday; À segunda-feira = every Monday",
+                ex: [
+                  "Aos domingos, janto com os meus avós.",
+                  "À segunda-feira eu vou sempre ao cinema.",
+                ],
+              },
+              {
+                type: "fim de período (end of a time range)",
+                note: "Used with DE…A — the end marker",
+                ex: [
+                  "Eu tenho aulas das nove às treze.",
+                  "Ela trabalha de segunda-feira a sexta-feira.",
+                ],
+              },
+            ],
+          },
+          {
+            prep: "DE",
+            pron: "[dɐ → da / das / do / dos]",
+            color: "var(--accent)",
+            uses: [
+              {
+                type: "parte do dia — morning",
+                note: "De manhã — exception: morning always uses DE, not A",
+                ex: [
+                  "De manhã apanho sempre o metro.",
+                  "De manhã, costumo correr antes de ir para o trabalho.",
+                ],
+              },
+              {
+                type: "datas — day + month + year format",
+                note: "Separates day from month and month from year",
+                ex: [
+                  "Hoje é dia 16 de março de 2005.",
+                  "Ela nasceu a 6 de agosto de 1980.",
+                ],
+              },
+              {
+                type: "início de período (start of a time range)",
+                note: "Used with DE…A — the start marker",
+                ex: [
+                  "Eu tenho aulas de segunda-feira a sexta-feira.",
+                  "Eu tenho aulas das oito horas ao meio-dia.",
+                ],
+              },
+              {
+                type: "hora numa parte do dia — locating a time",
+                note: "da manhã / da tarde / da noite after a clock time",
+                ex: [
+                  "Ele sai de casa às sete e meia da manhã.",
+                  "Eu janto sempre às nove da noite.",
+                ],
+              },
+            ],
+          },
+          {
+            prep: "EM",
+            pron: "[ayng → no / na / nos / nas]",
+            color: "var(--green)",
+            uses: [
+              {
+                type: "dia da semana — pontual / specific one-off",
+                note: "Contrasts with A (habitual): EM = this specific day",
+                ex: [
+                  "Eles chegam na terça-feira.",
+                  "Vi o Pedro no domingo. [ação pontual]",
+                ],
+              },
+              {
+                type: "frequência — de X em X",
+                note: "de 6 em 6 minutos = every 6 minutes",
+                ex: [
+                  "Este autocarro passa de 6 em 6 minutos.",
+                  "Os testes são de 3 em 3 semanas.",
+                ],
+              },
+              {
+                type: "mês / ano / estações do ano",
+                note: "Em maio, em 1967, no verão, na primavera",
+                ex: [
+                  "Estamos em maio. / A Ana nasceu em 1967.",
+                  "Estamos no verão. / Fiz o curso em três anos.",
+                ],
+              },
+            ],
+          },
+        ],
+        habitual_vs_pontual: {
+          note: "KEY DISTINCTION — Days of the week: A (habitual, every week) vs EM/NO/NA (specific, one particular time).",
+          rows: [
+            {
+              prep: "À / Aos",
+              ex: "Aos domingos, janto com os meus avós.",
+              en: "On Sundays I have dinner with my grandparents. (every Sunday — habitual)",
+            },
+            {
+              prep: "No / Na",
+              ex: "Vi o Pedro no domingo.",
+              en: "I saw Pedro on Sunday. (that specific Sunday — one-off)",
+            },
+            {
+              prep: "À",
+              ex: "À segunda-feira vou sempre ao cinema.",
+              en: "On Mondays I always go to the cinema. (habitual)",
+            },
+            {
+              prep: "Na",
+              ex: "Eles chegam na terça-feira.",
+              en: "They arrive on Tuesday. (specific arrival day)",
+            },
+          ],
+        },
+      };
+
       const D_DAYS = [
         {
           n: "2ª",
@@ -8797,9 +9688,27 @@
   ${D_PRONOUNS.notes.map((n) => `<div class="rule-box" style="margin-bottom:8px">→ ${n}</div>`).join("")}`,
 
         articles: () => `
-  ${sectionHead("Prepositions & Articles", "Session 3", "Prepositions link words together. Portuguese has a set of core prepositions, each with a distinct meaning. Crucially, three of them — em, de, a — automatically merge with articles to form contractions. These contractions are mandatory grammar, not optional.")}
+  ${sectionHead("Prepositions & Articles", "Sessions 3 & UFCD 6453", "Prepositions link elements in a sentence. Portuguese has 18 simple prepositions. Three core ones (em, de, a, por) contract with articles — these contractions are mandatory grammar.")}
 
-  <h3 class="sub-heading">Simple Prepositions</h3>
+  <h3 class="sub-heading">As 18 preposições simples — complete list</h3>
+  ${infoBox("As preposições estabelecem uma ligação entre dois elementos da frase. The 18 simple prepositions are invariable — they never change form.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Preposition</th><th>English</th><th>Note / typical use</th></tr></thead>
+    <tbody>${D_PREPOSITIONS.fullList
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;font-size:18px;color:var(--primary)">${r.prep}</td>
+      <td style="font-weight:700">${r.en}</td>
+      <td style="font-size:13px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Core prepositions — detailed</h3>
   ${D_PREPOSITIONS.simple
     .map(
       (p) => `
@@ -8822,6 +9731,21 @@
       </div>`,
         )
         .join("")}
+    </div>
+  </div>`,
+    )
+    .join("")}
+
+  <h3 class="sub-heading">SOB vs SOBRE vs locuções prepositivas</h3>
+  ${infoBox("SOB = under/beneath (formal; also used figuratively: sob pressão). SOBRE = on top of / about. In everyday speech, locuções prepositivas (debaixo de / em cima de) are more common than sob/sobre for physical position.")}
+  ${D_PREPOSITIONS.sob_sobre
+    .map(
+      (r) => `
+  <div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+    <div style="font-size:18px;font-weight:800;color:var(--primary);margin-bottom:4px">${r.prep}</div>
+    <div style="font-size:13px;font-weight:700;margin-bottom:6px">${r.en}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${r.ex.map((e) => `<div class="pt" style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:13px">${e[0]} <span class="en" style="font-size:12px">— ${e[2]}</span></div>`).join("")}
     </div>
   </div>`,
     )
@@ -8880,17 +9804,20 @@
       .join("")}
   </div>
 
-  <h3 class="sub-heading">Contractions — Preposition + Article (mandatory)</h3>
-  ${warnBox("These are not optional contractions. Portuguese grammar requires them. You cannot say <em>em o Porto</em> — it must be <em>no Porto</em>. Learn these as fixed forms.")}
+  <h3 class="sub-heading">Contractions — Preposição + Artigo (mandatory)</h3>
+  ${warnBox("These are not optional. Portuguese grammar requires them. You cannot say <em>em o Porto</em> — it must be <em>no Porto</em>. Includes indefinite article contractions (dum, numa) and POR contractions (pelo, pela).")}
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Preposition</th><th>+ Article =</th><th>Pronunciation</th><th>Example</th><th>English</th></tr></thead>
+    <thead><tr><th>Prep.</th><th>+ Article =</th><th>Result</th><th>Example</th><th>English</th></tr></thead>
     <tbody>${D_ARTICLES.contractions
       .map(
-        (r) => `<tr>
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
       <td style="color:var(--purple);font-weight:800;font-size:16px">${r.prep}</td>
-      <td><strong style="font-size:18px;color:var(--primary)">${r.art}</strong></td>
-      <td>${pr(r.art.match(/\[.*?\]/) ? r.art.match(/\[.*?\]/)[0] : "")}</td>
-      <td style="font-style:italic">${r.ex}</td>
+      <td style="font-size:13px;color:var(--text-3)">${r.art.split("→")[0].trim()}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--primary)" class="pt">${r.art.split("→")[1] ? r.art.split("→")[1].trim() : r.art}</td>
+      <td style="font-style:italic;font-size:13px" class="pt">${r.ex}</td>
       <td class="en">${r.en}</td>
     </tr>`,
       )
@@ -8898,7 +9825,70 @@
   </table></div>
 
   <h3 class="sub-heading">Special Rules</h3>
-  ${D_ARTICLES.rules.map((r) => `<div class="rule-box" style="margin-bottom:8px">→ ${r}</div>`).join("")}`,
+  ${D_ARTICLES.rules.map((r) => `<div class="rule-box" style="margin-bottom:8px">→ ${r}</div>`).join("")}
+
+  <h3 class="sub-heading">Preposições exigidas por verbos — verb-required prepositions</h3>
+  ${warnBox(D_VERB_PREPS.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>Prep.</th><th>Pronunciation</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_VERB_PREPS.verbs
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.verb}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--primary)">${r.prep}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-size:13px;font-style:italic">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Preposições de Tempo — A, DE, EM (Session 7)</h3>
+  ${warnBox(D_PREP_TEMPO_FULL.note)}
+  ${D_PREP_TEMPO_FULL.preps
+    .map(
+      (p) => `
+  <div class="card" style="margin-bottom:12px;border-left:4px solid ${p.color}">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-size:28px;font-weight:800;color:${p.color};min-width:50px">${p.prep}</span>
+      ${pr(p.pron)}
+    </div>
+    ${p.uses
+      .map(
+        (u) => `
+      <div style="margin-bottom:12px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:3px">${u.type}</div>
+        <div style="font-size:12px;color:var(--text-2);font-style:italic;margin-bottom:6px">${u.note}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${u.ex.map((e) => `<div class="pt" style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px">${e}</div>`).join("")}
+        </div>
+      </div>`,
+      )
+      .join("")}
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">KEY — Habitual (À/Aos) vs Specific (No/Na)</h3>
+  ${infoBox(D_PREP_TEMPO_FULL.habitual_vs_pontual.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Preposition</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_PREP_TEMPO_FULL.habitual_vs_pontual.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary);font-size:16px">${r.prep}</td>
+      <td class="pt">${r.ex}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
 
         gender: () => `
   ${sectionHead("Noun Gender", "Sessions 1–3", "Portuguese noun gender is largely predictable from the word ending. Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.")}
@@ -10500,33 +11490,24 @@
       .join("")}</tbody>
   </table></div>
 
-  <h3 class="sub-heading">Preposições de Tempo — A, DE, EM, DE…A, POR VOLTA DE</h3>
-  ${warnBox(D_TIME_PREPS.note)}
-  ${D_TIME_PREPS.preps
+  <h3 class="sub-heading">Preposições de Tempo — A, DE, EM (detailed)</h3>
+  ${warnBox(D_PREP_TEMPO_FULL.note)}
+  ${D_PREP_TEMPO_FULL.preps
     .map(
       (p) => `
-  <div class="card" style="margin-bottom:10px;border-left:4px solid ${p.color}">
+  <div class="card" style="margin-bottom:12px;border-left:4px solid ${p.color}">
     <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:10px">
-      <span style="font-size:24px;font-weight:800;color:${p.color};min-width:130px">${p.prep}</span>
+      <span style="font-size:24px;font-weight:800;color:${p.color};min-width:60px">${p.prep}</span>
       ${pr(p.pron)}
     </div>
     ${p.uses
       .map(
         (u) => `
       <div style="margin-bottom:12px">
-        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:6px">${u.type}</div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:4px">${u.type}</div>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:6px;font-style:italic">${u.note}</div>
         <div style="display:flex;flex-wrap:wrap;gap:8px">
-          ${u.ex
-            .map(
-              (
-                e,
-              ) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:200px">
-            <div class="pt">${e[0]}</div>
-            ${e[1] ? `<div style="margin:2px 0">${pr(e[1])}</div>` : ""}
-            <div class="en">${e[2]}</div>
-          </div>`,
-            )
-            .join("")}
+          ${u.ex.map((e) => `<div class="pt" style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px">${e}</div>`).join("")}
         </div>
       </div>`,
       )
@@ -10535,11 +11516,11 @@
     )
     .join("")}
 
-  <h3 class="sub-heading">Days of Week: Habitual (A) vs Specific (EM/NO/NA)</h3>
-  ${infoBox(D_TIME_PREPS.dayOfWeekRule.note)}
+  <h3 class="sub-heading">KEY — Habitual (A) vs Specific (EM/NO/NA)</h3>
+  ${infoBox(D_PREP_TEMPO_FULL.habitual_vs_pontual.note)}
   <div class="tbl-wrap"><table>
     <thead><tr><th>Preposition</th><th>Example</th><th>English</th></tr></thead>
-    <tbody>${D_TIME_PREPS.dayOfWeekRule.rows
+    <tbody>${D_PREP_TEMPO_FULL.habitual_vs_pontual.rows
       .map(
         (
           r,
@@ -11162,6 +12143,93 @@
   <div class="tbl-wrap"><table>
     <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
     <tbody>${D_LEISURE.phrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        celebrations: () => `
+  ${sectionHead("Celebrations & Holidays", "UFCD 6453 Session 7", "Festas e datas comemorativas em Portugal — annual celebrations, public holidays, and personal milestones.")}
+  <h3 class="sub-heading">📅 Festas anuais — annual celebrations</h3>
+  ${D_CELEBRATIONS.annual
+    .map(
+      (r) => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+      <span style="font-size:28px">${r.icon}</span>
+      <div>
+        <div style="font-weight:800;font-size:16px;color:var(--primary)">${r.name}</div>
+        <div style="font-size:12px;color:var(--text-3)">${r.date} — ${r.en}</div>
+      </div>
+    </div>
+    <div style="font-size:13px;color:var(--text-2)">${r.desc}</div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">🇵🇹 Feriados nacionais — public holidays</h3>
+  ${D_CELEBRATIONS.public
+    .map(
+      (r) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid var(--primary)">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+      <span style="font-size:28px">${r.icon}</span>
+      <div>
+        <div style="font-weight:800;font-size:16px;color:var(--primary)">${r.name}</div>
+        <div style="font-size:12px;color:var(--text-3)">${r.date} — ${r.en}</div>
+      </div>
+    </div>
+    <div style="font-size:13px;color:var(--text-2)">${r.desc}</div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">🎉 Datas pessoais — personal celebrations</h3>
+  <div class="card-grid">${D_CELEBRATIONS.personal
+    .map(
+      (r) => `
+    <div class="card-sm">
+      <div style="font-size:24px;margin-bottom:6px">${r.icon}</div>
+      <div class="pt" style="font-weight:800">${r.name}</div>
+      <div class="en">${r.en}</div>
+      <div style="font-size:12px;color:var(--text-3);margin-top:4px">${r.desc}</div>
+    </div>`,
+    )
+    .join("")}</div>
+  <h3 class="sub-heading">Vocabulário de festas</h3>
+  ${vocabGrid(D_CELEBRATIONS.vocab)}`,
+
+        weather: () => `
+  ${sectionHead("Weather — Estado do Tempo", "UFCD 6453 Session 7", "Meteorologia. Portugal has a mild Atlantic climate — warm dry summers, wet mild winters. Weather forecasts always use Celsius.")}
+  <h3 class="sub-heading">Estados do tempo — weather conditions</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th><th>Adjective</th></tr></thead>
+    <tbody>${D_WEATHER.states
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:22px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.adj}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Verbos do tempo — weather verbs</h3>
+  ${infoBox("European Portuguese uses <strong>ESTAR A + infinitivo</strong> for current weather: <em>Está a chover</em> (it is raining). FAZER + noun for general conditions: <em>Faz calor</em> (it is hot). ESTAR + adjective for states: <em>Está nublado</em> (it is cloudy).")}
+  ${vocabGrid(D_WEATHER.verbs)}
+  <h3 class="sub-heading">Frases úteis — weather phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_WEATHER.phrases
       .map(
         (
           r,
