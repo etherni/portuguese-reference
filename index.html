@@ -625,6 +625,46 @@
       .alpha-row.highlight td {
         background: #fff9e6 !important;
       }
+      [data-theme="dark"] .alpha-row.highlight td {
+        background: #2a2410 !important;
+      }
+      .alpha-cards {
+        display: none;
+      }
+      .alpha-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      }
+      .alpha-card .letter {
+        font-family: var(--mono);
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary);
+      }
+      .alpha-card .pron {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--accent);
+        background: var(--accent-lt);
+        border-radius: 3px;
+        padding: 1px 5px;
+        white-space: nowrap;
+      }
+      .alpha-card .rule {
+        font-size: 12px;
+        color: var(--text-3);
+        line-height: 1.4;
+        margin-top: 3px;
+      }
+      .alpha-card .example {
+        font-size: 12px;
+        color: var(--primary);
+        font-weight: 700;
+        margin-top: 2px;
+      }
 
       /* ── SEARCH RESULTS ── */
       .search-results-header {
@@ -753,6 +793,7 @@
         .content-area {
           margin-left: 0;
           padding: 16px 12px;
+          max-width: 100%;
         }
         .menu-btn {
           display: block;
@@ -770,111 +811,157 @@
         .card-grid {
           grid-template-columns: 1fr;
         }
-        .content-area {
-          max-width: 100%;
-        }
-        /* Stack two-column grids on tablet */
-        div[style*="grid-template-columns:1fr 1fr"] {
+        /* Stack two-column grids */
+        .two-col {
           display: block !important;
         }
-        div[style*="grid-template-columns: 1fr 1fr"] {
-          display: block !important;
-        }
-        /* Table: force horizontal scroll, add label for narrow context */
+        /* Tables scroll horizontally */
         .tbl-wrap {
-          border-radius: 6px;
           -webkit-overflow-scrolling: touch;
         }
-        .tbl-wrap table {
-          min-width: 440px;
-        }
-        /* Reduce section title size */
         .section-title {
           font-size: 22px;
         }
-        h3.sub-heading {
-          font-size: 15px;
-        }
-        /* Nav buttons larger touch target */
         .nav-btn {
-          padding: 11px 16px;
+          padding: 12px 16px;
           font-size: 15px;
         }
-        /* Cards full width */
-        .card,
-        .card-sm {
-          border-radius: 8px;
-        }
-        /* Theme button — hide text on small screens */
         .theme-btn {
           padding: 6px 8px;
         }
       }
       @media (max-width: 520px) {
-        .content-area {
-          padding: 12px 10px;
+        :root {
+          --header-h: 56px;
         }
-        .section-title {
-          font-size: 19px;
+        .content-area {
+          padding: 10px 8px;
         }
         .header-inner {
-          gap: 8px;
-          padding: 0 10px;
+          gap: 6px;
+          padding: 0 8px;
         }
         .logo-title {
           font-size: 13px;
         }
         .logo svg {
-          width: 28px;
-          height: 19px;
+          width: 26px !important;
+          height: 18px !important;
         }
-        /* Conjugation rows: two columns only (pronoun + form) */
+        .section-title {
+          font-size: 18px;
+        }
+        .session-badge {
+          font-size: 10px;
+          padding: 2px 7px;
+        }
+        h3.sub-heading {
+          font-size: 14px;
+          margin: 18px 0 10px;
+        }
+        /* Cards */
+        .card {
+          padding: 10px 12px;
+        }
+        .card-sm {
+          padding: 8px 10px;
+        }
+        .card-grid {
+          gap: 8px;
+        }
+        /* All multi-column inline grids → single column */
+        .verb-body > div,
+        .iv-body > div,
+        .rv-body > div,
+        .fv-body > div {
+          display: block !important;
+        }
+        /* Tables */
+        thead th {
+          padding: 8px 8px;
+          font-size: 11px;
+        }
+        tbody td {
+          padding: 8px 8px;
+          font-size: 13px;
+        }
+        /* Alphabet: card layout instead of table */
+        .alpha-table {
+          display: none;
+        }
+        .alpha-cards {
+          display: flex !important;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 16px;
+        }
+        .alpha-card {
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          padding: 8px 10px;
+          flex: 0 0 calc(50% - 4px);
+          min-width: 140px;
+        }
+        .alpha-card .letter {
+          font-family: var(--mono);
+          font-size: 18px;
+          font-weight: 800;
+          color: var(--primary);
+        }
+        .alpha-card .pron {
+          font-family: var(--mono);
+          font-size: 11px;
+          color: var(--accent);
+          background: var(--accent-lt);
+          border-radius: 3px;
+          padding: 1px 4px;
+          display: inline-block;
+          margin: 3px 0;
+        }
+        .alpha-card .rule {
+          font-size: 11px;
+          color: var(--text-3);
+          line-height: 1.4;
+        }
+        .alpha-card .example {
+          font-size: 12px;
+          color: var(--primary);
+          margin-top: 2px;
+        }
+        /* Conjugation: compact */
         .conj-row {
           grid-template-columns: auto 1fr;
+          gap: 6px;
         }
         .conj-row .conj-pron {
           display: none;
         }
-        /* Tables: tighter padding */
-        tbody td,
-        thead th {
-          padding: 8px 10px;
-          font-size: 13px;
+        .conj-form {
+          font-size: 14px !important;
         }
-        /* Cards: less padding */
-        .card {
-          padding: 12px 14px;
-        }
-        .card-sm {
-          padding: 10px 12px;
-        }
-        /* Verb body grids → single column */
-        .verb-body > div[style*="grid-template-columns:1fr 1fr"],
-        .iv-body > div[style*="grid-template-columns:1fr 1fr"],
-        .rv-body > div[style*="grid-template-columns:1fr 1fr"],
-        .fv-body > div[style*="grid-template-columns:1fr 1fr"] {
-          display: block !important;
-        }
-        /* Section intro padding */
+        /* Section intro / warn / rule boxes */
         .section-intro {
           padding: 10px 12px;
           font-size: 13px;
         }
-        /* Warn/info boxes */
         .warn-box,
         .rule-box {
-          padding: 10px 12px;
+          padding: 8px 12px;
           font-size: 13px;
         }
-        /* Hide speak button pronunciation column in very narrow tables where it squeezes */
-        .hide-mobile {
-          display: none;
+        /* Pronoun chips smaller */
+        .pron {
+          font-size: 11px !important;
         }
-        /* Alphabet table — show only letter + pron + rule, hide name */
-        .alpha-row td:nth-child(2) {
-          display: none;
+        /* Speak buttons tighter */
+        .speak-btn {
+          width: 20px;
+          height: 20px;
+          font-size: 10px;
+          margin-left: 3px;
         }
-        /* Search input placeholder shorter */
+        /* Search */
         .search-wrap input {
           font-size: 13px;
         }
@@ -1012,6 +1099,9 @@
           tabs: [
             { id: "numbers", title: "Numbers" },
             { id: "days", title: "Days, Time & Seasons" },
+            { id: "festividades", title: "Festividades" },
+            { id: "formulas-cortesia", title: "Fórmulas de Cortesia" },
+            { id: "food-containers", title: "Food Containers" },
             { id: "celebrations", title: "Celebrations & Holidays" },
             { id: "weather", title: "Weather" },
             { id: "identity", title: "Identity" },
@@ -2194,6 +2284,64 @@
             ex: "Reparei no teu novo corte de cabelo.",
           },
         ],
+      };
+
+      const D_DE_EM_PATTERN = {
+        note: "Estrutura <strong>de [nome] em [nome]</strong> — used to express movement from one thing to another of the same kind, or progression through repeated identical units. Always: de + same noun + em + same noun.",
+        examples: [
+          {
+            pt: "de porta em porta",
+            en: "from door to door",
+            context:
+              "Nesse dia, as crianças saem de porta em porta a pedir o Pão por Deus.",
+          },
+          {
+            pt: "de dia em dia",
+            en: "from day to day / day by day",
+            context: "A situação melhora de dia em dia.",
+          },
+          {
+            pt: "de passo em passo",
+            en: "step by step",
+            context: "Aprendemos de passo em passo.",
+          },
+          {
+            pt: "de lugar em lugar",
+            en: "from place to place",
+            context: "Viajaram de lugar em lugar.",
+          },
+          {
+            pt: "de mão em mão",
+            en: "from hand to hand",
+            context: "O livro passou de mão em mão.",
+          },
+          {
+            pt: "de cidade em cidade",
+            en: "from city to city",
+            context: "Andaram de cidade em cidade à procura de trabalho.",
+          },
+          {
+            pt: "de 6 em 6 minutos",
+            en: "every 6 minutes",
+            context: "Este autocarro passa de 6 em 6 minutos.",
+          },
+          {
+            pt: "de 3 em 3 semanas",
+            en: "every 3 weeks",
+            context: "Os testes são de 3 em 3 semanas.",
+          },
+          {
+            pt: "de hora em hora",
+            en: "every hour / hour by hour",
+            context: "Toma o medicamento de hora em hora.",
+          },
+          {
+            pt: "de geração em geração",
+            en: "from generation to generation",
+            context: "Esta receita passou de geração em geração.",
+          },
+        ],
+        rule: "The noun is always the same on both sides. The structure can express: (1) movement through a series of identical things — de porta em porta; (2) gradual progression — de dia em dia; (3) regular intervals of time — de 6 em 6 minutos.",
       };
 
       const D_ARTICLES = {
@@ -7858,6 +8006,373 @@
         ],
       };
 
+      const D_FORMULAS_CORTESIA = {
+        note: "Fórmulas de delicadeza e cortesia — polite language formulas used whenever we speak to others. Used for: cumprimentar (greet), agradecer (thank), fazer pedidos (make requests), and pedir informações (ask for information).",
+        categories: [
+          {
+            cat: "Fazer pedidos — making requests",
+            icon: "🙏",
+            formulas: [
+              {
+                formula: "QUERIA + nome",
+                ex: "Eu queria pão, por favor.",
+                en: "I would like bread, please.",
+                note: "QUERIA = imperfect of QUERER — polite, less direct than QUERO",
+              },
+              {
+                formula: "QUERIA + infinitivo",
+                ex: "Eu queria ver que pão é que tem, por favor.",
+                en: "I would like to see what bread you have, please.",
+                note: "QUERIA + verb in infinitive for more complex requests",
+              },
+              {
+                formula: "PODIA + infinitivo?",
+                ex: "Podia passar-me o sal, por favor?",
+                en: "Could you pass me the salt, please?",
+                note: "Even softer — conditional of PODER",
+              },
+              {
+                formula: "IMPORTA-SE de + infinitivo?",
+                ex: "Importa-se de nos mostrar aquela revista?",
+                en: "Would you mind showing us that magazine?",
+                note: "Very polite — reflexive form of IMPORTAR",
+              },
+            ],
+          },
+          {
+            cat: "Cumprimentar — greetings",
+            icon: "👋",
+            formulas: [
+              {
+                formula: "Saudação do dia",
+                ex: "Olá, bom dia!",
+                en: "Hello, good morning!",
+                note: "",
+              },
+              {
+                formula: "Boa tarde / Boa noite",
+                ex: "Olá, boa tarde!",
+                en: "Hello, good afternoon!",
+                note: "Use boa noite from ~19h",
+              },
+              {
+                formula: "Cumprimento informal",
+                ex: "Olá! / Oi!",
+                en: "Hi!",
+                note: "Casual, everyday",
+              },
+            ],
+          },
+          {
+            cat: "Agradecer — thanking",
+            icon: "🤝",
+            formulas: [
+              {
+                formula: "Obrigado/a (+ e + despedida)",
+                ex: "Obrigada e até amanhã!",
+                en: "Thank you and see you tomorrow!",
+                note: "Obrigado = M speaker; Obrigada = F speaker",
+              },
+              {
+                formula: "Muito obrigado/a",
+                ex: "Muito obrigado pela ajuda!",
+                en: "Thank you very much for the help!",
+                note: "More emphatic",
+              },
+              {
+                formula: "De nada / Com prazer",
+                ex: "De nada! / Com muito prazer!",
+                en: "Not at all! / With pleasure!",
+                note: "Response to obrigado",
+              },
+            ],
+          },
+          {
+            cat: "Pedir informações sobre preços — asking about prices",
+            icon: "💰",
+            formulas: [
+              {
+                formula: "Quanto custa...?",
+                ex: "Quanto custa tudo?",
+                en: "How much does everything cost?",
+                note: "",
+              },
+              {
+                formula: "Qual é o preço...?",
+                ex: "Qual é o preço do quilo dos morangos?",
+                en: "What is the price per kilo of strawberries?",
+                note: "More formal",
+              },
+              {
+                formula: "Se faz favor, quanto é?",
+                ex: "Se faz favor, quanto é?",
+                en: "Excuse me, how much is it?",
+                note: "",
+              },
+            ],
+          },
+        ],
+      };
+
+      const D_FOOD_CONTAINERS = {
+        note: "Embalagens e medidas — container and quantity expressions in recipes and shopping. Use DE to link the container to the food: um copo DE iogurte, uma colher DE mel.",
+        containers: [
+          {
+            e: "🥛",
+            pt: "um copo de",
+            pron: "[oong KO-poo dɐ]",
+            en: "a glass/cup of",
+            ex: "um copo de iogurte",
+          },
+          {
+            e: "📦",
+            pt: "um pacote de",
+            pron: "[oong pɐ-KOT dɐ]",
+            en: "a packet/pack of",
+            ex: "um pacote de farinha",
+          },
+          {
+            e: "🍶",
+            pt: "uma garrafa de",
+            pron: "[OO-mɐ gɐ-RA-fɐ dɐ]",
+            en: "a bottle of",
+            ex: "uma garrafa de óleo",
+          },
+          {
+            e: "🫙",
+            pt: "um frasco de",
+            pron: "[oong FRASH-koo dɐ]",
+            en: "a jar of",
+            ex: "um frasco de mel",
+          },
+          {
+            e: "🥄",
+            pt: "uma colher de",
+            pron: "[OO-mɐ kool-YEHR dɐ]",
+            en: "a spoonful of",
+            ex: "uma colher de açúcar",
+          },
+          {
+            e: "📫",
+            pt: "uma caixa de",
+            pron: "[OO-mɐ KAI-shɐ dɐ]",
+            en: "a box of",
+            ex: "uma caixa de ovos",
+          },
+          {
+            e: "🛍️",
+            pt: "um saco de",
+            pron: "[oong SA-koo dɐ]",
+            en: "a bag of",
+            ex: "um saco de arroz",
+          },
+          {
+            e: "🧴",
+            pt: "um litro de",
+            pron: "[oong LEE-troo dɐ]",
+            en: "a litre of",
+            ex: "um litro de leite",
+          },
+          {
+            e: "⚖️",
+            pt: "um quilo de",
+            pron: "[oong KEE-loo dɐ]",
+            en: "a kilo of",
+            ex: "um quilo de farinha",
+          },
+          {
+            e: "⚖️",
+            pt: "500 gramas de",
+            pron: "[keen-EN-tɐsh GRA-mɐsh dɐ]",
+            en: "500 grams of",
+            ex: "500 gramas de açúcar",
+          },
+          {
+            e: "🔢",
+            pt: "uma dúzia de",
+            pron: "[OO-mɐ DOO-zyɐ dɐ]",
+            en: "a dozen",
+            ex: "uma dúzia de ovos",
+          },
+          {
+            e: "🍰",
+            pt: "uma fatia de",
+            pron: "[OO-mɐ fɐ-TEE-ɐ dɐ]",
+            en: "a slice of",
+            ex: "uma fatia de bolo",
+          },
+        ],
+        recipe: {
+          title: "O bolo de iogurte",
+          story:
+            "Hoje é o aniversário do irmão da Celeste. A Celeste, com a ajuda da mãe, vai fazer um bolo de iogurte.",
+          ingredients: [
+            "1 iogurte",
+            "3 copos de iogurte com farinha",
+            "3 copos de iogurte com açúcar",
+            "1 copo de iogurte com óleo",
+            "3 ovos",
+            "1 colher pequena de fermento",
+          ],
+          steps: [
+            "Pôr os ingredientes todos numa tigela grande.",
+            "Misturar os ingredientes com uma colher.",
+            "Mexer tudo com uma batedeira.",
+            "Colocar a mistura numa forma de bolos.",
+            "Levar ao forno quente durante 30 minutos.",
+          ],
+        },
+      };
+
+      const D_FESTIVIDADES = {
+        note: "Uma festividade é um evento ou celebração que ocorre em determinada data ou período, com o objetivo de comemorar algo especial.",
+        types: [
+          {
+            type: "Festividades Religiosas",
+            icon: "✝️",
+            desc: "Festividades que têm como base a fé e a religião.",
+            examples: [
+              {
+                name: "Natal",
+                date: "25 de dezembro",
+                note: "Comemora o nascimento de Jesus Cristo",
+              },
+              {
+                name: "Páscoa",
+                date: "Março/abril — variável",
+                note: "Assinala a morte e ressurreição de Jesus; primeiro domingo após a primeira lua cheia do equinócio da primavera",
+              },
+              {
+                name: "Corpo de Deus",
+                date: "Junho — variável",
+                note: "Celebração do Santíssimo Sacramento; procissões nas ruas",
+              },
+              {
+                name: "Festas dos padroeiros",
+                date: "Variável",
+                note: "Cada paróquia/cidade celebra o seu santo padroeiro",
+              },
+            ],
+          },
+          {
+            type: "Festividades Culturais",
+            icon: "🎭",
+            desc: "Festividades que celebram a cultura de um determinado povo ou região.",
+            examples: [
+              {
+                name: "Festa de Santo António",
+                date: "13 de junho",
+                note: "Lisboa — maior festa popular da cidade",
+              },
+              {
+                name: "Festa de São João",
+                date: "24 de junho",
+                note: "Porto — martelos, manjericos, sardinhas",
+              },
+              {
+                name: "Queima das Fitas",
+                date: "Maio/junho",
+                note: "Celebração académica universitária (Coimbra, Porto, Lisboa)",
+              },
+              {
+                name: "Viagens Medievais",
+                date: "Julho/agosto",
+                note: "Recriação histórica medieval em Santa Maria da Feira",
+              },
+              {
+                name: "Romarias",
+                date: "Variável",
+                note: "Peregrinações religiosas e populares ao santuário do padroeiro",
+              },
+            ],
+          },
+          {
+            type: "Festividades Nacionais",
+            icon: "🇵🇹",
+            desc: "Festividades que celebram a identidade e a história de Portugal.",
+            examples: [
+              {
+                name: "Ano Novo",
+                date: "1 de janeiro",
+                note: "Passagem de Ano — reunião familiar e fogos de artifício",
+              },
+              {
+                name: "Carnaval / Entrudo",
+                date: "Fevereiro/março — variável",
+                note: "40 dias antes do Domingo de Páscoa; desfiles, folia e máscaras",
+              },
+              {
+                name: "Dia da Liberdade",
+                date: "25 de abril",
+                note: "Revolução dos Cravos (1974) — fim da ditadura do Estado Novo",
+              },
+              {
+                name: "Dia do Trabalhador",
+                date: "1 de maio",
+                note: "Feriado internacional dedicado aos trabalhadores",
+              },
+              {
+                name: "Dia de Portugal",
+                date: "10 de junho",
+                note: "Dia de Camões e das Comunidades Portuguesas",
+              },
+              {
+                name: "Dia da República",
+                date: "5 de outubro",
+                note: "Proclamação da República em 1910",
+              },
+            ],
+          },
+          {
+            type: "Festividades Populares",
+            icon: "🎉",
+            desc: "Festividades com origem na cultura popular, amplamente celebradas pelo povo.",
+            examples: [
+              {
+                name: "Santos Populares de junho",
+                date: "Junho",
+                note: "Santo António (Lisboa, 13/6), São João (Porto, 24/6), São Pedro (29/6)",
+              },
+              {
+                name: "Dia de Todos os Santos",
+                date: "1 de novembro",
+                note: "Crianças pedem Pão por Deus de porta em porta",
+              },
+              {
+                name: "Carnaval de Podence",
+                date: "Fevereiro/março",
+                note: "UNESCO Património Imaterial da Humanidade — aldeia de Podence, Macedo de Cavaleiros",
+              },
+            ],
+          },
+        ],
+        vocab: [
+          ["a festividade", "[ɐ fɐsh-tee-vee-DA-d]", "festivity / celebration"],
+          ["o padroeiro", "[oo pɐ-droo-AY-roo]", "patron saint"],
+          ["a romaria", "[ɐ hoo-mɐ-REE-ɐ]", "pilgrimage / procession"],
+          [
+            "a queima das fitas",
+            "",
+            "burning of the ribbons — student graduation celebration",
+          ],
+          [
+            "o cravo",
+            "[oo KRA-voo]",
+            "carnation — symbol of the 25 de Abril revolution",
+          ],
+          ["a peregrinação", "[ɐ pɐ-rɐ-gree-nɐ-SOWNG]", "pilgrimage"],
+          ["a procissão", "[ɐ proo-see-SOWNG]", "procession"],
+          ["comemorar", "[koo-mɐ-moo-RAR]", "to commemorate"],
+          ["celebrar", "[sɐ-lɐ-BRAR]", "to celebrate"],
+          ["festejar", "[fɐsh-tɐ-ZHAR]", "to mark (an occasion) / celebrate"],
+          [
+            "o feriado nacional",
+            "[oo fɐ-ryA-doo nɐ-syoo-NAL]",
+            "national public holiday",
+          ],
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -9609,7 +10124,7 @@
         alphabet: () => `
   ${sectionHead("Alphabet", "Session 1", "The Portuguese alphabet has 26 letters — same as English. K, W, Y exist but only appear in foreign words. The differences are in <strong>how letters sound</strong>, especially C, G, H, J, R, S, X, and the digraphs LH and NH.")}
   ${warnBox("<strong>5 letters that will trip you up:</strong> H (always silent) · R at start (guttural, deep guttural sound) · S (3 different sounds by position) · X (usually [sh] but not always) · LH and NH (single sounds, not two letters)")}
-  <div class="tbl-wrap"><table>
+  <div class="tbl-wrap alpha-table"><table>
     <thead><tr><th>Letter</th><th>Name</th><th>Phonetic</th><th>Key Rule</th><th>Example</th></tr></thead>
     <tbody>${D_ALPHABET.map(
       (r) => `<tr class="alpha-row${r.highlight ? " highlight" : ""}">
@@ -9620,7 +10135,16 @@
       <td class="pt" style="font-size:13px">${r.example}</td>
     </tr>`,
     ).join("")}</tbody>
-  </table></div>`,
+  </table></div>
+  <div class="alpha-cards" style="display:none">${D_ALPHABET.map(
+    (
+      r,
+    ) => `<div class="alpha-card${r.highlight ? " alpha-hl" : ""}" style="background:${r.highlight ? "var(--gold-lt)" : " var(--surface)"}">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span class="letter">${r.letter}</span><span class="pron">${r.pron}</span></div>
+    <div class="rule">${r.rule}</div>
+    <div class="example">${r.example}</div>
+  </div>`,
+  ).join("")}</div>`,
 
         pronunciation: () => `
   ${sectionHead("Pronunciation", "Sessions 1–3", "European Portuguese swallows unstressed vowels — this is why it sounds so compressed and different from what you read on the page. Brazilians open their vowels wide; Portuguese people swallow them. Once you hear this pattern, you cannot unhear it.")}
@@ -9847,7 +10371,21 @@
       .join("")}</tbody>
   </table></div>
 
-  <h3 class="sub-heading">Preposições de Tempo — A, DE, EM (Session 7)</h3>
+  <h3 class="sub-heading">Estrutura DE [nome] EM [nome] — from X to X / every X</h3>
+  ${infoBox(D_DE_EM_PATTERN.note)}
+  <div class="rule-box" style="margin-bottom:16px">📌 ${D_DE_EM_PATTERN.rule}</div>
+  <div class="card-grid">${D_DE_EM_PATTERN.examples
+    .map(
+      (r) => `
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800;font-size:16px;margin-bottom:4px">${r.pt}</div>
+      <div class="en" style="margin-bottom:6px">${r.en}</div>
+      <div style="font-size:12px;color:var(--text-3);font-style:italic">${r.context}</div>
+    </div>`,
+    )
+    .join("")}</div>
+
+  <h3 class="sub-heading">Preposições de Tempo — A, DE, EM</h3>
   ${warnBox(D_PREP_TEMPO_FULL.note)}
   ${D_PREP_TEMPO_FULL.preps
     .map(
@@ -12154,6 +12692,100 @@
       .join("")}</tbody>
   </table></div>`,
 
+        festividades: () => `
+  ${sectionHead("Festividades", "UFCD 6453 Session 8", "Tipos de festividades em Portugal — religiosas, culturais, nacionais e populares.")}
+  ${infoBox(D_FESTIVIDADES.note)}
+  ${D_FESTIVIDADES.types
+    .map(
+      (t) => `
+  <div class="card" style="margin-bottom:16px;border-left:4px solid var(--primary)">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-size:28px">${t.icon}</span>
+      <div>
+        <div style="font-size:17px;font-weight:800;color:var(--primary)">${t.type}</div>
+        <div style="font-size:13px;color:var(--text-3)">${t.desc}</div>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Festividade</th><th>Date</th><th>Note</th></tr></thead>
+      <tbody>${t.examples
+        .map(
+          (
+            e,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td class="pt" style="font-weight:800">${e.name}</td>
+        <td style="font-size:13px;color:var(--text-3);white-space:nowrap">${e.date}</td>
+        <td style="font-size:13px">${e.note}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">Vocabulário de festividades</h3>
+  ${vocabGrid(D_FESTIVIDADES.vocab)}`,
+
+        "formulas-cortesia": () => `
+  ${sectionHead("Fórmulas de Cortesia", "UFCD 6453 Session 8", "Fórmulas de delicadeza e cortesia — the polite formulas used for greeting, thanking, making requests, and asking about prices. Essential for everyday service interactions.")}
+  ${infoBox(D_FORMULAS_CORTESIA.note)}
+  ${D_FORMULAS_CORTESIA.categories
+    .map(
+      (cat) => `
+  <div class="card" style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <span style="font-size:24px">${cat.icon}</span>
+      <span style="font-size:16px;font-weight:800;color:var(--primary)">${cat.cat}</span>
+    </div>
+    ${cat.formulas
+      .map(
+        (f) => `
+    <div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+      <div style="font-weight:800;font-size:14px;color:var(--primary);margin-bottom:4px;font-family:var(--mono)">${f.formula}</div>
+      <div class="pt" style="margin-bottom:3px">${f.ex}</div>
+      <div class="en" style="margin-bottom:3px">${f.en}</div>
+      ${f.note ? `<div style="font-size:12px;color:var(--text-3);font-style:italic">${f.note}</div>` : ""}
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+    )
+    .join("")}`,
+
+        "food-containers": () => `
+  ${sectionHead("Food Containers & Quantities", "UFCD 6453 Session 8", "Embalagens e medidas — container expressions in recipes and shopping. Structure: [container] + DE + [food].")}
+  ${infoBox("Use <strong>DE</strong> to link the container to the food: <em>um copo <strong>de</strong> iogurte</em>, <em>uma colher <strong>de</strong> mel</em>, <em>um pacote <strong>de</strong> farinha</em>.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_FOOD_CONTAINERS.containers
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:13px;font-style:italic;color:var(--text-2)">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Receita: ${D_FOOD_CONTAINERS.recipe.title}</h3>
+  ${infoBox(D_FOOD_CONTAINERS.recipe.story)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+    <div>
+      <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);margin-bottom:8px">Ingredientes</div>
+      ${D_FOOD_CONTAINERS.recipe.ingredients.map((i) => `<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--primary)">•</span><span class="pt">${i}</span></div>`).join("")}
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);margin-bottom:8px">Como fazer</div>
+      ${D_FOOD_CONTAINERS.recipe.steps.map((s, i) => `<div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="font-weight:800;color:var(--primary);min-width:20px">${i + 1}.</span><span style="font-size:13px">${s}</span></div>`).join("")}
+    </div>
+  </div>`,
+
         celebrations: () => `
   ${sectionHead("Celebrations & Holidays", "UFCD 6453 Session 7", "Festas e datas comemorativas em Portugal — annual celebrations, public holidays, and personal milestones.")}
   <h3 class="sub-heading">📅 Festas anuais — annual celebrations</h3>
@@ -12532,6 +13164,13 @@
           isDark = !isDark;
           applyTheme(isDark);
         });
+        // Mark two-column grids for responsive CSS
+        document
+          .querySelectorAll(
+            '.content-area [style*="grid-template-columns:1fr 1fr"], .content-area [style*="grid-template-columns: 1fr 1fr"]',
+          )
+          .forEach((el) => el.classList.add("two-col"));
+
         window.addEventListener("hashchange", () => {
           const id = location.hash.slice(1);
           if (id && RENDERERS[id]) navigate(id);
