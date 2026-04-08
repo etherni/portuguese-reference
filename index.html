@@ -1080,6 +1080,8 @@
             { id: "comparatives", title: "Comparatives" },
             { id: "muito-pouco", title: "Muito / Pouco" },
             { id: "com-pronomes", title: "COM + Pronomes" },
+            { id: "gostos-preferencias", title: "Gostos & Preferências" },
+            { id: "precisar-dever", title: "Precisar / Ter de / Dever" },
           ],
         },
         {
@@ -1120,6 +1122,10 @@
             { id: "expressions", title: "Expressions" },
             { id: "survival", title: "Survival Phrases" },
             { id: "idioms", title: "Idioms" },
+            { id: "clothing", title: "Clothing & Accessories" },
+            { id: "colors", title: "Colors" },
+            { id: "stationery", title: "Stationery" },
+            { id: "shopping", title: "Shopping Expressions" },
             { id: "social-etiquette", title: "Social Etiquette" },
           ],
         },
@@ -8373,6 +8379,1000 @@
         ],
       };
 
+      const D_CLOTHING = {
+        note: "Roupa e acessórios — clothing vocabulary. Portugal uses EU sizing. Roupa = clothing/garments. Calçado = footwear. Acessórios = accessories.",
+        roupas: [
+          {
+            e: "👕",
+            pt: "a camisola",
+            pron: "[ɐ kɐ-mee-ZOH-lɐ]",
+            en: "jumper / sweatshirt",
+            note: "Long-sleeved casual top",
+          },
+          {
+            e: "👕",
+            pt: "a camisola com carapuço",
+            pron: "[kɐ-rɐ-POO-soo]",
+            en: "hoodie",
+            note: "Com capuz = with hood",
+          },
+          {
+            e: "👔",
+            pt: "a camisa",
+            pron: "[ɐ kɐ-MEE-zɐ]",
+            en: "shirt (formal/button-up)",
+            note: "",
+          },
+          {
+            e: "👕",
+            pt: "a t-shirt",
+            pron: "[ɐ tee-SHIRT]",
+            en: "t-shirt",
+            note: "Casual short-sleeved top",
+          },
+          {
+            e: "🧥",
+            pt: "o blusão",
+            pron: "[oo bloo-ZOWNG]",
+            en: "jacket / zip-up jacket",
+            note: "Casual outer layer",
+          },
+          {
+            e: "🧥",
+            pt: "o casaco",
+            pron: "[oo kɐ-ZA-koo]",
+            en: "coat",
+            note: "Heavier outer garment",
+          },
+          {
+            e: "👗",
+            pt: "o vestido",
+            pron: "[oo vɐsh-TEE-doo]",
+            en: "dress",
+            note: "",
+          },
+          { e: "👗", pt: "a saia", pron: "[ɐ SAI-ɐ]", en: "skirt", note: "" },
+          {
+            e: "👖",
+            pt: "as calças",
+            pron: "[ɐsh KAL-sɐsh]",
+            en: "trousers / pants",
+            note: "Always plural in Portuguese",
+          },
+          {
+            e: "👖",
+            pt: "as calças de ganga",
+            pron: "[KAL-sɐsh dɐ GANG-ɐ]",
+            en: "jeans",
+            note: "Ganga = denim",
+          },
+          {
+            e: "🩳",
+            pt: "os calções",
+            pron: "[oosh kal-SOYNG-sh]",
+            en: "shorts",
+            note: "",
+          },
+          {
+            e: "🩱",
+            pt: "o fato de banho",
+            pron: "[oo FA-too dɐ BAN-yoo]",
+            en: "swimsuit / swimwear",
+            note: "Fato de banho (1 piece) or biquíni (2 piece)",
+          },
+          {
+            e: "👔",
+            pt: "o fato",
+            pron: "[oo FA-too]",
+            en: "suit",
+            note: "Smart two/three piece",
+          },
+          {
+            e: "🧥",
+            pt: "o blaser",
+            pron: "[oo blɐ-ZER]",
+            en: "blazer",
+            note: "Smart jacket",
+          },
+          {
+            e: "👙",
+            pt: "a camisola de alças",
+            pron: "[AL-sɐsh]",
+            en: "tank top / vest top",
+            note: "",
+          },
+          {
+            e: "😴",
+            pt: "o pijama",
+            pron: "[oo pee-ZHA-mɐ]",
+            en: "pyjamas",
+            note: "",
+          },
+          {
+            e: "👙",
+            pt: "a roupa interior",
+            pron: "[ROH-pɐ ing-tɐ-ryOR]",
+            en: "underwear / lingerie",
+            note: "",
+          },
+          {
+            e: "🧣",
+            pt: "a blusa",
+            pron: "[ɐ BLOO-zɐ]",
+            en: "blouse / top",
+            note: "Lighter, often feminine top",
+          },
+        ],
+        calcado: [
+          {
+            e: "👟",
+            pt: "as sapatilhas / os ténis",
+            pron: "[sɐ-pɐ-TEEL-yɐsh / TEH-neesh]",
+            en: "trainers / sneakers",
+            note: "Sapatilhas = EU Pt. Ténis also used.",
+          },
+          {
+            e: "👠",
+            pt: "os sapatos",
+            pron: "[oo sɐ-PA-toosh]",
+            en: "shoes",
+            note: "Generic; high heels = sapatos de salto alto",
+          },
+          {
+            e: "👢",
+            pt: "as botas",
+            pron: "[ɐsh BOH-tɐsh]",
+            en: "boots",
+            note: "",
+          },
+          {
+            e: "🩴",
+            pt: "as sandálias",
+            pron: "[ɐsh sɐn-DA-lyɐsh]",
+            en: "sandals",
+            note: "",
+          },
+          {
+            e: "👡",
+            pt: "os sapatos de salto alto",
+            pron: "[SAL-too AL-too]",
+            en: "high heels",
+            note: "",
+          },
+          {
+            e: "🥿",
+            pt: "as chinelas",
+            pron: "[ɐsh shee-NEH-lɐsh]",
+            en: "slippers / flip-flops",
+            note: "",
+          },
+          {
+            e: "🧦",
+            pt: "as meias",
+            pron: "[ɐsh MAY-ɐsh]",
+            en: "socks / tights / stockings",
+            note: "Meias collants = tights",
+          },
+        ],
+        acessorios: [
+          {
+            e: "🕶️",
+            pt: "os óculos de sol",
+            pron: "[oosh OH-koo-loosh dɐ sol]",
+            en: "sunglasses",
+            note: "Óculos = glasses/spectacles",
+          },
+          {
+            e: "🧣",
+            pt: "o cachecol",
+            pron: "[oo kɐsh-SHKOL]",
+            en: "scarf",
+            note: "",
+          },
+          {
+            e: "🧤",
+            pt: "as luvas",
+            pron: "[ɐsh LOO-vɐsh]",
+            en: "gloves",
+            note: "",
+          },
+          {
+            e: "🧢",
+            pt: "o boné",
+            pron: "[oo boo-NEH]",
+            en: "cap / baseball cap",
+            note: "",
+          },
+          {
+            e: "👒",
+            pt: "o chapéu",
+            pron: "[oo shɐ-PEH-oo]",
+            en: "hat",
+            note: "",
+          },
+          {
+            e: "👜",
+            pt: "a mala",
+            pron: "[ɐ MA-lɐ]",
+            en: "bag / handbag",
+            note: "",
+          },
+          {
+            e: "💼",
+            pt: "a mochila",
+            pron: "[ɐ moo-SHEE-lɐ]",
+            en: "backpack",
+            note: "",
+          },
+          {
+            e: "⌚",
+            pt: "o relógio",
+            pron: "[oo hɐ-LOH-zhyoo]",
+            en: "watch",
+            note: "",
+          },
+          {
+            e: "👛",
+            pt: "o cinto",
+            pron: "[oo SEENT-oo]",
+            en: "belt",
+            note: "",
+          },
+          {
+            e: "👔",
+            pt: "a gravata",
+            pron: "[ɐ grɐ-VA-tɐ]",
+            en: "tie",
+            note: "",
+          },
+          {
+            e: "🧣",
+            pt: "o lenço",
+            pron: "[oo LENG-soo]",
+            en: "handkerchief / scarf",
+            note: "",
+          },
+          {
+            e: "📿",
+            pt: "o colar",
+            pron: "[oo koo-LAR]",
+            en: "necklace",
+            note: "",
+          },
+          { e: "💍", pt: "o anel", pron: "[oo ɐ-NEL]", en: "ring", note: "" },
+          {
+            e: "💎",
+            pt: "os brincos",
+            pron: "[oosh BREEN-koosh]",
+            en: "earrings",
+            note: "",
+          },
+          {
+            e: "☂️",
+            pt: "o guarda-chuva",
+            pron: "[oo GWAR-dɐ SHOO-vɐ]",
+            en: "umbrella",
+            note: "",
+          },
+        ],
+        materials: [
+          { pt: "a lã", pron: "[ɐ lɐng]", en: "wool", note: "Thick, warm" },
+          {
+            pt: "o algodão",
+            pron: "[oo al-goo-DOWNG]",
+            en: "cotton",
+            note: "Breathable, everyday",
+          },
+          {
+            pt: "a seda",
+            pron: "[ɐ SEH-dɐ]",
+            en: "silk",
+            note: "Smooth, luxury",
+          },
+          {
+            pt: "o linho",
+            pron: "[oo LEEN-yoo]",
+            en: "linen",
+            note: "Light, summer",
+          },
+          {
+            pt: "o couro",
+            pron: "[oo KOH-roo]",
+            en: "leather",
+            note: "Shoes, bags",
+          },
+          {
+            pt: "a ganga",
+            pron: "[ɐ GANG-ɐ]",
+            en: "denim",
+            note: "Calças de ganga = jeans",
+          },
+          {
+            pt: "a malha",
+            pron: "[ɐ MAL-yɐ]",
+            en: "knitwear / knit",
+            note: "",
+          },
+        ],
+        sizes: {
+          note: "Portugal uses EU sizing. Clothes: tamanho. Shoes: número. Try on = experimentar / provar.",
+          clothing: [
+            ["XS", "34-36"],
+            ["S", "36-38"],
+            ["M", "38-40"],
+            ["L", "40-42"],
+            ["XL", "42-44"],
+            ["XXL", "44+"],
+          ],
+          shoes:
+            "Sapatos adulto: números 35 a 48. Calças adulto: números 35 a 48.",
+        },
+      };
+
+      const D_COLORS = {
+        note: "As cores — colors. In Portuguese, colors agree in gender and number with the noun they describe. Most colors have masculine (-o) and feminine (-a) forms.",
+        colors: [
+          { pt: "amarelo/a", en: "yellow", hex: "#FCD116", note: "" },
+          { pt: "vermelho/a", en: "red", hex: "#CC0000", note: "" },
+          {
+            pt: "laranja",
+            en: "orange",
+            hex: "#FF7700",
+            note: "Invariable — no gender agreement",
+          },
+          {
+            pt: "rosa",
+            en: "pink",
+            hex: "#FF69B4",
+            note: "Invariable — no gender agreement",
+          },
+          {
+            pt: "roxo/a",
+            en: "purple/violet",
+            hex: "#7B2D8B",
+            note: "Darker purple; lilás = lilac",
+          },
+          { pt: "cinzento/a", en: "grey", hex: "#808080", note: "" },
+          {
+            pt: "azul",
+            en: "blue",
+            hex: "#003DA5",
+            note: "Invariable — no gender agreement",
+          },
+          {
+            pt: "verde",
+            en: "green",
+            hex: "#006400",
+            note: "Invariable — no gender agreement",
+          },
+          { pt: "preto/a", en: "black", hex: "#000000", note: "" },
+          { pt: "branco/a", en: "white", hex: "#F0F0F0", note: "" },
+          {
+            pt: "castanho/a",
+            en: "brown",
+            hex: "#8B4513",
+            note: "Also: café for dark brown",
+          },
+          { pt: "bege", en: "beige", hex: "#D4C5A0", note: "Invariable" },
+          { pt: "dourado/a", en: "gold / golden", hex: "#FFD700", note: "" },
+          { pt: "prateado/a", en: "silver", hex: "#C0C0C0", note: "" },
+          {
+            pt: "bordeaux",
+            en: "burgundy",
+            hex: "#800020",
+            note: "Invariable — from French",
+          },
+        ],
+        agreement: [
+          "Most colors add -a for feminine: amarelo → amarela. Exception: colors that already end in -a or -e do NOT change: rosa, laranja, bege, verde, azul.",
+          "Plural: add -s (amarelos/amarelas) or -eis for azul (azuis).",
+          "Shades: claro/a = light (azul-claro = light blue); escuro/a = dark (verde-escuro = dark green).",
+        ],
+        phrases: [
+          {
+            pt: "De que cor é?",
+            pron: "[dɐ kɐ kor eh]",
+            en: "What colour is it?",
+          },
+          { pt: "É azul.", pron: "[eh ɐ-ZOOl]", en: "It is blue." },
+          {
+            pt: "Tem em vermelho?",
+            pron: "[tayng ayng vɐr-MAEL-yoo]",
+            en: "Do you have it in red?",
+          },
+          {
+            pt: "Prefiro o azul-escuro.",
+            pron: "",
+            en: "I prefer the dark blue.",
+          },
+          {
+            pt: "Que cor preferes?",
+            pron: "",
+            en: "What colour do you prefer?",
+          },
+        ],
+      };
+
+      const D_STATIONERY = {
+        note: "Artigos de papelaria — stationery items. Papelaria = stationery shop. Uma papelaria vende artigos escolares e de escritório.",
+        items: [
+          {
+            e: "✏️",
+            pt: "o lápis de carvão",
+            pron: "[oo LA-peesh dɐ kɐr-VOWNG]",
+            en: "pencil",
+          },
+          { e: "🖊️", pt: "a caneta", pron: "[ɐ kɐ-NEH-tɐ]", en: "pen / biro" },
+          {
+            e: "🖍️",
+            pt: "o lápis de cera",
+            pron: "[oo LA-peesh dɐ SEH-rɐ]",
+            en: "crayon / wax pencil",
+          },
+          {
+            e: "🖊️",
+            pt: "os marcadores",
+            pron: "[oosh mɐr-kɐ-DOH-rɐsh]",
+            en: "markers / felt-tips",
+          },
+          {
+            e: "📐",
+            pt: "o esquadro",
+            pron: "[oo ish-KWA-droo]",
+            en: "set square",
+          },
+          { e: "📏", pt: "a régua", pron: "[ɐ REH-gwɐ]", en: "ruler" },
+          {
+            e: "📐",
+            pt: "o transferidor",
+            pron: "[oo trɐnsh-fɐ-ree-DOR]",
+            en: "protractor",
+          },
+          {
+            e: "🔢",
+            pt: "a calculadora",
+            pron: "[ɐ kal-koo-lɐ-DOH-rɐ]",
+            en: "calculator",
+          },
+          {
+            e: "📓",
+            pt: "o caderno",
+            pron: "[oo kɐ-DEHR-noo]",
+            en: "exercise book / notebook",
+          },
+          {
+            e: "📔",
+            pt: "o bloco de notas",
+            pron: "[oo BLOH-koo dɐ NOH-tɐsh]",
+            en: "notepad",
+          },
+          {
+            e: "🗒️",
+            pt: "o post-it",
+            pron: "[oo post-eet]",
+            en: "sticky note / post-it",
+          },
+          { e: "✂️", pt: "a tesoura", pron: "[ɐ tɐ-ZOH-rɐ]", en: "scissors" },
+          { e: "🔭", pt: "a lupa", pron: "[ɐ LOO-pɐ]", en: "magnifying glass" },
+          {
+            e: "🎨",
+            pt: "as aguarelas",
+            pron: "[ɐsh ɐ-gwɐ-REH-lɐsh]",
+            en: "watercolour paints",
+          },
+          {
+            e: "📎",
+            pt: "os clips e pins",
+            pron: "[oosh kleepsh ee peensh]",
+            en: "paper clips and pins",
+          },
+          {
+            e: "🔗",
+            pt: "os elásticos",
+            pron: "[oosh ɐ-LASH-tee-koosh]",
+            en: "rubber bands",
+          },
+          {
+            e: "🧲",
+            pt: "a mola",
+            pron: "[ɐ MOH-lɐ]",
+            en: "binder clip / bulldog clip",
+          },
+          {
+            e: "🃏",
+            pt: "os cartões",
+            pron: "[oosh kɐr-TOYNG-sh]",
+            en: "cards / card stock",
+          },
+          {
+            e: "🔪",
+            pt: "a afia-lápis",
+            pron: "[ɐ ɐ-FYAH LA-peesh]",
+            en: "pencil sharpener",
+          },
+          {
+            e: "📒",
+            pt: "a borracha",
+            pron: "[ɐ boo-RA-shɐ]",
+            en: "eraser / rubber",
+          },
+        ],
+        phrases: [
+          [
+            "Preciso de uma caneta.",
+            "[prɐ-SEE-zoo dɐ OO-mɐ kɐ-NEH-tɐ]",
+            "I need a pen.",
+          ],
+          ["Tem lápis de cera?", "", "Do you have crayons?"],
+          [
+            "Quanto custa este caderno?",
+            "",
+            "How much does this notebook cost?",
+          ],
+          [
+            "Onde fica a papelaria?",
+            "[OND FEE-kɐ ɐ pɐ-pɐ-lɐ-REE-ɐ]",
+            "Where is the stationery shop?",
+          ],
+        ],
+      };
+
+      const D_SHOPPING = {
+        note: "Numa loja — in a shop. Vocabulary and expressions for shopping for clothes, asking for sizes, giving opinions, and paying.",
+        expressions: [
+          {
+            cat: "Asking for items",
+            icon: "🛍️",
+            items: [
+              ["Quero ver...", "", "I want to see..."],
+              ["Queria ver...", "", "I would like to see... (polite)"],
+              [
+                "Prefiro este / esta / estes / estas.",
+                "",
+                "I prefer this one (m/f/pl).",
+              ],
+              [
+                "Tem em tamanho M / L / XL?",
+                "",
+                "Do you have it in size M/L/XL?",
+              ],
+              ["Qual é o seu número?", "", "What is your size? (shoes)"],
+              [
+                "Posso experimentar / provar?",
+                "[esh-pɐ-ree-men-TAR / proo-VAR]",
+                "Can I try it on?",
+              ],
+              [
+                "Vou experimentar. / Vou provar esta camisola.",
+                "",
+                "I'll try it on.",
+              ],
+            ],
+          },
+          {
+            cat: "Fit & quality",
+            icon: "👗",
+            items: [
+              [
+                "Fica-me muito bem! / Fica-me mal.",
+                "",
+                "It suits me very well! / It doesn't suit me.",
+              ],
+              [
+                "Fica-te bem. / Fica-te mal.",
+                "",
+                "It suits you well. / It doesn't suit you.",
+              ],
+              ["Está apertado/a.", "[ish-TA ɐ-pɐr-TA-doo]", "It is tight."],
+              ["Está largo/a.", "[ish-TA LAR-goo]", "It is loose / baggy."],
+              ["Está curto/a.", "[ish-TA KOOR-too]", "It is short."],
+              ["Está comprido/a.", "[ish-TA kom-PREE-doo]", "It is long."],
+              [
+                "É giro/a!",
+                "[eh ZHEE-roo]",
+                "It is nice / cool! (EU Pt colloquial)",
+              ],
+              ["É feio/a.", "[eh FAY-oo]", "It is ugly."],
+              ["É barato/a.", "[eh bɐ-RA-too]", "It is cheap."],
+              ["É caro/a.", "[eh KA-roo]", "It is expensive."],
+            ],
+          },
+          {
+            cat: "Opinion & suggestions",
+            icon: "💬",
+            items: [
+              ["Que tal?", "[kɐ tal]", "What do you think? / How about it?"],
+              ["O que achas?", "[oo kɐ A-shɐsh]", "What do you think?"],
+              ["Parece-te bem?", "", "Does it seem good to you?"],
+              [
+                "Acho bem. / Acho mal.",
+                "",
+                "I think it is good. / I think it is bad.",
+              ],
+              ["Acho boa ideia.", "", "I think it is a good idea."],
+              [
+                "Penso que... / Parece-me que...",
+                "",
+                "I think that... / It seems to me that...",
+              ],
+              ["Parece gira.", "", "It looks nice."],
+              ["Gostava mais do outro.", "", "I preferred the other one."],
+            ],
+          },
+          {
+            cat: "Paying",
+            icon: "💳",
+            items: [
+              ["Quanto custa? / Quanto é?", "", "How much is it?"],
+              ["Vou levar.", "", "I'll take it."],
+              ["Não vou levar.", "", "I won't take it."],
+              ["Pago com cartão multibanco.", "", "I'll pay by debit card."],
+              ["Pago em dinheiro.", "", "I'll pay cash."],
+              [
+                "Os saldos / As promoções",
+                "[oosh SAL-doosh]",
+                "The sales / promotions",
+              ],
+              ["Fazer um desconto", "", "To give a discount"],
+            ],
+          },
+        ],
+        ficarBemMal: {
+          note: "FICAR bem/mal + dative pronoun. The subject is the CLOTHING, not the person. The pronoun changes to match the person wearing it.",
+          rows: [
+            {
+              subject: "A saia",
+              form: "fica-me",
+              adj: "larga",
+              en: "The skirt is loose on me.",
+            },
+            {
+              subject: "As calças",
+              form: "ficam-te",
+              adj: "mal",
+              en: "The trousers don't suit you.",
+            },
+            {
+              subject: "A camisola",
+              form: "fica-lhe",
+              adj: "bem",
+              en: "The jumper suits him/her/you.",
+            },
+            {
+              subject: "Essas calças",
+              form: "não lhe ficam",
+              adj: "bem",
+              en: "Those trousers don't suit you.",
+            },
+          ],
+          pronouns: [
+            ["me", "to me — (Eu)"],
+            ["te", "to you — (Tu)"],
+            ["lhe", "to him/her/you — (Ele/Ela/Você)"],
+            ["nos", "to us — (Nós)"],
+            ["lhes", "to them/you — (Eles/Vocês)"],
+          ],
+        },
+      };
+
+      const D_GOSTOS_PREFERENCIAS = {
+        note: "Exprimir gostos e preferências — expressing likes, dislikes and preferences. GOSTAR requires DE before a noun or infinitive — never omit it.",
+        positive: [
+          {
+            verb: "GOSTAR DE",
+            en: "to like",
+            pattern1: [
+              "+ Infinitivo",
+              "A Inês gosta de jogar ténis.",
+              "Inês likes to play tennis.",
+            ],
+            pattern2: ["+ nome", "Ela gosta de ténis.", "She likes tennis."],
+          },
+          {
+            verb: "PREFERIR",
+            en: "to prefer",
+            pattern1: [
+              "+ Infinitivo",
+              "A Rita prefere ver televisão.",
+              "Rita prefers to watch TV.",
+            ],
+            pattern2: [
+              "+ nome",
+              "O Pedro prefere cerveja.",
+              "Pedro prefers beer.",
+            ],
+          },
+          {
+            verb: "ADORAR",
+            en: "to love / adore",
+            pattern1: [
+              "+ Infinitivo",
+              "Eu adoro beber chá.",
+              "I love drinking tea.",
+            ],
+            pattern2: [
+              "+ nome",
+              "O meu marido adora café.",
+              "My husband loves coffee.",
+            ],
+          },
+          {
+            verb: "QUERER",
+            en: "to want",
+            pattern1: [
+              "+ Infinitivo",
+              "Quero ir ao cinema.",
+              "I want to go to the cinema.",
+            ],
+            pattern2: ["+ nome", "Quero um café.", "I want a coffee."],
+          },
+        ],
+        negative: [
+          {
+            verb: "NÃO GOSTAR DE",
+            en: "to not like",
+            pattern1: [
+              "+ Infinitivo",
+              "A Joana não gosta de jogar ténis.",
+              "Joana doesn't like playing tennis.",
+            ],
+            pattern2: [
+              "+ nome",
+              "Ela não gosta de ténis.",
+              "She doesn't like tennis.",
+            ],
+          },
+          {
+            verb: "DETESTAR",
+            en: "to hate / detest",
+            pattern1: [
+              "+ Infinitivo",
+              "A Carla detesta ver televisão.",
+              "Carla hates watching TV.",
+            ],
+            pattern2: [
+              "+ nome",
+              "O Eduardo detesta cerveja.",
+              "Eduardo hates beer.",
+            ],
+          },
+          {
+            verb: "ODIAR",
+            en: "to hate",
+            pattern1: [
+              "+ Infinitivo",
+              "Eu odeio ver futebol.",
+              "I hate watching football.",
+            ],
+            pattern2: [
+              "+ nome",
+              "O meu marido odeia chá.",
+              "My husband hates tea.",
+            ],
+          },
+        ],
+        useful_verbs: [
+          {
+            verb: "PREFERIR",
+            pron: "[prɐ-fɐ-REER]",
+            conj: [
+              ["Eu", "prefiro"],
+              ["Tu", "preferes"],
+              ["Ele/Ela/Você", "prefere"],
+              ["Nós", "preferimos"],
+              ["Eles/Vocês", "preferem"],
+            ],
+            note: "Stem-changing: E→I in all forms except NÓS",
+          },
+          {
+            verb: "GOSTAR",
+            pron: "[goosh-TAR]",
+            conj: [
+              ["Eu", "gosto"],
+              ["Tu", "gostas"],
+              ["Ele/Ela/Você", "gosta"],
+              ["Nós", "gostamos"],
+              ["Eles/Vocês", "gostam"],
+            ],
+            note: "Always GOSTAR DE — never omit DE",
+          },
+          {
+            verb: "ADORAR",
+            pron: "[ɐ-doo-RAR]",
+            conj: [
+              ["Eu", "adoro"],
+              ["Tu", "adoras"],
+              ["Ele/Ela/Você", "adora"],
+              ["Nós", "adoramos"],
+              ["Eles/Vocês", "adoram"],
+            ],
+            note: "Regular -AR verb",
+          },
+          {
+            verb: "DETESTAR",
+            pron: "[dɐ-tɐsh-TAR]",
+            conj: [
+              ["Eu", "detesto"],
+              ["Tu", "detestas"],
+              ["Ele/Ela/Você", "detesta"],
+              ["Nós", "detestamos"],
+              ["Eles/Vocês", "detestam"],
+            ],
+            note: "Regular -AR verb",
+          },
+          {
+            verb: "ODIAR",
+            pron: "[oh-dyAR]",
+            conj: [
+              ["Eu", "odeio"],
+              ["Tu", "odeias"],
+              ["Ele/Ela/Você", "odeia"],
+              ["Nós", "odiamos"],
+              ["Eles/Vocês", "odeiam"],
+            ],
+            note: "Stem: odei- in most forms",
+          },
+        ],
+        phrases: [
+          {
+            pt: "Do que gostas?",
+            pron: "[doo kɐ GOSH-tɐsh]",
+            en: "What do you like?",
+          },
+          {
+            pt: "Gosto muito de música.",
+            pron: "[GOSH-too MWEE-too]",
+            en: "I really like music.",
+          },
+          {
+            pt: "Não gosto nada de cebola.",
+            pron: "",
+            en: "I don't like onion at all.",
+          },
+          {
+            pt: "Preferes chá ou café?",
+            pron: "[prɐ-FEH-rɐsh]",
+            en: "Do you prefer tea or coffee?",
+          },
+          {
+            pt: "Preferia o vermelho.",
+            pron: "[prɐ-fɐ-REE-ɐ]",
+            en: "I would prefer the red one. (conditional)",
+          },
+          {
+            pt: "Qual é a tua cor favorita?",
+            pron: "",
+            en: "What is your favourite colour?",
+          },
+        ],
+      };
+
+      const D_PRECISAR_DEVER = {
+        note: "Exprimir necessidade e obrigação — expressing need and obligation. Three main structures: PRECISAR DE (to need), TER DE (to have to), DEVER (should / ought to). All are followed by infinitivo.",
+        verbs: [
+          {
+            verb: "PRECISAR",
+            en: "to need",
+            pron: "[prɐ-see-ZAR]",
+            note: "PRECISAR DE + noun (to need something). PRECISAR + infinitive (to need to do something). The DE is required before nouns.",
+            conj: [
+              ["Eu", "preciso (de)"],
+              ["Tu", "precisas (de)"],
+              ["Ele/Ela/Você", "precisa (de)"],
+              ["Nós", "precisamos (de)"],
+              ["Eles/Vocês", "precisam (de)"],
+            ],
+            examples: [
+              [
+                "Preciso de uma caneta.",
+                "",
+                "I need a pen. (+ noun — DE required)",
+              ],
+              [
+                "Preciso comprar envelopes.",
+                "",
+                "I need to buy envelopes. (+ infinitive — DE optional)",
+              ],
+              [
+                "É preciso comprar envelopes.",
+                "",
+                "It is necessary to buy envelopes. (ser preciso + inf.)",
+              ],
+            ],
+          },
+          {
+            verb: "TER DE",
+            en: "to have to / must",
+            pron: "[tehr dɐ]",
+            note: "TER DE + infinitivo. Obligation or necessity. In casual speech, TER QUE is also accepted (ter que = ter de).",
+            conj: [
+              ["Eu", "tenho de"],
+              ["Tu", "tens de"],
+              ["Ele/Ela/Você", "tem de"],
+              ["Nós", "temos de"],
+              ["Eles/Vocês", "têm de"],
+            ],
+            examples: [
+              ["Tens de comprar envelopes.", "", "You have to buy envelopes."],
+              [
+                "A dona Ana tem de emagrecer.",
+                "",
+                "Mrs Ana has to lose weight.",
+              ],
+              [
+                "O senhor tem de tomar o antibiótico duas vezes ao dia.",
+                "",
+                "You must take the antibiotic twice a day.",
+              ],
+            ],
+          },
+          {
+            verb: "DEVER",
+            en: "should / ought to",
+            pron: "[dɐ-VEHR]",
+            note: "DEVER + infinitivo. Moral obligation, advice, recommendation. Softer than TER DE. Não dever = should not.",
+            conj: [
+              ["Eu", "devo"],
+              ["Tu", "deves"],
+              ["Ele/Ela/Você", "deve"],
+              ["Nós", "devemos"],
+              ["Eles/Vocês", "devem"],
+            ],
+            examples: [
+              ["Deves deixar de fumar.", "", "You should stop smoking."],
+              [
+                "A dona Ana deve emagrecer, ela não deve engordar.",
+                "",
+                "Mrs Ana should lose weight, she should not put on weight.",
+              ],
+              ["Devemos estudar mais.", "", "We should study more."],
+            ],
+          },
+        ],
+        structures: [
+          {
+            struct: "PRECISAR DE + nome",
+            ex: "Preciso de uma caneta.",
+            en: "I need a pen.",
+          },
+          {
+            struct: "PRECISAR + infinitivo",
+            ex: "Preciso comprar envelopes.",
+            en: "I need to buy envelopes.",
+          },
+          {
+            struct: "TER DE + infinitivo",
+            ex: "Tens de comprar envelopes.",
+            en: "You have to buy envelopes.",
+          },
+          {
+            struct: "TER QUE + infinitivo (oral)",
+            ex: "Tenho que trabalhar amanhã.",
+            en: "I have to work tomorrow. (casual speech)",
+          },
+          {
+            struct: "DEVER + infinitivo",
+            ex: "Deves estudar mais.",
+            en: "You should study more.",
+          },
+          {
+            struct: "NÃO DEVER + infinitivo",
+            ex: "Não deves fumar.",
+            en: "You should not smoke.",
+          },
+          {
+            struct: "SER PRECISO + infinitivo",
+            ex: "É preciso comprar envelopes.",
+            en: "It is necessary to buy envelopes.",
+          },
+          {
+            struct: "SER NECESSÁRIO + infinitivo",
+            ex: "É necessário tomar o medicamento.",
+            en: "It is necessary to take the medicine.",
+          },
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -12868,6 +13868,319 @@
           i,
         ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
       <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+        clothing: () => `
+  ${sectionHead("Clothing & Accessories", "UFCD 6454 Session 1", "Roupa, calçado e acessórios. Portugal uses EU sizing. Roupa = clothing. Calçado = footwear. Acessórios = accessories.")}
+  <h3 class="sub-heading">👕 Roupa — clothing</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_CLOTHING.roupas
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sub-heading">👟 Calçado — footwear</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Portuguese</th><th>English</th></tr></thead>
+        <tbody>${D_CLOTHING.calcado
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}<br><span style="font-size:11px;color:var(--text-3)">${r.pron}</span></td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🕶️ Acessórios — accessories</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Portuguese</th><th>English</th></tr></thead>
+        <tbody>${D_CLOTHING.acessorios
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}<br><span style="font-size:11px;color:var(--text-3)">${r.pron}</span></td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">🧵 Tipo de material — fabric types</h3>
+  ${vocabGrid(D_CLOTHING.materials.map((m) => [m.pt, m.pron, m.en + (m.note ? " — " + m.note : "")]))}
+  <h3 class="sub-heading">📏 Tamanhos — sizes</h3>
+  ${infoBox(D_CLOTHING.sizes.note)}
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+    ${D_CLOTHING.sizes.clothing.map((r) => `<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;text-align:center"><div style="font-weight:800;color:var(--primary)">${r[0]}</div><div style="font-size:12px;color:var(--text-3)">${r[1]}</div></div>`).join("")}
+  </div>
+  <div style="font-size:13px;color:var(--text-3);font-style:italic">${D_CLOTHING.sizes.shoes}</div>`,
+
+        colors: () => `
+  ${sectionHead("Colors — As Cores", "UFCD 6454 Session 1", "Colors agree in gender and number with the noun. Most add -a for feminine. Invariable colors (laranja, rosa, bege, azul, verde) never change form.")}
+  ${infoBox(D_COLORS.agreement.map((r, i) => `<strong>${i + 1}.</strong> ${r}`).join("<br>"))}
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:20px">
+    ${D_COLORS.colors
+      .map(
+        (
+          r,
+        ) => `<div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)">
+      <div style="height:52px;background:${r.hex};${r.hex === "#F0F0F0" ? "border-bottom:1px solid var(--border)" : ""}"></div>
+      <div style="padding:8px 10px;background:var(--surface)">
+        <div class="pt" style="font-weight:800;font-size:14px">${r.pt}</div>
+        <div class="en" style="font-size:12px">${r.en}</div>
+        ${r.note ? `<div style="font-size:11px;color:var(--text-3)">${r.note}</div>` : ""}
+      </div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">Frases sobre cores</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_COLORS.phrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        stationery: () => `
+  ${sectionHead("Stationery — Artigos de Papelaria", "UFCD 6454 Session 1", "Itens de papelaria. Uma papelaria sells school and office supplies. PRECISAR DE + noun to say you need something.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_STATIONERY.items
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Frases úteis</h3>
+  ${vocabGrid(D_STATIONERY.phrases)}`,
+
+        shopping: () => `
+  ${sectionHead("Shopping Expressions", "UFCD 6454 Session 1", "Numa loja de roupa — expressions for trying on clothes, asking about sizes, giving opinions and paying.")}
+  ${D_SHOPPING.expressions
+    .map(
+      (cat) => `
+  <div class="card" style="margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <span style="font-size:22px">${cat.icon}</span>
+      <span style="font-weight:800;font-size:15px;color:var(--primary)">${cat.cat}</span>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+      <tbody>${cat.items
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td class="pt">${r[0]}</td><td>${pr(r[1])}</td><td class="en">${r[2]}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">FICAR bem / mal — fit expressions</h3>
+  ${warnBox(D_SHOPPING.ficarBemMal.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject (clothing)</th><th>Verb + pronoun</th><th>Adjective</th><th>English</th></tr></thead>
+    <tbody>${D_SHOPPING.ficarBemMal.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.subject}</td>
+      <td style="font-weight:800;color:var(--primary);font-size:16px">${r.form}</td>
+      <td class="pt">${r.adj}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Pronomes dativo — dative pronouns</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    ${D_SHOPPING.ficarBemMal.pronouns
+      .map(
+        (
+          r,
+        ) => `<div style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:8px;padding:8px 14px">
+      <span style="font-weight:800;font-size:18px;color:var(--primary)">${r[0]}</span>
+      <span style="font-size:13px;color:var(--text-2);margin-left:6px">${r[1]}</span>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+
+        "gostos-preferencias": () => `
+  ${sectionHead("Gostos & Preferências", "UFCD 6454 Session 1", "Expressing likes, dislikes and preferences. GOSTAR always needs DE before nouns and infinitives. PREFERIR has a stem change (E→I in most forms).")}
+  ${warnBox("<strong>GOSTAR DE</strong> — the DE is mandatory and cannot be dropped. ✅ Gosto <strong>de</strong> música. ❌ Gosto música.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">✅ Pela positiva — positive</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Verb</th><th>Pattern</th><th>Example</th></tr></thead>
+        <tbody>${D_GOSTOS_PREFERENCIAS.positive
+          .map(
+            (r, i) => `
+          <tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+            <td rowspan="2" style="font-weight:800;color:var(--green);vertical-align:middle">${r.verb}</td>
+            <td style="font-size:12px;color:var(--text-3)">${r.pattern1[0]}</td>
+            <td class="pt" style="font-size:13px">${r.pattern1[1]}<br><span class="en" style="font-size:12px">${r.pattern1[2]}</span></td>
+          </tr>
+          <tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+            <td style="font-size:12px;color:var(--text-3)">${r.pattern2[0]}</td>
+            <td class="pt" style="font-size:13px">${r.pattern2[1]}<br><span class="en" style="font-size:12px">${r.pattern2[2]}</span></td>
+          </tr>`,
+          )
+          .join("")}
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">❌ Pela negativa — negative</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Verb</th><th>Pattern</th><th>Example</th></tr></thead>
+        <tbody>${D_GOSTOS_PREFERENCIAS.negative
+          .map(
+            (r, i) => `
+          <tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+            <td rowspan="2" style="font-weight:800;color:var(--accent);vertical-align:middle">${r.verb}</td>
+            <td style="font-size:12px;color:var(--text-3)">${r.pattern1[0]}</td>
+            <td class="pt" style="font-size:13px">${r.pattern1[1]}<br><span class="en" style="font-size:12px">${r.pattern1[2]}</span></td>
+          </tr>
+          <tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+            <td style="font-size:12px;color:var(--text-3)">${r.pattern2[0]}</td>
+            <td class="pt" style="font-size:13px">${r.pattern2[1]}<br><span class="en" style="font-size:12px">${r.pattern2[2]}</span></td>
+          </tr>`,
+          )
+          .join("")}
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">Conjugations — key verbs</h3>
+  <div class="card-grid">${D_GOSTOS_PREFERENCIAS.useful_verbs
+    .map(
+      (v) => `
+    <div class="card-sm">
+      <div style="font-size:16px;font-weight:800;color:var(--primary);margin-bottom:2px">${v.verb} ${pr(v.pron)}</div>
+      <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-bottom:8px">${v.note}</div>
+      ${v.conj.map((row, i) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid var(--border);${i === 0 ? "background:var(--primary-lt);margin:0 -4px;padding:4px;border-radius:4px" : ""}"><span style="font-size:11px;color:var(--text-3);min-width:80px">${row[0]}</span><span style="font-weight:800;color:var(--primary)">${row[1]}</span></div>`).join("")}
+    </div>`,
+    )
+    .join("")}</div>
+  <h3 class="sub-heading">Frases úteis</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_GOSTOS_PREFERENCIAS.phrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        "precisar-dever": () => `
+  ${sectionHead("Precisar / Ter de / Dever", "UFCD 6454 Session 1", "Expressing need and obligation. Three verbs, three levels of force: PRECISAR DE (need), TER DE (have to — stronger), DEVER (should — moral/advice).")}
+  ${infoBox("Strength of obligation: <strong>TER DE</strong> (must/have to) > <strong>DEVER</strong> (should) > <strong>PRECISAR DE</strong> (need to). All take infinitivo. TER QUE is also accepted in casual speech.")}
+  <h3 class="sub-heading">Full comparison table</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr style="background:var(--primary)"><th style="color:#fff">Pronome</th><th style="color:#fff">PRECISAR (DE)</th><th style="color:#fff">TER DE</th><th style="color:#fff">DEVER</th></tr></thead>
+    <tbody>${["Eu", "Tu", "Ele/Ela/Você", "Nós", "Eles/Vocês"]
+      .map(
+        (
+          pron,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:700;color:var(--text-3)">${pron}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${D_PRECISAR_DEVER.verbs[0].conj[i][1]}</td>
+      <td class="pt" style="font-weight:800;color:var(--green)">${D_PRECISAR_DEVER.verbs[1].conj[i][1]}</td>
+      <td class="pt" style="font-weight:800;color:var(--accent)">${D_PRECISAR_DEVER.verbs[2].conj[i][1]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  ${D_PRECISAR_DEVER.verbs
+    .map(
+      (v) => `
+  <div class="card" style="margin-bottom:12px;border-left:4px solid var(--primary)">
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+      <span style="font-size:20px;font-weight:800;color:var(--primary)">${v.verb}</span>
+      ${pr(v.pron)}
+      <span style="color:var(--text-2)">— ${v.en}</span>
+    </div>
+    <div class="warn-box" style="font-size:13px;margin-bottom:10px">${v.note}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${v.examples
+        .map(
+          (
+            e,
+          ) => `<div class="pt" style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px">
+        ${e[0]}<br><span class="en" style="font-size:12px">${e[2]}</span>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">All structures — at a glance</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Structure</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_PRECISAR_DEVER.structures
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-family:var(--mono);font-size:13px;font-weight:800;color:var(--primary)">${r.struct}</td>
+      <td class="pt">${r.ex}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
     </tr>`,
       )
       .join("")}</tbody>
