@@ -1093,6 +1093,7 @@
             { id: "core-verbs", title: "Core Verbs" },
             { id: "reflexive-verbs", title: "Reflexive Verbs" },
             { id: "irregular-verbs", title: "Irregular Verbs" },
+            { id: "imperativo", title: "Imperativo" },
             { id: "future-plans", title: "Future Plans (IR + inf.)" },
           ],
         },
@@ -1126,6 +1127,8 @@
             { id: "colors", title: "Colors" },
             { id: "stationery", title: "Stationery" },
             { id: "shopping", title: "Shopping Expressions" },
+            { id: "correios", title: "Correios & Carta" },
+            { id: "banking", title: "Banco & Finanças" },
             { id: "social-etiquette", title: "Social Etiquette" },
           ],
         },
@@ -1531,58 +1534,111 @@
             p: "Eu",
             pron: "[eh-oo]",
             en: "I",
-            use: "1st sg",
-            note: "Often dropped: 'Tenho 30 anos' not 'Eu tenho 30 anos'",
+            person: "1st",
+            number: "singular",
+            verbPerson: "1st sg",
+            conjKey: "1",
+            register: "—",
+            note: "Often dropped — verb ending carries the person: 'Tenho fome.' not 'Eu tenho fome.'",
           },
           {
             p: "Tu",
             pron: "[too]",
             en: "you",
-            use: "2nd sg INFORMAL",
-            note: "Friends, family, peers. Very common in Portugal.",
+            person: "2nd",
+            number: "singular",
+            verbPerson: "2nd sg",
+            conjKey: "2",
+            register: "informal",
+            note: "Friends, family, colleagues. Very common in Portugal.",
           },
-          { p: "Ele", pron: "[ehl]", en: "he", use: "3rd sg masc.", note: "" },
+          {
+            p: "Ele",
+            pron: "[ehl]",
+            en: "he",
+            person: "3rd",
+            number: "singular",
+            verbPerson: "3rd sg",
+            conjKey: "3",
+            register: "—",
+            note: "",
+          },
           {
             p: "Ela",
             pron: "[EH-lɐ]",
             en: "she",
-            use: "3rd sg fem.",
+            person: "3rd",
+            number: "singular",
+            verbPerson: "3rd sg",
+            conjKey: "3",
+            register: "—",
             note: "",
           },
           {
             p: "Você",
             pron: "[voh-SEH]",
             en: "you (formal)",
-            use: "2nd sg FORMAL",
-            note: "⚠ Takes 3rd person verb: 'Você TEM' not 'Você TENS'",
+            person: "2nd",
+            number: "singular",
+            verbPerson: "3rd sg ⚠",
+            conjKey: "3",
+            register: "formal",
+            note: "Takes 3rd person verb form — same as ele/ela. 'Você TEM' not 'Você TENS'",
           },
           {
             p: "Nós",
             pron: "[nosh]",
             en: "we",
-            use: "1st plural",
-            note: "Informal: replaced by 'a gente' + 3rd sg verb",
+            person: "1st",
+            number: "plural",
+            verbPerson: "1st pl",
+            conjKey: "4",
+            register: "—",
+            note: "Informal alternative: 'a gente' + 3rd sg verb",
+          },
+          {
+            p: "Vós",
+            pron: "[vosh]",
+            en: "you all (archaic)",
+            person: "2nd",
+            number: "plural",
+            verbPerson: "2nd pl",
+            conjKey: "5",
+            register: "archaic",
+            note: "Rare in modern speech. Seen in religious/literary text. Used in imperativo tables.",
           },
           {
             p: "Vocês",
             pron: "[voh-SESH]",
             en: "you all",
-            use: "2nd plural (any register)",
-            note: "Covers formal AND informal plural 'you'",
+            person: "2nd",
+            number: "plural",
+            verbPerson: "3rd pl ⚠",
+            conjKey: "6",
+            register: "any",
+            note: "Takes 3rd person plural verb — same as eles/elas. Covers formal and informal.",
           },
           {
             p: "Eles",
             pron: "[EH-lɐsh]",
-            en: "they (m)",
-            use: "3rd pl masc.",
-            note: "Used for all-male or mixed groups",
+            en: "they (m/mixed)",
+            person: "3rd",
+            number: "plural",
+            verbPerson: "3rd pl",
+            conjKey: "6",
+            register: "—",
+            note: "All-male or mixed groups",
           },
           {
             p: "Elas",
             pron: "[EH-lɐsh]",
             en: "they (f)",
-            use: "3rd pl fem.",
-            note: "Only all-female groups",
+            person: "3rd",
+            number: "plural",
+            verbPerson: "3rd pl",
+            conjKey: "6",
+            register: "—",
+            note: "All-female groups only",
           },
         ],
         address: [
@@ -9373,6 +9429,835 @@
         ],
       };
 
+      const D_IMPERATIVO = {
+        note: "O imperativo é usado para dar ordens, instruções, sugestões e conselhos. Afirmativo: uses present indicative as base. Negativo: uses present subjunctive (same ending as você affirmative for -ar → -e; for -er/-ir → -a). VÓS is archaic and rarely used in modern European Portuguese.",
+        affirmative: {
+          rule: "TU = 3rd person singular present indicative (remove the S: fala, come, parte). VOCÊ = present subjunctive (swap vowel: -ar→-e; -er/-ir→-a). NÓS = add -emos/-amos/-amos. VÓS = remove -r + add -i. VOCÊS = present subjunctive plural.",
+          table: [
+            {
+              pron: "TU",
+              ar: "cant<strong>a</strong>",
+              er: "com<strong>e</strong>",
+              ir: "part<strong>e</strong>",
+              note: "= 3rd sg. present minus -s",
+            },
+            {
+              pron: "VOCÊ",
+              ar: "cant<strong>e</strong>",
+              er: "com<strong>a</strong>",
+              ir: "part<strong>a</strong>",
+              note: "= present subjunctive",
+            },
+            {
+              pron: "NÓS",
+              ar: "cant<strong>emos</strong>",
+              er: "com<strong>amos</strong>",
+              ir: "part<strong>amos</strong>",
+              note: "let us...",
+            },
+            {
+              pron: "VÓS",
+              ar: "cant<strong>ai</strong>",
+              er: "com<strong>ei</strong>",
+              ir: "part<strong>i</strong>",
+              note: "archaic/literary",
+            },
+            {
+              pron: "VOCÊS",
+              ar: "cant<strong>em</strong>",
+              er: "com<strong>am</strong>",
+              ir: "part<strong>am</strong>",
+              note: "= present subjunctive pl.",
+            },
+          ],
+        },
+        negative: {
+          rule: "NÃO + present subjunctive for ALL persons. TU and VÓS differ from their affirmative forms. VOCÊ / NÓS / VOCÊS are identical in both affirmative and negative (they use the subjunctive in both).",
+          table: [
+            {
+              pron: "TU",
+              ar: "não cant<strong>es</strong>",
+              er: "não com<strong>as</strong>",
+              ir: "não part<strong>a</strong>",
+              note: "differs from affirmative TU",
+            },
+            {
+              pron: "VOCÊ",
+              ar: "não cant<strong>e</strong>",
+              er: "não com<strong>a</strong>",
+              ir: "não part<strong>a</strong>",
+              note: "same as affirmative",
+            },
+            {
+              pron: "NÓS",
+              ar: "não cant<strong>emos</strong>",
+              er: "não com<strong>amos</strong>",
+              ir: "não part<strong>amos</strong>",
+              note: "same as affirmative",
+            },
+            {
+              pron: "VÓS",
+              ar: "não cant<strong>eis</strong>",
+              er: "não com<strong>ais</strong>",
+              ir: "não part<strong>ais</strong>",
+              note: "",
+            },
+            {
+              pron: "VOCÊS",
+              ar: "não cant<strong>em</strong>",
+              er: "não com<strong>am</strong>",
+              ir: "não part<strong>am</strong>",
+              note: "same as affirmative",
+            },
+          ],
+        },
+        irregular: [
+          {
+            verb: "SER",
+            tu: "sê",
+            voce: "seja",
+            nos: "sejamos",
+            voces: "sejam",
+            en: "to be",
+          },
+          {
+            verb: "ESTAR",
+            tu: "está",
+            voce: "esteja",
+            nos: "estejamos",
+            voces: "estejam",
+            en: "to be (state/location)",
+          },
+          {
+            verb: "IR",
+            tu: "vai",
+            voce: "vá",
+            nos: "vamos",
+            voces: "vão",
+            en: "to go",
+          },
+          {
+            verb: "TER",
+            tu: "tem",
+            voce: "tenha",
+            nos: "tenhamos",
+            voces: "tenham",
+            en: "to have",
+          },
+          {
+            verb: "FAZER",
+            tu: "faz",
+            voce: "faça",
+            nos: "façamos",
+            voces: "façam",
+            en: "to do/make",
+          },
+          {
+            verb: "VIR",
+            tu: "vem",
+            voce: "venha",
+            nos: "venhamos",
+            voces: "venham",
+            en: "to come",
+          },
+          {
+            verb: "PÔR",
+            tu: "põe",
+            voce: "ponha",
+            nos: "ponhamos",
+            voces: "ponham",
+            en: "to put",
+          },
+          {
+            verb: "DIZER",
+            tu: "diz",
+            voce: "diga",
+            nos: "digamos",
+            voces: "digam",
+            en: "to say",
+          },
+          {
+            verb: "DAR",
+            tu: "dá",
+            voce: "dê",
+            nos: "demos",
+            voces: "deem",
+            en: "to give",
+          },
+          {
+            verb: "LER",
+            tu: "lê",
+            voce: "leia",
+            nos: "leiamos",
+            voces: "leiam",
+            en: "to read",
+          },
+          {
+            verb: "SABER",
+            tu: "sabe",
+            voce: "saiba",
+            nos: "saibamos",
+            voces: "saibam",
+            en: "to know",
+          },
+          {
+            verb: "PODER",
+            tu: "pode",
+            voce: "possa",
+            nos: "possamos",
+            voces: "possam",
+            en: "can/to be able",
+          },
+        ],
+        uses: [
+          {
+            use: "Dar ordens",
+            icon: "⚠️",
+            ex: [
+              ["Para! Não fales!", "Stop! Don't speak!"],
+              ["Sai daqui!", "Get out of here!"],
+            ],
+          },
+          {
+            use: "Dar instruções",
+            icon: "📋",
+            ex: [
+              ["Preencha o formulário.", "Fill in the form."],
+              ["Assine aqui, por favor.", "Sign here, please."],
+            ],
+          },
+          {
+            use: "Dar conselhos",
+            icon: "💡",
+            ex: [
+              ["Come mais devagar.", "Eat more slowly."],
+              ["Não bebas tanto café.", "Don't drink so much coffee."],
+            ],
+          },
+          {
+            use: "Fazer sugestões",
+            icon: "🤝",
+            ex: [
+              ["Vamos ao cinema!", "Let's go to the cinema!"],
+              ["Não comamos aqui.", "Let's not eat here."],
+            ],
+          },
+        ],
+        poderImperfeito: {
+          note: "PODER no imperfeito (imperfect) + infinitivo is used as a POLITE suggestion — softer than the imperative. Imperfeito de cortesia para dar sugestões.",
+          forms: [
+            ["Eu", "podia"],
+            ["Tu", "podias"],
+            ["Ele/Ela/Você", "podia"],
+            ["Nós", "podíamos"],
+            ["Eles/Vocês", "podiam"],
+          ],
+          examples: [
+            [
+              "Podias comprar envelopes.",
+              "You could buy envelopes. (gentle suggestion)",
+            ],
+            ["Podíamos ir ao bar.", "We could go to the bar."],
+            [
+              "Podia dizer-me onde fica?",
+              "Could you tell me where it is? (very polite request)",
+            ],
+          ],
+        },
+      };
+
+      const D_CORREIOS = {
+        note: "Serviço de correios — postal service. Os Correios (CTT — Correios de Portugal) is the national postal operator. Correio azul = priority mail. Correio verde = standard mail.",
+        cartaStructure: {
+          note: "A carta é um texto escrito destinado à comunicação entre duas pessoas. Contém: data e local, saudação inicial, corpo da carta (introdução, desenvolvimento, conclusão), fórmula de despedida e assinatura.",
+          elements: [
+            {
+              name: "Local e data",
+              icon: "📍",
+              example: "Lisboa, 11 de dezembro de 2024",
+              note: "Top right — format: [city], [day] de [month] de [year]",
+            },
+            {
+              name: "Saudação inicial",
+              icon: "👋",
+              example: "Querido/a [nome], / Caro/a [nome], / Exmo. Sr./Sra.,",
+              note: "Dear... — comma after name. Formal: Exmo. Senhor/a",
+            },
+            {
+              name: "Corpo da carta",
+              icon: "📝",
+              example: "Introdução → Desenvolvimento → Conclusão",
+              note: "Main text: intro, main content, closing thought",
+            },
+            {
+              name: "Fórmula de despedida",
+              icon: "🤝",
+              example:
+                "Um abraço, / Com os melhores cumprimentos, / Atenciosamente,",
+              note: "Closing formula before signature",
+            },
+            {
+              name: "Assinatura",
+              icon: "✍️",
+              example: "[Nome]",
+              note: "Your name",
+            },
+          ],
+          saudacoes: [
+            {
+              register: "Informal",
+              opening: "Querido/a [nome],",
+              closing: "Um abraço,",
+              en: "Dear [name] — close hug",
+            },
+            {
+              register: "Informal",
+              opening: "Olá [nome],",
+              closing: "Beijos,",
+              en: "Hi [name] — kisses",
+            },
+            {
+              register: "Semi-formal",
+              opening: "Caro/a [nome],",
+              closing: "Com os melhores cumprimentos,",
+              en: "Dear [name] — best regards",
+            },
+            {
+              register: "Formal",
+              opening: "Exmo. Senhor / Exma. Senhora,",
+              closing: "Atenciosamente,",
+              en: "Dear Sir/Madam — sincerely",
+            },
+            {
+              register: "Formal",
+              opening: "A/Ao [cargo/organização],",
+              closing: "Com os melhores cumprimentos,",
+              en: "To [role/org]",
+            },
+          ],
+        },
+        servicoVocab: [
+          { e: "✉️", pt: "a carta", pron: "[ɐ KAR-tɐ]", en: "letter" },
+          { e: "📮", pt: "o postal", pron: "[oo poosh-TAL]", en: "postcard" },
+          {
+            e: "📦",
+            pt: "a encomenda",
+            pron: "[ɐ en-koo-MEND-ɐ]",
+            en: "parcel / package",
+          },
+          {
+            e: "🎁",
+            pt: "o embrulho",
+            pron: "[oo em-BROOL-yoo]",
+            en: "parcel / wrapped package",
+          },
+          { e: "🔖", pt: "o selo", pron: "[oo SEH-loo]", en: "stamp" },
+          { e: "✉️", pt: "o envelope", pron: "[oo en-vɐ-LOP]", en: "envelope" },
+          {
+            e: "📋",
+            pt: "o impresso",
+            pron: "[oo im-PREH-soo]",
+            en: "form / printed form",
+          },
+          {
+            e: "📬",
+            pt: "a caixa do correio",
+            pron: "[ɐ KAI-shɐ doo koo-RAY-oo]",
+            en: "letterbox / postbox",
+          },
+          {
+            e: "📮",
+            pt: "o marco do correio",
+            pron: "[oo MAR-koo doo koo-RAY-oo]",
+            en: "post box (street)",
+          },
+          { e: "🏠", pt: "a morada", pron: "[ɐ moo-RA-dɐ]", en: "address" },
+          {
+            e: "📮",
+            pt: "o código postal",
+            pron: "[oo KO-dee-goo poosh-TAL]",
+            en: "postcode / zip code",
+          },
+          { e: "👤", pt: "o remetente", pron: "[oo hɐ-mɐ-TENT]", en: "sender" },
+          {
+            e: "👥",
+            pt: "o destinatário",
+            pron: "[oo dɐsh-tee-nɐ-TA-ryoo]",
+            en: "addressee / recipient",
+          },
+          {
+            e: "💬",
+            pt: "o telegrama",
+            pron: "[oo tɐ-lɐ-GRA-mɐ]",
+            en: "telegram",
+          },
+          {
+            e: "💰",
+            pt: "o vale postal",
+            pron: "[oo VAL poosh-TAL]",
+            en: "postal order",
+          },
+          {
+            e: "💙",
+            pt: "o correio azul",
+            pron: "[oo koo-RAY-oo ɐ-ZOOL]",
+            en: "priority mail (faster)",
+          },
+          {
+            e: "💚",
+            pt: "o correio verde",
+            pron: "[oo koo-RAY-oo VEHR-d]",
+            en: "standard mail",
+          },
+          {
+            e: "✈️",
+            pt: "o correio aéreo",
+            pron: "[oo koo-RAY-oo ɐ-EH-ryoo]",
+            en: "airmail",
+          },
+          {
+            e: "📨",
+            pt: "a correspondência",
+            pron: "[ɐ koo-rɐsh-pon-DEN-syɐ]",
+            en: "correspondence / mail",
+          },
+        ],
+        acoes: [
+          ["registar", "[hɐ-gee-sh-TAR]", "to register (mail)"],
+          ["enviar / mandar", "[en-vyAR / mɐn-DAR]", "to send"],
+          ["receber", "[hɐ-sɐ-BEHR]", "to receive"],
+          ["preencher (impressos)", "[prɐ-en-SHEHR]", "to fill in (forms)"],
+          ["levantar (encomenda)", "[lɐ-vɐn-TAR]", "to collect (a parcel)"],
+          ["ir ao Correio / Correios", "", "to go to the post office"],
+        ],
+        frases: [
+          {
+            cat: "Pedir info sobre correio",
+            items: [
+              [
+                "Sabes se há correio para mim?",
+                "",
+                "Do you know if there is mail for me?",
+              ],
+              ["Tenho correio?", "", "Do I have mail?"],
+              [
+                "Podia dizer-me se tenho correio?",
+                "",
+                "Could you tell me if I have mail?",
+              ],
+            ],
+          },
+          {
+            cat: "Resposta afirmativa",
+            items: [
+              ["Há sim.", "", "Yes, there is."],
+              ["Claro que há.", "", "Of course there is."],
+              ["Tens, tens.", "", "Yes, you do."],
+              ["Tem, sim.", "", "Yes, you do (formal)."],
+            ],
+          },
+          {
+            cat: "Resposta negativa",
+            items: [
+              ["Não, não há.", "", "No, there is not."],
+              ["Não, não tem.", "", "No, you don't (formal)."],
+            ],
+          },
+          {
+            cat: "No balcão dos correios",
+            items: [
+              [
+                "Queria enviar esta encomenda, por favor.",
+                "",
+                "I would like to send this parcel.",
+              ],
+              ["Qual é o peso?", "", "What is the weight?"],
+              [
+                "Queria comprar selos, por favor.",
+                "",
+                "I would like to buy stamps.",
+              ],
+              [
+                "Preciso de preencher um impresso?",
+                "",
+                "Do I need to fill in a form?",
+              ],
+              [
+                "Quanto custa enviar por correio azul?",
+                "",
+                "How much does it cost to send by priority mail?",
+              ],
+            ],
+          },
+        ],
+        serviceDialog: {
+          setting: "Numa loja — shop interaction",
+          exchanges: [
+            {
+              role: "Vendedor",
+              text: "Posso ajudar? / Posso ajudá-la? / Posso ajudá-lo?",
+              en: "Can I help you? (neutral / her / him)",
+            },
+            {
+              role: "Cliente",
+              text: "Estou só a ver, obrigado/a!",
+              en: "I am just looking, thank you!",
+            },
+            {
+              role: "Cliente",
+              text: "Por agora, não preciso de nada, obrigado/a.",
+              en: "For now, I don't need anything, thank you.",
+            },
+            {
+              role: "Vendedor",
+              text: "Faça favor. / Faça o favor de dizer.",
+              en: "Please. / Please tell me.",
+            },
+            {
+              role: "Cliente",
+              text: "Posso ver? / Posso experimentar? / Posso provar?",
+              en: "Can I see? / Can I try it on? (clothing) / Can I try it?",
+            },
+            {
+              role: "Cliente",
+              text: "Desculpe, tem o livro... / Tem este portátil em stock?",
+              en: "Excuse me, do you have the book... / Do you have this laptop in stock?",
+            },
+            {
+              role: "Cliente",
+              text: "Desculpe, pode ajudar-me?",
+              en: "Excuse me, can you help me?",
+            },
+            {
+              role: "Cliente",
+              text: "Tem estes sapatos?",
+              en: "Do you have these shoes?",
+            },
+          ],
+          see_also:
+            "Para pagar / aceitar / recusar: see Shopping Expressions section.",
+        },
+      };
+
+      const D_BANKING = {
+        note: "Movimentos financeiros — financial transactions. Banco = bank. Multibanco (MB) = Portugal's national ATM and card payment network. Com o cartão multibanco pode fazer muitas operações.",
+        multibancoFunctions: [
+          "Levantar dinheiro / numerário",
+          "Depositar dinheiro",
+          "Requisitar cheques",
+          "Depositar cheques",
+          "Fazer pagamentos de serviços",
+          "Fazer transferências",
+          "Consultar o saldo",
+          "Consultar movimentos de conta",
+          "Comprar bilhetes para espetáculos",
+        ],
+        vocab: [
+          { e: "🏦", pt: "o banco", pron: "[oo BAN-koo]", en: "bank" },
+          { e: "💶", pt: "a nota", pron: "[ɐ NOH-tɐ]", en: "banknote" },
+          { e: "🪙", pt: "a moeda", pron: "[ɐ moo-EH-dɐ]", en: "coin" },
+          {
+            e: "💱",
+            pt: "o câmbio",
+            pron: "[oo KAM-byoo]",
+            en: "exchange / exchange rate",
+          },
+          { e: "🛒", pt: "a compra", pron: "[ɐ KOM-prɐ]", en: "purchase" },
+          { e: "🏷️", pt: "a venda", pron: "[ɐ VEND-ɐ]", en: "sale" },
+          {
+            e: "📊",
+            pt: "a conta à ordem",
+            pron: "[ɐ KON-tɐ ɐ OR-daing]",
+            en: "current account",
+          },
+          {
+            e: "💰",
+            pt: "a conta a prazo",
+            pron: "[ɐ KON-tɐ ɐ PRA-zoo]",
+            en: "savings / fixed-term account",
+          },
+          {
+            e: "🔢",
+            pt: "o número de conta",
+            pron: "[oo NOO-mɐ-roo dɐ KON-tɐ]",
+            en: "account number",
+          },
+          {
+            e: "📕",
+            pt: "o livro de cheques",
+            pron: "[oo LEEV-roo dɐ SHEK-ɐsh]",
+            en: "chequebook",
+          },
+          {
+            e: "💳",
+            pt: "o cartão de crédito",
+            pron: "[oo kar-TOWNG dɐ KREH-dee-too]",
+            en: "credit card",
+          },
+          {
+            e: "💳",
+            pt: "o cartão multibanco",
+            pron: "[oo kar-TOWNG mool-tee-BAN-koo]",
+            en: "debit card / MB card",
+          },
+          { e: "⬇️", pt: "o débito", pron: "[oo DEH-bee-too]", en: "debit" },
+          { e: "⬆️", pt: "o crédito", pron: "[oo KREH-dee-too]", en: "credit" },
+          {
+            e: "📄",
+            pt: "o talão de depósito",
+            pron: "[oo tɐ-LOWNG dɐ dɐ-POH-zee-too]",
+            en: "deposit slip",
+          },
+          {
+            e: "💵",
+            pt: "o numerário",
+            pron: "[oo noo-mɐ-RA-ryoo]",
+            en: "cash / currency",
+          },
+          {
+            e: "📋",
+            pt: "a importância",
+            pron: "[ɐ im-por-TAN-syɐ]",
+            en: "amount / sum of money",
+          },
+          { e: "📈", pt: "o juro", pron: "[oo ZHOO-roo]", en: "interest" },
+          { e: "🧾", pt: "o total", pron: "[oo too-TAL]", en: "total" },
+          { e: "💾", pt: "poupar", pron: "[poh-PAR]", en: "to save (money)" },
+          {
+            e: "🔄",
+            pt: "transferir",
+            pron: "[trɐnsh-fɐ-REER]",
+            en: "to transfer",
+          },
+          {
+            e: "⬇️",
+            pt: "levantar dinheiro",
+            pron: "[lɐ-vɐn-TAR]",
+            en: "to withdraw money",
+          },
+          {
+            e: "⬆️",
+            pt: "depositar",
+            pron: "[dɐ-poo-zee-TAR]",
+            en: "to deposit",
+          },
+          {
+            e: "🔄",
+            pt: "cambiar / trocar",
+            pron: "[kɐm-byAR / troo-KAR]",
+            en: "to change / exchange",
+          },
+          {
+            e: "📂",
+            pt: "abrir conta",
+            pron: "[ɐ-BREER KON-tɐ]",
+            en: "to open an account",
+          },
+          {
+            e: "❌",
+            pt: "cancelar conta",
+            pron: "[kɐn-sɐ-LAR KON-tɐ]",
+            en: "to close an account",
+          },
+        ],
+        services: [
+          {
+            local: "Nos correios",
+            posso: [
+              "enviar / mandar uma carta",
+              "enviar ≠ levantar uma encomenda",
+              "comprar selos, envelopes ou caixas",
+            ],
+          },
+          {
+            local: "Num banco",
+            posso: [
+              "depositar dinheiro ≠ levantar dinheiro",
+              "pedir um cartão de crédito / débito",
+              "abrir / cancelar conta",
+              "fazer uma transferência bancária",
+              "consultar o saldo e os movimentos",
+            ],
+          },
+        ],
+        dialogues: [
+          {
+            title: "No banco — consultar saldo",
+            lines: [
+              { role: "Empregado", text: "Faz favor..." },
+              { role: "Cliente", text: "Gostaria de saber o meu saldo." },
+              { role: "Empregado", text: "Qual é o seu número de conta?" },
+              {
+                role: "Cliente",
+                text: "É este aqui. Também desejava levantar algum dinheiro.",
+              },
+              { role: "Empregado", text: "Quanto é que deseja?" },
+              { role: "Cliente", text: "Queria 200€ (euros)." },
+              {
+                role: "Empregado",
+                text: "Deseja em notas de vinte ou de cinquenta?",
+              },
+              { role: "Cliente", text: "Em notas de 50, por favor." },
+            ],
+          },
+          {
+            title: "Na feira — negociar preço",
+            lines: [
+              {
+                role: "Compradora",
+                text: "Boa tarde! Desculpe, o que é isso aí?",
+              },
+              {
+                role: "Vendedor",
+                text: "Isto aqui? É um candeeiro antigo. É uma verdadeira antiguidade!",
+              },
+              { role: "Compradora", text: "Que giro! Quanto é?" },
+              { role: "Vendedor", text: "São 50€ (euros)." },
+              {
+                role: "Compradora",
+                text: "Eu quero levar, mas tenho pouco dinheiro. Posso pagar com cartão?",
+              },
+              {
+                role: "Vendedor",
+                text: "Não, aqui não temos multibanco. Há uma caixa multibanco à saída da feira.",
+              },
+              {
+                role: "Compradora",
+                text: "Tenho 40€. Pode fazer um desconto?",
+              },
+              { role: "Vendedor", text: "Está bem! Aceito os 40€." },
+              { role: "Compradora", text: "Obrigada. Aqui está o dinheiro." },
+            ],
+          },
+        ],
+        serviceInteractions: [
+          {
+            cat: "Para oferecer ajuda",
+            icon: "🤝",
+            items: [
+              ["Posso ajudar?", "", "Can I help you?"],
+              ["Posso ajudá-la?", "", "Can I help you? (to a woman)"],
+              ["Posso ajudá-lo?", "", "Can I help you? (to a man)"],
+              [
+                "Faça favor. / Faça o favor de dizer.",
+                "",
+                "Please. / Please tell me.",
+              ],
+            ],
+          },
+          {
+            cat: "Para recusar ajuda",
+            icon: "🚫",
+            items: [
+              [
+                "Estou só a ver, obrigado/a!",
+                "",
+                "I am just looking, thank you!",
+              ],
+              [
+                "Por agora, não preciso de nada, obrigado/a.",
+                "",
+                "For now I don't need anything, thank you.",
+              ],
+            ],
+          },
+          {
+            cat: "Para pedir / receber ajuda",
+            icon: "🙋",
+            items: [
+              [
+                "Posso ver? / Posso experimentar? / Posso provar?",
+                "",
+                "Can I see? / Can I try it on? / Can I taste it?",
+              ],
+              [
+                "Desculpe, tem o livro... / Tem estes sapatos?",
+                "",
+                "Excuse me, do you have the book... / Do you have these shoes?",
+              ],
+              ["Desculpe, pode ajudar-me?", "", "Excuse me, can you help me?"],
+              [
+                "Tem este portátil em stock?",
+                "",
+                "Do you have this laptop in stock?",
+              ],
+            ],
+          },
+          {
+            cat: "Para saber o que é / ver",
+            icon: "🔍",
+            items: [
+              ["Desculpe, o que é isso?", "", "Excuse me, what is that?"],
+              ["Posso ver melhor?", "", "Can I have a better look?"],
+              ["Posso tocar?", "", "Can I touch it?"],
+            ],
+          },
+          {
+            cat: "Para pagar",
+            icon: "💳",
+            items: [
+              ["Quanto é? / Quanto custa?", "", "How much is it?"],
+              ["Tem multibanco?", "", "Do you have a card machine?"],
+              [
+                "Posso pagar com cartão? / com dinheiro?",
+                "",
+                "Can I pay by card? / with cash?",
+              ],
+            ],
+          },
+          {
+            cat: "Para aceitar / recusar compra",
+            icon: "🛒",
+            items: [
+              ["Vou levar.", "", "I will take it."],
+              ["Desculpe, não vou levar.", "", "Sorry, I will not take it."],
+              [
+                "Com certeza. / Não há problema.",
+                "",
+                "Of course. / No problem.",
+              ],
+            ],
+          },
+          {
+            cat: "Pedir autorização / permissão",
+            icon: "🔓",
+            items: [
+              ["Permite-me passar à frente?", "", "Will you let me go first?"],
+              ["Posso passar à frente?", "", "May I go first?"],
+              [
+                "Claro, faz favor. / Com certeza.",
+                "",
+                "Of course, please. / Certainly.",
+              ],
+            ],
+          },
+          {
+            cat: "Pedir instruções / ajuda com tarefa",
+            icon: "📋",
+            items: [
+              ["O que é que devo fazer agora?", "", "What should I do now?"],
+              [
+                "O que é que faço agora? / O que é que tenho de fazer?",
+                "",
+                "What do I do now? / What do I have to do?",
+              ],
+              ["Ajuda-me a preencher isto?", "", "Help me fill this in?"],
+              [
+                "Podia-me ajudar a preencher isto?",
+                "",
+                "Could you help me fill this in?",
+              ],
+              [
+                "Pode-me ajudar a escrever a quantia?",
+                "",
+                "Can you help me write the amount?",
+              ],
+              ["Já está. E agora?", "", "Done. And now? (tarefa concluída)"],
+            ],
+          },
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -11178,22 +12063,110 @@
   ${D_PRONUNCIATION.tips.map((t) => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join("")}`,
 
         pronouns: () => `
-  ${sectionHead("Pronouns", "Session 2", "Portuguese subject pronouns are often DROPPED — the verb ending tells you the person. But you must know the full table because verbs conjugate by subject.")}
-  <h3 class="sub-heading">Personal Pronouns</h3>
+  ${sectionHead("Pronouns", "Session 2", "Portuguese subject pronouns are often DROPPED — the verb ending identifies the person. VOCÊ and VOCÊS look like 2nd person but take 3rd person verb forms — this is the biggest trap for learners.")}
+  ${warnBox("⚠ VOCÊ (sg) and VOCÊS (pl) are grammatically 2nd person pronouns but take <strong>3rd person</strong> verb endings — the same as ele/ela and eles/elas. Always double-check this when conjugating.")}
+
+  <h3 class="sub-heading">Full pronoun table — person, number and verb form</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Pronoun</th><th>Pron.</th><th>English</th><th>Usage</th><th>Note</th></tr></thead>
-    <tbody>${D_PRONOUNS.personal
-      .map(
-        (r) => `<tr>
-      <td><strong style="font-size:16px">${r.p}</strong></td>
-      <td>${pr(r.pron)}</td>
-      <td>${r.en}</td>
-      <td><span class="tag ${r.use.includes("INFORMAL") ? "tag-good" : r.use.includes("FORMAL") ? "tag-warn" : "tag-info"}">${r.use}</span></td>
-      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
-    </tr>`,
-      )
-      .join("")}</tbody>
+    <thead><tr style="background:var(--primary)">
+      <th style="color:#fff">Person</th>
+      <th style="color:#fff">Number</th>
+      <th style="color:#fff;font-size:15px">Pronoun</th>
+      <th style="color:#fff">Pronunciation</th>
+      <th style="color:#fff">English</th>
+      <th style="color:#fff">Verb person used</th>
+      <th style="color:#fff">Register</th>
+      <th style="color:#fff">Note</th>
+    </tr></thead>
+    <tbody>${(() => {
+      const rows = D_PRONOUNS.personal;
+      // Group by number for visual separation
+      let lastNum = "";
+      return rows
+        .map((r, i) => {
+          const borderTop =
+            r.number !== lastNum
+              ? ((lastNum = r.number), "border-top:2px solid var(--border-2)")
+              : ((lastNum = r.number), "");
+          const regColor =
+            r.register === "informal"
+              ? "var(--green)"
+              : r.register === "formal"
+                ? "var(--accent)"
+                : r.register === "archaic"
+                  ? "var(--text-3)"
+                  : r.register === "any"
+                    ? "var(--primary)"
+                    : "var(--text-3)";
+          const verbWarn = r.verbPerson.includes("⚠");
+          return `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"};${borderTop}">
+          <td style="font-size:12px;font-weight:800;color:var(--text-3);text-align:center">${r.person}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.number}</td>
+          <td><strong style="font-size:18px;color:var(--primary)">${r.p}</strong></td>
+          <td>${pr(r.pron)}</td>
+          <td style="font-weight:700">${r.en}</td>
+          <td style="font-weight:800;font-size:13px;color:${verbWarn ? "var(--accent)" : "var(--green)"}">
+            ${r.verbPerson}${verbWarn ? ' <span style="font-size:11px">(not 2nd!)</span>' : ""}
+          </td>
+          <td style="font-size:12px;font-weight:700;color:${regColor}">${r.register !== "—" ? r.register : "—"}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+        </tr>`;
+        })
+        .join("");
+    })()}</tbody>
   </table></div>
+
+  <h3 class="sub-heading">Verb conjugation slot map</h3>
+  ${infoBox("Portuguese verbs have 6 conjugation slots. This shows which pronoun(s) use each slot.")}
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">
+    ${[
+      {
+        slot: "1st sg",
+        prons: ["Eu"],
+        color: "var(--primary)",
+        ex: "falo / como / parto",
+      },
+      {
+        slot: "2nd sg",
+        prons: ["Tu"],
+        color: "var(--green)",
+        ex: "falas / comes / partes",
+      },
+      {
+        slot: "3rd sg",
+        prons: ["Ele / Ela / Você ⚠"],
+        color: "var(--accent)",
+        ex: "fala / come / parte",
+      },
+      {
+        slot: "1st pl",
+        prons: ["Nós"],
+        color: "var(--primary)",
+        ex: "falamos / comemos / partimos",
+      },
+      {
+        slot: "2nd pl",
+        prons: ["Vós (archaic)"],
+        color: "var(--text-3)",
+        ex: "falais / comeis / partis",
+      },
+      {
+        slot: "3rd pl",
+        prons: ["Eles / Elas / Vocês ⚠"],
+        color: "var(--accent)",
+        ex: "falam / comem / partem",
+      },
+    ]
+      .map(
+        (s) => `<div class="card-sm" style="border-left:3px solid ${s.color}">
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;color:var(--text-3);margin-bottom:4px">${s.slot}</div>
+      <div style="font-size:14px;font-weight:800;color:${s.color};margin-bottom:4px">${s.prons.join("<br>")}</div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--text-3)">${s.ex}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
   <h3 class="sub-heading">Forms of Address</h3>
   ${D_PRONOUNS.address
     .map(
@@ -14185,6 +15158,271 @@
       )
       .join("")}</tbody>
   </table></div>`,
+
+        imperativo: () => `
+  ${sectionHead("Imperativo", "UFCD 6454 Session 2", "Used for commands, instructions, advice and suggestions. Affirmative and negative forms have different endings. TU negative differs from affirmative — learn this carefully.")}
+  ${warnBox("KEY RULE — Two persons differ between affirmative and negative: <strong>TU</strong> and <strong>VÓS</strong>.<br>TU: ✅ Aff = <strong>canta</strong> (3rd sg. present) | ❌ Neg = <strong>não cantes</strong> (subjunctive)<br>VÓS: ✅ Aff = <strong>cantai</strong> (inf. − r + i) | ❌ Neg = <strong>não canteis</strong> (subjunctive)<br>VOCÊ / NÓS / VOCÊS: same form in both — they use the subjunctive in affirmative and negative.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">✅ Imperativo Afirmativo</h3>
+      ${infoBox(D_IMPERATIVO.affirmative.rule)}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pronoun</th><th>-AR (cantar)</th><th>-ER (comer)</th><th>-IR (partir)</th><th>Note</th></tr></thead>
+        <tbody>${D_IMPERATIVO.affirmative.table
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${r.pron === "TU" ? "var(--primary-lt)" : i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-weight:800;color:var(--primary)">${r.pron}</td>
+          <td class="pt" style="font-weight:800">${r.ar}</td>
+          <td class="pt" style="font-weight:800">${r.er}</td>
+          <td class="pt" style="font-weight:800">${r.ir}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">❌ Imperativo Negativo</h3>
+      ${infoBox(D_IMPERATIVO.negative.rule)}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pronoun</th><th>-AR (cantar)</th><th>-ER (comer)</th><th>-IR (partir)</th><th>Note</th></tr></thead>
+        <tbody>${D_IMPERATIVO.negative.table
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${r.pron === "TU" ? "var(--accent-lt)" : i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-weight:800;color:var(--accent)">${r.pron}</td>
+          <td class="pt" style="font-weight:800">${r.ar}</td>
+          <td class="pt" style="font-weight:800">${r.er}</td>
+          <td class="pt" style="font-weight:800">${r.ir}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">Uses of the Imperative</h3>
+  <div class="card-grid">${D_IMPERATIVO.uses
+    .map(
+      (u) => `
+    <div class="card-sm">
+      <div style="font-size:20px;margin-bottom:4px">${u.icon}</div>
+      <div style="font-weight:800;color:var(--primary);margin-bottom:8px">${u.use}</div>
+      ${u.ex.map((e) => `<div style="margin-bottom:6px"><div class="pt">${e[0]}</div><div class="en">${e[1]}</div></div>`).join("")}
+    </div>`,
+    )
+    .join("")}</div>
+  <h3 class="sub-heading">Irregular Imperative Forms</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>English</th><th>TU (aff.)</th><th>VOCÊ (aff.)</th><th>NÓS</th><th>VOCÊS</th></tr></thead>
+    <tbody>${D_IMPERATIVO.irregular
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary)">${r.verb}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.en}</td>
+      <td class="pt" style="font-weight:800">${r.tu}</td>
+      <td class="pt" style="font-weight:800">${r.voce}</td>
+      <td class="pt">${r.nos}</td>
+      <td class="pt">${r.voces}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Imperfeito de Cortesia — polite suggestions with PODER</h3>
+  ${infoBox(D_IMPERATIVO.poderImperfeito.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pronome</th><th>PODER (imperfeito)</th></tr></thead>
+      <tbody>${D_IMPERATIVO.poderImperfeito.forms
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="color:var(--text-3)">${r[0]}</td>
+        <td class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">${r[1]}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+    <div>
+      ${D_IMPERATIVO.poderImperfeito.examples
+        .map(
+          (
+            e,
+          ) => `<div class="card-sm" style="margin-bottom:8px;border-left:3px solid var(--primary)">
+        <div class="pt">${e[0]}</div>
+        <div class="en">${e[1]}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>`,
+
+        correios: () => `
+  ${sectionHead("Correios & Carta", "UFCD 6454 Session 2", "Serviço de correios (CTT). Ir ao Correio, enviar e receber correspondência. Estrutura de uma carta formal e informal.")}
+  <h3 class="sub-heading">📝 Estrutura da carta — letter structure</h3>
+  ${infoBox(D_CORREIOS.cartaStructure.note)}
+  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:16px;font-family:var(--mono);font-size:13px">
+    <div style="text-align:right;margin-bottom:12px;color:var(--text-3)">📍 Lisboa, 15 de abril de 2025</div>
+    <div style="margin-bottom:12px;font-weight:800">👋 Querida Maria,</div>
+    <div style="margin-bottom:12px;color:var(--text-2)">📝 [Introdução]<br>[Desenvolvimento]<br>[Conclusão]</div>
+    <div>🤝 Um abraço,<br>✍️ <em>Ana</em></div>
+  </div>
+  ${D_CORREIOS.cartaStructure.elements
+    .map(
+      (
+        el,
+      ) => `<div style="display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)">
+    <span style="font-size:20px;min-width:28px">${el.icon}</span>
+    <div><strong style="color:var(--primary)">${el.name}</strong> — <em>${el.example}</em><br><span style="font-size:12px;color:var(--text-3)">${el.note}</span></div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">Saudações e fórmulas de despedida</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Register</th><th>Opening / Saudação inicial</th><th>Closing / Fórmula de despedida</th><th>English equivalent</th></tr></thead>
+    <tbody>${D_CORREIOS.cartaStructure.saudacoes
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:12px;font-weight:700;color:var(--text-3)">${r.register}</td>
+      <td class="pt">${r.opening}</td>
+      <td class="pt">${r.closing}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">📮 Vocabulário do correio</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_CORREIOS.servicoVocab
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Ações — verbs</h3>
+  ${vocabGrid(D_CORREIOS.acoes)}
+  <h3 class="sub-heading">Frases úteis no correio</h3>
+  ${D_CORREIOS.frases
+    .map(
+      (cat) => `
+  <div class="card-sm" style="margin-bottom:10px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:6px">${cat.cat}</div>
+    <div class="tbl-wrap"><table>
+      <tbody>${cat.items
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td class="pt">${r[0]}</td><td class="en">${r[2]}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>`,
+    )
+    .join("")}`,
+
+        banking: () => `
+  ${sectionHead("Banco & Finanças", "UFCD 6454 Session 2", "Movimentos financeiros — banking and financial services in Portugal. Multibanco (MB) is the national card system operated by SIBS, used for ATMs and card payments everywhere.")}
+  <h3 class="sub-heading">💳 Com o cartão Multibanco pode...</h3>
+  ${infoBox("The Multibanco card is a debit card linked to your Portuguese bank account. It works at all ATM machines and payment terminals (terminais de pagamento automático — TPA) in Portugal.")}
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    ${D_BANKING.multibancoFunctions.map((f) => `<div style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:700">✓ ${f}</div>`).join("")}
+  </div>
+  <h3 class="sub-heading">📖 Vocabulário bancário</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
+    <tbody>${D_BANKING.vocab
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Serviços — o que posso fazer?</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    ${D_BANKING.services
+      .map(
+        (s) => `<div class="card">
+      <div style="font-weight:800;font-size:15px;color:var(--primary);margin-bottom:10px">🏢 ${s.local}</div>
+      ${s.posso.map((p) => `<div style="padding:4px 0;border-bottom:1px solid var(--border);font-size:13px">✓ ${p}</div>`).join("")}
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">Interações no serviço — service interaction phrases</h3>
+  ${D_BANKING.serviceInteractions
+    .map(
+      (cat) => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:20px">${cat.icon}</span>
+      <span style="font-weight:800;color:var(--primary)">${cat.cat}</span>
+    </div>
+    ${cat.items
+      .map(
+        (
+          r,
+          i,
+        ) => `<div style="display:flex;gap:8px;padding:4px 0;border-bottom:1px solid var(--border)">
+      <span class="pt" style="flex:1">${r[0]}</span>
+      <span class="en" style="flex:1;font-size:12px;color:var(--text-2)">${r[2]}</span>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">Diálogos — dialogues</h3>
+  ${D_BANKING.dialogues
+    .map(
+      (d) => `
+  <div class="card" style="margin-bottom:12px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:10px">🗨️ ${d.title}</div>
+    ${d.lines
+      .map(
+        (
+          l,
+          i,
+        ) => `<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid var(--border)">
+      <span style="font-weight:800;min-width:100px;font-size:12px;color:${l.role === "Compradora" || l.role === "Cliente" ? "var(--primary)" : "var(--accent)"}">${l.role}:</span>
+      <span class="pt" style="font-size:13px">${l.text}</span>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+    )
+    .join("")}`,
       };
 
       // ─────────────────────────────────────────────
