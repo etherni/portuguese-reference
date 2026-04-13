@@ -10723,6 +10723,100 @@
             },
           ],
         },
+        fullTable: [
+          {
+            num: "Singular",
+            pessoa: "1ª",
+            subject: "eu",
+            tonico: "mim",
+            comCom: "comigo",
+            atona: "me",
+            en: "me / to me",
+          },
+          {
+            num: "Singular",
+            pessoa: "2ª",
+            subject: "tu",
+            tonico: "ti",
+            comCom: "contigo",
+            atona: "te",
+            en: "you / to you",
+          },
+          {
+            num: "Singular",
+            pessoa: "3ª",
+            subject: "ele, ela",
+            tonico: "ele, ela, si",
+            comCom: "consigo",
+            atona: "o, a, lhe, se",
+            en: "him/her / to him/her",
+          },
+          {
+            num: "Plural",
+            pessoa: "1ª",
+            subject: "nós",
+            tonico: "nós",
+            comCom: "connosco",
+            atona: "nos",
+            en: "us / to us",
+          },
+          {
+            num: "Plural",
+            pessoa: "2ª",
+            subject: "vós",
+            tonico: "vós",
+            comCom: "convosco",
+            atona: "vos",
+            en: "you all / to you all",
+          },
+          {
+            num: "Plural",
+            pessoa: "3ª",
+            subject: "eles, elas",
+            tonico: "eles, elas, si",
+            comCom: "si / com eles",
+            atona: "os, as, lhes, se",
+            en: "them / to them",
+          },
+        ],
+        positionRules: {
+          general:
+            "As formas átonas colocam-se geralmente DEPOIS da forma verbal, ligadas por hífen.",
+          before:
+            "As átonas colocam-se ANTES da forma verbal em frases com valor negativo (não, nunca, nada, ninguém) ou com certos advérbios (já, ainda, também, sempre, aqui, ali, lá, cá).",
+          examples: [
+            {
+              rule: "Normal position — after verb with hyphen",
+              pt: "Eu comprei os binóculos. → Eu comprei-os.",
+              en: "I bought the binoculars. → I bought them.",
+            },
+            {
+              rule: "Negative (não)",
+              pt: "Eu não os comprei.",
+              en: "I did not buy them.",
+            },
+            {
+              rule: "Negative (nunca)",
+              pt: "Ela nunca o viu.",
+              en: "She never saw him/it.",
+            },
+            {
+              rule: "Adverb (já)",
+              pt: "Eu já os comprei.",
+              en: "I already bought them.",
+            },
+            {
+              rule: "Adverb (ainda)",
+              pt: "Ainda me lembro.",
+              en: "I still remember (it/you).",
+            },
+            {
+              rule: "Adverb (também)",
+              pt: "Também te vi.",
+              en: "I also saw you.",
+            },
+          ],
+        },
       };
 
       const D_CONVITES = {
@@ -16314,6 +16408,61 @@
       <td style="font-weight:700;color:var(--text-2)">${r.subject}</td>
       <td style="font-weight:800;font-size:18px;color:var(--accent)">${r.form}</td>
       <td class="pt" style="font-size:13px">${r.ex}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Quadro completo — tónicas e átonas por pessoa</h3>
+  ${infoBox("Formas tónicas = stressed forms used after prepositions or standing alone. Formas átonas = unstressed clitic forms attached directly to the verb.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr style="background:var(--primary)">
+      <th style="color:#fff">Nº</th>
+      <th style="color:#fff">Pessoa</th>
+      <th style="color:#fff">Sujeito</th>
+      <th style="color:#fff;background:var(--primary-dk)">Forma tónica<br><span style="font-size:10px;font-weight:400">(após preposição)</span></th>
+      <th style="color:#fff;background:var(--primary-dk)">COM +</th>
+      <th style="color:#fff;background:var(--accent)">Forma átona<br><span style="font-size:10px;font-weight:400">(CD / CI / reflexivo)</span></th>
+      <th style="color:#fff">English</th>
+    </tr></thead>
+    <tbody>${D_PRONOMES_PREP.fullTable
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${r.num === "Plural" && i === 3 ? "border-top:2px solid var(--border-2)" : ""}${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:11px;color:var(--text-3);font-weight:700">${r.num}</td>
+      <td style="font-size:13px;font-weight:800;text-align:center;color:var(--text-2)">${r.pessoa}ª</td>
+      <td style="font-weight:800;color:var(--text)">${r.subject}</td>
+      <td style="font-weight:800;font-size:15px;color:var(--primary)" class="pt">${r.tonico}</td>
+      <td style="font-weight:800;font-size:14px;color:var(--primary)" class="pt">${r.comCom}</td>
+      <td style="font-weight:800;font-size:15px;color:var(--accent)" class="pt">${r.atona}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Posição das formas átonas — position rules</h3>
+  <div class="card" style="margin-bottom:12px;border-left:4px solid var(--green)">
+    <div style="font-weight:800;color:var(--green);margin-bottom:6px">✅ Posição normal — depois do verbo, com hífen</div>
+    <div style="font-size:13px;color:var(--text-2)">${D_PRONOMES_PREP.positionRules.general}</div>
+  </div>
+  <div class="card" style="margin-bottom:16px;border-left:4px solid var(--accent)">
+    <div style="font-weight:800;color:var(--accent);margin-bottom:6px">⚠ Posição especial — antes do verbo</div>
+    <div style="font-size:13px;color:var(--text-2)">${D_PRONOMES_PREP.positionRules.before}</div>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Rule</th><th>Portuguese</th><th>English</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.positionRules.examples
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:12px;font-weight:700;color:${i === 0 ? "var(--green)" : "var(--accent)"}">${r.rule}</td>
+      <td class="pt">${r.pt}</td>
       <td class="en" style="font-size:13px">${r.en}</td>
     </tr>`,
       )
