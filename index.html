@@ -1080,6 +1080,7 @@
             { id: "comparatives", title: "Comparatives" },
             { id: "muito-pouco", title: "Muito / Pouco" },
             { id: "com-pronomes", title: "COM + Pronomes" },
+            { id: "pronomes-complemento", title: "Pronomes Complemento" },
             { id: "gostos-preferencias", title: "Gostos & Preferências" },
             { id: "precisar-dever", title: "Precisar / Ter de / Dever" },
           ],
@@ -1094,6 +1095,7 @@
             { id: "reflexive-verbs", title: "Reflexive Verbs" },
             { id: "irregular-verbs", title: "Irregular Verbs" },
             { id: "imperativo", title: "Imperativo" },
+            { id: "imperfeito", title: "Pretérito Imperfeito" },
             { id: "future-plans", title: "Future Plans (IR + inf.)" },
           ],
         },
@@ -1129,6 +1131,8 @@
             { id: "shopping", title: "Shopping Expressions" },
             { id: "correios", title: "Correios & Carta" },
             { id: "banking", title: "Banco & Finanças" },
+            { id: "convites", title: "Convites" },
+            { id: "residencia", title: "Autorização de Residência" },
             { id: "social-etiquette", title: "Social Etiquette" },
           ],
         },
@@ -10258,6 +10262,746 @@
         ],
       };
 
+      const D_IMPERFEITO = {
+        note: "Pretérito Imperfeito do Indicativo — the imperfect past tense. Used for: (1) habitual or repeated past actions (costumar + imperf.), (2) descriptions in the past, (3) courtesy (queria / podia = I would like / could you). Regular -AR: -ava endings. Regular -ER/-IR: -ia endings.",
+        regular: {
+          ar: {
+            stem: "-av-",
+            endings: [
+              ["Eu", "-ava"],
+              ["Tu", "-avas"],
+              ["Ele/Ela/Você", "-ava"],
+              ["Nós", "-ávamos"],
+              ["Eles/Vocês", "-avam"],
+            ],
+            model: "falar → falave → falava",
+          },
+          er: {
+            stem: "-i-",
+            endings: [
+              ["Eu", "-ia"],
+              ["Tu", "-ias"],
+              ["Ele/Ela/Você", "-ia"],
+              ["Nós", "-íamos"],
+              ["Eles/Vocês", "-iam"],
+            ],
+            model: "comer → comia",
+          },
+          ir: {
+            stem: "-i-",
+            endings: [
+              ["Eu", "-ia"],
+              ["Tu", "-ias"],
+              ["Ele/Ela/Você", "-ia"],
+              ["Nós", "-íamos"],
+              ["Eles/Vocês", "-iam"],
+            ],
+            model: "partir → partia",
+          },
+        },
+        keyVerbs: [
+          {
+            verb: "QUERER",
+            pron: "[kɐ-REHR]",
+            en: "to want",
+            conj: [
+              ["Eu", "queria"],
+              ["Tu", "querias"],
+              ["Ele/Ela/Você", "queria"],
+              ["Nós", "queríamos"],
+              ["Eles/Vocês", "queriam"],
+            ],
+            note: "Imperfect of QUERER = polite request. 'Queria um café' = I would like a coffee.",
+            ex: [
+              ["Queria um café, por favor.", "I would like a coffee, please."],
+              ["Queria ver essa camisola.", "I would like to see that jumper."],
+            ],
+          },
+          {
+            verb: "PODER",
+            pron: "[poo-DEHR]",
+            en: "can / to be able",
+            conj: [
+              ["Eu", "podia"],
+              ["Tu", "podias"],
+              ["Ele/Ela/Você", "podia"],
+              ["Nós", "podíamos"],
+              ["Eles/Vocês", "podiam"],
+            ],
+            note: "Imperfect of PODER = polite request/suggestion. 'Podia ajudar-me?' = Could you help me?",
+            ex: [
+              ["Podia ajudar-me, por favor?", "Could you help me, please?"],
+              ["Podias comprar pão?", "Could you buy bread?"],
+            ],
+          },
+          {
+            verb: "SER",
+            pron: "[sehr]",
+            en: "to be",
+            conj: [
+              ["Eu", "era"],
+              ["Tu", "eras"],
+              ["Ele/Ela/Você", "era"],
+              ["Nós", "éramos"],
+              ["Eles/Vocês", "eram"],
+            ],
+            note: "Irregular — SER uses 'er-' stem. Used for descriptions and identity in the past.",
+            ex: [
+              ["Era uma casa muito grande.", "It was a very big house."],
+              ["Eram muito simpáticos.", "They were very friendly."],
+            ],
+          },
+          {
+            verb: "TER",
+            pron: "[tehr]",
+            en: "to have",
+            conj: [
+              ["Eu", "tinha"],
+              ["Tu", "tinhas"],
+              ["Ele/Ela/Você", "tinha"],
+              ["Nós", "tínhamos"],
+              ["Eles/Vocês", "tinham"],
+            ],
+            note: "Irregular — TER uses 'tinh-' stem.",
+            ex: [
+              ["Tinha muito trabalho.", "I had a lot of work."],
+              ["Tínhamos uma casa em Lisboa.", "We had a house in Lisbon."],
+            ],
+          },
+          {
+            verb: "IR",
+            pron: "[eer]",
+            en: "to go",
+            conj: [
+              ["Eu", "ia"],
+              ["Tu", "ias"],
+              ["Ele/Ela/Você", "ia"],
+              ["Nós", "íamos"],
+              ["Eles/Vocês", "iam"],
+            ],
+            note: "Irregular — IR uses same endings as -ER/-IR verbs but with 'i-' stem only.",
+            ex: [
+              [
+                "Ia ao mercado todos os sábados.",
+                "I used to go to the market every Saturday.",
+              ],
+              ["Íamos de autocarro.", "We used to go by bus."],
+            ],
+          },
+          {
+            verb: "VIR",
+            pron: "[veer]",
+            en: "to come",
+            conj: [
+              ["Eu", "vinha"],
+              ["Tu", "vinhas"],
+              ["Ele/Ela/Você", "vinha"],
+              ["Nós", "vínhamos"],
+              ["Eles/Vocês", "vinham"],
+            ],
+            note: "Irregular — VIR uses 'vinh-' stem.",
+            ex: [
+              ["Vinha sempre a pé.", "I always used to come on foot."],
+              ["Ela vinha de autocarro.", "She used to come by bus."],
+            ],
+          },
+        ],
+        uses: [
+          {
+            use: "Habitual past action",
+            icon: "🔄",
+            note: "Action that happened regularly in the past. Often with: sempre, todos os dias, antigamente, quando era criança.",
+            ex: [
+              [
+                "Quando era criança, brincava muito.",
+                "When I was a child, I played a lot.",
+              ],
+              [
+                "Ia à praia todos os verões.",
+                "I used to go to the beach every summer.",
+              ],
+            ],
+          },
+          {
+            use: "Description in the past",
+            icon: "🖼️",
+            note: "Background description — state, appearance, weather, feelings in the past.",
+            ex: [
+              [
+                "O quarto era pequeno e tinha uma janela.",
+                "The room was small and had a window.",
+              ],
+              ["Estava muito frio.", "It was very cold."],
+            ],
+          },
+          {
+            use: "Imperfeito de cortesia",
+            icon: "🙏",
+            note: "Imperfect used as a polite softener instead of present. Sounds less direct and more respectful. QUERER and PODER are the two most important.",
+            ex: [
+              [
+                "Queria um bilhete, por favor.",
+                "I would like a ticket, please.",
+              ],
+              [
+                "Podia dizer-me onde fica o banco?",
+                "Could you tell me where the bank is?",
+              ],
+              [
+                "Podes chegar aqui, por favor? (vs Chega aqui!)",
+                "Can you come here, please? (vs Come here!)",
+              ],
+            ],
+          },
+        ],
+        principioCortesia:
+          "Quando falamos com os outros é preciso respeitar o princípio de cortesia. Em vez de darmos diretamente uma ordem, podemos fazê-lo de uma forma indireta. Por exemplo: 'Podes chegar aqui, por favor?' em vez de 'Chega aqui!'",
+      };
+
+      const D_PRONOMES_PREP = {
+        note: "Pronomes pessoais + preposições — when a personal pronoun follows a preposition, it takes a special tonic (stressed) form. EU → mim. TU → ti. ELE/ELA/VOCÊ → ele/ela/si. NÓS/VÓS/ELES/ELAS are unchanged.",
+        tonic: [
+          {
+            subject: "Eu",
+            afterPrep: "mim",
+            pron: "[meeng]",
+            en: "me",
+            ex: "Os meus pais nunca vão sem mim ao supermercado.",
+          },
+          {
+            subject: "Tu",
+            afterPrep: "ti",
+            pron: "[tee]",
+            en: "you",
+            ex: "Este livro é para ti.",
+          },
+          {
+            subject: "Você",
+            afterPrep: "si",
+            pron: "[see]",
+            en: "you (formal/reflexive)",
+            ex: "Posso ir por si aos Correios.",
+          },
+          {
+            subject: "Ele",
+            afterPrep: "ele",
+            pron: "[ehl]",
+            en: "him",
+            ex: "Fiz isto por ele.",
+          },
+          {
+            subject: "Ela",
+            afterPrep: "ela",
+            pron: "[EH-lɐ]",
+            en: "her",
+            ex: "Trouxe um presente para ela.",
+          },
+          {
+            subject: "Nós",
+            afterPrep: "nós",
+            pron: "[nosh]",
+            en: "us",
+            ex: "Vieram connosco. / Trouxeram isso para nós.",
+          },
+          {
+            subject: "Vocês",
+            afterPrep: "vocês",
+            pron: "[voh-SESH]",
+            en: "you all",
+            ex: "Comprei este bolo para vocês.",
+          },
+          {
+            subject: "Eles",
+            afterPrep: "eles",
+            pron: "[EH-lɐsh]",
+            en: "them (m)",
+            ex: "Nunca falo sobre eles.",
+          },
+          {
+            subject: "Elas",
+            afterPrep: "elas",
+            pron: "[EH-lɐsh]",
+            en: "them (f)",
+            ex: "Fui com elas ao cinema.",
+          },
+        ],
+        contractions: [
+          {
+            prep: "COM",
+            forms: [
+              {
+                pronoun: "mim",
+                result: "comigo",
+                pron: "[koo-MEE-goo]",
+                en: "with me",
+              },
+              {
+                pronoun: "ti",
+                result: "contigo",
+                pron: "[kong-TEE-goo]",
+                en: "with you",
+              },
+              {
+                pronoun: "si",
+                result: "consigo",
+                pron: "[kong-SEE-goo]",
+                en: "with you (formal)",
+              },
+              {
+                pronoun: "nós",
+                result: "connosco",
+                pron: "[koo-NOSH-koo]",
+                en: "with us",
+              },
+              {
+                pronoun: "vós",
+                result: "convosco",
+                pron: "[kong-VOSH-koo]",
+                en: "with you all (archaic)",
+              },
+              {
+                pronoun: "ele/ela/eles/elas/vocês",
+                result: "com ele / com ela / com eles / com elas / com vocês",
+                pron: "",
+                en: "with him/her/them/you",
+              },
+            ],
+          },
+          {
+            prep: "DE",
+            forms: [
+              {
+                pronoun: "ele",
+                result: "dele",
+                pron: "[DEH-l]",
+                en: "of/from him",
+              },
+              {
+                pronoun: "ela",
+                result: "dela",
+                pron: "[DEH-lɐ]",
+                en: "of/from her",
+              },
+              {
+                pronoun: "eles",
+                result: "deles",
+                pron: "[DEH-lɐsh]",
+                en: "of/from them (m)",
+              },
+              {
+                pronoun: "elas",
+                result: "delas",
+                pron: "[DEH-lɐsh]",
+                en: "of/from them (f)",
+              },
+            ],
+          },
+          {
+            prep: "EM",
+            forms: [
+              {
+                pronoun: "ele",
+                result: "nele",
+                pron: "[NEH-l]",
+                en: "in/on him/it",
+              },
+              {
+                pronoun: "ela",
+                result: "nela",
+                pron: "[NEH-lɐ]",
+                en: "in/on her/it",
+              },
+              {
+                pronoun: "eles",
+                result: "neles",
+                pron: "[NEH-lɐsh]",
+                en: "in/on them (m)",
+              },
+              {
+                pronoun: "elas",
+                result: "nelas",
+                pron: "[NEH-lɐsh]",
+                en: "in/on them (f)",
+              },
+            ],
+          },
+        ],
+        directObj: {
+          note: "Pronomes pessoais de complemento direto — replace the direct object (the thing/person receiving the action directly). Placed after the verb with a hyphen in European Portuguese.",
+          rule: "EU → me | TU → te | ELE → o | ELA → a | NÓS → nos | VÓS → vos | ELES → os | ELAS → as",
+          forms: [
+            {
+              subject: "Eu",
+              form: "me",
+              ex: "Ela viu-me na rua.",
+              en: "She saw me in the street.",
+            },
+            {
+              subject: "Tu",
+              form: "te",
+              ex: "Eu vi-te ontem.",
+              en: "I saw you yesterday.",
+            },
+            {
+              subject: "Ele",
+              form: "o",
+              ex: "Escrevi o currículo e enviei-o.",
+              en: "I wrote the CV and sent it.",
+            },
+            {
+              subject: "Ela",
+              form: "a",
+              ex: "Encontrei-a no supermercado.",
+              en: "I found her at the supermarket.",
+            },
+            {
+              subject: "Nós",
+              form: "nos",
+              ex: "Eles convidaram-nos.",
+              en: "They invited us.",
+            },
+            {
+              subject: "Vós",
+              form: "vos",
+              ex: "Eu avisei-vos.",
+              en: "I warned you all.",
+            },
+            {
+              subject: "Eles",
+              form: "os",
+              ex: "Eu comprei-os ontem.",
+              en: "I bought them yesterday.",
+            },
+            {
+              subject: "Elas",
+              form: "as",
+              ex: "Ele viu-as no mercado.",
+              en: "He saw them at the market.",
+            },
+          ],
+          positionNote:
+            "In European Portuguese, clitic pronouns typically appear AFTER the verb, joined by a hyphen: enviei-o, vi-te, comprou-a. They come BEFORE the verb after: não (não o vi), question words (quem te disse?), subordinating conjunctions.",
+        },
+        indirectObj: {
+          note: "Pronomes pessoais de complemento indireto — replace the indirect object (to whom / for whom the action is done). Same form as direct for me/te/nos; but 3rd person uses LHE/LHES.",
+          forms: [
+            {
+              subject: "Eu",
+              form: "me",
+              ex: "Ela deu-me um livro.",
+              en: "She gave me a book.",
+            },
+            {
+              subject: "Tu",
+              form: "te",
+              ex: "Eu disse-te a verdade.",
+              en: "I told you the truth.",
+            },
+            {
+              subject: "Ele/Ela/Você",
+              form: "lhe",
+              ex: "Dei-lhe o dinheiro.",
+              en: "I gave him/her/you the money.",
+            },
+            {
+              subject: "Nós",
+              form: "nos",
+              ex: "Enviaram-nos uma carta.",
+              en: "They sent us a letter.",
+            },
+            {
+              subject: "Vós",
+              form: "vos",
+              ex: "Eu expliquei-vos o problema.",
+              en: "I explained the problem to you all.",
+            },
+            {
+              subject: "Eles/Elas/Vocês",
+              form: "lhes",
+              ex: "Mandei-lhes um email.",
+              en: "I sent them/you all an email.",
+            },
+          ],
+        },
+      };
+
+      const D_CONVITES = {
+        note: "Fazer convites, aceitar e recusar — invitations. Key verb: QUERER IR (to want to go), VIR (to come). Use PODER in the negative to decline: não posso ir.",
+        fazer: [
+          [
+            "Queres ir ao cinema comigo?",
+            "[KEHR-ɐsh eer ow see-NEH-mɐ koo-MEE-goo]",
+            "Do you want to go to the cinema with me?",
+          ],
+          [
+            "Vens almoçar connosco?",
+            "[vaingsh al-moo-SAR koo-NOSH-koo]",
+            "Are you coming to have lunch with us?",
+          ],
+          ["Queres vir à minha festa?", "", "Do you want to come to my party?"],
+          [
+            "O que achas de irmos ao teatro?",
+            "",
+            "What do you think about going to the theatre?",
+          ],
+          ["Que tal irmos tomar um café?", "", "How about going for a coffee?"],
+        ],
+        aceitar: [
+          ["Quero ir, sim!", "", "I want to go, yes!"],
+          ["Ótima ideia! / Boa ideia! / Excelente ideia!", "", "Great idea!"],
+          ["Vou com muito gosto!", "", "I would love to go!"],
+          ["Vou com muito prazer!", "", "It would be my pleasure!"],
+          ["Claro, com certeza!", "", "Of course, certainly!"],
+        ],
+        recusar: [
+          ["Que pena!", "[kɐ PAYN-ɐ]", "What a shame!"],
+          [
+            "Não posso ir, já tenho planos.",
+            "",
+            "I cannot go, I already have plans.",
+          ],
+          [
+            "Não posso ir, tenho outros compromissos!",
+            "",
+            "I cannot go, I have other commitments!",
+          ],
+          ["Desculpa, hoje não posso!", "", "Sorry, I cannot today!"],
+          ["Lamento, hoje não posso!", "", "I am sorry, I cannot today!"],
+          [
+            "Agradeço imenso o convite, mas não posso ir.",
+            "",
+            "I really appreciate the invitation, but I cannot go.",
+          ],
+          ["É impossível ir.", "", "It is impossible to go."],
+        ],
+        preferencias: [
+          [
+            "Eu adoro tocar instrumentos musicais.",
+            "",
+            "I love playing musical instruments.",
+          ],
+          [
+            "Gosto muito de dar caminhadas.",
+            "",
+            "I really like going for walks.",
+          ],
+          ["Gosto de ir ao cinema.", "", "I like going to the cinema."],
+          [
+            "A minha grande paixão é o desporto.",
+            "",
+            "My great passion is sport.",
+          ],
+          [
+            "Gosto muito de jogar jogos de mesa.",
+            "",
+            "I really like playing board games.",
+          ],
+          ["Adoro tirar fotografias.", "", "I love taking photographs."],
+          ["Detesto ir às compras.", "", "I hate going shopping."],
+          [
+            "Prefiro tomar um café ou um copo com os meus amigos.",
+            "",
+            "I prefer to have a coffee or a drink with my friends.",
+          ],
+        ],
+      };
+
+      const D_RESIDENCIA = {
+        note: "Autorização de residência em Portugal — residence permit. The main authority is AIMA (Agência para a Integração, Migrações e Asilo), which replaced SEF (Serviço de Estrangeiros e Fronteiras). Appointments must be booked via agendamento prévio.",
+        definition:
+          "A autorização de residência é um documento emitido pela AIMA (Agência para a Integração, Migrações e Asilo). É um título de residência que permite ao cidadão estrangeiro residir em Portugal. Pode ser temporária (ART) ou permanente (ARP) e tem de ser renovada periodicamente.",
+        tipos: [
+          {
+            tipo: "Autorização de Residência Temporária (ART)",
+            abbr: "ART",
+            desc: "Título de residência que permite aos cidadãos estrangeiros residir em Portugal, inicialmente pelo período de dois anos a partir da data de emissão.",
+            renewal:
+              "Renovável por períodos sucessivos de três anos. Deve ser renovado sempre que se verifique alteração dos elementos de identificação.",
+            validity: "2 anos (inicial) → depois 3+3+3… anos",
+          },
+          {
+            tipo: "Autorização de Residência Permanente (ARP)",
+            abbr: "ARP",
+            desc: "Título de residência que permite aos cidadãos estrangeiros residir em Portugal sem limite de validade. Atribuída após 5 anos de residência legal contínua.",
+            renewal:
+              "Renovada de cinco em cinco anos ou quando se verifiquem alterações nos elementos de identificação pessoal.",
+            validity: "Sem limite de validade — renovação a cada 5 anos",
+          },
+          {
+            tipo: "Renovação de autorização de residência",
+            abbr: "",
+            desc: "Renovação de um título existente. Necessária para frequentar cursos de português (PPT) e para manter a legalidade da estadia.",
+            renewal:
+              "Deve ser pedida antes do fim da validade do título atual.",
+            validity: "Varia — ver ART ou ARP",
+          },
+        ],
+        documentos: [
+          {
+            e: "📋",
+            doc: "Formulário devidamente preenchido",
+            en: "Duly completed application form",
+          },
+          {
+            e: "📸",
+            doc: "Duas fotografias tipo passe (a cores, fundo liso)",
+            en: "Two passport-size photos (colour, plain background)",
+          },
+          {
+            e: "🛂",
+            doc: "Passaporte ou documento de viagem válido",
+            en: "Valid passport or travel document",
+          },
+          {
+            e: "🏠",
+            doc: "Visto de residência válido",
+            en: "Valid residence visa",
+          },
+          {
+            e: "💼",
+            doc: "Comprovativo dos meios de subsistência (ex: contrato de trabalho)",
+            en: "Proof of means of subsistence (e.g. work contract)",
+          },
+          {
+            e: "🏡",
+            doc: "Comprovativo de alojamento (ex: contrato de arrendamento)",
+            en: "Proof of accommodation (e.g. rental contract)",
+          },
+          {
+            e: "⚖️",
+            doc: "Autorização para consulta do registo criminal português",
+            en: "Authorisation to check Portuguese criminal record (unless under 16)",
+          },
+          {
+            e: "👨‍👩‍👧",
+            doc: "Comprovativo de vínculos de parentesco (quando se justifique)",
+            en: "Proof of family ties (when applicable)",
+          },
+          {
+            e: "💰",
+            doc: "Comprovativo de inscrição nas Finanças",
+            en: "Proof of registration with Tax Authority (AT/Finanças)",
+          },
+          {
+            e: "🏥",
+            doc: "Comprovativo de inscrição na Segurança Social",
+            en: "Proof of registration with Social Security",
+          },
+          {
+            e: "🩺",
+            doc: "Seguro de saúde ou SNS",
+            en: "Health insurance or proof of NHS (SNS) coverage",
+          },
+        ],
+        onde: {
+          current:
+            "AIMA — Agência para a Integração, Migrações e Asilo. Replaced SEF in 2023. Appointments via agendamento prévio (prior booking required).",
+          quem: "O interessado ou o seu representante legal. Pode ser extensivo aos menores a cargo do requerente.",
+          url: "https://www.aima.gov.pt",
+        },
+        vocab: [
+          [
+            "a autorização de residência",
+            "[ɐ ow-too-ree-zɐ-SOWNG dɐ hɐ-zee-DEN-syɐ]",
+            "residence permit",
+          ],
+          ["a renovação", "[ɐ hɐ-noo-vɐ-SOWNG]", "renewal"],
+          ["o requerente", "[oo hɐ-kɐ-RENT]", "applicant"],
+          [
+            "o comprovativo",
+            "[oo kom-proo-vɐ-TEE-voo]",
+            "proof / supporting document",
+          ],
+          [
+            "os meios de subsistência",
+            "[may-oosh dɐ soob-seesh-TEN-syɐ]",
+            "means of subsistence",
+          ],
+          [
+            "o contrato de arrendamento",
+            "[kon-TRA-too dɐ ɐ-hɐn-dɐ-MENT-oo]",
+            "rental contract",
+          ],
+          ["o visto", "[oo VEESH-too]", "visa"],
+          [
+            "o agendamento prévio",
+            "[ɐ-zhen-dɐ-MENT-oo PREH-vyoo]",
+            "prior appointment booking",
+          ],
+          ["a Segurança Social", "[sɐ-goo-RAN-sɐ soo-SYAL]", "Social Security"],
+          ["as Finanças", "[ɐsh fee-NAN-sɐsh]", "Tax Authority (AT)"],
+          [
+            "o registo criminal",
+            "[hɐ-ZHEESH-too kree-mee-NAL]",
+            "criminal record",
+          ],
+          ["o menor", "[oo mɐ-NOR]", "minor (person under 18)"],
+          [
+            "o representante legal",
+            "[hɐ-prɐ-zan-TANT lɐ-GAL]",
+            "legal representative",
+          ],
+          [
+            "preencher (um formulário)",
+            "[prɐ-en-SHEHR]",
+            "to fill in (a form)",
+          ],
+          [
+            "apresentar (documentos)",
+            "[ɐ-prɐ-zen-TAR]",
+            "to submit / present (documents)",
+          ],
+          ["requerer", "[hɐ-kɐ-REHR]", "to apply / request formally"],
+        ],
+        formasTratamento: {
+          note: "Formas de tratamento — forms of address. Portugal has distinct formal and informal registers.",
+          table: [
+            {
+              register: "Informal",
+              singular: "Tu / Você",
+              plural: "Vocês",
+              verb: "2nd sg (tu) or 3rd sg (você)",
+              context: "Friends, family, colleagues, informal settings",
+            },
+            {
+              register: "Formal",
+              singular: "O senhor / A senhora",
+              plural: "Os senhores / As senhoras",
+              verb: "3rd person (sg or pl)",
+              context: "Strangers, elderly, professionals, official settings",
+            },
+          ],
+          modes: [
+            {
+              form: "o + nome",
+              level: "menos formal",
+              ex: "o Francisco",
+              en: "Francisco (familiar formal)",
+            },
+            {
+              form: "o senhor + nome próprio",
+              level: "mais formal",
+              ex: "o sr. Francisco",
+              en: "Mr Francisco",
+            },
+            {
+              form: "o senhor + apelido",
+              level: "mais formal",
+              ex: "o sr. Fernandes",
+              en: "Mr Fernandes",
+            },
+            {
+              form: "o senhor + título + nome + apelido",
+              level: "muito formal",
+              ex: "o senhor doutor António Marques",
+              en: "Dr António Marques",
+            },
+          ],
+          note2:
+            "VOCÊ = used in any register, but less formal than o senhor. TU = exclusively informal (friends, family, close colleagues).",
+        },
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -15423,6 +16167,289 @@
   </div>`,
     )
     .join("")}`,
+
+        imperfeito: () => `
+  ${sectionHead("Pretérito Imperfeito", "UFCD 6454 Session 3", "The imperfect tense describes past habits, past states/descriptions, and is used as a polite softener (imperfeito de cortesia). Regular -AR: -ava endings. Regular -ER/-IR: -ia endings.")}
+  ${infoBox(D_IMPERFEITO.principioCortesia)}
+  <h3 class="sub-heading">Regular endings</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+    ${["ar", "er", "ir"]
+      .map((c2) => {
+        const t = D_IMPERFEITO.regular[c2];
+        return `<div class="card-sm">
+        <div style="font-weight:800;color:var(--primary);font-size:15px;margin-bottom:4px">-${c2.toUpperCase()} verbs</div>
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">${t.model}</div>
+        ${t.endings
+          .map(
+            (
+              r,
+              i,
+            ) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid var(--border);${i === 3 ? "font-weight:800" : ""}">
+          <span style="font-size:11px;color:var(--text-3);min-width:80px">${r[0]}</span>
+          <span style="font-weight:800;color:var(--primary)" class="pt">${r[1]}</span>
+        </div>`,
+          )
+          .join("")}
+      </div>`;
+      })
+      .join("")}
+  </div>
+  <h3 class="sub-heading">Key verbs — full conjugations</h3>
+  <div class="card-grid">${D_IMPERFEITO.keyVerbs
+    .map(
+      (v) => `
+    <div class="card-sm">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px">
+        <span style="font-size:16px;font-weight:800;color:var(--primary)">${v.verb}</span>
+        ${pr(v.pron)}
+        <span style="font-size:12px;color:var(--text-2)">— ${v.en}</span>
+      </div>
+      <div style="font-size:11px;color:var(--accent);font-style:italic;margin-bottom:8px">${v.note}</div>
+      ${v.conj
+        .map(
+          (
+            r,
+            i,
+          ) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid var(--border);${i === 0 ? "background:var(--primary-lt);margin:0 -4px;padding:4px 4px;border-radius:4px" : ""}">
+        <span style="font-size:11px;color:var(--text-3);min-width:80px">${r[0]}</span>
+        <span style="font-weight:800;color:var(--primary)" class="pt">${r[1]}</span>
+      </div>`,
+        )
+        .join("")}
+      <div style="margin-top:8px">${v.ex.map((e) => `<div style="font-size:12px;padding:2px 0"><span class="pt">${e[0]}</span> <span class="en">— ${e[1]}</span></div>`).join("")}</div>
+    </div>`,
+    )
+    .join("")}</div>
+  <h3 class="sub-heading">Uses of the Imperfect</h3>
+  ${D_IMPERFEITO.uses
+    .map(
+      (u) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid var(--primary)">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:22px">${u.icon}</span>
+      <span style="font-weight:800;font-size:15px;color:var(--primary)">${u.use}</span>
+    </div>
+    <div style="font-size:13px;color:var(--text-3);font-style:italic;margin-bottom:8px">${u.note}</div>
+    ${u.ex.map((e) => `<div style="margin-bottom:4px"><span class="pt">${e[0]}</span> <span class="en" style="font-size:13px">— ${e[1]}</span></div>`).join("")}
+  </div>`,
+    )
+    .join("")}`,
+
+        "pronomes-complemento": () => `
+  ${sectionHead("Pronomes Complemento", "UFCD 6454 Session 3", "Personal pronouns change form depending on their grammatical role. Subject pronouns (eu/tu/ele…) differ from tonic pronouns after prepositions (mim/ti/si…) and from clitic pronouns used as direct or indirect objects.")}
+
+  <h3 class="sub-heading">Pronomes tónicos após preposições — tonic pronouns after prepositions</h3>
+  ${warnBox("After a preposition (de, em, para, por, com, sem, até…), EU becomes <strong>mim</strong> and TU becomes <strong>ti</strong>. All others stay the same (except COM which creates special fused forms).")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject pronoun</th><th>After preposition</th><th>Pron.</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.tonic
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${r.afterPrep === "mim" || r.afterPrep === "ti" || r.afterPrep === "si" ? "var(--primary-lt)" : i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--text-2)">${r.subject}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--primary)" class="pt">${r.afterPrep}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-size:13px;font-style:italic">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Contrações — preposition + pronoun</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+    ${D_PRONOMES_PREP.contractions
+      .map(
+        (grp) => `<div class="card-sm">
+      <div style="font-weight:800;font-size:16px;color:var(--primary);margin-bottom:8px">${grp.prep}</div>
+      ${grp.forms
+        .map(
+          (
+            f,
+          ) => `<div style="display:flex;gap:6px;align-items:baseline;padding:3px 0;border-bottom:1px solid var(--border)">
+        <span style="font-size:12px;color:var(--text-3);min-width:60px">${f.pronoun}</span>
+        <span style="color:var(--text-3)">→</span>
+        <span style="font-weight:800;color:var(--primary)" class="pt">${f.result}</span>
+        ${f.en ? `<span style="font-size:11px;color:var(--text-3)"> — ${f.en}</span>` : ""}
+      </div>`,
+        )
+        .join("")}
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Pronomes de complemento direto (CD) — direct object pronouns</h3>
+  ${infoBox(D_PRONOMES_PREP.directObj.note + "<br><strong>Rule: " + D_PRONOMES_PREP.directObj.rule + "</strong>")}
+  ${warnBox(D_PRONOMES_PREP.directObj.positionNote)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject</th><th>CD pronoun</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.directObj.forms
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:700;color:var(--text-2)">${r.subject}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--green)">${r.form}</td>
+      <td class="pt" style="font-size:13px">${r.ex}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Pronomes de complemento indireto (CI) — indirect object pronouns</h3>
+  ${infoBox(D_PRONOMES_PREP.indirectObj.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject</th><th>CI pronoun</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.indirectObj.forms
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:700;color:var(--text-2)">${r.subject}</td>
+      <td style="font-weight:800;font-size:18px;color:var(--accent)">${r.form}</td>
+      <td class="pt" style="font-size:13px">${r.ex}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        convites: () => `
+  ${sectionHead("Convites", "UFCD 6454 Session 3", "Fazer, aceitar e recusar convites — making, accepting and declining invitations. Key phrase for declining: Que pena! / Não posso ir.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">📩 Fazer convites — making invitations</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Portuguese</th><th>English</th></tr></thead>
+        <tbody>${D_CONVITES.fazer
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt">${r[0]}</td><td class="en">${r[2]}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">✅ Aceitar convites — accepting</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Portuguese</th><th>English</th></tr></thead>
+        <tbody>${D_CONVITES.aceitar
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt">${r[0]}</td><td class="en">${r[2]}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+      <h3 class="sub-heading">❌ Recusar convites — declining</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Portuguese</th><th>English</th></tr></thead>
+        <tbody>${D_CONVITES.recusar
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt">${r[0]}</td><td class="en">${r[2]}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">Expressar preferências — preference expressions</h3>
+  ${vocabGrid(D_CONVITES.preferencias)}`,
+
+        residencia: () => `
+  ${sectionHead("Autorização de Residência", "UFCD 6454 Session 3", "Documentos necessários para a autorização de residência em Portugal. Submitted to AIMA (Agência para a Integração, Migrações e Asilo) via prior appointment — agendamento prévio obrigatório.")}
+  <h3 class="sub-heading">O que é?</h3>
+  ${infoBox(D_RESIDENCIA.definition)}
+  <h3 class="sub-heading">Tipos de autorização</h3>
+  ${D_RESIDENCIA.tipos
+    .map(
+      (t) => `
+  <div class="card" style="margin-bottom:10px;border-left:4px solid var(--primary)">
+    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+      <span style="font-weight:800;font-size:16px;color:var(--primary)">${t.tipo}</span>
+    </div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:6px">${t.desc}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px">
+      <span style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:6px;padding:3px 10px;font-weight:700;color:var(--primary)">⏱ ${t.validity}</span>
+      <span style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:3px 10px;color:var(--text-3)">${t.renewal}</span>
+    </div>
+  </div>`,
+    )
+    .join("")}
+  <h3 class="sub-heading">📋 Documentos necessários</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Document</th><th>English</th></tr></thead>
+    <tbody>${D_RESIDENCIA.documentos
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:700">${r.doc}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Quem pode pedir e onde?</h3>
+  ${infoBox("<strong>" + D_RESIDENCIA.onde.current + "</strong><br>" + D_RESIDENCIA.onde.quem)}
+  <h3 class="sub-heading">Formas de tratamento — forms of address</h3>
+  ${infoBox(D_RESIDENCIA.formasTratamento.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Register</th><th>Singular</th><th>Plural</th><th>Verb person</th><th>Context</th></tr></thead>
+    <tbody>${D_RESIDENCIA.formasTratamento.table
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary)">${r.register}</td>
+      <td class="pt" style="font-weight:800">${r.singular}</td>
+      <td class="pt">${r.plural}</td>
+      <td style="font-size:13px;color:var(--text-2)">${r.verb}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.context}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Modos de tratamento formais</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Form</th><th>Level</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_RESIDENCIA.formasTratamento.modes
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-family:var(--mono);font-size:13px;color:var(--primary)">${r.form}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.level}</td>
+      <td class="pt" style="font-weight:800">${r.ex}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div class="rule-box">→ ${D_RESIDENCIA.formasTratamento.note2}</div>
+  <h3 class="sub-heading">Vocabulário útil</h3>
+  ${vocabGrid(D_RESIDENCIA.vocab)}`,
       };
 
       // ─────────────────────────────────────────────
