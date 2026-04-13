@@ -1157,6 +1157,9 @@
       function warnBox(text) {
         return `<div class="warn-box">${text}</div>`;
       }
+      function ctx(what, why, connects) {
+        return `<div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--purple);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.7"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:16px">📖</span><span style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--purple)">Context &amp; Purpose</span></div><div style="display:grid;gap:6px"><div><span style="font-weight:800;color:var(--text)">What it is: </span><span style="color:var(--text-2)">${what}</span></div><div><span style="font-weight:800;color:var(--text)">Why it matters: </span><span style="color:var(--text-2)">${why}</span></div>${connects ? `<div><span style="font-weight:800;color:var(--text)">Related to: </span><span style="color:var(--purple);font-style:italic">${connects}</span></div>` : ""}</div></div>`;
+      }
       function tag(text, type) {
         return `<span class="tag tag-${type}">${text}</span>`;
       }
@@ -12845,6 +12848,7 @@
 
       const RENDERERS = {
         alphabet: () => `
+  ${ctx("The 26-letter Portuguese alphabet — letters, names and sounds.", "You need this to spell words aloud, understand phonetic transcriptions [like this], and see why words look different from how they sound.", "Pronunciation — every letter rule connects there")}
   ${sectionHead("Alphabet", "Session 1", "The Portuguese alphabet has 26 letters — same as English. K, W, Y exist but only appear in foreign words. The differences are in <strong>how letters sound</strong>, especially C, G, H, J, R, S, X, and the digraphs LH and NH.")}
   ${warnBox("<strong>5 letters that will trip you up:</strong> H (always silent) · R at start (guttural, deep guttural sound) · S (3 different sounds by position) · X (usually [sh] but not always) · LH and NH (single sounds, not two letters)")}
   <div class="tbl-wrap alpha-table"><table>
@@ -12870,6 +12874,7 @@
   ).join("")}</div>`,
 
         pronunciation: () => `
+  ${ctx("How spoken European Portuguese differs from written — vowel reduction, consonant shifts, sounds that don't exist in English.", "EU Pt swallows unstressed vowels. Without this, written text sounds nothing like native speech. The phonetic notation [like this] used throughout every section is explained here.", "Alphabet — letter rules; all vocabulary sections — phonetics throughout")}
   ${sectionHead("Pronunciation", "Sessions 1–3", "European Portuguese swallows unstressed vowels — this is why it sounds so compressed and different from what you read on the page. Brazilians open their vowels wide; Portuguese people swallow them. Once you hear this pattern, you cannot unhear it.")}
   <h3 class="sub-heading">Vowel Sounds</h3>
   <div class="tbl-wrap"><table>
@@ -12901,6 +12906,7 @@
   ${D_PRONUNCIATION.tips.map((t) => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join("")}`,
 
         pronouns: () => `
+  ${ctx("The words that replace nouns: I / you / he / she / we / they, with formal and informal variants.", "Verb conjugation depends entirely on the pronoun. The biggest trap: VOCÊ and VOCÊS look 2nd person but always take 3rd person verb forms — same endings as ele/ela and eles/elas.", "Verb Patterns — every conjugation table uses these; Forms of Address — tu vs você vs o senhor")}
   ${sectionHead("Pronouns", "Session 2", "Portuguese subject pronouns are often DROPPED — the verb ending identifies the person. VOCÊ and VOCÊS look like 2nd person but take 3rd person verb forms — this is the biggest trap for learners.")}
   ${warnBox("⚠ VOCÊ (sg) and VOCÊS (pl) are grammatically 2nd person pronouns but take <strong>3rd person</strong> verb endings — the same as ele/ela and eles/elas. Always double-check this when conjugating.")}
 
@@ -13023,6 +13029,7 @@
   ${D_PRONOUNS.notes.map((n) => `<div class="rule-box" style="margin-bottom:8px">→ ${n}</div>`).join("")}`,
 
         articles: () => `
+  ${ctx("Prepositions connect words in a sentence. Articles mark nouns as definite/indefinite. Three prepositions fuse with articles into mandatory contractions.", "You cannot form a correct sentence without contractions. Saying em o Porto instead of no Porto marks you instantly as a beginner. These appear in every sentence.", "Gender — articles agree with noun gender; Location — em/a; Time Prepositions — A/DE/EM; Verb-required prepositions — 21 verbs needing a specific preposition")}
   ${sectionHead("Prepositions & Articles", "Sessions 3 & UFCD 6453", "Prepositions link elements in a sentence. Portuguese has 18 simple prepositions. Three core ones (em, de, a, por) contract with articles — these contractions are mandatory grammar.")}
 
   <h3 class="sub-heading">As 18 preposições simples — complete list</h3>
@@ -13240,6 +13247,7 @@
   </table></div>`,
 
         gender: () => `
+  ${ctx("Every Portuguese noun is masculine (o) or feminine (a). Articles, adjectives, pronouns and demonstratives all agree with it.", "Getting gender wrong makes the whole sentence feel off. Most endings are predictable but a set of exceptions must be memorised — including the -ema trap (o problema is masculine).", "Articles — o/a/os/as; Description — adjective agreement; Singular/Plural — -ão plurals")}
   ${sectionHead("Noun Gender", "Sessions 1–3", "Portuguese noun gender is largely predictable from the word ending. Always learn nouns with their article: <em>o livro</em>, not just <em>livro</em>. The article is part of the word.")}
   ${D_GENDER.map(
     (
@@ -13309,6 +13317,7 @@
   </table></div>`,
 
         "ser-estar": () => `
+  ${ctx("SER and ESTAR both mean 'to be' in English but are not interchangeable.", "The most fundamental distinction in Portuguese grammar. SER = permanent identity (nationality, profession, material). ESTAR = temporary state, location, ongoing action. Every sentence containing 'to be' requires this choice.", "Estar Patterns — the four ESTAR constructions; Verb Patterns — both conjugations")}
   ${sectionHead("Ser vs Estar", "Sessions 2–3", 'Both mean "to be" but are not interchangeable. <strong>SER</strong> = permanent identity (your passport). <strong>ESTAR</strong> = temporary state or condition (today\'s mood). Many languages have just one verb for to be — Portuguese makes a meaningful distinction between permanent identity and temporary state.')}
   <div class="conj-grid">
     ${conjBox("SER — permanent identity", "var(--primary)", D_SER_ESTAR.ser_conj)}
@@ -13354,6 +13363,7 @@
   </div>`,
 
         "core-verbs": () => `
+  ${ctx("The 16 most frequently used Portuguese verbs with full conjugations, pronunciation, and examples.", "If you learn only one section, learn this. These cover the core actions of daily life: having, going, speaking, living, liking, wanting, being able to, knowing, taking, starting.", "Verb Patterns — the regular endings behind these; Irregular Verbs — several of the 16 are irregular")}
   ${sectionHead("Core Verbs", "Sessions 2–3", "Master these 8 verbs and you can express almost anything at A1 level. Each verb is shown with full conjugation and real examples. Click/tap any verb to expand.")}
   ${infoBox("<strong>-AR pattern (falar):</strong> -o / -as / -a / -amos / -am / -am &nbsp;|&nbsp; <strong>-ER pattern (comer):</strong> -o / -es / -e / -emos / -em / -em &nbsp;|&nbsp; <strong>-IR pattern (partir):</strong> -o / -es / -e / -imos / -em / -em")}
   ${D_CORE_VERBS.map(
@@ -13515,6 +13525,7 @@
   </div>`,
 
         house: () => `
+  ${ctx("Vocabulary for describing your home: rooms, furniture, and how to say where things are.", "Essential for practical conversation, housing contracts, and describing your daily routine. Connects reflexive verbs (levantar-se) with location (o sofá está na sala).", "Location Expressions — where things are; Reflexive Verbs — daily routines at home")}
   ${sectionHead("House & Home", "Session 4", "Portuguese homes are described by floor (andar) and room (divisão/assoalho). Portuguese floor numbering differs from North American — the ground floor is rés do chão (R/C), not the 1st floor.")}
   ${warnBox(D_HOUSE.note)}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
@@ -13540,6 +13551,7 @@
   </div>`,
 
         possessives: () => `
+  ${ctx("My, your, his, her, our, their — possessives agree with the thing owned, not the owner.", "English speakers often confuse seu/sua because it is ambiguous (his/her/your/their). The fix: use dele/dela for clarity.", "Gender — possessives agree with noun gender; Pronouns — possessives are a type of determiner")}
   ${sectionHead("Possessives", "Session 5", "Possessives agree in gender and number with the THING POSSESSED, not the owner. In European Portuguese, the definite article is always used before the possessive: <em>a minha casa</em>, never <em>minha casa</em>.")}
   ${warnBox("<strong>SEU/SUA is ambiguous</strong> — it can mean his, her, your, or their. To be clear about who owns something, use <strong>DELE</strong> (his) or <strong>DELA</strong> (her) instead: <em>o livro dele</em> = his book.")}
   <h3 class="sub-heading">Possessive Determiners (before a noun)</h3>
@@ -13575,6 +13587,7 @@
   ${vocabGrid(D_POSSESSIVES.examples)}`,
 
         demonstratives: () => `
+  ${ctx("This / that / that over there — este/esse/aquele with feminine and neuter forms, agreeing with the noun.", "The three-way distance contrast is more explicit than English. Neuter forms (isto/isso/aquilo) are used for unknown or abstract things.", "Gender — agreement; Prepositions — contractions deste/nesse/naquele")}
   ${sectionHead("Demonstratives", "Sessions 5 & UFCD 6453 S3", "Point to things by distance from the speaker. ESTE = near me (aqui). ESSE = near you (aí). AQUELE = far from both (ali). Can stand alone as pronouns to replace nouns and avoid repetition.")}
   <h3 class="sub-heading">Full Table — Determiners + o outro</h3>
   <div class="tbl-wrap"><table>
@@ -13675,6 +13688,7 @@
   </table></div>`,
 
         "estar-patterns": () => `
+  ${ctx("Four construction patterns for ESTAR: location, adjective, COM + noun (physical sensations), ESTAR A + infinitive (ongoing action).", "ESTAR A + infinitive is the EU Portuguese progressive tense (Estou a trabalhar = I am working). BR Portuguese uses the gerund (estou trabalhando). This difference immediately identifies EU vs BR.", "Ser vs Estar — the core distinction; Core Verbs — ESTAR is one of the 16")}
   ${sectionHead("Estar Patterns", "Session 5", "ESTAR has four key construction patterns beyond simple conjugation. Each expresses something different — location, temporary state, physical sensation, or ongoing action.")}
   ${D_ESTAR_PATTERNS.patterns
     .map(
@@ -13731,6 +13745,7 @@
   </div>`,
 
         "reflexive-verbs": () => `
+  ${ctx("Reflexive verbs: actions the subject does to themselves. Identified by -se on the infinitive (chamar-se, levantar-se, vestir-se).", "Essential for daily routine and your name. The reflexive pronoun (me/te/se/nos) must match the subject and attaches to the verb.", "Pronomes Complemento — se is the 3rd person reflexive clitic; Estar Patterns — reflexives often use ESTAR")}
   ${sectionHead("Reflexive Verbs", "Session 6", "Reflexive verbs describe actions the subject does to themselves. The reflexive pronoun changes with the subject and MOVES POSITION depending on sentence type.")}
   ${warnBox("<strong>NÓS rule:</strong> Drop the final -s of the verb before adding -nos. levantamos + nos → <strong>levantamo-nos</strong>. This applies to all reflexive verbs.")}
   <h3 class="sub-heading">Pronoun Position Rules</h3>
@@ -13798,6 +13813,7 @@
     .join("")}`,
 
         "irregular-verbs": () => `
+  ${ctx("16 high-frequency verbs that do not follow regular -AR/-ER/-IR patterns. Mostly only the EU form is irregular.", "These appear in nearly every sentence of real Portuguese. In most cases, only EU is irregular; the rest follow a predictable pattern from there.", "Core Verbs — IR/SER/TER are both core and irregular; Verb Patterns — shows what regular looks like; Imperativo — irregular imperatives")}
   ${sectionHead("Irregular Verbs", "Sessions 6 & UFCD 6453 S6", "These high-frequency verbs do not follow the regular -AR/-ER/-IR patterns. The EU form is almost always the most irregular — learn that one first. Session 6 adds FAZER, SABER, PÔR, PEDIR, SUBIR.")}
   <h3 class="sub-heading">Summary table — all at a glance</h3>
   ${infoBox(D_IRREGULAR_TABLE.note)}
@@ -13939,6 +13955,7 @@
   </div>`,
 
         sports: () => `
+  ${ctx("Sports vocabulary, Portugal's top sports by registered athlete count, swimming disciplines, and sports verbs.", "JOGAR for team/competitive sports; PRATICAR for activities. Futebol is dominant. The athlete counts reflect national federation data.", "Gostos & Preferências — preferring a sport; Leisure — sport as leisure")}
   ${sectionHead("Sports & Athletics", "UFCD 6453 Session 6", "Atividades desportivas. Top sports in Portugal by number of registered athletes. Vocabulary for sports, disciplines, verbs and phrases.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div>
@@ -14008,6 +14025,7 @@
   </table></div>`,
 
         money: () => `
+  ${ctx("The euro, reading prices aloud, and key retail money vocabulary.", "Comma = decimal (1,50€), period = thousands (1.000€). Getting this backwards on forms causes real confusion in Portugal.", "Payments & Documents — payment methods; Numbers — price reading")}
   ${sectionHead("Money & Prices", "Session 6", "Portugal uses the Euro (€). Prices use comma as decimal separator: 1,50€ = one euro fifty. Period is the thousands separator: 1.000 = one thousand. See also the Payments & Documents section.")}
   <h3 class="sub-heading">Key Phrases</h3>
   <div class="tbl-wrap"><table>
@@ -14044,6 +14062,7 @@
   ${vocabGrid(D_MONEY.currency)}`,
 
         payments: () => `
+  ${ctx("Payment methods, card anatomy, fatura vs talão vs recibo, and the AT fiscal system (NIF, IRS, IVA, e-fatura).", "Your NIF is needed to get a tax-deductible fatura. MB Way is the dominant mobile payment. Understanding fatura vs talão matters for expense tracking and tax returns.", "Banking — bank vocabulary; Autorização de Residência — NIF registration at Finanças")}
   ${sectionHead("Payments & Documents", "UFCD 6453 Session 4", "Formas de pagamento, documentos fiscais, cartão de crédito, MB Way, IBAN e a Autoridade Tributária.")}
   <h3 class="sub-heading">Formas de Pagamento — payment methods</h3>
   <div class="tbl-wrap"><table>
@@ -14145,6 +14164,7 @@
   </table></div>`,
 
         measurements: () => `
+  ${ctx("Measurement systems for mass, capacity, length, time, and temperature (Celsius) including an oven chart.", "Needed for recipes, shopping (500 gramas de queijo), medical dosages, and cooking. Portugal uses metric and Celsius.", "Food — recipes use grams and litres; Numbers — quantities; Temperature — oven chart here")}
   ${sectionHead("Units of Measure", "UFCD 6453 Session 4", "Unidades de medida e abreviaturas: massa, capacidade, comprimento, tempo e temperatura. Used constantly in recipes, shopping, health, and everyday conversation.")}
 
   <h3 class="sub-heading">⚖️ Massa — weight/mass</h3>
@@ -14289,6 +14309,7 @@
   ${vocabGrid(D_MEASUREMENTS.temperature.phrases)}`,
 
         transport: () => `
+  ${ctx("Vocabulary for getting around Portugal: vehicles, stations, tickets, passes, and key phrases.", "EU Portuguese uses comboio/autocarro/paragem — different from BR Portuguese (trem/ônibus/parada). These trip up learners who learned BR first.", "Location Expressions — directions; Prepositions — de/em for transport mode")}
   ${sectionHead("Transport & Schedules", "Sessions 6–7", "Getting around Portugal. Key difference from Brazilian Portuguese: comboio (not trem), autocarro (not ônibus), paragem (not parada).")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:4px">
     <div>
@@ -14336,6 +14357,7 @@
   ${vocabGrid(D_TRANSPORT.vocabulary)}`,
 
         location: () => `
+  ${ctx("How to describe where things are, how to give directions, and how to answer Onde fica? (Where is it?).", "Essential for giving directions, describing your home, navigating cities. Builds directly on prepositions and their contractions.", "Prepositions & Articles — contractions used in location; Transport — travel directions")}
   ${sectionHead("Location Expressions", "Sessions 7–8", "Locuções de lugar tell you WHERE something is. They pair opposites (inside/outside, above/below, in front/behind) and always contract with the article that follows. Session 8 adds a full treatment of movement prepositions and transport prepositions.")}
   ${infoBox("These expressions always combine with <strong>de</strong> and contract with the article: em frente + de + a = <strong>em frente da</strong> · debaixo + de + o = <strong>debaixo do</strong> · ao lado + de + a = <strong>ao lado da</strong>")}
   <h3 class="sub-heading">Location Expressions — with opposites</h3>
@@ -14423,6 +14445,7 @@
     .join("")}`,
 
         food: () => `
+  ${ctx("Food categories, meal vocabulary, and the structure of Portuguese eating habits.", "Portuguese meal times differ from English norms — almoço is the main meal, jantar is eaten late (20h–22h). This vocabulary is used daily.", "Typical Dishes — specific foods; Shopping — buying food; Food Containers — quantities")}
   ${sectionHead("Food & Meals", "Sessions 7 & UFCD 6453", "Meal culture, vocabulary, shopping, cooking verbs, and food adjectives. Includes UFCD 6453 (Hábitos alimentares) content.")}
 
   <h3 class="sub-heading">The Five Meals (As Refeições)</h3>
@@ -14692,6 +14715,7 @@
   ${vocabGrid(D_FOOD.vocabulary)}`,
 
         numbers: () => `
+  ${ctx("Cardinal and ordinal numbers, prices, and the Portuguese convention: comma = decimal separator, period = thousands separator.", "Numbers are everywhere: prices, addresses, time, dates. The comma/period convention is the reverse of English — 1,50€ = one euro fifty, not 150 euros.", "Days/Time — time uses numbers; Money & Prices — reading prices; Units of Measure — quantities")}
   ${sectionHead("Numbers", "Sessions 2 & 6", "Numbers 1 and 2 have gender forms. Tens (30–90) are invariable. Hundreds (200–900) have GENDER forms like adjectives. 1000 (mil) is invariable.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div>
@@ -14766,6 +14790,7 @@
   ${infoBox("Compound numbers use <strong>e</strong> between each part: 21 = vinte e um · 101 = cento e um · 250 livros = duzentos e cinquenta livros · 250 casas = duzentas e cinquenta casas")}`,
 
         days: () => `
+  ${ctx("Days of the week (numbered, not named after gods), months, seasons, telling the time, and frequency expressions.", "Portuguese days are unique: Monday = segunda-feira. Months and days are never capitalised. Time prepositions A/DE/EM embedded here are critical for saying when something happens.", "Prepositions — A/DE/EM time prepositions; Numbers — telling time; Celebrations — dates of holidays")}
   ${sectionHead("Days, Time & Seasons", "Sessions 2, 5 & 8", "Portuguese days are NUMBERED, not named after gods. Monday = second fair day (segunda-feira). Months are never capitalised in Portuguese. Session 8 adds a full treatment of time prepositions.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div>
@@ -14924,6 +14949,7 @@
   ])}`,
 
         identity: () => `
+  ${ctx("Vocabulary for introducing yourself: name, age, nationality, occupation, where you live.", "Foundation of every first conversation. Connects to question words (Como te chamas? / De onde és?) and address forms (tu vs você).", "Pronouns — personal address; Questions — interrogatives for personal info; Family — extending identity")}
   ${sectionHead("Identity & Personal Info", "Session 2", "Vocabulary for filling in forms (formulários), visa applications, and introducing yourself — exactly what the PLA course requires.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
     <div>
@@ -14994,6 +15020,7 @@
   </table></div>`,
 
         expressions: () => `
+  ${ctx("Common Portuguese expressions and set phrases that do not translate literally.", "These appear in natural conversation and are essential for sounding less like a textbook. Many are cultural chunks.", "Idioms — figurative expressions; Survival Phrases — practical daily use")}
   ${sectionHead("Expressions", "Sessions 1–3", "These go beyond survival phrases. The Connectors category especially — mas, porque, então, também — is what lets you link sentences together and raises your level immediately.")}
   ${D_EXPRESSIONS.map(
     (cat) => `
@@ -15012,6 +15039,7 @@
   ).join("")}`,
 
         survival: () => `
+  ${ctx("The most essential practical phrases for everyday situations: shopping, transport, emergencies, asking for help.", "If you learn nothing else, learn these. They cover situations where a language gap could leave you stuck.", "Social Etiquette — politeness; Shopping Expressions — retail; Fórmulas de Cortesia — polite request forms")}
   ${sectionHead("Survival Phrases", "Session 1", "Use Não percebo and Pode repetir? in class without hesitation. Asking for repetition is not weakness — it is how you learn. Use these from day one.")}
   ${["Greetings", "Politeness", "Classroom", "Basics"]
     .map(
@@ -15051,6 +15079,7 @@
   </div>`,
 
         comparatives: () => `
+  ${ctx("More than / less than / as much as. Includes four irregular forms: melhor/pior/maior/menor.", "These appear constantly in shopping, opinions, and descriptions. Irregular forms replace mais bom and mais mau and cannot be avoided.", "Description — adjectives in comparison; Muito/Pouco — degree modifiers")}
   ${sectionHead("Comparatives", "UFCD 6453 Session 2", "Grau comparativo do adjetivo — comparing two things. Three structures: superior (more than), equal (as…as), inferior (less than). Adjective agrees in gender and number with the noun.")}
   ${D_COMPARATIVES.structures
     .map(
@@ -15208,6 +15237,7 @@
   </table></div>`,
 
         "kitchen-utensils": () => `
+  ${ctx("Kitchen equipment, tableware, and 14 cooking methods (fritar/cozer/assar/grelhar…).", "Essential for following recipes in Portuguese and understanding menus. Connects to the imperative used in recipe instructions (corte / adicione / misture).", "Imperativo — recipe instructions; Typical Dishes — the dishes made with these methods; Food Containers — recipe quantities")}
   ${sectionHead("Kitchen & Table", "UFCD 6453 Session 3", "Utensílios de cozinha, louça e talheres, e equipamentos. Emojis are shown to help memorise each item.")}
   <h3 class="sub-heading">🍳 Equipamentos de Cozinha — appliances</h3>
   <div class="tbl-wrap"><table>
@@ -15313,6 +15343,7 @@
   ).join("")}`,
 
         "social-etiquette": () => `
+  ${ctx("Politeness conventions for greetings, restaurant and service interactions, table manners.", "QUERIA (not QUERO) is the polite order form. A beijinho greeting is common even with new acquaintances. These conventions reduce social friction immediately.", "Fórmulas de Cortesia — formal politeness; Imperativo — softened requests; Pretérito Imperfeito — QUERIA/PODIA")}
   ${sectionHead("Social Etiquette", "UFCD 6453 Session 3", "Fórmulas de cortesia — polite language in restaurants, shops and service situations. The key rule: use QUERIA (imperfect) not QUERO (present) when making requests.")}
   <h3 class="sub-heading">The QUERIA Rule — polite requests</h3>
   ${warnBox('<strong>QUERIA</strong> (imperfect of QUERER) = "I would like" — use it instead of QUERO ("I want") in service contexts. This is one of the most important markers of politeness in European Portuguese. The imperfect makes the request more tentative and respectful.')}
@@ -15378,6 +15409,7 @@
     .join("")}`,
 
         "muito-pouco": () => `
+  ${ctx("Muito (a lot / very) and pouco (little / not much). Before a noun they agree; after a verb they are invariable.", "One of the most common errors: muita água (agrees with noun) vs trabalho muito (invariable after verb). One decision rule covers all cases.", "Gender — agreement before nouns; Comparatives — degree")}
   ${sectionHead("Muito / Pouco", "UFCD 6453 Session 5", "The single most common source of mistakes at A1/A2. The rule is simple but must be applied consistently: agree when before a noun; invariable when after a verb.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div class="card" style="border-top:4px solid var(--primary)">
@@ -15474,6 +15506,7 @@
   </table></div>`,
 
         leisure: () => `
+  ${ctx("Hobbies and free-time vocabulary — rural, urban, and general activities.", "Used for self-introduction, making plans, and responding to social invitations. Feeds directly into gostos e preferências and making invitations.", "Gostos & Preferências — expressing what you like; Convites — inviting to activities; Sports — sport-specific leisure")}
   ${sectionHead("Leisure & Free Time", "UFCD 6453 Session 5", "Atividades de tempos livres. Activities vary by context — urban areas have more facilities; rural areas offer outdoor activities. Use COSTUMAR + inf. for habits and IR + inf. for plans.")}
   ${infoBox("<strong>Zona rural</strong> = campo, natureza, agricultura, animais, menos desenvolvimento. <strong>Zona urbana</strong> = cidades, mais equipamentos de lazer, mais agitação.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
@@ -15504,6 +15537,7 @@
   </table></div>`,
 
         festividades: () => `
+  ${ctx("A classification of Portuguese festivities: religiosas, culturais, nacionais, and populares.", "A systematic view of which events are religious, cultural, regional, or national. Useful for civic integration and understanding Portuguese identity.", "Celebrations & Holidays — individual event details")}
   ${sectionHead("Festividades", "UFCD 6453 Session 8", "Tipos de festividades em Portugal — religiosas, culturais, nacionais e populares.")}
   ${infoBox(D_FESTIVIDADES.note)}
   ${D_FESTIVIDADES.types
@@ -15539,6 +15573,7 @@
   ${vocabGrid(D_FESTIVIDADES.vocab)}`,
 
         "formulas-cortesia": () => `
+  ${ctx("Structured polite formulas for four acts: making requests (QUERIA/PODIA), greeting, thanking, and asking about prices.", "QUERIA not QUERO. PODIA is even softer. Using these instead of the imperative signals cultural competence in service situations.", "Social Etiquette — broader norms; Imperativo — commands vs polite requests; Pretérito Imperfeito — the grammar behind QUERIA/PODIA")}
   ${sectionHead("Fórmulas de Cortesia", "UFCD 6453 Session 8", "Fórmulas de delicadeza e cortesia — the polite formulas used for greeting, thanking, making requests, and asking about prices. Essential for everyday service interactions.")}
   ${infoBox(D_FORMULAS_CORTESIA.note)}
   ${D_FORMULAS_CORTESIA.categories
@@ -15598,6 +15633,7 @@
   </div>`,
 
         celebrations: () => `
+  ${ctx("Major Portuguese annual celebrations, national public holidays, and personal milestone events.", "Understanding festividades helps you navigate closed shops, join conversations about culture, and appreciate the rhythm of Portuguese life.", "Days/Time — date formats; Festividades — deeper classification")}
   ${sectionHead("Celebrations & Holidays", "UFCD 6453 Session 7", "Festas e datas comemorativas em Portugal — annual celebrations, public holidays, and personal milestones.")}
   <h3 class="sub-heading">📅 Festas anuais — annual celebrations</h3>
   ${D_CELEBRATIONS.annual
@@ -15647,6 +15683,7 @@
   ${vocabGrid(D_CELEBRATIONS.vocab)}`,
 
         weather: () => `
+  ${ctx("Vocabulary and phrases for weather conditions. EU Portuguese uses ESTAR A + infinitive for ongoing weather (Está a chover = it is raining).", "Weather is the universal conversation opener. The ESTAR A + infinitive construction here is the EU Portuguese progressive — the same pattern used for all ongoing actions.", "Estar Patterns — ESTAR A + infinitive; Units of Measure — temperature section")}
   ${sectionHead("Weather — Estado do Tempo", "UFCD 6453 Session 7", "Meteorologia. Portugal has a mild Atlantic climate — warm dry summers, wet mild winters. Weather forecasts always use Celsius.")}
   <h3 class="sub-heading">Estados do tempo — weather conditions</h3>
   <div class="tbl-wrap"><table>
@@ -15684,6 +15721,7 @@
       .join("")}</tbody>
   </table></div>`,
         clothing: () => `
+  ${ctx("Vocabulary for clothing (roupa), footwear (calçado), accessories (acessórios), fabrics, and EU sizing.", "Portugal uses EU sizing. Sapatilhas (EU Pt) not tênis (BR Pt). Essential for shopping conversations: your size, fabric, colour.", "Shopping Expressions — in-store dialogue; Colors — describing what you want; Gostos — preferences")}
   ${sectionHead("Clothing & Accessories", "UFCD 6454 Session 1", "Roupa, calçado e acessórios. Portugal uses EU sizing. Roupa = clothing. Calçado = footwear. Acessórios = accessories.")}
   <h3 class="sub-heading">👕 Roupa — clothing</h3>
   <div class="tbl-wrap"><table>
@@ -15751,6 +15789,7 @@
   <div style="font-size:13px;color:var(--text-3);font-style:italic">${D_CLOTHING.sizes.shoes}</div>`,
 
         colors: () => `
+  ${ctx("The 15 most used colours with gender agreement rules and shade modifiers (claro/escuro).", "Most colours agree in gender (vermelho/vermelha) but several are invariable (laranja, rosa, bege, azul, verde). Shades: azul-claro, verde-escuro.", "Clothing — describing clothes; Description — adjective agreement; Gender — why some colours agree and some don't")}
   ${sectionHead("Colors — As Cores", "UFCD 6454 Session 1", "Colors agree in gender and number with the noun. Most add -a for feminine. Invariable colors (laranja, rosa, bege, azul, verde) never change form.")}
   ${infoBox(D_COLORS.agreement.map((r, i) => `<strong>${i + 1}.</strong> ${r}`).join("<br>"))}
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:20px">
@@ -15785,6 +15824,7 @@
   </table></div>`,
 
         stationery: () => `
+  ${ctx("School and office supply vocabulary — pencils, pens, rulers, calculators, scissors.", "Papelaria is a common shop type. This vocabulary is practical for everyday errands.", "Shopping Expressions — asking for items; Precisar/Ter de — Preciso de uma caneta")}
   ${sectionHead("Stationery — Artigos de Papelaria", "UFCD 6454 Session 1", "Itens de papelaria. Uma papelaria sells school and office supplies. PRECISAR DE + noun to say you need something.")}
   <div class="tbl-wrap"><table>
     <thead><tr><th></th><th>Portuguese</th><th>Pronunciation</th><th>English</th></tr></thead>
@@ -15806,6 +15846,7 @@
   ${vocabGrid(D_STATIONERY.phrases)}`,
 
         shopping: () => `
+  ${ctx("Functional language for clothing shops: trying on, fit, opinions, and paying. Includes the FICAR BEM/MAL construction.", "FICAR BEM/MAL: the clothing is the subject, not the person (Fica-me bem = it suits me). Dative pronoun me/te/lhe. Entire section is dialogue-ready.", "Clothing — the items being discussed; Fórmulas de Cortesia — polite phrases; Pronomes Complemento — dative pronouns")}
   ${sectionHead("Shopping Expressions", "UFCD 6454 Session 1", "Numa loja de roupa — expressions for trying on clothes, asking about sizes, giving opinions and paying.")}
   ${D_SHOPPING.expressions
     .map(
@@ -15864,6 +15905,7 @@
   </div>`,
 
         "gostos-preferencias": () => `
+  ${ctx("Expressing likes, dislikes and preferences using GOSTAR, PREFERIR, ADORAR, DETESTAR, ODIAR.", "GOSTAR always requires DE before a noun or infinitive — the single most common beginner error. These verbs are essential for describing yourself and making or declining invitations.", "Pretérito Imperfeito — gostava (used to like); Convites — preferences drive social decisions; Prepositions — gostar DE")}
   ${sectionHead("Gostos & Preferências", "UFCD 6454 Session 1", "Expressing likes, dislikes and preferences. GOSTAR always needs DE before nouns and infinitives. PREFERIR has a stem change (E→I in most forms).")}
   ${warnBox("<strong>GOSTAR DE</strong> — the DE is mandatory and cannot be dropped. ✅ Gosto <strong>de</strong> música. ❌ Gosto música.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
@@ -15937,6 +15979,7 @@
   </table></div>`,
 
         "precisar-dever": () => `
+  ${ctx("Three verbs for need and obligation, ordered by force: PRECISAR DE (need) < DEVER (should) < TER DE (must).", "Used daily at the doctor, at work, and when explaining document requirements. TER QUE is accepted in casual speech. SER PRECISO / SER NECESSÁRIO + infinitive are impersonal alternatives.", "Imperativo — obligation via commands; Autorização de Residência — document requirements")}
   ${sectionHead("Precisar / Ter de / Dever", "UFCD 6454 Session 1", "Expressing need and obligation. Three verbs, three levels of force: PRECISAR DE (need), TER DE (have to — stronger), DEVER (should — moral/advice).")}
   ${infoBox("Strength of obligation: <strong>TER DE</strong> (must/have to) > <strong>DEVER</strong> (should) > <strong>PRECISAR DE</strong> (need to). All take infinitivo. TER QUE is also accepted in casual speech.")}
   <h3 class="sub-heading">Full comparison table</h3>
@@ -15998,6 +16041,7 @@
   </table></div>`,
 
         imperativo: () => `
+  ${ctx("The imperative mood for commands, instructions, advice and suggestions. Affirmative and negative forms differ for TU.", "Indispensable for recipes, instructions, giving advice, and everyday interaction. TU negative is the most common error: TU affirmative = canta, TU negative = não cantes. Imperfeito de cortesia (podia/queria) is the polite alternative.", "Pretérito Imperfeito — the politeness imperfect; Verb Patterns — conjugation foundations; Irregular Verbs — their irregular imperatives")}
   ${sectionHead("Imperativo", "UFCD 6454 Session 2", "Used for commands, instructions, advice and suggestions. Affirmative and negative forms have different endings. TU negative differs from affirmative — learn this carefully.")}
   ${warnBox("KEY RULE — Two persons differ between affirmative and negative: <strong>TU</strong> and <strong>VÓS</strong>.<br>TU: ✅ Aff = <strong>canta</strong> (3rd sg. present) | ❌ Neg = <strong>não cantes</strong> (subjunctive)<br>VÓS: ✅ Aff = <strong>cantai</strong> (inf. − r + i) | ❌ Neg = <strong>não canteis</strong> (subjunctive)<br>VOCÊ / NÓS / VOCÊS: same form in both — they use the subjunctive in affirmative and negative.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
@@ -16106,6 +16150,7 @@
   </div>`,
 
         correios: () => `
+  ${ctx("The Portuguese postal system (CTT), letter structure with all five required elements, and useful counter phrases.", "Letter writing follows a strict structure in Portuguese. Knowing remetente/destinatário/código postal is essential for sending post and filling in address forms.", "Fórmulas de Cortesia — formal and informal salutations; Autorização de Residência — official correspondence")}
   ${sectionHead("Correios & Carta", "UFCD 6454 Session 2", "Serviço de correios (CTT). Ir ao Correio, enviar e receber correspondência. Estrutura de uma carta formal e informal.")}
   <h3 class="sub-heading">📝 Estrutura da carta — letter structure</h3>
   ${infoBox(D_CORREIOS.cartaStructure.note)}
@@ -16184,6 +16229,7 @@
     .join("")}`,
 
         banking: () => `
+  ${ctx("Banking vocabulary, Multibanco functions, services at the bank and post office, and two annotated dialogues.", "The Multibanco card is Portugal's universal debit system. Knowing levantar vs depositar vs transferir is essential for daily life. MB Way is the dominant mobile payment.", "Payments & Documents — card and receipts; Autorização de Residência — bank account needs residence permit")}
   ${sectionHead("Banco & Finanças", "UFCD 6454 Session 2", "Movimentos financeiros — banking and financial services in Portugal. Multibanco (MB) is the national card system operated by SIBS, used for ATMs and card payments everywhere.")}
   <h3 class="sub-heading">💳 Com o cartão Multibanco pode...</h3>
   ${infoBox("The Multibanco card is a debit card linked to your Portuguese bank account. It works at all ATM machines and payment terminals (terminais de pagamento automático — TPA) in Portugal.")}
@@ -16263,6 +16309,7 @@
     .join("")}`,
 
         imperfeito: () => `
+  ${ctx("The imperfect past tense for past habits, descriptions, and the politeness tense.", "QUERIA (I would like) and PODIA (could you) are the two most used forms in shops, restaurants, and service counters — they are the imperfeito de cortesia, not actually past tense in these contexts.", "Imperativo — politeness vs commands; Gostos — gostava = used to like; Precisar/Dever — podia replaces the imperative for softness")}
   ${sectionHead("Pretérito Imperfeito", "UFCD 6454 Session 3", "The imperfect tense describes past habits, past states/descriptions, and is used as a polite softener (imperfeito de cortesia). Regular -AR: -ava endings. Regular -ER/-IR: -ia endings.")}
   ${infoBox(D_IMPERFEITO.principioCortesia)}
   <h3 class="sub-heading">Regular endings</h3>
@@ -16330,6 +16377,7 @@
     .join("")}`,
 
         "pronomes-complemento": () => `
+  ${ctx("Personal pronouns change form by role: subject (eu), tonic after prepositions (mim/ti/si), atonic clitics attached to the verb (me/te/o/a/lhe).", "Once you name something, you replace it with a pronoun. Position rule is critical in EU Portuguese: normally after the verb with hyphen (comprei-os), but BEFORE after negatives (não os comprei) and adverbs (já os comprei).", "COM + Pronomes — special COM contractions; Pronouns tab — subject pronoun overview; Imperativo — clitics attach to imperative forms")}
   ${sectionHead("Pronomes Complemento", "UFCD 6454 Session 3", "Personal pronouns change form depending on their grammatical role. Subject pronouns (eu/tu/ele…) differ from tonic pronouns after prepositions (mim/ti/si…) and from clitic pronouns used as direct or indirect objects.")}
 
   <h3 class="sub-heading">Pronomes tónicos após preposições — tonic pronouns after prepositions</h3>
@@ -16470,6 +16518,7 @@
   </table></div>`,
 
         convites: () => `
+  ${ctx("Making, accepting, and declining invitations — set phrases for each.", "Que pena! opens a decline. Acceptance uses Que boa ideia! / Vou com muito gosto!. These are chunks that work in virtually every social situation.", "Gostos & Preferências — underlying preferences; COM + Pronomes — Queres vir comigo?; Pretérito Imperfeito — gostava de ir")}
   ${sectionHead("Convites", "UFCD 6454 Session 3", "Fazer, aceitar e recusar convites — making, accepting and declining invitations. Key phrase for declining: Que pena! / Não posso ir.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div>
@@ -16523,6 +16572,7 @@
   ${vocabGrid(D_CONVITES.preferencias)}`,
 
         residencia: () => `
+  ${ctx("The Portuguese residence permit system: ART (temporary, 2+3+3… years) and ARP (permanent, renewed every 5 years), required documents and where to apply.", "Directly affects your legal status in Portugal. AIMA (not SEF since 2023) is the authority. Prior appointment (agendamento prévio) is mandatory.", "Banco & Finanças — bank account requires the permit; Payments & Documents — NIF/Finanças registration")}
   ${sectionHead("Autorização de Residência", "UFCD 6454 Session 3", "Documentos necessários para a autorização de residência em Portugal. Submitted to AIMA (Agência para a Integração, Migrações e Asilo) via prior appointment — agendamento prévio obrigatório.")}
   <h3 class="sub-heading">O que é?</h3>
   ${infoBox(D_RESIDENCIA.definition)}
