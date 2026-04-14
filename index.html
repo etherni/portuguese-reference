@@ -5160,6 +5160,1105 @@ banking: () => `
 
 
 
+'location': () => `
+  ${ctx('Location prepositions (locuções de lugar) tell you WHERE something is. Prepositions of movement tell you WHERE something is going.','You cannot describe a scene or give directions without these. They always contract with the article: em frente + de + a = em frente da.','Prepositions & Articles — contractions table; Directions & Orientação — direction-giving; Transport — movement verbs')}
+  ${sectionHead('Location Expressions','Sessions 7–8','Locuções de lugar + preposições de movimento. Static location: where something IS. Dynamic movement: where something GOES.')}
+  <h3 class="sub-heading">📍 Locuções de lugar — where things are</h3>
+  ${infoBox(D_LOCATION.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Português</th><th>Pronúncia</th><th>English</th><th>Opposite</th><th>Example</th></tr></thead>
+    <tbody>${D_LOCATION.expressions.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.opposite}</td>
+      <td class="pt" style="font-size:12px">${r.ex}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">❓ Onde fica...? — typical questions and answers</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+    <tbody>${D_LOCATION.questions.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.q}</td>
+      <td class="pt">${r.a}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">➡️ Preposições de movimento — where things go</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Preposição</th><th>Pronúncia</th><th>English</th><th>Key rule</th><th>Example</th></tr></thead>
+    <tbody>${D_LOCATION.movement.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r[0]}</td>
+      <td>${pr(r[1])}</td>
+      <td class="en">${r[2]}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[3]}</td>
+      <td class="pt" style="font-size:12px">${r[4]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🚗 Transport prepositions — DE vs EM (no/na)</h3>
+  ${D_MOVEMENT_PREPS.transport.map(t => `
+  <div class="rule-box" style="border-left:3px solid ${t.color};margin-bottom:8px">
+    <strong style="color:${t.color}">${t.pattern}</strong> — ${t.note}<br>
+    ${t.ex.map(e => `<div class="pt" style="font-size:13px;margin-top:4px">${e[0]} <span class="en">${e[2]}</span></div>`).join('')}
+  </div>`).join('')}`,
+
+'comparatives': () => `
+  ${ctx('The comparative degree (grau comparativo) compares two things using three structures: superior, equal, and inferior.','The irregular forms (melhor/pior/maior/menor) are the most frequent errors — never say *mais bom or *mais mau.','Muito / Pouco — intensity adverbs; Description — adjective agreement')}
+  ${sectionHead('Comparatives','UFCD 6453 S2','Grau comparativo do adjetivo — comparing two things. Adjective must agree in gender and number.')}
+  ${infoBox(D_COMPARATIVES.note)}
+  <div style="display:grid;gap:16px;margin-bottom:20px">
+    ${D_COMPARATIVES.structures.map(s => `<div class="card" style="border-left:4px solid ${s.color}">
+      <div style="font-weight:800;color:${s.color};margin-bottom:6px">${s.type}</div>
+      <div class="rule-box" style="margin-bottom:10px"><code>${s.formula}</code> — ${s.en}</div>
+      ${s.ex.map(e => `<div style="padding:4px 0;border-bottom:1px solid var(--border)">
+        <div class="pt">${e.pt}</div><div class="en">${e.en}</div>
+      </div>`).join('')}
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">⚠️ Irregular comparative forms</h3>
+  ${warnBox('Never use MAIS + these adjectives. Use the irregular form directly: <strong>melhor</strong> (not *mais bom), <strong>pior</strong> (not *mais mau), <strong>maior</strong> (not *mais grande), <strong>menor</strong> (not *mais pequeno).')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Adjective</th><th>Comparative</th><th>Example</th></tr></thead>
+    <tbody>${D_COMPARATIVES.irregular.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.adj}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.comp}</td>
+      <td class="pt" style="font-size:13px">${r.ex}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Superlativo relativo</h3>
+  ${infoBox(D_COMPARATIVES.superlativo.note)}
+  ${D_COMPARATIVES.superlativo.ex.map(e => `<div class="card-sm" style="margin-bottom:6px"><div class="pt">${e.pt}</div><div class="en">${e.en}</div></div>`).join('')}`,
+
+'muito-pouco': () => `
+  ${ctx('MUITO and POUCO change form depending on what they modify — noun or verb.','This is one of the most consistent A1 mistakes: saying *muito cansados instead of muito cansados (correct — after verb it is invariable). Always ask: is it before a noun or after a verb?','Comparatives — degree; Description — adjective agreement')}
+  ${sectionHead('Muito / Pouco','UFCD 6453 S5','MUITO and POUCO agree with the noun they precede, but are invariable after a verb or adjective.')}
+  ${infoBox(D_MUITO_POUCO.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div class="card" style="border-left:4px solid var(--primary)">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:10px">${D_MUITO_POUCO.rule1.label}</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Form</th><th>Gender</th><th>Example</th><th>English</th></tr></thead>
+        <tbody>${D_MUITO_POUCO.rule1.table.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r.form}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.gen}</td>
+          <td class="pt">${r.ex}</td>
+          <td class="en">${r.en}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--green)">
+      <div style="font-weight:800;color:var(--green);margin-bottom:10px">${D_MUITO_POUCO.rule2.label}</div>
+      ${infoBox(D_MUITO_POUCO.rule2.note)}
+      ${D_MUITO_POUCO.rule2.ex.map(e => `<div style="padding:4px 0;border-bottom:1px solid var(--border)">
+        <div class="pt">${e[0]}</div><div class="en">${e[1]}</div>
+      </div>`).join('')}
+    </div>
+  </div>
+  <h3 class="sub-heading">Decision rule</h3>
+  <div class="rule-box">${D_MUITO_POUCO.decision}</div>
+  <h3 class="sub-heading">Worked examples</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>English</th><th>Rule applied</th></tr></thead>
+    <tbody>${D_MUITO_POUCO.examples.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:${r.rule==='before noun'?'var(--primary)':'var(--green)'};font-weight:700">${r.rule}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+'com-pronomes': () => `
+  ${ctx('COM + personal pronouns — the preposition COM fuses with mim/ti/si to create unique forms that must be memorised.','These forms appear constantly in spoken Portuguese: Vens comigo? / Fala comigo! Not knowing them marks you as a beginner.','Pronomes Complemento — full pronoun system; Reflexive Verbs — SE forms')}
+  ${sectionHead('COM + Pronomes','UFCD 6453 S6','Preposição COM + pronomes pessoais. Three irregular fused forms: comigo, contigo, consigo. All others are regular COM + pronoun.')}
+  ${infoBox(D_COM_PRONOMES.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Combination</th><th>Result</th><th>Pronunciation</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_COM_PRONOMES.forms.map((r,i) => `<tr style="background:${r.result.startsWith('com')&&!r.result.startsWith('com ')?' var(--primary-lt)':i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r.combo}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.result}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Example sentences</h3>
+  <div class="card-grid">${D_COM_PRONOMES.examples.map(e => `<div class="card-sm">
+    <div class="pt">${e.pt}</div><div class="en">${e.en}</div>
+  </div>`).join('')}</div>
+  ${infoBox('→ Full pronoun system (direct object, indirect object, after all prepositions): see <strong>Pronomes Complemento</strong>')}`,
+
+'pronomes-complemento': () => `
+  ${ctx('Personal pronouns change form depending on their function: subject, after prepositions (tonic), direct object (CD), indirect object (CI).','Every Portuguese sentence potentially uses one of these forms. The subject forms are well known; the others are where mistakes happen.','COM + Pronomes — the COM-specific fused forms; Reflexive Verbs — SE position rules')}
+  ${sectionHead('Pronomes Complemento','UFCD 6454 S3','Personal pronoun system — tonic forms after prepositions, direct object (CD) and indirect object (CI) clitic pronouns, position rules.')}
+  ${infoBox(D_PRONOMES_PREP.note)}
+  <h3 class="sub-heading">Pronomes tónicos — after prepositions</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject</th><th>After prep.</th><th>Pronúncia</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.tonic.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r.subject}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.afterPrep}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-size:12px">${r.ex}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Preposição DE contractions</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>DE +</th><th>Result</th><th>Example</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.de_contractions.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="color:var(--text-3)">${r[0]}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+      <td class="pt" style="font-size:13px">${r[2]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Pronomes átonos — CD (direct object) and CI (indirect object)</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sub-heading">CD — Complemento Direto</h3>
+      ${infoBox(D_PRONOMES_PREP.cd.note)}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Person</th><th>CD pronoun</th><th>Example</th></tr></thead>
+        <tbody>${D_PRONOMES_PREP.cd.forms.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+          <td class="pt" style="font-size:12px">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">CI — Complemento Indireto</h3>
+      ${infoBox(D_PRONOMES_PREP.ci.note)}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Person</th><th>CI pronoun</th><th>Example</th></tr></thead>
+        <tbody>${D_PRONOMES_PREP.ci.forms.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800;color:var(--green)">${r[1]}</td>
+          <td class="pt" style="font-size:12px">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>`,
+
+'gostos-preferencias': () => `
+  ${ctx('Expressing likes, dislikes and preferences using GOSTAR DE, PREFERIR, ADORAR, DETESTAR.','GOSTAR always requires DE before a noun or infinitive — omitting it is a constant mistake. PREFERIR has a stem change (E→I) in some forms.','Precisar / Ter de / Dever — expressing need; Convites — invitations using these verbs')}
+  ${sectionHead('Gostos & Preferências','UFCD 6454 S1','Exprimir gostos e preferências. GOSTAR DE (always DE!), PREFERIR, ADORAR, DETESTAR, ODIAR.')}
+  ${warnBox('GOSTAR always needs DE. ✅ Gosto <strong>de</strong> música. ❌ Gosto música. This is the most common A1 mistake.')}
+  <div style="display:grid;gap:16px;margin-bottom:20px">
+    ${D_GOSTOS_PREFERENCIAS.positive.map(v => `<div class="card" style="border-left:4px solid var(--green)">
+      <div style="font-weight:800;color:var(--green);margin-bottom:4px">${v.verb} <span style="font-size:12px;color:var(--text-3);font-weight:400">${v.en}</span></div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${v.pattern}</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pronoun</th><th>Form</th><th>Example</th></tr></thead>
+        <tbody>${v.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800">${r[1]}</td>
+          <td class="pt" style="font-size:12px">${r[2]||''}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`).join('')}
+    ${D_GOSTOS_PREFERENCIAS.negative.map(v => `<div class="card" style="border-left:4px solid var(--accent)">
+      <div style="font-weight:800;color:var(--accent);margin-bottom:4px">${v.verb} <span style="font-size:12px;color:var(--text-3);font-weight:400">${v.en}</span></div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${v.note}</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pronoun</th><th>Form</th></tr></thead>
+        <tbody>${v.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800">${r[1]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">Useful phrases</h3>
+  <div class="card-grid">${D_GOSTOS_PREFERENCIAS.phrases.map(p => `<div class="card-sm">
+    <div class="pt">${p.pt}</div><div class="en">${p.en}</div>
+  </div>`).join('')}</div>`,
+
+'precisar-dever': () => `
+  ${ctx('Three structures for expressing need and obligation: PRECISAR DE (I need), TER DE (I have to), DEVER (I should).','These are essential for giving advice, instructions, and talking about requirements. The distinction between DEVER (mild obligation) and TER DE (strong obligation) maps closely to English should vs must.','Gostos & Preferências — desires; Imperativo — direct commands; Estar Patterns — TER DE pattern')}
+  ${sectionHead('Precisar / Ter de / Dever','UFCD 6454 S1','Exprimir necessidade e obrigação. PRECISAR DE + noun/inf. = need. TER DE + inf. = have to. DEVER + inf. = should/ought to.')}
+  ${infoBox(D_PRECISAR_DEVER.note)}
+  ${D_PRECISAR_DEVER.verbs.map(v => `
+  <div class="card" style="border-left:4px solid ${v.color};margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+      <span style="font-weight:800;font-size:16px;color:${v.color}">${v.verb}</span>
+      <span style="font-size:13px;color:var(--text-3)">${v.en}</span>
+    </div>
+    <div class="rule-box" style="margin-bottom:10px">${v.pattern}</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pronoun</th><th>Form</th><th>Example</th></tr></thead>
+      <tbody>${v.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+        <td class="pt" style="font-weight:800">${r[1]}</td>
+        <td class="pt" style="font-size:12px">${r[2]||''}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+  </div>`).join('')}
+  <h3 class="sub-heading">All 8 obligation structures at a glance</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Structure</th><th>English</th><th>Strength</th></tr></thead>
+    <tbody>${D_PRECISAR_DEVER.allStructures.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td class="en">${r[1]}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+'ser-estar': () => `
+  ${ctx('SER and ESTAR both translate as "to be" in English but are never interchangeable in Portuguese. SER = permanent/identity. ESTAR = temporary/state/location.','This is the single most important grammatical distinction at A1. Every "to be" sentence requires you to choose. Location is ALWAYS ESTAR.','Estar Patterns — the 5 ESTAR constructions; Verb Patterns — conjugation families')}
+  ${sectionHead('Ser vs Estar','Sessions 2–3','Both mean "to be". SER for identity, origin, profession, characteristics. ESTAR for location, state, ongoing action. Never interchangeable.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading" style="color:var(--primary)">SER — present tense</h3>
+      <div class="tbl-wrap"><table>
+        <tbody>${D_SER_ESTAR.ser_conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">${r[1]}</td>
+          <td>${pr(r[2])}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading" style="color:var(--green)">ESTAR — present tense</h3>
+      <div class="tbl-wrap"><table>
+        <tbody>${D_SER_ESTAR.estar_conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800;font-size:16px;color:var(--green)">${r[1]}</td>
+          <td>${pr(r[2])}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">SER — past tense (fui/foi/fomos…)</h3>
+  ${infoBox('SER and IR share the same past tense forms (fui, foste, foi, fomos, foram). Context makes it clear which is meant.')}
+  <div class="tbl-wrap"><table>
+    <tbody>${D_SER_ESTAR.ser_past.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+      <td class="pt" style="font-weight:800">${r[1]}</td>
+      <td>${pr(r[2])}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">When to use SER</h3>
+  <div class="card-grid">${D_SER_ESTAR.ser_uses.map(u => `<div class="card-sm">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:4px">${u.use}</div>
+    <div class="pt">${u.pt}</div><div class="en">${u.en}</div>
+  </div>`).join('')}</div>
+  <h3 class="sub-heading">When to use ESTAR</h3>
+  <div class="card-grid">${D_SER_ESTAR.estar_uses.map(u => `<div class="card-sm">
+    <div style="font-weight:800;color:var(--green);margin-bottom:4px">${u.use}</div>
+    <div class="pt">${u.pt}</div><div class="en">${u.en}</div>
+  </div>`).join('')}</div>
+  ${warnBox(D_SER_ESTAR.tricky_cases.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Context</th><th>Verb</th><th>Example</th><th>Why</th></tr></thead>
+    <tbody>${D_SER_ESTAR.tricky_cases.cases.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;font-weight:700">${r.ctx}</td>
+      <td class="pt" style="font-weight:800;color:${r.verb==='SER'?'var(--primary)':'var(--green)'}">${r.verb}</td>
+      <td class="pt">${r.ex}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.why}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+'estar-patterns': () => `
+  ${ctx('ESTAR has 5 key construction patterns beyond simple location. Each has a distinct meaning.','ESTAR A + infinitivo (ongoing action) is the EU Portuguese equivalent of the English present continuous — this is one of the biggest EU/BR differences.','Ser vs Estar — when to use each; Reflexive Verbs — estar a + reflexive constructions')}
+  ${sectionHead('Estar Patterns','Session 5','The 5 key ESTAR patterns: location, state, COM+noun (sensations), ESTAR A + inf. (ongoing action), TER DE/QUE + inf. (obligation).')}
+  ${D_ESTAR_PATTERNS.patterns.map(p => `
+  <div class="card" style="border-left:4px solid ${p.color};margin-bottom:16px">
+    <div style="font-weight:800;font-size:15px;color:${p.color};margin-bottom:6px">${p.title}</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:10px">${p.note}</div>
+    ${p.ex.map(e => `<div style="padding:4px 0;border-bottom:1px solid var(--border)">
+      <div class="pt">${e[0]}</div>
+      <div class="en">${e[2]}</div>
+    </div>`).join('')}
+  </div>`).join('')}`,
+
+'verb-patterns': () => `
+  ${ctx('Portuguese verbs belong to one of 3 families (-AR, -ER, -IR). Learn one model verb per family and you can conjugate hundreds.','This is the foundation of all conjugation. Every regular verb follows one of three identical patterns. Master ANDAR, COMER, PARTIR and 90% of regular verbs are covered.','Core Verbs — the 16 most important verbs (mostly irregular); Irregular Verbs — verbs that break the pattern')}
+  ${sectionHead('Verb Patterns','Session 4','Regular verb conjugation — present indicative. Three families: -AR, -ER, -IR. Vós (*) is archaic — shown for completeness.')}
+  ${infoBox(D_VERB_PATTERNS.note)}
+  <div style="display:grid;gap:16px;margin-bottom:20px">
+    ${D_VERB_PATTERNS.families.map(f => `<div class="card" style="border-left:4px solid ${f.color}">
+      <div style="font-weight:800;font-size:16px;color:${f.color};margin-bottom:4px">${f.num} conjugation — <code>${f.end}</code></div>
+      <div style="font-size:13px;color:var(--text-3);margin-bottom:12px">Model: <strong>${f.model}</strong></div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pronoun</th><th>Form</th><th>Pronunciation</th><th>Note</th></tr></thead>
+        <tbody>${f.pronouns.map((p,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${p}</td>
+          <td class="pt" style="font-weight:800;font-size:16px">${f.forms[i].w}</td>
+          <td>${pr(f.forms[i].p)}</td>
+          <td style="font-size:12px;color:var(--text-3)">${f.forms[i].note}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">Affirmative / Negative / Interrogative</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Type</th><th>Structure</th><th>Example</th></tr></thead>
+    <tbody>${D_VERB_PATTERNS.sentence_types.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:700;font-size:13px">${r.type}</td>
+      <td style="font-size:13px;color:var(--text-3)">${r.structure}</td>
+      <td class="pt">${r.ex}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+'core-verbs': () => `
+  ${ctx('16 core verbs that appear constantly in daily Portuguese speech. Many are irregular.','You cannot form basic sentences without these. Memorise EU form first — it is always the most irregular.','Irregular Verbs — full irregularity breakdown; Verb Patterns — regular conjugation families')}
+  ${sectionHead('Core Verbs','Sessions 2–7','The 16 most essential verbs with full conjugations and examples. Irregular EU forms highlighted.')}
+  ${D_CORE_VERBS.map(v => `
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+      <span style="font-weight:800;font-size:16px;color:var(--primary)">${v.verb}</span>
+      <span style="font-size:12px;color:var(--text-3)">${pr(v.pron)} — ${v.en}</span>
+    </div>
+    <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${v.note}</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pronoun</th><th>Form</th><th>Pron.</th></tr></thead>
+      <tbody>${v.conj.map((r,i) => `<tr style="background:${i===0?'var(--primary-lt)':i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+        <td class="pt" style="font-weight:800;color:${i===0?'var(--primary)':'inherit'}">${r[1]}</td>
+        <td>${pr(r[2])}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+    <div style="margin-top:8px">${v.ex.map(e => `<div style="padding:2px 0"><span class="pt" style="font-size:13px">${e[0]}</span> <span class="en">${e[2]}</span></div>`).join('')}</div>
+  </div>`).join('')}`,
+
+'reflexive-verbs': () => `
+  ${ctx('Reflexive verbs describe actions done to oneself. The reflexive pronoun (me/te/se/nos) moves position depending on sentence context.','PLACEMENT is the critical issue: after verb in normal statements (Chamo-me), before verb after negation/trigger words (Não me chamo). The NÓS form drops the final -s: levantamo-nos.','Verb Patterns — base conjugation; Pronouns — subject pronouns; Pronomes Complemento — full pronoun system')}
+  ${sectionHead('Reflexive Verbs','Sessions 6–7','Verbos reflexos — the pronoun refers back to the subject. Pronoun position changes after negation and trigger words.')}
+  <h3 class="sub-heading">Reflexive pronouns</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Subject</th><th>Pronoun</th><th>Pron.</th><th>Meaning</th><th>Example</th></tr></thead>
+    <tbody>${D_REFLEXIVE_VERBS.pronouns.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+      <td>${pr(r[1].split(' ')[1]||r[1])}</td>
+      <td style="font-size:12px;color:var(--text-3)">myself/yourself…</td>
+      <td class="pt" style="font-size:12px">${r[2]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">⚠️ Placement rules</h3>
+  ${warnBox('NÓS form: drop the final -S of the verb before adding -NOS. Levantamos + nos → Levantamo-nos (not *levantamos-nos)')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Rule</th><th>Position</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_REFLEXIVE_VERBS.placement.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;font-weight:700">${r.rule}</td>
+      <td style="font-size:12px;color:${i===0?'var(--green)':'var(--accent)'};font-weight:700">${r.pos}</td>
+      <td class="pt">${r.ex}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">13 key reflexive verbs</h3>
+  ${vocabGrid(D_REFLEXIVE_VERBS.verbs.map(v => [v.pt, v.pron, v.en]))}`,
+
+'irregular-verbs': () => `
+  ${ctx('16 high-frequency verbs that do not follow the regular -AR/-ER/-IR pattern. The EU (first person) form is always the most irregular.','You will use these every day. There is no shortcut — they must be memorised. EU form first, then the pattern often extends to other forms.','Core Verbs — the 16 most important; Verb Patterns — what regular conjugation looks like')}
+  ${sectionHead('Irregular Verbs','Session 6 & UFCD 6453','16 irregular verbs — full conjugations. Summary comparison table at top for quick reference.')}
+  <h3 class="sub-heading">Summary — all 16 verbs at a glance</h3>
+  ${infoBox(D_IRREGULAR_TABLE.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>En</th><th style="color:var(--primary)">EU ⚠️</th><th>TU</th><th>ELE</th><th>NÓS</th><th>ELES</th><th>Key</th></tr></thead>
+    <tbody>
+      ${[...D_IRREGULAR_TABLE.ar_er, ...D_IRREGULAR_TABLE.ir].map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <td style="font-weight:800;color:var(--primary)">${r.verb}</td>
+        <td style="font-size:12px;color:var(--text-3)">${r.en}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary);background:var(--primary-lt)">${r.eu} ${pr(r.eu_pron)}</td>
+        <td class="pt">${r.tu}</td>
+        <td class="pt">${r.ele}</td>
+        <td class="pt">${r.nos}</td>
+        <td class="pt">${r.eles}</td>
+        <td style="font-size:11px;color:var(--text-3)">${r.key}</td>
+      </tr>`).join('')}
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">Detailed conjugations — expandable</h3>
+  ${D_IRREGULAR_VERBS.map(v => `
+  <details style="margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden">
+    <summary style="padding:10px 14px;cursor:pointer;font-weight:800;background:var(--surface);display:flex;justify-content:space-between">
+      <span style="color:var(--primary)">${v.verb}</span>
+      <span style="font-size:13px;color:var(--text-3)">${v.en} — ${v.pron}</span>
+    </summary>
+    <div style="padding:12px 14px">
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${v.note}</div>
+      <div class="tbl-wrap"><table>
+        <tbody>${v.conj.map((r,i) => `<tr style="background:${i===0?'var(--primary-lt)':i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800;color:${i===0?'var(--primary)':'inherit'}">${r[1]}</td>
+          <td>${pr(r[2])}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+      ${v.ex.map(e => `<div style="padding:3px 0"><span class="pt" style="font-size:13px">${e[0]}</span> <span class="en">${e[2]}</span></div>`).join('')}
+    </div>
+  </details>`).join('')}`,
+
+'imperfeito': () => `
+  ${ctx('The imperfect past tense — used for habitual past actions, past descriptions, and polite requests (imperfeito de cortesia).','QUERIA and PODIA as polite request forms are extremely high frequency in spoken Portuguese. Regular -AR verbs get -ava endings; -ER/-IR get -ia.','Ser vs Estar — past forms; Imperativo — imperfeito de cortesia comparison; Future Plans — contrasting past habits vs future plans')}
+  ${sectionHead('Pretérito Imperfeito','UFCD 6454 S3','Imperfect past tense — habitual past, descriptions, and politeness. -AR → -ava endings. -ER/-IR → -ia endings.')}
+  ${infoBox(D_IMPERFEITO.note)}
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+    ${['ar','er','ir'].map(t => {const f=D_IMPERFEITO.regular[t]; return `<div class="card">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:8px">${t.toUpperCase()} — ${f.model}</div>
+      <div class="tbl-wrap"><table>
+        <tbody>${f.endings.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800">${r[1]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`}).join('')}
+  </div>
+  <h3 class="sub-heading">Key irregular verbs in imperfeito</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>EU</th><th>TU</th><th>ELE</th><th>NÓS</th><th>ELES</th></tr></thead>
+    <tbody>${D_IMPERFEITO.keyVerbs.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:800;color:var(--primary)">${r.verb}</td>
+      <td class="pt" style="font-weight:800">${r.eu}</td>
+      <td class="pt">${r.tu}</td>
+      <td class="pt">${r.ele}</td>
+      <td class="pt">${r.nos}</td>
+      <td class="pt">${r.eles}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">3 uses of the Imperfeito</h3>
+  <div class="card-grid">${D_IMPERFEITO.uses.map(u => `<div class="card-sm" style="border-left:3px solid ${u.color}">
+    <div style="font-weight:800;color:${u.color};margin-bottom:6px">${u.use}</div>
+    <div style="font-size:12px;color:var(--text-2);margin-bottom:6px">${u.note}</div>
+    ${u.ex.map(e => `<div class="pt" style="font-size:13px">${e[0]} <span class="en">${e[1]}</span></div>`).join('')}
+  </div>`).join('')}`,
+
+'future-plans': () => `
+  ${ctx('IR + infinitivo — the main way to express future plans at A1/A2. Conjugate IR, then add the infinitive unchanged.','This structure replaces the formal future tense at A1/A2 level. It is used constantly in everyday speech: Vou fazer… / Vais ver…','Core Verbs — IR conjugation; Days, Time & Seasons — time expressions for planning')}
+  ${sectionHead('Future Plans (IR + inf.)','UFCD 6453 S5','IR + infinitivo = going to do something. Equivalent of English "going to". IR is conjugated; the main verb stays in the infinitive.')}
+  ${infoBox(D_FUTURE_IR.note)}
+  <div class="rule-box" style="font-size:16px;text-align:center;margin-bottom:20px"><strong>${D_FUTURE_IR.formula}</strong></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Pronoun</th><th>IR form</th><th>Pron.</th><th>Example sentence</th></tr></thead>
+    <tbody>${D_FUTURE_IR.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+      <td class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">${r[1]}</td>
+      <td>${pr(r[2])}</td>
+      <td class="pt" style="font-size:13px">${r[3]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Time expressions for future plans</h3>
+  ${vocabGrid(D_FUTURE_IR.timeExpressions)}
+  <h3 class="sub-heading">IR + inf. vs COSTUMAR + inf.</h3>
+  ${infoBox(D_FUTURE_IR.costumar.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    ${D_FUTURE_IR.costumar.compare.map(col => `<div class="card" style="border-left:3px solid ${col.color}">
+      <div style="font-weight:800;color:${col.color};margin-bottom:8px">${col.label}</div>
+      ${col.ex.map(e => `<div class="pt" style="margin-bottom:4px">${e[0]} <span class="en">${e[1]}</span></div>`).join('')}
+    </div>`).join('')}
+  </div>`,
+
+
+
+numbers: () => `
+  ${ctx('Cardinal numbers 0–20, tens 30–90, hundreds, ordinals and thousands. Numbers 1 (um/uma) and 2 (dois/duas) agree in gender.','Needed for prices, times, dates, quantities and phone numbers. 200 is duzentos (m) / duzentas (f) — not *duzendos.','Days, Time & Seasons — clock reading; Money & Prices — price expressions')}
+  ${sectionHead('Numbers','Sessions 2 & 6','Cardinal numbers, hundreds, ordinals. Two rules to remember: 1 and 2 agree in gender (um/uma, dois/duas). 100 = cem (exact) vs cento (before more digits).')}
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">0–20</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>PT</th><th>Pron.</th></tr></thead>
+        <tbody>${D_NUMBERS.basic.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="color:var(--text-3)">${r[0]}</td><td class="pt" style="font-weight:800">${r[1]}</td><td>${pr(r[2])}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">Tens & large</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>PT</th><th>Pron.</th></tr></thead>
+        <tbody>${D_NUMBERS.tens.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="color:var(--text-3)">${r[0]}</td><td class="pt" style="font-weight:800">${r[1]}</td><td>${pr(r[2])}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">Hundreds</h3>
+      ${warnBox('100 = cem (exact) / cento (before more digits: 101 = cento e um)')}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Masc.</th><th>Fem.</th></tr></thead>
+        <tbody>${D_NUMBERS.hundreds.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="color:var(--text-3);font-weight:700">${r[0]}</td><td class="pt" style="font-weight:800">${r[1]}</td><td class="pt" style="color:var(--accent)">${r[2]}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sub-heading">Ordinals</h3>
+      ${vocabGrid(D_NUMBERS.ordinals)}
+    </div>
+    <div>
+      <h3 class="sub-heading">Compound numbers</h3>
+      ${infoBox(D_NUMBERS.compound_note||'Compound numbers: link with E (and): 21 = vinte e um, 305 = trezentos e cinco. Thousands: 2024 = dois mil e vinte e quatro.')}
+      ${D_NUMBERS.compounds ? vocabGrid(D_NUMBERS.compounds) : ''}
+    </div>
+  </div>`,
+
+days: () => `
+  ${ctx('Days of the week (numbered system from Monday = 2ª), months, seasons, parts of the day and time expressions.','The Portuguese weekday numbering system (2ª=Monday because Sunday=1st) surprises English speakers. Months are always lowercase. Clock reading uses the 24-hour format in writing.','Numbers — clock requires numerals; Prepositions & Articles — preposições de tempo A/DE/EM')}
+  ${sectionHead('Days, Time & Seasons','Sessions 2, 5 & 8','Weekdays use an ordinal numbering system. Months are lowercase. Seasons link to the calendar year. Time uses 24h in written form.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">📅 Dias da semana</h3>
+      ${infoBox('Portuguese days are numbered from Sunday = 1ª (domingo). Monday = 2ª feira. The FEIRA part is often dropped in everyday speech: segunda, terça, quarta…')}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Full form</th><th>Short</th><th>Pron.</th><th>EN</th></tr></thead>
+        <tbody>${D_DAYS.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="color:var(--text-3);font-weight:700">${r.n}</td><td class="pt" style="font-weight:800">${r.pt}</td><td class="pt" style="color:var(--text-2)">${r.short}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">📆 Meses do ano</h3>
+      ${infoBox('Months are always lowercase in Portuguese. No capital letter unless starting a sentence.')}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>#</th><th>Mês</th><th>Pron.</th></tr></thead>
+        <tbody>${D_MONTHS.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="color:var(--text-3)">${r[0]}</td><td class="pt" style="font-weight:800">${r[1]}</td><td>${pr(r[2])}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🌸 Estações do ano — Seasons</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>PT</th><th>EN</th><th>Months</th></tr></thead>
+        <tbody>${D_SEASONS.seasons.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en">${r.en}</td><td style="font-size:12px;color:var(--text-3)">${r.months}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🕐 Partes do dia</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>PT</th><th>Pron.</th><th>EN</th><th>Hours</th></tr></thead>
+        <tbody>${D_SEASONS.timeOfDay.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td><td style="font-size:12px;color:var(--text-3)">${r.hours}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>`,
+
+festividades: () => `
+  ${ctx('Classification of Portuguese festivities: religious, cultural, national and popular. Framework for understanding what kind of event something is.','Understanding whether a festivity is religious vs national vs popular helps predict customs, shop closures and appropriate behaviour.','Celebrations & Holidays — full list with dates and descriptions; Weather — seasonal context')}
+  ${sectionHead('Festividades','UFCD 6453','Classification framework for Portuguese festivities. 4 types: religiosas, culturais, nacionais, populares.')}
+  ${infoBox(D_FESTIVIDADES.note)}
+  <div style="display:grid;gap:16px">
+    ${D_FESTIVIDADES.types.map(t=>`<div class="card" style="border-left:4px solid var(--primary)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <span style="font-size:24px">${t.icon}</span>
+        <div><div style="font-weight:800;font-size:15px">${t.type}</div><div style="font-size:13px;color:var(--text-2)">${t.desc}</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        ${t.examples.map(e=>`<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px">
+          <div class="pt" style="font-weight:700">${e.name}</div>
+          <div style="font-size:12px;color:var(--text-3)">${e.date}</div>
+          ${e.note?`<div style="font-size:12px;color:var(--text-2)">${e.note}</div>`:''}
+        </div>`).join('')}
+      </div>
+    </div>`).join('')}
+  </div>`,
+
+'formulas-cortesia': () => `
+  ${ctx('Polite language formulas used in everyday interactions: QUERIA (I would like), PODIA (could you), IMPORTA-SE (would you mind).','These formulas distinguish a polite speaker from a blunt one. QUERIA vs QUERO is one of the highest-priority politeness markers in Portuguese.','Imperativo — imperfeito de cortesia; Social Etiquette — restaurant and service contexts; Pretérito Imperfeito — QUERIA/PODIA conjugation')}
+  ${sectionHead('Fórmulas de Cortesia','UFCD 6453','Polite language formulas. Key rule: use the IMPERFEITO (QUERIA, PODIA) instead of present tense for requests.')}
+  ${infoBox(D_FORMULAS_CORTESIA.note)}
+  <div style="display:grid;gap:16px">
+    ${D_FORMULAS_CORTESIA.categories.map(cat=>`<div class="card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:22px">${cat.icon}</span>
+        <div style="font-weight:800;font-size:15px;color:var(--primary)">${cat.cat}</div>
+      </div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Formula</th><th>Example</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>${cat.formulas.map((f,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-weight:800;font-size:13px;color:var(--primary)">${f.formula}</td>
+          <td class="pt" style="font-size:13px">${f.ex}</td>
+          <td class="en" style="font-size:12px">${f.en}</td>
+          <td style="font-size:11px;color:var(--text-3)">${f.note||''}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`).join('')}
+  </div>`,
+
+'food-containers': () => `
+  ${ctx('Container expressions: um pacote de, uma lata de, uma garrafa de — used in recipes and shopping.','These are the quantity expressions you need for shopping and cooking. They always use DE to link container + food.','Measurements — mass and volume units; Food & Meals — cooking vocabulary; Typical Dishes — recipe context')}
+  ${sectionHead('Food Containers & Quantities','UFCD 6453','Embalagens e quantidades. Container + DE + food = quantity expression.')}
+  ${infoBox(D_FOOD_CONTAINERS.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_FOOD_CONTAINERS.containers.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-size:12px;color:var(--text-3)">${r.ex}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_FOOD_CONTAINERS.recipe ? `<h3 class="sub-heading">Recipe example</h3>${infoBox(D_FOOD_CONTAINERS.recipe)}` : ''}`,
+
+celebrations: () => `
+  ${ctx('Annual Portuguese celebrations and public holidays with dates, names and cultural context.','Essential for understanding the social calendar, public closures and gift-giving customs.','Festividades — classification framework; Days, Time & Seasons — calendar context')}
+  ${sectionHead('Celebrations & Holidays','UFCD 6453','Celebrações e feriados em Portugal. Annual events and their cultural significance.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Date</th><th>Name</th><th>English</th><th>Description</th></tr></thead>
+    <tbody>${D_CELEBRATIONS.annual.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:22px;text-align:center">${r.icon}</td>
+      <td style="font-size:12px;color:var(--text-3);white-space:nowrap">${r.date}</td>
+      <td class="pt" style="font-weight:800">${r.name}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-2)">${r.desc.substring(0,100)}…</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+weather: () => `
+  ${ctx('Weather vocabulary: states (está sol, está chuva), adjectives, verbs, questions and seasonal context for Portugal.','You need weather vocabulary for everyday small talk and practical planning. The standard question is Que tempo está a fazer?','Days, Time & Seasons — seasonal vocabulary; Survival Phrases — casual conversation')}
+  ${sectionHead('Weather','UFCD 6453 S7','Estado do tempo — weather expressions. Portugal: hot dry summers (25–35°C), mild rainy winters (8–16°C).')}
+  ${infoBox(D_WEATHER.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pron.</th><th>English</th><th>Adjective</th></tr></thead>
+    <tbody>${D_WEATHER.states.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:22px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-size:12px;color:var(--text-3)">${r.adj}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_WEATHER.verbs ? `<h3 class="sub-heading">Weather verbs</h3>${vocabGrid(D_WEATHER.verbs)}` : ''}
+  ${D_WEATHER.phrases ? `<h3 class="sub-heading">Useful phrases</h3>${vocabGrid(D_WEATHER.phrases)}` : ''}`,
+
+identity: () => `
+  ${ctx('Personal ID vocabulary, marital status, and countries with nationalities (masculine and feminine forms) and languages.','You need this from day 1 to introduce yourself, fill in forms, and understand questions about your background.','Pronouns — EU/TU forms used for self-introduction; Description — physical appearance')}
+  ${sectionHead('Identity','Session 2','Personal identification vocabulary — for forms, introductions and talking about yourself and others.')}
+  <h3 class="sub-heading">📋 Campos de identificação — ID fields</h3>
+  ${vocabGrid(D_IDENTITY.fields)}
+  <h3 class="sub-heading">💍 Estado civil — Marital status</h3>
+  ${vocabGrid(D_IDENTITY.civil)}
+  <h3 class="sub-heading">🌍 Países, nacionalidades e línguas</h3>
+  ${infoBox('Nationality adjectives agree in gender and number. Most add -a for feminine. A língua / o idioma = the language.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>País</th><th>Masc.</th><th>Fem.</th><th>Língua</th></tr></thead>
+    <tbody>${D_IDENTITY.countries.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td class="pt">${r[3]}</td>
+      <td class="pt" style="color:var(--accent)">${r[4]}</td>
+      <td class="pt" style="color:var(--text-2)">${r[5]||''}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+description: () => `
+  ${ctx('Physical description vocabulary: hair, eyes, body type. Personality adjectives. Adjective agreement rules.','Needed for describing people and understanding descriptions. Adjective agreement (-o/-a/-os/-as) is the most common grammar error in A1.','Gender — noun gender rules; Plurals — adjective agreement')}
+  ${sectionHead('Description','Session 3','Physical and personality description. Adjectives must agree with the noun in gender and number.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">💇 Cabelo — Hair</h3>
+      ${vocabGrid(D_DESCRIPTION.hair)}
+    </div>
+    <div>
+      <h3 class="sub-heading">👁️ Olhos — Eyes</h3>
+      ${vocabGrid(D_DESCRIPTION.eyes)}
+      <h3 class="sub-heading" style="margin-top:16px">🧍 Corpo — Body</h3>
+      ${vocabGrid(D_DESCRIPTION.body)}
+    </div>
+    <div>
+      <h3 class="sub-heading">😊 Personalidade</h3>
+      ${vocabGrid(D_DESCRIPTION.personality)}
+    </div>
+  </div>
+  <h3 class="sub-heading">📐 Adjective agreement rules</h3>
+  ${warnBox('Adjectives agree with the NOUN in gender AND number. Learn the noun gender first, then apply the ending.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Ending</th><th>Feminine rule</th><th>Examples</th></tr></thead>
+    <tbody>${D_DESCRIPTION.adj_rules.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td><code>${r.end}</code></td>
+      <td style="font-weight:700;color:var(--green)">${r.rule}</td>
+      <td style="font-size:13px">${r.ex.join(' · ')}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
+
+money: () => `
+  ${ctx('Euro, céntimos, reading prices aloud, Multibanco, and key money phrases.','Prices in Portuguese use a comma for decimals: 1,50€ = um euro e cinquenta. You need this vocabulary every day in shops.','Payments & Documents — payment methods; Banking — bank vocabulary; Shopping — store expressions')}
+  ${sectionHead('Money & Prices','Session 6','Currency vocabulary, reading prices aloud, and key expressions for shopping and financial contexts.')}
+  <h3 class="sub-heading">💶 Currency vocabulary</h3>
+  ${vocabGrid(D_MONEY.currency)}
+  <h3 class="sub-heading">🗣️ Key phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pron.</th><th>English</th></tr></thead>
+    <tbody>${D_MONEY.phrases.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_MONEY.reading ? `<h3 class="sub-heading">Reading prices aloud</h3>${infoBox(D_MONEY.reading)}` : ''}`,
+
+payments: () => `
+  ${ctx('Payment methods, NIF tax number, receipts, MB Way, and fiscal documents.','The NIF is required for fiscal receipts entered into the e-fatura system. MB Way is the dominant mobile payment method.','Money & Prices — currency; Banking — bank services')}
+  ${sectionHead('Payments & Documents','UFCD 6454 S1','Formas de pagamento e documentos fiscais em Portugal.')}
+  <h3 class="sub-heading">💳 Payment methods</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pron.</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_PAYMENTS.methods.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_PAYMENTS.fiscal ? `<h3 class="sub-heading">📄 Documentos fiscais</h3>${vocabGrid(D_PAYMENTS.fiscal)}` : ''}
+  ${D_PAYMENTS.phrases ? `<h3 class="sub-heading">🗣️ Key phrases</h3>${vocabGrid(D_PAYMENTS.phrases)}` : ''}`,
+
+measurements: () => `
+  ${ctx('Mass (grama, quilograma), volume (litro, mililitro, decilitro) and common recipe quantities.','Recipe instructions use grams, litres and decilitres. Shopping lists use kg and litres. Decimal separator in Portuguese is a comma, not a point: 1,5 kg not 1.5 kg.','Food Containers — container expressions; Typical Dishes — recipe context')}
+  ${sectionHead('Units of Measure','UFCD 6453','Unidades de medida — mass and volume units used in recipes and shopping.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sub-heading">⚖️ Massa — Mass/Weight</h3>
+      ${infoBox(D_MEASUREMENTS.mass.note)}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Unit</th><th>Abbr.</th><th>Value</th><th>Note</th></tr></thead>
+        <tbody>${D_MEASUREMENTS.mass.units.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td style="font-weight:800;color:var(--primary)">${r.abbr}</td>
+          <td style="font-size:12px">${r.val}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">💧 Volume</h3>
+      ${infoBox(D_MEASUREMENTS.volume.note)}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Unit</th><th>Abbr.</th><th>Value</th><th>Note</th></tr></thead>
+        <tbody>${D_MEASUREMENTS.volume.units.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td style="font-weight:800;color:var(--primary)">${r.abbr}</td>
+          <td style="font-size:12px">${r.val}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>`,
+
+transport: () => `
+  ${ctx('Vehicles, stops, tickets, essential phrases and EU vs Brazilian differences for key transport words.','Transport vocabulary is essential daily in Lisbon. COMBOIO (not trem), AUTOCARRO (not onibus), PARAGEM (not parada) — core EU Portuguese markers.','Location Expressions — movement prepositions; Directions & Orientação — navigation vocabulary')}
+  ${sectionHead('Transport','Sessions 6–7','Vocabulário de transportes. EU Portuguese transport words differ significantly from Brazilian.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🚌 Vehicles</h3>
+      ${vocabGrid(D_TRANSPORT.vehicles)}
+    </div>
+    <div>
+      <h3 class="sub-heading">🛑 Stops & Stations</h3>
+      ${vocabGrid(D_TRANSPORT.stops)}
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🎟️ Tickets & Passes</h3>
+      ${vocabGrid(D_TRANSPORT.tickets)}
+    </div>
+    <div>
+      <h3 class="sub-heading">📖 General vocabulary</h3>
+      ${vocabGrid(D_TRANSPORT.vocabulary)}
+    </div>
+  </div>
+  <h3 class="sub-heading">🗣️ Essential phrases</h3>
+  <div class="card-grid">${D_TRANSPORT.phrases.map(r=>`<div class="card-sm"><div class="pt" style="font-weight:700">${r.pt}</div><div class="en">${r.en}</div></div>`).join('')}</div>`,
+
+'typical-dishes': () => `
+  ${ctx('365 bacalhau recipes, traditional meat dishes, soups, sweets and supermarket sections.','Understanding typical dishes is essential for restaurant menus, food shopping and cultural conversation.','Food & Meals — meal times and cooking verbs; Kitchen & Table — equipment; Food Containers — recipe quantities')}
+  ${sectionHead('Typical Dishes','UFCD 6453 S2','Pratos típicos portugueses — bacalhau, carnes, sopas, sobremesas.')}
+  <h3 class="sub-heading">🐟 Bacalhau — Cod dishes</h3>
+  ${infoBox(D_TYPICAL_DISHES.bacalhau.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese name</th><th>Description</th></tr></thead>
+    <tbody>${D_TYPICAL_DISHES.bacalhau.dishes.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en" style="font-size:13px">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_TYPICAL_DISHES.carne ? `<h3 class="sub-heading">🥩 Carne & outros pratos</h3><div class="tbl-wrap"><table><thead><tr><th>PT</th><th>EN</th></tr></thead><tbody>${D_TYPICAL_DISHES.carne.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  ${D_TYPICAL_DISHES.sopas ? `<h3 class="sub-heading">🥣 Sopas</h3><div class="tbl-wrap"><table><thead><tr><th>PT</th><th>EN</th></tr></thead><tbody>${D_TYPICAL_DISHES.sopas.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  ${D_TYPICAL_DISHES.sobremesas ? `<h3 class="sub-heading">🍮 Sobremesas</h3><div class="tbl-wrap"><table><thead><tr><th>PT</th><th>EN</th></tr></thead><tbody>${D_TYPICAL_DISHES.sobremesas.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+
+'kitchen-utensils': () => `
+  ${ctx('Cookware, utensils, appliances, crockery and cutlery — everything in a Portuguese kitchen.','Needed for reading recipes and talking about cooking. The Portuguese kitchen uses specific terms for pan types with no direct English equivalent.','Food & Meals — cooking verbs; Typical Dishes — recipes; Measurements — recipe quantities')}
+  ${sectionHead('Kitchen & Table','UFCD 6453 S3','Equipamentos, utensílios, louça e talheres de cozinha.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🍳 Cookware — Tachos e panelas</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead>
+        <tbody>${D_UTENSILS.cookware.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🔪 Utensils — Utensílios</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead>
+        <tbody>${D_UTENSILS.utensils.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  ${D_UTENSILS.appliances ? `<h3 class="sub-heading">⚡ Appliances — Electrodomésticos</h3><div class="tbl-wrap"><table><thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead><tbody>${D_UTENSILS.appliances.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.e}</td><td class="pt" style="font-weight:800">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  ${D_UTENSILS.crockery ? `<h3 class="sub-heading">🍽️ Crockery & Cutlery</h3><div class="tbl-wrap"><table><thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead><tbody>${D_UTENSILS.crockery.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.e||''}</td><td class="pt" style="font-weight:800">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+
+food: () => `
+  ${ctx('Five meals with times and verbs, food shop vocabulary, cooking verbs, food adjectives, and physical states of hunger.','The structure of Portuguese meals (5 not 3) differs from most countries. ALMOÇAR and JANTAR are high-frequency verbs. GOSTAR DE + food is a basic self-description pattern.','Typical Dishes — what to eat; Kitchen & Table — cooking equipment; Food Containers — recipe quantities')}
+  ${sectionHead('Food & Meals','Session 7 & UFCD 6453','As refeições — the five Portuguese meals. Food shops. Cooking verbs. Food vocabulary.')}
+  <h3 class="sub-heading">🕐 As refeições — Meals</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Meal</th><th>Pron.</th><th>EN</th><th>Time</th><th>Verb</th></tr></thead>
+    <tbody>${D_FOOD.meals.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r.meal}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.time}</td>
+      <td class="pt" style="font-size:12px">${r.verb}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🍳 Cooking verbs</h3>
+  ${vocabGrid(D_FOOD.cookingVerbs||[])}
+  ${D_FOOD.vocabulary ? `<h3 class="sub-heading">🥗 Food vocabulary</h3>${vocabGrid(D_FOOD.vocabulary)}` : ''}
+  ${D_FOOD.adjectives ? `<h3 class="sub-heading">👅 Food adjectives</h3><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">${Object.entries(D_FOOD.adjectives).map(([k,v])=>`<div><h3 class="sub-heading">${k}</h3>${vocabGrid(v)}</div>`).join('')}</div>` : ''}`,
+
+leisure: () => `
+  ${ctx('Leisure activities grouped by rural vs urban zones, plus general free-time activities and key phrases.','Essential vocabulary for describing what you do in your free time and making plans.','Sports & Athletics — sporting activities; Convites — invitations to leisure activities; Future Plans — planning with IR + inf.')}
+  ${sectionHead('Leisure & Free Time','UFCD 6453 S5','Atividades de lazer — rural, urban and general leisure vocabulary.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🌳 Zona rural — Rural</h3>
+      ${vocabGrid(D_LEISURE.ruralUrban.rural)}
+    </div>
+    <div>
+      <h3 class="sub-heading">🏙️ Zona urbana — Urban</h3>
+      ${vocabGrid(D_LEISURE.ruralUrban.urban)}
+    </div>
+  </div>
+  ${D_LEISURE.general ? `<h3 class="sub-heading">🎭 Geral — General leisure</h3>${vocabGrid(D_LEISURE.general)}` : ''}
+  ${D_LEISURE.phrases ? `<h3 class="sub-heading">🗣️ Key phrases</h3><div class="card-grid">${D_LEISURE.phrases.map(r=>`<div class="card-sm"><div class="pt" style="font-weight:700">${r.pt||r[0]}</div><div class="en">${r.en||r[2]}</div></div>`).join('')}</div>` : ''}`,
+
+sports: () => `
+  ${ctx('Top 5 most and least popular sports in Portugal, swimming disciplines, athletics events and key sports vocabulary.','Portugal is a football nation — futebol dominates. Natação is the 5th most popular sport. Portuguese uses JOGAR for team sports and PRATICAR/FAZER for individual ones.','Leisure & Free Time — non-sporting activities; Expressions — phrases for talking about preferences')}
+  ${sectionHead('Sports & Athletics','UFCD 6453 S6','Desportos em Portugal — statistics, vocabulary and key verbs.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🏆 Top 5 most popular</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Sport</th><th>Athletes</th><th>Note</th></tr></thead>
+        <tbody>${D_SPORTS.top5most.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r.sport}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.athletes}</td>
+          <td style="font-size:12px;color:var(--text-2)">${r.note}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🔻 5 least popular</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Sport</th><th>Athletes</th><th>Note</th></tr></thead>
+        <tbody>${D_SPORTS.top5least.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r.sport}</td>
+          <td style="font-size:12px;color:var(--text-3)">${r.athletes}</td>
+          <td style="font-size:12px;color:var(--text-2)">${r.note}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  ${D_SPORTS.natacao ? `<h3 class="sub-heading">🏊 Natação — Swimming disciplines</h3>${vocabGrid(D_SPORTS.natacao)}` : ''}
+  ${D_SPORTS.vocab ? `<h3 class="sub-heading">📖 Sports vocabulary</h3>${vocabGrid(D_SPORTS.vocab)}` : ''}
+  ${D_SPORTS.verbs ? `<h3 class="sub-heading">⚽ Key sports verbs</h3><div class="tbl-wrap"><table><thead><tr><th>Verb</th><th>EN</th><th>Use</th></tr></thead><tbody>${D_SPORTS.verbs.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.v}</td><td class="en">${r.en}</td><td style="font-size:12px;color:var(--text-3)">${r.use}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+
+expressions: () => `
+  ${ctx('Expressions for agreement/disagreement, opinions, emotions, connectors and café vocabulary.','These expressions are the glue of conversation. Without them, you can name things but not discuss them.','Survival Phrases — greetings; Gostos & Preferências — expressing opinions; Questions — question words')}
+  ${sectionHead('Expressions','Sessions 1–3','Agreement, opinion, emotion, connectors. The vocabulary of conversation.')}
+  ${D_EXPRESSIONS.map(cat=>`
+  <div class="card" style="margin-bottom:16px">
+    <div style="font-weight:800;color:var(--primary);font-size:15px;margin-bottom:10px">${cat.cat}</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Portuguese</th><th>Pron.</th><th>English</th></tr></thead>
+      <tbody>${cat.items.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <td class="pt" style="font-weight:800">${r[0]}</td>
+        <td>${pr(r[1])}</td>
+        <td class="en">${r[2]}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+  </div>`).join('')}`,
+
+survival: () => `
+  ${ctx('Essential phrases for first contact: greetings, classroom language, politeness. The minimum you need to start.','These phrases get you through any first encounter. Memorise them before anything else.','Expressions — broader conversation vocabulary; Fórmulas de Cortesia — polite requests')}
+  ${sectionHead('Survival Phrases','Session 1','The essential phrases — greetings, classroom language, politeness. Minimum viable Portuguese.')}
+  ${(()=>{
+    const cats = [...new Set(D_SURVIVAL.map(r=>r.cat))];
+    return cats.map(cat=>`<div class="card" style="margin-bottom:16px">
+      <div style="font-weight:800;color:var(--primary);font-size:15px;margin-bottom:10px">${cat}</div>
+      ${vocabGrid(D_SURVIVAL.filter(r=>r.cat===cat).map(r=>[r.pt,r.pron,r.en]))}
+    </div>`).join('');
+  })()}`,
+
+idioms: () => `
+  ${ctx('10 common Portuguese idioms with literal translation, cultural meaning and example usage.','Idioms are how native speakers actually talk. Knowing even 5 marks you as someone who has gone beyond textbook Portuguese.','Expressions — everyday phrases; Social Etiquette — cultural context')}
+  ${sectionHead('Idioms','UFCD 6453 S3','Expressões idiomáticas — common idioms with literal translations and examples.')}
+  ${D_IDIOMS.map((r,i)=>`<div class="card" style="margin-bottom:12px;border-left:4px solid var(--gold)">
+    <div style="font-size:16px;font-weight:800;color:var(--primary);margin-bottom:4px" class="pt">${r.pt}</div>
+    <div style="font-size:12px;color:var(--text-3);margin-bottom:6px"><em>Literal: ${r.lit}</em></div>
+    <div style="font-weight:700;color:var(--green);margin-bottom:8px">${r.en}</div>
+    <div class="pt" style="font-size:13px;border-left:3px solid var(--border);padding-left:8px">${r.ex}</div>
+  </div>`).join('')}`,
+
+clothing: () => `
+  ${ctx('Clothing, footwear and accessories with EU sizes, fabric types and shopping expressions.','Needed for shopping, describing what people wear, and understanding size labels.','Shopping Expressions — store phrases; Colors — color agreement; Payments — how to pay')}
+  ${sectionHead('Clothing & Accessories','UFCD 6454 S1','Roupa, calçado e acessórios. EU sizing. Fabric types.')}
+  ${infoBox(D_CLOTHING.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">👗 Roupa — Clothing</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th><th>Note</th></tr></thead>
+        <tbody>${D_CLOTHING.roupas.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+          <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">👟 Calçado — Footwear</h3>
+      ${D_CLOTHING.calcado ? `<div class="tbl-wrap"><table><thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead><tbody>${D_CLOTHING.calcado.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.e}</td><td class="pt" style="font-weight:800">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}
+      <h3 class="sub-heading" style="margin-top:16px">👒 Acessórios</h3>
+      ${D_CLOTHING.acessorios ? `<div class="tbl-wrap"><table><thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead><tbody>${D_CLOTHING.acessorios.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.e}</td><td class="pt" style="font-weight:800">${r.pt}</td><td>${pr(r.pron)}</td><td class="en">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}
+    </div>
+  </div>
+  ${D_CLOTHING.fabrics ? `<h3 class="sub-heading">🧵 Tecidos — Fabrics</h3>${vocabGrid(D_CLOTHING.fabrics)}` : ''}
+  ${D_CLOTHING.sizes ? `<h3 class="sub-heading">📏 Sizes — Tamanhos</h3>${infoBox(D_CLOTHING.sizes)}` : ''}`,
+
+colors: () => `
+  ${ctx('15 colors with agreement rules. Invariable colors (laranja, rosa, bege, azul, verde) do not change form.','Color adjectives must agree with the noun they modify — but 5 common colors are invariable. This is a key source of errors.','Description — adjective agreement rules; Clothing — color in shopping context; Gender — noun gender determines agreement')}
+  ${sectionHead('Colors','UFCD 6454 S1','As cores — colors with gender agreement. Invariable colors: laranja, rosa, bege, azul, verde.')}
+  ${infoBox(D_COLORS.note)}
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:20px">
+    ${D_COLORS.colors.map(r=>`<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;display:flex;gap:10px;align-items:center">
+      <div style="width:32px;height:32px;border-radius:50%;background:${r.hex};border:2px solid var(--border);flex-shrink:0"></div>
+      <div><div class="pt" style="font-weight:800;font-size:14px">${r.pt}</div><div class="en" style="font-size:12px">${r.en}</div>${r.note?`<div style="font-size:11px;color:var(--text-3)">${r.note}</div>`:''}</div>
+    </div>`).join('')}
+  </div>
+  ${D_COLORS.agreement ? `<h3 class="sub-heading">Agreement rules</h3><div class="tbl-wrap"><table><thead><tr><th>Rule</th><th>Example</th></tr></thead><tbody>${D_COLORS.agreement.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:13px">${r.rule}</td><td class="pt">${r.ex}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+
+stationery: () => `
+  ${ctx('Stationery items found in a papelaria — school and office supplies vocabulary.','Essential for the classroom and office. The stationery shop (papelaria) is where you buy school supplies in Portugal.','Shopping Expressions — how to ask for items; Colors — describing stationery')}
+  ${sectionHead('Stationery','UFCD 6454 S1','Artigos de papelaria — school and office supplies.')}
+  ${infoBox(D_STATIONERY.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pron.</th><th>English</th></tr></thead>
+    <tbody>${D_STATIONERY.items.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_STATIONERY.phrases ? `<h3 class="sub-heading">Useful phrases</h3>${vocabGrid(D_STATIONERY.phrases)}` : ''}`,
+
+shopping: () => `
+  ${ctx('Expressions for asking for items, commenting on fit, expressing opinions, and paying — the complete in-store conversation.','These phrases are the script for any shop visit. Knowing them means you can handle clothing shops, pharmacies and markets.','Clothing — what to buy; Colors — describing items; Payments — how to pay; Banking — payment by card')}
+  ${sectionHead('Shopping Expressions','UFCD 6454 S1','Numa loja — expressions for all stages of a shopping interaction.')}
+  ${infoBox(D_SHOPPING.note)}
+  <div style="display:grid;gap:16px">
+    ${D_SHOPPING.expressions.map(cat=>`<div class="card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:22px">${cat.icon}</span>
+        <div style="font-weight:800;font-size:15px;color:var(--primary)">${cat.cat}</div>
+      </div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Portuguese</th><th>Pron.</th><th>English</th></tr></thead>
+        <tbody>${cat.items.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r[0]}</td>
+          <td>${r[1]?pr(r[1]):''}</td>
+          <td class="en">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`).join('')}
+  </div>
+  ${D_SHOPPING.ficarBem ? `<h3 class="sub-heading">FICAR BEM/MAL — with dative pronouns</h3>${infoBox(D_SHOPPING.ficarBem.note)}<div class="tbl-wrap"><table><thead><tr><th>Pronoun</th><th>Form</th><th>Example</th></tr></thead><tbody>${D_SHOPPING.ficarBem.table.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="color:var(--text-3)">${r[0]}</td><td class="pt" style="font-weight:800">${r[1]}</td><td class="pt" style="font-size:13px">${r[2]||''}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+
+convites: () => `
+  ${ctx('Fazer convites (making invitations), aceitar (accepting) and recusar (declining) — the complete invitation script.','Invitations are central to social life. Knowing the polite refusal formulas (Que pena! / Não posso, já tenho planos.) is as important as knowing how to accept.','COM + Pronomes — comigo/contigo appear constantly in invitations; Future Plans — planning using IR + inf.; Gostos — expressing preferences')}
+  ${sectionHead('Convites','UFCD 6454 S3','Making, accepting and declining invitations in Portuguese.')}
+  ${infoBox(D_CONVITES.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">💌 Fazer convites</h3>
+      ${vocabGrid(D_CONVITES.fazer)}
+    </div>
+    <div>
+      <h3 class="sub-heading">✅ Aceitar</h3>
+      ${vocabGrid(D_CONVITES.aceitar)}
+    </div>
+    <div>
+      <h3 class="sub-heading">❌ Recusar</h3>
+      ${vocabGrid(D_CONVITES.recusar)}
+    </div>
+  </div>
+  ${D_CONVITES.preferences ? `<h3 class="sub-heading">Expressões de preferência</h3>${vocabGrid(D_CONVITES.preferences)}` : ''}`,
+
+residencia: () => `
+  ${ctx('Residence permit types (ART/ARP), required documents, AIMA process (replaced SEF 2023), and forms of address.','Every non-EU resident in Portugal needs one of these permits. AIMA replaced SEF in 2023 — previous guides mentioning SEF are outdated. Agendamento prévio (prior appointment) is mandatory.','Payments & Documents — document vocabulary; Correios — sending official correspondence; Banking — bank account requirements')}
+  ${sectionHead('Autorização de Residência','UFCD 6454 S3','Residence permits in Portugal. AIMA (replaced SEF in 2023). Two types: Temporária (ART) and Permanente (ARP).')}
+  ${warnBox(D_RESIDENCIA.note)}
+  <div style="font-size:13px;color:var(--text-2);margin-bottom:16px;padding:12px;background:var(--surface-2);border-radius:8px">${D_RESIDENCIA.definition}</div>
+  <h3 class="sub-heading">📋 Tipos de autorização</h3>
+  <div style="display:grid;gap:12px;margin-bottom:20px">
+    ${D_RESIDENCIA.tipos.map(t=>`<div class="card" style="border-left:4px solid var(--primary)">
+      <div style="font-weight:800;font-size:15px;color:var(--primary);margin-bottom:4px">${t.tipo} <span style="font-size:13px;background:var(--primary-lt);padding:2px 8px;border-radius:12px;margin-left:6px">${t.abbr}</span></div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:6px">${t.desc}</div>
+      ${t.validity?`<div style="font-size:12px;color:var(--text-3)">⏱️ ${t.validity}</div>`:''}
+    </div>`).join('')}
+  </div>
+  ${D_RESIDENCIA.documents ? `<h3 class="sub-heading">📄 Required documents</h3><div class="tbl-wrap"><table><thead><tr><th></th><th>Document</th><th>Note</th></tr></thead><tbody>${D_RESIDENCIA.documents.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.icon||'📄'}</td><td class="pt" style="font-weight:800">${r.pt}</td><td style="font-size:12px;color:var(--text-3)">${r.note||''}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  ${D_RESIDENCIA.formasTratamento ? `<h3 class="sub-heading">🤝 Formas de tratamento</h3>${infoBox(D_RESIDENCIA.formasTratamento.note)}<div class="tbl-wrap"><table><thead><tr><th>Form</th><th>Use</th><th>Context</th></tr></thead><tbody>${D_RESIDENCIA.formasTratamento.levels.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.form}</td><td style="font-size:12px;color:var(--text-3)">${r.use}</td><td style="font-size:12px">${r.context}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+
+'social-etiquette': () => `
+  ${ctx('QUERIA instead of QUERO for polite restaurant and service requests. Dialogues showing imperfeito de cortesia in action.','This single habit (QUERIA not QUERO) separates polite from rude in Portuguese service contexts. It applies everywhere: restaurants, shops, hotels, banks.','Fórmulas de Cortesia — complete formula system; Imperativo — imperfeito de cortesia with PODER; Pretérito Imperfeito — conjugation')}
+  ${sectionHead('Social Etiquette','UFCD 6453 S3','Politeness in service contexts. QUERIA = polite. QUERO = abrupt. Use QUERIA for all requests.')}
+  ${warnBox(D_SOCIAL_ETIQUETTE.restaurantNote)}
+  <h3 class="sub-heading">QUERIA vs QUERO — side by side</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Context</th><th style="color:var(--accent)">❌ Blunt</th><th style="color:var(--green)">✅ Polite</th><th>English</th></tr></thead>
+    <tbody>${D_SOCIAL_ETIQUETTE.queria.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r.context}</td>
+      <td class="pt" style="color:var(--accent)">${r.rude}</td>
+      <td class="pt" style="color:var(--green);font-weight:800">${r.polite}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  ${D_SOCIAL_ETIQUETTE.dialogues ? `<h3 class="sub-heading">Dialogues</h3>${D_SOCIAL_ETIQUETTE.dialogues.map(d=>`<div class="card" style="margin-bottom:10px"><div style="display:flex;gap:10px;flex-wrap:wrap">
+    <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--text-3);text-transform:uppercase;margin-bottom:4px">Funcionário/a</div><div class="pt">${d.emp}</div></div>
+    <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--primary);text-transform:uppercase;margin-bottom:4px">Cliente</div><div class="pt">${d.cli}</div></div>
+  </div></div>`).join('')}` : ''}
+  ${D_SOCIAL_ETIQUETTE.mealPhrases ? `<h3 class="sub-heading">🍽️ Meal phrases</h3>${vocabGrid(D_SOCIAL_ETIQUETTE.mealPhrases)}` : ''}`,
+
+practice: () => `
+  ${ctx('Write-in practice prompts to test self-introduction and core vocabulary from all sections.','Active recall — writing from memory — is the most effective memorisation technique. Use these prompts daily.','Identity — vocabulary to answer these; Pronouns — forms used for introduction')}
+  ${sectionHead('Practice','All Sessions','Write your answers in Portuguese. Cover the prompt and try from memory.')}
+  ${infoBox('Use these prompts to write a short paragraph about yourself in Portuguese. Then check the relevant sections for vocabulary.')}
+  <div style="display:grid;gap:12px">
+    ${[
+      ['🧑 Introdução', ['Como se chama?','Onde mora?','De onde é?','Qual é a sua nacionalidade?','Qual é a sua profissão?','Quantos anos tem?']],
+      ['👨‍👩‍👧 Família', ['Tem filhos? Quantos?','Como se chama o seu/a sua parceiro/a?','Descreva a sua família.']],
+      ['🏠 Casa', ['Onde mora? (rua, cidade)','Como é a sua casa? (quarto, sala, cozinha…)']],
+      ['⏰ Rotina', ['A que horas se levanta?','O que come ao pequeno-almoço?','Como vai para o trabalho / escola?']],
+      ['🎭 Gostos', ['O que gosta de fazer nos tempos livres?','Qual é o seu desporto favorito?','O que não gosta de fazer?']],
+    ].map(([section, qs])=>`<div class="card">
+      <div style="font-weight:800;color:var(--primary);font-size:15px;margin-bottom:10px">${section}</div>
+      ${qs.map(q=>`<div style="padding:10px 0;border-bottom:1px solid var(--border)">
+        <div style="font-weight:700;margin-bottom:6px">❓ ${q}</div>
+        <div style="height:36px;border:1px dashed var(--border);border-radius:6px;background:var(--surface-2)"></div>
+      </div>`).join('')}
+    </div>`).join('')}
+  </div>`,
+
+
+
 };
 
 // ─────────────────────────────────────────────
