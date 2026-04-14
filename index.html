@@ -478,6 +478,8 @@ const NAV = [
     { id:"payments",       title:"Payments & Documents" },
     { id:"measurements",   title:"Units of Measure" },
     { id:"transport",      title:"Transport" },
+    { id:"car-maintenance",  title:"Carro & Manutenção" },
+    { id:"directions",       title:"Direções & Orientação" },
     { id:"typical-dishes", title:"Typical Dishes" },
     { id:"kitchen-utensils",title:"Kitchen & Table" },
     { id:"food",           title:"Food & Meals" },
@@ -1900,11 +1902,24 @@ const D_MOVEMENT_PREPS = {
     },
     {
       prep:"por", pron:"[poor]", color:"var(--purple)",
-      meaning:"through / via · near / past",
-      note:"Movement that passes through a place, or movement near/by something.",
+      meaning:"9 uses — movement/route, cause, mode, passage, price, distribution, sentiment, gratitude, agent",
+      note:"POR contracts with articles: por + o = pelo, por + a = pela, por + os = pelos, por + as = pelas.",
+      uses:[
+        { n:"1", label:"Percurso / itinerário", en:"route / itinerary", ex:"Quando vou para o trabalho, passo pela ponte.", exen:"When I go to work, I go via the bridge." },
+        { n:"2", label:"Movimento rápido / perto de", en:"brief movement / passing near", ex:"Hoje de manhã, eu passei pela Ana e pelo Pedro.", exen:"This morning I passed by Ana and Pedro." },
+        { n:"3", label:"Passagem (através de)", en:"passage through", ex:"Saiu pela janela.", exen:"He left through the window." },
+        { n:"4", label:"Causa", en:"cause / reason", ex:"Ele está zangado por não ter ido ao teatro.", exen:"He is angry because he didn't go to the theatre." },
+        { n:"5", label:"Modo", en:"mode / means", ex:"Mandei a carta pelo correio.", exen:"I sent the letter by post." },
+        { n:"6", label:"Preço / valor", en:"price / value", ex:"Comprei o carro por 10.000 euros.", exen:"I bought the car for 10,000 euros." },
+        { n:"7", label:"Divisão / distribuição / multiplicação", en:"division / distribution / multiplication", ex:"Distribuir os rebuçados pelos irmãos. / Multiplicar por cinco.", exen:"Distribute the sweets among the siblings. / Multiply by five." },
+        { n:"8", label:"Sentimento / pessoa que motiva a ação", en:"sentiment / person motivating the action", ex:"Fiz isto pelo Pedro. / Fizemos isto por amizade.", exen:"I did this for Pedro. / We did this out of friendship." },
+        { n:"9", label:"Agradecimento", en:"gratitude", ex:"Obrigada por tudo.", exen:"Thank you for everything." },
+      ],
       ex:[
-        ["Nós não viemos pela auto-estrada.","","We did not come via the motorway."],
-        ["O autocarro n.º 31 passa pelo museu.","","Bus no. 31 passes by the museum."],
+        ["Quando vou para o trabalho, passo pela ponte.","","I go via the bridge (route)."],
+        ["Ele está zangado por não ter ido ao teatro.","","He is angry because he didn't go (cause)."],
+        ["Comprei o carro por 10.000 euros.","","I bought it for 10,000 euros (price)."],
+        ["Obrigada por tudo.","","Thank you for everything (gratitude)."],
       ]
     },
     {
@@ -2822,18 +2837,22 @@ const D_IMPERATIVO = {
     ]
   },
   irregular:[
-    { verb:"SER",  tu:"sê",    voce:"seja",   nos:"sejamos",   voces:"sejam",   en:"to be" },
-    { verb:"ESTAR",tu:"está",  voce:"esteja",  nos:"estejamos", voces:"estejam", en:"to be (state/location)" },
-    { verb:"IR",   tu:"vai",   voce:"vá",     nos:"vamos",     voces:"vão",     en:"to go" },
-    { verb:"TER",  tu:"tem",   voce:"tenha",  nos:"tenhamos",  voces:"tenham",  en:"to have" },
-    { verb:"FAZER",tu:"faz",   voce:"faça",   nos:"façamos",   voces:"façam",   en:"to do/make" },
-    { verb:"VIR",  tu:"vem",   voce:"venha",  nos:"venhamos",  voces:"venham",  en:"to come" },
-    { verb:"PÔR",  tu:"põe",   voce:"ponha",  nos:"ponhamos",  voces:"ponham",  en:"to put" },
-    { verb:"DIZER",tu:"diz",   voce:"diga",   nos:"digamos",   voces:"digam",   en:"to say" },
-    { verb:"DAR",  tu:"dá",    voce:"dê",     nos:"demos",     voces:"deem",    en:"to give" },
-    { verb:"LER",  tu:"lê",    voce:"leia",   nos:"leiamos",   voces:"leiam",   en:"to read" },
-    { verb:"SABER",tu:"sabe",  voce:"saiba",  nos:"saibamos",  voces:"saibam",  en:"to know" },
-    { verb:"PODER",tu:"pode",  voce:"possa",  nos:"possamos",  voces:"possam",  en:"can/to be able" },
+    { verb:"SER",   tu:"sê",    tu_neg:"não sejas",   voce:"seja",   nos:"sejamos",   voces:"sejam",   en:"to be" },
+    { verb:"ESTAR", tu:"está",  tu_neg:"não estejas",  voce:"esteja",  nos:"estejamos", voces:"estejam", en:"to be (state/location)" },
+    { verb:"IR",    tu:"vai",   tu_neg:"não vás",      voce:"vá",     nos:"vamos",     voces:"vão",     en:"to go" },
+    { verb:"TER",   tu:"tem",   tu_neg:"não tenhas",   voce:"tenha",  nos:"tenhamos",  voces:"tenham",  en:"to have" },
+    { verb:"FAZER", tu:"faz",   tu_neg:"não faças",    voce:"faça",   nos:"façamos",   voces:"façam",   en:"to do/make" },
+    { verb:"VIR",   tu:"vem",   tu_neg:"não venhas",   voce:"venha",  nos:"venhamos",  voces:"venham",  en:"to come" },
+    { verb:"PÔR",   tu:"põe",   tu_neg:"não ponhas",   voce:"ponha",  nos:"ponhamos",  voces:"ponham",  en:"to put" },
+    { verb:"DIZER", tu:"diz",   tu_neg:"não digas",    voce:"diga",   nos:"digamos",   voces:"digam",   en:"to say" },
+    { verb:"DAR",   tu:"dá",    tu_neg:"não dês",      voce:"dê",     nos:"demos",     voces:"deem",    en:"to give" },
+    { verb:"TRAZER",tu:"traz",  tu_neg:"não tragas",   voce:"traga",  nos:"tragamos",  voces:"tragam",  en:"to bring" },
+    { verb:"VER",   tu:"vê",    tu_neg:"não vejas",    voce:"veja",   nos:"vejamos",   voces:"vejam",   en:"to see" },
+    { verb:"OUVIR", tu:"ouve",  tu_neg:"não ouças",    voce:"ouça",   nos:"ouçamos",   voces:"ouçam",   en:"to hear/listen" },
+    { verb:"SEGUIR",tu:"segue", tu_neg:"não sigas",    voce:"siga",   nos:"sigamos",   voces:"sigam",   en:"to follow/continue" },
+    { verb:"LER",   tu:"lê",    tu_neg:"não leias",    voce:"leia",   nos:"leiamos",   voces:"leiam",   en:"to read" },
+    { verb:"SABER", tu:"sabe",  tu_neg:"não saibas",   voce:"saiba",  nos:"saibamos",  voces:"saibam",  en:"to know" },
+    { verb:"PODER", tu:"pode",  tu_neg:"não possas",   voce:"possa",  nos:"possamos",  voces:"possam",  en:"can/to be able" },
   ],
   uses:[
     { use:"Dar ordens",       icon:"⚠️", ex:[["Para! Não fales!","Stop! Don't speak!"],["Sai daqui!","Get out of here!"]] },
@@ -3306,6 +3325,142 @@ const D_RESIDENCIA = {
     ],
     note2:"VOCÊ = used in any register, but less formal than o senhor. TU = exclusively informal (friends, family, close colleagues)."
   }
+};
+
+const D_CAR = {
+  parts:[
+    ["a luz","[ɐ loosh]","the light / headlight"],
+    ["o pneu","[oo pneh-oo]","the tyre"],
+    ["a campainha / a buzina","[ɐ kɐm-pɐ-EE-nyɐ / ɐ boo-ZEE-nɐ]","the horn / hooter"],
+    ["o pedal","[oo pɐ-DAL]","the pedal"],
+    ["o assento","[oo ɐ-SEN-too]","the seat"],
+    ["o volante","[oo voo-LANT]","the steering wheel"],
+    ["a roda","[ɐ ROH-dɐ]","the wheel (rim + tyre unit)"],
+    ["o travão","[oo trɐ-VOWNG]","the brake"],
+    ["o motor","[oo moo-TOR]","the engine"],
+    ["o capô","[oo kɐ-POH]","the bonnet / hood"],
+    ["o porta-bagagens","[oo POR-tɐ bɐ-GAH-jɐynsh]","the boot / trunk"],
+    ["o para-brisas","[oo PA-rɐ BREE-zɐsh]","the windscreen"],
+    ["o espelho retrovisor","[oo ish-PEH-lyoo rɐ-troo-vee-ZOR]","the rear-view mirror"],
+    ["o cinto de segurança","[oo SIN-too dɐ sɐ-goo-RAHN-sɐ]","the seatbelt"],
+    ["o macaco","[oo mɐ-KAH-koo]","the car jack"],
+    ["o triângulo","[oo tree-AHNG-goo-loo]","the warning triangle"],
+    ["o colete verde","[oo koo-LET VERD]","the high-vis vest"],
+    ["a estação de serviço","[ɐ ish-tɐ-SOWNG dɐ sir-VEE-soo]","the service station / petrol station"],
+  ],
+  maintenance:{
+    types:[
+      { type:"Preventiva", icon:"🔍", color:"var(--green)",
+        desc:"Revisão periódica planeada — checks all wear points before they fail.",
+        items:["óleo do motor","componentes eléctricos","filtros (ar, óleo, combustível)","água do radiador","travões","luzes","alinhamento das rodas","pneus","escovas de para-brisas"]
+      },
+      { type:"Preditiva", icon:"📡", color:"var(--primary)",
+        desc:"Based on warning signs from the car — predict and prevent failures before they happen.",
+        items:["sinais de avaria","luzes de aviso no painel","ruídos anómalos","comportamento irregular da travagem","consumo excessivo"]
+      },
+      { type:"Corretiva", icon:"🔧", color:"var(--accent)",
+        desc:"Fixes a problem already identified and affecting performance. Necessary but least desirable — always aim for preventive first.",
+        items:["substituição de peças avariadas","reparação após acidente","diagnóstico e correção de avarias"]
+      },
+    ],
+    inspection:{
+      note:"A inspeção periódica automóvel (IPO) é obrigatória em Portugal e em toda a UE. A periodicidade varia conforme a idade do veículo. Falta da inspeção = infração grave = multa de 250€ a 1.500€ + possível apreensão do veículo.",
+      steps:[
+        "Leve no seu veículo um par de luvas resistentes.",
+        "Coloque o triângulo na estrada, bem visível — deve estar a 30 passos do seu carro.",
+        "Use o colete verde.",
+        "Confirme se o macaco está bem colocado.",
+        "Mude o pneu.",
+        "Pare na estação de serviço mais próxima e encha corretamente o pneu montado.",
+        "Arranje logo o pneu furado.",
+      ]
+    }
+  }
+};
+
+const D_DIRECTIONS = {
+  orientationVocab:[
+    ["o mapa","[oo MAH-pɐ]","the map"],
+    ["a planta","[ɐ PLAHN-tɐ]","the street plan / floor plan"],
+    ["a esquina","[ɐ ish-KEE-nɐ]","the corner (of a street)"],
+    ["o cruzamento","[oo kroo-zɐ-MEN-too]","the crossroads / junction"],
+    ["o passeio","[oo pɐ-SAY-oo]","the pavement / sidewalk"],
+    ["o semáforo","[oo sɐ-MAH-foo-roo]","the traffic light"],
+    ["a rua","[ɐ ROO-ɐ]","the street"],
+    ["a avenida","[ɐ ɐ-vɐ-NEE-dɐ]","the avenue"],
+    ["o largo","[oo LAR-goo]","the small square / open space"],
+    ["a praça","[ɐ PRAH-sɐ]","the square (larger)"],
+    ["o quarteirão","[oo kwɐr-tay-ROWNG]","the block (city block)"],
+    ["o jardim","[oo jɐr-DEEM]","the garden / park"],
+    ["a rotunda","[ɐ roo-TOON-dɐ]","the roundabout"],
+    ["a paragem","[ɐ pɐ-RAH-jɐyng]","the (bus/tram) stop"],
+    ["a estação","[ɐ ish-tɐ-SOWNG]","the (metro/train) station"],
+    ["a entrada","[ɐ en-TRAH-dɐ]","the entrance"],
+    ["a saída","[ɐ sɐ-EE-dɐ]","the exit"],
+  ],
+  movementVerbs:[
+    ["ir em frente / seguir em frente","[eer ayng FRENT]","to go straight ahead"],
+    ["virar à direita","[vee-RAR a dee-RAY-tɐ]","to turn right"],
+    ["virar à esquerda","[vee-RAR a ish-KEHR-dɐ]","to turn left"],
+    ["atravessar / passar","[ɐ-trɐ-vɐ-SAR]","to cross / to pass"],
+    ["contornar","[kon-tor-NAR]","to go around (a roundabout)"],
+    ["subir","[soo-BEER]","to go up"],
+    ["descer","[dɐ-SER]","to go down"],
+    ["enganar-se no caminho","[en-gɐ-NAR sɐ]","to take the wrong route"],
+    ["perder-se","[pɐr-DER sɐ]","to get lost"],
+    ["estar perdido/a","[ish-TAR pɐr-DEE-doo]","to be lost"],
+    ["demorar","[dɐ-moo-RAR]","to take (time) / to be long"],
+    ["ficar em frente","[fee-KAR ayng FRENT]","to be opposite"],
+    ["ficar na rua...","[fee-KAR nɐ ROO-ɐ]","to be on ... street"],
+  ],
+  verbPreps:[
+    { verb:"ir / seguir", preps:[
+      { prep:"em frente", ex:"Vai sempre em frente.", exen:"Go straight ahead." },
+      { prep:"pelo lado direito / esquerdo", ex:"Vai pelo lado direito.", exen:"Go along the right side." },
+      { prep:"pela rua... / pela avenida... / pelo largo...", ex:"Vai pela Rua Augusta.", exen:"Go along Rua Augusta." },
+      { prep:"por esta rua / avenida / largo", ex:"Vai por esta rua.", exen:"Go along this street." },
+      { prep:"até ao fim da rua / da avenida", ex:"Vai até ao fim da rua.", exen:"Go as far as the end of the street." },
+    ]},
+    { verb:"atravessar", preps:[
+      { prep:"a rua / a avenida / o largo", ex:"Atravessa a rua.", exen:"Cross the street." },
+    ]},
+    { verb:"virar / cortar", preps:[
+      { prep:"na rua... / na avenida... / no largo...", ex:"Vira na segunda rua.", exen:"Turn at the second street." },
+      { prep:"à esquerda / à direita", ex:"Vira à direita.", exen:"Turn right." },
+    ]},
+  ],
+  askingDirections:[
+    { pt:"Desculpe, sabe se há um banco aqui perto?", en:"Excuse me, do you know if there is a bank nearby?" },
+    { pt:"Faz favor, onde ficam os Correios?", en:"Excuse me, where is the post office?" },
+    { pt:"Pode dizer-me onde está a papelaria?", en:"Can you tell me where the stationer's is?" },
+    { pt:"Como é que vai para o Parque das Nações?", en:"How do I get to Parque das Nações?" },
+    { pt:"Qual é o melhor autocarro para a Baixa?", en:"Which is the best bus for Baixa?" },
+    { pt:"É muito longe?", en:"Is it very far?" },
+    { pt:"Vai na direção certa?", en:"Are you going in the right direction?" },
+    { pt:"Podia dar-me uma informação?", en:"Could you give me some information? (polite)" },
+  ],
+  givingDirections:[
+    { pt:"Vai sempre em frente.", en:"Go straight ahead." },
+    { pt:"Vira na primeira à esquerda / à direita.", en:"Turn at the first left / right." },
+    { pt:"Fica à esquerda do banco.", en:"It is to the left of the bank." },
+    { pt:"Fica em frente ao centro comercial.", en:"It is opposite the shopping centre." },
+    { pt:"Pode ir a pé, não é longe.", en:"You can walk, it is not far." },
+    { pt:"Enganou-se no caminho.", en:"You have taken the wrong route." },
+    { pt:"Penso que é o 31, mas não tenho a certeza.", en:"I think it is the 31, but I am not sure." },
+    { pt:"É melhor perguntar a outra pessoa.", en:"You'd better ask someone else." },
+  ],
+  dialogue:[
+    { role:"Catarina", text:"Faz favor. Podia dar-me uma informação?" },
+    { role:"X",        text:"Claro. Diga." },
+    { role:"Catarina", text:"Como é que vai para o Parque das Nações?" },
+    { role:"X",        text:"É fácil. Podem apanhar o autocarro ou ir de metro." },
+    { role:"Martim",   text:"Qual é o melhor transporte?" },
+    { role:"X",        text:"A paragem do autocarro fica ali, em frente à Faculdade de Direito, e o metro fica um bocadinho longe, atrás da Reitoria. A estação chama-se «Oriente»." },
+    { role:"Martim",   text:"Sabes qual é o número do autocarro?" },
+    { role:"X",        text:"Penso que é o 31, mas não tenho a certeza. É melhor perguntar a outra pessoa." },
+    { role:"Catarina", text:"Obrigada pela informação." },
+    { role:"X",        text:"De nada." },
+  ]
 };
 
 const D_CELEBRATIONS = {
@@ -4067,6 +4222,18 @@ articles: () => `
     </tr>`).join('')}</tbody>
   </table></div>
 
+  <h3 class="sub-heading">POR — 9 uses (usos detalhados)</h3>
+  ${infoBox('POR contracts with the definite article: por + o = <strong>pelo</strong>, por + a = <strong>pela</strong>, por + os = <strong>pelos</strong>, por + as = <strong>pelas</strong>.')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>Uso</th><th>English</th><th>Exemplo</th></tr></thead>
+    <tbody>${D_MOVEMENT_PREPS.detail.find(d=>d.prep==='por').uses.map((u,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-weight:800;color:var(--purple);font-size:13px">${u.n}</td>
+      <td style="font-weight:700;font-size:13px">${u.label}</td>
+      <td style="font-size:12px;color:var(--text-3)">${u.en}</td>
+      <td><div class="pt" style="font-size:13px">${u.ex}</div><div class="en" style="font-size:12px">${u.exen}</div></td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+
   <h3 class="sub-heading">EM vs A — location vs direction</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Use case</th><th>EM</th><th>A</th></tr></thead>
@@ -4795,12 +4962,14 @@ imperativo: () => `
       ${u.ex.map(e => `<div style="margin-bottom:6px"><div class="pt">${e[0]}</div><div class="en">${e[1]}</div></div>`).join('')}
     </div>`).join('')}</div>
   <h3 class="sub-heading">Irregular Imperative Forms</h3>
+  ${warnBox('TU: affirmative and negative are <strong>different forms</strong>. Aff = a special short form. Neg = não + present subjunctive. All other persons (VOCÊ/NÓS/VOCÊS) use the same subjunctive form in both affirmative and negative.')}
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Verb</th><th>English</th><th>TU (aff.)</th><th>VOCÊ (aff.)</th><th>NÓS</th><th>VOCÊS</th></tr></thead>
+    <thead><tr><th>Verb</th><th>English</th><th>TU ✅ aff.</th><th>TU ❌ neg.</th><th>VOCÊ</th><th>NÓS</th><th>VOCÊS</th></tr></thead>
     <tbody>${D_IMPERATIVO.irregular.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
       <td style="font-weight:800;color:var(--primary)">${r.verb}</td>
       <td style="font-size:12px;color:var(--text-3)">${r.en}</td>
-      <td class="pt" style="font-weight:800">${r.tu}</td>
+      <td class="pt" style="font-weight:800;color:var(--green)">${r.tu}</td>
+      <td class="pt" style="font-weight:800;color:var(--accent)">${r.tu_neg}</td>
       <td class="pt" style="font-weight:800">${r.voce}</td>
       <td class="pt">${r.nos}</td>
       <td class="pt">${r.voces}</td>
@@ -4909,6 +5078,87 @@ banking: () => `
       <span class="pt" style="font-size:13px">${l.text}</span>
     </div>`).join('')}
   </div>`).join('')}`,
+
+'car-maintenance': () => `
+  ${ctx('Car parts vocabulary, three types of car maintenance, mandatory inspection rules, and how to change a flat tyre safely.', 'Real-life survival vocabulary for driving in Portugal. The IPO inspection is obligatory — fines range from 250€ to 1,500€. Knowing maintenance types helps you understand what a mechanic is telling you.', 'Transport — public transport vocabulary; Survival Phrases — emergencies')}
+  ${sectionHead('Carro & Manutenção','UFCD 6454 Session 4','Vocabulário do automóvel. Tipos de manutenção: preventiva, preditiva, corretiva. Inspeção periódica (IPO). Como trocar um pneu furado.')}
+  <h3 class="sub-heading">🚗 Partes do carro — car parts</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_CAR.parts.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td>${pr(r[1])}</td>
+      <td class="en">${r[2]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🔧 Tipos de manutenção</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+    ${D_CAR.maintenance.types.map(t => `<div class="card" style="border-left:4px solid ${t.color}">
+      <div style="font-size:24px;margin-bottom:6px">${t.icon}</div>
+      <div style="font-weight:800;color:${t.color};margin-bottom:8px">${t.type}</div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:10px">${t.desc}</div>
+      <ul style="font-size:12px;padding-left:16px;color:var(--text-3);margin:0">
+        ${t.items.map(i => `<li class="pt">${i}</li>`).join('')}
+      </ul>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">📋 Inspeção Periódica Automóvel (IPO)</h3>
+  ${warnBox(D_CAR.maintenance.inspection.note)}
+  <h3 class="sub-heading">🛞 Como trocar um pneu furado — step by step</h3>
+  ${infoBox('Pense sempre na sua segurança. Conselhos para trocar um pneu furado.')}
+  <ol style="padding-left:20px;line-height:2">
+    ${D_CAR.maintenance.inspection.steps.map(s => `<li class="pt" style="font-size:14px">${s}</li>`).join('')}
+  </ol>`,
+
+'directions': () => `
+  ${ctx('Vocabulary for urban orientation, road signs, verb + preposition patterns for movement, and complete phrases for asking and giving directions.', 'Essential for daily life in Lisbon — navigating on foot, by metro, or by bus. The dialogue pattern (Podia dar-me uma informação?) is high-frequency and directly testable. Verb + preposition collocations (ir pelo / virar à / atravessar a) must be memorised as fixed chunks.', 'Location Expressions — static location prepositions; Transport — public transport; Prepositions & Articles — por/pelo contractions')}
+  ${sectionHead('Direções & Orientação','UFCD 6454 Session 4','Vocabulário de deslocação e orientação urbana. Sinais de trânsito. Verbos de movimento com preposições. Pedir e dar informações sobre direções.')}
+  <h3 class="sub-heading">🗺️ Vocabulário de orientação</h3>
+  ${vocabGrid(D_DIRECTIONS.orientationVocab)}
+  <h3 class="sub-heading">🚶 Verbos de movimento e orientação</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_DIRECTIONS.movementVerbs.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td>${pr(r[1])}</td>
+      <td class="en">${r[2]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+  <h3 class="sub-heading">📐 Verbo + preposição de movimento</h3>
+  ${infoBox('Fixed collocations — memorise these as complete chunks, not word-by-word.')}
+  <div style="display:grid;gap:12px;margin-bottom:20px">
+    ${D_DIRECTIONS.verbPreps.map(vp => `<div class="card">
+      <div style="font-weight:800;color:var(--primary);font-size:15px;margin-bottom:10px">🔹 ${vp.verb}</div>
+      ${vp.preps.map(p => `<div style="display:flex;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);align-items:baseline">
+        <span style="min-width:220px;font-weight:700;font-size:13px;color:var(--purple)">${p.prep}</span>
+        <span class="pt" style="font-size:13px">${p.ex}</span>
+        <span class="en" style="font-size:12px;margin-left:8px">${p.exen}</span>
+      </div>`).join('')}
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">❓ Pedir informações — asking directions</h3>
+  <div class="card-grid">
+    ${D_DIRECTIONS.askingDirections.map(r => `<div class="card-sm">
+      <div class="pt" style="font-weight:700">${r.pt}</div>
+      <div class="en">${r.en}</div>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">✅ Dar informações — giving directions</h3>
+  <div class="card-grid">
+    ${D_DIRECTIONS.givingDirections.map(r => `<div class="card-sm">
+      <div class="pt" style="font-weight:700">${r.pt}</div>
+      <div class="en">${r.en}</div>
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">🗨️ Diálogo — Como ir para o Parque das Nações?</h3>
+  <div class="card" style="margin-bottom:16px">
+    ${D_DIRECTIONS.dialogue.map((l,i) => `<div style="display:flex;gap:10px;padding:5px 0;border-bottom:1px solid var(--border)">
+      <span style="font-weight:800;min-width:90px;font-size:12px;color:${l.role==='X'?'var(--accent)':'var(--primary)'}">${l.role}:</span>
+      <span class="pt" style="font-size:13px">${l.text}</span>
+    </div>`).join('')}
+  </div>`,
+
+
 
 };
 
