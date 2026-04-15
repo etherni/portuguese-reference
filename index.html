@@ -473,7 +473,8 @@ const NAV = [
     { id:"identity",    title:"Identity" },
     { id:"family",      title:"Family" },
     { id:"house",       title:"House & Home" },
-    { id:"description", title:"Description" },
+    { id:"body",        title:"Corpo Humano & Sentidos" },
+    { id:"description", title:"Descrição Física" },
     { id:"money",          title:"Money & Prices" },
     { id:"payments",       title:"Payments & Documents" },
     { id:"measurements",   title:"Units of Measure" },
@@ -647,9 +648,9 @@ const D_NUMBERS = {
     [900, "novecentos",  "novecentas",     "[nov-SENT-oosh]", "[nov-SENT-ɐsh]",    ""],
   ],
   ordinals:[
-    ["1st","primeiro/a","[pree-MAY-roo]"],["2nd","segundo/a","[sɐ-GOON-doo]"],
-    ["3rd","terceiro/a","[ter-SAY-roo]"],["4th","quarto/a","[KWAR-too]"],
-    ["5th","quinto/a","[KEEN-too]"],["last","último/a","[OOL-tee-moo]"],
+    ["🥇 1st","primeiro/a","[pree-MAY-roo]"],["🥈 2nd","segundo/a","[sɐ-GOON-doo]"],
+    ["🥉 3rd","terceiro/a","[ter-SAY-roo]"],["4th","quarto/a","[KWAR-too]"],
+    ["5th","quinto/a","[KEEN-too]"],["🏁 last","último/a","[OOL-tee-moo]"],
   ]
 };
 
@@ -912,33 +913,33 @@ const D_LEISURE = {
   ruralUrban:{
     note:"A zona rural é uma zona de campo, onde há mais natureza, se cultivam alimentos e se criam animais. A zona urbana é onde encontramos mais desenvolvimento e agitação — o espaço das cidades.",
     rural:[
-      ["acampar","[ɐ-kam-PAR]","to camp"],
-      ["fazer caminhadas","[fɐ-SEHR kɐ-meen-YA-dɐsh]","to go hiking"],
-      ["pescar","[pɐsh-KAR]","to fish"],
-      ["andar a cavalo","[ɐn-DAR ɐ kɐ-VA-loo]","to horse-ride"],
-      ["apanhar cogumelos","[ɐ-pɐ-NYAR koo-goo-MEH-loosh]","to pick mushrooms"],
-      ["conviver com a natureza","","to enjoy nature"],
+      ["🏕️ acampar","[ɐ-kam-PAR]","to camp"],
+      ["🥾 fazer caminhadas","[fɐ-SEHR kɐ-meen-YA-dɐsh]","to go hiking"],
+      ["🎣 pescar","[pɐsh-KAR]","to fish"],
+      ["🐴 andar a cavalo","[ɐn-DAR ɐ kɐ-VA-loo]","to horse-ride"],
+      ["🍄 apanhar cogumelos","[ɐ-pɐ-NYAR koo-goo-MEH-loosh]","to pick mushrooms"],
+      ["🌿 conviver com a natureza","","to enjoy nature"],
     ],
     urban:[
-      ["ir às compras","[eer ɐsh KOM-prɐsh]","to go shopping"],
-      ["ver as montras","[vehr ɐsh MON-trɐsh]","to window-shop"],
-      ["ir ao ginásio","[eer ow zhee-NA-zyoo]","to go to the gym"],
-      ["ir a um bar","[eer ɐ oong bar]","to go to a bar"],
-      ["ir à discoteca","[eer a deesh-koo-TEH-kɐ]","to go clubbing"],
-      ["ir ao cinema","[eer ow see-NEH-mɐ]","to go to the cinema"],
-      ["ir ao teatro","[eer ow tyA-troo]","to go to the theatre"],
-      ["assistir a um festival de música","[ɐ-seesh-TEER]","to attend a music festival"],
+      ["🛍️ ir às compras","[eer ɐsh KOM-prɐsh]","to go shopping"],
+      ["👀 ver as montras","[vehr ɐsh MON-trɐsh]","to window-shop"],
+      ["🏋️ ir ao ginásio","[eer ow zhee-NA-zyoo]","to go to the gym"],
+      ["🍺 ir a um bar","[eer ɐ oong bar]","to go to a bar"],
+      ["💃 ir à discoteca","[eer a deesh-koo-TEH-kɐ]","to go clubbing"],
+      ["🎬 ir ao cinema","[eer ow see-NEH-mɐ]","to go to the cinema"],
+      ["🎭 ir ao teatro","[eer ow tyA-troo]","to go to the theatre"],
+      ["🎟️ assistir a um festival de música","[ɐ-seesh-TEER]","to attend a music festival"],
       ["ir a um concerto","[eer ɐ oong kon-SEHR-too]","to go to a concert"],
     ]
   },
   general:[
     ["ver televisão","[vehr tɐ-lɐ-vee-ZOWNG]","to watch television"],
-    ["ouvir música","[OH-veer moo-ZEE-kɐ]","to listen to music"],
-    ["ler","[lehr]","to read"],
+    ["🎵 ouvir música","[OH-veer moo-ZEE-kɐ]","to listen to music"],
+    ["📖 ler","[lehr]","to read"],
     ["passear","[pɐ-syAR]","to go for a walk / stroll"],
     ["conversar","[kong-vɐr-SAR]","to chat / socialise"],
-    ["dançar","[dɐn-SAR]","to dance"],
-    ["viajar","[vyɐ-ZHAR]","to travel"],
+    ["💃 dançar","[dɐn-SAR]","to dance"],
+    ["✈️ viajar","[vyɐ-ZHAR]","to travel"],
     ["ir à praia","[eer a PRAi-ɐ]","to go to the beach"],
     ["fazer desporto","[fɐ-SEHR dɐsh-POR-too]","to do sport"],
     ["fazer exercício","[fɐ-SEHR ɐ-zer-SEE-zyoo]","to exercise"],
@@ -950,7 +951,7 @@ const D_LEISURE = {
     { pt:"O que é que costumas fazer nos tempos livres?", pron:"[oo kɐ ish-kɐ koosh-TOO-mɐsh]", en:"What do you usually do in your free time?" },
     { pt:"O que é que vais fazer este fim de semana?",    pron:"[oo kɐ ish-kɐ vaish fɐ-SEHR]",   en:"What are you going to do this weekend?" },
     { pt:"Prefiro atividades ao ar livre.",               pron:"[prɐ-FEE-roo ow ar LEEV-r]",      en:"I prefer outdoor activities." },
-    { pt:"Não tenho muito tempo livre.",                  pron:"[nowng TAYN-yoo MWEE-too TEMP-oo LEEV-r]", en:"I don't have much free time." },
+    { pt:"❌ Não tenho muito tempo livre.",                  pron:"[nowng TAYN-yoo MWEE-too TEMP-oo LEEV-r]", en:"I don't have much free time." },
     { pt:"A ocupação do tempo livre depende da idade e dos recursos.",pron:"",                     en:"How people spend free time depends on age and available resources." },
     { pt:"As cidades têm mais equipamentos de lazer.",    pron:"",                                 en:"Cities generally have more leisure facilities." },
   ]
@@ -1229,16 +1230,16 @@ const D_ESTAR_PATTERNS = {
 
 const D_SEASONS = {
   seasons: [
-    { pt:"a primavera", pron:"[ɐ pree-mɐ-VEH-rɐ]", en:"spring", months:"março, abril, maio" },
-    { pt:"o verão", pron:"[oo vɐ-ROWNG]", en:"summer", months:"junho, julho, agosto" },
-    { pt:"o outono", pron:"[oo oh-TOH-noo]", en:"autumn / fall", months:"setembro, outubro, novembro" },
-    { pt:"o inverno", pron:"[oo in-VEHR-noo]", en:"winter", months:"dezembro, janeiro, fevereiro" },
+    { pt:"🌸 a primavera", pron:"[ɐ pree-mɐ-VEH-rɐ]", en:"spring", months:"março, abril, maio" },
+    { pt:"☀️ o verão", pron:"[oo vɐ-ROWNG]", en:"summer", months:"junho, julho, agosto" },
+    { pt:"🍂 o outono", pron:"[oo oh-TOH-noo]", en:"autumn / fall", months:"setembro, outubro, novembro" },
+    { pt:"❄️ o inverno", pron:"[oo in-VEHR-noo]", en:"winter", months:"dezembro, janeiro, fevereiro" },
   ],
   timeOfDay: [
-    { pt:"a manhã", pron:"[ɐ mɐ-NYUNG]", en:"morning", hours:"~6h–12h" },
-    { pt:"a tarde", pron:"[ɐ TAR-d]", en:"afternoon", hours:"~12h–19h" },
-    { pt:"a noite", pron:"[ɐ NOYT]", en:"evening / night", hours:"~19h–24h" },
-    { pt:"a madrugada", pron:"[ɐ mɐ-droo-GA-dɐ]", en:"early morning / dawn", hours:"~0h–6h" },
+    { pt:"🌅 a manhã", pron:"[ɐ mɐ-NYUNG]", en:"morning", hours:"~6h–12h" },
+    { pt:"🌤️ a tarde", pron:"[ɐ TAR-d]", en:"afternoon", hours:"~12h–19h" },
+    { pt:"🌙 a noite", pron:"[ɐ NOYT]", en:"evening / night", hours:"~19h–24h" },
+    { pt:"🌃 a madrugada", pron:"[ɐ mɐ-droo-GA-dɐ]", en:"early morning / dawn", hours:"~0h–6h" },
   ],
   clock: [
     { q:"Que horas são?", pron:"[kɐ OH-rɐsh sowng]", en:"What time is it?" },
@@ -1503,26 +1504,26 @@ const D_COM_PRONOMES = {
 
 const D_SPORTS = {
   top5most:[
-    { sport:"Futebol",       athletes:"190 865", note:"Most popular by far — national identity" },
-    { sport:"Voleibol",      athletes:"53 316",  note:"Praia (beach) and indoor" },
-    { sport:"Andebol",       athletes:"45 394",  note:"Strong national team" },
-    { sport:"Basquetebol",   athletes:"26 608",  note:"" },
-    { sport:"Natação",       athletes:"21 479",  note:"Multiple disciplines (see below)" },
+    { sport:"⚽ Futebol",       athletes:"190 865", note:"Most popular by far — national identity" },
+    { sport:"🏐 Voleibol",      athletes:"53 316",  note:"Praia (beach) and indoor" },
+    { sport:"🤾 Andebol",       athletes:"45 394",  note:"Strong national team" },
+    { sport:"🏀 Basquetebol",   athletes:"26 608",  note:"" },
+    { sport:"🏊 Natação",       athletes:"21 479",  note:"Multiple disciplines (see below)" },
   ],
   top5least:[
-    { sport:"Desportos de inverno", athletes:"118",   note:"Limited mountains in Portugal" },
-    { sport:"Aeronáutica",          athletes:"174",   note:"" },
-    { sport:"Tiro com Arco",        athletes:"175",   note:"Archery" },
-    { sport:"Pesca de Alto Mar",    athletes:"292",   note:"Deep sea fishing" },
-    { sport:"Motonáutica",          athletes:"308",   note:"Powerboat racing" },
+    { sport:"⛷️ Desportos de inverno", athletes:"118",   note:"Limited mountains in Portugal" },
+    { sport:"✈️ Aeronáutica",          athletes:"174",   note:"" },
+    { sport:"🏹 Tiro com Arco",        athletes:"175",   note:"Archery" },
+    { sport:"🎣 Pesca de Alto Mar",    athletes:"292",   note:"Deep sea fishing" },
+    { sport:"🚤 Motonáutica",          athletes:"308",   note:"Powerboat racing" },
   ],
   natacao:[
-    ["Natação pura","[nɐ-tɐ-SOWNG POO-rɐ]","competitive swimming"],
-    ["Polo aquático","[POH-loo ɐ-KWA-tee-koo]","water polo"],
-    ["Saltos para a água","[SAL-toosh PA-rɐ ɐ A-gwɐ]","diving"],
-    ["Natação sincronizada","[sing-kroo-nee-ZA-dɐ]","artistic / synchronised swimming"],
-    ["Natação em águas abertas","[A-gwɐsh ɐ-BEHR-tɐsh]","open water swimming"],
-    ["Natação adaptada","[ɐ-dɐp-TA-dɐ]","para/adaptive swimming"],
+    ["🏊 Natação pura","[nɐ-tɐ-SOWNG POO-rɐ]","competitive swimming"],
+    ["🤽 Polo aquático","[POH-loo ɐ-KWA-tee-koo]","water polo"],
+    ["🏊‍♂️ Saltos para a água","[SAL-toosh PA-rɐ ɐ A-gwɐ]","diving"],
+    ["🤸 Natação sincronizada","[sing-kroo-nee-ZA-dɐ]","artistic / synchronised swimming"],
+    ["🌊 Natação em águas abertas","[A-gwɐsh ɐ-BEHR-tɐsh]","open water swimming"],
+    ["♿ Natação adaptada","[ɐ-dɐp-TA-dɐ]","para/adaptive swimming"],
     ["Natação Masters","","masters swimming (adults 25+)"],
   ],
   atletismo:[
@@ -1580,21 +1581,21 @@ const D_SPORTS = {
 
 const D_MONEY = {
   currency: [
-    ["euro","[EH-oo-roo]","€ — currency of Portugal (and EU)"],
+    ["💶 euro","[EH-oo-roo]","€ — currency of Portugal (and EU)"],
     ["cêntimo/s","[SEN-tee-moo]","cent(s) — 100 cêntimos = 1 euro"],
     ["tostão","[toosh-TOWNG]","old slang for small coin, still used colloquially"],
-    ["pagar","[pɐ-GAR]","to pay"],
+    ["💳 pagar","[pɐ-GAR]","to pay"],
     ["cobrar","[koo-BRAR]","to charge"],
-    ["troco","[TROH-koo]","change (money returned)"],
+    ["💰 troco","[TROH-koo]","change (money returned)"],
     ["nota","[NOH-tɐ]","banknote"],
     ["moeda","[moo-EH-dɐ]","coin"],
-    ["cartão de crédito","[kar-TOWNG dɐ KREH-dee-too]","credit card"],
+    ["💳 cartão de crédito","[kar-TOWNG dɐ KREH-dee-too]","credit card"],
     ["multibanco","[mool-tee-BAN-koo]","ATM / debit card payment (Portugal-specific term)"],
     ["talão","[tɐ-LOWNG]","receipt"],
     ["desconto","[dɐsh-KON-too]","discount"],
   ],
   phrases: [
-    { pt:"Quanto custa?",           pron:"[KWAN-too KOOSH-tɐ]",       en:"How much does it cost?" },
+    { pt:"💶 Quanto custa?",           pron:"[KWAN-too KOOSH-tɐ]",       en:"How much does it cost?" },
     { pt:"Quanto é?",               pron:"[KWAN-too eh]",              en:"How much is it?" },
     { pt:"Qual é o preço?",         pron:"[kwal eh oo PRAY-soo]",      en:"What is the price?" },
     { pt:"É muito caro/barato.",    pron:"[eh MWEE-too KA-roo / bɐ-RA-too]", en:"It is very expensive/cheap." },
@@ -1715,14 +1716,14 @@ const D_MEASUREMENTS = {
 
 const D_PAYMENTS = {
   methods:[
-    { pt:"dinheiro / numerário",  pron:"[deen-YAYE-roo / noo-mɐ-RA-ryoo]", en:"cash",             note:"Notas e moedas" },
-    { pt:"cartão de débito",      pron:"[kar-TOWNG dɐ DEH-bee-too]",        en:"debit card",        note:"Linked directly to your bank account" },
+    { pt:"💵 dinheiro / numerário",  pron:"[deen-YAYE-roo / noo-mɐ-RA-ryoo]", en:"cash",             note:"Notas e moedas" },
+    { pt:"💳 cartão de débito",      pron:"[kar-TOWNG dɐ DEH-bee-too]",        en:"debit card",        note:"Linked directly to your bank account" },
     { pt:"cartão de crédito",     pron:"[kar-TOWNG dɐ KREH-dee-too]",       en:"credit card",       note:"Pay later; interest if not cleared monthly" },
-    { pt:"multibanco / MB",       pron:"[mool-tee-BAN-koo]",                en:"ATM / card payment (Portugal)", note:"Portugal's own card payment network — ubiquitous" },
-    { pt:"MB Way",                pron:"[em-BEH way]",                      en:"mobile payment app",note:"Portuguese mobile payment: transfer money via phone number" },
-    { pt:"transferência bancária",pron:"[trɐnsh-fɐ-REN-syɐ bɐn-KA-ryɐ]",  en:"bank transfer",     note:"Requires IBAN of recipient" },
+    { pt:"🏧 multibanco / MB",       pron:"[mool-tee-BAN-koo]",                en:"ATM / card payment (Portugal)", note:"Portugal's own card payment network — ubiquitous" },
+    { pt:"📱 MB Way",                pron:"[em-BEH way]",                      en:"mobile payment app",note:"Portuguese mobile payment: transfer money via phone number" },
+    { pt:"🏦 transferência bancária",pron:"[trɐnsh-fɐ-REN-syɐ bɐn-KA-ryɐ]",  en:"bank transfer",     note:"Requires IBAN of recipient" },
     { pt:"débito direto",         pron:"[DEH-bee-too dee-REH-too]",          en:"direct debit",      note:"Automatic monthly payment (utilities, subscriptions)" },
-    { pt:"cheque",                pron:"[SHEK]",                            en:"cheque",            note:"Rare — mostly replaced by transfers" },
+    { pt:"📝 cheque",                pron:"[SHEK]",                            en:"cheque",            note:"Rare — mostly replaced by transfers" },
   ],
   card:[
     { n:"1", pt:"chip EMV",              en:"EMV chip (Europay, Mastercard, Visa)",  note:"Transmits encrypted transaction data; generates a unique code per transaction" },
@@ -1738,15 +1739,15 @@ const D_PAYMENTS = {
   ],
   documents:[
     { pt:"o talão",          pron:"[oo tɐ-LOWNG]",          en:"till receipt / slip",       note:"Não é um documento legal — comprova apenas a transação comercial. Dado automaticamente." },
-    { pt:"a fatura",         pron:"[ɐ fɐ-TOO-rɐ]",          en:"invoice / tax receipt",     note:"Documento comprovativo de transação comercial. Necessária para declaração de IRS (e-fatura). Pedida ao dar o NIF." },
-    { pt:"o recibo",         pron:"[oo hɐ-SEE-boo]",         en:"receipt (proof of payment)",note:"Comprova que o pagamento foi efectuado. Emitido com a fatura quando o pagamento é realizado." },
+    { pt:"📄 a fatura",         pron:"[ɐ fɐ-TOO-rɐ]",          en:"invoice / tax receipt",     note:"Documento comprovativo de transação comercial. Necessária para declaração de IRS (e-fatura). Pedida ao dar o NIF." },
+    { pt:"🧾 o recibo",         pron:"[oo hɐ-SEE-boo]",         en:"receipt (proof of payment)",note:"Comprova que o pagamento foi efectuado. Emitido com a fatura quando o pagamento é realizado." },
     { pt:"a fatura-recibo",  pron:"[ɐ fɐ-TOO-rɐ hɐ-SEE-boo]",en:"combined invoice+receipt", note:"Documento único que serve como fatura e recibo em simultâneo — comum em prestação de serviços." },
   ],
   at:{
     name:"Autoridade Tributária (AT)",
     note:"A AT é a entidade pública portuguesa que controla a autenticidade e faz a coleta tributária de todos os documentos fiscais. Gere o sistema e-fatura, IRS (imposto sobre rendimento de pessoas singulares) e IRC (imposto sobre o rendimento das pessoas coletivas — empresas).",
     terms:[
-      ["NIF", "Número de Identificação Fiscal","Your Portuguese tax number — required when requesting a fatura. Present it at shops to accumulate tax deductions."],
+      ["🆔 NIF", "Número de Identificação Fiscal","Your Portuguese tax number — required when requesting a fatura. Present it at shops to accumulate tax deductions."],
       ["IRS", "Imposto sobre o Rendimento das Pessoas Singulares","Personal income tax — filed annually by individuals"],
       ["IRC", "Imposto sobre o Rendimento das Pessoas Coletivas","Corporate tax — paid by companies"],
       ["e-fatura", "Portal de faturas electrónicas","Online AT portal where all your received faturas are registered — used for IRS deductions"],
@@ -1771,32 +1772,32 @@ const D_PAYMENTS = {
 
 const D_TRANSPORT = {
   vehicles: [
-    ["o comboio","[oo kom-BOY-oo]","train (EU Portuguese — NOT trem)"],
-    ["o autocarro","[oo ow-too-KA-hroo]","bus"],
-    ["o metro","[oo MEH-troo]","metro / subway"],
-    ["o elétrico","[oo ee-LEH-tree-koo]","tram"],
-    ["a camioneta","[ɐ kɐ-myoo-NEH-tɐ]","long-distance coach / minibus"],
-    ["o táxi","[oo TAK-see]","taxi"],
-    ["o barco","[oo BAR-koo]","boat / ferry"],
-    ["o avião","[oo ɐ-vyOWNG]","aeroplane"],
-    ["o helicóptero","[oo ɐ-lee-KO-tɐ-roo]","helicopter"],
-    ["a bicicleta","[ɐ bee-see-KLEH-tɐ]","bicycle"],
-    ["o carro","[oo KA-hroo]","car"],
-    ["a mota","[ɐ MOH-tɐ]","motorbike"],
-    ["a pé","[ɐ peh]","on foot (not a vehicle, but how you travel)"],
+    ["🚂 o comboio","[oo kom-BOY-oo]","train (EU Portuguese — NOT trem)"],
+    ["🚌 o autocarro","[oo ow-too-KA-hroo]","bus"],
+    ["🚇 o metro","[oo MEH-troo]","metro / subway"],
+    ["🚃 o elétrico","[oo ee-LEH-tree-koo]","tram"],
+    ["🚐 a camioneta","[ɐ kɐ-myoo-NEH-tɐ]","long-distance coach / minibus"],
+    ["🚕 o táxi","[oo TAK-see]","taxi"],
+    ["⛵ o barco","[oo BAR-koo]","boat / ferry"],
+    ["✈️ o avião","[oo ɐ-vyOWNG]","aeroplane"],
+    ["🚁 o helicóptero","[oo ɐ-lee-KO-tɐ-roo]","helicopter"],
+    ["🚲 a bicicleta","[ɐ bee-see-KLEH-tɐ]","bicycle"],
+    ["🚗 o carro","[oo KA-hroo]","car"],
+    ["🏍️ a mota","[ɐ MOH-tɐ]","motorbike"],
+    ["🚶 a pé","[ɐ peh]","on foot (not a vehicle, but how you travel)"],
   ],
   stops: [
-    ["a paragem de autocarro","[ɐ pɐ-RA-zhayng dɐ ow-too-KA-hroo]","bus stop"],
-    ["a paragem de metro","[ɐ pɐ-RA-zhayng dɐ MEH-troo]","metro stop"],
-    ["a paragem de elétrico","[ɐ pɐ-RA-zhayng dɐ ee-LEH-tree-koo]","tram stop"],
-    ["a paragem de táxis","[ɐ pɐ-RA-zhayng dɐ TAK-seesh]","taxi rank"],
-    ["a estação de comboios","[ɐ ish-tɐ-SOWNG dɐ kom-BOY-oosh]","train station"],
+    ["🚏 a paragem de autocarro","[ɐ pɐ-RA-zhayng dɐ ow-too-KA-hroo]","bus stop"],
+    ["🚇 a paragem de metro","[ɐ pɐ-RA-zhayng dɐ MEH-troo]","metro stop"],
+    ["🚃 a paragem de elétrico","[ɐ pɐ-RA-zhayng dɐ ee-LEH-tree-koo]","tram stop"],
+    ["🚕 a paragem de táxis","[ɐ pɐ-RA-zhayng dɐ TAK-seesh]","taxi rank"],
+    ["🚂 a estação de comboios","[ɐ ish-tɐ-SOWNG dɐ kom-BOY-oosh]","train station"],
     ["a estação de metro","[ɐ ish-tɐ-SOWNG dɐ MEH-troo]","metro station"],
-    ["o aeroporto","[oo ɐ-ee-roo-POR-too]","airport"],
+    ["✈️ o aeroporto","[oo ɐ-ee-roo-POR-too]","airport"],
     ["o cais do barco / Transtejo","[oo kaish doo BAR-koo]","ferry pier / Tagus ferry (Transtejo)"],
   ],
   tickets: [
-    ["o passe","[oo PAS]","monthly/weekly travel pass"],
+    ["🪪 o passe","[oo PAS]","monthly/weekly travel pass"],
     ["o bilhete simples","[oo beel-YET SIM-plɐsh]","single ticket"],
     ["o bilhete de ida","[oo beel-YET dɐ EE-dɐ]","one-way ticket"],
     ["o bilhete de ida e volta","[oo beel-YET dɐ EE-dɐ ee VOL-tɐ]","return ticket"],
@@ -1816,7 +1817,7 @@ const D_TRANSPORT = {
     ["a partida","[ɐ pɐr-TEE-dɐ]","departure"],
     ["atrasado/a","[ɐ-trɐ-ZA-doo]","late / delayed"],
     ["a tempo","[ɐ TEMP-oo]","on time"],
-    ["a carreira","[ɐ kɐ-HAY-rɐ]","bus route/number"],
+    ["🚌 a carreira","[ɐ kɐ-HAY-rɐ]","bus route/number"],
     ["a correspondência","[ɐ koo-rɐsh-pon-DEN-syɐ]","transfer (changing lines)"],
   ],
   phrases: [
@@ -1844,18 +1845,18 @@ const D_TRANSPORT = {
 const D_LOCATION = {
   note: "Locuções de lugar (location expressions) tell you WHERE something is. They always combine with a preposition and usually contract with the article: em + frente + de + a = em frente da.",
   expressions: [
-    { pt:"em cima de",       pron:"[ayng SEE-mɐ dɐ]",      en:"on top of / above",        opposite:"debaixo de",    ex:"O livro está em cima da mesa." },
-    { pt:"debaixo de",       pron:"[dɐ-BAI-shoo dɐ]",      en:"under / below",            opposite:"em cima de",    ex:"O gato está debaixo da cadeira." },
-    { pt:"dentro de",        pron:"[DEN-troo dɐ]",          en:"inside / within",          opposite:"fora de",       ex:"As chaves estão dentro da mala." },
-    { pt:"fora de",          pron:"[FOH-rɐ dɐ]",            en:"outside / out of",         opposite:"dentro de",     ex:"O cão está fora de casa." },
-    { pt:"à frente de",      pron:"[a FRENT dɐ]",           en:"in front of",              opposite:"atrás de",      ex:"O carro está à frente do banco." },
-    { pt:"em frente de/a",   pron:"[ayng FRENT dɐ]",        en:"facing / opposite",        opposite:"atrás de",      ex:"O cinema fica em frente da estação." },
-    { pt:"atrás de",         pron:"[ɐ-TRASH dɐ]",           en:"behind",                   opposite:"à frente de",   ex:"O jardim está atrás da escola." },
-    { pt:"ao lado de",       pron:"[ow LA-doo dɐ]",         en:"next to / beside",         opposite:"longe de",      ex:"A farmácia fica ao lado do supermercado." },
-    { pt:"entre",            pron:"[EN-trɐ]",               en:"between / among",          opposite:"",              ex:"O banco fica entre o café e a loja." },
-    { pt:"perto de",         pron:"[PER-too dɐ]",           en:"near / close to",          opposite:"longe de",      ex:"Fico perto do trabalho." },
-    { pt:"longe de",         pron:"[LONG-dɐ dɐ]",           en:"far from",                 opposite:"perto de",      ex:"Moro longe do centro." },
-    { pt:"em frente a",      pron:"[ayng FRENT ɐ]",         en:"opposite / across from",   opposite:"",              ex:"O hotel fica em frente à estação." },
+    { pt:"⬆️ em cima de",       pron:"[ayng SEE-mɐ dɐ]",      en:"on top of / above",        opposite:"debaixo de",    ex:"O livro está em cima da mesa." },
+    { pt:"⬇️ debaixo de",       pron:"[dɐ-BAI-shoo dɐ]",      en:"under / below",            opposite:"em cima de",    ex:"O gato está debaixo da cadeira." },
+    { pt:"📦 dentro de",        pron:"[DEN-troo dɐ]",          en:"inside / within",          opposite:"fora de",       ex:"As chaves estão dentro da mala." },
+    { pt:"🚪 fora de",          pron:"[FOH-rɐ dɐ]",            en:"outside / out of",         opposite:"dentro de",     ex:"O cão está fora de casa." },
+    { pt:"⬛ à frente de",      pron:"[a FRENT dɐ]",           en:"in front of",              opposite:"atrás de",      ex:"O carro está à frente do banco." },
+    { pt:"↔️ em frente de/a",   pron:"[ayng FRENT dɐ]",        en:"facing / opposite",        opposite:"atrás de",      ex:"O cinema fica em frente da estação." },
+    { pt:"🔙 atrás de",         pron:"[ɐ-TRASH dɐ]",           en:"behind",                   opposite:"à frente de",   ex:"O jardim está atrás da escola." },
+    { pt:"◀️▶️ ao lado de",       pron:"[ow LA-doo dɐ]",         en:"next to / beside",         opposite:"longe de",      ex:"A farmácia fica ao lado do supermercado." },
+    { pt:"↔️ entre",            pron:"[EN-trɐ]",               en:"between / among",          opposite:"",              ex:"O banco fica entre o café e a loja." },
+    { pt:"🔵 perto de",         pron:"[PER-too dɐ]",           en:"near / close to",          opposite:"longe de",      ex:"Fico perto do trabalho." },
+    { pt:"⚪ longe de",         pron:"[LONG-dɐ dɐ]",           en:"far from",                 opposite:"perto de",      ex:"Moro longe do centro." },
+    { pt:"🔁 em frente a",      pron:"[ayng FRENT ɐ]",         en:"opposite / across from",   opposite:"",              ex:"O hotel fica em frente à estação." },
   ],
   questions: [
     { q:"Onde fica o banco?",         a:"Na Rua Augusta, em frente da Faculdade.",   en_q:"Where is the bank?",       en_a:"On Rua Augusta, opposite the Faculty." },
@@ -1971,12 +1972,12 @@ const D_MOVEMENT_PREPS = {
 
 const D_FOOD = {
   meals: [
-    { meal:"o pequeno-almoço", pron:"[oo pɐ-KEH-noo al-MOH-soo]", en:"breakfast", time:"~7h–10h", verb:"tomar / comer ao pequeno-almoço" },
-    { meal:"o lanche (da manhã)", pron:"[oo LANSH dɐ mɐ-NYUNG]", en:"mid-morning snack", time:"~10h–11h", verb:"lanchar" },
-    { meal:"o almoço", pron:"[oo al-MOH-soo]", en:"lunch", time:"~12h30–14h", verb:"almoçar / comer ao almoço" },
-    { meal:"o lanche (da tarde)", pron:"[oo LANSH dɐ TAR-d]", en:"afternoon snack", time:"~16h–17h", verb:"lanchar" },
-    { meal:"o jantar", pron:"[oo zhɐn-TAR]", en:"dinner", time:"~19h30–21h", verb:"jantar / comer ao jantar" },
-    { meal:"a ceia", pron:"[ɐ SAY-ɐ]", en:"supper (late)", time:"~22h+", verb:"cear" },
+    { meal:"☕ o pequeno-almoço", pron:"[oo pɐ-KEH-noo al-MOH-soo]", en:"breakfast", time:"~7h–10h", verb:"tomar / comer ao pequeno-almoço" },
+    { meal:"🍎 o lanche (da manhã)", pron:"[oo LANSH dɐ mɐ-NYUNG]", en:"mid-morning snack", time:"~10h–11h", verb:"lanchar" },
+    { meal:"🍽️ o almoço", pron:"[oo al-MOH-soo]", en:"lunch", time:"~12h30–14h", verb:"almoçar / comer ao almoço" },
+    { meal:"🍰 o lanche (da tarde)", pron:"[oo LANSH dɐ TAR-d]", en:"afternoon snack", time:"~16h–17h", verb:"lanchar" },
+    { meal:"🌙 o jantar", pron:"[oo zhɐn-TAR]", en:"dinner", time:"~19h30–21h", verb:"jantar / comer ao jantar" },
+    { meal:"🌙 a ceia", pron:"[ɐ SAY-ɐ]", en:"supper (late)", time:"~22h+", verb:"cear" },
   ],
   mealVerbs: [
     ["tomar o pequeno-almoço","[too-MAR]","to have breakfast"],
@@ -2081,7 +2082,7 @@ const D_SUPERMARKET = {
 
 const D_TYPICAL_DISHES = {
   bacalhau:{
-    note:"Portugal has over 365 bacalhau recipes — one for every day of the year. Bacalhau is dried and salted cod that must be soaked in water for 24–48 hours before cooking.",
+    note:"🐟 Portugal has over 365 bacalhau recipes — one for every day of the year. Bacalhau is dried and salted cod that must be soaked in water for 24–48 hours before cooking.",
     dishes:[
       { pt:"Bacalhau à Gomes de Sá",          en:"Baked cod with potatoes, onions, olives and eggs — Porto classic" },
       { pt:"Bacalhau à Brás",                 en:"Shredded cod with fried potatoes, scrambled eggs and olives" },
@@ -2106,17 +2107,17 @@ const D_TYPICAL_DISHES = {
     ]
   },
   carnes:[
-    { pt:"Cozido à portuguesa",       en:"Boiled meat and vegetable stew — Portugal's national dish; includes different meats, chouriço, vegetables and chickpeas" },
+    { pt:"🍲 Cozido à portuguesa",       en:"Boiled meat and vegetable stew — Portugal's national dish; includes different meats, chouriço, vegetables and chickpeas" },
     { pt:"Cozido das Furnas",         en:"Cozido cooked underground using geothermal heat in the Azores" },
     { pt:"Espetadas da Madeira",      en:"Beef kebabs on laurel wood skewers — Madeiran speciality" },
     { pt:"Cozido de grão à alentejana", en:"Chickpea stew from Alentejo" },
     { pt:"Migas de Évora",            en:"Bread-based side dish from Évora, Alentejo" },
     { pt:"Ensopado de Arraiolos",     en:"Lamb stew from Arraiolos" },
-    { pt:"Chanfana",                  en:"Goat or lamb slowly braised in red wine — Coimbra region" },
-    { pt:"Leitão assado",             en:"Roast suckling pig — famous from Mealhada, Bairrada" },
-    { pt:"Francesinha",               en:"Porto sandwich — meat layers in bread, covered in hot spicy tomato-beer sauce and melted cheese" },
+    { pt:"🍖 Chanfana",                  en:"Goat or lamb slowly braised in red wine — Coimbra region" },
+    { pt:"🐷 Leitão assado",             en:"Roast suckling pig — famous from Mealhada, Bairrada" },
+    { pt:"🫕 Francesinha",               en:"Porto sandwich — meat layers in bread, covered in hot spicy tomato-beer sauce and melted cheese" },
     { pt:"Feijoada",                  en:"Bean and meat stew — includes chouriço, pig ear, trotter" },
-    { pt:"Alheiras",                  en:"Smoked sausage made with bread and poultry — originally created by Jews to appear to eat pork" },
+    { pt:"🌭 Alheiras",                  en:"Smoked sausage made with bread and poultry — originally created by Jews to appear to eat pork" },
     { pt:"Rancho",                    en:"Thick chickpea, pasta and meat stew" },
     { pt:"Bucho",                     en:"Stuffed pig stomach — Trás-os-Montes" },
   ],
@@ -2125,11 +2126,11 @@ const D_TYPICAL_DISHES = {
     { pt:"Canja de galinha",        en:"Chicken broth with rice — comforting, given to the sick" },
     { pt:"Sopa da Pedra",           en:"Stone soup — bean and meat soup from Almeirim; named after the folk tale" },
     { pt:"Sopa de legumes",         en:"Vegetable soup — everyday staple" },
-    { pt:"Gaspacho",                en:"Cold tomato and vegetable soup — Alentejo version (chunky, not blended like Spanish gazpacho)" },
+    { pt:"🥗 Gaspacho",                en:"Cold tomato and vegetable soup — Alentejo version (chunky, not blended like Spanish gazpacho)" },
   ],
   sobremesas:[
     { pt:"Pastéis de Belém",        en:"Custard tarts from Belém, Lisbon — the original, made since 1837 at Pastéis de Belém bakery" },
-    { pt:"Arroz-doce",              en:"Rice pudding with cinnamon — served cold, often with a cinnamon pattern on top" },
+    { pt:"🍚 Arroz-doce",              en:"Rice pudding with cinnamon — served cold, often with a cinnamon pattern on top" },
     { pt:"Pudim Abade de Priscos",  en:"Rich caramel custard from Braga — made with egg yolks, bacon fat and port wine" },
     { pt:"Sericaia",                en:"Egg and cinnamon pudding from Alentejo" },
     { pt:"Pão-de-ló de Ovar",       en:"Very moist sponge cake from Ovar — underbaked by design" },
@@ -3329,23 +3330,23 @@ const D_RESIDENCIA = {
 
 const D_CAR = {
   parts:[
-    ["a luz","[ɐ loosh]","the light / headlight"],
-    ["o pneu","[oo pneh-oo]","the tyre"],
-    ["a campainha / a buzina","[ɐ kɐm-pɐ-EE-nyɐ / ɐ boo-ZEE-nɐ]","the horn / hooter"],
-    ["o pedal","[oo pɐ-DAL]","the pedal"],
-    ["o assento","[oo ɐ-SEN-too]","the seat"],
-    ["o volante","[oo voo-LANT]","the steering wheel"],
-    ["a roda","[ɐ ROH-dɐ]","the wheel (rim + tyre unit)"],
-    ["o travão","[oo trɐ-VOWNG]","the brake"],
-    ["o motor","[oo moo-TOR]","the engine"],
-    ["o capô","[oo kɐ-POH]","the bonnet / hood"],
+    ["💡 a luz","[ɐ loosh]","the light / headlight"],
+    ["🛞 o pneu","[oo pneh-oo]","the tyre"],
+    ["📯 a campainha / a buzina","[ɐ kɐm-pɐ-EE-nyɐ / ɐ boo-ZEE-nɐ]","the horn / hooter"],
+    ["🦶 o pedal","[oo pɐ-DAL]","the pedal"],
+    ["💺 o assento","[oo ɐ-SEN-too]","the seat"],
+    ["🎡 o volante","[oo voo-LANT]","the steering wheel"],
+    ["🛞 a roda","[ɐ ROH-dɐ]","the wheel (rim + tyre unit)"],
+    ["🛑 o travão","[oo trɐ-VOWNG]","the brake"],
+    ["⚙️ o motor","[oo moo-TOR]","the engine"],
+    ["🚗 o capô","[oo kɐ-POH]","the bonnet / hood"],
     ["o porta-bagagens","[oo POR-tɐ bɐ-GAH-jɐynsh]","the boot / trunk"],
-    ["o para-brisas","[oo PA-rɐ BREE-zɐsh]","the windscreen"],
-    ["o espelho retrovisor","[oo ish-PEH-lyoo rɐ-troo-vee-ZOR]","the rear-view mirror"],
-    ["o cinto de segurança","[oo SIN-too dɐ sɐ-goo-RAHN-sɐ]","the seatbelt"],
-    ["o macaco","[oo mɐ-KAH-koo]","the car jack"],
-    ["o triângulo","[oo tree-AHNG-goo-loo]","the warning triangle"],
-    ["o colete verde","[oo koo-LET VERD]","the high-vis vest"],
+    ["🪟 o para-brisas","[oo PA-rɐ BREE-zɐsh]","the windscreen"],
+    ["🪞 o espelho retrovisor","[oo ish-PEH-lyoo rɐ-troo-vee-ZOR]","the rear-view mirror"],
+    ["🪢 o cinto de segurança","[oo SIN-too dɐ sɐ-goo-RAHN-sɐ]","the seatbelt"],
+    ["🔧 o macaco","[oo mɐ-KAH-koo]","the car jack"],
+    ["⚠️ o triângulo","[oo tree-AHNG-goo-loo]","the warning triangle"],
+    ["🦺 o colete verde","[oo koo-LET VERD]","the high-vis vest"],
     ["a estação de serviço","[ɐ ish-tɐ-SOWNG dɐ sir-VEE-soo]","the service station / petrol station"],
   ],
   maintenance:{
@@ -3380,36 +3381,36 @@ const D_CAR = {
 
 const D_DIRECTIONS = {
   orientationVocab:[
-    ["o mapa","[oo MAH-pɐ]","the map"],
-    ["a planta","[ɐ PLAHN-tɐ]","the street plan / floor plan"],
-    ["a esquina","[ɐ ish-KEE-nɐ]","the corner (of a street)"],
-    ["o cruzamento","[oo kroo-zɐ-MEN-too]","the crossroads / junction"],
-    ["o passeio","[oo pɐ-SAY-oo]","the pavement / sidewalk"],
-    ["o semáforo","[oo sɐ-MAH-foo-roo]","the traffic light"],
-    ["a rua","[ɐ ROO-ɐ]","the street"],
-    ["a avenida","[ɐ ɐ-vɐ-NEE-dɐ]","the avenue"],
-    ["o largo","[oo LAR-goo]","the small square / open space"],
-    ["a praça","[ɐ PRAH-sɐ]","the square (larger)"],
-    ["o quarteirão","[oo kwɐr-tay-ROWNG]","the block (city block)"],
-    ["o jardim","[oo jɐr-DEEM]","the garden / park"],
-    ["a rotunda","[ɐ roo-TOON-dɐ]","the roundabout"],
-    ["a paragem","[ɐ pɐ-RAH-jɐyng]","the (bus/tram) stop"],
-    ["a estação","[ɐ ish-tɐ-SOWNG]","the (metro/train) station"],
-    ["a entrada","[ɐ en-TRAH-dɐ]","the entrance"],
-    ["a saída","[ɐ sɐ-EE-dɐ]","the exit"],
+    ["🗺️ o mapa","[oo MAH-pɐ]","the map"],
+    ["🗺️ a planta","[ɐ PLAHN-tɐ]","the street plan / floor plan"],
+    ["📐 a esquina","[ɐ ish-KEE-nɐ]","the corner (of a street)"],
+    ["✚ o cruzamento","[oo kroo-zɐ-MEN-too]","the crossroads / junction"],
+    ["🚶 o passeio","[oo pɐ-SAY-oo]","the pavement / sidewalk"],
+    ["🚦 o semáforo","[oo sɐ-MAH-foo-roo]","the traffic light"],
+    ["🛣️ a rua","[ɐ ROO-ɐ]","the street"],
+    ["🛤️ a avenida","[ɐ ɐ-vɐ-NEE-dɐ]","the avenue"],
+    ["⬜ o largo","[oo LAR-goo]","the small square / open space"],
+    ["🏛️ a praça","[ɐ PRAH-sɐ]","the square (larger)"],
+    ["🏘️ o quarteirão","[oo kwɐr-tay-ROWNG]","the block (city block)"],
+    ["🌳 o jardim","[oo jɐr-DEEM]","the garden / park"],
+    ["🔄 a rotunda","[ɐ roo-TOON-dɐ]","the roundabout"],
+    ["🚏 a paragem","[ɐ pɐ-RAH-jɐyng]","the (bus/tram) stop"],
+    ["🚇 a estação","[ɐ ish-tɐ-SOWNG]","the (metro/train) station"],
+    ["🔛 a entrada","[ɐ en-TRAH-dɐ]","the entrance"],
+    ["🚪 a saída","[ɐ sɐ-EE-dɐ]","the exit"],
   ],
   movementVerbs:[
-    ["ir em frente / seguir em frente","[eer ayng FRENT]","to go straight ahead"],
-    ["virar à direita","[vee-RAR a dee-RAY-tɐ]","to turn right"],
-    ["virar à esquerda","[vee-RAR a ish-KEHR-dɐ]","to turn left"],
-    ["atravessar / passar","[ɐ-trɐ-vɐ-SAR]","to cross / to pass"],
-    ["contornar","[kon-tor-NAR]","to go around (a roundabout)"],
-    ["subir","[soo-BEER]","to go up"],
-    ["descer","[dɐ-SER]","to go down"],
-    ["enganar-se no caminho","[en-gɐ-NAR sɐ]","to take the wrong route"],
-    ["perder-se","[pɐr-DER sɐ]","to get lost"],
-    ["estar perdido/a","[ish-TAR pɐr-DEE-doo]","to be lost"],
-    ["demorar","[dɐ-moo-RAR]","to take (time) / to be long"],
+    ["⬆️ ir em frente / seguir em frente","[eer ayng FRENT]","to go straight ahead"],
+    ["➡️ virar à direita","[vee-RAR a dee-RAY-tɐ]","to turn right"],
+    ["⬅️ virar à esquerda","[vee-RAR a ish-KEHR-dɐ]","to turn left"],
+    ["↔️ atravessar / passar","[ɐ-trɐ-vɐ-SAR]","to cross / to pass"],
+    ["🔄 contornar","[kon-tor-NAR]","to go around (a roundabout)"],
+    ["⬆️ subir","[soo-BEER]","to go up"],
+    ["⬇️ descer","[dɐ-SER]","to go down"],
+    ["❌ enganar-se no caminho","[en-gɐ-NAR sɐ]","to take the wrong route"],
+    ["❓ perder-se","[pɐr-DER sɐ]","to get lost"],
+    ["🆘 estar perdido/a","[ish-TAR pɐr-DEE-doo]","to be lost"],
+    ["⏱️ demorar","[dɐ-moo-RAR]","to take (time) / to be long"],
     ["ficar em frente","[fee-KAR ayng FRENT]","to be opposite"],
     ["ficar na rua...","[fee-KAR nɐ ROO-ɐ]","to be on ... street"],
   ],
@@ -3430,7 +3431,7 @@ const D_DIRECTIONS = {
     ]},
   ],
   askingDirections:[
-    { pt:"Desculpe, sabe se há um banco aqui perto?", en:"Excuse me, do you know if there is a bank nearby?" },
+    { pt:"😅 Desculpe, sabe se há um banco aqui perto?", en:"Excuse me, do you know if there is a bank nearby?" },
     { pt:"Faz favor, onde ficam os Correios?", en:"Excuse me, where is the post office?" },
     { pt:"Pode dizer-me onde está a papelaria?", en:"Can you tell me where the stationer's is?" },
     { pt:"Como é que vai para o Parque das Nações?", en:"How do I get to Parque das Nações?" },
@@ -3558,7 +3559,7 @@ const D_WEATHER = {
   ],
   phrases:[
     { pt:"Que tempo faz hoje?",                   pron:"[kɐ TEMP-oo fash OH-zhɐ]",     en:"What is the weather like today?" },
-    { pt:"Como está o tempo?",                    pron:"[KOH-moo ish-TA oo TEMP-oo]",  en:"What is the weather like?" },
+    { pt:"😊 Como está o tempo?",                    pron:"[KOH-moo ish-TA oo TEMP-oo]",  en:"What is the weather like?" },
     { pt:"Está um dia lindo!",                    pron:"[ish-TA oong DEE-ɐ LEEN-doo]", en:"It is a lovely day!" },
     { pt:"Está a chover muito.",                  pron:"[ish-TA ɐ shoo-VEHR MWEE-too]",en:"It is raining a lot." },
     { pt:"A previsão do tempo diz que vai nevar.",pron:"",                              en:"The weather forecast says it will snow." },
@@ -3621,39 +3622,39 @@ const D_PREP_TEMPO_FULL = {
 };
 
 const D_DAYS = [
-  { n:"2ª", pt:"segunda-feira", short:"segunda", pron:"[sɐ-GOON-dɐ-FAY-rɐ]", en:"Monday" },
-  { n:"3ª", pt:"terça-feira", short:"terça", pron:"[TER-sɐ-FAY-rɐ]", en:"Tuesday" },
-  { n:"4ª", pt:"quarta-feira", short:"quarta", pron:"[KWAR-tɐ-FAY-rɐ]", en:"Wednesday" },
-  { n:"5ª", pt:"quinta-feira", short:"quinta", pron:"[KEEN-tɐ-FAY-rɐ]", en:"Thursday" },
-  { n:"6ª", pt:"sexta-feira", short:"sexta", pron:"[SESH-tɐ-FAY-rɐ]", en:"Friday" },
-  { n:"—", pt:"sábado", short:"sábado", pron:"[SA-bɐ-doo]", en:"Saturday" },
-  { n:"—", pt:"domingo", short:"domingo", pron:"[doo-MING-oo]", en:"Sunday" },
+  { n:"2ª", pt:"😔 segunda-feira", short:"segunda", pron:"[sɐ-GOON-dɐ-FAY-rɐ]", en:"Monday" },
+  { n:"3ª", pt:"📅 terça-feira", short:"terça", pron:"[TER-sɐ-FAY-rɐ]", en:"Tuesday" },
+  { n:"4ª", pt:"📅 quarta-feira", short:"quarta", pron:"[KWAR-tɐ-FAY-rɐ]", en:"Wednesday" },
+  { n:"5ª", pt:"📅 quinta-feira", short:"quinta", pron:"[KEEN-tɐ-FAY-rɐ]", en:"Thursday" },
+  { n:"6ª", pt:"🎉 sexta-feira", short:"sexta", pron:"[SESH-tɐ-FAY-rɐ]", en:"Friday" },
+  { n:"—", pt:"🏖️ sábado", short:"sábado", pron:"[SA-bɐ-doo]", en:"Saturday" },
+  { n:"—", pt:"😴 domingo", short:"domingo", pron:"[doo-MING-oo]", en:"Sunday" },
 ];
 const D_MONTHS = [
-  [1,"janeiro","[zhɐ-NAY-roo]"],[2,"fevereiro","[fɐ-vɐ-RAY-roo]"],
-  [3,"março","[MAR-soo]"],[4,"abril","[ɐ-BREEL]"],
-  [5,"maio","[MAI-oo]"],[6,"junho","[ZHOON-yoo]"],
-  [7,"julho","[ZHOOL-yoo]"],[8,"agosto","[ɐ-GOHSH-too]"],
-  [9,"setembro","[sɐ-TEM-broo]"],[10,"outubro","[oh-TOO-broo]"],
-  [11,"novembro","[noo-VEM-broo]"],[12,"dezembro","[dɐ-ZEM-broo]"],
+  [1,"❄️ janeiro","[zhɐ-NAY-roo]"],[2,"❄️ fevereiro","[fɐ-vɐ-RAY-roo]"],
+  [3,"🌸 março","[MAR-soo]"],[4,"🌸 abril","[ɐ-BREEL]"],
+  [5,"🌼 maio","[MAI-oo]"],[6,"☀️ junho","[ZHOON-yoo]"],
+  [7,"☀️ julho","[ZHOOL-yoo]"],[8,"🌊 agosto","[ɐ-GOHSH-too]"],
+  [9,"🍂 setembro","[sɐ-TEM-broo]"],[10,"🍂 outubro","[oh-TOO-broo]"],
+  [11,"🌧️ novembro","[noo-VEM-broo]"],[12,"🎄 dezembro","[dɐ-ZEM-broo]"],
 ];
 
 const D_IDENTITY = {
   fields:[
-    ["o nome","[oo NOH-m]","first name"],["o apelido","[oo ɐ-pɐ-LEE-doo]","surname"],
-    ["a morada","[ɐ moo-RA-dɐ]","address"],["o código postal","[KO-dee-goo poosh-TAL]","postal code"],
-    ["o número de telemóvel","[NOO-mɐ-roo dɐ tɐ-lɐ-MO-vel]","mobile number"],
-    ["a data de nascimento","[DA-tɐ dɐ nɐsh-see-MENT-oo]","date of birth"],
-    ["a naturalidade","[nɐ-too-rɐ-lee-DA-d]","place of birth"],
-    ["a nacionalidade","[nɐ-see-oh-nɐ-lee-DA-d]","nationality"],
-    ["as habilitações","[ɐ-bee-lee-tɐ-SOYSH]","qualifications / education level"],
-    ["a profissão","[proo-fee-SOWNG]","profession"],["o sexo","[SEH-ksoo]","sex / gender"],
-    ["o estado civil","[ish-TA-doo see-VEEL]","marital status"],["a idade","[ee-DA-d]","age"],
+    ["🆔 o nome","[oo NOH-m]","first name"],["🆔 o apelido","[oo ɐ-pɐ-LEE-doo]","surname"],
+    ["📬 a morada","[ɐ moo-RA-dɐ]","address"],["📮 o código postal","[KO-dee-goo poosh-TAL]","postal code"],
+    ["📱 o número de telemóvel","[NOO-mɐ-roo dɐ tɐ-lɐ-MO-vel]","mobile number"],
+    ["🎂 a data de nascimento","[DA-tɐ dɐ nɐsh-see-MENT-oo]","date of birth"],
+    ["🌍 a naturalidade","[nɐ-too-rɐ-lee-DA-d]","place of birth"],
+    ["🛂 a nacionalidade","[nɐ-see-oh-nɐ-lee-DA-d]","nationality"],
+    ["📚 as habilitações","[ɐ-bee-lee-tɐ-SOYSH]","qualifications / education level"],
+    ["💼 a profissão","[proo-fee-SOWNG]","profession"],["⚧️ o sexo","[SEH-ksoo]","sex / gender"],
+    ["💍 o estado civil","[ish-TA-doo see-VEEL]","marital status"],["🎂 a idade","[ee-DA-d]","age"],
   ],
   civil:[
-    ["solteiro/a","[sol-TAY-roo]","single"],["casado/a","[kɐ-ZA-doo]","married"],
-    ["divorciado/a","[dee-vor-see-A-doo]","divorced"],["separado/a","[sɐ-pɐ-RA-doo]","separated"],
-    ["viúvo/a","[vee-OO-voo]","widowed"],["em união de facto","[oo-nee-OWNG dɐ FA-too]","domestic partnership"],
+    ["💔 solteiro/a","[sol-TAY-roo]","single"],["💍 casado/a","[kɐ-ZA-doo]","married"],
+    ["💔 divorciado/a","[dee-vor-see-A-doo]","divorced"],["💔 separado/a","[sɐ-pɐ-RA-doo]","separated"],
+    ["🕊️ viúvo/a","[vee-OO-voo]","widowed"],["💑 em união de facto","[oo-nee-OWNG dɐ FA-too]","domestic partnership"],
   ],
   countries:[
     ["Portugal","—","[poor-too-GAL]","português","portuguesa","português"],
@@ -3680,34 +3681,143 @@ const D_IDENTITY = {
   ]
 };
 
+const D_BODY = {
+  corpo:[
+    ["💪 o braço (os braços)","[oo BRA-soo]","arm"],
+    ["🦾 o cotovelo (os cotovelos)","[oo koo-too-VEH-loo]","elbow"],
+    ["✋ a mão (as mãos)","[ɐ mowng]","hand"],
+    ["☝️ o dedo (os dedos)","[oo DEH-doo]","finger / toe"],
+    ["🤷 o ombro (os ombros)","[oo OM-broo]","shoulder"],
+    ["🫀 o peito","[oo PAY-too]","chest"],
+    ["🫃 o estômago","[oo ish-TOH-mɐ-goo]","stomach"],
+    ["🤰 a barriga","[ɐ bɐ-HEE-gɐ]","belly"],
+    ["📐 a cintura","[ɐ sin-TOO-rɐ]","waist"],
+    ["🦯 a anca (as ancas)","[ɐ AN-kɐ]","hip"],
+    ["🦵 a perna (as pernas)","[ɐ PER-nɐ]","leg"],
+    ["🦵 a coxa (as coxas)","[ɐ KOH-shɐ]","thigh"],
+    ["🦿 o joelho (os joelhos)","[oo zhoo-EL-yoo]","knee"],
+    ["🦶 o tornozelo","[oo tor-noo-ZEH-loo]","ankle"],
+    ["🦶 o pé (os pés)","[oo peh]","foot"],
+    ["🔙 as costas","[ɐsh KOSH-tɐsh]","back"],
+  ],
+  cabeca:[
+    ["💇 o cabelo (os cabelos)","[oo kɐ-BEH-loo]","hair (on head)"],
+    ["🙆 a testa","[ɐ TESH-tɐ]","forehead"],
+    ["🤨 a sobrancelha (as sobrancelhas)","[ɐ soo-brɐn-SEL-yɐ]","eyebrow"],
+    ["👁️ o olho (os olhos)","[oo OL-yoo]","eye"],
+    ["👂 a orelha (as orelhas)","[ɐ oh-REL-yɐ]","ear (outer)"],
+    ["🔊 o ouvido (os ouvidos)","[oo oh-VEE-doo]","ear (inner / hearing organ)"],
+    ["👃 o nariz","[oo nɐ-REESH]","nose"],
+    ["😊 a bochecha (as bochechas)","[ɐ boo-SHEH-shɐ]","cheek"],
+    ["👄 a boca","[ɐ BOH-kɐ]","mouth"],
+    ["💋 o lábio (os lábios)","[oo LA-byoo]","lip"],
+    ["👅 a língua","[ɐ LING-gwɐ]","tongue"],
+    ["🦷 o dente (os dentes)","[oo DENT]","tooth"],
+    ["🤜 o queixo","[oo KAY-shoo]","chin"],
+    ["🦒 o pescoço","[oo pɐsh-KOH-soo]","neck"],
+    ["🤕 a dor (as dores)","[ɐ dor]","pain / ache"],
+  ],
+  sentidos:[
+    { sense:"visão",      pron:"[vee-ZOWNG]",   organ:"os olhos",   en:"sight",   icon:"👁️",
+      desc:"Para veres as cores, as formas e os tamanhos de tudo o que te rodeia, usas os olhos." },
+    { sense:"audição",    pron:"[ow-dee-SOWNG]", organ:"os ouvidos", en:"hearing", icon:"👂",
+      desc:"Com os ouvidos distingues os diferentes sons do meio ambiente." },
+    { sense:"olfato",     pron:"[ol-FA-too]",    organ:"o nariz",    en:"smell",   icon:"👃",
+      desc:"Para identificar os cheiros que te rodeiam, utilizas o nariz." },
+    { sense:"paladar",    pron:"[pɐ-lɐ-DAR]",   organ:"a língua",   en:"taste",   icon:"👅",
+      desc:"Para saboreares os alimentos usas a língua, onde tens as papilas gustativas." },
+    { sense:"tato",       pron:"[TA-too]",       organ:"a pele / as mãos", en:"touch", icon:"✋",
+      desc:"Para sentires tudo o que te rodeia usas principalmente as mãos. É através da pele que distingues quente/frio, mole/duro, áspero/macio." },
+  ]
+};
+
 const D_DESCRIPTION = {
+  ter_usar_ser:{
+    note:"Three verbs describe physical features. The choice depends on whether the feature is identity, natural, or chosen.",
+    verbs:[
+      {
+        verb:"SER", color:"var(--primary)", en:"to be",
+        rule:"Stable, defining characteristics — height, build, skin tone, age group. These are part of identity.",
+        uses:["height: alto/a, baixo/a","build: gordo/a, magro/a, forte","skin: moreno/a, louro/a (naturally)","age: novo/a, velho/a, jovem, de meia-idade","other: careca, bonito/a, feio/a"],
+        examples:[
+          ["Ele é alto e moreno.","He is tall and dark-skinned."],
+          ["A minha avó é baixa e careca.","My grandmother is short and bald."],
+          ["São jovens e bonitos.","They are young and good-looking."],
+        ]
+      },
+      {
+        verb:"TER", color:"var(--green)", en:"to have",
+        rule:"Natural features you were born with — eye colour, natural hair colour and texture, facial features.",
+        uses:["eye colour: Tem olhos castanhos / azuis / verdes","natural hair: Tem cabelo louro / preto / ruivo / encaracolado / liso","hair length: Tem o cabelo comprido / curto","nose/mouth/etc: Tem nariz pequeno, dentes brancos"],
+        examples:[
+          ["Ela tem olhos verdes e cabelo louro.","She has green eyes and blonde hair."],
+          ["Os irmãos têm o cabelo encaracolado.","The brothers have curly hair."],
+          ["Tem nariz pequeno e boca grande.","He/She has a small nose and a large mouth."],
+        ]
+      },
+      {
+        verb:"USAR", color:"var(--accent)", en:"to wear / to use",
+        rule:"Aesthetic features you choose and can change — glasses, beard, facial hair, hairstyles, dyed hair.",
+        uses:["glasses: usar óculos / lentes de contacto","beard/moustache: usar barba / bigode","hairstyles: usar tranças / franja / rabo de cavalo","dyed hair: usar/pintar o cabelo de louro"],
+        examples:[
+          ["O tio usa óculos e barba.","My uncle wears glasses and has a beard."],
+          ["(Ela) usa o cabelo louro. Pinta o cabelo de louro.","She wears her hair blonde. She dyes her hair blonde."],
+          ["(Ela) usa lentes de contacto no trabalho.","She wears contact lenses at work."],
+        ]
+      },
+    ],
+    contrast:[
+      ["TER cabelo louro","natural blonde — born with it","USAR/PINTAR o cabelo de louro","dyed blonde — chosen"],
+      ["TER barba","has facial hair growing","USAR barba","wears/grows a beard (by choice)"],
+      ["TER olhos castanhos","eye colour — always TER","never USAR for eye colour","—"],
+    ]
+  },
   hair:[
     ["liso/a","[LEE-zoo]","straight"],["encaracolado/a","[en-kɐ-rɐ-koo-LA-doo]","curly"],
     ["ondulado/a","[on-doo-LA-doo]","wavy"],["comprido/a","[kom-PREE-doo]","long"],
-    ["curto/a","[KOOR-too]","short"],["castanho/a","[kɐsh-TAN-yoo]","brown"],
-    ["loiro/a","[LOY-roo]","blonde"],["preto/a","[PREH-too]","black"],
-    ["ruivo/a","[HWEE-voo]","red / ginger"],["branco/a","[BRANK-oo]","white / grey"],
-    ["calvo/a","[KAL-voo]","bald"],
+    ["curto/a","[KOOR-too]","short"],["castanho/a","[kɐsh-TAN-yoo]","brown / chestnut"],
+    ["louro/a","[LOH-roo]","blonde"],["preto/a","[PREH-too]","black"],
+    ["ruivo/a","[HWEE-voo]","red / ginger"],["👴 grisalho/a","[gree-ZAL-yoo]","grey (hair)"],
+    ["branco/a","[BRANK-oo]","white"],["escuro/a","[ish-KOO-roo]","dark"],
+    ["claro/a","[KLA-roo]","light"],["🧑‍🦲 careca","[kɐ-REH-kɐ]","bald (adj) — ser careca"],
+    ["💈 as tranças","[ɐsh TRAN-sɐsh]","plaits / braids — usar tranças"],
+    ["✂️ a franja","[ɐ FRAN-zhɐ]","fringe — usar franja"],
+    ["🐴 o rabo de cavalo","[oo RA-boo dɐ kɐ-VA-loo]","ponytail — usar rabo de cavalo"],
   ],
   eyes:[
     ["castanhos","[kɐsh-TAN-yoosh]","brown"],["azuis","[ɐ-ZWEEISH]","blue"],
     ["verdes","[VEHR-dɐsh]","green"],["pretos","[PREH-toosh]","black"],
-    ["grandes / pequenos","","big / small"],
+    ["claros ≠ escuros","","light vs dark"],["grandes / pequenos","","big / small"],
+    ["castanho-escuros","","dark brown"],["usar óculos","","to wear glasses"],
+    ["usar lentes de contacto","","to wear contact lenses"],
   ],
   body:[
-    ["alto/a","[AL-too]","tall"],["baixo/a","[BAI-shoo]","short"],
+    ["📏 alto/a","[AL-too]","tall"],["📏 baixo/a","[BAI-shoo]","short"],
     ["de estatura média","[ish-tɐ-TOO-rɐ MEH-dyɐ]","medium height"],
-    ["gordo/a","[GOR-doo]","overweight"],["magro/a","[MA-groo]","slim"],
-    ["robusto/a","[hoo-BOOSH-too]","sturdy"],["elegante","[ɐ-lɐ-GANT]","elegant"],
-    ["jovem","[ZHOH-vayng]","young"],["idoso/a","[ee-DOH-zoo]","elderly"],
+    ["🏋️ gordo/a","[GOR-doo]","overweight"],["🏃 magro/a","[MA-groo]","slim"],
+    ["💪 forte","[FORT]","strong / sturdy"],["robusto/a","[hoo-BOOSH-too]","sturdy"],
+    ["elegante","[ɐ-lɐ-GANT]","elegant"],["😍 bonito/a","[boo-NEE-too]","good-looking"],
+    ["feio/a","[FAY-oo]","ugly"],["🌞 moreno/a","[moo-REH-noo]","dark-skinned / tanned"],
+    ["🧒 novo/a","[NOH-voo]","young (=jovem)"],["👴 velho/a","[VEL-yoo]","old (=idoso/a)"],
+    ["🧑 de meia-idade","[MEH-yɐ ee-DA-d]","middle-aged"],
+    ["😄 bem-disposto/a","[bayng deesh-POSH-too]","in a good mood / cheerful"],
+  ],
+  face:[
+    ["🧔 usar barba","","to have a beard (by choice)"],
+    ["🥸 usar bigode","","to have a moustache (by choice)"],
+    ["🧔 ter barba","","to have beard hair growing"],
+    ["👯 ser parecido/a com","","to look like / to resemble"],
   ],
   personality:[
-    ["inteligente","[in-tɐ-lee-ZHENT]","intelligent"],["calmo/a","[KAL-moo]","calm"],
-    ["trabalhador/a","[trɐ-bɐl-yɐ-DOR]","hardworking"],["teimoso/a","[tay-MOH-zoo]","stubborn"],
-    ["alegre","[ɐ-LEH-grɐ]","cheerful"],["feliz","[fɐ-LEESH]","happy"],
-    ["simpático/a","[sim-PA-tee-koo]","friendly"],["antipático/a","[an-tee-PA-tee-koo]","unfriendly"],
-    ["tímido/a","[TEE-mee-doo]","shy"],["honesto/a","[oh-NESH-too]","honest"],
-    ["divertido/a","[dee-ver-TEE-doo]","fun"],["criativo/a","[kree-ɐ-TEE-voo]","creative"],
+    ["🧠 inteligente","[in-tɐ-lee-ZHENT]","intelligent"],["😌 calmo/a","[KAL-moo]","calm"],
+    ["💼 trabalhador/a","[trɐ-bɐl-yɐ-DOR]","hardworking"],["🤔 teimoso/a","[tay-MOH-zoo]","stubborn"],
+    ["😄 alegre","[ɐ-LEH-grɐ]","cheerful"],["😊 feliz","[fɐ-LEESH]","happy"],
+    ["🤝 simpático/a","[sim-PA-tee-koo]","friendly"],["😒 antipático/a","[an-tee-PA-tee-koo]","unfriendly"],
+    ["🙈 tímido/a","[TEE-mee-doo]","shy"],["✅ honesto/a","[oh-NESH-too]","honest"],
+    ["🎉 divertido/a","[dee-ver-TEE-doo]","fun"],["🎨 criativo/a","[kree-ɐ-TEE-voo]","creative"],
+    ["❤️ querido/a","[kɐ-REE-doo]","dear / kind"],["🦁 corajoso/a","[koo-rɐ-ZHOH-zoo]","brave"],
+    ["💬 falador/a","[fɐ-lɐ-DOR]","talkative"],["😂 engraçado/a","[en-grɐ-SA-doo]","funny"],
+    ["🤗 carinhoso/a","[kɐ-reen-YOH-zoo]","affectionate"],["bem-disposto/a","[bayng deesh-POSH-too]","cheerful / in good spirits"],
   ],
   adj_rules:[
     { end:"Masc. ends -o", rule:"-o → -a", ex:["alto → alta","bonito → bonita","calvo → calva"] },
@@ -3779,30 +3889,30 @@ const D_VERB_PATTERNS = {
 
 const D_FAMILY = {
   nuclear:[
-    ["o pai / a mãe","[oo pai / ɐ mɐ-yng]","father / mother"],
-    ["os pais","[oosh paish]","parents"],
-    ["o marido / a mulher","[oo mɐ-REE-doo / ɐ mool-YEHR]","husband / wife"],
-    ["o filho / a filha","[oo FEEL-yoo / ɐ FEEL-yɐ]","son / daughter"],
-    ["os filhos","[oosh FEEL-yoosh]","children (sons/children)"],
-    ["o irmão / a irmã","[oo eer-MOWNG / ɐ eer-MƐ]","brother / sister"],
-    ["os irmãos gémeos","[oosh eer-MOWNGSH ZHEH-myoosh]","twins"],
+    ["👨 o pai / 👩 a mãe","[oo pai / ɐ mɐ-yng]","father / mother"],
+    ["👨‍👩 os pais","[oosh paish]","parents"],
+    ["💍 o marido / a mulher","[oo mɐ-REE-doo / ɐ mool-YEHR]","husband / wife"],
+    ["👦 o filho / 👧 a filha","[oo FEEL-yoo / ɐ FEEL-yɐ]","son / daughter"],
+    ["👶 os filhos","[oosh FEEL-yoosh]","children (sons/children)"],
+    ["🧑‍🤝‍🧑 o irmão / a irmã","[oo eer-MOWNG / ɐ eer-MƐ]","brother / sister"],
+    ["👯 os irmãos gémeos","[oosh eer-MOWNGSH ZHEH-myoosh]","twins"],
   ],
   extended:[
-    ["o avô / a avó","[oo ɐ-VOH / ɐ ɐ-VO]","grandfather / grandmother"],
-    ["os avós","[oosh ɐ-VOSH]","grandparents"],
-    ["o neto / a neta","[oo NEH-too / ɐ NEH-tɐ]","grandson / granddaughter"],
-    ["o tio / a tia","[oo TEE-oo / ɐ TEE-ɐ]","uncle / aunt"],
-    ["o primo / a prima","[oo PREE-moo / ɐ PREE-mɐ]","cousin (m/f)"],
-    ["o sobrinho / a sobrinha","[oo soo-BREEN-yoo / ɐ soo-BREEN-yɐ]","nephew / niece"],
-    ["o sogro / a sogra","[oo SOH-groo / ɐ SOH-grɐ]","father-in-law / mother-in-law"],
+    ["👴 o avô / 👵 a avó","[oo ɐ-VOH / ɐ ɐ-VO]","grandfather / grandmother"],
+    ["👴👵 os avós","[oosh ɐ-VOSH]","grandparents"],
+    ["👶 o neto / a neta","[oo NEH-too / ɐ NEH-tɐ]","grandson / granddaughter"],
+    ["🧔 o tio / 👩 a tia","[oo TEE-oo / ɐ TEE-ɐ]","uncle / aunt"],
+    ["👦 o primo / 👧 a prima","[oo PREE-moo / ɐ PREE-mɐ]","cousin (m/f)"],
+    ["🧒 o sobrinho / a sobrinha","[oo soo-BREEN-yoo / ɐ soo-BREEN-yɐ]","nephew / niece"],
+    ["👴 o sogro / 👵 a sogra","[oo SOH-groo / ɐ SOH-grɐ]","father-in-law / mother-in-law"],
     ["o genro / a nora","[oo ZHEHN-roo / ɐ NOH-rɐ]","son-in-law / daughter-in-law"],
-    ["o cunhado / a cunhada","[oo koon-YA-doo / ɐ koon-YA-dɐ]","brother-in-law / sister-in-law"],
+    ["💑 o cunhado / a cunhada","[oo koon-YA-doo / ɐ koon-YA-dɐ]","brother-in-law / sister-in-law"],
     ["o padrinho / a madrinha","[oo pɐ-DREEN-yoo / ɐ mɐ-DREEN-yɐ]","godfather / godmother"],
     ["o afilhado / a afilhada","[oo ɐ-feel-YA-doo]","godson / goddaughter"],
   ],
   stepFamily:[
-    ["o padrasto / a madrasta","[oo pɐ-DRASH-too / ɐ mɐ-DRASH-tɐ]","stepfather / stepmother"],
-    ["o meio-irmão / a meia-irmã","[oo MAY-oo eer-MOWNG]","half-brother / half-sister"],
+    ["🔗 o padrasto / a madrasta","[oo pɐ-DRASH-too / ɐ mɐ-DRASH-tɐ]","stepfather / stepmother"],
+    ["🔗 o meio-irmão / a meia-irmã","[oo MAY-oo eer-MOWNG]","half-brother / half-sister"],
     ["o ex-marido / a ex-mulher","[oo ex mɐ-REE-doo]","ex-husband / ex-wife"],
   ],
   types:[
@@ -3821,17 +3931,17 @@ const D_FAMILY = {
 
 const D_HOUSE = {
   exterior:[
-    ["a casa","[ɐ KA-zɐ]","house"],
-    ["o apartamento","[oo ɐ-pɐr-tɐ-MENT-oo]","apartment"],
-    ["o telhado","[oo tɐl-YA-doo]","roof"],
-    ["a chaminé","[ɐ shɐ-mee-NEH]","chimney"],
-    ["o sótão","[oo SO-towng]","attic"],
+    ["🏠 a casa","[ɐ KA-zɐ]","house"],
+    ["🏢 o apartamento","[oo ɐ-pɐr-tɐ-MENT-oo]","apartment"],
+    ["🏗️ o telhado","[oo tɐl-YA-doo]","roof"],
+    ["🏚️ a chaminé","[ɐ shɐ-mee-NEH]","chimney"],
+    ["📦 o sótão","[oo SO-towng]","attic"],
     ["a cave (c/v)","[ɐ KA-v]","basement / cellar"],
-    ["a varanda","[ɐ vɐ-RAN-dɐ]","balcony / veranda"],
-    ["a janela","[ɐ zhɐ-NEH-lɐ]","window"],
-    ["a porta principal","[ɐ POR-tɐ preen-see-PAL]","front door"],
+    ["🌿 a varanda","[ɐ vɐ-RAN-dɐ]","balcony / veranda"],
+    ["🪟 a janela","[ɐ zhɐ-NEH-lɐ]","window"],
+    ["🚪 a porta principal","[ɐ POR-tɐ preen-see-PAL]","front door"],
     ["a parede","[ɐ pɐ-REH-d]","wall"],
-    ["a garagem","[ɐ gɐ-RA-zhayng]","garage"],
+    ["🚗 a garagem","[ɐ gɐ-RA-zhayng]","garage"],
   ],
   floors:[
     ["a cave (c/v)","[ɐ KA-v]","basement — marked C/V"],
@@ -3841,13 +3951,13 @@ const D_HOUSE = {
   ],
   rooms:[
     ["a sala de estar","[ɐ SA-lɐ dɐ ish-TAR]","living room"],
-    ["a cozinha","[ɐ koo-ZEEN-yɐ]","kitchen"],
+    ["🍳 a cozinha","[ɐ koo-ZEEN-yɐ]","kitchen"],
     ["o quarto","[oo KWAR-too]","bedroom"],
-    ["a casa de banho","[ɐ KA-zɐ dɐ BAN-yoo]","bathroom"],
-    ["o escritório","[oo ish-kree-TO-ryoo]","study / home office"],
+    ["🚿 a casa de banho","[ɐ KA-zɐ dɐ BAN-yoo]","bathroom"],
+    ["💻 o escritório","[oo ish-kree-TO-ryoo]","study / home office"],
     ["a garagem","[ɐ gɐ-RA-zhayng]","garage"],
     ["o corredor","[oo koo-hɐ-DOR]","corridor / hallway"],
-    ["a sala de jantar","[ɐ SA-lɐ dɐ zhɐn-TAR]","dining room"],
+    ["🍽️ a sala de jantar","[ɐ SA-lɐ dɐ zhɐn-TAR]","dining room"],
   ],
   note:"⚠ Portuguese floor numbering differs from North American: rés do chão (R/C) = ground floor. The 1º andar is one floor above ground. Always check the floor number in Portugal — it is not what you expect from North American habits.",
 };
@@ -3874,13 +3984,13 @@ const D_QUESTIONS = {
 };
 
 const D_EXPRESSIONS = [
-  { cat:"Agreement & Disagreement", items:[
+  { cat:"🤝 Agreement & Disagreement", items:[
     ["Concordo","[kon-KOR-doo]","I agree"],["Não concordo","[nowng kon-KOR-doo]","I disagree"],
     ["Tens razão","[tayngsh hɐ-ZOWNG]","You're right"],["Não tens razão","","You're wrong"],
     ["Talvez","[tal-VESH]","Maybe"],["Depende","[dɐ-PEND]","It depends"],
     ["Exatamente","[ee-za-tɐ-MENT]","Exactly"],["Claro que sim!","[KLA-roo kɐ seeng]","Of course!"],
   ]},
-  { cat:"Asking for Things", items:[
+  { cat:"🙋 Asking for Things", items:[
     ["Queria…","[kɐ-REE-ɐ]","I would like… (polite)"],
     ["Pode dar-me…?","[POH-d DAR-mɐ]","Can you give me…?"],
     ["Quanto custa?","[KWAN-too KOOSH-tɐ]","How much does it cost?"],
@@ -3888,7 +3998,7 @@ const D_EXPRESSIONS = [
     ["A que horas…?","[ɐ kɐ OH-rɐsh]","At what time…?"],
     ["Tem…?","[tayng]","Do you have…?"],
   ]},
-  { cat:"Expressing Opinions", items:[
+  { cat:"💭 Expressing Opinions", items:[
     ["Acho que…","[A-shoo kɐ]","I think that…"],
     ["Na minha opinião…","[nɐ MEEN-yɐ oh-peen-YOWNG]","In my opinion…"],
     ["Para mim…","[PA-rɐ meeng]","For me…"],
@@ -3896,7 +4006,7 @@ const D_EXPRESSIONS = [
     ["Não sei","[nowng say]","I don't know"],
     ["Tenho a certeza","[TAYN-yoo ɐ ser-TEH-zɐ]","I'm certain"],
   ]},
-  { cat:"Emotions & Reactions", items:[
+  { cat:"❤️ Emotions & Reactions", items:[
     ["Que pena!","[kɐ PAY-nɐ]","What a shame!"],
     ["Que bom!","[kɐ bong]","How great!"],
     ["Que fixe!","[kɐ FEESH]","How cool! (very Portuguese slang)"],
@@ -3904,14 +4014,14 @@ const D_EXPRESSIONS = [
     ["Fico contente","[FEE-koo kon-TENT]","I'm glad"],
     ["Estou farto/a de…","[ish-TOH FAR-too]","I'm fed up with…"],
   ]},
-  { cat:"Connectors (link your sentences)", items:[
+  { cat:"🔗 Connectors (link your sentences)", items:[
     ["e","[ee]","and"],["mas","[mɐsh]","but"],["porque","[poor-KÊ]","because"],
     ["então","[en-TOWNG]","so / then"],["também","[tɐm-BAYNG]","also / too"],
     ["só","[so]","only / just"],["ainda","[ɐ-IND-ɐ]","still / yet"],
     ["já","[zha]","already / now"],["logo","[LOH-goo]","soon / later"],
     ["quando","[KWAN-doo]","when"],["se","[sɐ]","if"],
   ]},
-  { cat:"At the Café & Table", items:[
+  { cat:"☕ At the Café & Table", items:[
     ["Uma bica, por favor","[OO-mɐ BEE-kɐ]","An espresso, please (Lisbon)"],
     ["Um galão, por favor","[oong gɐ-LOWNG]","Large milky coffee, please"],
     ["A conta, por favor","[ɐ KON-tɐ]","The bill, please"],
@@ -3921,25 +4031,25 @@ const D_EXPRESSIONS = [
 ];
 
 const D_SURVIVAL = [
-  { pt:"Bom dia", pron:"[bong DEE-ɐ]", en:"Good morning (until noon)", cat:"Greetings" },
-  { pt:"Boa tarde", pron:"[BOH-ɐ TAR-d]", en:"Good afternoon", cat:"Greetings" },
-  { pt:"Boa noite", pron:"[BOH-ɐ NOYT]", en:"Good evening / night", cat:"Greetings" },
-  { pt:"Olá", pron:"[oh-LA]", en:"Hello (anytime, informal)", cat:"Greetings" },
-  { pt:"Tudo bem?", pron:"[TOO-doo bayng]", en:"How's everything?", cat:"Greetings" },
-  { pt:"Tudo bem, obrigado/a", pron:"[oh-bree-GA-doo/dɐ]", en:"All good, thanks — obrigado (m) / obrigada (f)", cat:"Greetings" },
-  { pt:"Até amanhã / logo", pron:"[ɐ-TEH ɐ-mɐ-NYUNG / LOH-goo]", en:"See you tomorrow / soon", cat:"Greetings" },
-  { pt:"Adeus / Tchau", pron:"[ɐ-DEH-oosh / chow]", en:"Goodbye / Bye", cat:"Greetings" },
-  { pt:"Por favor", pron:"[poor fɐ-VOR]", en:"Please", cat:"Politeness" },
-  { pt:"De nada", pron:"[dɐ NAH-dɐ]", en:"You're welcome", cat:"Politeness" },
-  { pt:"Desculpe", pron:"[dɐsh-KOOL-pɐ]", en:"Excuse me / Sorry", cat:"Politeness" },
-  { pt:"Com licença", pron:"[kong lee-SEN-sɐ]", en:"Excuse me (to pass through)", cat:"Politeness" },
-  { pt:"Não percebo", pron:"[nowng pɐr-SEH-boo]", en:"I don't understand", cat:"Classroom" },
-  { pt:"Pode repetir?", pron:"[POH-d hɐ-pɐ-TEER]", en:"Can you repeat?", cat:"Classroom" },
-  { pt:"Fale mais devagar, por favor", pron:"[FA-lɐ maish dɐ-vɐ-GAR]", en:"Speak more slowly, please", cat:"Classroom" },
-  { pt:"Não falo bem português", pron:"[nowng FA-loo bayng poor-too-GESH]", en:"I don't speak Portuguese well", cat:"Classroom" },
-  { pt:"Como se diz… em português?", pron:"[KOH-moo sɐ deesh ayng poor-too-GESH]", en:"How do you say… in Portuguese?", cat:"Classroom" },
-  { pt:"Sim / Não", pron:"[seeng / nowng]", en:"Yes / No", cat:"Basics" },
-  { pt:"Obrigado/a", pron:"[oh-bree-GA-doo/dɐ]", en:"Thank you — obrigado (m) / obrigada (f)", cat:"Basics" },
+  { pt:"☀️ Bom dia", pron:"[bong DEE-ɐ]", en:"Good morning (until noon)", cat:"Greetings" },
+  { pt:"🌤️ Boa tarde", pron:"[BOH-ɐ TAR-d]", en:"Good afternoon", cat:"Greetings" },
+  { pt:"🌙 Boa noite", pron:"[BOH-ɐ NOYT]", en:"Good evening / night", cat:"Greetings" },
+  { pt:"👋 Olá", pron:"[oh-LA]", en:"Hello (anytime, informal)", cat:"Greetings" },
+  { pt:"🙂 Tudo bem?", pron:"[TOO-doo bayng]", en:"How's everything?", cat:"Greetings" },
+  { pt:"😊 Tudo bem, obrigado/a", pron:"[oh-bree-GA-doo/dɐ]", en:"All good, thanks — obrigado (m) / obrigada (f)", cat:"Greetings" },
+  { pt:"👋 Até amanhã / logo", pron:"[ɐ-TEH ɐ-mɐ-NYUNG / LOH-goo]", en:"See you tomorrow / soon", cat:"Greetings" },
+  { pt:"👋 Adeus / Tchau", pron:"[ɐ-DEH-oosh / chow]", en:"Goodbye / Bye", cat:"Greetings" },
+  { pt:"🙏 Por favor", pron:"[poor fɐ-VOR]", en:"Please", cat:"Politeness" },
+  { pt:"😊 De nada", pron:"[dɐ NAH-dɐ]", en:"You're welcome", cat:"Politeness" },
+  { pt:"😅 Desculpe", pron:"[dɐsh-KOOL-pɐ]", en:"Excuse me / Sorry", cat:"Politeness" },
+  { pt:"🚶 Com licença", pron:"[kong lee-SEN-sɐ]", en:"Excuse me (to pass through)", cat:"Politeness" },
+  { pt:"❓ Não percebo", pron:"[nowng pɐr-SEH-boo]", en:"I don't understand", cat:"Classroom" },
+  { pt:"🔁 Pode repetir?", pron:"[POH-d hɐ-pɐ-TEER]", en:"Can you repeat?", cat:"Classroom" },
+  { pt:"🔉 Fale mais devagar, por favor", pron:"[FA-lɐ maish dɐ-vɐ-GAR]", en:"Speak more slowly, please", cat:"Classroom" },
+  { pt:"🤐 Não falo bem português", pron:"[nowng FA-loo bayng poor-too-GESH]", en:"I don't speak Portuguese well", cat:"Classroom" },
+  { pt:"💬 Como se diz… em português?", pron:"[KOH-moo sɐ deesh ayng poor-too-GESH]", en:"How do you say… in Portuguese?", cat:"Classroom" },
+  { pt:"✅ Sim / Não", pron:"[seeng / nowng]", en:"Yes / No", cat:"Basics" },
+  { pt:"🙏 Obrigado/a", pron:"[oh-bree-GA-doo/dɐ]", en:"Thank you — obrigado (m) / obrigada (f)", cat:"Basics" },
 ];
 
 const D_PRACTICE = [
@@ -5582,17 +5692,52 @@ identity: () => `
   </table></div>`,
 
 description: () => `
-  ${ctx('Physical description vocabulary: hair, eyes, body type. Personality adjectives. Adjective agreement rules.','Needed for describing people and understanding descriptions. Adjective agreement (-o/-a/-os/-as) is the most common grammar error in A1.','Gender — noun gender rules; Plurals — adjective agreement')}
-  ${sectionHead('Description','Session 3','Physical and personality description. Adjectives must agree with the noun in gender and number.')}
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">
+  ${ctx('TER / USAR / SER for physical description. Hair, eyes, body, face and personality vocabulary.','The TER/USAR/SER distinction is the most important grammar point in this section. SER = identity. TER = natural features. USAR = chosen/changeable features.','Body — body parts vocabulary; Ser vs Estar — SER patterns; Core Verbs — TER conjugation')}
+  ${sectionHead('Descrição Física','Sessions 3 & UFCD 6454 S5','Physical description — SER, TER and USAR each describe different kinds of features. Hair, eyes, body and personality vocabulary.')}
+
+  <h3 class="sub-heading">⚠️ TER / USAR / SER — which verb to use?</h3>
+  ${infoBox('This is the most common source of mistakes in physical description. The choice of verb depends on the <strong>nature of the feature</strong>, not the word order.')}
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+    ${D_DESCRIPTION.ter_usar_ser.verbs.map(v=>`<div class="card" style="border-top:4px solid ${v.color}">
+      <div style="font-weight:800;font-size:18px;color:${v.color};margin-bottom:4px">${v.verb}</div>
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:10px">${v.rule}</div>
+      <ul style="font-size:12px;padding-left:16px;margin:0 0 10px;color:var(--text-3)">
+        ${v.uses.map(u=>`<li>${u}</li>`).join('')}
+      </ul>
+      ${v.examples.map(e=>`<div style="padding:5px 0;border-top:1px solid var(--border)">
+        <div class="pt" style="font-size:13px">${e[0]}</div>
+        <div class="en" style="font-size:12px">${e[1]}</div>
+      </div>`).join('')}
+    </div>`).join('')}
+  </div>
+  <h3 class="sub-heading">TER vs USAR — common contrast pairs</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>TER (natural)</th><th>Meaning</th><th>USAR (chosen)</th><th>Meaning</th></tr></thead>
+    <tbody>${D_DESCRIPTION.ter_usar_ser.contrast.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800;color:var(--green)">${r[0]}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[1]}</td>
+      <td class="pt" style="font-weight:800;color:var(--accent)">${r[2]}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[3]}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;margin-bottom:20px">
     <div>
       <h3 class="sub-heading">💇 Cabelo — Hair</h3>
+      ${infoBox('Shape: liso / ondulado / encaracolado<br>Length: comprido / curto<br>Colour: louro / castanho / ruivo / preto / grisalho / branco<br>Style (usar): tranças / franja / rabo de cavalo')}
       ${vocabGrid(D_DESCRIPTION.hair)}
     </div>
     <div>
       <h3 class="sub-heading">👁️ Olhos — Eyes</h3>
       ${vocabGrid(D_DESCRIPTION.eyes)}
-      <h3 class="sub-heading" style="margin-top:16px">🧍 Corpo — Body</h3>
+      <h3 class="sub-heading" style="margin-top:16px">🧔 Rosto — Face</h3>
+      ${vocabGrid(D_DESCRIPTION.face)}
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🧍 Corpo — Build & appearance</h3>
       ${vocabGrid(D_DESCRIPTION.body)}
     </div>
     <div>
@@ -5600,6 +5745,7 @@ description: () => `
       ${vocabGrid(D_DESCRIPTION.personality)}
     </div>
   </div>
+
   <h3 class="sub-heading">📐 Adjective agreement rules</h3>
   ${warnBox('Adjectives agree with the NOUN in gender AND number. Learn the noun gender first, then apply the ending.')}
   <div class="tbl-wrap"><table>
@@ -6002,6 +6148,49 @@ practice: () => `
         <div style="font-weight:700;margin-bottom:6px">❓ ${q}</div>
         <div style="height:36px;border:1px dashed var(--border);border-radius:6px;background:var(--surface-2)"></div>
       </div>`).join('')}
+    </div>`).join('')}
+  </div>`,
+
+
+
+body: () => `
+  ${ctx('Parts of the body (partes do corpo), head vocabulary, and the five senses (os cinco sentidos) with their organs.','Body vocabulary is essential for doctor visits, describing pain, and describing people. The five senses connect directly to specific body organs — knowing them explains which organ to use with TER.','Description — TER/USAR/SER for describing physical features; Survival Phrases — At the doctor')}
+  ${sectionHead('Corpo Humano & Sentidos','UFCD 6454 Session 5','Partes do corpo humano. Os órgãos dos sentidos.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🦵 O corpo — Body</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Português</th><th>Pron.</th><th>English</th></tr></thead>
+        <tbody>${D_BODY.corpo.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r[0]}</td>
+          <td>${pr(r[1])}</td>
+          <td class="en">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🧠 A cabeça — Head</h3>
+      ${infoBox('ORELHA = outer ear (visible). OUVIDO = inner ear / the hearing organ. Use OUVIDO when talking about hearing (órgão da audição).')}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Português</th><th>Pron.</th><th>English</th></tr></thead>
+        <tbody>${D_BODY.cabeca.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+          <td class="pt" style="font-weight:800">${r[0]}</td>
+          <td>${pr(r[1])}</td>
+          <td class="en">${r[2]}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">👁️ Os cinco sentidos — The five senses</h3>
+  ${infoBox('O contacto com o mundo é feito através dos cinco sentidos.')}
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px">
+    ${D_BODY.sentidos.map(s=>`<div class="card" style="text-align:center;border-top:4px solid var(--primary)">
+      <div style="font-size:32px;margin-bottom:8px">${s.icon}</div>
+      <div class="pt" style="font-weight:800;font-size:15px;color:var(--primary);margin-bottom:4px">${s.sense}</div>
+      <div>${pr(s.pron)}</div>
+      <div class="en" style="margin:4px 0">${s.en}</div>
+      <div style="font-size:12px;color:var(--text-3);font-style:italic;margin-top:4px">órgão: ${s.organ}</div>
+      <div style="font-size:11px;color:var(--text-2);margin-top:6px">${s.desc}</div>
     </div>`).join('')}
   </div>`,
 
