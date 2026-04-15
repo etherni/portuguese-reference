@@ -5225,43 +5225,42 @@ banking: () => `
     </tr>`).join('')}</tbody>
   </table></div>
   <h3 class="sub-heading">Superlativo relativo</h3>
-  ${infoBox(D_COMPARATIVES.superlativo.note)}
-  ${D_COMPARATIVES.superlativo.ex.map(e => `<div class="card-sm" style="margin-bottom:6px"><div class="pt">${e.pt}</div><div class="en">${e.en}</div></div>`).join('')}`,
+  ${infoBox(D_COMPARATIVES.superlative.note)}
+  ${D_COMPARATIVES.superlative.ex.map(e => `<div class="card-sm" style="margin-bottom:6px"><div class="pt">${e.pt}</div><div class="en">${e.en}</div></div>`).join('')}`,
 
 'muito-pouco': () => `
-  ${ctx('MUITO and POUCO change form depending on what they modify — noun or verb.','This is one of the most consistent A1 mistakes: saying *muito cansados instead of muito cansados (correct — after verb it is invariable). Always ask: is it before a noun or after a verb?','Comparatives — degree; Description — adjective agreement')}
+  ${ctx('MUITO and POUCO change form depending on what they modify — noun or verb.','This is one of the most consistent A1 mistakes. Always ask: is it before a noun or after a verb/adjective?','Comparatives — degree; Description — adjective agreement')}
   ${sectionHead('Muito / Pouco','UFCD 6453 S5','MUITO and POUCO agree with the noun they precede, but are invariable after a verb or adjective.')}
   ${infoBox(D_MUITO_POUCO.note)}
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
-    <div class="card" style="border-left:4px solid var(--primary)">
-      <div style="font-weight:800;color:var(--primary);margin-bottom:10px">${D_MUITO_POUCO.rule1.label}</div>
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Form</th><th>Gender</th><th>Example</th><th>English</th></tr></thead>
-        <tbody>${D_MUITO_POUCO.rule1.table.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td class="pt" style="font-weight:800">${r.form}</td>
-          <td style="font-size:12px;color:var(--text-3)">${r.gen}</td>
-          <td class="pt">${r.ex}</td>
-          <td class="en">${r.en}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>
-    <div class="card" style="border-left:4px solid var(--green)">
-      <div style="font-weight:800;color:var(--green);margin-bottom:10px">${D_MUITO_POUCO.rule2.label}</div>
-      ${infoBox(D_MUITO_POUCO.rule2.note)}
-      ${D_MUITO_POUCO.rule2.ex.map(e => `<div style="padding:4px 0;border-bottom:1px solid var(--border)">
-        <div class="pt">${e[0]}</div><div class="en">${e[1]}</div>
-      </div>`).join('')}
-    </div>
-  </div>
-  <h3 class="sub-heading">Decision rule</h3>
-  <div class="rule-box">${D_MUITO_POUCO.decision}</div>
+  ${warnBox(D_MUITO_POUCO.decisionRule)}
+  <h3 class="sub-heading">Before a noun — must agree in gender and number</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Form</th><th>Use</th><th>Example</th></tr></thead>
+    <tbody>
+      ${[['muito','M sg noun','muito trabalho — a lot of work'],
+         ['muita','F sg noun','muita atividade — a lot of activity'],
+         ['muitos','M pl noun','muitos livros — many books'],
+         ['muitas','F pl noun','muitas pessoas — many people'],
+         ['pouco','M sg noun','pouco tempo — little time'],
+         ['pouca','F sg noun','pouca água — little water'],
+         ['poucos','M pl noun','poucos amigos — few friends'],
+         ['poucas','F pl noun','poucas vezes — few times'],
+      ].map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <td class="pt" style="font-weight:800;color:var(--primary)">${r[0]}</td>
+        <td style="font-size:12px;color:var(--text-3)">${r[1]}</td>
+        <td class="pt" style="font-size:13px">${r[2]}</td>
+      </tr>`).join('')}
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">After a verb — invariable (never changes)</h3>
+  ${infoBox('After a verb or adjective, muito/pouco never change form: Ela trabalha <strong>muito</strong>. Ele come <strong>pouco</strong>. Estou <strong>muito</strong> cansada.')}
   <h3 class="sub-heading">Worked examples</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Portuguese</th><th>English</th><th>Rule applied</th></tr></thead>
-    <tbody>${D_MUITO_POUCO.examples.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td class="pt">${r.pt}</td>
-      <td class="en">${r.en}</td>
-      <td style="font-size:12px;color:${r.rule==='before noun'?'var(--primary)':'var(--green)'};font-weight:700">${r.rule}</td>
+    <thead><tr><th>Sentence</th><th>Answer</th><th>Why</th></tr></thead>
+    <tbody>${D_MUITO_POUCO.worked.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt">${r.sent}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.ans}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.why}</td>
     </tr>`).join('')}</tbody>
   </table></div>`,
 
@@ -5280,7 +5279,7 @@ banking: () => `
     </tr>`).join('')}</tbody>
   </table></div>
   <h3 class="sub-heading">Example sentences</h3>
-  <div class="card-grid">${D_COM_PRONOMES.examples.map(e => `<div class="card-sm">
+  <div class="card-grid">${D_COM_PRONOMES.ex.map(e => `<div class="card-sm">
     <div class="pt">${e.pt}</div><div class="en">${e.en}</div>
   </div>`).join('')}</div>
   ${infoBox('→ Full pronoun system (direct object, indirect object, after all prepositions): see <strong>Pronomes Complemento</strong>')}`,
@@ -5300,292 +5299,32 @@ banking: () => `
       <td class="pt" style="font-size:12px">${r.ex}</td>
     </tr>`).join('')}</tbody>
   </table></div>
-  <h3 class="sub-heading">Preposição DE contractions</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>DE +</th><th>Result</th><th>Example</th></tr></thead>
-    <tbody>${D_PRONOMES_PREP.de_contractions.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td style="color:var(--text-3)">${r[0]}</td>
-      <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
-      <td class="pt" style="font-size:13px">${r[2]}</td>
-    </tr>`).join('')}</tbody>
-  </table></div>
-  <h3 class="sub-heading">Pronomes átonos — CD (direct object) and CI (indirect object)</h3>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-    <div>
-      <h3 class="sub-heading">CD — Complemento Direto</h3>
-      ${infoBox(D_PRONOMES_PREP.cd.note)}
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Person</th><th>CD pronoun</th><th>Example</th></tr></thead>
-        <tbody>${D_PRONOMES_PREP.cd.forms.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
-          <td class="pt" style="font-size:12px">${r[2]}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>
-    <div>
-      <h3 class="sub-heading">CI — Complemento Indireto</h3>
-      ${infoBox(D_PRONOMES_PREP.ci.note)}
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Person</th><th>CI pronoun</th><th>Example</th></tr></thead>
-        <tbody>${D_PRONOMES_PREP.ci.forms.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800;color:var(--green)">${r[1]}</td>
-          <td class="pt" style="font-size:12px">${r[2]}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>
-  </div>`,
-
-'gostos-preferencias': () => `
-  ${ctx('Expressing likes, dislikes and preferences using GOSTAR DE, PREFERIR, ADORAR, DETESTAR.','GOSTAR always requires DE before a noun or infinitive — omitting it is a constant mistake. PREFERIR has a stem change (E→I) in some forms.','Precisar / Ter de / Dever — expressing need; Convites — invitations using these verbs')}
-  ${sectionHead('Gostos & Preferências','UFCD 6454 S1','Exprimir gostos e preferências. GOSTAR DE (always DE!), PREFERIR, ADORAR, DETESTAR, ODIAR.')}
-  ${warnBox('GOSTAR always needs DE. ✅ Gosto <strong>de</strong> música. ❌ Gosto música. This is the most common A1 mistake.')}
-  <div style="display:grid;gap:16px;margin-bottom:20px">
-    ${D_GOSTOS_PREFERENCIAS.positive.map(v => `<div class="card" style="border-left:4px solid var(--green)">
-      <div style="font-weight:800;color:var(--green);margin-bottom:4px">${v.verb} <span style="font-size:12px;color:var(--text-3);font-weight:400">${v.en}</span></div>
-      <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${v.pattern}</div>
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Pronoun</th><th>Form</th><th>Example</th></tr></thead>
-        <tbody>${v.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800">${r[1]}</td>
-          <td class="pt" style="font-size:12px">${r[2]||''}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>`).join('')}
-    ${D_GOSTOS_PREFERENCIAS.negative.map(v => `<div class="card" style="border-left:4px solid var(--accent)">
-      <div style="font-weight:800;color:var(--accent);margin-bottom:4px">${v.verb} <span style="font-size:12px;color:var(--text-3);font-weight:400">${v.en}</span></div>
-      <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${v.note}</div>
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Pronoun</th><th>Form</th></tr></thead>
-        <tbody>${v.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800">${r[1]}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>`).join('')}
-  </div>
-  <h3 class="sub-heading">Useful phrases</h3>
-  <div class="card-grid">${D_GOSTOS_PREFERENCIAS.phrases.map(p => `<div class="card-sm">
-    <div class="pt">${p.pt}</div><div class="en">${p.en}</div>
-  </div>`).join('')}</div>`,
-
-'precisar-dever': () => `
-  ${ctx('Three structures for expressing need and obligation: PRECISAR DE (I need), TER DE (I have to), DEVER (I should).','These are essential for giving advice, instructions, and talking about requirements. The distinction between DEVER (mild obligation) and TER DE (strong obligation) maps closely to English should vs must.','Gostos & Preferências — desires; Imperativo — direct commands; Estar Patterns — TER DE pattern')}
-  ${sectionHead('Precisar / Ter de / Dever','UFCD 6454 S1','Exprimir necessidade e obrigação. PRECISAR DE + noun/inf. = need. TER DE + inf. = have to. DEVER + inf. = should/ought to.')}
-  ${infoBox(D_PRECISAR_DEVER.note)}
-  ${D_PRECISAR_DEVER.verbs.map(v => `
-  <div class="card" style="border-left:4px solid ${v.color};margin-bottom:16px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
-      <span style="font-weight:800;font-size:16px;color:${v.color}">${v.verb}</span>
-      <span style="font-size:13px;color:var(--text-3)">${v.en}</span>
-    </div>
-    <div class="rule-box" style="margin-bottom:10px">${v.pattern}</div>
+  <h3 class="sub-heading">Contrações — COM / EM / DE + pronomes</h3>
+  ${D_PRONOMES_PREP.contractions.map(ct => `
+  <div class="card" style="margin-bottom:10px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:8px">prep. <strong>${ct.prep}</strong> +</div>
     <div class="tbl-wrap"><table>
-      <thead><tr><th>Pronoun</th><th>Form</th><th>Example</th></tr></thead>
-      <tbody>${v.conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-        <td class="pt" style="font-weight:800">${r[1]}</td>
-        <td class="pt" style="font-size:12px">${r[2]||''}</td>
+      <thead><tr><th>Pronoun</th><th>Result</th><th>Pron.</th><th>English</th></tr></thead>
+      <tbody>${ct.forms.map((f,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <td class="pt" style="color:var(--text-3)">${f.pronoun}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary)">${f.result}</td>
+        <td>${pr(f.pron)}</td>
+        <td class="en">${f.en}</td>
       </tr>`).join('')}</tbody>
     </table></div>
   </div>`).join('')}
-  <h3 class="sub-heading">All 8 obligation structures at a glance</h3>
+  <h3 class="sub-heading">Pronomes átonos — Direct Object (CD / Complemento Direto)</h3>
+  ${infoBox(D_PRONOMES_PREP.directObj.note)}
+  <div class="rule-box" style="margin-bottom:12px">${D_PRONOMES_PREP.directObj.rule}</div>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Structure</th><th>English</th><th>Strength</th></tr></thead>
-    <tbody>${D_PRECISAR_DEVER.allStructures.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td class="pt" style="font-weight:800">${r[0]}</td>
-      <td class="en">${r[1]}</td>
-      <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
+    <thead><tr><th>Person</th><th>CD pronoun</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.directObj.forms.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td style="font-size:12px;color:var(--text-3)">${r.subject}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.form}</td>
+      <td class="pt" style="font-size:12px">${r.ex}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
     </tr>`).join('')}</tbody>
   </table></div>`,
-
-'ser-estar': () => `
-  ${ctx('SER and ESTAR both translate as "to be" in English but are never interchangeable in Portuguese. SER = permanent/identity. ESTAR = temporary/state/location.','This is the single most important grammatical distinction at A1. Every "to be" sentence requires you to choose. Location is ALWAYS ESTAR.','Estar Patterns — the 5 ESTAR constructions; Verb Patterns — conjugation families')}
-  ${sectionHead('Ser vs Estar','Sessions 2–3','Both mean "to be". SER for identity, origin, profession, characteristics. ESTAR for location, state, ongoing action. Never interchangeable.')}
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
-    <div>
-      <h3 class="sub-heading" style="color:var(--primary)">SER — present tense</h3>
-      <div class="tbl-wrap"><table>
-        <tbody>${D_SER_ESTAR.ser_conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">${r[1]}</td>
-          <td>${pr(r[2])}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>
-    <div>
-      <h3 class="sub-heading" style="color:var(--green)">ESTAR — present tense</h3>
-      <div class="tbl-wrap"><table>
-        <tbody>${D_SER_ESTAR.estar_conj.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800;font-size:16px;color:var(--green)">${r[1]}</td>
-          <td>${pr(r[2])}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>
-  </div>
-  <h3 class="sub-heading">SER — past tense (fui/foi/fomos…)</h3>
-  ${infoBox('SER and IR share the same past tense forms (fui, foste, foi, fomos, foram). Context makes it clear which is meant.')}
-  <div class="tbl-wrap"><table>
-    <tbody>${D_SER_ESTAR.ser_past.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-      <td class="pt" style="font-weight:800">${r[1]}</td>
-      <td>${pr(r[2])}</td>
-    </tr>`).join('')}</tbody>
-  </table></div>
-  <h3 class="sub-heading">When to use SER</h3>
-  <div class="card-grid">${D_SER_ESTAR.ser_uses.map(u => `<div class="card-sm">
-    <div style="font-weight:800;color:var(--primary);margin-bottom:4px">${u.use}</div>
-    <div class="pt">${u.pt}</div><div class="en">${u.en}</div>
-  </div>`).join('')}</div>
-  <h3 class="sub-heading">When to use ESTAR</h3>
-  <div class="card-grid">${D_SER_ESTAR.estar_uses.map(u => `<div class="card-sm">
-    <div style="font-weight:800;color:var(--green);margin-bottom:4px">${u.use}</div>
-    <div class="pt">${u.pt}</div><div class="en">${u.en}</div>
-  </div>`).join('')}</div>
-  ${warnBox(D_SER_ESTAR.tricky_cases.note)}
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Context</th><th>Verb</th><th>Example</th><th>Why</th></tr></thead>
-    <tbody>${D_SER_ESTAR.tricky_cases.cases.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td style="font-size:12px;font-weight:700">${r.ctx}</td>
-      <td class="pt" style="font-weight:800;color:${r.verb==='SER'?'var(--primary)':'var(--green)'}">${r.verb}</td>
-      <td class="pt">${r.ex}</td>
-      <td style="font-size:12px;color:var(--text-3)">${r.why}</td>
-    </tr>`).join('')}</tbody>
-  </table></div>`,
-
-'estar-patterns': () => `
-  ${ctx('ESTAR has 5 key construction patterns beyond simple location. Each has a distinct meaning.','ESTAR A + infinitivo (ongoing action) is the EU Portuguese equivalent of the English present continuous — this is one of the biggest EU/BR differences.','Ser vs Estar — when to use each; Reflexive Verbs — estar a + reflexive constructions')}
-  ${sectionHead('Estar Patterns','Session 5','The 5 key ESTAR patterns: location, state, COM+noun (sensations), ESTAR A + inf. (ongoing action), TER DE/QUE + inf. (obligation).')}
-  ${D_ESTAR_PATTERNS.patterns.map(p => `
-  <div class="card" style="border-left:4px solid ${p.color};margin-bottom:16px">
-    <div style="font-weight:800;font-size:15px;color:${p.color};margin-bottom:6px">${p.title}</div>
-    <div style="font-size:13px;color:var(--text-2);margin-bottom:10px">${p.note}</div>
-    ${p.ex.map(e => `<div style="padding:4px 0;border-bottom:1px solid var(--border)">
-      <div class="pt">${e[0]}</div>
-      <div class="en">${e[2]}</div>
-    </div>`).join('')}
-  </div>`).join('')}`,
-
-'verb-patterns': () => `
-  ${ctx('Portuguese verbs belong to one of 3 families (-AR, -ER, -IR). Learn one model verb per family and you can conjugate hundreds.','This is the foundation of all conjugation. Every regular verb follows one of three identical patterns. Master ANDAR, COMER, PARTIR and 90% of regular verbs are covered.','Core Verbs — the 16 most important verbs (mostly irregular); Irregular Verbs — verbs that break the pattern')}
-  ${sectionHead('Verb Patterns','Session 4','Regular verb conjugation — present indicative. Three families: -AR, -ER, -IR. Vós (*) is archaic — shown for completeness.')}
-  ${infoBox(D_VERB_PATTERNS.note)}
-  <div style="display:grid;gap:16px;margin-bottom:20px">
-    ${D_VERB_PATTERNS.families.map(f => `<div class="card" style="border-left:4px solid ${f.color}">
-      <div style="font-weight:800;font-size:16px;color:${f.color};margin-bottom:4px">${f.num} conjugation — <code>${f.end}</code></div>
-      <div style="font-size:13px;color:var(--text-3);margin-bottom:12px">Model: <strong>${f.model}</strong></div>
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Pronoun</th><th>Form</th><th>Pronunciation</th><th>Note</th></tr></thead>
-        <tbody>${f.pronouns.map((p,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${p}</td>
-          <td class="pt" style="font-weight:800;font-size:16px">${f.forms[i].w}</td>
-          <td>${pr(f.forms[i].p)}</td>
-          <td style="font-size:12px;color:var(--text-3)">${f.forms[i].note}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>`).join('')}
-  </div>
-  <h3 class="sub-heading">Affirmative / Negative / Interrogative</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Type</th><th>Structure</th><th>Example</th></tr></thead>
-    <tbody>${D_VERB_PATTERNS.sentence_types.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td style="font-weight:700;font-size:13px">${r.type}</td>
-      <td style="font-size:13px;color:var(--text-3)">${r.structure}</td>
-      <td class="pt">${r.ex}</td>
-    </tr>`).join('')}</tbody>
-  </table></div>`,
-
-'core-verbs': () => `
-  ${ctx('16 core verbs that appear constantly in daily Portuguese speech. Many are irregular.','You cannot form basic sentences without these. Memorise EU form first — it is always the most irregular.','Irregular Verbs — full irregularity breakdown; Verb Patterns — regular conjugation families')}
-  ${sectionHead('Core Verbs','Sessions 2–7','The 16 most essential verbs with full conjugations and examples. Irregular EU forms highlighted.')}
-  ${D_CORE_VERBS.map(v => `
-  <div class="card" style="margin-bottom:14px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
-      <span style="font-weight:800;font-size:16px;color:var(--primary)">${v.verb}</span>
-      <span style="font-size:12px;color:var(--text-3)">${pr(v.pron)} — ${v.en}</span>
-    </div>
-    <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${v.note}</div>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>Pronoun</th><th>Form</th><th>Pron.</th></tr></thead>
-      <tbody>${v.conj.map((r,i) => `<tr style="background:${i===0?'var(--primary-lt)':i%2===0?'var(--surface)':'var(--surface-2)'}">
-        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-        <td class="pt" style="font-weight:800;color:${i===0?'var(--primary)':'inherit'}">${r[1]}</td>
-        <td>${pr(r[2])}</td>
-      </tr>`).join('')}</tbody>
-    </table></div>
-    <div style="margin-top:8px">${v.ex.map(e => `<div style="padding:2px 0"><span class="pt" style="font-size:13px">${e[0]}</span> <span class="en">${e[2]}</span></div>`).join('')}</div>
-  </div>`).join('')}`,
-
-'reflexive-verbs': () => `
-  ${ctx('Reflexive verbs describe actions done to oneself. The reflexive pronoun (me/te/se/nos) moves position depending on sentence context.','PLACEMENT is the critical issue: after verb in normal statements (Chamo-me), before verb after negation/trigger words (Não me chamo). The NÓS form drops the final -s: levantamo-nos.','Verb Patterns — base conjugation; Pronouns — subject pronouns; Pronomes Complemento — full pronoun system')}
-  ${sectionHead('Reflexive Verbs','Sessions 6–7','Verbos reflexos — the pronoun refers back to the subject. Pronoun position changes after negation and trigger words.')}
-  <h3 class="sub-heading">Reflexive pronouns</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Subject</th><th>Pronoun</th><th>Pron.</th><th>Meaning</th><th>Example</th></tr></thead>
-    <tbody>${D_REFLEXIVE_VERBS.pronouns.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-      <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
-      <td>${pr(r[1].split(' ')[1]||r[1])}</td>
-      <td style="font-size:12px;color:var(--text-3)">myself/yourself…</td>
-      <td class="pt" style="font-size:12px">${r[2]}</td>
-    </tr>`).join('')}</tbody>
-  </table></div>
-  <h3 class="sub-heading">⚠️ Placement rules</h3>
-  ${warnBox('NÓS form: drop the final -S of the verb before adding -NOS. Levantamos + nos → Levantamo-nos (not *levantamos-nos)')}
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Rule</th><th>Position</th><th>Example</th><th>English</th></tr></thead>
-    <tbody>${D_REFLEXIVE_VERBS.placement.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-      <td style="font-size:12px;font-weight:700">${r.rule}</td>
-      <td style="font-size:12px;color:${i===0?'var(--green)':'var(--accent)'};font-weight:700">${r.pos}</td>
-      <td class="pt">${r.ex}</td>
-      <td class="en">${r.en}</td>
-    </tr>`).join('')}</tbody>
-  </table></div>
-  <h3 class="sub-heading">13 key reflexive verbs</h3>
-  ${vocabGrid(D_REFLEXIVE_VERBS.verbs.map(v => [v.pt, v.pron, v.en]))}`,
-
-'irregular-verbs': () => `
-  ${ctx('16 high-frequency verbs that do not follow the regular -AR/-ER/-IR pattern. The EU (first person) form is always the most irregular.','You will use these every day. There is no shortcut — they must be memorised. EU form first, then the pattern often extends to other forms.','Core Verbs — the 16 most important; Verb Patterns — what regular conjugation looks like')}
-  ${sectionHead('Irregular Verbs','Session 6 & UFCD 6453','16 irregular verbs — full conjugations. Summary comparison table at top for quick reference.')}
-  <h3 class="sub-heading">Summary — all 16 verbs at a glance</h3>
-  ${infoBox(D_IRREGULAR_TABLE.note)}
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Verb</th><th>En</th><th style="color:var(--primary)">EU ⚠️</th><th>TU</th><th>ELE</th><th>NÓS</th><th>ELES</th><th>Key</th></tr></thead>
-    <tbody>
-      ${[...D_IRREGULAR_TABLE.ar_er, ...D_IRREGULAR_TABLE.ir].map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
-        <td style="font-weight:800;color:var(--primary)">${r.verb}</td>
-        <td style="font-size:12px;color:var(--text-3)">${r.en}</td>
-        <td class="pt" style="font-weight:800;color:var(--primary);background:var(--primary-lt)">${r.eu} ${pr(r.eu_pron)}</td>
-        <td class="pt">${r.tu}</td>
-        <td class="pt">${r.ele}</td>
-        <td class="pt">${r.nos}</td>
-        <td class="pt">${r.eles}</td>
-        <td style="font-size:11px;color:var(--text-3)">${r.key}</td>
-      </tr>`).join('')}
-    </tbody>
-  </table></div>
-  <h3 class="sub-heading">Detailed conjugations — expandable</h3>
-  ${D_IRREGULAR_VERBS.map(v => `
-  <details style="margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden">
-    <summary style="padding:10px 14px;cursor:pointer;font-weight:800;background:var(--surface);display:flex;justify-content:space-between">
-      <span style="color:var(--primary)">${v.verb}</span>
-      <span style="font-size:13px;color:var(--text-3)">${v.en} — ${v.pron}</span>
-    </summary>
-    <div style="padding:12px 14px">
-      <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${v.note}</div>
-      <div class="tbl-wrap"><table>
-        <tbody>${v.conj.map((r,i) => `<tr style="background:${i===0?'var(--primary-lt)':i%2===0?'var(--surface)':'var(--surface-2)'}">
-          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
-          <td class="pt" style="font-weight:800;color:${i===0?'var(--primary)':'inherit'}">${r[1]}</td>
-          <td>${pr(r[2])}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-      ${v.ex.map(e => `<div style="padding:3px 0"><span class="pt" style="font-size:13px">${e[0]}</span> <span class="en">${e[2]}</span></div>`).join('')}
-    </div>
-  </details>`).join('')}`,
 
 'imperfeito': () => `
   ${ctx('The imperfect past tense — used for habitual past actions, past descriptions, and polite requests (imperfeito de cortesia).','QUERIA and PODIA as polite request forms are extremely high frequency in spoken Portuguese. Regular -AR verbs get -ava endings; -ER/-IR get -ia.','Ser vs Estar — past forms; Imperativo — imperfeito de cortesia comparison; Future Plans — contrasting past habits vs future plans')}
@@ -5638,13 +5377,15 @@ banking: () => `
   <h3 class="sub-heading">Time expressions for future plans</h3>
   ${vocabGrid(D_FUTURE_IR.timeExpressions)}
   <h3 class="sub-heading">IR + inf. vs COSTUMAR + inf.</h3>
-  ${infoBox(D_FUTURE_IR.costumar.note)}
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-    ${D_FUTURE_IR.costumar.compare.map(col => `<div class="card" style="border-left:3px solid ${col.color}">
-      <div style="font-weight:800;color:${col.color};margin-bottom:8px">${col.label}</div>
-      ${col.ex.map(e => `<div class="pt" style="margin-bottom:4px">${e[0]} <span class="en">${e[1]}</span></div>`).join('')}
-    </div>`).join('')}
-  </div>`,
+  ${infoBox(D_FUTURE_IR.vs_costumar.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_FUTURE_IR.vs_costumar.rows.map((r,i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.verb}</td>
+      <td class="pt" style="font-size:13px">${r.ex}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`,
 
 
 
@@ -5812,7 +5553,14 @@ weather: () => `
     </tr>`).join('')}</tbody>
   </table></div>
   ${D_WEATHER.verbs ? `<h3 class="sub-heading">Weather verbs</h3>${vocabGrid(D_WEATHER.verbs)}` : ''}
-  ${D_WEATHER.phrases ? `<h3 class="sub-heading">Useful phrases</h3>${vocabGrid(D_WEATHER.phrases)}` : ''}`,
+  ${D_WEATHER.phrases ? `<h3 class="sub-heading">Useful phrases</h3><div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>Pron.</th><th>English</th></tr></thead>
+    <tbody>${D_WEATHER.phrases.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>` : ''}`,
 
 identity: () => `
   ${ctx('Personal ID vocabulary, marital status, and countries with nationalities (masculine and feminine forms) and languages.','You need this from day 1 to introduce yourself, fill in forms, and understand questions about your background.','Pronouns — EU/TU forms used for self-introduction; Description — physical appearance')}
@@ -5914,10 +5662,10 @@ measurements: () => `
     </div>
     <div>
       <h3 class="sub-heading">💧 Volume</h3>
-      ${infoBox(D_MEASUREMENTS.volume.note)}
+      ${infoBox(D_MEASUREMENTS.capacity.note)}
       <div class="tbl-wrap"><table>
         <thead><tr><th>Unit</th><th>Abbr.</th><th>Value</th><th>Note</th></tr></thead>
-        <tbody>${D_MEASUREMENTS.volume.units.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <tbody>${D_MEASUREMENTS.capacity.units.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
           <td class="pt" style="font-weight:800">${r.pt}</td>
           <td style="font-weight:800;color:var(--primary)">${r.abbr}</td>
           <td style="font-size:12px">${r.val}</td>
@@ -5989,7 +5737,7 @@ transport: () => `
       <h3 class="sub-heading">🔪 Utensils — Utensílios</h3>
       <div class="tbl-wrap"><table>
         <thead><tr><th></th><th>PT</th><th>Pron.</th><th>EN</th></tr></thead>
-        <tbody>${D_UTENSILS.utensils.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
+        <tbody>${D_UTENSILS.tools.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}">
           <td style="font-size:18px;text-align:center">${r.e}</td>
           <td class="pt" style="font-weight:800">${r.pt}</td>
           <td>${pr(r.pron)}</td>
@@ -6214,8 +5962,8 @@ residencia: () => `
       ${t.validity?`<div style="font-size:12px;color:var(--text-3)">⏱️ ${t.validity}</div>`:''}
     </div>`).join('')}
   </div>
-  ${D_RESIDENCIA.documents ? `<h3 class="sub-heading">📄 Required documents</h3><div class="tbl-wrap"><table><thead><tr><th></th><th>Document</th><th>Note</th></tr></thead><tbody>${D_RESIDENCIA.documents.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.icon||'📄'}</td><td class="pt" style="font-weight:800">${r.pt}</td><td style="font-size:12px;color:var(--text-3)">${r.note||''}</td></tr>`).join('')}</tbody></table></div>` : ''}
-  ${D_RESIDENCIA.formasTratamento ? `<h3 class="sub-heading">🤝 Formas de tratamento</h3>${infoBox(D_RESIDENCIA.formasTratamento.note)}<div class="tbl-wrap"><table><thead><tr><th>Form</th><th>Use</th><th>Context</th></tr></thead><tbody>${D_RESIDENCIA.formasTratamento.levels.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td class="pt" style="font-weight:800">${r.form}</td><td style="font-size:12px;color:var(--text-3)">${r.use}</td><td style="font-size:12px">${r.context}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
+  ${D_RESIDENCIA.documentos ? `<h3 class="sub-heading">📄 Required documents</h3><div class="tbl-wrap"><table><thead><tr><th></th><th>Document</th><th>Note</th></tr></thead><tbody>${D_RESIDENCIA.documentos.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-size:18px;text-align:center">${r.e}</td><td class="pt" style="font-weight:800">${r.doc}</td><td class="en" style="font-size:12px">${r.en}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  ${D_RESIDENCIA.formasTratamento ? `<h3 class="sub-heading">🤝 Formas de tratamento</h3>${infoBox(D_RESIDENCIA.formasTratamento.note)}<div class="tbl-wrap"><table><thead><tr><th>Register</th><th>Singular</th><th>Plural</th><th>Context</th></tr></thead><tbody>${D_RESIDENCIA.formasTratamento.table.map((r,i)=>`<tr style="background:${i%2===0?'var(--surface)':'var(--surface-2)'}"><td style="font-weight:700;font-size:13px">${r.register}</td><td class="pt">${r.singular}</td><td class="pt">${r.plural}</td><td style="font-size:12px;color:var(--text-3)">${r.context}</td></tr>`).join('')}</tbody></table></div>` : ''}`,
 
 'social-etiquette': () => `
   ${ctx('QUERIA instead of QUERO for polite restaurant and service requests. Dialogues showing imperfeito de cortesia in action.','This single habit (QUERIA not QUERO) separates polite from rude in Portuguese service contexts. It applies everywhere: restaurants, shops, hotels, banks.','Fórmulas de Cortesia — complete formula system; Imperativo — imperfeito de cortesia with PODER; Pretérito Imperfeito — conjugation')}
