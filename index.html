@@ -1114,6 +1114,7 @@
             { id: "house", title: "House & Home" },
             { id: "body", title: "Corpo Humano & Sentidos" },
             { id: "description", title: "Descrição Física" },
+            { id: "saude", title: "Saúde & Serviços" },
             { id: "money", title: "Money & Prices" },
             { id: "payments", title: "Payments & Documents" },
             { id: "measurements", title: "Units of Measure" },
@@ -9646,6 +9647,7 @@
             tu_neg: "não vás",
             voce: "vá",
             nos: "vamos",
+            vos: "ide",
             voces: "vão",
             en: "to go",
           },
@@ -9699,7 +9701,8 @@
             tu: "dá",
             tu_neg: "não dês",
             voce: "dê",
-            nos: "demos",
+            nos: "dêmos",
+            vos: "dai",
             voces: "deem",
             en: "to give",
           },
@@ -11535,6 +11538,397 @@
           },
           { role: "Catarina", text: "Obrigada pela informação." },
           { role: "X", text: "De nada." },
+        ],
+      };
+
+      const D_SAUDE = {
+        snsSystems: {
+          note: "O Serviço Nacional de Saúde (SNS) é o sistema público de saúde em Portugal. Acesso universal, comparticipado. Cidadãos e residentes legais têm acesso mediante número de utente do SNS.",
+          services: [
+            {
+              e: "🏥",
+              pt: "o hospital",
+              pron: "[oo osh-pee-TAL]",
+              en: "hospital",
+              note: "Urgência available 24h",
+            },
+            {
+              e: "🏪",
+              pt: "o centro de saúde",
+              pron: "[oo SEN-troo dɐ sɐ-OO-d]",
+              en: "health centre (GP clinic)",
+              note: "First point of contact; requires número de utente",
+            },
+            {
+              e: "💊",
+              pt: "a farmácia",
+              pron: "[ɐ fɐr-MA-syɐ]",
+              en: "pharmacy / chemist",
+              note: "Green cross sign. Many medicines without prescription.",
+            },
+            {
+              e: "🚑",
+              pt: "a urgência",
+              pron: "[ɐ oor-ZHEN-syɐ]",
+              en: "A&E / emergency room",
+              note: "Triagem de Manchester — colour-coded waiting system",
+            },
+            {
+              e: "🩺",
+              pt: "a consulta",
+              pron: "[ɐ kon-SOOL-tɐ]",
+              en: "appointment / consultation",
+              note: "Marcar consulta = to book an appointment",
+            },
+            {
+              e: "🏠",
+              pt: "os cuidados de saúde primários",
+              pron: "",
+              en: "primary healthcare / GP services",
+              note: "Centro de saúde is the gateway",
+            },
+            {
+              e: "🩻",
+              pt: "o hospital de dia",
+              pron: "",
+              en: "day hospital (outpatient treatment)",
+              note: "Chemotherapy, dialysis, minor procedures",
+            },
+            {
+              e: "📞",
+              pt: "a linha SNS 24",
+              pron: "",
+              en: "SNS 24 hotline — tel. 808 24 24 24",
+              note: "Phone triage before going to urgência",
+            },
+          ],
+        },
+        numeroutente: {
+          note: "O número de utente do SNS é o número de identificação do cidadão no Serviço Nacional de Saúde. É necessário para aceder a qualquer serviço de saúde público em Portugal. Pode ser obtido no centro de saúde da área de residência.",
+          vocab: [
+            [
+              "o número de utente",
+              "",
+              "SNS patient number (required for all public health services)",
+            ],
+            ["o cartão de saúde", "[oo kar-TOWNG dɐ sɐ-OO-d]", "health card"],
+            [
+              "o centro de saúde da área",
+              "",
+              "local health centre (by residence address)",
+            ],
+            [
+              "inscrever-se",
+              "[insh-krɐ-VER sɐ]",
+              "to register (at the health centre)",
+            ],
+            [
+              "marcar consulta",
+              "[mɐr-KAR kon-SOOL-tɐ]",
+              "to book an appointment",
+            ],
+            [
+              "a lista de espera",
+              "[ɐ LEESH-tɐ dɐ ish-PEH-rɐ]",
+              "the waiting list",
+            ],
+          ],
+        },
+        triagem: {
+          note: "Triagem de Manchester — sistema de classificação de doentes nas urgências hospitalares em Portugal. Cada cor corresponde a um nível de urgência e a um tempo máximo de espera.",
+          levels: [
+            {
+              color: "#CC0000",
+              label: "Emergente",
+              en: "Immediate",
+              time: "Atendimento imediato",
+              desc: "Life-threatening — resuscitation required",
+            },
+            {
+              color: "#FF6600",
+              label: "Muito Urgente",
+              en: "Very Urgent",
+              time: "Até 10 minutos",
+              desc: "Serious condition requiring rapid assessment",
+            },
+            {
+              color: "#FFD700",
+              label: "Urgente",
+              en: "Urgent",
+              time: "Até 60 minutos",
+              desc: "Urgent but stable — can wait up to 1 hour",
+            },
+            {
+              color: "#2E7D32",
+              label: "Pouco Urgente",
+              en: "Less Urgent",
+              time: "Até 120 minutos",
+              desc: "Semi-urgent — stable, can wait up to 2 hours",
+            },
+            {
+              color: "#1565C0",
+              label: "Não Urgente",
+              en: "Non-urgent",
+              time: "Até 240 minutos",
+              desc: "Non-urgent — can wait up to 4 hours",
+            },
+            {
+              color: "#DDDDDD",
+              label: "Atendimento Programado",
+              en: "Scheduled",
+              time: "Consulta agendada",
+              desc: "Pre-scheduled appointment / planned procedure",
+            },
+          ],
+        },
+        symptoms: [
+          {
+            e: "🤧",
+            pt: "a constipação",
+            pron: "[ɐ kon-shtee-pɐ-SOWNG]",
+            en: "the cold (common cold) — NOT constipation!",
+            note: "False friend! A constipação = a cold. Prisão de ventre = constipation.",
+          },
+          {
+            e: "🤒",
+            pt: "a febre",
+            pron: "[ɐ FEH-brɐ]",
+            en: "fever / high temperature",
+            note: "Ter febre = to have a fever",
+          },
+          {
+            e: "😮‍💨",
+            pt: "a tosse",
+            pron: "[ɐ TOS]",
+            en: "cough",
+            note: "Tossir = to cough",
+          },
+          {
+            e: "😣",
+            pt: "a dor de garganta",
+            pron: "[ɐ dor dɐ gɐr-GAN-tɐ]",
+            en: "sore throat",
+            note: "",
+          },
+          {
+            e: "🤢",
+            pt: "a dor de barriga",
+            pron: "[ɐ dor dɐ bɐ-HEE-gɐ]",
+            en: "stomach ache / belly pain",
+            note: "Dor abdominal (formal)",
+          },
+          {
+            e: "🤕",
+            pt: "a dor de cabeça",
+            pron: "[ɐ dor dɐ kɐ-BEH-sɐ]",
+            en: "headache",
+            note: "Enxaqueca = migraine",
+          },
+          {
+            e: "🦷",
+            pt: "a dor de dentes",
+            pron: "[ɐ dor dɐ DEN-tɐsh]",
+            en: "toothache",
+            note: "",
+          },
+          {
+            e: "💪",
+            pt: "o braço partido",
+            pron: "[oo BRA-soo pɐr-TEE-doo]",
+            en: "broken arm",
+            note: "Partido/a = broken (bone)",
+          },
+          {
+            e: "🦵",
+            pt: "a perna partida",
+            pron: "[ɐ PER-nɐ pɐr-TEE-dɐ]",
+            en: "broken leg",
+            note: "",
+          },
+          {
+            e: "🤮",
+            pt: "a náusea / ter enjoo",
+            pron: "[NAO-zyɐ / en-ZHOH-oo]",
+            en: "nausea / feeling sick",
+            note: "",
+          },
+          {
+            e: "😪",
+            pt: "a falta de ar",
+            pron: "[ɐ FAL-tɐ dɐ ar]",
+            en: "shortness of breath",
+            note: "",
+          },
+          {
+            e: "🩸",
+            pt: "a hemorragia",
+            pron: "[ɐ eh-moo-rɐ-ZHEE-ɐ]",
+            en: "bleeding / haemorrhage",
+            note: "Sangrar = to bleed",
+          },
+          {
+            e: "🤕",
+            pt: "a tontura",
+            pron: "[ɐ ton-TOO-rɐ]",
+            en: "dizziness",
+            note: "Estar tonto/a = to feel dizzy",
+          },
+          {
+            e: "😴",
+            pt: "a fadiga / o cansaço",
+            pron: "[fɐ-DEE-gɐ / kɐn-SA-soo]",
+            en: "fatigue / exhaustion",
+            note: "",
+          },
+        ],
+        atDoctor: [
+          {
+            role: "Doente",
+            pt: "Tenho uma consulta marcada para as 10h.",
+            en: "I have an appointment at 10.",
+          },
+          {
+            role: "Doente",
+            pt: "Não me sinto bem. Tenho dores aqui.",
+            en: "I don't feel well. I have pain here.",
+          },
+          {
+            role: "Doente",
+            pt: "Tenho dor de cabeça e febre desde ontem.",
+            en: "I've had a headache and fever since yesterday.",
+          },
+          { role: "Doente", pt: "Estou constipado/a.", en: "I have a cold." },
+          {
+            role: "Doente",
+            pt: "Tenho tosse há três dias.",
+            en: "I've had a cough for three days.",
+          },
+          { role: "Doente", pt: "Dói-me aqui.", en: "It hurts here." },
+          {
+            role: "Doente",
+            pt: "Preciso de receita médica.",
+            en: "I need a prescription.",
+          },
+          {
+            role: "Doente",
+            pt: "Queria marcar uma consulta.",
+            en: "I'd like to book an appointment.",
+          },
+          {
+            role: "Médico/a",
+            pt: "Onde é que lhe dói?",
+            en: "Where does it hurt?",
+          },
+          {
+            role: "Médico/a",
+            pt: "Há quanto tempo tem estes sintomas?",
+            en: "How long have you had these symptoms?",
+          },
+          {
+            role: "Médico/a",
+            pt: "Tome estes comprimidos de 8 em 8 horas.",
+            en: "Take these tablets every 8 hours.",
+          },
+          {
+            role: "Médico/a",
+            pt: "Vou passar uma receita.",
+            en: "I'll write you a prescription.",
+          },
+          {
+            role: "Médico/a",
+            pt: "Descanse e beba muitos líquidos.",
+            en: "Rest and drink plenty of fluids.",
+          },
+          {
+            role: "Enfermeiro/a",
+            pt: "Qual é o seu número de utente?",
+            en: "What is your SNS patient number?",
+          },
+          {
+            role: "Enfermeiro/a",
+            pt: "Tem alguma alergia a medicamentos?",
+            en: "Are you allergic to any medication?",
+          },
+        ],
+        vocab: [
+          ["o/a médico/a", "[oo MEH-dee-koo]", "the doctor (GP)"],
+          ["o/a enfermeiro/a", "[oo en-fer-MAY-roo]", "the nurse"],
+          ["o/a farmacêutico/a", "[oo fɐr-mɐ-SOO-tee-koo]", "the pharmacist"],
+          ["a receita", "[ɐ rɐ-SAY-tɐ]", "the prescription"],
+          ["o medicamento", "[oo mɐ-dee-kɐ-MEN-too]", "the medication"],
+          ["o comprimido", "[oo kom-pree-MEE-doo]", "the tablet / pill"],
+          ["o xarope", "[oo shɐ-ROP]", "the syrup / cough mixture"],
+          ["a pomada", "[ɐ poo-MA-dɐ]", "the cream / ointment"],
+          ["a injeção", "[ɐ in-zhɐ-SOWNG]", "the injection"],
+          ["o penso", "[oo PEN-soo]", "the plaster / bandage"],
+          ["a cirurgia", "[ɐ see-roor-ZHEE-ɐ]", "the surgery / operation"],
+          ["a radiografia", "[ɐ rɐ-dyoo-grɐ-FEE-ɐ]", "the X-ray"],
+          ["as análises", "[ɐsh ɐ-NA-lee-zɐsh]", "blood tests / lab tests"],
+          ["a vacina", "[ɐ vɐ-SEE-nɐ]", "the vaccine"],
+          [
+            "o seguro de saúde",
+            "[oo sɐ-GOO-roo dɐ sɐ-OO-d]",
+            "health insurance",
+          ],
+          [
+            "o internamento",
+            "[oo in-ter-nɐ-MEN-too]",
+            "hospitalisation / admission",
+          ],
+          ["a alta", "[ɐ AL-tɐ]", "discharge (from hospital)"],
+        ],
+        specialties: [
+          [
+            "Medicina Geral e Familiar",
+            "",
+            "GP — general practitioner; first point of contact",
+          ],
+          ["Pediatria", "", "children 0–18"],
+          ["Ginecologia-Obstetrícia", "", "women's health + pregnancy"],
+          ["Cardiologia", "", "heart conditions"],
+          ["Ortopedia", "", "bones, joints, muscles"],
+          ["Oftalmologia", "", "eyes and vision"],
+          ["Otorrinolaringologia", "", "ear, nose, throat (ENT)"],
+          ["Dermatologia", "", "skin conditions"],
+          ["Psiquiatria", "", "mental health"],
+          ["Neurologia", "", "brain and nervous system"],
+          ["Pneumologia", "", "lungs and respiratory system"],
+          ["Gastrenterologia", "", "digestive system"],
+          ["Urologia", "", "urinary system"],
+          ["Oncologia Médica", "", "cancer treatment"],
+          ["Endocrinologia", "", "hormones and metabolism"],
+          ["Reumatologia", "", "joints, muscles, autoimmune"],
+          ["Nefrologia", "", "kidneys"],
+          ["Hematologia Clínica", "", "blood disorders"],
+          ["Medicina de Emergência", "", "emergency medicine (urgência)"],
+          ["Cirurgia Geral", "", "general surgery"],
+          [
+            "Medicina Interna",
+            "",
+            "internal medicine (adult complex conditions)",
+          ],
+          ["Anestesiologia", "", "anaesthesiology"],
+          [
+            "Radiologia / Radiodiagnóstico",
+            "",
+            "imaging: X-ray, MRI, CT scans",
+          ],
+          ["Patologia Clínica", "", "lab analysis / pathology"],
+          ["Medicina do Trabalho", "", "occupational health"],
+          ["Saúde Pública", "", "public health"],
+          ["Cuidados Paliativos", "", "palliative / end-of-life care"],
+        ],
+        videos: [
+          {
+            url: "https://youtu.be/bRaHpbwAJf0",
+            title: "No médico — At the Doctor (YouTube)",
+            desc: "Dialogue and vocabulary for a doctor's appointment: symptoms, making an appointment, understanding instructions.",
+          },
+          {
+            url: "https://youtu.be/Un5nqMfPtNM",
+            title: "Na farmácia — At the Pharmacy (YouTube)",
+            desc: "Asking for medication, understanding a prescription, pharmacy vocabulary.",
+          },
         ],
       };
 
@@ -14874,8 +15268,9 @@
     .join("")}</div>
   <h3 class="sub-heading">Irregular Imperative Forms</h3>
   ${warnBox("TU: affirmative and negative are <strong>different forms</strong>. Aff = a special short form. Neg = não + present subjunctive. All other persons (VOCÊ/NÓS/VOCÊS) use the same subjunctive form in both affirmative and negative.")}
+  ${infoBox("VÓS is archaic. It is shown only where the session explicitly teaches it: IR → <strong>ide</strong> (vós aff.) / <strong>não vades</strong> (neg.); DAR → <strong>dai</strong> (vós aff.) / <strong>não deis</strong> (neg.). All other verbs: VÓS form follows regular pattern (inf. − r + i).")}
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Verb</th><th>English</th><th>TU ✅ aff.</th><th>TU ❌ neg.</th><th>VOCÊ</th><th>NÓS</th><th>VOCÊS</th></tr></thead>
+    <thead><tr><th>Verb</th><th>English</th><th>TU ✅ aff.</th><th>TU ❌ neg.</th><th>VOCÊ</th><th>NÓS</th><th>VÓS*</th><th>VOCÊS</th></tr></thead>
     <tbody>${D_IMPERATIVO.irregular
       .map(
         (
@@ -14888,6 +15283,7 @@
       <td class="pt" style="font-weight:800;color:var(--accent)">${r.tu_neg}</td>
       <td class="pt" style="font-weight:800">${r.voce}</td>
       <td class="pt">${r.nos}</td>
+      <td class="pt" style="color:var(--text-3);font-size:12px">${r.vos || "—"}</td>
       <td class="pt">${r.voces}</td>
     </tr>`,
       )
@@ -16534,6 +16930,125 @@
       )
       .join("")}
   </div>`,
+
+        saude: () => `
+  ${ctx("SNS health system, number of utente, triagem de Manchester (colour-coded urgency), symptoms, at the doctor / pharmacy dialogues, and full list of medical specialties.", "Healthcare vocabulary is essential for daily life in Portugal. The SNS is public and free but requires a número de utente. Knowing the triagem colours prevents unnecessary panic in A&E waiting times.", "Body — partes do corpo e sentidos; Survival Phrases — emergency phrases; Autorização de Residência — documents needed to register for SNS")}
+  ${sectionHead("Saúde & Serviços", "UFCD 6454 Session 6", "Serviço Nacional de Saúde (SNS), serviços de saúde, sintomas, no médico, na farmácia, especialidades médicas. Triagem de Manchester. YouTube resources linked below.")}
+
+  <h3 class="sub-heading">🏥 Serviços de saúde — Health services</h3>
+  ${infoBox(D_SAUDE.snsSystems.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Serviço</th><th>Pron.</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_SAUDE.snsSystems.services
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🆔 Número de utente do SNS</h3>
+  ${infoBox(D_SAUDE.numeroutente.note)}
+  ${vocabGrid(D_SAUDE.numeroutente.vocab)}
+
+  <h3 class="sub-heading">🚑 Triagem de Manchester — Urgency Classification</h3>
+  ${infoBox(D_SAUDE.triagem.note)}
+  <div style="display:grid;gap:8px;margin-bottom:20px">
+    ${D_SAUDE.triagem.levels
+      .map(
+        (
+          l,
+        ) => `<div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border)">
+      <div style="width:36px;height:36px;border-radius:6px;background:${l.color};flex-shrink:0"></div>
+      <div style="min-width:130px;font-weight:800;font-size:14px">${l.label}</div>
+      <div style="min-width:160px;font-weight:700;color:var(--primary);font-size:13px">${l.time}</div>
+      <div style="font-size:12px;color:var(--text-2)">${l.en} — ${l.desc}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">🤒 Sintomas — Symptoms</h3>
+  ${warnBox("⚠️ FALSE FRIEND: <strong>a constipação</strong> = a cold (NOT constipation). <strong>a prisão de ventre</strong> = constipation.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_SAUDE.symptoms
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:${r.note.includes("False") || r.note.includes("NOT") ? "var(--accent)" : "var(--text-3)"}">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">💊 Vocabulário médico essencial</h3>
+  ${vocabGrid(D_SAUDE.vocab)}
+
+  <h3 class="sub-heading">🗨️ No médico / Na farmácia — Dialogues</h3>
+  ${infoBox("These phrases and patterns also appear in the two recommended YouTube videos below.")}
+  <div class="card" style="margin-bottom:16px">
+    ${D_SAUDE.atDoctor
+      .map(
+        (
+          l,
+          i,
+        ) => `<div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);align-items:baseline">
+      <span style="font-weight:800;min-width:110px;font-size:11px;color:${l.role.startsWith("Médic") ? "var(--accent)" : l.role.startsWith("Enferm") ? "var(--green)" : "var(--primary)"}">${l.role}:</span>
+      <div><div class="pt" style="font-size:13px">${l.pt}</div><div class="en" style="font-size:12px">${l.en}</div></div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">📺 Recursos de vídeo — Recommended Videos</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    ${D_SAUDE.videos
+      .map(
+        (
+          v,
+        ) => `<a href="${v.url}" target="_blank" rel="noopener" style="text-decoration:none">
+      <div class="card" style="border-left:4px solid var(--primary);cursor:pointer">
+        <div style="font-size:18px;margin-bottom:6px">▶️</div>
+        <div style="font-weight:800;color:var(--primary);margin-bottom:4px">${v.title}</div>
+        <div style="font-size:12px;color:var(--text-2)">${v.desc}</div>
+      </div>
+    </a>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">🏥 Especialidades médicas — Medical Specialties</h3>
+  ${infoBox("Portugal has 50+ official medical specialties. The 27 most relevant for daily life and common situations are listed here. For a full appointment, reference your specialty and say: <strong>Tenho consulta de [especialidade].</strong>")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Especialidade</th><th>English / Area</th><th>Relevant for</th></tr></thead>
+    <tbody>${D_SAUDE.specialties
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td class="en">${r[1]}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
       };
 
       // ─────────────────────────────────────────────
