@@ -3620,6 +3620,72 @@
         note: "Possessives agree in gender and number with the THING POSSESSED, not with the owner. Always use the definite article before the possessive in European Portuguese: A MINHA casa, not MINHA casa.",
         seu_note:
           "SEU/SUA is ambiguous — it can mean his/her/your/their. To avoid confusion, Portuguese speakers often use DELE/DELA (of him/of her) instead of seu/sua for third person.",
+        framework: [
+          {
+            group: "Um só possuidor — one owner",
+            rows: [
+              {
+                person: "1ª pessoa",
+                owner: "Eu",
+                m: "meu",
+                f: "minha",
+                mp: "meus",
+                fp: "minhas",
+                en: "my",
+              },
+              {
+                person: "2ª pessoa",
+                owner: "Tu",
+                m: "teu",
+                f: "tua",
+                mp: "teus",
+                fp: "tuas",
+                en: "your (informal)",
+              },
+              {
+                person: "3ª pessoa",
+                owner: "Ele/Ela/Você",
+                m: "seu / dele / dela",
+                f: "sua / dele / dela",
+                mp: "seus / deles / delas",
+                fp: "suas / deles / delas",
+                en: "his / her / your (formal)",
+              },
+            ],
+          },
+          {
+            group: "Vários possuidores — multiple owners",
+            rows: [
+              {
+                person: "1ª pessoa",
+                owner: "Nós",
+                m: "nosso",
+                f: "nossa",
+                mp: "nossos",
+                fp: "nossas",
+                en: "our",
+              },
+              {
+                person: "2ª pessoa",
+                owner: "Vós / Vocês",
+                m: "vosso",
+                f: "vossa",
+                mp: "vossos",
+                fp: "vossas",
+                en: "your (plural)",
+              },
+              {
+                person: "3ª pessoa",
+                owner: "Eles/Elas",
+                m: "seu / deles / delas",
+                f: "sua / deles / delas",
+                mp: "seus / deles / delas",
+                fp: "suas / deles / delas",
+                en: "their",
+              },
+            ],
+          },
+        ],
         determiners: [
           {
             owner: "Eu (I)",
@@ -3638,12 +3704,12 @@
             en: "your",
           },
           {
-            owner: "Ele/Ela (he/she)",
-            m: "seu [SEH-oo] / dele [DEH-l]",
-            f: "sua [SOO-ɐ] / dela [DEH-lɐ]",
-            mp: "seus / deles",
+            owner: "Ele/Ela/Você",
+            m: "seu / dele / dela",
+            f: "sua / dele / dela",
+            mp: "seus / deles / delas",
             fp: "suas / delas",
-            en: "his / her",
+            en: "his / her / your",
           },
           {
             owner: "Nós (we)",
@@ -3654,12 +3720,20 @@
             en: "our",
           },
           {
-            owner: "Vocês/Eles (they/you all)",
-            m: "seu [SEH-oo] / deles",
-            f: "sua [SOO-ɐ] / delas",
+            owner: "Vós / Vocês",
+            m: "vosso [VOH-soo]",
+            f: "vossa [VOH-sɐ]",
+            mp: "vossos",
+            fp: "vossas",
+            en: "your (plural)",
+          },
+          {
+            owner: "Eles/Elas",
+            m: "seu / deles / delas",
+            f: "sua / deles / delas",
             mp: "seus / deles",
             fp: "suas / delas",
-            en: "their / your",
+            en: "their",
           },
         ],
         determiner_vs_pronoun: [
@@ -3671,9 +3745,58 @@
           },
           {
             type: "Pronome possessivo",
-            rule: "Replaces the noun entirely — stands alone",
+            rule: "Replaces the noun entirely — stands alone after article",
             ex: "A minha mãe e a tua são professoras.",
             en: "My mother and yours are teachers. ('tua' replaces 'tua mãe')",
+          },
+        ],
+        pronomeExamples: [
+          {
+            pt: "Este relógio é do Tiago. É seu.",
+            en: "This watch belongs to Tiago. It is his.",
+            note: "seu = dele (his)",
+          },
+          {
+            pt: "Os trabalhos expostos pertencem-nos. São nossos.",
+            en: "The displayed works belong to us. They are ours.",
+            note: "nossos — masc. plural",
+          },
+          {
+            pt: "O chapéu de chinês pertence-me. É meu.",
+            en: "The chinese hat belongs to me. It is mine.",
+            note: "meu — masc. singular",
+          },
+          {
+            pt: "A pulseira pertence-te, Sara. É tua.",
+            en: "The bracelet belongs to you, Sara. It is yours.",
+            note: "tua — fem. singular",
+          },
+          {
+            pt: "Essas histórias são da Diana. São suas.",
+            en: "Those stories belong to Diana. They are hers.",
+            note: "suas = delas (hers)",
+          },
+        ],
+        sessionDialogue: [
+          {
+            pt: "José, queria comprar-te uma prenda. Quando é o teu aniversário?",
+            en: "José, I'd like to buy you a present. When is your birthday?",
+            note: "teu — tu form",
+          },
+          {
+            pt: "O João é Sagitário. O seu aniversário é a 9 de dezembro.",
+            en: "João is Sagittarius. His birthday is on the 9th of December.",
+            note: "seu = dele (his)",
+          },
+          {
+            pt: "O nosso aniversário é no outono.",
+            en: "Our birthday is in autumn.",
+            note: "nosso — nós",
+          },
+          {
+            pt: "O vosso aniversário é no verão.",
+            en: "Your birthday is in summer.",
+            note: "vosso — vocês",
           },
         ],
         examples: [
@@ -3684,14 +3807,23 @@
             "[oosh MEH-oosh ɐ-MEE-goosh]",
             "my friends (masc. plural)",
           ],
-          ["o livro dele", "[oo LEEV-roo DEH-l]", "his book (unambiguous)"],
-          ["a casa dela", "[ɐ KA-zɐ DEH-lɐ]", "her house (unambiguous)"],
+          [
+            "o livro dele",
+            "[oo LEEV-roo DEH-l]",
+            "his book (unambiguous — not seu)",
+          ],
+          [
+            "a casa dela",
+            "[ɐ KA-zɐ DEH-lɐ]",
+            "her house (unambiguous — not sua)",
+          ],
           ["o nosso professor", "[oo NOH-soo proo-feh-SOR]", "our teacher"],
           [
             "a vossa cidade",
             "[ɐ VOH-sɐ see-DA-d]",
-            "your city (plural/formal)",
+            "your city (vocês — plural)",
           ],
+          ["os vossos desenhos", "", "your drawings (vocês)"],
         ],
       };
 
@@ -12194,6 +12326,184 @@
         ],
       };
 
+      const D_DOENCAS = {
+        estadoFisico: [
+          ["estar saudável", "[ish-TAR sɐ-OO-da-vel]", "to be healthy"],
+          ["estar bem", "[ish-TAR bayng]", "to be well / to feel fine"],
+          ["sentir-se bem", "[sen-TEER sɐ bayng]", "to feel well"],
+          [
+            "estar doente / ter uma doença",
+            "[ish-TAR doo-ENT]",
+            "to be ill / to have an illness",
+          ],
+          ["estar mal", "[ish-TAR mal]", "to feel unwell"],
+          ["sentir-se mal", "[sen-TEER sɐ mal]", "to feel bad / unwell"],
+          [
+            "estar um pouco doente / estar adoentado/a",
+            "",
+            "to be a little ill / under the weather",
+          ],
+          ["estar com febre", "", "to have a fever (estar construction)"],
+          ["ter febre", "[TER FEH-brɐ]", "to have a fever (ter construction)"],
+          [
+            "ter uma constipação",
+            "[kon-shtee-pɐ-SOWNG]",
+            "to have a cold — ⚠️ NOT constipation!",
+          ],
+          ["estar constipado/a", "", "to have a cold (estar construction)"],
+          ["ter tosse", "[TOS]", "to have a cough"],
+          ["estar com tosse", "", "to have a cough (estar construction)"],
+          ["tossir", "[too-SEER]", "to cough (verb)"],
+        ],
+        accidents: [
+          ["ter um acidente", "[ɐ-see-DEN-t]", "to have an accident"],
+          ["cortar(-se)", "[koor-TAR sɐ]", "to cut (oneself)"],
+          ["cortar a mão / o dedo", "", "to cut one's hand / finger"],
+          ["aleijar(-se)", "[ɐ-lay-ZHAR sɐ]", "to hurt / injure (oneself)"],
+          ["aleijar o cotovelo / o joelho", "", "to injure one's elbow / knee"],
+          ["magoar(-se)", "[mɐ-goo-AR sɐ]", "to hurt (oneself) / to injure"],
+          ["magoar o pé / a cabeça", "", "to hurt one's foot / head"],
+          ["partir o braço", "[pɐr-TEER oo BRA-soo]", "to break one's arm"],
+          ["partir a perna / a cabeça", "", "to break one's leg / head"],
+          ["torcer o pé", "[tor-SER]", "to sprain one's ankle/foot"],
+        ],
+        estarCom: [
+          {
+            pt: "estar com dores",
+            en: "to be in pain / aching",
+            ex: "Estou com dores.",
+          },
+          { pt: "estar com fome", en: "to be hungry", ex: "Estou com fome." },
+          { pt: "estar com sede", en: "to be thirsty", ex: "Estou com sede." },
+          { pt: "estar com sono", en: "to be sleepy", ex: "Estou com sono." },
+          {
+            pt: "estar com frio",
+            en: "to be cold (feeling cold)",
+            ex: "Estou com frio.",
+          },
+          {
+            pt: "estar com calor",
+            en: "to be hot (feeling hot)",
+            ex: "Estou com calor.",
+          },
+          {
+            pt: "estar com febre",
+            en: "to have a fever",
+            ex: "Está com febre alta.",
+          },
+          {
+            pt: "estar com tosse",
+            en: "to have a cough",
+            ex: "Está com tosse há dias.",
+          },
+          {
+            pt: "estar com alergia",
+            en: "to have an allergy",
+            ex: "Está com alergia ao pó.",
+          },
+          {
+            pt: "estar com gripe",
+            en: "to have the flu",
+            ex: "Está com gripe.",
+          },
+          {
+            pt: "ter sono",
+            en: "to be sleepy (TER construction)",
+            ex: "Tenho muito sono.",
+          },
+          {
+            pt: "ter fome",
+            en: "to be hungry (TER construction)",
+            ex: "Tens fome?",
+          },
+          {
+            pt: "ter sede",
+            en: "to be thirsty (TER construction)",
+            ex: "Tem sede?",
+          },
+          {
+            pt: "sentir-se cansado/a",
+            en: "to feel tired",
+            ex: "Sinto-me cansado.",
+          },
+          {
+            pt: "sentir-se ensonado/a",
+            en: "to feel drowsy / sleepy",
+            ex: "Sinto-me ensonada.",
+          },
+          {
+            pt: "sentir-se dorido/a",
+            en: "to feel sore / achy",
+            ex: "Sinto-me todo dorido.",
+          },
+          {
+            pt: "sentir-se ótimo/a",
+            en: "to feel great",
+            ex: "Sinto-me ótimo!",
+          },
+          {
+            pt: "mais ou menos",
+            en: "so-so / not bad",
+            ex: "Estou mais ou menos.",
+          },
+        ],
+        socialPhrases: [
+          {
+            e: "🤧",
+            situation: "When someone sneezes",
+            pt: "Santinho! (homem) / Santinha! (mulher)",
+            en: "Bless you! (lit. little saint)",
+            note: "Gender agrees with the person who sneezed",
+          },
+          {
+            e: "💊",
+            situation: "Alternative to Santinho",
+            pt: "Saúde!",
+            en: "Bless you! (lit. health)",
+            note: "Can also be used as a toast when drinking",
+          },
+          {
+            e: "🛌",
+            situation: "When someone is ill",
+            pt: "As melhoras! / Boas melhoras!",
+            en: "Get well soon!",
+            note: "Very common — always use this when someone is sick",
+          },
+        ],
+        gravida: {
+          note: "Estar grávida — to be pregnant. Key vocabulary for pregnancy and reproductive health.",
+          vocab: [
+            ["estar grávida", "[ish-TAR GRA-vee-dɐ]", "to be pregnant"],
+            ["a gravidez", "[ɐ grɐ-vee-DESH]", "pregnancy"],
+            ["o parto", "[oo PAR-too]", "childbirth / delivery"],
+            ["a cesariana", "[ɐ sɐ-zɐ-ree-AN-ɐ]", "caesarean section"],
+            ["o bebé", "[oo bɐ-BEH]", "baby"],
+            ["o embrião", "[oo em-bree-OWNG]", "embryo"],
+            ["o feto", "[oo FEH-too]", "foetus"],
+            ["a ecografia", "[ɐ eh-koo-grɐ-FEE-ɐ]", "ultrasound scan"],
+            [
+              "o cordão umbilical",
+              "[oo kor-DOWNG oom-bee-lee-KAL]",
+              "umbilical cord",
+            ],
+            ["a placenta", "[ɐ plɐ-SEN-tɐ]", "placenta"],
+            ["o útero", "[oo OO-tɐ-roo]", "uterus / womb"],
+            ["a gestação", "[ɐ zhesh-tɐ-SOWNG]", "gestation"],
+            ["a fecundação", "[ɐ fɐ-koon-dɐ-SOWNG]", "fertilisation"],
+            ["a ovulação", "[ɐ oh-voo-lɐ-SOWNG]", "ovulation"],
+            [
+              "a menstruação / o período",
+              "[men-stroo-ɐ-SOWNG]",
+              "menstruation / period",
+            ],
+            ["a dilatação", "[ɐ dee-lɐ-tɐ-SOWNG]", "dilation (labour)"],
+            ["os métodos contracetivos", "", "contraceptive methods"],
+            ["a pílula", "[ɐ PEE-loo-lɐ]", "the contraceptive pill"],
+            ["9 meses", "", "9 months (duration of pregnancy)"],
+          ],
+        },
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -14912,38 +15222,91 @@
   </div>`,
 
         possessives: () => `
-  ${ctx("My, your, his, her, our, their — possessives agree with the thing owned, not the owner.", "English speakers often confuse seu/sua because it is ambiguous (his/her/your/their). The fix: use dele/dela for clarity.", "Gender — possessives agree with noun gender; Pronouns — possessives are a type of determiner")}
-  ${sectionHead("Possessives", "Session 5", "Possessives agree in gender and number with the THING POSSESSED, not the owner. In European Portuguese, the definite article is always used before the possessive: <em>a minha casa</em>, never <em>minha casa</em>.")}
-  ${warnBox("<strong>SEU/SUA is ambiguous</strong> — it can mean his, her, your, or their. To be clear about who owns something, use <strong>DELE</strong> (his) or <strong>DELA</strong> (her) instead: <em>o livro dele</em> = his book.")}
-  <h3 class="sub-heading">Possessive Determiners (before a noun)</h3>
+  ${ctx("My, your, his, her, our, their — possessives agree with the thing owned, not the owner. Two functions: determinante (before noun) and pronome (replaces noun).", "SEU/SUA is ambiguous. VOSSO/VOSSA is the 2nd person plural (vocês) form — separate from seu/sua. The definite article is always used before possessives in EU Portuguese.", "Gender — agreement; Pronouns — pronomes possessivos")}
+  ${sectionHead("Possessivos", "Sessions 5 & UFCD 6454 S8", "Determinantes e Pronomes Possessivos. Two uses: before a noun (determinante) or replacing a noun (pronome). Both forms are identical — the article signals the function.")}
+  ${warnBox("<strong>SEU/SUA is ambiguous</strong> — can mean his/her/your/their. Use <strong>DELE</strong> (his) or <strong>DELA</strong> (her) for clarity: <em>o livro dele</em> (not <em>o seu livro</em>). <strong>VOSSO/VOSSA</strong> = your (plural, vocês). Do not confuse with SEU/SUA.")}
+  ${infoBox("Portuguese always uses the definite article before the possessive: <strong>o meu</strong> livro (not *meu livro). This is different from Brazilian Portuguese where the article is often dropped.")}
+
+  <h3 class="sub-heading">Full table — um só possuidor / vários possuidores</h3>
+  ${D_POSSESSIVES.framework
+    .map(
+      (group, gi) => `
+  <div style="margin-bottom:16px">
+    <div style="font-weight:800;color:var(--primary);font-size:14px;margin-bottom:8px;padding:6px 12px;background:var(--primary-lt);border-radius:6px">${group.group}</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pessoa</th><th>Owner</th><th>Masc. sg</th><th>Fem. sg</th><th>Masc. pl</th><th>Fem. pl</th><th>EN</th></tr></thead>
+      <tbody>${group.rows
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="font-size:12px;color:var(--text-3)">${r.person}</td>
+        <td style="font-weight:700;font-size:13px">${r.owner}</td>
+        <td class="pt" style="font-weight:800">${r.m}</td>
+        <td class="pt" style="font-weight:800">${r.f}</td>
+        <td class="pt" style="color:var(--text-2)">${r.mp}</td>
+        <td class="pt" style="color:var(--text-2)">${r.fp}</td>
+        <td class="en">${r.en}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>`,
+    )
+    .join("")}
+
+  <h3 class="sub-heading">Determinante vs Pronome — two functions, same forms</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    ${D_POSSESSIVES.determiner_vs_pronoun
+      .map(
+        (
+          r,
+          i,
+        ) => `<div class="card" style="border-left:4px solid ${i === 0 ? "var(--primary)" : "var(--green)"}">
+      <div style="font-weight:800;color:${i === 0 ? "var(--primary)" : "var(--green)"};margin-bottom:6px">${r.type}</div>
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${r.rule}</div>
+      <div class="pt" style="font-weight:700">${r.ex}</div>
+      <div class="en" style="font-size:12px">${r.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Pronome possessivo — replaces the noun</h3>
+  ${infoBox("The article is kept when the possessive is used as a pronoun: <em>Esta caneta é <strong>a minha</strong>.</em> Sometimes the article is dropped after SER: <em>Esta caneta é <strong>minha</strong>.</em>")}
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Owner</th><th>Masc. sg</th><th>Fem. sg</th><th>Masc. pl</th><th>Fem. pl</th><th>Meaning</th></tr></thead>
-    <tbody>${D_POSSESSIVES.determiners
+    <thead><tr><th>Sentence</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_POSSESSIVES.pronomeExamples
       .map(
         (
           r,
           i,
         ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
-      <td style="font-weight:700;font-size:13px">${r.owner}</td>
-      <td class="pt">${r.m}</td><td class="pt">${r.f}</td>
-      <td style="color:var(--text-2)">${r.mp}</td><td style="color:var(--text-2)">${r.fp}</td>
-      <td class="en">${r.en}</td>
+      <td class="pt" style="font-weight:700">${r.pt}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
     </tr>`,
       )
       .join("")}</tbody>
   </table></div>
-  <h3 class="sub-heading">Determiner vs Pronoun</h3>
-  ${D_POSSESSIVES.determiner_vs_pronoun
-    .map(
-      (r) => `
-  <div class="card" style="margin-bottom:10px">
-    <div style="font-weight:800;color:var(--primary);margin-bottom:6px">${r.type}</div>
-    <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">${r.rule}</div>
-    <div class="pt">${r.ex}</div>
-    <div class="en">${r.en}</div>
-  </div>`,
-    )
-    .join("")}
+
+  <h3 class="sub-heading">Session dialogue — teu / seu / nosso / vosso</h3>
+  <div class="card" style="margin-bottom:16px">
+    ${D_POSSESSIVES.sessionDialogue
+      .map(
+        (
+          l,
+          i,
+        ) => `<div style="padding:6px 0;border-bottom:1px solid var(--border)">
+      <div class="pt" style="font-size:13px;font-weight:700">${l.pt}</div>
+      <div class="en" style="font-size:12px">${l.en}</div>
+      <div style="font-size:11px;color:var(--text-3)">${l.note}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
   <h3 class="sub-heading">Examples</h3>
   ${vocabGrid(D_POSSESSIVES.examples)}`,
 
@@ -17355,6 +17718,54 @@
   <ul style="padding-left:20px;line-height:2">
     ${D_SAUDE.primaryCare.characteristics.map((c) => `<li class="pt" style="font-size:14px">${c}</li>`).join("")}
   </ul>
+
+  <h3 class="sub-heading">🗣️ Frases sociais — Social health phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Situation</th><th>Portuguese</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_DOENCAS.socialPhrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.situation}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">💊 Estado físico / Doenças — Health states & illness expressions</h3>
+  ${infoBox("Key patterns: <strong>ESTAR + adjective</strong> (estar doente), <strong>TER + noun</strong> (ter febre), <strong>ESTAR COM + noun</strong> (estar com tosse), <strong>SENTIR-SE + adjective</strong> (sentir-se bem). All are correct — learn all four patterns.")}
+  ${vocabGrid(D_DOENCAS.estadoFisico)}
+
+  <h3 class="sub-heading">🤕 Acidentes e lesões — Accidents and injuries</h3>
+  ${vocabGrid(D_DOENCAS.accidents)}
+
+  <h3 class="sub-heading">🤢 ESTAR COM / TER / SENTIR-SE — how you feel</h3>
+  ${infoBox("These constructions describe physical states. ESTAR COM + noun and TER + noun often overlap (estar com fome = ter fome = to be hungry). SENTIR-SE + adjective is more personal/subjective.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Expression</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_DOENCAS.estarCom
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+      <td class="pt" style="font-size:12px;color:var(--text-3)">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🤰 Estar grávida — Pregnancy vocabulary</h3>
+  ${infoBox(D_DOENCAS.gravida.note)}
+  ${vocabGrid(D_DOENCAS.gravida.vocab)}
 
   <h3 class="sub-heading">🏥 Especialidades médicas — Medical Specialties</h3>
   ${infoBox("Portugal has 50+ official medical specialties. The 27 most relevant for daily life and common situations are listed here. For a full appointment, reference your specialty and say: <strong>Tenho consulta de [especialidade].</strong>")}
