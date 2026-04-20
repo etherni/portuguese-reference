@@ -1097,6 +1097,7 @@
             { id: "imperativo", title: "Imperativo" },
             { id: "imperfeito", title: "Pretérito Imperfeito" },
             { id: "future-plans", title: "Future Plans (IR + inf.)" },
+            { id: "doer", title: "Verbo Doer (pain)" },
           ],
         },
         {
@@ -11930,6 +11931,267 @@
             desc: "Asking for medication, understanding a prescription, pharmacy vocabulary.",
           },
         ],
+        sinaisSintomas: {
+          note: "Um sintoma é uma queixa subjetiva — algo que o doente sente e descreve. Um sinal é uma manifestação clínica percebida por outra pessoa (médico, enfermeiro).",
+          sinais: [
+            {
+              e: "🌡️",
+              pt: "a febre",
+              en: "fever",
+              note: "measured by others — sinal",
+            },
+            {
+              e: "😣",
+              pt: "a dor no corpo",
+              en: "body pain",
+              note: "visible reactions — sinal",
+            },
+            {
+              e: "😴",
+              pt: "o cansaço",
+              en: "fatigue / tiredness",
+              note: "observable — sinal",
+            },
+          ],
+          sintomas: [
+            {
+              e: "🟡",
+              pt: "manchas na pele",
+              en: "skin spots / rashes",
+              note: "subjective complaint — sintoma",
+            },
+            {
+              e: "💛",
+              pt: "coloração amarela da pele",
+              en: "yellowing of the skin",
+              note: "jaundice — sintoma",
+            },
+            {
+              e: "😤",
+              pt: "comichão",
+              en: "itching",
+              note: "subjective — sintoma",
+            },
+            {
+              e: "🤧",
+              pt: "nariz congestionado",
+              en: "blocked nose",
+              note: "sintoma",
+            },
+            {
+              e: "😮‍💨",
+              pt: "falta de ar",
+              en: "shortness of breath",
+              note: "sintoma",
+            },
+          ],
+        },
+        primaryCare: {
+          note: "Os cuidados de saúde primários são a porta de entrada no SNS. O centro de saúde presta cuidados próximos da população.",
+          characteristics: [
+            "Trabalham com os pacientes e as suas famílias",
+            "Atendem às necessidades de saúde imediatas e a longo prazo",
+            "Não se limitam a doenças específicas",
+            "Influenciam o bem-estar físico, mental e social",
+            "Dedicam-se a prevenção, diagnóstico, tratamento, gestão e reabilitação",
+          ],
+        },
+        serSaudavel: {
+          note: "Ser saudável não é apenas não ter doenças — é um estado de bem-estar físico, mental e social.",
+          tips: [
+            {
+              e: "🥗",
+              tip: "Ter uma alimentação variada e equilibrada",
+              en: "Have a varied and balanced diet",
+            },
+            {
+              e: "🚫🍺",
+              tip: "Evitar bebidas alcoólicas, tabaco e outras drogas",
+              en: "Avoid alcohol, tobacco and other drugs",
+            },
+            {
+              e: "🏃",
+              tip: "Praticar exercício físico regularmente",
+              en: "Exercise regularly",
+            },
+            {
+              e: "😴",
+              tip: "Dormir o número de horas suficiente",
+              en: "Sleep enough hours",
+            },
+            {
+              e: "🩺",
+              tip: "Consultar o médico com regularidade",
+              en: "See the doctor regularly",
+            },
+            {
+              e: "😊",
+              tip: "Realizar atividades que tragam felicidade e aumentem a autoestima",
+              en: "Do activities that bring happiness and boost self-esteem",
+            },
+            {
+              e: "👨‍👩‍👧",
+              tip: "Passar momentos agradáveis com a família e com os amigos",
+              en: "Spend quality time with family and friends",
+            },
+          ],
+        },
+      };
+
+      const D_DOER = {
+        note: "DOER is a defective verb — it conjugates ONLY in the 3rd person singular (dói) and plural (doem). The PERSON who feels pain is expressed with an indirect object pronoun (me/te/lhe/nos/vos/lhes), and the BODY PART is the grammatical subject. This works exactly like GOSTAR: the pronoun changes, the verb form does not.",
+        rule: "dói = one body part hurts | doem = multiple body parts hurt. The verb agrees with the body part, NOT with the person.",
+        warning:
+          "Never conjugate doer for the person: ❌ 'Eu dói a cabeça' — WRONG. ✅ 'Dói-me a cabeça' — CORRECT.",
+        singular: {
+          note: "Quando dói apenas UMA parte do corpo — one body part → dói",
+          forms: [
+            {
+              person: "1ª sg",
+              pronoun: "me",
+              pt: "Dói-me a perna.",
+              en: "My leg hurts.",
+              note: "eu → me",
+            },
+            {
+              person: "2ª sg",
+              pronoun: "te",
+              pt: "Dói-te o joelho.",
+              en: "Your knee hurts.",
+              note: "tu → te",
+            },
+            {
+              person: "3ª sg",
+              pronoun: "lhe",
+              pt: "Dói-lhe o braço.",
+              en: "His/Her arm hurts.",
+              note: "ele/ela/você → lhe",
+            },
+            {
+              person: "1ª pl",
+              pronoun: "nos",
+              pt: "Dói-nos a mão.",
+              en: "Our hand hurts.",
+              note: "nós → nos",
+            },
+            {
+              person: "2ª pl",
+              pronoun: "vos",
+              pt: "Dói-vos o pé.",
+              en: "Your foot hurts. (vocês)",
+              note: "vós/vocês → vos",
+            },
+            {
+              person: "3ª pl",
+              pronoun: "lhes",
+              pt: "Dói-lhes o ouvido.",
+              en: "Their ear hurts.",
+              note: "eles/elas/vocês → lhes",
+            },
+          ],
+        },
+        plural: {
+          note: "Quando doem MUITAS partes do corpo — multiple body parts → doem",
+          forms: [
+            {
+              person: "1ª sg",
+              pronoun: "me",
+              pt: "Doem-me as pernas e os pés.",
+              en: "My legs and feet hurt.",
+              note: "",
+            },
+            {
+              person: "2ª sg",
+              pronoun: "te",
+              pt: "Doem-te o joelho e o pé.",
+              en: "Your knee and foot hurt.",
+              note: "",
+            },
+            {
+              person: "3ª sg",
+              pronoun: "lhe",
+              pt: "Doem-lhe os braços.",
+              en: "His/Her arms hurt.",
+              note: "",
+            },
+            {
+              person: "1ª pl",
+              pronoun: "nos",
+              pt: "Doem-nos as mãos.",
+              en: "Our hands hurt.",
+              note: "",
+            },
+            {
+              person: "2ª pl",
+              pronoun: "vos",
+              pt: "Doem-vos os pés.",
+              en: "Your feet hurt. (vocês)",
+              note: "",
+            },
+            {
+              person: "3ª pl",
+              pronoun: "lhes",
+              pt: "Doem-lhes os ouvidos.",
+              en: "Their ears hurt.",
+              note: "",
+            },
+          ],
+        },
+        questions: [
+          {
+            register: "Informal (tu)",
+            q: "O que te dói?",
+            a: "Dói-me a garganta.",
+            qa_en: "What hurts? — My throat hurts.",
+          },
+          {
+            register: "Formal (você)",
+            q: "O que lhe dói?",
+            a: "Dói-me a cabeça.",
+            qa_en: "What hurts? — My head hurts.",
+          },
+          {
+            register: "Formal/Informal (vocês/vós)",
+            q: "O que vos dói?",
+            a: "Doem-nos as costas.",
+            qa_en: "What hurts? — Our backs hurt.",
+          },
+        ],
+        painExpressions: [
+          ["Dói-me aqui.", "", "It hurts here. (pointing)"],
+          [
+            "Tenho dor de cabeça.",
+            "[TEN-yoo dor dɐ kɐ-BEH-sɐ]",
+            "I have a headache.",
+          ],
+          [
+            "Tenho dor de garganta.",
+            "[TEN-yoo dor dɐ gɐr-GAN-tɐ]",
+            "I have a sore throat.",
+          ],
+          [
+            "Tenho dor de barriga.",
+            "[TEN-yoo dor dɐ bɐ-HEE-gɐ]",
+            "I have a stomach ache.",
+          ],
+          [
+            "Tenho dor de dentes.",
+            "[TEN-yoo dor dɐ DEN-tɐsh]",
+            "I have toothache.",
+          ],
+          [
+            "Tenho dor nas costas.",
+            "[TEN-yoo dor nɐsh KOSH-tɐsh]",
+            "I have back pain.",
+          ],
+          ["Tenho dor no tornozelo.", "", "I have ankle pain."],
+          ["Tenho o nariz congestionado.", "", "I have a blocked nose."],
+          ["Tenho a perna partida.", "", "I have a broken leg."],
+          ["Tenho a perna partida.", "", "I have a broken leg."],
+          ["Tenho febre.", "[TEN-yoo FEH-brɐ]", "I have a fever."],
+          ["Sinto-me cansado/a.", "[SIN-too mɐ kɐn-SA-doo]", "I feel tired."],
+          ["Estou tonto/a / com tonturas.", "", "I feel dizzy."],
+        ],
       };
 
       const D_CELEBRATIONS = {
@@ -17032,6 +17294,68 @@
       .join("")}
   </div>
 
+  <h3 class="sub-heading">🍎 Ser saudável — Living healthily</h3>
+  ${infoBox(D_SAUDE.serSaudavel.note)}
+  <div style="display:grid;gap:8px;margin-bottom:20px">
+    ${D_SAUDE.serSaudavel.tips
+      .map(
+        (
+          t,
+        ) => `<div style="display:flex;align-items:center;gap:12px;padding:8px 12px;background:var(--surface-2);border-radius:8px;border:1px solid var(--border)">
+      <span style="font-size:22px;min-width:30px;text-align:center">${t.e}</span>
+      <div><div class="pt" style="font-size:13px;font-weight:700">${t.tip}</div><div class="en" style="font-size:12px">${t.en}</div></div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">⚕️ Sinais vs Sintomas — Signs vs Symptoms</h3>
+  ${infoBox(D_SAUDE.sinaisSintomas.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">👁️ Sinais — Signs (observed by others)</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>PT</th><th>EN</th></tr></thead>
+        <tbody>${D_SAUDE.sinaisSintomas.sinais
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">💬 Sintomas — Symptoms (felt by patient)</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>PT</th><th>EN</th></tr></thead>
+        <tbody>${D_SAUDE.sinaisSintomas.sintomas
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <h3 class="sub-heading">🏪 Cuidados de saúde primários</h3>
+  ${infoBox(D_SAUDE.primaryCare.note)}
+  <ul style="padding-left:20px;line-height:2">
+    ${D_SAUDE.primaryCare.characteristics.map((c) => `<li class="pt" style="font-size:14px">${c}</li>`).join("")}
+  </ul>
+
   <h3 class="sub-heading">🏥 Especialidades médicas — Medical Specialties</h3>
   ${infoBox("Portugal has 50+ official medical specialties. The 27 most relevant for daily life and common situations are listed here. For a full appointment, reference your specialty and say: <strong>Tenho consulta de [especialidade].</strong>")}
   <div class="tbl-wrap"><table>
@@ -17049,6 +17373,68 @@
       )
       .join("")}</tbody>
   </table></div>`,
+
+        doer: () => `
+  ${ctx("DOER is a defective verb used only in 3rd person (dói / doem). The person who hurts is the indirect object pronoun; the body part is the grammatical subject.", "The most common error: conjugating DOER for the person (❌ Eu dói). The pattern is the same as GOSTAR — the pronoun signals who, the verb agrees with what. dói = one part. doem = multiple parts.", "Body — body parts vocabulary; Pronomes Complemento — indirect object pronouns me/te/lhe/nos/vos/lhes; Saúde — symptom expressions")}
+  ${sectionHead("Verbo DOER — to hurt / to ache", "UFCD 6454 Session 7", "Defective verb: only 3rd person singular (dói) and plural (doem). The person is indirect object; the body part is the subject.")}
+  ${warnBox(D_DOER.warning)}
+  ${infoBox("<strong>Pattern:</strong> <code>Dói/Doem + pronoun + body part</code><br>dói = one part → <strong>Dói-me a cabeça.</strong> (My head hurts.)<br>doem = multiple parts → <strong>Doem-me as costas.</strong> (My back/backs hurt.)")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">💊 DÓI — one body part</h3>
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:10px">${D_DOER.singular.note}</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Person</th><th>Pronoun</th><th>Example</th><th>English</th></tr></thead>
+        <tbody>${D_DOER.singular.forms
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:12px;color:var(--text-3)">${r.person}</td>
+          <td style="font-weight:800;color:var(--primary);font-size:16px">${r.pronoun}</td>
+          <td class="pt" style="font-weight:700">${r.pt}</td>
+          <td class="en" style="font-size:12px">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">💊💊 DOEM — multiple body parts</h3>
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:10px">${D_DOER.plural.note}</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Person</th><th>Pronoun</th><th>Example</th><th>English</th></tr></thead>
+        <tbody>${D_DOER.plural.forms
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:12px;color:var(--text-3)">${r.person}</td>
+          <td style="font-weight:800;color:var(--primary);font-size:16px">${r.pronoun}</td>
+          <td class="pt" style="font-weight:700">${r.pt}</td>
+          <td class="en" style="font-size:12px">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">❓ Perguntar — How to ask</h3>
+  <div class="card-grid">${D_DOER.questions
+    .map(
+      (q) => `<div class="card-sm" style="border-left:3px solid var(--primary)">
+    <div style="font-size:11px;font-weight:800;color:var(--text-3);text-transform:uppercase;margin-bottom:6px">${q.register}</div>
+    <div class="pt" style="font-weight:800;color:var(--primary)">${q.q}</div>
+    <div class="pt" style="margin-top:4px">${q.a}</div>
+    <div class="en" style="font-size:12px;margin-top:2px">${q.qa_en}</div>
+  </div>`,
+    )
+    .join("")}</div>
+  <h3 class="sub-heading">🤕 Expressar dor — Expressing pain</h3>
+  ${infoBox("Two structures: <strong>TER DOR DE/NO/NA</strong> (to have pain of/in) and <strong>DÓI-ME / DOEM-ME</strong> (it hurts me). Both are correct and used interchangeably.")}
+  ${vocabGrid(D_DOER.painExpressions)}`,
       };
 
       // ─────────────────────────────────────────────
