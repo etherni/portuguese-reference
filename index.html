@@ -1098,6 +1098,14 @@
             { id: "imperfeito", title: "Pretérito Imperfeito" },
             { id: "future-plans", title: "Future Plans (IR + inf.)" },
             { id: "doer", title: "Verbo Doer (pain)" },
+            { id: "perfeito", title: "Pretérito Perfeito Simples" },
+          ],
+        },
+        {
+          group: "💼 A2 — Trabalho & Sociedade",
+          tabs: [
+            { id: "trabalho", title: "Mundo do Trabalho" },
+            { id: "cabeleireiro", title: "No Cabeleireiro" },
           ],
         },
         {
@@ -12504,6 +12512,903 @@
         },
       };
 
+      const D_PERFEITO = {
+        note: "O Pretérito Perfeito Simples (PPS) exprime ações passadas pontuais e completamente terminadas. Contrast: Imperfeito = habitual/continuous past (what was happening). PPS = completed single event (what happened, what was done).",
+        contrast: {
+          note: "The two past tenses are NOT interchangeable.",
+          rows: [
+            {
+              tense: "Pretérito Perfeito Simples",
+              use: "Completed single event, specific moment in the past",
+              ex: "Ontem, eu trabalhei 8 horas.",
+              en: "Yesterday, I worked 8 hours.",
+            },
+            {
+              tense: "Pretérito Imperfeito",
+              use: "Habitual past action, background description, ongoing state",
+              ex: "Quando era jovem, trabalhava muito.",
+              en: "When I was young, I used to work a lot.",
+            },
+          ],
+        },
+        timeMarkers: [
+          ["ontem", "[ON-tayng]", "yesterday"],
+          ["anteontem", "[an-tee-ON-tayng]", "the day before yesterday"],
+          ["na semana passada", "", "last week"],
+          ["no mês passado", "", "last month"],
+          ["no ano passado", "", "last year"],
+          ["na segunda-feira passada", "", "last Monday"],
+          ["há dois dias", "", "two days ago"],
+          ["há um ano", "", "a year ago"],
+          ["quando era jovem", "", "when I was young"],
+          ["de manhã", "", "this morning (completed)"],
+          ["às 9h", "", "at 9 o'clock"],
+        ],
+        regular: {
+          ar: {
+            note: "–AR verbs: remove –AR, add endings. KEY: eu → –ei (not –o). Note the accent: trabalhEI.",
+            verb: "trabalhar",
+            stem: "trabalh–",
+            endings: [
+              {
+                person: "eu",
+                ending: "–ei",
+                form: "trabalhei",
+                note: "accent on E",
+              },
+              { person: "tu", ending: "–aste", form: "trabalhaste", note: "" },
+              {
+                person: "ele/ela/você",
+                ending: "–ou",
+                form: "trabalhou",
+                note: "",
+              },
+              {
+                person: "nós",
+                ending: "–ámos",
+                form: "trabalhámos",
+                note: "accent distinguishes from present: trabalhamos",
+              },
+              {
+                person: "eles/elas/vocês",
+                ending: "–aram",
+                form: "trabalharam",
+                note: "",
+              },
+            ],
+            otherVerbs: [
+              "falar → falei/falaste/falou/falámos/falaram",
+              "morar → morei/moraste/morou/morámos/moraram",
+              "pagar → paguei (spelling change: g→gu before e)",
+              "estudar → estudei",
+              "assinar → assinei",
+              "cortar → cortei",
+              "lavar → lavei",
+              "acordar → acordei",
+              "preparar → preparei",
+              "levantar-se → levantei-me",
+              "chegar → cheguei (g→gu)",
+              "ficar → fiquei (c→qu)",
+            ],
+          },
+          er: {
+            note: "–ER verbs: remove –ER, add endings. eu → –i. ele → –eu.",
+            verb: "comer",
+            stem: "com–",
+            endings: [
+              { person: "eu", ending: "–i", form: "comi", note: "" },
+              { person: "tu", ending: "–este", form: "comeste", note: "" },
+              {
+                person: "ele/ela/você",
+                ending: "–eu",
+                form: "comeu",
+                note: "",
+              },
+              {
+                person: "nós",
+                ending: "–emos",
+                form: "comemos",
+                note: "same as present — context clarifies",
+              },
+              {
+                person: "eles/elas/vocês",
+                ending: "–eram",
+                form: "comeram",
+                note: "",
+              },
+            ],
+            otherVerbs: [
+              "receber → recebi",
+              "compreender → compreendi",
+              "viver → vivi",
+              "conhecer → conheci",
+              "beber → bebi",
+              "descer → desci",
+              "ouvir → ouvi (behaves like -ER)",
+            ],
+          },
+          ir: {
+            note: "–IR verbs: remove –IR, add endings. eu → –i. ele → –iu. Endings very similar to –ER.",
+            verb: "abrir",
+            stem: "abr–",
+            endings: [
+              {
+                person: "eu",
+                ending: "–i",
+                form: "abri",
+                note: "same as –ER eu",
+              },
+              { person: "tu", ending: "–iste", form: "abriste", note: "" },
+              {
+                person: "ele/ela/você",
+                ending: "–iu",
+                form: "abriu",
+                note: "",
+              },
+              {
+                person: "nós",
+                ending: "–imos",
+                form: "abrimos",
+                note: "same as present — context clarifies",
+              },
+              {
+                person: "eles/elas/vocês",
+                ending: "–iram",
+                form: "abriram",
+                note: "",
+              },
+            ],
+            otherVerbs: [
+              "partir → parti",
+              "decidir → decidi",
+              "preferir → preferi",
+              "dormir → dormi",
+              "sentir → senti",
+              "assistir → assisti",
+              "sair → saí (accent: saí/saíste/saiu/saímos/saíram)",
+            ],
+          },
+        },
+        irregulars_preview: {
+          note: "Irregular PPS forms are covered in the Irregular Verbs section. Most common high-frequency irregulars:",
+          verbs: [
+            {
+              inf: "ser/ir",
+              eu: "fui",
+              tu: "foste",
+              ele: "foi",
+              nos: "fomos",
+              eles: "foram",
+              note: "SER and IR share identical PPS forms — context distinguishes",
+            },
+            {
+              inf: "ter",
+              eu: "tive",
+              tu: "tiveste",
+              ele: "teve",
+              nos: "tivemos",
+              eles: "tiveram",
+              note: "",
+            },
+            {
+              inf: "fazer",
+              eu: "fiz",
+              tu: "fizeste",
+              ele: "fez",
+              nos: "fizemos",
+              eles: "fizeram",
+              note: "",
+            },
+            {
+              inf: "vir",
+              eu: "vim",
+              tu: "vieste",
+              ele: "veio",
+              nos: "viemos",
+              eles: "vieram",
+              note: "",
+            },
+            {
+              inf: "dizer",
+              eu: "disse",
+              tu: "disseste",
+              ele: "disse",
+              nos: "dissemos",
+              eles: "disseram",
+              note: "",
+            },
+            {
+              inf: "estar",
+              eu: "estive",
+              tu: "estiveste",
+              ele: "esteve",
+              nos: "estivemos",
+              eles: "estiveram",
+              note: "",
+            },
+            {
+              inf: "poder",
+              eu: "pude",
+              tu: "pudeste",
+              ele: "pôde",
+              nos: "pudemos",
+              eles: "puderam",
+              note: "",
+            },
+            {
+              inf: "querer",
+              eu: "quis",
+              tu: "quiseste",
+              ele: "quis",
+              nos: "quisemos",
+              eles: "quiseram",
+              note: "",
+            },
+            {
+              inf: "saber",
+              eu: "soube",
+              tu: "soubeste",
+              ele: "soube",
+              nos: "soubemos",
+              eles: "souberam",
+              note: "",
+            },
+            {
+              inf: "pôr",
+              eu: "pus",
+              tu: "puseste",
+              ele: "pôs",
+              nos: "pusemos",
+              eles: "puseram",
+              note: "",
+            },
+          ],
+        },
+        narrative: {
+          note: "Connected narrative in PPS — notice how all completed actions in a sequence use PPS (acordaram, levantaram-se, tomaram, foram, prepararam…)",
+          text: "Ontem a Renata e o Luís acordaram às 9:30. Levantaram-se, tomaram um duche e foram à cozinha e prepararam um ótimo pequeno-almoço. Saíram de casa às 11:00, foram até à paragem do autocarro e foram ao centro comercial. À tarde, almoçaram num restaurante; comeram um cozido à portuguesa e beberam um vinho tinto. Quando chegaram a casa, ouviram um pouco de música e descansaram.",
+          highlights: [
+            "acordaram",
+            "levantaram-se",
+            "tomaram",
+            "foram",
+            "prepararam",
+            "saíram",
+            "almoçaram",
+            "comeram",
+            "beberam",
+            "chegaram",
+            "ouviram",
+            "descansaram",
+          ],
+        },
+      };
+
+      const D_TRABALHO = {
+        note: "Vocabulário do emprego e das relações laborais — A2 level. Portugal employment context: 72.1% services sector, 25.1% industry/construction/energy, 2.9% agriculture. SMN (Salário Mínimo Nacional) is set annually.",
+        stats: {
+          note: "EURES data Q1 2023:",
+          items: [
+            "Total population Portugal: 10.3 million (47.2% male, 52.8% female)",
+            "Active population: 5.305 million (+1.8% vs 2022)",
+            "Unemployment rate: 7.2% (women more affected: 7.5%)",
+            "Registered unemployed May 2023: 285,855 (down 10,500 vs 2022)",
+            "39.8% unemployed for over 1 year",
+            "14.5% of registered unemployed were foreign nationals",
+            "Sectors: Services 72.1% | Industry/Construction 25.1% | Agriculture 2.9%",
+          ],
+        },
+        salario: [
+          {
+            e: "💶",
+            pt: "o salário / o ordenado / o vencimento / a remuneração",
+            pron: "",
+            en: "salary / wages / pay — all synonyms",
+            note: "Salário is most common in everyday speech. Vencimento = formal/contractual. Remuneração = umbrella term.",
+          },
+          {
+            e: "💸",
+            pt: "o salário mínimo nacional (SMN)",
+            pron: "",
+            en: "national minimum wage — set annually by government",
+            note: "",
+          },
+          {
+            e: "📈",
+            pt: "os rendimentos",
+            pron: "[ren-dee-MEN-toosh]",
+            en: "income / earnings",
+            note: "Receitas = revenues (same meaning in personal finance)",
+          },
+          {
+            e: "💵",
+            pt: "mil euros ilíquidos / brutos",
+            pron: "",
+            en: "€1,000 gross (before tax)",
+            note: "Ilíquido/bruto = gross. Líquido/neto = net (after tax).",
+          },
+          {
+            e: "🏦",
+            pt: "o recibo de pagamento / de vencimento",
+            pron: "[rɐ-SEE-boo]",
+            en: "payslip",
+            note: "",
+          },
+          {
+            e: "⏱️",
+            pt: "as horas extraordinárias",
+            pron: "",
+            en: "overtime hours",
+            note: "Fazer horas extra = to work overtime",
+          },
+          {
+            e: "🏖️",
+            pt: "as férias",
+            pron: "[FEH-ryɐsh]",
+            en: "holiday / annual leave",
+            note: "22 working days minimum per year in Portugal",
+          },
+          {
+            e: "📅",
+            pt: "o subsídio de férias",
+            pron: "[soob-SEE-dyoo]",
+            en: "holiday bonus (= one extra month salary at holiday time)",
+            note: "Mandatory in Portugal",
+          },
+          {
+            e: "🎄",
+            pt: "o subsídio de Natal",
+            pron: "",
+            en: "Christmas bonus (= one extra month salary in December)",
+            note: "Mandatory in Portugal — 14th month salary",
+          },
+          {
+            e: "🍽️",
+            pt: "o subsídio de refeição / de alimentação",
+            pron: "",
+            en: "meal allowance (daily contribution toward lunch)",
+            note: "Exempt from IRS up to a legal limit",
+          },
+          {
+            e: "📉",
+            pt: "o subsídio de desemprego",
+            pron: "",
+            en: "unemployment benefit",
+            note: "Brazil: seguro-desemprego",
+          },
+          {
+            e: "💰",
+            pt: "poupar",
+            pron: "[poh-PAR]",
+            en: "to save (money)",
+            note: "",
+          },
+          {
+            e: "📊",
+            pt: "o poder de compra / poder aquisitivo",
+            pron: "",
+            en: "purchasing power",
+            note: "",
+          },
+          {
+            e: "⏸️",
+            pt: "congelar os salários",
+            pron: "",
+            en: "to freeze salaries",
+            note: "",
+          },
+          {
+            e: "🕐",
+            pt: "os salários em atraso",
+            pron: "",
+            en: "overdue / delayed wages",
+            note: "",
+          },
+          {
+            e: "🏦",
+            pt: "a pensão / a reforma",
+            pron: "[pɐn-SOWNG / rɐ-FOR-mɐ]",
+            en: "pension / retirement (EU Pt: reforma)",
+            note: "Brazil: aposentadoria",
+          },
+          {
+            e: "🧓",
+            pt: "o reformado / aposentado",
+            pron: "",
+            en: "retired person",
+            note: "EU Pt: reformado. Brazil: aposentado.",
+          },
+          {
+            e: "💼",
+            pt: "receber o salário",
+            pron: "[rɐ-sɐ-BER]",
+            en: "to receive/get your salary",
+            note: "RECEBER = to receive. Do NOT use COBRAR for salary — cobrar = to collect debts/invoices.",
+          },
+        ],
+        impostos: [
+          {
+            e: "🏛️",
+            pt: "o imposto",
+            pron: "[oom-POSH-too]",
+            en: "tax — mandatory contribution to the state",
+            note: "",
+          },
+          {
+            e: "📋",
+            pt: "o IRS",
+            pron: "",
+            en: "Income Tax — Imposto sobre o Rendimento de pessoas Singulares (individuals)",
+            note: "Filed annually; rates 14.5–48% depending on income bracket",
+          },
+          {
+            e: "🏢",
+            pt: "o IRC",
+            pron: "",
+            en: "Corporate Tax — Imposto sobre o Rendimento de pessoas Coletivas (companies)",
+            note: "21% standard rate",
+          },
+          {
+            e: "🛒",
+            pt: "o IVA",
+            pron: "",
+            en: "VAT — Imposto sobre o Valor Acrescentado (Value Added Tax)",
+            note: "23% standard; 13% intermediate; 6% reduced rate",
+          },
+          {
+            e: "🔐",
+            pt: "a Segurança Social",
+            pron: "[sɐ-goo-RAN-sɐ so-SYAL]",
+            en: "Social Security — contributions from salary",
+            note: "Employee: 11%. Employer: 23.75% of gross salary",
+          },
+          {
+            e: "📤",
+            pt: "descontar para a Segurança Social",
+            pron: "",
+            en: "to deduct for Social Security",
+            note: "",
+          },
+          {
+            e: "🏛️",
+            pt: "a repartição das Finanças",
+            pron: "",
+            en: "the tax office",
+            note: "Repartição = public service counter",
+          },
+          {
+            e: "🆔",
+            pt: "o NIB (número de identificação bancária)",
+            pron: "",
+            en: "bank account ID number",
+            note: "Needed for salary payments",
+          },
+        ],
+        horario: [
+          {
+            e: "📅",
+            pt: "o horário de trabalho",
+            pron: "[oh-RA-ryoo]",
+            en: "working hours / work schedule",
+            note: "",
+          },
+          {
+            e: "🌅",
+            pt: "a jornada de trabalho",
+            pron: "[zhoor-NA-dɐ]",
+            en: "working day / shift",
+            note: "Full-time = 40h/week in Portugal",
+          },
+          {
+            e: "🔢",
+            pt: "o dia útil",
+            pron: "[OO-teel]",
+            en: "working day (Mon–Fri)",
+            note: "",
+          },
+          {
+            e: "🏖️",
+            pt: "o dia de folga / folgar",
+            pron: "[FOL-gɐ]",
+            en: "day off / to have a day off",
+            note: "",
+          },
+          {
+            e: "📅",
+            pt: "os dias feriados",
+            pron: "[fɐ-rya-DOOSH]",
+            en: "public holidays",
+            note: "Portugal: 13 public holidays per year",
+          },
+          {
+            e: "✊",
+            pt: "a greve / fazer greve",
+            pron: "[GREV]",
+            en: "strike / to go on strike",
+            note: "",
+          },
+          {
+            e: "🎓",
+            pt: "o estágio / o estagiário",
+            pron: "[ish-TA-zhyoo]",
+            en: "internship / intern",
+            note: "",
+          },
+        ],
+        organizacao: [
+          {
+            e: "👔",
+            pt: "o patrão / a patroa / o patronato",
+            pron: "[pɐ-TROWNG]",
+            en: "employer / boss / employers (collective)",
+            note: "Patronato = the employer side in negotiations",
+          },
+          {
+            e: "👷",
+            pt: "a mão-de-obra",
+            pron: "[mowng dɐ OH-brɐ]",
+            en: "labour / workforce",
+            note: "",
+          },
+          {
+            e: "📈",
+            pt: "a carreira profissional / escalar na carreira",
+            pron: "",
+            en: "career / to climb the career ladder",
+            note: "",
+          },
+          {
+            e: "⬆️",
+            pt: "ser promovido/a",
+            pron: "",
+            en: "to be promoted",
+            note: "",
+          },
+          {
+            e: "🎓",
+            pt: "a qualificação profissional",
+            pron: "",
+            en: "professional qualification",
+            note: "",
+          },
+          {
+            e: "🏅",
+            pt: "o trabalhador qualificado",
+            pron: "",
+            en: "skilled worker",
+            note: "",
+          },
+          {
+            e: "💼",
+            pt: "o trabalhador assalariado",
+            pron: "",
+            en: "employee / salaried worker",
+            note: "",
+          },
+          {
+            e: "🧾",
+            pt: "o trabalhador por conta própria",
+            pron: "",
+            en: "self-employed / freelancer",
+            note: "",
+          },
+          {
+            e: "🏢",
+            pt: "o trabalhador por conta de outrem",
+            pron: "",
+            en: "employed by a third party (employee)",
+            note: "Outrem = another person. Formal/legal term.",
+          },
+          {
+            e: "🏛️",
+            pt: "o funcionário público",
+            pron: "",
+            en: "civil servant / public employee",
+            note: "",
+          },
+          {
+            e: "🏢",
+            pt: "o funcionário",
+            pron: "[foon-syo-NA-ryoo]",
+            en: "employee (of any company)",
+            note: "",
+          },
+          {
+            e: "⚙️",
+            pt: "o burocrata / o tecnocrata",
+            pron: "",
+            en: "bureaucrat / technocrat",
+            note: "",
+          },
+        ],
+        procurarEmprego: [
+          {
+            e: "📰",
+            pt: "os anúncios / os classificados",
+            pron: "",
+            en: "job ads / classified ads",
+            note: "",
+          },
+          {
+            e: "🏢",
+            pt: "a agência de empregos",
+            pron: "",
+            en: "employment agency",
+            note: "",
+          },
+          {
+            e: "📝",
+            pt: "a carta de candidatura / de apresentação",
+            pron: "",
+            en: "cover letter / letter of application",
+            note: "",
+          },
+          {
+            e: "🙋",
+            pt: "o candidato / candidatar-se",
+            pron: "",
+            en: "candidate / to apply (for a job)",
+            note: "",
+          },
+          {
+            e: "📄",
+            pt: "o currículo",
+            pron: "[koo-REE-koo-loo]",
+            en: "CV / résumé",
+            note: "",
+          },
+          {
+            e: "🏢",
+            pt: "a empresa de trabalho temporário",
+            pron: "",
+            en: "temp agency / recruitment agency",
+            note: "",
+          },
+          {
+            e: "🏛️",
+            pt: "o IEFP (Instituto do Emprego e Formação Profissional)",
+            pron: "",
+            en: "Employment and Vocational Training Institute",
+            note: "Government employment agency — register here for subsídio de desemprego",
+          },
+        ],
+        qualificarTrabalho: [
+          {
+            e: "⭐",
+            pt: "trabalhar com profissionalismo",
+            pron: "",
+            en: "to work professionally",
+            note: "",
+          },
+          {
+            e: "😩",
+            pt: "trabalho degradante / rotineiro / cansativo / exigente",
+            pron: "",
+            en: "degrading / routine / exhausting / demanding work",
+            note: "",
+          },
+          {
+            e: "📊",
+            pt: "a avaliação do desempenho",
+            pron: "",
+            en: "performance review",
+            note: "",
+          },
+          {
+            e: "⚠️",
+            pt: "o processo disciplinar / levantar um processo",
+            pron: "",
+            en: "disciplinary proceedings / to bring a case",
+            note: "",
+          },
+        ],
+        direitos: {
+          note: "Os trabalhadores imigrantes têm direitos laborais e sociais, tenham ou não os documentos legais. É importante compreender o que está escrito no contrato de trabalho.",
+          items: [
+            "Direito ao salário mínimo nacional",
+            "Direito a férias pagas (mínimo 22 dias úteis)",
+            "Subsídio de férias e subsídio de Natal (obrigatórios)",
+            "Direito a descanso semanal (mínimo 2 dias)",
+            "Proteção contra discriminação salarial",
+            "Acesso ao subsídio de desemprego após demissão involuntária",
+            "Direito a contrato de trabalho escrito",
+          ],
+        },
+      };
+
+      const D_CABELEIREIRO = {
+        note: "No cabeleireiro / salão de beleza — vocabulary for hairdresser/beauty salon interactions. Profession: Cabeleireiro/a. Workplace: Salão de cabeleireiro/salão de beleza.",
+        tools: [
+          { e: "✂️", pt: "a tesoura", pron: "[ɐ tɐ-ZOH-rɐ]", en: "scissors" },
+          { e: "💨", pt: "o secador", pron: "[oo sɐ-kɐ-DOR]", en: "hairdryer" },
+          { e: "🪮", pt: "a escova", pron: "[ɐ ish-KOH-vɐ]", en: "brush" },
+          { e: "🪮", pt: "o pente", pron: "[oo PENT]", en: "comb" },
+          { e: "🔵", pt: "o espelho", pron: "[oo ish-PEL-yoo]", en: "mirror" },
+          {
+            e: "💈",
+            pt: "o modelador de caracóis",
+            pron: "",
+            en: "curling tongs",
+          },
+          { e: "🔧", pt: "o alisador", pron: "", en: "hair straightener" },
+          { e: "🧴", pt: "o champô", pron: "[oo shan-POH]", en: "shampoo" },
+          { e: "🧴", pt: "o condicionador", pron: "", en: "conditioner" },
+          { e: "🟤", pt: "a tintura", pron: "[ɐ tin-TOO-rɐ]", en: "hair dye" },
+          {
+            e: "💅",
+            pt: "o verniz / o esmalte",
+            pron: "",
+            en: "nail varnish / nail polish",
+          },
+          {
+            e: "🪒",
+            pt: "a lâmina / a navalha",
+            pron: "",
+            en: "razor blade / cut-throat razor",
+          },
+          { e: "🧴", pt: "o creme de barbear", pron: "", en: "shaving cream" },
+        ],
+        phrases: [
+          { pt: "Quero um corte de cabelo.", en: "I want a haircut." },
+          { pt: "Não muito curto, por favor.", en: "Not too short, please." },
+          {
+            pt: "Apare só as pontas, por favor.",
+            en: "Just trim the ends, please.",
+          },
+          {
+            pt: "Quer um pouco mais curto?",
+            en: "Do you want it a bit shorter?",
+          },
+          { pt: "Rase tudo.", en: "Shave it all off." },
+          {
+            pt: "Quer curto na frente / atrás / em cima / dos lados?",
+            en: "Do you want it short in front / at the back / on top / at the sides?",
+          },
+          { pt: "Quer lavar também?", en: "Do you also want a wash?" },
+          {
+            pt: "Quer alisar o cabelo?",
+            en: "Do you want to straighten your hair?",
+          },
+          {
+            pt: "Divide o cabelo à esquerda ou à direita?",
+            en: "Do you part your hair on the left or right?",
+          },
+          {
+            pt: "Gostaria de mudar de penteado?",
+            en: "Would you like to change your hairstyle?",
+          },
+          {
+            pt: "Gostaria de tingir o cabelo?",
+            en: "Would you like to have your hair dyed?",
+          },
+          {
+            pt: "Você tem que marcar uma hora.",
+            en: "You have to make an appointment.",
+          },
+          { pt: "Posso ajudar-te?", en: "Can I help you?" },
+          {
+            pt: "Gostaria de aparar a barba?",
+            en: "Would you like to trim your beard?",
+          },
+          {
+            pt: "Você quer fazer as unhas das mãos?",
+            en: "Do you want a manicure?",
+          },
+          {
+            pt: "Você quer fazer as unhas dos pés?",
+            en: "Do you want a pedicure?",
+          },
+          { pt: "Com ou sem esmalte?", en: "With or without nail polish?" },
+          {
+            pt: "Posso apenas limar as suas unhas.",
+            en: "I can just file your nails.",
+          },
+        ],
+        vocab: [
+          {
+            e: "💈",
+            pt: "o cabeleireiro / a cabeleireira",
+            pron: "[kɐ-bɐ-lɐy-RAY-roo]",
+            en: "hairdresser / hairstylist",
+          },
+          { e: "💈", pt: "o barbeiro", pron: "[bɐr-BAY-roo]", en: "barber" },
+          {
+            e: "🏪",
+            pt: "o salão de cabeleireiro / de beleza",
+            pron: "[sɐ-LOWNG]",
+            en: "hairdresser's salon / beauty salon",
+          },
+          {
+            e: "✂️",
+            pt: "cortar o cabelo",
+            pron: "",
+            en: "to cut hair / to have a haircut",
+          },
+          {
+            e: "🚿",
+            pt: "lavar a cabeça / o cabelo",
+            pron: "",
+            en: "to wash the hair",
+          },
+          { e: "💨", pt: "secar o cabelo", pron: "", en: "to dry hair" },
+          {
+            e: "🪮",
+            pt: "pentear",
+            pron: "[pen-TYAR]",
+            en: "to comb/style hair",
+          },
+          { e: "✂️", pt: "aparar as pontas", pron: "", en: "to trim the ends" },
+          {
+            e: "📏",
+            pt: "alisar o cabelo",
+            pron: "",
+            en: "to straighten hair",
+          },
+          { e: "🌀", pt: "encaracolar o cabelo", pron: "", en: "to curl hair" },
+          {
+            e: "🎨",
+            pt: "tingir / pintar o cabelo",
+            pron: "",
+            en: "to dye hair",
+          },
+          { e: "💅", pt: "fazer as unhas", pron: "", en: "manicure (hands)" },
+          {
+            e: "🦶",
+            pt: "fazer as unhas dos pés / pedicure",
+            pron: "",
+            en: "pedicure",
+          },
+          {
+            e: "🧔",
+            pt: "fazer a barba / aparar a barba",
+            pron: "",
+            en: "to shave / trim beard",
+          },
+          {
+            e: "🪒",
+            pt: "depilar / a depilação",
+            pron: "[dɐ-pee-lɐ-SOWNG]",
+            en: "waxing / hair removal",
+          },
+          {
+            e: "💇",
+            pt: "o penteado",
+            pron: "[pen-TYAH-doo]",
+            en: "hairstyle / hairdo",
+          },
+          { e: "💇", pt: "a permanente", pron: "", en: "perm" },
+          {
+            e: "👩‍🦲",
+            pt: "careca",
+            pron: "",
+            en: "bald — cross-ref Description section",
+          },
+          { e: "💛", pt: "a caspa", pron: "[KASH-pɐ]", en: "dandruff" },
+          {
+            e: "💧",
+            pt: "o cabelo oleoso / seco / normal",
+            pron: "",
+            en: "oily / dry / normal hair",
+          },
+          { e: "🔮", pt: "a cuticula", pron: "", en: "cuticle" },
+          {
+            e: "💄",
+            pt: "a maquilhagem",
+            pron: "[mɐ-kee-LA-zhɐyng]",
+            en: "make-up",
+          },
+          { e: "💄", pt: "o batom", pron: "[bɐ-TONG]", en: "lipstick" },
+          { e: "💄", pt: "o rímel", pron: "", en: "mascara" },
+          { e: "💄", pt: "o delineador", pron: "", en: "eyeliner" },
+          { e: "💄", pt: "a sombra", pron: "", en: "eyeshadow" },
+          { e: "💄", pt: "o blush", pron: "", en: "blush" },
+          { e: "💄", pt: "a base", pron: "", en: "foundation" },
+          { e: "📌", pt: "a pinça", pron: "[PIN-sɐ]", en: "tweezers" },
+          { e: "📌", pt: "a lima de unhas", pron: "", en: "nail file" },
+          { e: "💇", pt: "a peruca", pron: "[pɐ-ROO-kɐ]", en: "wig" },
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -17846,6 +18751,239 @@
   <h3 class="sub-heading">🤕 Expressar dor — Expressing pain</h3>
   ${infoBox("Two structures: <strong>TER DOR DE/NO/NA</strong> (to have pain of/in) and <strong>DÓI-ME / DOEM-ME</strong> (it hurts me). Both are correct and used interchangeably.")}
   ${vocabGrid(D_DOER.painExpressions)}`,
+
+        perfeito: () => `
+  ${ctx("Pretérito Perfeito Simples (PPS) — completed, one-off past actions. Contrast: Imperfeito = habitual/background past. PPS = what happened, finished.", "This is the most important new tense at A2. The critical distinction is PPS vs Imperfeito — PPS is for specific completed events, Imperfeito for repeated habits or descriptions.", "Pretérito Imperfeito — the other past tense; Core Verbs — SER/IR share the same PPS forms (fui/foste/foi...)")}
+  ${sectionHead("Pretérito Perfeito Simples", "UFCD 6455 Session 1", "Verbos regulares –AR/–ER/–IR. Exprime ações passadas pontuais e completamente terminadas.")}
+  ${warnBox("<strong>PPS vs Imperfeito:</strong><br>• PPS: completed single event → <em>Ontem trabalhei 8 horas.</em> (Yesterday I worked 8 hours — done.)<br>• Imperfeito: habitual/background → <em>Quando era jovem, trabalhava muito.</em> (When I was young, I used to work a lot — repeated habit.)")}
+
+  <h3 class="sub-heading">⏱️ Time markers that trigger PPS</h3>
+  ${vocabGrid(D_PERFEITO.timeMarkers)}
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+    ${["ar", "er", "ir"]
+      .map((type) => {
+        const d = D_PERFEITO.regular[type];
+        return `<div class="card" style="border-top:4px solid var(--primary)">
+        <div style="font-weight:800;font-size:15px;color:var(--primary);margin-bottom:4px">–${type.toUpperCase()} verbs</div>
+        <div style="font-size:11px;color:var(--text-2);margin-bottom:10px">${d.note}</div>
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">Stem: <strong>${d.stem}</strong></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Person</th><th style="color:var(--accent)">Ending</th><th class="pt">Form</th></tr></thead>
+          <tbody>${d.endings
+            .map(
+              (
+                r,
+                i,
+              ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+            <td style="font-size:11px;color:var(--text-3)">${r.person}</td>
+            <td style="font-weight:800;color:var(--accent)">${r.ending}</td>
+            <td class="pt" style="font-weight:800">${r.form}</td>
+          </tr>`,
+            )
+            .join("")}</tbody>
+        </table></div>
+        ${d.note.includes("nós") || true ? `<div style="font-size:11px;color:var(--text-3);margin-top:8px;font-style:italic">${d.endings.find((e) => e.note)?.note ? "⚠️ " + d.endings.find((e) => e.note).note : ""}</div>` : ""}
+        <div style="margin-top:10px">
+          <div style="font-size:11px;font-weight:700;color:var(--text-2);margin-bottom:4px">Other common –${type.toUpperCase()} verbs:</div>
+          ${d.otherVerbs.map((v) => `<div class="pt" style="font-size:11px;padding:2px 0;border-bottom:1px solid var(--border)">${v}</div>`).join("")}
+        </div>
+      </div>`;
+      })
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">📖 Narrative — PPS in a connected story</h3>
+  ${infoBox(D_PERFEITO.narrative.note)}
+  <div class="card" style="font-size:14px;line-height:1.8">
+    ${D_PERFEITO.narrative.text
+      .split(
+        /(\b(?:acordaram|levantaram-se|tomaram|foram|prepararam|saíram|almoçaram|comeram|beberam|chegaram|ouviram|descansaram)\b)/g,
+      )
+      .map((part, i) =>
+        D_PERFEITO.narrative.highlights.includes(part)
+          ? `<strong style="color:var(--primary);text-decoration:underline">${part}</strong>`
+          : `<span class="pt">${part}</span>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">⚠️ High-frequency irregular PPS forms</h3>
+  ${warnBox("SER and IR share identical PPS forms. Context (subject + meaning) distinguishes them: <em>Fui ao médico.</em> (IR) vs <em>Foi um bom dia.</em> (SER)")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Infinitivo</th><th>eu</th><th>tu</th><th>ele/você</th><th>nós</th><th>eles/vocês</th><th>Note</th></tr></thead>
+    <tbody>${D_PERFEITO.irregulars_preview.verbs
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary)">${r.inf}</td>
+      <td class="pt" style="font-weight:800">${r.eu}</td>
+      <td class="pt">${r.tu}</td>
+      <td class="pt">${r.ele}</td>
+      <td class="pt">${r.nos}</td>
+      <td class="pt">${r.eles}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        trabalho: () => `
+  ${ctx("Employment vocabulary for Portugal — salary structures, taxes, subsidies, work organisation, rights, and job search. Portuguese employment context: 72.1% services, 14th-month Christmas bonus mandatory, SNM set annually.", "A2 core topic. Immigrants have full labour rights regardless of documentation status. Understanding the payslip (recibo), tax IDs (IRS/IRC/IVA), and mandatory benefits (subsídio de férias, subsídio de Natal) is essential.", "Money & Prices — currency; Banking — bank account; Autorização de Residência — documents for legal work")}
+  ${sectionHead("Mundo do Trabalho", "UFCD 6455 Session 1", "Employment vocabulary — salary, taxes, subsidies, labour rights, job search. Portuguese labour context.")}
+  ${infoBox(D_TRABALHO.note)}
+
+  <h3 class="sub-heading">💶 Salário e vencimento — Pay and salary</h3>
+  ${infoBox('<strong>Key distinction:</strong> RECEBER = to receive salary. COBRAR = to collect invoices/debts. ❌ Never say "cobrei o salário". ✅ "Recebi o salário."')}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_TRABALHO.salario
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🏛️ Impostos e finanças — Taxes</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_TRABALHO.impostos
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">📅 Horário e condições — Hours and conditions</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_TRABALHO.horario
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">👔 Organização laboral — Work organisation</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_TRABALHO.organizacao
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">📰 À procura de emprego — Job hunting</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_TRABALHO.procurarEmprego
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">⚖️ Direitos dos trabalhadores imigrantes</h3>
+  ${warnBox(D_TRABALHO.direitos.note)}
+  <ul style="padding-left:20px;line-height:2">
+    ${D_TRABALHO.direitos.items.map((i) => `<li style="font-size:14px">${i}</li>`).join("")}
+  </ul>`,
+
+        cabeleireiro: () => `
+  ${ctx("Hairdresser and beauty salon vocabulary — phrases for booking and describing what you want, tools, beauty vocabulary, and make-up terms.", "Hair vocabulary bridges with the Description section (cabelo: liso/ondulado/encaracolado). The salon dialogue phrases are high-frequency service-context language.", "Descrição Física — hair colour and texture vocabulary (cross-reference for cabelo terms)")}
+  ${sectionHead("No Cabeleireiro", "UFCD 6455 Session 1", "Salão de cabeleireiro. Profissão: cabeleireiro/a. Instrumentos: escova, secador, tesoura.")}
+  ${infoBox("Cross-reference: hair colour and texture vocabulary (liso, ondulado, encaracolado, louro, castanho, ruivo…) is in <strong>Descrição Física</strong>. This section covers the service interaction and tools.")}
+
+  <h3 class="sub-heading">🗣️ Frases úteis — Useful phrases</h3>
+  <div class="card-grid">
+    ${D_CABELEIREIRO.phrases
+      .map(
+        (r) => `<div class="card-sm">
+      <div class="pt" style="font-weight:700">${r.pt}</div>
+      <div class="en">${r.en}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">✂️ Vocabulário — Salon vocabulary</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_CABELEIREIRO.vocab
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🛠️ Instrumentos de trabalho — Tools</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_CABELEIREIRO.tools
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:18px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
       };
 
       // ─────────────────────────────────────────────
