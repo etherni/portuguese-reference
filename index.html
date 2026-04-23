@@ -1106,6 +1106,8 @@
           tabs: [
             { id: "trabalho", title: "Mundo do Trabalho" },
             { id: "cabeleireiro", title: "No Cabeleireiro" },
+            { id: "cozinha-accoes", title: "Confeção & Utensílios" },
+            { id: "limpeza", title: "Limpeza" },
           ],
         },
         {
@@ -5202,6 +5204,42 @@
               "[SOH-b SEM-prɐ]",
               "The price always goes up.",
             ],
+          ],
+        },
+        {
+          verb: "SER",
+          pron: "[ser]",
+          en: "to be (identity/permanent)",
+          note: "Irregular in all tenses. SER vs ESTAR is one of the most important distinctions in Portuguese. Full detail: see Ser vs Estar section. PPS: fui/foste/foi/fomos/fostes/foram (identical to IR).",
+          conj: [
+            ["Eu", "sou", "[soh]"],
+            ["Tu", "és", "[esh]"],
+            ["Ele/Ela/Você", "é", "[eh]"],
+            ["Nós", "somos", "[SOH-moosh]"],
+            ["Vocês/Eles", "são", "[sowng]"],
+          ],
+          ex: [
+            ["Sou português.", "", "I am Portuguese."],
+            ["Ela é médica.", "", "She is a doctor."],
+            ["São muito simpáticos.", "", "They are very friendly."],
+          ],
+        },
+        {
+          verb: "ESTAR",
+          pron: "[ish-TAR]",
+          en: "to be (state/location/condition)",
+          note: "Irregular in 1st person present: EU ESTOU. SER vs ESTAR is one of the most important distinctions in Portuguese. Full detail: see Ser vs Estar section. PPS: estive/estiveste/esteve/estivemos/estivestes/estiveram.",
+          conj: [
+            ["Eu", "estou", "[ish-TOH]"],
+            ["Tu", "estás", "[ish-TASH]"],
+            ["Ele/Ela/Você", "está", "[ish-TA]"],
+            ["Nós", "estamos", "[ish-TA-moosh]"],
+            ["Vocês/Eles", "estão", "[ish-TOWNG]"],
+          ],
+          ex: [
+            ["Estou em Lisboa.", "", "I am in Lisbon (location)."],
+            ["Está cansado.", "", "He is tired (state)."],
+            ["O banco está fechado.", "", "The bank is closed (condition)."],
           ],
         },
       ];
@@ -12070,6 +12108,11 @@
             title: "Na farmácia — At the Pharmacy (YouTube)",
             desc: "Asking for medication, understanding a prescription, pharmacy vocabulary.",
           },
+          {
+            url: "https://youtu.be/HLpJrNjXCF0",
+            title: "Speak in Portugal — with the doctor (listen & repeat)",
+            desc: "Authentic doctor dialogue for listening and speaking practice.",
+          },
         ],
         sinaisSintomas: {
           note: "Um sintoma é uma queixa subjetiva — algo que o doente sente e descreve. Um sinal é uma manifestação clínica percebida por outra pessoa (médico, enfermeiro).",
@@ -12669,36 +12712,81 @@
             ],
           },
         },
-        irregulars_preview: {
-          note: "Irregular PPS forms are covered in the Irregular Verbs section. Most common high-frequency irregulars:",
-          verbs: [
+        irregulars: {
+          note: "Irregular PPS — these 7 verbs are explicitly taught at A2 S2. SER and IR are identical in PPS.",
+          tableVerbs: [
             {
-              inf: "ser/ir",
+              inf: "SER",
               eu: "fui",
               tu: "foste",
               ele: "foi",
               nos: "fomos",
+              vos: "fostes",
               eles: "foram",
-              note: "SER and IR share identical PPS forms — context distinguishes",
+              note: "SER and IR share identical PPS — context distinguishes",
             },
             {
-              inf: "ter",
+              inf: "IR",
+              eu: "fui",
+              tu: "foste",
+              ele: "foi",
+              nos: "fomos",
+              vos: "fostes",
+              eles: "foram",
+              note: "Same as SER. Ontem fomos à praia. (IR)",
+            },
+            {
+              inf: "ESTAR",
+              eu: "estive",
+              tu: "estiveste",
+              ele: "esteve",
+              nos: "estivemos",
+              vos: "estivestes",
+              eles: "estiveram",
+              note: "",
+            },
+            {
+              inf: "TER",
               eu: "tive",
               tu: "tiveste",
               ele: "teve",
               nos: "tivemos",
+              vos: "tivestes",
               eles: "tiveram",
               note: "",
             },
             {
-              inf: "fazer",
+              inf: "FAZER",
               eu: "fiz",
               tu: "fizeste",
               ele: "fez",
               nos: "fizemos",
+              vos: "fizestes",
               eles: "fizeram",
-              note: "",
+              note: "ele form = fez (z, not s)",
             },
+            {
+              inf: "PÔR",
+              eu: "pus",
+              tu: "puseste",
+              ele: "pôs",
+              nos: "pusemos",
+              vos: "pusestes",
+              eles: "puseram",
+              note: "ele form = pôs (circumflex)",
+            },
+            {
+              inf: "DIZER",
+              eu: "disse",
+              tu: "disseste",
+              ele: "disse",
+              nos: "dissemos",
+              vos: "dissestes",
+              eles: "disseram",
+              note: "eu = ele = disse",
+            },
+          ],
+          otherIrregulars: [
             {
               inf: "vir",
               eu: "vim",
@@ -12709,31 +12797,13 @@
               note: "",
             },
             {
-              inf: "dizer",
-              eu: "disse",
-              tu: "disseste",
-              ele: "disse",
-              nos: "dissemos",
-              eles: "disseram",
-              note: "",
-            },
-            {
-              inf: "estar",
-              eu: "estive",
-              tu: "estiveste",
-              ele: "esteve",
-              nos: "estivemos",
-              eles: "estiveram",
-              note: "",
-            },
-            {
               inf: "poder",
               eu: "pude",
               tu: "pudeste",
               ele: "pôde",
               nos: "pudemos",
               eles: "puderam",
-              note: "",
+              note: "ele = pôde (accent)",
             },
             {
               inf: "querer",
@@ -12742,7 +12812,7 @@
               ele: "quis",
               nos: "quisemos",
               eles: "quiseram",
-              note: "",
+              note: "eu = ele = quis",
             },
             {
               inf: "saber",
@@ -12751,15 +12821,42 @@
               ele: "soube",
               nos: "soubemos",
               eles: "souberam",
+              note: "eu = ele = soube",
+            },
+            {
+              inf: "ver",
+              eu: "vi",
+              tu: "viste",
+              ele: "viu",
+              nos: "vimos",
+              eles: "viram",
               note: "",
             },
             {
-              inf: "pôr",
-              eu: "pus",
-              tu: "puseste",
-              ele: "pôs",
-              nos: "pusemos",
-              eles: "puseram",
+              inf: "ler",
+              eu: "li",
+              tu: "leste",
+              ele: "leu",
+              nos: "lemos",
+              eles: "leram",
+              note: "",
+            },
+            {
+              inf: "trazer",
+              eu: "trouxe",
+              tu: "trouxeste",
+              ele: "trouxe",
+              nos: "trouxemos",
+              eles: "trouxeram",
+              note: "",
+            },
+            {
+              inf: "dar",
+              eu: "dei",
+              tu: "deste",
+              ele: "deu",
+              nos: "demos",
+              eles: "deram",
               note: "",
             },
           ],
@@ -13406,6 +13503,418 @@
           { e: "📌", pt: "a pinça", pron: "[PIN-sɐ]", en: "tweezers" },
           { e: "📌", pt: "a lima de unhas", pron: "", en: "nail file" },
           { e: "💇", pt: "a peruca", pron: "[pɐ-ROO-kɐ]", en: "wig" },
+        ],
+      };
+
+      const D_LIMPEZA = {
+        note: "Vocabulário de limpeza — household and professional cleaning vocabulary. Cleaning is classified by context: domestic, building, technical, hospital, industrial, ecological.",
+        acoes: [
+          {
+            e: "🌀",
+            pt: "aspirar",
+            pron: "[ɐsh-pee-RAR]",
+            en: "to vacuum / to hoover",
+            note: "Recolher poeira e pequenos detritos por sucção",
+          },
+          { e: "🧹", pt: "varrer", pron: "[vɐ-HER]", en: "to sweep", note: "" },
+          {
+            e: "🧽",
+            pt: "limpar o pó",
+            pron: "[lim-PAR oo POH]",
+            en: "to dust / wipe dust",
+            note: "Passar o pano; tirar o pó",
+          },
+          {
+            e: "🚿",
+            pt: "lavar",
+            pron: "[lɐ-VAR]",
+            en: "to wash / to mop",
+            note: "Tirar impurezas com água ou outro líquido",
+          },
+          {
+            e: "🧴",
+            pt: "esfregar",
+            pron: "[ish-frɐ-GAR]",
+            en: "to scrub",
+            note: "",
+          },
+          {
+            e: "🛏️",
+            pt: "mudar os lençóis",
+            pron: "[moo-DAR oosh lɐn-SOISH]",
+            en: "to change the bed sheets",
+            note: "",
+          },
+          {
+            e: "🪴",
+            pt: "regar as plantas",
+            pron: "",
+            en: "to water the plants",
+            note: "",
+          },
+          {
+            e: "🗑️",
+            pt: "tirar / levar o lixo",
+            pron: "",
+            en: "to take out the rubbish",
+            note: "",
+          },
+          {
+            e: "🪟",
+            pt: "limpar as janelas",
+            pron: "",
+            en: "to clean the windows",
+            note: "",
+          },
+          {
+            e: "🧺",
+            pt: "fazer a roupa / a lavagem",
+            pron: "",
+            en: "to do the laundry",
+            note: "",
+          },
+          {
+            e: "👕",
+            pt: "estender a roupa",
+            pron: "",
+            en: "to hang out the laundry",
+            note: "",
+          },
+          {
+            e: "👔",
+            pt: "dobrar a roupa",
+            pron: "",
+            en: "to fold the laundry",
+            note: "",
+          },
+          {
+            e: "🔦",
+            pt: "desinfetar",
+            pron: "[dɐ-zin-fɐ-TAR]",
+            en: "to disinfect",
+            note: "",
+          },
+          {
+            e: "🧼",
+            pt: "ensaboar",
+            pron: "[en-sɐ-boo-AR]",
+            en: "to soap / to lather",
+            note: "",
+          },
+          {
+            e: "💧",
+            pt: "enxugar",
+            pron: "[en-shoo-GAR]",
+            en: "to dry / to wipe dry",
+            note: "",
+          },
+        ],
+        utensilios: [
+          {
+            e: "🌀",
+            pt: "o aspirador",
+            pron: "[oo ɐsh-pee-rɐ-DOR]",
+            en: "vacuum cleaner / hoover",
+          },
+          { e: "🧹", pt: "a vassoura", pron: "[ɐ vɐ-SOH-rɐ]", en: "broom" },
+          {
+            e: "🧽",
+            pt: "o pano de pó / pano de limpeza",
+            pron: "",
+            en: "duster / cleaning cloth",
+          },
+          {
+            e: "🧹",
+            pt: "a esfregona",
+            pron: "[ɐ ish-frɐ-GOH-nɐ]",
+            en: "mop (with wringing head)",
+          },
+          { e: "🧹", pt: "a mopa", pron: "[ɐ MOH-pɐ]", en: "flat mop" },
+          { e: "🪣", pt: "o balde", pron: "[oo BAL-d]", en: "bucket" },
+          {
+            e: "🧴",
+            pt: "o detergente",
+            pron: "[oo dɐ-ter-ZHENT]",
+            en: "detergent / cleaning product",
+          },
+          {
+            e: "🧼",
+            pt: "o sabão / o sabonete",
+            pron: "[oo sɐ-BOWNG]",
+            en: "soap / bar soap",
+          },
+          { e: "🌿", pt: "o desinfetante", pron: "", en: "disinfectant" },
+          { e: "🧽", pt: "a esponja", pron: "[ɐ ish-PON-zhɐ]", en: "sponge" },
+          {
+            e: "🪣",
+            pt: "o esfregão",
+            pron: "[oo ish-frɐ-GOWNG]",
+            en: "scrubbing brush / scourer",
+          },
+          {
+            e: "🧺",
+            pt: "a máquina de lavar roupa",
+            pron: "",
+            en: "washing machine",
+          },
+          { e: "👔", pt: "a tábua de engomar", pron: "", en: "ironing board" },
+          {
+            e: "🔌",
+            pt: "o ferro de engomar",
+            pron: "",
+            en: "iron (for clothes)",
+          },
+          {
+            e: "🪣",
+            pt: "o lixo / o caixote do lixo",
+            pron: "",
+            en: "rubbish / bin",
+          },
+        ],
+        types: [
+          {
+            e: "🌿",
+            type: "Limpeza ecológica",
+            desc: "Métodos e produtos amigos do ambiente",
+          },
+          {
+            e: "🏠",
+            type: "Limpeza domiciliar",
+            desc: "Realizada quotidianamente no domicílio",
+          },
+          {
+            e: "🏢",
+            type: "Limpeza predial",
+            desc: "Por contratados com conhecimentos básicos de produtos químicos",
+          },
+          {
+            e: "🔬",
+            type: "Limpeza técnica",
+            desc: "Sob supervisão técnica, para tipos específicos de superfícies",
+          },
+          {
+            e: "🏥",
+            type: "Limpeza hospitalar",
+            desc: "Inclui desinfeção — Concorrente (manutenção) e Terminal (completa)",
+          },
+          {
+            e: "🏭",
+            type: "Limpeza industrial",
+            desc: "Equipamentos pesados: hidrojateadoras, aspiradores de alto vácuo",
+          },
+        ],
+      };
+
+      const D_COZINHA_ACCOES = {
+        note: "Ações de confeção — cooking methods used in Portuguese professional and domestic cooking. Each method differs in heat source, liquid, temperature and vessel.",
+        methods: [
+          {
+            e: "💧",
+            pt: "cozer",
+            pron: "[koo-ZER]",
+            en: "to boil / to cook in liquid",
+            desc: "Submeter o alimento ao calor de um líquido (geralmente água). O método mais básico.",
+          },
+          {
+            e: "🔥",
+            pt: "assar",
+            pron: "[ɐ-SAR]",
+            en: "to roast / to bake (in oven)",
+            desc: "Colocar num recipiente e levar ao forno a temperatura variada. Difere conforme o tamanho do alimento.",
+          },
+          {
+            e: "🛢️",
+            pt: "fritar",
+            pron: "[free-TAR]",
+            en: "to fry (in oil)",
+            desc: "Colocar em óleo a 155–165°C. Imersão total ou parcial.",
+          },
+          {
+            e: "🍳",
+            pt: "saltear",
+            pron: "[sal-TYAR]",
+            en: "to sauté (in pan with oil + garlic)",
+            desc: "Na frigideira com um fio de azeite e um pouco de alho. Rápido, em lume alto.",
+          },
+          {
+            e: "🔥",
+            pt: "grelhar",
+            pron: "[grɐ-LYAR]",
+            en: "to grill",
+            desc: "Num grelhador, sobre fonte de calor direta. Dá marcas características.",
+          },
+          {
+            e: "🧀",
+            pt: "gratinar",
+            pron: "[grɐ-tee-NAR]",
+            en: "to gratin (bake with topping of sauce/cheese)",
+            desc: "Após confecionar, cobrir com molho ou queijo e levar ao forno ou à salamandra.",
+          },
+          {
+            e: "🥚",
+            pt: "escalfar",
+            pron: "[ish-kal-FAR]",
+            en: "to poach (eggs/fish in acidulated water)",
+            desc: "Cozer em água com vinagre, em lume brando. Mexer a água em apenas um sentido.",
+          },
+          {
+            e: "🫕",
+            pt: "estufar",
+            pron: "[ish-too-FAR]",
+            en: "to braise / to stew (in closed vessel)",
+            desc: "Num recipiente fechado com plantas aromáticas ou gordura. Mantém a humidade.",
+          },
+          {
+            e: "🫕",
+            pt: "guisar",
+            pron: "[gee-ZAR]",
+            en: "to stew (slow cook with liquid)",
+            desc: "Cozedura lenta, em recipiente que pode estar destapado, com folhas aromáticas e bastante líquido.",
+          },
+          {
+            e: "🫙",
+            pt: "confitar",
+            pron: "[kon-fee-TAR]",
+            en: "to confit (low temp, fat)",
+            desc: "Cocção em gordura a temperatura baixa (máx. 100°C) durante tempo prolongado.",
+          },
+          {
+            e: "🥔",
+            pt: "bringir",
+            pron: "[brin-ZHEER]",
+            en: "to blanch-fry (double-fry, e.g. chips)",
+            desc: "Cozedura a 120–140°C em óleo. Normalmente associada a batatas fritas em dois tempos.",
+          },
+          {
+            e: "🫧",
+            pt: "suar",
+            pron: "[soo-AR]",
+            en: "to sweat (covered, minimal liquid)",
+            desc: "Cozer tapado hermeticamente, quase sem caldo ou água.",
+          },
+          {
+            e: "♨️",
+            pt: "cozer a vapor",
+            pron: "",
+            en: "to steam",
+            desc: "Sobre água a ferver numa grelha, ou em forno de vapor (forno convetor). Também: cestos de bambu.",
+          },
+        ],
+        utensilios: [
+          {
+            e: "🍳",
+            pt: "a frigideira",
+            pron: "[ɐ free-zhɐy-RAY-rɐ]",
+            en: "frying pan / skillet",
+          },
+          {
+            e: "🫕",
+            pt: "o tacho",
+            pron: "[oo TA-shoo]",
+            en: "saucepan / pot (medium, 2 handles)",
+          },
+          {
+            e: "🫕",
+            pt: "a panela",
+            pron: "[ɐ pɐ-NEH-lɐ]",
+            en: "large pot / saucepan",
+          },
+          {
+            e: "🫕",
+            pt: "a panela de pressão",
+            pron: "",
+            en: "pressure cooker",
+          },
+          { e: "♨️", pt: "a panela a vapor", pron: "", en: "steamer pot" },
+          {
+            e: "🔲",
+            pt: "a forma",
+            pron: "[ɐ FOR-mɐ]",
+            en: "baking tin / mould (for cakes, tarts)",
+          },
+          {
+            e: "🟫",
+            pt: "o tabuleiro",
+            pron: "[oo tɐ-blɐy-RAY-roo]",
+            en: "baking tray / sheet pan",
+          },
+          {
+            e: "🥣",
+            pt: "a tigela / a taça",
+            pron: "[ɐ tee-ZHEH-lɐ]",
+            en: "bowl / mixing bowl",
+          },
+          {
+            e: "⚖️",
+            pt: "a balança",
+            pron: "[ɐ bɐ-LAN-sɐ]",
+            en: "kitchen scales",
+          },
+          { e: "🔪", pt: "a faca", pron: "[ɐ FA-kɐ]", en: "knife" },
+          { e: "🪮", pt: "a tábua de corte", pron: "", en: "chopping board" },
+          {
+            e: "🥄",
+            pt: "a colher de pau",
+            pron: "[ɐ kool-YER dɐ pow]",
+            en: "wooden spoon",
+          },
+          {
+            e: "🥄",
+            pt: "a espátula",
+            pron: "[ɐ ish-PA-too-lɐ]",
+            en: "spatula / palette knife",
+          },
+          { e: "🍢", pt: "a pinça de cozinha", pron: "", en: "kitchen tongs" },
+          { e: "🔩", pt: "o ralador", pron: "[oo rɐ-lɐ-DOR]", en: "grater" },
+          {
+            e: "🥣",
+            pt: "o coador / passador",
+            pron: "[oo koo-ɐ-DOR]",
+            en: "strainer / colander",
+          },
+          { e: "🔧", pt: "o descascador", pron: "", en: "peeler (vegetable)" },
+          {
+            e: "🥄",
+            pt: "a colher de sopa",
+            pron: "",
+            en: "soup spoon / ladle",
+          },
+          { e: "🔨", pt: "o rolo da cozinha", pron: "", en: "rolling pin" },
+          {
+            e: "🧪",
+            pt: "o medidor / jarro medidor",
+            pron: "",
+            en: "measuring jug / cup",
+          },
+          {
+            e: "🌀",
+            pt: "a varinha mágica / batedor",
+            pron: "",
+            en: "hand blender / whisk",
+          },
+          { e: "💉", pt: "o espremedor", pron: "", en: "juicer / squeezer" },
+          {
+            e: "🧂",
+            pt: "o almofariz e o pilão",
+            pron: "",
+            en: "mortar and pestle",
+          },
+          {
+            e: "🧁",
+            pt: "as formas de queques",
+            pron: "",
+            en: "cupcake/muffin tins",
+          },
+          { e: "🍕", pt: "a forma de pizza", pron: "", en: "pizza tray" },
+          { e: "🎂", pt: "as formas para bolos", pron: "", en: "cake tins" },
+          { e: "🥐", pt: "o saco de pasteleiro", pron: "", en: "piping bag" },
+          { e: "🔓", pt: "o abre-latas", pron: "", en: "tin/can opener" },
+          {
+            e: "🥔",
+            pt: "o esmagador de batatas",
+            pron: "",
+            en: "potato masher",
+          },
         ],
       };
 
@@ -15664,6 +16173,34 @@
       .join("")}</tbody>
   </table></div>
 
+  <h3 class="sub-heading">📺 Video resources — Prepositions</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:20px">
+    ${[
+      {
+        url: "https://youtu.be/d0AYYtUN-sw",
+        title: "Pela vs Pelo and other Prepositions",
+        desc: "Focus on por/pelo/pela contractions in context.",
+        color: "var(--purple)",
+      },
+      {
+        url: "https://wordwall.net/pt/resource/94088016",
+        title: "Preposição EM — Wordwall",
+        desc: "Interactive practice.",
+        color: "var(--green)",
+      },
+      {
+        url: "https://wordwall.net/pt/resource/78180797",
+        title: "Preposição POR — Wordwall",
+        desc: "Interactive practice.",
+        color: "var(--green)",
+      },
+    ]
+      .map(
+        (v) =>
+          `<a href="${v.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card" style="border-left:3px solid ${v.color};cursor:pointer"><div style="font-size:14px;margin-bottom:3px">▶️</div><div style="font-weight:700;color:${v.color};font-size:12px">${v.title}</div><div style="font-size:11px;color:var(--text-2)">${v.desc}</div></div></a>`,
+      )
+      .join("")}
+  </div>
   <h3 class="sub-heading">POR — 9 uses (usos detalhados)</h3>
   ${infoBox("POR contracts with the definite article: por + o = <strong>pelo</strong>, por + a = <strong>pela</strong>, por + os = <strong>pelos</strong>, por + as = <strong>pelas</strong>.")}
   <div class="tbl-wrap"><table>
@@ -16444,6 +16981,22 @@
         "irregular-verbs": () => `
   ${ctx("16 high-frequency verbs that do not follow regular -AR/-ER/-IR patterns. Mostly only the EU form is irregular.", "These appear in nearly every sentence of real Portuguese. In most cases, only EU is irregular; the rest follow a predictable pattern from there.", "Core Verbs — IR/SER/TER are both core and irregular; Verb Patterns — shows what regular looks like; Imperativo — irregular imperatives")}
   ${sectionHead("Irregular Verbs", "Sessions 6 & UFCD 6453 S6", "These high-frequency verbs do not follow the regular -AR/-ER/-IR patterns. The EU form is almost always the most irregular — learn that one first. Session 6 adds FAZER, SABER, PÔR, PEDIR, SUBIR.")}
+  <h3 class="sub-heading">📺 Recommended video resources</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+    ${[
+      {
+        url: "https://youtu.be/zkFm6NL1uiA",
+        title: "Saber vs Conhecer — European Portuguese",
+        desc: "Explains the key difference with dialogue and examples.",
+        color: "var(--primary)",
+      },
+    ]
+      .map(
+        (v) =>
+          `<a href="${v.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card" style="border-left:3px solid ${v.color};cursor:pointer"><div style="font-size:16px;margin-bottom:4px">▶️</div><div style="font-weight:700;color:${v.color};font-size:13px">${v.title}</div><div style="font-size:11px;color:var(--text-2)">${v.desc}</div></div></a>`,
+      )
+      .join("")}
+  </div>
   <h3 class="sub-heading">Summary table — all at a glance</h3>
   ${infoBox(D_IRREGULAR_TABLE.note)}
   <div style="overflow-x:auto;margin-bottom:20px">
@@ -16740,6 +17293,8 @@
         imperativo: () => `
   ${ctx("The imperative mood for commands, instructions, advice and suggestions. Affirmative and negative forms differ for TU.", "Indispensable for recipes, instructions, giving advice, and everyday interaction. TU negative is the most common error: TU affirmative = canta, TU negative = não cantes. Imperfeito de cortesia (podia/queria) is the polite alternative.", "Pretérito Imperfeito — the politeness imperfect; Verb Patterns — conjugation foundations; Irregular Verbs — their irregular imperatives")}
   ${sectionHead("Imperativo", "UFCD 6454 Session 2", "Used for commands, instructions, advice and suggestions. Affirmative and negative forms have different endings. TU negative differs from affirmative — learn this carefully.")}
+  <h3 class="sub-heading">📺 Recommended video resource</h3>
+  <a href="https://youtu.be/D2QHK3u7Yxo" target="_blank" rel="noopener" style="text-decoration:none"><div class="card" style="border-left:3px solid var(--accent);cursor:pointer;margin-bottom:20px"><div style="font-size:16px;margin-bottom:4px">▶️</div><div style="font-weight:700;color:var(--accent)">Imperativo in Portuguese — how to use it</div><div style="font-size:12px;color:var(--text-2)">Clear explanation of affirmative and negative imperative with examples.</div></div></a>
   ${warnBox("KEY RULE — Two persons differ between affirmative and negative: <strong>TU</strong> and <strong>VÓS</strong>.<br>TU: ✅ Aff = <strong>canta</strong> (3rd sg. present) | ❌ Neg = <strong>não cantes</strong> (subjunctive)<br>VÓS: ✅ Aff = <strong>cantai</strong> (inf. − r + i) | ❌ Neg = <strong>não canteis</strong> (subjunctive)<br>VOCÊ / NÓS / VOCÊS: same form in both — they use the subjunctive in affirmative and negative.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div>
@@ -17998,6 +18553,26 @@
         food: () => `
   ${ctx("Five meals with times and verbs, food shop vocabulary, cooking verbs, food adjectives, and physical states of hunger.", "The structure of Portuguese meals (5 not 3) differs from most countries. ALMOÇAR and JANTAR are high-frequency verbs. GOSTAR DE + food is a basic self-description pattern.", "Typical Dishes — what to eat; Kitchen & Table — cooking equipment; Food Containers — recipe quantities")}
   ${sectionHead("Food & Meals", "Session 7 & UFCD 6453", "As refeições — the five Portuguese meals. Food shops. Cooking verbs. Food vocabulary.")}
+  <h3 class="sub-heading">📺 Recommended video resources</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+    ${[
+      {
+        url: "https://youtu.be/issghLco7oM",
+        title: "Vegetables in Portuguese",
+        desc: "Beginner & Intermediate Phrases — Vegetais em Português.",
+      },
+      {
+        url: "https://youtu.be/emHsk5VLleY",
+        title: "EVERYTHING Food & Drinks Related",
+        desc: "Comprehensive food and drink vocabulary.",
+      },
+    ]
+      .map(
+        (v) =>
+          `<a href="${v.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card" style="border-left:3px solid var(--green);cursor:pointer"><div style="font-size:16px;margin-bottom:4px">▶️</div><div style="font-weight:700;color:var(--green);font-size:13px">${v.title}</div><div style="font-size:11px;color:var(--text-2)">${v.desc}</div></div></a>`,
+      )
+      .join("")}
+  </div>
   <h3 class="sub-heading">🕐 As refeições — Meals</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Meal</th><th>Pron.</th><th>EN</th><th>Time</th><th>Verb</th></tr></thead>
@@ -18121,6 +18696,36 @@
         survival: () => `
   ${ctx("Essential phrases for first contact: greetings, classroom language, politeness. The minimum you need to start.", "These phrases get you through any first encounter. Memorise them before anything else.", "Expressions — broader conversation vocabulary; Fórmulas de Cortesia — polite requests")}
   ${sectionHead("Survival Phrases", "Session 1", "The essential phrases — greetings, classroom language, politeness. Minimum viable Portuguese.")}
+  <h3 class="sub-heading">📺 Recommended video resources</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+    ${[
+      {
+        url: "https://youtu.be/tOc8tK9f8Wg",
+        title: "Formal vs Informal Portuguese",
+        desc: "How to start any conversation — TU vs VOCÊ vs O SENHOR.",
+      },
+      {
+        url: "https://youtu.be/87ovyf_7nQY",
+        title: "200 Common Items Every Beginner Must Know (2h+)",
+        desc: "Comprehensive A1 vocabulary video.",
+      },
+      {
+        url: "https://youtu.be/JoaGC5BIh9s",
+        title: "1-Hour Beginner Conversation Course",
+        desc: "Full beginner conversation patterns.",
+      },
+      {
+        url: "https://youtu.be/Un5nqMfPtNM",
+        title: "50 Most Common Words in Portuguese (Part 2)",
+        desc: "High-frequency vocabulary.",
+      },
+    ]
+      .map(
+        (v) =>
+          `<a href="${v.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card" style="border-left:3px solid var(--primary);cursor:pointer"><div style="font-size:16px;margin-bottom:4px">▶️</div><div style="font-weight:700;color:var(--primary);font-size:13px">${v.title}</div><div style="font-size:11px;color:var(--text-2)">${v.desc}</div></div></a>`,
+      )
+      .join("")}
+  </div>
   ${(() => {
     const cats = [...new Set(D_SURVIVAL.map((r) => r.cat))];
     return cats
@@ -18808,11 +19413,33 @@
       .join("")}
   </div>
 
-  <h3 class="sub-heading">⚠️ High-frequency irregular PPS forms</h3>
-  ${warnBox("SER and IR share identical PPS forms. Context (subject + meaning) distinguishes them: <em>Fui ao médico.</em> (IR) vs <em>Foi um bom dia.</em> (SER)")}
+  <h3 class="sub-heading">⚠️ Irregular PPS — Session 2 verbs (ir/ser/estar/ter/fazer/pôr/dizer)</h3>
+  ${warnBox("SER and IR are <strong>identical</strong> in PPS (fui/foste/foi/fomos/fostes/foram). Context + subject distinguishes them. <em>Fomos à praia.</em> (IR) | <em>Foi um dia difícil.</em> (SER)")}
+  ${infoBox(D_PERFEITO.irregulars.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Infinitivo</th><th>eu</th><th>tu</th><th>ele/você</th><th>nós</th><th style="color:var(--text-3)">vós*</th><th>eles/vocês</th><th>Note</th></tr></thead>
+    <tbody>${D_PERFEITO.irregulars.tableVerbs
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary)">${r.inf}</td>
+      <td class="pt" style="font-weight:800">${r.eu}</td>
+      <td class="pt">${r.tu}</td>
+      <td class="pt">${r.ele}</td>
+      <td class="pt">${r.nos}</td>
+      <td class="pt" style="color:var(--text-3);font-size:12px">${r.vos}</td>
+      <td class="pt">${r.eles}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">Other important irregular PPS verbs</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Infinitivo</th><th>eu</th><th>tu</th><th>ele/você</th><th>nós</th><th>eles/vocês</th><th>Note</th></tr></thead>
-    <tbody>${D_PERFEITO.irregulars_preview.verbs
+    <tbody>${D_PERFEITO.irregulars.otherIrregulars
       .map(
         (
           r,
@@ -18984,6 +19611,102 @@
       )
       .join("")}</tbody>
   </table></div>`,
+
+        "cozinha-accoes": () => `
+  ${ctx("Cooking methods (técnicas de confeção) with descriptions, and a comprehensive kitchen utensils list.", "Understanding cooking methods is essential for recipes and restaurant menus. Each method has a specific Portuguese verb that cannot be substituted.", "Food & Meals — cooking verbs; Kitchen & Table — existing utensils section; Typical Dishes — recipe context")}
+  ${sectionHead("Confeção & Utensílios de Cozinha", "UFCD 6455 Session 2", "Cooking methods with descriptions, temperatures and contexts. Kitchen utensils for professional and domestic use.")}
+  ${infoBox(D_COZINHA_ACCOES.note)}
+  <h3 class="sub-heading">🍳 Técnicas de confeção — Cooking methods</h3>
+  <div style="display:grid;gap:10px;margin-bottom:20px">
+    ${D_COZINHA_ACCOES.methods
+      .map(
+        (
+          m,
+          i,
+        ) => `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 12px;background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"};border-radius:8px;border:1px solid var(--border)">
+      <span style="font-size:24px;min-width:32px;text-align:center">${m.e}</span>
+      <div>
+        <div style="display:flex;gap:10px;align-items:baseline;margin-bottom:4px">
+          <span class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">${m.pt}</span>
+          <span>${pr(m.pron)}</span>
+          <span class="en" style="font-size:13px">${m.en}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-2)">${m.desc}</div>
+      </div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">🍳 Utensílios de cozinha — Kitchen utensils</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_COZINHA_ACCOES.utensilios
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        limpeza: () => `
+  ${ctx("Household and professional cleaning vocabulary — actions, tools, and types of cleaning by context.", "Cleaning vocabulary appears across many practical contexts: domestic work, job interviews for domestic/cleaning roles, and healthcare (hospital cleaning is a separate discipline with specific terms).", "Kitchen & Table — kitchen cleaning overlaps; Saúde — hospital cleaning (limpeza hospitalar)")}
+  ${sectionHead("Limpeza", "UFCD 6455 Session 2", "Vocabulário de limpeza doméstica e profissional — ações, utensílios e tipos de limpeza.")}
+  ${infoBox(D_LIMPEZA.note)}
+  <h3 class="sub-heading">🧹 Ações de limpeza — Cleaning actions</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_LIMPEZA.acoes
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🪣 Utensílios de limpeza — Cleaning tools</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_LIMPEZA.utensilios
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">📋 Tipos de limpeza — Types of cleaning</h3>
+  <div style="display:grid;gap:10px">
+    ${D_LIMPEZA.types
+      .map(
+        (
+          t,
+        ) => `<div style="display:flex;gap:12px;align-items:center;padding:10px;background:var(--surface-2);border-radius:8px;border:1px solid var(--border)">
+      <span style="font-size:22px">${t.e}</span>
+      <div><div style="font-weight:800;color:var(--primary)">${t.type}</div><div style="font-size:12px;color:var(--text-2)">${t.desc}</div></div>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
       };
 
       // ─────────────────────────────────────────────
