@@ -5207,6 +5207,42 @@
           ],
         },
         {
+          verb: "PODER",
+          pron: "[poo-DER]",
+          en: "can / to be able to",
+          note: "EU: POSSO (double-S). Common mistake: *eu pode. Always: EU POSSO. NÓS: podemos.",
+          conj: [
+            ["Eu", "posso", "[POH-soo]"],
+            ["Tu", "podes", "[POH-dɐsh]"],
+            ["Ele/Ela/Você", "pode", "[POH-d]"],
+            ["Nós", "podemos", "[poo-DEH-moosh]"],
+            ["Vocês/Eles", "podem", "[POH-dayng]"],
+          ],
+          ex: [
+            ["Posso falar contigo?", "", "Can I speak with you?"],
+            ["Ele não pode trabalhar hoje.", "", "He can't work today."],
+            ["Podemos ajudar?", "", "Can we help?"],
+          ],
+        },
+        {
+          verb: "QUERER",
+          pron: "[kɐ-RER]",
+          en: "to want",
+          note: "ELE/ELA: QUER (drops the -ES). EU: quero. Most forms are regular-looking except ELE.",
+          conj: [
+            ["Eu", "quero", "[KEH-roo]"],
+            ["Tu", "queres", "[KEH-rɐsh]"],
+            ["Ele/Ela/Você", "quer", "[kɛr]"],
+            ["Nós", "queremos", "[kɐ-REH-moosh]"],
+            ["Vocês/Eles", "querem", "[KEH-rayng]"],
+          ],
+          ex: [
+            ["Quero um café, por favor.", "", "I want a coffee, please."],
+            ["O que é que queres?", "", "What do you want?"],
+            ["Ela não quer sair.", "", "She doesn't want to go out."],
+          ],
+        },
+        {
           verb: "SER",
           pron: "[ser]",
           en: "to be (identity/permanent)",
@@ -5247,6 +5283,28 @@
       const D_IRREGULAR_TABLE = {
         note: "Resumo comparativo — all irregular verbs in one table. Highlighted EU form is almost always the most irregular. Learn EU first, then the pattern usually becomes clear.",
         ar_er: [
+          {
+            verb: "SER",
+            eu: "sou",
+            eu_pron: "[soh]",
+            en: "to be (identity)",
+            tu: "és",
+            ele: "é",
+            nos: "somos",
+            eles: "são",
+            key: "Fully irregular — see Ser vs Estar",
+          },
+          {
+            verb: "ESTAR",
+            eu: "estou",
+            eu_pron: "[ish-TOH]",
+            en: "to be (state/loc)",
+            tu: "estás",
+            ele: "está",
+            nos: "estamos",
+            eles: "estão",
+            key: "EU: estou (unique form)",
+          },
           {
             verb: "DAR",
             eu: "dou",
@@ -5424,6 +5482,28 @@
             nos: "vimos",
             eles: "vêm",
             key: "EU: venho; NÓS: vimos",
+          },
+          {
+            verb: "SAIR",
+            eu: "saio",
+            eu_pron: "[SAI-oo]",
+            en: "to leave / go out",
+            tu: "sais",
+            ele: "sai",
+            nos: "saímos",
+            eles: "saem",
+            key: "EU: saio; accent on I in NÓS",
+          },
+          {
+            verb: "HAVER",
+            eu: "hei (HÁ)",
+            eu_pron: "[ay / a]",
+            en: "there is/are (HÁ)",
+            tu: "hás",
+            ele: "há",
+            nos: "havemos",
+            eles: "hão",
+            key: "HÁ = essential. Full conj. archaic.",
           },
         ],
       };
@@ -17298,7 +17378,8 @@
   ${warnBox("KEY RULE — Two persons differ between affirmative and negative: <strong>TU</strong> and <strong>VÓS</strong>.<br>TU: ✅ Aff = <strong>canta</strong> (3rd sg. present) | ❌ Neg = <strong>não cantes</strong> (subjunctive)<br>VÓS: ✅ Aff = <strong>cantai</strong> (inf. − r + i) | ❌ Neg = <strong>não canteis</strong> (subjunctive)<br>VOCÊ / NÓS / VOCÊS: same form in both — they use the subjunctive in affirmative and negative.")}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div>
-      <h3 class="sub-heading">✅ Imperativo Afirmativo</h3>
+      ${infoBox(D_IMPERATIVO.note)}
+  <h3 class="sub-heading">✅ Imperativo Afirmativo</h3>
       ${infoBox(D_IMPERATIVO.affirmative.rule)}
       <div class="tbl-wrap"><table>
         <thead><tr><th>Pronoun</th><th>-AR (cantar)</th><th>-ER (comer)</th><th>-IR (partir)</th><th>Note</th></tr></thead>
