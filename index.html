@@ -1099,6 +1099,9 @@
             { id: "future-plans", title: "Future Plans (IR + inf.)" },
             { id: "doer", title: "Verbo Doer (pain)" },
             { id: "perfeito", title: "Pretérito Perfeito Simples" },
+            { id: "adverbios", title: "Advérbios de Tempo" },
+            { id: "regencia", title: "Preposição de Regência" },
+            { id: "enfatica", title: "Forma Enfática" },
           ],
         },
         {
@@ -1108,6 +1111,10 @@
             { id: "cabeleireiro", title: "No Cabeleireiro" },
             { id: "cozinha-accoes", title: "Confeção & Utensílios" },
             { id: "limpeza", title: "Limpeza" },
+            { id: "hospital-proc", title: "No Hospital" },
+            { id: "telefone", title: "Ao Telefone" },
+            { id: "construcao", title: "Construção" },
+            { id: "agricultura", title: "Agricultura" },
           ],
         },
         {
@@ -13998,6 +14005,779 @@
         ],
       };
 
+      const D_HOSPITAL_PROC = {
+        note: "Procedimentos e vocabulário hospitalar — what happens at the hospital, emergency numbers, and medical equipment.",
+        procedures: [
+          {
+            e: "🧪",
+            pt: "fazer análises",
+            pron: "[fɐ-ZER ɐ-NA-lee-zɐsh]",
+            en: "to do blood/lab tests",
+          },
+          {
+            e: "💉",
+            pt: "dar/levar uma injeção",
+            pron: "[ee-ZHƐ-sowng]",
+            en: "to give/have an injection",
+          },
+          {
+            e: "🩹",
+            pt: "fazer um penso",
+            pron: "[fɐ-ZER oom PEN-soo]",
+            en: "to do a dressing/bandage",
+          },
+          {
+            e: "🩻",
+            pt: "fazer raios-X",
+            pron: "[RAEE-oosh EESH]",
+            en: "to have an X-ray",
+          },
+          {
+            e: "💉",
+            pt: "levar uma vacina",
+            pron: "",
+            en: "to have a vaccine",
+          },
+          {
+            e: "📏",
+            pt: "medir a tensão arterial",
+            pron: "[ten-SOWNG ɐr-tɐ-RYAL]",
+            en: "to measure blood pressure",
+          },
+          {
+            e: "🩸",
+            pt: "medir o açúcar do sangue",
+            pron: "[ɐ-SOO-kar doo SAN-g]",
+            en: "to measure blood sugar (glucose)",
+          },
+          { e: "⚖️", pt: "pesar", pron: "[pɐ-ZAR]", en: "to weigh" },
+          {
+            e: "👂",
+            pt: "observar o doente",
+            pron: "",
+            en: "to examine the patient",
+          },
+          {
+            e: "📋",
+            pt: "passar uma receita",
+            pron: "",
+            en: "to write a prescription",
+          },
+          {
+            e: "🏥",
+            pt: "internar o doente",
+            pron: "",
+            en: "to admit the patient (to hospital)",
+          },
+          {
+            e: "🩺",
+            pt: "fazer um exame",
+            pron: "[ish-ZAM]",
+            en: "to do an examination/scan",
+          },
+        ],
+        equipment: [
+          {
+            e: "🧤",
+            pt: "as luvas",
+            pron: "[ɐsh LOO-vɐsh]",
+            en: "gloves",
+            note: "Luvas de latex = latex gloves",
+          },
+          {
+            e: "🩹",
+            pt: "a gaze",
+            pron: "[ɐ GA-z]",
+            en: "gauze / wound dressing",
+            note: "",
+          },
+          {
+            e: "💉",
+            pt: "a seringa",
+            pron: "[ɐ sɐ-REEN-gɐ]",
+            en: "syringe",
+            note: "",
+          },
+          {
+            e: "🩺",
+            pt: "o estetoscópio",
+            pron: "[oo ish-tɐ-toosh-KO-pyoo]",
+            en: "stethoscope",
+            note: "",
+          },
+          {
+            e: "🔪",
+            pt: "o bisturi",
+            pron: "[oo beesh-too-REE]",
+            en: "scalpel",
+            note: "",
+          },
+          {
+            e: "🛏️",
+            pt: "a maca",
+            pron: "[ɐ MA-kɐ]",
+            en: "stretcher / gurney",
+            note: "",
+          },
+          {
+            e: "🛏️",
+            pt: "a cama (de hospital)",
+            pron: "",
+            en: "hospital bed",
+            note: "",
+          },
+          {
+            e: "🦴",
+            pt: "o gesso",
+            pron: "[oo ZHEH-soo]",
+            en: "plaster cast",
+            note: "",
+          },
+          {
+            e: "🩹",
+            pt: "a ligadura",
+            pron: "[ɐ lee-gɐ-DOO-rɐ]",
+            en: "bandage",
+            note: "",
+          },
+          {
+            e: "🦯",
+            pt: "a muleta",
+            pron: "[ɐ moo-LEH-tɐ]",
+            en: "crutch",
+            note: "",
+          },
+          {
+            e: "😷",
+            pt: "a máscara",
+            pron: "[ɐ MASH-kɐ-rɐ]",
+            en: "mask",
+            note: "",
+          },
+          {
+            e: "🚑",
+            pt: "a ambulância",
+            pron: "[ɐm-boo-LAN-syɐ]",
+            en: "ambulance",
+            note: "",
+          },
+          {
+            e: "😴",
+            pt: "o anestésico",
+            pron: "[ɐ-nɐsh-TEH-zee-koo]",
+            en: "anaesthetic",
+            note: "",
+          },
+          {
+            e: "💊",
+            pt: "o analgésico",
+            pron: "[ɐ-nal-ZHEH-zee-koo]",
+            en: "painkiller / analgesic",
+            note: "",
+          },
+          { e: "🩸", pt: "a arrastadeira", pron: "", en: "bedpan", note: "" },
+        ],
+        emergency: [
+          {
+            e: "🆘",
+            number: "112",
+            name: "Número de Emergência",
+            hours: "24h/7",
+            desc: "Saúde, incêndios, assaltos. Gratuito, acessível de qualquer ponto do país. Atendido por operador da Central de Emergência.",
+          },
+          {
+            e: "🏥",
+            number: "808 24 24 24",
+            name: "SNS 24 / Saúde 24",
+            hours: "24h/7",
+            desc: "Triagem, aconselhamento e encaminhamento de saúde. Para todos os utentes do SNS.",
+          },
+          {
+            e: "☠️",
+            number: "808 250 143",
+            name: "INEM — Centro de Informação Antivenenos",
+            hours: "Permanent",
+            desc: "Informações sobre intoxicações e envenenamentos.",
+          },
+        ],
+        services: [
+          ["🏥 Hospital", "Urgência available 24h. Full range of services."],
+          ["🏪 Centro de Saúde", "Primary care. Requires número de utente."],
+          [
+            "👨‍👩‍👧 USF (Unidade de Saúde Familiar)",
+            "Family health unit — GP + nurse team.",
+          ],
+          ["📞 Linha de emergência", "112 — for urgent situations."],
+          [
+            "🩺 Gabinete Médico / Posto Médico",
+            "Private clinic or occupational health post.",
+          ],
+        ],
+      };
+
+      const D_TELEFONE = {
+        note: "Ao telefone — phone expressions. Key pattern: EU form of SER + pronoun: Está a falar com... / Fala de... / É o próprio.",
+        expressions: [
+          {
+            e: "📞",
+            pt: "Estou? / Estou sim?",
+            en: "Hello? (answering the phone)",
+            note: "EU Pt standard way to answer — not Olá",
+          },
+          {
+            e: "🗣️",
+            pt: "Estou a falar com quem?",
+            en: "Who am I speaking to?",
+            note: "",
+          },
+          {
+            e: "🙏",
+            pt: "Gostaria de falar com o/a...",
+            en: "I would like to speak with...",
+            note: "Formal — use GOSTARIA not QUERO",
+          },
+          {
+            e: "📲",
+            pt: "Podia chamar-me o/a...?",
+            en: "Could you call... to the phone?",
+            note: "",
+          },
+          {
+            e: "❓",
+            pt: "Quem fala?",
+            en: "Who is calling? / Who's speaking?",
+            note: "",
+          },
+          {
+            e: "✅",
+            pt: "Sim, sou eu quem fala. / É o próprio.",
+            en: "Yes, speaking. / Yes, it's me (himself/herself).",
+            note: "É o próprio/a própria = formal",
+          },
+          {
+            e: "❓",
+            pt: "É possível falar com...?",
+            en: "Is it possible to speak with...?",
+            note: "Formal request",
+          },
+          {
+            e: "📞",
+            pt: "Fala de...",
+            en: "This is... (calling from / speaking for)",
+            note: "To identify yourself",
+          },
+          {
+            e: "📱",
+            pt: "Está a falar com...",
+            en: "You are speaking with...",
+            note: "",
+          },
+          {
+            e: "📋",
+            pt: "Podia dar-me uma informação?",
+            en: "Could you give me some information?",
+            note: "",
+          },
+          {
+            e: "🔀",
+            pt: "Podia passar-me a ligação?",
+            en: "Could you put me through / transfer the call?",
+            note: "",
+          },
+          {
+            e: "👋",
+            pt: "Até logo! Com licença.",
+            en: "Goodbye! Excuse me (to close the call).",
+            note: "",
+          },
+        ],
+        video: {
+          url: "https://youtu.be/NE6wYGTjwmU",
+          title: "How to Talk on the Phone in Portuguese 🇵🇹",
+          desc: "Complete phone conversation guide with authentic expressions.",
+        },
+      };
+
+      const D_REGENCIA = {
+        note: "Preposição de regência verbal — certain verbs REQUIRE a specific preposition. The combination verb + preposition is fixed and must be memorised as a unit. Most common: DE, A, EM, COM, POR.",
+        verbs_de: [
+          {
+            verb: "sair",
+            ex: "Ela saiu do aeroporto.",
+            en: "She left the airport.",
+            note: "sair DE = to leave (a place)",
+          },
+          {
+            verb: "gostar",
+            ex: "Gosto de música portuguesa.",
+            en: "I like Portuguese music.",
+            note: "gostar DE = to like",
+          },
+          {
+            verb: "precisar",
+            ex: "Preciso de ajuda.",
+            en: "I need help.",
+            note: "precisar DE = to need",
+          },
+          {
+            verb: "lembrar-se",
+            ex: "Lembro-me do teu nome.",
+            en: "I remember your name.",
+            note: "lembrar-se DE = to remember",
+          },
+          {
+            verb: "esquecer-se",
+            ex: "Esqueci-me da reunião.",
+            en: "I forgot the meeting.",
+            note: "esquecer-se DE = to forget",
+          },
+          {
+            verb: "tratar",
+            ex: "Trata de resolver isso.",
+            en: "Deal with resolving that.",
+            note: "tratar DE = to deal with / handle",
+          },
+          {
+            verb: "depender",
+            ex: "Depende de ti.",
+            en: "It depends on you.",
+            note: "depender DE = to depend on",
+          },
+        ],
+        verbs_a: [
+          {
+            verb: "chegar",
+            ex: "Ela chegou à escola às 9h.",
+            en: "She arrived at school at 9.",
+            note: "chegar A = to arrive at/in",
+          },
+          {
+            verb: "ir",
+            ex: "Vou ao médico amanhã.",
+            en: "I'm going to the doctor tomorrow.",
+            note: "ir A = to go to",
+          },
+          {
+            verb: "aprender",
+            ex: "Aprendo a falar português.",
+            en: "I'm learning to speak Portuguese.",
+            note: "aprender A + inf = to learn to",
+          },
+          {
+            verb: "começar",
+            ex: "Começou a chover.",
+            en: "It started raining.",
+            note: "começar A + inf = to start doing",
+          },
+          {
+            verb: "ajudar",
+            ex: "Ajuda-me a carregar isto.",
+            en: "Help me carry this.",
+            note: "ajudar A + inf = to help to",
+          },
+        ],
+        verbs_em: [
+          {
+            verb: "entrar",
+            ex: "As crianças entraram na escola.",
+            en: "The children entered the school.",
+            note: "entrar EM = to enter",
+          },
+          {
+            verb: "pensar",
+            ex: "Estou a pensar em ti.",
+            en: "I'm thinking about you.",
+            note: "pensar EM = to think about",
+          },
+          {
+            verb: "acreditar",
+            ex: "Acredito em ti.",
+            en: "I believe in you.",
+            note: "acreditar EM = to believe in",
+          },
+          {
+            verb: "insistir",
+            ex: "Insistiu em ficar.",
+            en: "He insisted on staying.",
+            note: "insistir EM = to insist on",
+          },
+        ],
+        videos: [
+          {
+            url: "https://youtu.be/HQuTHEqU8-E",
+            title: "7 Verbs with Preposition DE",
+            desc: "",
+          },
+          {
+            url: "https://youtu.be/hEn4YSsUuEI",
+            title: "5 Verbs with Preposition A",
+            desc: "",
+          },
+        ],
+        contractions: {
+          note: "The preposition always contracts with the article: a + o = ao, a + a = à, em + o = no, em + a = na, de + o = do, de + a = da.",
+          examples: [
+            ["chegar a + o hospital", "→ chegar ao hospital"],
+            ["sair de + o trabalho", "→ sair do trabalho"],
+            ["entrar em + a sala", "→ entrar na sala"],
+          ],
+        },
+      };
+
+      const D_ENFATICA = {
+        note: "Forma enfática — emphatic constructions. Used to stress WHO did something or WHAT happened. Key structure: SER + [element] + QUE/QUEM.",
+        structures: [
+          {
+            type: "Focalização com SER...QUE",
+            rule: "SER (conjugated to match tense) + element being stressed + QUE + rest of sentence",
+            examples: [
+              {
+                normal: "O Joãozinho comeu a tarte.",
+                emphatic: "Foi o Joãozinho que comeu a tarte.",
+                en: "It was João who ate the tart.",
+              },
+              {
+                normal: "Eu fiz o relatório.",
+                emphatic: "Fui eu que fiz o relatório.",
+                en: "It was me who did the report.",
+              },
+              {
+                normal: "Ela chegou tarde.",
+                emphatic: "Foi ela que chegou tarde.",
+                en: "It was her who arrived late.",
+              },
+              {
+                normal: "Eles resolveram o problema.",
+                emphatic: "Foram eles que resolveram o problema.",
+                en: "It was them who solved the problem.",
+              },
+            ],
+          },
+          {
+            type: "Sou eu que... (present emphasis)",
+            rule: "SOu/ÉS/É/SOMOS/SÃO + pronoun + QUE — stresses the subject in present tense",
+            examples: [
+              {
+                normal: "Eu falo português.",
+                emphatic: "Sou eu que falo português.",
+                en: "I am the one who speaks Portuguese.",
+              },
+              {
+                normal: "Ela trata do problema.",
+                emphatic: "É ela que trata do problema.",
+                en: "She is the one who handles the problem.",
+              },
+              {
+                normal: "Nós pagamos a conta.",
+                emphatic: "Somos nós que pagamos a conta.",
+                en: "We are the ones who pay the bill.",
+              },
+            ],
+          },
+          {
+            type: "Topicalização",
+            rule: "Move the topic to the front of the sentence for emphasis",
+            examples: [
+              {
+                normal: "O Joãozinho comeu a tarte num instante.",
+                emphatic: "A tarte de maçã, o Joãozinho comeu-a num instante!",
+                en: "The apple tart — João ate it in an instant!",
+              },
+            ],
+          },
+        ],
+      };
+
+      const D_CONSTRUCAO = {
+        note: "Vocabulário da construção civil — construction and building vocabulary. A major employment sector in Portugal (25.1% of jobs in industry/construction/energy sector).",
+        materials: [
+          {
+            e: "🏗️",
+            pt: "o andaime",
+            pron: "[oo an-DAI-m]",
+            en: "scaffold / scaffolding",
+          },
+          {
+            e: "🧱",
+            pt: "os tijolos",
+            pron: "[oosh tee-ZHOH-loosh]",
+            en: "bricks",
+          },
+          { e: "⬜", pt: "o cimento", pron: "[oo see-MEN-too]", en: "cement" },
+          {
+            e: "🪚",
+            pt: "a serra / o serrote",
+            pron: "[ɐ SEH-hrɐ]",
+            en: "saw / handsaw",
+          },
+          { e: "🔨", pt: "o martelo", pron: "[oo mɐr-TEH-loo]", en: "hammer" },
+          { e: "📌", pt: "o prego", pron: "[oo PREH-goo]", en: "nail" },
+          { e: "🪣", pt: "a pá", pron: "[ɐ pa]", en: "spade / shovel" },
+          {
+            e: "🪜",
+            pt: "o escadote",
+            pron: "[oo ish-kɐ-DOT]",
+            en: "stepladder",
+          },
+          { e: "🎨", pt: "o pincel", pron: "[oo pin-SEL]", en: "paintbrush" },
+          { e: "🎨", pt: "o rolo de pintura", pron: "", en: "paint roller" },
+          { e: "🔩", pt: "a chave de fenda", pron: "", en: "screwdriver" },
+          {
+            e: "📏",
+            pt: "a fita métrica",
+            pron: "[FEE-tɐ MEH-tree-kɐ]",
+            en: "tape measure",
+          },
+          {
+            e: "⛑️",
+            pt: "o capacete",
+            pron: "[oo kɐ-pɐ-SET]",
+            en: "hard hat / helmet",
+          },
+          { e: "🥅", pt: "o nível", pron: "[oo NEE-vel]", en: "spirit level" },
+        ],
+        actions: [
+          {
+            e: "🎨",
+            pt: "pintar",
+            pron: "[pin-TAR]",
+            en: "to paint",
+            note: "Pintar a casa = to paint the house",
+          },
+          { e: "🪚", pt: "serrar", pron: "[sɐ-HAR]", en: "to saw", note: "" },
+          {
+            e: "🧱",
+            pt: "construir",
+            pron: "[konsh-troo-EER]",
+            en: "to build / construct",
+            note: "",
+          },
+          { e: "⛏️", pt: "cavar", pron: "[kɐ-VAR]", en: "to dig", note: "" },
+          { e: "🔨", pt: "pregar", pron: "[prɐ-GAR]", en: "to nail", note: "" },
+          { e: "🪛", pt: "aparafusar", pron: "", en: "to screw", note: "" },
+          {
+            e: "🔬",
+            pt: "medir",
+            pron: "[mɐ-DEER]",
+            en: "to measure",
+            note: "",
+          },
+          {
+            e: "📐",
+            pt: "nivelar",
+            pron: "[nee-vɐ-LAR]",
+            en: "to level",
+            note: "",
+          },
+          {
+            e: "🏗️",
+            pt: "montar o andaime",
+            pron: "",
+            en: "to erect scaffolding",
+            note: "",
+          },
+          {
+            e: "🏠",
+            pt: "demolir",
+            pron: "[dɐ-moo-LEER]",
+            en: "to demolish",
+            note: "",
+          },
+        ],
+      };
+
+      const D_AGRICULTURA = {
+        note: "Vocabulário da agricultura — farming vocabulary. Portugal: 2.9% of employment in agriculture. Key distinction: agricultura tradicional (subsistência) vs moderna (mercado).",
+        actions: [
+          {
+            e: "🌱",
+            pt: "semear",
+            pron: "[sɐ-MYAR]",
+            en: "to sow / plant seeds",
+            note: "Semear trigo, milho...",
+          },
+          {
+            e: "✂️",
+            pt: "cortar",
+            pron: "[koor-TAR]",
+            en: "to cut / harvest (stem)",
+            note: "Cortar a erva, as flores",
+          },
+          {
+            e: "🌿",
+            pt: "cultivar",
+            pron: "[kool-tee-VAR]",
+            en: "to cultivate / grow",
+            note: "Cultivar a terra",
+          },
+          {
+            e: "🍎",
+            pt: "apanhar",
+            pron: "[ɐ-pɐn-YAR]",
+            en: "to pick / harvest (fruit)",
+            note: "Apanhar fruta, azeitonas",
+          },
+          {
+            e: "💧",
+            pt: "regar",
+            pron: "[rɐ-GAR]",
+            en: "to water / irrigate",
+            note: "Regar as plantas",
+          },
+          {
+            e: "🚜",
+            pt: "lavrar",
+            pron: "[lɐ-VRAR]",
+            en: "to plough (the land)",
+            note: "",
+          },
+          {
+            e: "🌾",
+            pt: "colher",
+            pron: "[kool-YER]",
+            en: "to harvest / collect",
+            note: "Colher a cereal",
+          },
+          {
+            e: "✂️",
+            pt: "podar",
+            pron: "[poo-DAR]",
+            en: "to prune",
+            note: "Podar as árvores/videiras",
+          },
+          {
+            e: "🌿",
+            pt: "plantar",
+            pron: "[plan-TAR]",
+            en: "to plant",
+            note: "",
+          },
+          {
+            e: "🌱",
+            pt: "adubar",
+            pron: "[ɐ-doo-BAR]",
+            en: "to fertilise",
+            note: "",
+          },
+        ],
+        vocab: [
+          ["o campo / a quinta", "", "field / farm"],
+          ["o solo / a terra", "[oo SOH-loo]", "soil / earth"],
+          ["a semente", "[ɐ sɐ-MEN-t]", "seed"],
+          ["a colheita", "[ɐ kool-YAY-tɐ]", "harvest / crop"],
+          ["o adubo", "[oo ɐ-DOO-boo]", "fertiliser"],
+          ["a rega / o sistema de rega", "", "irrigation / irrigation system"],
+          ["a trator", "[oo trɐ-TOR]", "tractor"],
+          ["o agricultor / a agricultora", "", "farmer"],
+          ["a vinha", "[ɐ VEEN-yɐ]", "vineyard"],
+          ["o pomar", "[oo poo-MAR]", "orchard"],
+          ["a estufa", "[ɐ ish-TOO-fɐ]", "greenhouse"],
+          [
+            "o socalco",
+            "[oo soo-KAL-koo]",
+            "terrace / socalcos (stepped hillside farming)",
+          ],
+        ],
+        types: [
+          {
+            type: "Agricultura tradicional / de subsistência",
+            desc: "Small-scale, for own consumption. Less technology, manual labour.",
+          },
+          {
+            type: "Agricultura moderna / de mercado",
+            desc: "Large-scale, for commercial sale. Technology-intensive, mechanised.",
+          },
+        ],
+        factors: {
+          physical: [
+            "Clima — temperatura e pluviosidade adequadas a cada cultura",
+            "Relevo — vertentes inclinadas dificultam mecanização (→ socalcos)",
+            "Solo — maior concentração de húmus = solo mais fértil",
+          ],
+          human: [
+            "Demografia — aumento da população → alargamento da área cultivada",
+            "Características socioculturais — tradições e crenças influenciam a agricultura",
+            "Desenvolvimento tecnológico — países mais desenvolvidos têm maior capacidade de inovação",
+            "Envolvimento do poder regulador — subsídios e políticas de apoio agrícola",
+          ],
+        },
+      };
+
+      const D_ADVERBIOS = {
+        note: "Advérbios de tempo — time adverbs are invariable (no gender/number agreement). They modify the meaning of verbs, expressions or full sentences.",
+        past: [
+          { pt: "ontem", en: "yesterday", ex: "Ontem fui ao médico." },
+          {
+            pt: "anteontem",
+            en: "the day before yesterday",
+            ex: "Anteontem choveu muito.",
+          },
+          { pt: "ontem de manhã", en: "yesterday morning", ex: "" },
+          { pt: "há um dia", en: "a day ago", ex: "Saiu há um dia." },
+          {
+            pt: "há muito / pouco tempo",
+            en: "a long / short time ago",
+            ex: "",
+          },
+          {
+            pt: "há bocado",
+            en: "a little while ago",
+            ex: "Ele saiu há bocado.",
+          },
+          { pt: "em 1974", en: "in 1974 (specific year)", ex: "" },
+          {
+            pt: "no inverno / verão passado",
+            en: "last winter / summer",
+            ex: "",
+          },
+          { pt: "na semana passada", en: "last week", ex: "" },
+          { pt: "no mês passado", en: "last month", ex: "" },
+          {
+            pt: "antigamente",
+            en: "in the past / in former times",
+            ex: "Antigamente havia menos carros.",
+          },
+          { pt: "dantes", en: "formerly / in the old days", ex: "" },
+          { pt: "naquela época", en: "in that era / at that time", ex: "" },
+        ],
+        present: [
+          { pt: "hoje", en: "today", ex: "Hoje está sol." },
+          { pt: "agora", en: "now", ex: "" },
+          { pt: "neste momento", en: "at this moment", ex: "" },
+          {
+            pt: "ultimamente",
+            en: "lately / recently",
+            ex: "Ultimamente tenho estado cansado.",
+          },
+          { pt: "até agora", en: "until now / so far", ex: "" },
+          {
+            pt: "nos últimos tempos / dias / meses",
+            en: "recently / in recent times/days/months",
+            ex: "",
+          },
+          { pt: "nas últimas semanas", en: "in recent weeks", ex: "" },
+        ],
+        future: [
+          { pt: "amanhã", en: "tomorrow", ex: "" },
+          { pt: "depois de amanhã", en: "the day after tomorrow", ex: "" },
+          { pt: "logo", en: "soon / later today", ex: "" },
+          { pt: "em breve", en: "shortly / soon", ex: "" },
+        ],
+        general: [
+          { pt: "sempre", en: "always", ex: "" },
+          { pt: "nunca / jamais", en: "never", ex: "" },
+          { pt: "ainda", en: "still / yet", ex: "Ainda não terminei." },
+          { pt: "já", en: "already", ex: "Já comi." },
+          {
+            pt: "habitualmente",
+            en: "usually / habitually",
+            ex: "Habitualmente vou ao ginásio.",
+          },
+          { pt: "cedo / tarde", en: "early / late", ex: "" },
+          { pt: "antes / depois", en: "before / after", ex: "" },
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -19788,6 +20568,345 @@
       )
       .join("")}
   </div>`,
+
+        "hospital-proc": () => `
+  ${ctx("Hospital procedures, medical equipment, emergency numbers (112/SNS24/INEM), and health service types.", "Expands on the Saúde & Serviços section with specific procedural vocabulary. Emergency numbers are essential to know before you need them.", "Saúde & Serviços — SNS system, symptoms, at the doctor; Body — partes do corpo")}
+  ${sectionHead("No Hospital", "UFCD 6455 Session 3", "Hospital procedures, equipment, emergency services and numbers.")}
+  <h3 class="sub-heading">🆘 Números de emergência — Emergency numbers</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+    ${D_HOSPITAL_PROC.emergency
+      .map(
+        (
+          e,
+        ) => `<div class="card" style="border-top:4px solid var(--accent);text-align:center">
+      <div style="font-size:28px;margin-bottom:6px">${e.e}</div>
+      <div style="font-size:22px;font-weight:800;color:var(--accent);margin-bottom:4px">${e.number}</div>
+      <div style="font-weight:700;font-size:13px;margin-bottom:6px">${e.name}</div>
+      <div style="font-size:11px;color:var(--text-3)">${e.hours}</div>
+      <div style="font-size:12px;color:var(--text-2);margin-top:6px">${e.desc}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">🏥 O que podemos fazer no hospital?</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronúncia</th><th>English</th></tr></thead>
+    <tbody>${D_HOSPITAL_PROC.procedures
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🩺 Equipamento — Equipment</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>Pronúncia</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_HOSPITAL_PROC.equipment
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td>${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        telefone: () => `
+  ${ctx("Phone call expressions — how to answer, identify yourself, ask to speak with someone, and close a call.", 'Phone Portuguese is very different from in-person Portuguese. ESTOU? (not Olá) answers the phone. É o próprio/a própria means "speaking" (formal).', "Survival Phrases — greetings; Fórmulas de Cortesia — polite requests; Gostos & Preferências — expressing preferences on phone")}
+  ${sectionHead("Ao Telefone", "UFCD 6455 Session 3", "Phone expressions — answering, identifying, requesting, transferring, closing.")}
+  ${infoBox(D_TELEFONE.note)}
+  <a href="${D_TELEFONE.video.url}" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--primary);margin-bottom:20px;cursor:pointer">
+      <div style="font-size:18px;margin-bottom:4px">▶️</div>
+      <div style="font-weight:700;color:var(--primary)">${D_TELEFONE.video.title}</div>
+      <div style="font-size:12px;color:var(--text-2)">${D_TELEFONE.video.desc}</div>
+    </div>
+  </a>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Portuguese</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_TELEFONE.expressions
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        regencia: () => `
+  ${ctx("Preposição de regência verbal — verbs that require a specific preposition. The verb + preposition combination is fixed and must be memorised as a unit.", "This is one of the biggest sources of errors at A2. You cannot swap prepositions — gostar DE not *gostar EM. The preposition contracts with the article following it.", "Prepositions & Articles — contraction rules; Perfeito — sair de / chegar a appear frequently in past narratives")}
+  ${sectionHead("Preposição de Regência Verbal", "UFCD 6455 Session 3", "Verb + preposition: the combination is fixed. Chegar A, sair DE, entrar EM — and many others.")}
+  ${infoBox(D_REGENCIA.note)}
+  ${warnBox(D_REGENCIA.contractions.note + "<br>" + D_REGENCIA.contractions.examples.map((e) => `<code>${e[0]} ${e[1]}</code>`).join(" &nbsp;|&nbsp; "))}
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading" style="color:var(--primary)">Verbo + DE</h3>
+      ${D_REGENCIA.videos.map((v) => `<a href="${v.url}" target="_blank" rel="noopener" style="text-decoration:none"><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:6px 10px;margin-bottom:8px;cursor:pointer"><span style="font-size:12px">▶️ ${v.title}</span></div></a>`).join("")}
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Verb</th><th>Example</th><th>EN</th></tr></thead>
+        <tbody>${D_REGENCIA.verbs_de
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800;color:var(--primary)">${r.verb} + DE</td>
+          <td class="pt" style="font-size:12px">${r.ex}</td>
+          <td class="en" style="font-size:11px">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading" style="color:var(--green)">Verbo + A</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Verb</th><th>Example</th><th>EN</th></tr></thead>
+        <tbody>${D_REGENCIA.verbs_a
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800;color:var(--green)">${r.verb} + A</td>
+          <td class="pt" style="font-size:12px">${r.ex}</td>
+          <td class="en" style="font-size:11px">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading" style="color:var(--accent)">Verbo + EM</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Verb</th><th>Example</th><th>EN</th></tr></thead>
+        <tbody>${D_REGENCIA.verbs_em
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800;color:var(--accent)">${r.verb} + EM</td>
+          <td class="pt" style="font-size:12px">${r.ex}</td>
+          <td class="en" style="font-size:11px">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>`,
+
+        enfatica: () => `
+  ${ctx("Forma enfática — emphatic structures to stress WHO did something. Key pattern: SER (conjugated) + element + QUE.", 'Used constantly in everyday speech when correcting, insisting, or stressing information. "Foi ela que fez isso!" is the most natural way to emphasise subject.', "Pronouns — pronome subject forms; Ser vs Estar — SER conjugation needed")}
+  ${sectionHead("Forma Enfática", "UFCD 6455 Session 3", "Focalização: SER + element + QUE. Used to emphasise WHO did something or WHAT happened.")}
+  ${infoBox(D_ENFATICA.note)}
+  ${D_ENFATICA.structures
+    .map(
+      (s) => `
+  <div class="card" style="margin-bottom:16px">
+    <div style="font-weight:800;font-size:15px;color:var(--primary);margin-bottom:4px">${s.type}</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:12px;padding:6px 10px;background:var(--surface-2);border-radius:6px"><strong>Rule:</strong> ${s.rule}</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Normal</th><th style="color:var(--primary)">Emphatic (enfática)</th><th>English</th></tr></thead>
+      <tbody>${s.examples
+        .map(
+          (
+            e,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td class="pt" style="font-size:13px;color:var(--text-3)">${e.normal}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary)">${e.emphatic}</td>
+        <td class="en" style="font-size:12px">${e.en}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>`,
+    )
+    .join("")}`,
+
+        construcao: () => `
+  ${ctx("Construction and building vocabulary — materials, tools, and action verbs. Major employment sector in Portugal.", "Construction is one of the top employment areas for immigrants in Portugal (canalizadores, eletricistas, operários qualificados listed in EURES top shortage areas).", "Mundo do Trabalho — employment context; Limpeza — cleaning on construction sites")}
+  ${sectionHead("Na Construção", "UFCD 6455 Session 4", "Materiais e ferramentas de construção. Verbos de ação na construção.")}
+  ${infoBox(D_CONSTRUCAO.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🏗️ Materiais e ferramentas</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Português</th><th>Pronúncia</th><th>English</th></tr></thead>
+        <tbody>${D_CONSTRUCAO.materials
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🔨 Ações de construção</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Verbo</th><th>Pronúncia</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>${D_CONSTRUCAO.actions
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+          <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>`,
+
+        agricultura: () => `
+  ${ctx("Farming vocabulary — action verbs, equipment, and the context of Portuguese agriculture (factors, types, employment significance).", "Agriculture represents 2.9% of Portuguese employment but shapes the landscape (socalcos, vinhas, pomares). For immigrants, seasonal agricultural work (apanha de fruta) is a top employment sector.", "Mundo do Trabalho — employment statistics; Cozinha — vegetables and food grown")}
+  ${sectionHead("Na Agricultura", "UFCD 6455 Session 4", "Ações e vocabulário agrícola. Tipos de agricultura. Fatores físicos e humanos.")}
+  ${infoBox(D_AGRICULTURA.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">🌱 Ações agrícolas — Farming verbs</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Verbo</th><th>Pronúncia</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>${D_AGRICULTURA.actions
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+          <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🚜 Vocabulário</h3>
+      ${vocabGrid(D_AGRICULTURA.vocab)}
+    </div>
+  </div>
+  <h3 class="sub-heading">📊 Tipos e fatores</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div class="card">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:8px">Tipos de agricultura</div>
+      ${D_AGRICULTURA.types.map((t) => `<div style="padding:6px 0;border-bottom:1px solid var(--border)"><div style="font-weight:700;font-size:13px">${t.type}</div><div style="font-size:12px;color:var(--text-2)">${t.desc}</div></div>`).join("")}
+    </div>
+    <div class="card">
+      <div style="font-weight:800;color:var(--green);margin-bottom:6px">🌍 Fatores físicos</div>
+      ${D_AGRICULTURA.factors.physical.map((f) => `<div style="font-size:12px;padding:3px 0;border-bottom:1px solid var(--border)">${f}</div>`).join("")}
+      <div style="font-weight:800;color:var(--accent);margin-top:10px;margin-bottom:6px">👷 Fatores humanos</div>
+      ${D_AGRICULTURA.factors.human.map((f) => `<div style="font-size:12px;padding:3px 0;border-bottom:1px solid var(--border)">${f}</div>`).join("")}
+    </div>
+  </div>`,
+
+        adverbios: () => `
+  ${ctx("Time adverbs and adverbial expressions — past, present, future and habitual. Invariable in gender and number.", "Time adverbs are the trigger words that tell you which tense to use. Ontem/anteontem → PPS. Habitualmente/sempre → presente. Ultimamente/nos últimos tempos → presente perfeito composto.", "Pretérito Perfeito Simples — ontem/anteontem/na semana passada trigger PPS; Pretérito Imperfeito — antigamente/dantes trigger imperfeito")}
+  ${sectionHead("Advérbios de Tempo", "UFCD 6455 Session 4", "Time adverbs — invariable words that modify verbs and sentences. Grouped by time reference.")}
+  ${infoBox(D_ADVERBIOS.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">⏮️ Passado — Past</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Adverb</th><th>English</th><th>Example</th></tr></thead>
+        <tbody>${D_ADVERBIOS.past
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en" style="font-size:12px">${r.en}</td>
+          <td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">⏸️ Presente — Present</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Adverb</th><th>English</th><th>Example</th></tr></thead>
+        <tbody>${D_ADVERBIOS.present
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en" style="font-size:12px">${r.en}</td>
+          <td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+      <h3 class="sub-heading" style="margin-top:14px">⏭️ Futuro — Future</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Adverb</th><th>English</th></tr></thead>
+        <tbody>${D_ADVERBIOS.future
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">🔄 Geral — General time adverbs</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Adverb</th><th>English</th><th>Example</th></tr></thead>
+    <tbody>${D_ADVERBIOS.general
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-size:12px;color:var(--text-3)">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
       };
 
       // ─────────────────────────────────────────────
