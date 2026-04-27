@@ -1115,6 +1115,8 @@
             { id: "telefone", title: "Ao Telefone" },
             { id: "construcao", title: "Construção" },
             { id: "agricultura", title: "Agricultura" },
+            { id: "escritorio", title: "No Escritório" },
+            { id: "educacao", title: "Estudos & Educação" },
           ],
         },
         {
@@ -1822,13 +1824,31 @@
           ],
         ],
         ordinals: [
-          ["🥇 1st", "primeiro/a", "[pree-MAY-roo]"],
-          ["🥈 2nd", "segundo/a", "[sɐ-GOON-doo]"],
-          ["🥉 3rd", "terceiro/a", "[ter-SAY-roo]"],
-          ["4th", "quarto/a", "[KWAR-too]"],
-          ["5th", "quinto/a", "[KEEN-too]"],
-          ["🏁 last", "último/a", "[OOL-tee-moo]"],
+          [
+            "🥇 1.º primeiro/a",
+            "[pree-MAY-roo]",
+            "1st — o primeiro / a primeira",
+          ],
+          [
+            "🥈 2.º segundo/a",
+            "[sɐ-GOON-doo]",
+            "2nd — 2.º Esq = 2nd floor left (address)",
+          ],
+          ["🥉 3.º terceiro/a", "[ter-SAY-roo]", "3rd"],
+          ["4.º quarto/a", "[KWAR-too]", "4th"],
+          ["5.º quinto/a", "[KEEN-too]", "5th"],
+          ["6.º sexto/a", "[SESH-too]", "6th"],
+          ["7.º sétimo/a", "[SEH-tee-moo]", "7th"],
+          ["8.º oitavo/a", "[oy-TA-voo]", "8th"],
+          ["9.º nono/a", "[NOH-noo]", "9th"],
+          ["10.º décimo/a", "[DEH-see-moo]", "10th"],
+          ["11.º décimo primeiro/a", "", "11th"],
+          ["12.º décimo segundo/a", "", "12th"],
+          ["20.º vigésimo/a", "[vee-ZHEH-zee-moo]", "20th"],
+          ["🏁 último/a", "[OOL-tee-moo]", "last"],
         ],
+        ordinal_note:
+          "Ordinals agree in gender/number: o primeiro / a primeira / os primeiros / as primeiras. Used in addresses (2.º Esq), school years (1.º Ciclo), floor numbers (r/c = rés-do-chão = ground floor).",
       };
 
       const D_PREPOSITIONS = {
@@ -5214,6 +5234,36 @@
           ],
         },
         {
+          verb: "CONSEGUIR",
+          pron: "[kon-sɐ-GHEER]",
+          en: "to manage to / to succeed in doing",
+          note: "EU: CONSIGO (stem change -GUI→-GI). Similar to SEGUIR. KEY DISTINCTION: CONSEGUIR = manage to (succeeded in doing it), PODER = be allowed/able to. Equivalent of CAN only when implying overcoming a challenge.",
+          conj: [
+            ["Eu", "consigo", "[kon-SEE-goo]"],
+            ["Tu", "consegues", "[kon-SEH-gɐsh]"],
+            ["Ele/Ela/Você", "consegue", "[kon-SEH-g]"],
+            ["Nós", "conseguimos", "[kon-sɐ-GHEE-moosh]"],
+            ["Vocês/Eles", "conseguem", "[kon-SEH-gayng]"],
+          ],
+          ex: [
+            [
+              "Não consigo dormir.",
+              "",
+              "I can't manage to sleep. (trying but failing)",
+            ],
+            [
+              "Conseguiste acabar a tempo?",
+              "",
+              "Did you manage to finish in time?",
+            ],
+            [
+              "Ele conseguiu falar com o médico.",
+              "",
+              "He managed to get through to the doctor.",
+            ],
+          ],
+        },
+        {
           verb: "PODER",
           pron: "[poo-DER]",
           en: "can / to be able to",
@@ -5500,6 +5550,17 @@
             nos: "saímos",
             eles: "saem",
             key: "EU: saio; accent on I in NÓS",
+          },
+          {
+            verb: "CONSEGUIR",
+            eu: "consigo",
+            eu_pron: "[kon-SEE-goo]",
+            en: "to manage to",
+            tu: "consegues",
+            ele: "consegue",
+            nos: "conseguimos",
+            eles: "conseguem",
+            key: "EU: consigo (GUI→GI). ≠ PODER: overcoming a challenge",
           },
           {
             verb: "HAVER",
@@ -12661,6 +12722,66 @@
             },
           ],
         },
+        threeTenses: {
+          note: "Comparison of the same verb in three tenses. REGAR and CORRER show the pattern for regular -AR and -ER verbs.",
+          verbs: [
+            {
+              inf: "REGAR (to water) — -AR, spelling change g→gu before e in PPS",
+              rows: [
+                { person: "Eu", pres: "rego", imp: "regava", pps: "reguei" },
+                { person: "Tu", pres: "regas", imp: "regavas", pps: "regaste" },
+                {
+                  person: "Ele/Ela/Você",
+                  pres: "rega",
+                  imp: "regava",
+                  pps: "regou",
+                },
+                {
+                  person: "Nós",
+                  pres: "regamos",
+                  imp: "regávamos",
+                  pps: "regámos",
+                },
+                {
+                  person: "Eles/Vocês",
+                  pres: "regam",
+                  imp: "regavam",
+                  pps: "regaram",
+                },
+              ],
+            },
+            {
+              inf: "CORRER (to run) — -ER verb, regular",
+              rows: [
+                { person: "Eu", pres: "corro", imp: "corria", pps: "corri" },
+                {
+                  person: "Tu",
+                  pres: "corres",
+                  imp: "corrias",
+                  pps: "correste",
+                },
+                {
+                  person: "Ele/Ela/Você",
+                  pres: "corre",
+                  imp: "corria",
+                  pps: "correu",
+                },
+                {
+                  person: "Nós",
+                  pres: "corremos",
+                  imp: "corríamos",
+                  pps: "corremos",
+                },
+                {
+                  person: "Eles/Vocês",
+                  pres: "correm",
+                  imp: "corriam",
+                  pps: "correram",
+                },
+              ],
+            },
+          ],
+        },
         timeMarkers: [
           ["ontem", "[ON-tayng]", "yesterday"],
           ["anteontem", "[an-tee-ON-tayng]", "the day before yesterday"],
@@ -12710,6 +12831,9 @@
               "falar → falei/falaste/falou/falámos/falaram",
               "morar → morei/moraste/morou/morámos/moraram",
               "pagar → paguei (spelling change: g→gu before e)",
+              "regar → reguei (g→gu before e)",
+              "ficar → fiquei (c→qu before e)",
+              "começar → comecei (ç→c before e)",
               "estudar → estudei",
               "assinar → assinei",
               "cortar → cortei",
@@ -14776,6 +14900,283 @@
           { pt: "cedo / tarde", en: "early / late", ex: "" },
           { pt: "antes / depois", en: "before / after", ex: "" },
         ],
+      };
+
+      const D_ESCRITORIO = {
+        note: "Vocabulário do escritório — office vocabulary for UFCD 6455. Key profession: Secretária/o. Workplace: escritório, empresa.",
+        actions: [
+          {
+            e: "📄",
+            pt: "tirar fotocópias",
+            pron: "[fee-too-KO-pyɐsh]",
+            en: "to make photocopies",
+            note: "A fotocopiadora = the photocopier",
+          },
+          {
+            e: "📧",
+            pt: "enviar um email",
+            pron: "[en-vee-AR oom ee-MAIL]",
+            en: "to send an email",
+            note: "",
+          },
+          {
+            e: "📠",
+            pt: "enviar um fax",
+            pron: "[en-vee-AR oom faks]",
+            en: "to send a fax",
+            note: "",
+          },
+          {
+            e: "📅",
+            pt: "marcar uma reunião",
+            pron: "[mɐr-KAR oomɐ hrɐ-oo-NYOWNG]",
+            en: "to schedule a meeting",
+            note: "",
+          },
+          {
+            e: "📝",
+            pt: "escrever um relatório",
+            pron: "[ish-krɐ-VER oom hrɐ-lɐ-TO-ryoo]",
+            en: "to write a report",
+            note: "",
+          },
+          {
+            e: "📞",
+            pt: "passar uma chamada",
+            pron: "[pɐ-SAR oomɐ shɐ-MA-dɐ]",
+            en: "to transfer/put through a call",
+            note: "",
+          },
+          {
+            e: "✈️",
+            pt: "marcar uma viagem",
+            pron: "",
+            en: "to book a trip / schedule travel",
+            note: "",
+          },
+          {
+            e: "🖨️",
+            pt: "imprimir",
+            pron: "[im-pree-MEER]",
+            en: "to print",
+            note: "",
+          },
+          {
+            e: "📂",
+            pt: "arquivar documentos",
+            pron: "",
+            en: "to file documents",
+            note: "",
+          },
+          {
+            e: "📊",
+            pt: "preparar uma apresentação",
+            pron: "",
+            en: "to prepare a presentation",
+            note: "",
+          },
+          {
+            e: "📋",
+            pt: "tomar nota / anotar",
+            pron: "",
+            en: "to take note / note down",
+            note: "",
+          },
+          {
+            e: "🔍",
+            pt: "pesquisar informação",
+            pron: "",
+            en: "to research / look up information",
+            note: "",
+          },
+        ],
+        tools: [
+          {
+            e: "💻",
+            pt: "o computador",
+            pron: "[oo kom-poo-tɐ-DOR]",
+            en: "computer",
+          },
+          { e: "🖥️", pt: "o monitor", pron: "[oo moo-nee-TOR]", en: "monitor" },
+          { e: "⌨️", pt: "o teclado", pron: "[oo tɐ-KLA-doo]", en: "keyboard" },
+          {
+            e: "🖱️",
+            pt: "o rato",
+            pron: "[oo RA-too]",
+            en: "mouse (computer)",
+          },
+          {
+            e: "🖨️",
+            pt: "a impressora",
+            pron: "[ɐ im-prɐ-SOH-rɐ]",
+            en: "printer",
+          },
+          { e: "📠", pt: "o fax", pron: "[oo faks]", en: "fax machine" },
+          { e: "📞", pt: "o telefone", pron: "", en: "telephone" },
+          { e: "📄", pt: "o papel", pron: "[oo pɐ-PEL]", en: "paper" },
+          {
+            e: "📎",
+            pt: "o agrafador",
+            pron: "[oo ɐ-grɐ-fɐ-DOR]",
+            en: "stapler",
+          },
+          { e: "✂️", pt: "as tesouras", pron: "", en: "scissors" },
+          { e: "📂", pt: "a pasta", pron: "[ɐ PASH-tɐ]", en: "folder / file" },
+          {
+            e: "🗓️",
+            pt: "a agenda",
+            pron: "[ɐ ɐ-ZHEN-dɐ]",
+            en: "diary / planner",
+          },
+        ],
+        dialogue: [
+          {
+            role: "A",
+            pt: "Que tal o fim de semana?",
+            en: "How was the weekend?",
+          },
+          {
+            role: "B",
+            pt: "Muito calmo. Aos sábados e domingos, eu descanso, passeio, ouço música. E tu?",
+            en: "Very quiet. On Saturdays and Sundays I rest, go for walks, listen to music. And you?",
+          },
+          {
+            role: "A",
+            pt: "Eu não. Normalmente, limpo a casa e passo a ferro. O meu marido trabalha ao sábado e tem de apanhar o barco muito cedo. Eu levanto-me às 6h da manhã. Estou muito cansada. Neste momento, estou a trabalhar muito.",
+            en: "Not me. Normally I clean the house and iron. My husband works Saturdays and has to catch the boat very early. I get up at 6am. I am very tired. Right now I am working a lot.",
+          },
+        ],
+      };
+
+      const D_EDUCACAO = {
+        note: "Percurso académico e expressões de estudos — academic background and study expressions. Used when describing your CV, in interviews, or completing forms.",
+        portugal_system: [
+          {
+            level: "1.º Ciclo",
+            years: "1.º ao 4.º anos",
+            age: "6–10",
+            en: "Primary school (years 1–4)",
+          },
+          {
+            level: "2.º Ciclo",
+            years: "5.º e 6.º anos",
+            age: "10–12",
+            en: "Lower secondary (years 5–6)",
+          },
+          {
+            level: "3.º Ciclo",
+            years: "7.º ao 9.º anos",
+            age: "12–15",
+            en: "Upper secondary prep (years 7–9)",
+          },
+          {
+            level: "Ensino Secundário",
+            years: "10.º ao 12.º anos",
+            age: "15–18",
+            en: "Secondary school / sixth form (years 10–12)",
+          },
+          {
+            level: "Ensino Profissional",
+            years: "3 anos",
+            age: "15–18",
+            en: "Vocational/professional training (≈ secondary level)",
+          },
+          {
+            level: "Ensino Técnico",
+            years: "pós 12.º",
+            age: "18+",
+            en: "Technical specialisation (post-secondary)",
+          },
+          {
+            level: "Ensino Universitário",
+            years: "3–8 anos",
+            age: "18+",
+            en: "Higher education",
+          },
+        ],
+        university: [
+          [
+            "o bacharelato",
+            "[bɐ-shɐ-rɐ-LA-too]",
+            "bachelor's degree (3 years)",
+          ],
+          [
+            "a licenciatura",
+            "[lee-sen-syɐ-TOO-rɐ]",
+            "undergraduate degree (3–4 years)",
+          ],
+          ["o mestrado", "[oo mɐsh-TRA-doo]", "master's degree"],
+          ["o doutoramento", "[oo doh-too-rɐ-MEN-too]", "doctorate / PhD"],
+          ["a especialização", "[ɐ ish-pɐ-syɐ-lee-ZA-sowng]", "specialisation"],
+          ["o estágio", "[oo ish-TA-zhyoo]", "internship / work placement"],
+        ],
+        expressions: [
+          {
+            pt: "Tirei o curso de...",
+            en: "I did a degree / course in...",
+            note: "Most common for academic qualifications",
+          },
+          {
+            pt: "Fiz o curso de...",
+            en: "I completed a course in...",
+            note: "fiz = PPS of fazer",
+          },
+          {
+            pt: "Andei na escola..., que fica em...",
+            en: "I went to ... school, which is in...",
+            note: "Andei = attended (informal PPS of andar)",
+          },
+          {
+            pt: "Já fiz formação em...",
+            en: "I have already done training in...",
+            note: "formação = vocational training",
+          },
+          {
+            pt: "Gostava de especializar-me em...",
+            en: "I would like to specialise in...",
+            note: "gostava = imperfeito de cortesia",
+          },
+          {
+            pt: "Andei numa escola de língua a aprender...",
+            en: "I attended a language school learning...",
+            note: "",
+          },
+          {
+            pt: "Tenho o 12.º ano completo.",
+            en: "I have completed year 12 / secondary school.",
+            note: "",
+          },
+          {
+            pt: "Tenho o ensino básico.",
+            en: "I have basic schooling (9 years).",
+            note: "",
+          },
+          {
+            pt: "Sou licenciado/a em...",
+            en: "I have a degree in...",
+            note: "Sou = SER (permanent characteristic)",
+          },
+        ],
+        address_format: {
+          note: "Portuguese address format (from image 4). Used on forms, envelopes, ID documents.",
+          fields: [
+            {
+              field: "Rua [nome], [número] - [piso].[lado]",
+              example: "Rua Poeta José António Pereira, 88 - 2.º Esq.",
+              en: "Street name, number - floor.side (Esq = left/Esquerda, Dir/Dto = right/Direita)",
+            },
+            {
+              field: "[código postal] [cidade]",
+              example: "3500-145 Viseu",
+              en: "4-digit + 3-digit postal code, followed by city name",
+            },
+            {
+              field: "r/c",
+              example: "r/c (rés-do-chão)",
+              en: "Ground floor (0th floor in Portugal — 1st floor = 1.º andar)",
+            },
+          ],
+        },
       };
 
       const D_CELEBRATIONS = {
@@ -17850,6 +18251,12 @@
         desc: "Explains the key difference with dialogue and examples.",
         color: "var(--primary)",
       },
+      {
+        url: "https://youtu.be/iYgWKRCgmRE",
+        title: "Conseguir vs Poder — European Portuguese",
+        desc: "When to use conseguir (managed to) vs poder (allowed/able to), with dialogue.",
+        color: "var(--accent)",
+      },
     ]
       .map(
         (v) =>
@@ -20223,6 +20630,32 @@
   ${sectionHead("Pretérito Perfeito Simples", "UFCD 6455 Session 1", "Verbos regulares –AR/–ER/–IR. Exprime ações passadas pontuais e completamente terminadas.")}
   ${warnBox("<strong>PPS vs Imperfeito:</strong><br>• PPS: completed single event → <em>Ontem trabalhei 8 horas.</em> (Yesterday I worked 8 hours — done.)<br>• Imperfeito: habitual/background → <em>Quando era jovem, trabalhava muito.</em> (When I was young, I used to work a lot — repeated habit.)")}
 
+  <h3 class="sub-heading">📊 Three tenses compared — regar & correr</h3>
+  ${infoBox(D_PERFEITO.threeTenses.note)}
+  ${D_PERFEITO.threeTenses.verbs
+    .map(
+      (v) => `
+  <div class="card" style="margin-bottom:14px">
+    <div style="font-weight:800;color:var(--primary);margin-bottom:8px">${v.inf}</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Person</th><th style="color:var(--green)">Presente</th><th style="color:var(--accent)">Imperfeito</th><th style="color:var(--primary)">Perfeito (PPS)</th></tr></thead>
+      <tbody>${v.rows
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="font-size:12px;color:var(--text-3)">${r.person}</td>
+        <td class="pt" style="color:var(--green)">${r.pres}</td>
+        <td class="pt" style="color:var(--accent)">${r.imp}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary)">${r.pps}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>`,
+    )
+    .join("")}
   <h3 class="sub-heading">⏱️ Time markers that trigger PPS</h3>
   ${vocabGrid(D_PERFEITO.timeMarkers)}
 
@@ -20903,6 +21336,123 @@
       <td class="pt" style="font-weight:800">${r.pt}</td>
       <td class="en">${r.en}</td>
       <td class="pt" style="font-size:12px;color:var(--text-3)">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
+
+        escritorio: () => `
+  ${ctx("Office vocabulary — tasks, tools and a dialogue. Key profession: Secretária/o.", "Office skills appear directly on CVs and in job interviews. The verb+noun combinations (tirar fotocópias, marcar uma reunião) are fixed collocations that must be learned as units.", "Mundo do Trabalho — employment vocabulary; Ao Telefone — phone call in office context")}
+  ${sectionHead("No Escritório", "UFCD 6455 Session 5", "Office tasks, tools, and a workplace dialogue.")}
+  ${infoBox(D_ESCRITORIO.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 class="sub-heading">📋 Tarefas — Office tasks</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Portuguese</th><th>English</th><th>Note</th></tr></thead>
+        <tbody>${D_ESCRITORIO.actions
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en">${r.en}</td>
+          <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">🖥️ Instrumentos — Tools</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th></th><th>Portuguese</th><th>Pronúncia</th><th>English</th></tr></thead>
+        <tbody>${D_ESCRITORIO.tools
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:18px;text-align:center">${r.e}</td>
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td>${pr(r.pron)}</td>
+          <td class="en">${r.en}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <h3 class="sub-heading">🗨️ Diálogo — No escritório</h3>
+  <div class="card">
+    ${D_ESCRITORIO.dialogue
+      .map(
+        (
+          l,
+          i,
+        ) => `<div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">
+      <span style="font-weight:800;min-width:20px;color:var(--primary)">${l.role}:</span>
+      <div><div class="pt">${l.pt}</div><div class="en" style="font-size:12px">${l.en}</div></div>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+
+        educacao: () => `
+  ${ctx("Portuguese education system, university degrees, and expressions for describing your academic background. Used in CVs, job interviews and on official forms.", "Immigrants with foreign degrees often need to have them recognised (reconhecimento de habilitações). Knowing the Portuguese system helps you map your own qualifications.", "Mundo do Trabalho — career vocabulary; Autorização de Residência — documents needed")}
+  ${sectionHead("Estudos & Educação", "UFCD 6455 Session 5", "Portuguese education system, degrees, and how to describe your academic background.")}
+  ${infoBox(D_EDUCACAO.note)}
+  <h3 class="sub-heading">🏫 O sistema de ensino em Portugal</h3>
+  ${infoBox("O ensino obrigatório é de 12 anos.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Nível</th><th>Anos</th><th>Idades</th><th>English</th></tr></thead>
+    <tbody>${D_EDUCACAO.portugal_system
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.level}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.years}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r.age}</td>
+      <td class="en">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🎓 Ensino universitário</h3>
+  ${vocabGrid(D_EDUCACAO.university)}
+  <h3 class="sub-heading">🗣️ Expressões — Describing your studies</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Portuguese</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_EDUCACAO.expressions
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">📬 Formato de morada — Portuguese address format</h3>
+  ${infoBox(D_EDUCACAO.address_format.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Format</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_EDUCACAO.address_format.fields
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-family:monospace;font-size:12px">${r.field}</td>
+      <td class="pt" style="font-weight:700;font-size:13px">${r.example}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
     </tr>`,
       )
       .join("")}</tbody>
