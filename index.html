@@ -1102,6 +1102,7 @@
             { id: "adverbios", title: "Advérbios de Tempo" },
             { id: "regencia", title: "Preposição de Regência" },
             { id: "enfatica", title: "Forma Enfática" },
+            { id: "desde-ha", title: "Desde / Há" },
           ],
         },
         {
@@ -1117,6 +1118,7 @@
             { id: "agricultura", title: "Agricultura" },
             { id: "escritorio", title: "No Escritório" },
             { id: "educacao", title: "Estudos & Educação" },
+            { id: "curriculo", title: "Currículo & Experiência" },
           ],
         },
         {
@@ -3643,86 +3645,6 @@
             note: "Pronoun comes before verb",
           },
         ],
-        common: [
-          ["chamar-se", "to be called", "Chamo-me Ana [SHA-moo-mɐ AH-nɐ]"],
-          ["levantar-se", "to get up", "Levanto-me às 7h [lɐ-VAN-too-mɐ]"],
-          ["deitar-se", "to go to bed", "Deito-me tarde [DAY-too-mɐ TAR-d]"],
-          ["sentir-se", "to feel", "Sinto-me bem [SINT-too-mɐ bayng]"],
-          ["lembrar-se", "to remember", "Lembro-me de ti [LEM-broo-mɐ dɐ tee]"],
-          ["esquecer-se", "to forget", "Esqueci-me [ish-kɐ-SEE-mɐ]"],
-        ],
-      };
-
-      const D_POSSESSIVES = {
-        note: "Possessives agree in gender and number with the THING POSSESSED, not with the owner. Always use the definite article before the possessive in European Portuguese: A MINHA casa, not MINHA casa.",
-        seu_note:
-          "SEU/SUA is ambiguous — it can mean his/her/your/their. To avoid confusion, Portuguese speakers often use DELE/DELA (of him/of her) instead of seu/sua for third person.",
-        framework: [
-          {
-            group: "Um só possuidor — one owner",
-            rows: [
-              {
-                person: "1ª pessoa",
-                owner: "Eu",
-                m: "meu",
-                f: "minha",
-                mp: "meus",
-                fp: "minhas",
-                en: "my",
-              },
-              {
-                person: "2ª pessoa",
-                owner: "Tu",
-                m: "teu",
-                f: "tua",
-                mp: "teus",
-                fp: "tuas",
-                en: "your (informal)",
-              },
-              {
-                person: "3ª pessoa",
-                owner: "Ele/Ela/Você",
-                m: "seu / dele / dela",
-                f: "sua / dele / dela",
-                mp: "seus / deles / delas",
-                fp: "suas / deles / delas",
-                en: "his / her / your (formal)",
-              },
-            ],
-          },
-          {
-            group: "Vários possuidores — multiple owners",
-            rows: [
-              {
-                person: "1ª pessoa",
-                owner: "Nós",
-                m: "nosso",
-                f: "nossa",
-                mp: "nossos",
-                fp: "nossas",
-                en: "our",
-              },
-              {
-                person: "2ª pessoa",
-                owner: "Vós / Vocês",
-                m: "vosso",
-                f: "vossa",
-                mp: "vossos",
-                fp: "vossas",
-                en: "your (plural)",
-              },
-              {
-                person: "3ª pessoa",
-                owner: "Eles/Elas",
-                m: "seu / deles / delas",
-                f: "sua / deles / delas",
-                mp: "seus / deles / delas",
-                fp: "suas / deles / delas",
-                en: "their",
-              },
-            ],
-          },
-        ],
         determiners: [
           {
             owner: "Eu (I)",
@@ -4681,6 +4603,22 @@
         ],
         nós_rule:
           "The NÓS form drops the final -s of the verb before adding -nos: levantamos + nos → levantamo-nos. This applies to all reflexive verbs.",
+        whyPortugueseUsesThem: {
+          note: "English says: I wake up. I get dressed. I sit down. Portuguese conceptualises these as actions done TO YOURSELF:",
+          pairs: [
+            { en: "I wake up", pt: "Eu acordo-me", lit: "I wake myself" },
+            { en: "I get dressed", pt: "Eu visto-me", lit: "I dress myself" },
+            { en: "I sit down", pt: "Eu sento-me", lit: "I sit myself down" },
+            { en: "I go to bed", pt: "Eu deito-me", lit: "I lay myself down" },
+            { en: "I get up", pt: "Eu levanto-me", lit: "I lift myself up" },
+            {
+              en: "I feel well",
+              pt: "Eu sinto-me bem",
+              lit: "I feel myself well",
+            },
+          ],
+          rule: "In everyday speech, the reflexive pronoun is OBLIGATORY.",
+        },
         common: [
           {
             verb: "chamar-se",
@@ -4868,6 +4806,265 @@
               ["Não te enganes!", "", "Don't make a mistake!"],
             ],
           },
+          {
+            verb: "sentar-se",
+            pron: "[sen-TAR-sɐ]",
+            en: "to sit down",
+            daily: "posture/movement",
+            ex: [
+              ["Senta-te aqui.", "", "Sit down here."],
+              ["Sentamo-nos à mesa.", "", "We sat down at the table."],
+            ],
+          },
+          {
+            verb: "queixar-se",
+            pron: "[kay-SHAR-sɐ]",
+            en: "to complain",
+            daily: "social",
+            ex: [
+              [
+                "Queixa-se sempre de tudo.",
+                "",
+                "He always complains about everything.",
+              ],
+              ["Não te queixes!", "", "Don't complain!"],
+            ],
+          },
+          {
+            verb: "preocupar-se",
+            pron: "[prɐ-oh-koo-PAR-sɐ]",
+            en: "to worry",
+            daily: "emotion",
+            ex: [
+              ["Não te preocupes.", "", "Don't worry."],
+              [
+                "Preocupa-se muito com os filhos.",
+                "",
+                "She worries a lot about her children.",
+              ],
+            ],
+          },
+          {
+            verb: "ir-se embora",
+            pron: "[eer sɐ em-BOH-rɐ]",
+            en: "to leave / go away",
+            daily: "movement",
+            ex: [
+              ["Vou-me embora.", "[VOH-mɐ em-BOH-rɐ]", "I'm leaving."],
+              ["Ele foi-se embora cedo.", "", "He left early."],
+            ],
+          },
+        ],
+      };
+
+      const D_POSSESSIVES = {
+        note: "Possessives agree in gender and number with the THING POSSESSED, not the owner. Always use the definite article before the possessive in European Portuguese: A MINHA casa, not MINHA casa.",
+        seu_note:
+          "SEU/SUA is ambiguous — it can mean his/her/your/their. To avoid confusion, Portuguese speakers often use DELE/DELA (of him/of her) instead of seu/sua for third person.",
+        framework: [
+          {
+            group: "Um só possuidor — one owner",
+            rows: [
+              {
+                person: "1ª pessoa",
+                owner: "Eu",
+                m: "meu",
+                f: "minha",
+                mp: "meus",
+                fp: "minhas",
+                en: "my",
+              },
+              {
+                person: "2ª pessoa",
+                owner: "Tu",
+                m: "teu",
+                f: "tua",
+                mp: "teus",
+                fp: "tuas",
+                en: "your (informal)",
+              },
+              {
+                person: "3ª pessoa",
+                owner: "Ele/Ela/Você",
+                m: "seu / dele / dela",
+                f: "sua / dele / dela",
+                mp: "seus / deles / delas",
+                fp: "suas / deles / delas",
+                en: "his / her / your (formal)",
+              },
+            ],
+          },
+          {
+            group: "Vários possuidores — multiple owners",
+            rows: [
+              {
+                person: "1ª pessoa",
+                owner: "Nós",
+                m: "nosso",
+                f: "nossa",
+                mp: "nossos",
+                fp: "nossas",
+                en: "our",
+              },
+              {
+                person: "2ª pessoa",
+                owner: "Vós / Vocês",
+                m: "vosso",
+                f: "vossa",
+                mp: "vossos",
+                fp: "vossas",
+                en: "your (plural)",
+              },
+              {
+                person: "3ª pessoa",
+                owner: "Eles/Elas",
+                m: "seu / deles / delas",
+                f: "sua / deles / delas",
+                mp: "seus / deles / delas",
+                fp: "suas / deles / delas",
+                en: "their",
+              },
+            ],
+          },
+        ],
+        determiners: [
+          {
+            owner: "Eu (I)",
+            m: "meu [MEH-oo]",
+            f: "minha [MEEN-yɐ]",
+            mp: "meus [MEH-oosh]",
+            fp: "minhas [MEEN-yɐsh]",
+            en: "my",
+          },
+          {
+            owner: "Tu (you)",
+            m: "teu [TEH-oo]",
+            f: "tua [TOO-ɐ]",
+            mp: "teus [TEH-oosh]",
+            fp: "tuas [TOO-ɐsh]",
+            en: "your",
+          },
+          {
+            owner: "Ele/Ela/Você",
+            m: "seu / dele / dela",
+            f: "sua / dele / dela",
+            mp: "seus / deles / delas",
+            fp: "suas / delas",
+            en: "his / her / your",
+          },
+          {
+            owner: "Nós (we)",
+            m: "nosso [NOH-soo]",
+            f: "nossa [NOH-sɐ]",
+            mp: "nossos",
+            fp: "nossas",
+            en: "our",
+          },
+          {
+            owner: "Vós / Vocês",
+            m: "vosso [VOH-soo]",
+            f: "vossa [VOH-sɐ]",
+            mp: "vossos",
+            fp: "vossas",
+            en: "your (plural)",
+          },
+          {
+            owner: "Eles/Elas",
+            m: "seu / deles / delas",
+            f: "sua / deles / delas",
+            mp: "seus / deles",
+            fp: "suas / delas",
+            en: "their",
+          },
+        ],
+        determiner_vs_pronoun: [
+          {
+            type: "Determinante possessivo",
+            rule: "Comes BEFORE a noun — determines/modifies it",
+            ex: "A minha mãe é professora.",
+            en: "My mother is a teacher.",
+          },
+          {
+            type: "Pronome possessivo",
+            rule: "Replaces the noun entirely — stands alone after article",
+            ex: "A minha mãe e a tua são professoras.",
+            en: "My mother and yours are teachers. ('tua' replaces 'tua mãe')",
+          },
+        ],
+        pronomeExamples: [
+          {
+            pt: "Este relógio é do Tiago. É seu.",
+            en: "This watch belongs to Tiago. It is his.",
+            note: "seu = dele (his)",
+          },
+          {
+            pt: "Os trabalhos expostos pertencem-nos. São nossos.",
+            en: "The displayed works belong to us. They are ours.",
+            note: "nossos — masc. plural",
+          },
+          {
+            pt: "O chapéu de chinês pertence-me. É meu.",
+            en: "The chinese hat belongs to me. It is mine.",
+            note: "meu — masc. singular",
+          },
+          {
+            pt: "A pulseira pertence-te, Sara. É tua.",
+            en: "The bracelet belongs to you, Sara. It is yours.",
+            note: "tua — fem. singular",
+          },
+          {
+            pt: "Essas histórias são da Diana. São suas.",
+            en: "Those stories belong to Diana. They are hers.",
+            note: "suas = delas (hers)",
+          },
+        ],
+        sessionDialogue: [
+          {
+            pt: "José, queria comprar-te uma prenda. Quando é o teu aniversário?",
+            en: "José, I'd like to buy you a present. When is your birthday?",
+            note: "teu — tu form",
+          },
+          {
+            pt: "O João é Sagitário. O seu aniversário é a 9 de dezembro.",
+            en: "João is Sagittarius. His birthday is on the 9th of December.",
+            note: "seu = dele (his)",
+          },
+          {
+            pt: "O nosso aniversário é no outono.",
+            en: "Our birthday is in autumn.",
+            note: "nosso — nós",
+          },
+          {
+            pt: "O vosso aniversário é no verão.",
+            en: "Your birthday is in summer.",
+            note: "vosso — vocês",
+          },
+        ],
+        examples: [
+          ["o meu livro", "[oo MEH-oo LEEV-roo]", "my book (masc. singular)"],
+          ["a minha casa", "[ɐ MEEN-yɐ KA-zɐ]", "my house (fem. singular)"],
+          [
+            "os meus amigos",
+            "[oosh MEH-oosh ɐ-MEE-goosh]",
+            "my friends (masc. plural)",
+          ],
+          [
+            "o livro dele",
+            "[oo LEEV-roo DEH-l]",
+            "his book (unambiguous — not seu)",
+          ],
+          [
+            "a casa dela",
+            "[ɐ KA-zɐ DEH-lɐ]",
+            "her house (unambiguous — not sua)",
+          ],
+          ["o nosso professor", "[oo NOH-soo proo-feh-SOR]", "our teacher"],
+          [
+            "a vossa cidade",
+            "[ɐ VOH-sɐ see-DA-d]",
+            "your city (vocês — plural)",
+          ],
+          ["os vossos desenhos", "", "your drawings (vocês)"],
         ],
       };
 
@@ -15179,6 +15376,186 @@
         },
       };
 
+      const D_DESDE_HA = {
+        note: "DESDE and HÁ both express duration — how long something has been going on. Key distinction: DESDE = since a specific point in time (date/event). HÁ = for a duration of time (amount: days, months, years).",
+        comparison: [
+          {
+            word: "DESDE",
+            color: "var(--primary)",
+            rule: "Since [a specific point in time] — a date, a month, an event. The action started at that point and continues.",
+            examples: [
+              {
+                pt: "Trabalho nesse restaurante desde 2006.",
+                en: "I have worked in that restaurant since 2006.",
+              },
+              {
+                pt: "Ele exerce essa profissão desde janeiro de 2002.",
+                en: "He has practised that profession since January 2002.",
+              },
+              {
+                pt: "Estou em Portugal desde março de 2005.",
+                en: "I have been in Portugal since March 2005.",
+              },
+              {
+                pt: "Desde ontem que estou à espera da resposta.",
+                en: "Since yesterday I have been waiting for the answer.",
+              },
+            ],
+            questions: [
+              "Desde quando...? → Desde [data/evento]",
+              "Desde quando mora aqui? → Moro aqui desde 2020.",
+            ],
+          },
+          {
+            word: "HÁ",
+            color: "var(--accent)",
+            rule: "For [a period of time] — a quantity (2 years, 6 months, 3 days). The amount of time elapsed since the action started.",
+            examples: [
+              {
+                pt: "Trabalho nesse restaurante há sete anos.",
+                en: "I have worked in that restaurant for seven years.",
+              },
+              {
+                pt: "Há dois meses que enviei o meu currículo.",
+                en: "Two months ago I sent my CV / I sent my CV 2 months ago.",
+              },
+              {
+                pt: "Recebi o meu vencimento há uma semana.",
+                en: "I received my salary a week ago.",
+              },
+              {
+                pt: "Estou em Portugal há um ano.",
+                en: "I have been in Portugal for one year.",
+              },
+            ],
+            questions: [
+              "Há quanto tempo...? → Há [quantidade de tempo]",
+              "Há quanto tempo estuda português? → Estudo português há dois anos.",
+            ],
+          },
+        ],
+        keyPattern: {
+          note: "Both DESDE and HÁ use the PRESENTE tense in Portuguese when the action started in the past and STILL CONTINUES. This is different from English which uses 'have been doing'.",
+          examples: [
+            {
+              pt: "Estudo português há dois anos.",
+              en: "I HAVE BEEN STUDYING Portuguese for two years. (still studying now)",
+              note: "Present tense in PT, present perfect in EN",
+            },
+            {
+              pt: "Moro desde janeiro de 2022.",
+              en: "I HAVE BEEN LIVING here since January 2022.",
+              note: "Present tense in PT",
+            },
+          ],
+        },
+      };
+
+      const D_CURRICULO = {
+        note: "Currículo Vitae (CV) — o documento essencial para procurar emprego. Europass CV is the EU standard format, free at europass.europa.eu.",
+        europass_url:
+          "https://europa.eu/europass/eportfolio/screen/cv-editor?lang=pt",
+        sections: [
+          {
+            e: "📋",
+            section: "Informações de contacto / Dados pessoais",
+            en: "Contact information / Personal data",
+            note: "Nome, morada, telefone, email, data de nascimento, nacionalidade",
+          },
+          {
+            e: "💼",
+            section: "Posto de trabalho / Emprego pretendido",
+            en: "Job applied for / desired position",
+            note: "",
+          },
+          {
+            e: "🎓",
+            section: "Educação e formação",
+            en: "Education and training",
+            note: "Use system: 1.º Ciclo → Ensino Universitário",
+          },
+          {
+            e: "🏢",
+            section: "Experiência profissional",
+            en: "Work experience",
+            note: "List in reverse chronological order (most recent first)",
+          },
+          {
+            e: "⭐",
+            section: "Competências pessoais",
+            en: "Personal skills",
+            note: "Languages, digital, organisational, social skills",
+          },
+          {
+            e: "ℹ️",
+            section: "Informação adicional",
+            en: "Additional information",
+            note: "Volunteering, hobbies, references",
+          },
+        ],
+        qualifications: {
+          note: "Two patterns for expressing academic qualifications — TER + noun or SER + adjective.",
+          rows: [
+            {
+              person: "Eu",
+              ter: "tenho uma licenciatura em...",
+              ser: "sou licenciado/a em...",
+            },
+            {
+              person: "Tu",
+              ter: "tens um mestrado em...",
+              ser: "és mestre em...",
+            },
+            {
+              person: "Ele/Ela/Você",
+              ter: "tem um doutoramento em...",
+              ser: "é doutor/a — doutorado/a em...",
+            },
+            {
+              person: "Nós",
+              ter: "temos um curso do ensino secundário.",
+              ser: "somos finalistas do ensino secundário.",
+            },
+            {
+              person: "Eles/Elas/Vocês",
+              ter: "têm um curso de formação profissional.",
+              ser: "são formados/as em contabilidade.",
+            },
+          ],
+        },
+        experience_tips: [
+          {
+            e: "📚",
+            tip: "Faça uma formação profissional",
+            desc: "Many free vocational courses exist nationally, some with paid internships (estágio remunerado).",
+          },
+          {
+            e: "🏢",
+            tip: "Faça um estágio",
+            desc: "Internships improve your CV and provide professional knowledge.",
+          },
+          {
+            e: "💡",
+            tip: "Trabalhe em projetos pessoais",
+            desc: "Community funds and grants exist for personal projects (bolsas de fundos comunitários).",
+          },
+          {
+            e: "🤝",
+            tip: "Participe em eventos da sua área",
+            desc: "Volunteering (voluntariado) builds contacts and keeps you occupied during job searching.",
+          },
+          {
+            e: "💻",
+            tip: "Faça cursos online",
+            desc: "Practical and free — online courses cover most professional fields.",
+          },
+        ],
+        rvcc: {
+          note: "RVCC — Reconhecimento, Validação e Certificação de Competências. Your life story (história de vida) can count toward formal qualifications in Portugal. Managed through Centros Qualifica.",
+          url: "https://www.qualifica.gov.pt/",
+        },
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -18208,6 +18585,24 @@
       )
       .join("")}</tbody>
   </table></div>
+  <h3 class="sub-heading">⭐ Why Portuguese uses reflexive verbs so often</h3>
+  ${infoBox(D_REFLEXIVE_VERBS.whyPortugueseUsesThem.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>English says</th><th>Portuguese says</th><th>Literal</th></tr></thead>
+    <tbody>${D_REFLEXIVE_VERBS.whyPortugueseUsesThem.pairs
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="en">${r.en}</td>
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td style="font-size:12px;color:var(--text-3);font-style:italic">${r.lit}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  ${warnBox(D_REFLEXIVE_VERBS.whyPortugueseUsesThem.rule)}
   <h3 class="sub-heading">Common Reflexive Verbs</h3>
   ${D_REFLEXIVE_VERBS.common
     .map(
@@ -21457,6 +21852,101 @@
       )
       .join("")}</tbody>
   </table></div>`,
+
+        "desde-ha": () => `
+  ${ctx('DESDE and HÁ express duration. DESDE = since a specific point. HÁ = for a period. Both use the PRESENTE tense in Portuguese when the action still continues — different from English which uses "have been doing".', 'This is a very frequent error: English speakers often try to use past tenses here. In Portuguese, if the situation still continues now, you use the present: "Estou em Portugal há um ano" (not estive).', "Advérbios de Tempo — há also as a time marker; Haver — HÁ as existential; Pretérito Imperfeito — habitually vs DESDE/HÁ (ongoing)")}
+  ${sectionHead("Desde / Há", "UFCD 6455 Session 6", "Duration expressions. DESDE = since [date/event]. HÁ = for [period of time].")}
+  ${infoBox(D_DESDE_HA.note)}
+  ${warnBox(D_DESDE_HA.keyPattern.note + "<br>" + D_DESDE_HA.keyPattern.examples.map((e) => `<strong class="pt">${e.pt}</strong> → <em>${e.en}</em> <span style="font-size:11px;color:var(--text-3)">(${e.note})</span>`).join("<br>"))}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    ${D_DESDE_HA.comparison
+      .map(
+        (d) => `<div class="card" style="border-top:4px solid ${d.color}">
+      <div style="font-size:22px;font-weight:800;color:${d.color};margin-bottom:6px">${d.word}</div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:10px">${d.rule}</div>
+      ${d.examples
+        .map(
+          (
+            e,
+          ) => `<div style="padding:5px 0;border-bottom:1px solid var(--border)">
+        <div class="pt" style="font-weight:700">${e.pt}</div>
+        <div class="en" style="font-size:12px">${e.en}</div>
+      </div>`,
+        )
+        .join("")}
+      <div style="margin-top:10px">
+        ${d.questions.map((q) => `<div style="font-size:12px;color:var(--text-3);padding:2px 0">❓ ${q}</div>`).join("")}
+      </div>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+
+        curriculo: () => `
+  ${ctx("CV/Currículo — Europass format, sections to complete, qualification expressions (ter uma licenciatura / ser licenciado), and how life story (RVCC) can count toward qualifications in Portugal.", "Immigrants in Portugal can have their life experience formally recognised through the RVCC programme. Knowing the CV vocabulary is essential for job applications.", "Mundo do Trabalho — employment context; Estudos & Educação — academic background")}
+  ${sectionHead("Currículo & Experiência Profissional", "UFCD 6455 Session 6", "CV/Currículo Vitae — Europass format. Qualifications vocabulary. Professional experience tips.")}
+  ${infoBox(D_CURRICULO.note)}
+  <a href="${D_CURRICULO.europass_url}" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--primary);margin-bottom:20px;cursor:pointer">
+      <div style="font-weight:800;color:var(--primary)">🌐 Europass CV — criar currículo online</div>
+      <div style="font-size:12px;color:var(--text-2)">${D_CURRICULO.europass_url}</div>
+    </div>
+  </a>
+  <h3 class="sub-heading">📋 Secções do Currículo</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Secção</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_CURRICULO.sections
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.section}</td>
+      <td class="en">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">🎓 Indicar qualificações — TER + nome vs SER + adjetivo</h3>
+  ${infoBox(D_CURRICULO.qualifications.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Person</th><th style="color:var(--green)">TER + nome</th><th style="color:var(--primary)">SER + adjetivo</th></tr></thead>
+    <tbody>${D_CURRICULO.qualifications.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:12px;color:var(--text-3)">${r.person}</td>
+      <td class="pt" style="color:var(--green)">${r.ter}</td>
+      <td class="pt" style="color:var(--primary)">${r.ser}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">💡 Como ganhar experiência</h3>
+  <div style="display:grid;gap:8px;margin-bottom:20px">
+    ${D_CURRICULO.experience_tips
+      .map(
+        (
+          t,
+        ) => `<div style="display:flex;gap:12px;align-items:flex-start;padding:8px 12px;background:var(--surface-2);border-radius:8px;border:1px solid var(--border)">
+      <span style="font-size:22px;min-width:28px">${t.e}</span>
+      <div><div class="pt" style="font-weight:800">${t.tip}</div><div style="font-size:12px;color:var(--text-2)">${t.desc}</div></div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">📜 RVCC — Reconhecimento, Validação e Certificação de Competências</h3>
+  ${infoBox(D_CURRICULO.rvcc.note)}
+  <a href="${D_CURRICULO.rvcc.url}" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--gold);cursor:pointer">
+      <div style="font-weight:800;color:var(--gold)">🌐 Qualifica — Centros de reconhecimento de competências</div>
+      <div style="font-size:12px;color:var(--text-2)">${D_CURRICULO.rvcc.url}</div>
+    </div>
+  </a>`,
       };
 
       // ─────────────────────────────────────────────
