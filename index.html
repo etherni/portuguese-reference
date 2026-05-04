@@ -1119,6 +1119,8 @@
             { id: "escritorio", title: "No Escritório" },
             { id: "educacao", title: "Estudos & Educação" },
             { id: "curriculo", title: "Currículo & Experiência" },
+            { id: "carta-apresentacao", title: "Carta de Apresentação" },
+            { id: "entrevista", title: "Entrevista de Trabalho" },
           ],
         },
         {
@@ -11362,6 +11364,89 @@
           ],
           positionNote:
             "In European Portuguese, clitic pronouns typically appear AFTER the verb, joined by a hyphen: enviei-o, vi-te, comprou-a. They come BEFORE the verb after: não (não o vi), question words (quem te disse?), subordinating conjunctions.",
+          exceptions: {
+            note: "The forms o/a/os/as change when attached to certain verb endings:",
+            rules: [
+              {
+                trigger: "Verb ends in -R, -S, or -Z",
+                change:
+                  "o → lo | a → la | os → los | as → las (verb loses final R/S/Z + adds accent if needed)",
+                examples: [
+                  {
+                    before: "Tu vais levar o carro.",
+                    after: "Tu vais levá-lo.",
+                    note: "levar → levá- + lo",
+                  },
+                  {
+                    before: "Ele foi comprar os bilhetes.",
+                    after: "Ele foi comprá-los.",
+                    note: "comprar → comprá- + los",
+                  },
+                  {
+                    before: "Faz o exercício.",
+                    after: "Fá-lo.",
+                    note: "faz → fá- + lo (z drops)",
+                  },
+                ],
+              },
+              {
+                trigger: "Verb ends in nasal sound (-M, -ÃO, -ÕE)",
+                change: "o → no | a → na | os → nos | as → nas",
+                examples: [
+                  {
+                    before: "Eles põem a mesa.",
+                    after: "Eles põem-na.",
+                    note: "põem (nasal) + a → na",
+                  },
+                  {
+                    before: "Eles dão os livros.",
+                    after: "Eles dão-nos.",
+                    note: "dão (nasal) + os → nos",
+                  },
+                  {
+                    before: "Eles comem o pão.",
+                    after: "Eles comem-no.",
+                    note: "comem (nasal) + o → no",
+                  },
+                ],
+              },
+            ],
+            beforeVerb: {
+              note: "The pronome comes BEFORE the verb when the sentence is:",
+              triggers: [
+                {
+                  type: "Negativa",
+                  ex_before: "O Luís não passou a bola.",
+                  ex_after: "O Luís não a passou.",
+                  note: "não forces pronome before verb",
+                },
+                {
+                  type: "Começa por alguém/ninguém",
+                  ex_before: "Alguém passou a bola.",
+                  ex_after: "Alguém a passou.",
+                  note: "indefinite subject → before verb",
+                },
+                {
+                  type: "Interrogativa",
+                  ex_before: "Quem passou a bola?",
+                  ex_after: "Quem a passou?",
+                  note: "question → before verb",
+                },
+                {
+                  type: "Nunca/sempre/já",
+                  ex_before: "Eu nunca conheci o diretor.",
+                  ex_after: "Eu nunca o conheci.",
+                  note: "adverb triggers proclisis",
+                },
+                {
+                  type: "Subordinating conjunction",
+                  ex_before: "Quando vi a resposta, fiquei contente.",
+                  ex_after: "Quando a vi, fiquei contente.",
+                  note: "quando/que/porque → before verb",
+                },
+              ],
+            },
+          },
         },
         indirectObj: {
           note: "Pronomes pessoais de complemento indireto — replace the indirect object (to whom / for whom the action is done). Same form as direct for me/te/nos; but 3rd person uses LHE/LHES.",
@@ -15556,6 +15641,245 @@
         },
       };
 
+      const D_CARTA_APRESENTACAO = {
+        note: "A carta de apresentação serve para apresentar a candidatura, informar do envio do currículo e solicitar uma entrevista. Deve ser breve, formal e simples.",
+        structure: [
+          {
+            e: "👤",
+            element: "Identificação do candidato",
+            desc: "Nome, morada e contacto telefónico",
+          },
+          {
+            e: "📬",
+            element: "Destinatário",
+            desc: "Presidente/Diretor dos Recursos Humanos ou da empresa",
+          },
+          {
+            e: "📢",
+            element: "Como tomou conhecimento da oferta",
+            desc: "Indicar fonte do anúncio e referência (ex: Anúncio LinkedIn, ref. 2024-001)",
+          },
+          {
+            e: "💼",
+            element: "Função a que se candidata",
+            desc: "Indicar claramente o cargo pretendido",
+          },
+          {
+            e: "🎓",
+            element: "Habilitações e perfil",
+            desc: "Referência a habilitações, experiências relevantes e interesse na empresa",
+          },
+          {
+            e: "🗓️",
+            element: "Disponibilidade para entrevista",
+            desc: "Expressar disponibilidade para uma entrevista",
+          },
+          {
+            e: "📎",
+            element: "Currículo em anexo",
+            desc: "Referência ao envio do CV em anexo",
+          },
+          {
+            e: "✉️",
+            element: "Despedida cordial + data + assinatura",
+            desc: "Fórmula de despedida formal, data, assinatura",
+          },
+        ],
+        questions: [
+          "Quais as necessidades do empregador? Que conhecimentos e experiência são necessários?",
+          "Quais são os meus objetivos? (candidatura a função específica / entrevista / averiguar oportunidades)",
+          "Como me tornar a pessoa certa para as funções?",
+          "Por que razão quero trabalhar para esta empresa em particular?",
+          "Quais as minhas 3 a 5 características que podem ser uma mais-valia para a empresa?",
+        ],
+        uses: [
+          {
+            type: "Em resposta a anúncio",
+            desc: "Carta dirigida a uma oferta de emprego específica — identificar o anúncio e a referência",
+          },
+          {
+            type: "Candidatura espontânea",
+            desc: "Carta enviada sem oferta específica — para demonstrar interesse na empresa",
+          },
+        ],
+        formalExpressions: [
+          {
+            context: "Abertura",
+            pt: "Exmo. Sr./Sra. [Nome],",
+            en: "Dear Mr./Mrs. [Name],",
+          },
+          {
+            context: "Abertura geral",
+            pt: "A quem de direito,",
+            en: "To whom it may concern,",
+          },
+          {
+            context: "Motivo",
+            pt: "Venho por este meio candidatar-me à função de...",
+            en: "I am hereby applying for the position of...",
+          },
+          {
+            context: "Referência",
+            pt: "Em resposta ao anúncio publicado em... com a referência...",
+            en: "In response to the advertisement published in... with reference...",
+          },
+          {
+            context: "Perfil",
+            pt: "Possuo [X] anos de experiência em... e sou licenciado/a em...",
+            en: "I have [X] years of experience in... and hold a degree in...",
+          },
+          {
+            context: "Disponibilidade",
+            pt: "Estou disponível para uma entrevista, no momento que considerar mais conveniente.",
+            en: "I am available for an interview at your convenience.",
+          },
+          {
+            context: "Anexo",
+            pt: "Envio em anexo o meu curriculum vitae.",
+            en: "I attach my curriculum vitae.",
+          },
+          {
+            context: "Despedida",
+            pt: "Com os melhores cumprimentos,",
+            en: "Yours sincerely / Kind regards,",
+          },
+          {
+            context: "Despedida alt.",
+            pt: "Aguardo uma resposta favorável da vossa parte.",
+            en: "I look forward to hearing from you.",
+          },
+        ],
+      };
+
+      const D_ENTREVISTA = {
+        note: "Entrevista de trabalho — job interview vocabulary. Key topics that employers ask about when hiring immigrants: documents, language skills, driving licence, and work experience.",
+        topics: [
+          {
+            e: "📋",
+            topic: "Legalização",
+            pt: "estar legalizado/a",
+            en: "to have legal status in Portugal",
+            note: "Trabalhadores imigrantes têm direitos laborais mesmo sem documentação completa",
+          },
+          {
+            e: "🛂",
+            topic: "Visto",
+            pt: "o visto de trabalho / de residência",
+            en: "work visa / residence visa",
+            note: "Required to live and work legally in Portugal",
+          },
+          {
+            e: "🪪",
+            topic: "Autorização de residência",
+            pt: "a autorização de residência (AR)",
+            en: "residence permit",
+            note: "Issued by SEF/AIMA. Must be valid to sign a contract.",
+          },
+          {
+            e: "💰",
+            topic: "Subsídios",
+            pt: "o subsídio de desemprego / refeição / Natal",
+            en: "unemployment / meal / Christmas benefit",
+            note: "Review Mundo do Trabalho section for all subsídios",
+          },
+          {
+            e: "🗣️",
+            topic: "Línguas",
+            pt: "as línguas / os idiomas que fala",
+            en: "languages spoken",
+            note: "Falo português, inglês e... / Tenho nível B2 de inglês.",
+          },
+          {
+            e: "💼",
+            topic: "Experiências",
+            pt: "a experiência profissional",
+            en: "work experience",
+            note: "Trabalhei durante X anos em... / Tenho experiência em...",
+          },
+          {
+            e: "🚗",
+            topic: "Carta de condução",
+            pt: "a carta de condução / carta de condução portuguesa",
+            en: "driving licence",
+            note: "European licences valid in Portugal. Non-EU may need to exchange.",
+          },
+        ],
+        vocab: [
+          ["o empregador", "[oo em-prɐ-gɐ-DOR]", "the employer"],
+          [
+            "o candidato / a candidata",
+            "[kɐn-dee-DA-too]",
+            "the candidate / applicant",
+          ],
+          ["o recrutador", "", "the recruiter"],
+          ["os recursos humanos", "", "human resources (HR)"],
+          ["o posto de trabalho", "", "the job position"],
+          ["a entrevista de emprego", "", "the job interview"],
+          ["a carta de apresentação", "", "cover letter"],
+          ["o currículo vitae (CV)", "", "CV / résumé"],
+          ["as competências", "", "skills / competencies"],
+          ["as referências", "", "references"],
+          ["o salário pretendido", "", "desired salary"],
+          ["disponível imediatamente", "", "available immediately"],
+          ["o período experimental", "", "probationary period"],
+          ["o contrato de trabalho", "", "employment contract"],
+          [
+            "a AIMA (ex-SEF)",
+            "",
+            "Migration and Asylum Agency (replaced SEF in 2023)",
+          ],
+          [
+            "o NIF",
+            "[ɛn ee feh]",
+            "tax identification number (required to work)",
+          ],
+          ["a Segurança Social", "", "social security"],
+          ["a NISS", "", "Social Security identification number"],
+        ],
+        interviewPhrases: [
+          {
+            context: "Apresentação",
+            pt: "O meu nome é... e tenho [X] anos de experiência em...",
+            en: "My name is... and I have [X] years of experience in...",
+          },
+          {
+            context: "Habilitações",
+            pt: "Sou licenciado/a em... pela Universidade de...",
+            en: "I have a degree in... from the University of...",
+          },
+          {
+            context: "Idiomas",
+            pt: "Falo fluentemente... e tenho conhecimentos de...",
+            en: "I speak ... fluently and have knowledge of...",
+          },
+          {
+            context: "Documentação",
+            pt: "Tenho autorização de residência válida e NIF.",
+            en: "I have a valid residence permit and tax number.",
+          },
+          {
+            context: "Carta condução",
+            pt: "Tenho carta de condução [categoria B/C/D].",
+            en: "I have a driving licence [category B/C/D].",
+          },
+          {
+            context: "Disponibilidade",
+            pt: "Estou disponível a partir de [data].",
+            en: "I am available from [date].",
+          },
+          {
+            context: "Salário",
+            pt: "Estou à espera de uma remuneração entre X e Y euros.",
+            en: "I am expecting a salary between X and Y euros.",
+          },
+          {
+            context: "Questão",
+            pt: "Poderia dar-me mais informações sobre as condições do contrato?",
+            en: "Could you give me more information about the contract conditions?",
+          },
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -19586,6 +19910,55 @@
     </tr>`,
       )
       .join("")}</tbody>
+  </table></div>
+  <a href="https://youtu.be/TWa1RZAT1-w" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--primary);margin-bottom:16px;cursor:pointer">
+      <div style="font-size:18px;margin-bottom:4px">▶️</div>
+      <div style="font-weight:800;color:var(--primary)">Placement of Object Pronouns in Portuguese</div>
+      <div style="font-size:12px;color:var(--text-2)">Before, after or in between the verb? — Covers all placement rules including -lo/-la/-no/-na exceptions and proclisis triggers.</div>
+    </div>
+  </a>
+  <h3 class="sub-heading">⚠️ Exceções: -lo/-la/-no/-na</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    ${D_PRONOMES_PREP.directObj.exceptions.rules
+      .map(
+        (
+          rule,
+          ri,
+        ) => `<div class="card" style="border-top:4px solid var(--accent)">
+      <div style="font-weight:800;color:var(--accent);margin-bottom:6px">${rule.trigger}</div>
+      <div style="font-size:13px;padding:6px 10px;background:var(--surface-2);border-radius:6px;margin-bottom:10px"><code>${rule.change}</code></div>
+      ${rule.examples
+        .map(
+          (
+            e,
+          ) => `<div style="padding:4px 0;border-bottom:1px solid var(--border)">
+        <div style="font-size:12px;color:var(--text-3)">${e.before}</div>
+        <div class="pt" style="font-weight:800;color:var(--primary)">→ ${e.after}</div>
+        <div style="font-size:11px;color:var(--text-3)">${e.note}</div>
+      </div>`,
+        )
+        .join("")}
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">📍 O pronome vem antes do verbo quando...</h3>
+  ${infoBox(D_PRONOMES_PREP.directObj.exceptions.beforeVerb.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Situation</th><th>Original</th><th>With pronoun BEFORE verb</th></tr></thead>
+    <tbody>${D_PRONOMES_PREP.directObj.exceptions.beforeVerb.triggers
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:700;color:var(--accent);font-size:12px">${r.type}</td>
+      <td class="pt" style="font-size:12px;color:var(--text-3)">${r.ex_before}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary)">${r.ex_after}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
   </table></div>`,
 
         imperfeito: () => `
@@ -21947,6 +22320,109 @@
       <div style="font-size:12px;color:var(--text-2)">${D_CURRICULO.rvcc.url}</div>
     </div>
   </a>`,
+
+        "carta-apresentacao": () => `
+  ${ctx("Cover letter (carta de apresentação) — structure, formal expressions, and the five questions to ask yourself before writing.", "Every job application needs a cover letter. The structure is fixed and the formal expressions are reusable templates.", "Currículo & Experiência — CV vocabulary; Mundo do Trabalho — employment context; Entrevista — interview preparation")}
+  ${sectionHead("Carta de Apresentação", "UFCD 6455 Session 7", "Cover letter structure, formal expressions, and strategic preparation questions.")}
+  ${infoBox(D_CARTA_APRESENTACAO.note)}
+  <h3 class="sub-heading">📋 Tipos de carta</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+    ${D_CARTA_APRESENTACAO.uses
+      .map(
+        (u) => `<div class="card" style="border-left:4px solid var(--primary)">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:4px">${u.type}</div>
+      <div style="font-size:13px;color:var(--text-2)">${u.desc}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">📐 Estrutura — Elements of the letter</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Elemento</th><th>Description</th></tr></thead>
+    <tbody>${D_CARTA_APRESENTACAO.structure
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td class="pt" style="font-weight:800">${r.element}</td>
+      <td style="font-size:12px;color:var(--text-2)">${r.desc}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">✉️ Expressões formais — Ready-to-use phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Context</th><th>Portuguese</th><th>English</th></tr></thead>
+    <tbody>${D_CARTA_APRESENTACAO.formalExpressions
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:11px;font-weight:700;color:var(--text-3)">${r.context}</td>
+      <td class="pt" style="font-weight:700">${r.pt}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">💡 Antes de escrever — Key questions</h3>
+  <div style="display:grid;gap:8px">
+    ${D_CARTA_APRESENTACAO.questions
+      .map(
+        (
+          q,
+          i,
+        ) => `<div style="display:flex;gap:10px;padding:8px 12px;background:var(--surface-2);border-radius:8px;border-left:3px solid var(--primary)">
+      <span style="font-weight:800;color:var(--primary)">${i + 1}.</span>
+      <span style="font-size:13px">${q}</span>
+    </div>`,
+      )
+      .join("")}
+  </div>`,
+
+        entrevista: () => `
+  ${ctx("Job interview vocabulary — key topics: documents, visa/residence permit, language skills, driving licence. Interview phrases for each topic.", "Understanding what interviewers ask immigrants about (legalização, AR, NIF) and having the vocabulary to answer confidently is essential for getting hired.", "Currículo & Experiência — CV; Carta de Apresentação — cover letter; Mundo do Trabalho — contracts and rights")}
+  ${sectionHead("Entrevista de Trabalho", "UFCD 6455 Session 7", "Job interview vocabulary — documents, rights, and ready-to-use phrases.")}
+  ${infoBox(D_ENTREVISTA.note)}
+  <h3 class="sub-heading">📋 Tópicos principais — Key interview topics</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Tópico</th><th>Vocabulary</th><th>English</th><th>Note</th></tr></thead>
+    <tbody>${D_ENTREVISTA.topics
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:20px;text-align:center">${r.e}</td>
+      <td style="font-weight:800;color:var(--primary);font-size:12px">${r.topic}</td>
+      <td class="pt" style="font-weight:700">${r.pt}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+      <td style="font-size:11px;color:var(--text-3)">${r.note}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <h3 class="sub-heading">💼 Vocabulário da entrevista</h3>
+  ${vocabGrid(D_ENTREVISTA.vocab)}
+  <h3 class="sub-heading">🗣️ Frases para a entrevista — Ready phrases</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Context</th><th>Portuguese</th><th>English</th></tr></thead>
+    <tbody>${D_ENTREVISTA.interviewPhrases
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:11px;font-weight:700;color:var(--text-3)">${r.context}</td>
+      <td class="pt" style="font-weight:700">${r.pt}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
       };
 
       // ─────────────────────────────────────────────
