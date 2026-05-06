@@ -5344,6 +5344,29 @@
             ["Nós", "sabemos", "[sɐ-BEH-moosh]"],
             ["Vocês/Eles", "sabem", "[SA-bayng]"],
           ],
+          imp: [
+            ["eu", "sabia"],
+            ["tu", "sabias"],
+            ["ele", "sabia"],
+            ["nós", "sabíamos"],
+            ["vós", "sabíeis"],
+            ["eles", "sabiam"],
+          ],
+          pps: [
+            ["eu", "soube"],
+            ["tu", "soubeste"],
+            ["ele", "soube"],
+            ["nós", "soubemos"],
+            ["vós", "soubestes"],
+            ["eles", "souberam"],
+          ],
+          imperativo: {
+            tu: "sabe",
+            voce: "saiba",
+            nos: "saibamos",
+            vos: "sabei",
+            voces: "saibam",
+          },
           ex: [
             [
               "Sei falar inglês.",
@@ -5355,6 +5378,51 @@
               "[nowng say OND FEE-kɐ]",
               "I don't know where it is.",
             ],
+          ],
+        },
+        {
+          verb: "CONHECER",
+          pron: "[kon-YEH-ser]",
+          en: "to know (people/places — familiarity)",
+          note: "EU: CONHEÇO (stem-change ç before o/a). KEY DISTINCTION: CONHECER = to know a person/place/thing through familiarity or meeting. SABER = to know a fact/how to do something. Imperativo: regular-looking except você/eles (conheça/conheçam — subjunctive stem).",
+          conj: [
+            ["Eu", "conheço", "[kon-YEH-soo]"],
+            ["Tu", "conheces", "[kon-YEH-sɐsh]"],
+            ["Ele/Ela/Você", "conhece", "[kon-YEH-s]"],
+            ["Nós", "conhecemos", "[kon-yɐ-SEH-moosh]"],
+            ["Vocês/Eles", "conhecem", "[kon-YEH-sayng]"],
+          ],
+          imp: [
+            ["eu", "conhecia"],
+            ["tu", "conhecias"],
+            ["ele", "conhecia"],
+            ["nós", "conhecíamos"],
+            ["vós", "conhecíeis"],
+            ["eles", "conheciam"],
+          ],
+          pps: [
+            ["eu", "conheci"],
+            ["tu", "conheceste"],
+            ["ele", "conheceu"],
+            ["nós", "conhecemos"],
+            ["vós", "conhecestes"],
+            ["eles", "conheceram"],
+          ],
+          imperativo: {
+            tu: "conhece",
+            voce: "conheça",
+            nos: "conheçamos",
+            vos: "conhecei",
+            voces: "conheçam",
+          },
+          ex: [
+            [
+              "Conheço muito bem Lisboa.",
+              "",
+              "I know Lisbon very well. (familiarity)",
+            ],
+            ["Já conheces a minha colega?", "", "Have you met my colleague?"],
+            ["Conheceu o marido em 2010.", "", "She met her husband in 2010."],
           ],
         },
         {
@@ -5444,6 +5512,29 @@
             ["Nós", "conseguimos", "[kon-sɐ-GHEE-moosh]"],
             ["Vocês/Eles", "conseguem", "[kon-SEH-gayng]"],
           ],
+          imp: [
+            ["eu", "conseguia"],
+            ["tu", "conseguias"],
+            ["ele", "conseguia"],
+            ["nós", "conseguíamos"],
+            ["vós", "conseguíeis"],
+            ["eles", "conseguiam"],
+          ],
+          pps: [
+            ["eu", "consegui"],
+            ["tu", "conseguiste"],
+            ["ele", "conseguiu"],
+            ["nós", "conseguimos"],
+            ["vós", "conseguistes"],
+            ["eles", "conseguiram"],
+          ],
+          imperativo: {
+            tu: "consegue",
+            voce: "consiga",
+            nos: "consigamos",
+            vos: "consegui",
+            voces: "consigam",
+          },
           ex: [
             [
               "Não consigo dormir.",
@@ -5474,6 +5565,29 @@
             ["Nós", "podemos", "[poo-DEH-moosh]"],
             ["Vocês/Eles", "podem", "[POH-dayng]"],
           ],
+          imp: [
+            ["eu", "podia"],
+            ["tu", "podias"],
+            ["ele", "podia"],
+            ["nós", "podíamos"],
+            ["vós", "podíeis"],
+            ["eles", "podiam"],
+          ],
+          pps: [
+            ["eu", "pude"],
+            ["tu", "pudeste"],
+            ["ele", "pôde"],
+            ["nós", "pudemos"],
+            ["vós", "pudestes"],
+            ["eles", "puderam"],
+          ],
+          imperativo: {
+            tu: "pode",
+            voce: "possa",
+            nos: "possamos",
+            vos: "podei",
+            voces: "possam",
+          },
           ex: [
             ["Posso falar contigo?", "", "Can I speak with you?"],
             ["Ele não pode trabalhar hoje.", "", "He can't work today."],
@@ -5637,6 +5751,17 @@
             nos: "sabemos",
             eles: "sabem",
             key: "EU: sei (unique)",
+          },
+          {
+            verb: "CONHECER",
+            eu: "conheço",
+            eu_pron: "[kon-YEH-soo]",
+            en: "to know (familiarity)",
+            tu: "conheces",
+            ele: "conhece",
+            nos: "conhecemos",
+            eles: "conhecem",
+            key: "EU: conheço (ç before o); SABER vs CONHECER",
           },
           {
             verb: "PODER",
@@ -10287,6 +10412,26 @@
             en: "to know",
           },
           {
+            verb: "CONHECER",
+            tu: "conhece",
+            tu_neg: "não conheças",
+            voce: "conheça",
+            nos: "conheçamos",
+            vos: "conhecei",
+            voces: "conheçam",
+            en: "to know (familiarity)",
+          },
+          {
+            verb: "CONSEGUIR",
+            tu: "consegue",
+            tu_neg: "não consigas",
+            voce: "consiga",
+            nos: "consigamos",
+            vos: "consegui",
+            voces: "consigam",
+            en: "to manage to",
+          },
+          {
             verb: "PODER",
             tu: "pode",
             tu_neg: "não possas",
@@ -13790,6 +13935,58 @@
             pron: "",
             en: "disciplinary proceedings / to bring a case",
             note: "",
+          },
+        ],
+        pagamentoTipos: [
+          {
+            e: "📅",
+            type: "Pagamento mensal",
+            note: "O mais comum. Pago obrigatoriamente até ao dia 10 do mês seguinte.",
+            details: [
+              "Valor definido por contrato ou acordo colectivo",
+              "Subsídio de férias e de Natal obrigatórios — pagos em duodécimos ou na totalidade (junho/novembro)",
+              "Contrato de trabalho indispensável",
+            ],
+          },
+          {
+            e: "⏱️",
+            type: "Pagamento por hora",
+            note: "Ganhas o que trabalhas. Comum em contratos de curta duração.",
+            details: [
+              "Valor definido por ambas as partes — não pode ser inferior ao SMN por hora",
+              "Direitos como férias e subsídios estão incluídos no preço/hora",
+              "Pagos na data de fim de contrato ou até dia 8 do mês seguinte (se >1 mês de trabalho)",
+              "Uso frequente em contratos pontuais e de muito curta duração",
+            ],
+          },
+          {
+            e: "🧾",
+            type: "Prestação de serviços (conta própria)",
+            note: "Trabalhas por conta própria. Tens de passar recibo.",
+            details: [
+              "Obrigação de abrir atividade (coleta) nas Finanças",
+              "Pagas a totalidade dos teus impostos (IRS + Segurança Social)",
+              "Se os rendimentos ultrapassarem um certo limiar: contabilidade organizada obrigatória",
+              "Podes cobrar valor horário ou orçamentar um preço pelo serviço",
+              "Podes emitir recibo verde (recibo eletrónico no portal das finanças)",
+            ],
+          },
+        ],
+        metodoPagamento: [
+          {
+            e: "🏦",
+            method: "Transferência bancária",
+            note: "O mais usual — opção preferencial das empresas.",
+          },
+          {
+            e: "📝",
+            method: "Cheque",
+            note: "Cada vez menos usado para salários. Ainda comum para pagamentos de bens/serviços.",
+          },
+          {
+            e: "💵",
+            method: "Numerário (dinheiro)",
+            note: "Com uso decrescente. Empresas com faturação elevada não podem pagar salários em numerário por imposição legal.",
           },
         ],
         direitos: {
@@ -19068,6 +19265,15 @@
             )
             .join("")}
         </table>
+        ${
+          v.imp
+            ? `<div style="margin-top:8px;padding:6px 10px;background:var(--surface);border-radius:6px">
+          <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:3px">Imperfeito: <span style="font-weight:400">${v.imp.map((r) => r[0] + " " + r[1]).join(" · ")}</span></div>
+          <div style="font-size:11px;font-weight:700;color:var(--green)">Perfeito (PPS): <span style="font-weight:400">${v.pps ? v.pps.map((r) => r[0] + " " + r[1]).join(" · ") : "-"}</span></div>
+          ${v.imperativo ? `<div style="font-size:11px;font-weight:700;color:var(--primary)">Imperativo (tu/você/vocês): <span class="pt" style="font-weight:400">${v.imperativo.tu} / ${v.imperativo.voce} / ${v.imperativo.voces}</span></div>` : ""}
+        </div>`
+            : ""
+        }
         <div>
           ${v.ex
             .map(
@@ -21615,6 +21821,34 @@
       .join("")}</tbody>
   </table></div>
 
+  <h3 class="sub-heading">💰 Tipos de pagamento</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+    ${D_TRABALHO.pagamentoTipos
+      .map(
+        (t) => `<div class="card" style="border-top:4px solid var(--primary)">
+      <div style="font-size:22px;margin-bottom:6px">${t.e}</div>
+      <div style="font-weight:800;font-size:14px;margin-bottom:6px">${t.type}</div>
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${t.note}</div>
+      <ul style="font-size:11px;padding-left:14px;color:var(--text-3);margin:0">
+        ${t.details.map((d) => `<li>${d}</li>`).join("")}
+      </ul>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">💳 Métodos de pagamento</h3>
+  <div style="display:grid;gap:8px;margin-bottom:20px">
+    ${D_TRABALHO.metodoPagamento
+      .map(
+        (
+          m,
+        ) => `<div style="display:flex;gap:10px;align-items:center;padding:8px 12px;background:var(--surface-2);border-radius:8px;border:1px solid var(--border)">
+      <span style="font-size:20px">${m.e}</span>
+      <div><div style="font-weight:800">${m.method}</div><div style="font-size:12px;color:var(--text-2)">${m.note}</div></div>
+    </div>`,
+      )
+      .join("")}
+  </div>
   <h3 class="sub-heading">⚖️ Direitos dos trabalhadores imigrantes</h3>
   ${warnBox(D_TRABALHO.direitos.note)}
   <ul style="padding-left:20px;line-height:2">
