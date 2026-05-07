@@ -11233,6 +11233,26 @@
               ["Ela vinha de autocarro.", "She used to come by bus."],
             ],
           },
+          {
+            verb: "PÔR",
+            pron: "[por]",
+            en: "to put",
+            conj: [
+              ["Eu", "punha"],
+              ["Tu", "punhas"],
+              ["Ele/Ela/Você", "punha"],
+              ["Nós", "púnhamos"],
+              ["Eles/Vocês", "punham"],
+            ],
+            note: "Irregular — PÔR uses 'punh-' stem. NÓS gets accent: púnhamos.",
+            ex: [
+              [
+                "Punha sempre as chaves na mesa.",
+                "I used to put the keys on the table.",
+              ],
+              ["Púnhamos a mesa às 19h.", "We used to set the table at 7pm."],
+            ],
+          },
         ],
         uses: [
           {
@@ -11284,6 +11304,78 @@
         ],
         principioCortesia:
           "Quando falamos com os outros é preciso respeitar o princípio de cortesia. Em vez de darmos diretamente uma ordem, podemos fazê-lo de uma forma indireta. Por exemplo: 'Podes chegar aqui, por favor?' em vez de 'Chega aqui!'",
+        sairCair: {
+          note: "SAIR and CAIR follow the regular -IR imperfeito pattern (-ia endings) BUT the í is always written with an accent in every form. This marks the hiatus (two separate vowel sounds).",
+          verbs: [
+            {
+              verb: "SAIR",
+              conj: [
+                ["Eu", "saía"],
+                ["Tu", "saías"],
+                ["Ele/Ela/Você", "saía"],
+                ["Nós", "saíamos"],
+                ["Eles/Vocês", "saíam"],
+              ],
+            },
+            {
+              verb: "CAIR",
+              conj: [
+                ["Eu", "caía"],
+                ["Tu", "caías"],
+                ["Ele/Ela/Você", "caía"],
+                ["Nós", "caíamos"],
+                ["Eles/Vocês", "caíam"],
+              ],
+            },
+          ],
+        },
+        costumava: {
+          note: "COSTUMAR in the imperfeito + infinitivo = habitual past action. The verb COSTUMAR goes in the imperfeito; the main verb stays in the infinitive. Used for habits that were true in the past but are no longer true now.",
+          formula:
+            "costumava/costumavas/costumava/costumávamos/costumavam + INFINITIVO",
+          conj: [
+            ["Eu", "costumava"],
+            ["Tu", "costumavas"],
+            ["Ele/Ela/Você", "costumava"],
+            ["Nós", "costumávamos"],
+            ["Eles/Elas/Vocês", "costumavam"],
+          ],
+          ex: [
+            [
+              "Eu costumava ir ao cinema todas as semanas.",
+              "I used to go to the cinema every week.",
+              "(Agora já não vou.)",
+            ],
+            [
+              "Tu costumavas sair de casa mais cedo.",
+              "You used to leave home earlier.",
+              "",
+            ],
+            ["Ele costumava fumar muito.", "He used to smoke a lot.", ""],
+            [
+              "Nós costumávamos fazer muitas festas.",
+              "We used to have lots of parties.",
+              "",
+            ],
+            [
+              "Eles costumavam apanhar o autocarro todos os dias.",
+              "They used to catch the bus every day.",
+              "(Agora já não apanham.)",
+            ],
+          ],
+          contrast: [
+            [
+              "Costuma beber café.",
+              "He/she usually drinks coffee.",
+              "Present habit — still true now.",
+            ],
+            [
+              "Costumava beber café.",
+              "He/she used to drink coffee.",
+              "Past habit — no longer true.",
+            ],
+          ],
+        },
       };
 
       const D_PRONOMES_PREP = {
@@ -15379,6 +15471,155 @@
           { pt: "cedo / tarde", en: "early / late", ex: "" },
           { pt: "antes / depois", en: "before / after", ex: "" },
         ],
+        modo: {
+          note: "Advérbios de modo answer COMO? (how?). Describe the manner of an action. Most adjectives form -mente adverbs: rápido → rapidamente. All adverbs are invariable.",
+          advs: [
+            { pt: "assim", en: "like this / this way", ex: "Faz assim." },
+            { pt: "bem", en: "well", ex: "Fala bem português." },
+            { pt: "mal", en: "badly / poorly", ex: "Escreve mal." },
+            { pt: "devagar", en: "slowly", ex: "Fala devagar, por favor." },
+            { pt: "depressa", en: "quickly / fast", ex: "Lê depressa." },
+            { pt: "lentamente", en: "slowly (formal)", ex: "" },
+            { pt: "rapidamente", en: "quickly (formal)", ex: "" },
+            {
+              pt: "atentamente",
+              en: "attentively",
+              ex: "Lê o texto atentamente.",
+            },
+          ],
+          locs: [
+            {
+              pt: "a custo",
+              en: "with difficulty",
+              ex: "A custo conseguiu terminar.",
+            },
+            {
+              pt: "à vontade",
+              en: "at ease / comfortably",
+              ex: "Sente-se à vontade.",
+            },
+            {
+              pt: "ao acaso",
+              en: "at random / by chance",
+              ex: "Escolheu ao acaso.",
+            },
+            { pt: "às claras", en: "openly", ex: "Fez tudo às claras." },
+            { pt: "de cor", en: "by heart", ex: "Sabe o poema de cor." },
+            { pt: "em vão", en: "in vain", ex: "Tentou em vão." },
+            { pt: "por acaso", en: "by chance", ex: "Por acaso encontrei-o." },
+          ],
+        },
+        lugar: {
+          note: "Advérbios de lugar answer ONDE? (where?). Key contrast: aqui/cá = here; ali/lá = there. Aqui/ali = static; cá/lá = with movement.",
+          advs: [
+            { pt: "aqui", en: "here (near speaker, static)", ex: "Vem aqui." },
+            { pt: "aí", en: "there (near listener)", ex: "Fica aí." },
+            {
+              pt: "ali",
+              en: "there (away from both, static)",
+              ex: "Está ali.",
+            },
+            { pt: "lá", en: "over there (far, movement)", ex: "Ele mora lá." },
+            { pt: "cá", en: "here (toward speaker, movement)", ex: "Vem cá." },
+            { pt: "dentro", en: "inside", ex: "Está dentro de casa." },
+            { pt: "fora", en: "outside", ex: "Fica fora." },
+            { pt: "perto", en: "nearby / close", ex: "Mora perto daqui." },
+            { pt: "longe", en: "far away", ex: "Fica longe." },
+            { pt: "atrás", en: "behind", ex: "Está atrás de mim." },
+          ],
+          locs: [
+            { pt: "à direita", en: "to the right", ex: "" },
+            { pt: "à esquerda", en: "to the left", ex: "" },
+            { pt: "ao lado", en: "next to / beside", ex: "" },
+            { pt: "em baixo", en: "below / downstairs", ex: "" },
+            { pt: "em cima", en: "above / upstairs", ex: "" },
+            { pt: "ao longe", en: "in the distance", ex: "" },
+          ],
+        },
+        quantidade: {
+          note: "Advérbios de quantidade e grau answer QUANTO? (how much?). Also used in comparisons: tão … como / mais … do que.",
+          advs: [
+            { pt: "muito", en: "a lot / very", ex: "Fala muito." },
+            { pt: "pouco", en: "a little / not much", ex: "Come pouco." },
+            { pt: "bastante", en: "quite / enough", ex: "É bastante difícil." },
+            { pt: "mais", en: "more", ex: "Quero mais." },
+            { pt: "menos", en: "less", ex: "Fala menos." },
+            {
+              pt: "quase",
+              en: "almost / nearly",
+              ex: "Quase cheguei a tempo.",
+            },
+            { pt: "tão", en: "so / as (comparisons)", ex: "É tão bonito!" },
+            { pt: "tanto", en: "so much", ex: "Trabalha tanto!" },
+            { pt: "demais", en: "too much", ex: "Come demais." },
+            { pt: "apenas", en: "only / just", ex: "Apenas bebi água." },
+          ],
+        },
+        conectivos: {
+          note: "Advérbios conectivos link sentences and clauses. Essential for A2+ written production and formal speech.",
+          rows: [
+            {
+              tipo: "Consequência",
+              advs: "consequentemente",
+              locs: "por consequência, por isso",
+            },
+            {
+              tipo: "Contraste",
+              advs: "porém, todavia, contudo",
+              locs: "no entanto, ainda assim",
+            },
+            {
+              tipo: "Ordenação",
+              advs: "primeiramente, seguidamente",
+              locs: "de seguida, por fim",
+            },
+          ],
+        },
+        afirmacaoNegacao: {
+          afirm: [
+            { pt: "sim", en: "yes", ex: "" },
+            { pt: "certamente", en: "certainly", ex: "" },
+            { pt: "decerto", en: "surely / no doubt", ex: "" },
+            { pt: "realmente", en: "really / truly", ex: "É realmente bom." },
+          ],
+          afirmLocs: [
+            { pt: "com certeza", en: "for sure", ex: "" },
+            { pt: "sem dúvida", en: "without doubt", ex: "" },
+          ],
+          neg: [{ pt: "não", en: "no / not", ex: "Não sei." }],
+          negLocs: [
+            { pt: "de forma alguma", en: "not at all / by no means", ex: "" },
+            { pt: "de modo nenhum", en: "in no way", ex: "" },
+          ],
+        },
+        inclusaoExclusao: {
+          inclusao: [
+            { pt: "também", en: "also / too", ex: "Eu também gosto." },
+            {
+              pt: "até / inclusive",
+              en: "even / including",
+              ex: "Até ela veio.",
+            },
+            { pt: "mesmo", en: "even / itself", ex: "Mesmo ele errou." },
+          ],
+          exclusao: [
+            { pt: "apenas / só", en: "only", ex: "Só falo português." },
+            { pt: "somente", en: "solely (formal)", ex: "" },
+            { pt: "exceto", en: "except", ex: "Todos exceto eu." },
+          ],
+        },
+        interrogativos: [
+          { pt: "Onde?", en: "Where?", ex: "Onde fica o banco?" },
+          { pt: "Aonde?", en: "To where? (direction)", ex: "Aonde vais?" },
+          { pt: "Como?", en: "How?", ex: "Como estás?" },
+          { pt: "Quando?", en: "When?", ex: "Quando chegaste?" },
+          { pt: "Porquê?", en: "Why? (standalone)", ex: "Porquê?" },
+          {
+            pt: "Porque?",
+            en: "Why? / Because (in clause)",
+            ex: "Porque é que saíste?",
+          },
+        ],
       };
 
       const D_ESCRITORIO = {
@@ -16963,6 +17204,24 @@
             "[bayng deesh-POSH-too]",
             "cheerful / in good spirits",
           ],
+          ["🤤 mentiroso/a", "[men-tee-ROH-zoo]", "dishonest / lying"],
+          ["💚 fiel", "[fyehl]", "loyal / faithful"],
+          ["😡 ciumento/a", "[syoo-MEN-too]", "jealous"],
+          [
+            "🧐 desconfiado/a",
+            "[dɐsh-kong-fyA-doo]",
+            "suspicious / distrustful",
+          ],
+          ["🎓 educado/a", "[eh-doo-KA-doo]", "polite / well-mannered"],
+          ["🦚 vaidoso/a", "[vai-DOH-zoo]", "vain / conceited"],
+          ["😐 arrogante", "[ɐ-hoo-GANT]", "arrogant"],
+          ["🦁 valente", "[vɐ-LENT]", "brave / courageous"],
+          ["🙇 humilde", "[oo-MILD]", "humble"],
+          ["😨 medroso/a", "[mɐ-DROH-zoo]", "fearful / timid"],
+          ["🎉 extrovertido/a", "[ɐsh-troo-ver-TEE-doo]", "extroverted"],
+          ["🤫 introvertido/a", "[in-troo-ver-TEE-doo]", "introverted"],
+          ["🧹 arrumado/a", "[ɐ-hoo-MA-doo]", "tidy / organized"],
+          ["📢 barulhento/a", "[bɐ-rool-YEN-too]", "noisy / loud"],
         ],
         adj_rules: [
           {
@@ -17003,6 +17262,75 @@
         ],
         model:
           "A Maria Joana tem um ar feliz [fɐ-LEESH]. Ela é elegante [ɐ-lɐ-GANT] e de estatura média [MEH-dyɐ]. É jovem [ZHOH-vayng], tem um longo cabelo castanho [kɐsh-TAN-yoo] e liso [LEE-zoo]. Tem um sorriso radiante e uns olhos grandes e castanhos. Usa roupa descontraída [dɐsh-kon-trɐ-EE-dɐ] e jovial.",
+        defeitos: [
+          ["a apatia", "[ɐ-pɐ-TEE-ɐ]", "apathy / indifference"],
+          ["o autoritarismo", "[ow-too-ree-tɐ-REEZH-moo]", "authoritarianism"],
+          ["a impaciência", "[im-pɐ-SYEN-syɐ]", "impatience"],
+          ["o egoísmo", "[eh-goo-EEZH-moo]", "selfishness / egoism"],
+          [
+            "o individualismo",
+            "[in-dee-vee-doo-ɐ-LEEZH-moo]",
+            "excessive self-reliance / aloofness",
+          ],
+          ["a hipocrisia", "[ee-poo-kree-ZEE-ɐ]", "hypocrisy"],
+          [
+            "a inflexibilidade",
+            "[in-flɐ-ksi-bee-lee-DAD]",
+            "inflexibility / rigidity",
+          ],
+          ["o narcisismo", "[nɐr-see-ZEEZH-moo]", "narcissism"],
+          ["a insegurança", "[in-sɐ-goo-RAN-sɐ]", "insecurity"],
+          ["a frieza", "[free-EH-zɐ]", "coldness / emotional distance"],
+        ],
+        writingTips: {
+          title: "Organização da descrição escrita",
+          principles: [
+            "Do geral para o particular (global impression first, then details)",
+            "De cima para baixo, da esquerda para a direita ou vice-versa",
+            "De um plano próximo para o plano de fundo (foreground to background)",
+          ],
+          linguistico:
+            "Use varied precise vocabulary so the reader can visualise what is described. Key verbs: SER (identity), ESTAR (state), TER (features), HAVER (there is). Stylistic devices: comparações, metáforas, personificações, adjectivação.",
+        },
+        descricaoDetalhada: {
+          note: "Practical framework for detailed descriptions — A2 written tasks, police reports, identity documents.",
+          steps: [
+            {
+              step: "Identidade",
+              tip: "Identify as homem or mulher. Skin: moreno / branco / negro / pele de cor clara / escura.",
+            },
+            {
+              step: "Idade",
+              tip: "Use ranges: 'tem por volta de 25 anos' | 'está na casa dos 60' | 'tem de 30 a 35 anos'.",
+            },
+            {
+              step: "Altura",
+              tip: "muito alto / alto / estatura média / baixo / muito baixo. Or: 'tinha entre 1,80m a 1,85m de altura'.",
+            },
+            {
+              step: "Peso/forma",
+              tip: "magro / normal / robusto / forte / musculado / fora de forma. Prefer 'fora de forma' over 'gordo'.",
+            },
+            {
+              step: "Cabelo",
+              tip: "Comprimento: rapado/curto/médio/comprido/na altura dos ombros. Estilo: liso/encaracolado/ondulado/afro/rabo de cavalo/coque. Aparência: penteado/ralo/brilhante.",
+            },
+            {
+              step: "Olhos",
+              tip: "Cor: castanhos/pretos/acinzentados/azuis/verdes/mel. Formato: grandes/pequenos/rasgados/fundos. Sobrancelhas: finas/grossas/rebeldes.",
+            },
+            {
+              step: "Rosto",
+              tip: "Face: oval/fina/redonda/quadrada. Nariz: pequeno/grande/largo/torto. Orelhas: pequenas/médias/grandes. Lábios: finos/normais/carnudos.",
+            },
+            {
+              step: "Roupa e estilo",
+              tip: "Calças, camisa, casaco, sapatos, saia, boné, chapéu. Estilo: prático/desportivo/casual/clássico/elegante/arrumado/chique.",
+            },
+          ],
+          sensitivity:
+            "Avoid 'feio/a'. Say 'comum' or 'não tem nada de especial'. Use 'interessante' instead of 'bonito/a' for attraction. Use 'fora de forma' for someone unfit.",
+        },
       };
 
       const D_VERB_PATTERNS = {
@@ -18127,7 +18455,14 @@
     )
     .join("")}</div>
   <h3 class="sub-heading">Tips for Comprehension</h3>
-  ${D_PRONUNCIATION.tips.map((t) => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join("")}`,
+  ${D_PRONUNCIATION.tips.map((t) => `<div class="rule-box" style="margin-bottom:8px"><span style="margin-right:8px">${t.icon}</span>${t.text}</div>`).join("")}
+  <a href="https://youtu.be/3davnQc9sUU" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--primary);margin-top:20px;cursor:pointer">
+      <div style="font-size:18px;margin-bottom:4px">&#9654;&#65039;</div>
+      <div style="font-weight:800;color:var(--primary)">Learn every sound in the Portuguese language</div>
+      <div style="font-size:12px;color:var(--text-2)">Complete guide to all European Portuguese phonemes — complements the tables above.</div>
+    </div>
+  </a>`,
 
         pronouns: () => `
   ${ctx("The words that replace nouns: I / you / he / she / we / they, with formal and informal variants.", "Verb conjugation depends entirely on the pronoun. The biggest trap: VOCÊ and VOCÊS look 2nd person but always take 3rd person verb forms — same endings as ele/ela and eles/elas.", "Verb Patterns — every conjugation table uses these; Forms of Address — tu vs você vs o senhor")}
@@ -20204,11 +20539,11 @@
           i,
         ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
       <td style="font-weight:800;color:var(--primary)">${r.verb}</td>
-      <td class="pt" style="font-weight:800">${r.eu}</td>
-      <td class="pt">${r.tu}</td>
-      <td class="pt">${r.ele}</td>
-      <td class="pt">${r.nos}</td>
-      <td class="pt">${r.eles}</td>
+      <td class="pt" style="font-weight:800">${r.conj[0][1]}</td>
+      <td class="pt">${r.conj[1][1]}</td>
+      <td class="pt">${r.conj[2][1]}</td>
+      <td class="pt">${r.conj[3][1]}</td>
+      <td class="pt">${r.conj[4][1]}</td>
     </tr>`,
       )
       .join("")}</tbody>
@@ -20222,7 +20557,67 @@
     ${u.ex.map((e) => `<div class="pt" style="font-size:13px">${e[0]} <span class="en">${e[1]}</span></div>`).join("")}
   </div>`,
     )
-    .join("")}`,
+    .join("")}
+
+  <h3 class="sub-heading">&#9888; SAIR &amp; CAIR &#8212; Imperfeito special case</h3>
+  ${warnBox("SAIR and CAIR follow the regular -IR imperfeito pattern, but the <strong>&#237; is always accented</strong> in every form (sa&#237;a, ca&#237;a, etc.). The accent marks a hiatus between two separate vowel sounds &#8212; removing it would change pronunciation.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    ${D_IMPERFEITO.sairCair.verbs
+      .map(
+        (v) => `<div class="card">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:8px">${v.verb}</div>
+      <div class="tbl-wrap"><table><tbody>${v.conj
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+        <td class="pt" style="font-weight:800">${r[1]}</td>
+      </tr>`,
+        )
+        .join("")}</tbody></table></div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">COSTUMAR (imperfeito) + infinitivo — used to</h3>
+  ${infoBox(D_IMPERFEITO.costumava.note)}
+  <div style="background:var(--surface-2);border-radius:8px;padding:10px 16px;font-size:15px;font-weight:800;text-align:center;margin-bottom:16px;color:var(--primary);font-family:monospace">${D_IMPERFEITO.costumava.formula}</div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Pessoa</th><th style="color:var(--primary)">COSTUMAR</th><th>Example</th><th>English</th></tr></thead>
+    <tbody>${D_IMPERFEITO.costumava.conj
+      .map((r, i) => {
+        const ex = D_IMPERFEITO.costumava.ex[i] || [
+          r[0] + " costumava...",
+          "",
+          "",
+        ];
+        return `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+        <td class="pt" style="font-size:12px">${ex[0]}</td>
+        <td style="font-size:12px"><span class="en">${ex[1]}</span>${ex[2] ? ` <em style="color:var(--text-3);font-size:11px">${ex[2]}</em>` : ""}</td>
+      </tr>`;
+      })
+      .join("")}</tbody>
+  </table></div>
+  <div class="tbl-wrap" style="margin-top:8px"><table>
+    <thead><tr><th colspan="3" style="text-align:left">&#128260; Costuma (present) vs Costumava (past)</th></tr></thead>
+    <tbody>${D_IMPERFEITO.costumava.contrast
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r[0]}</td>
+      <td class="en">${r[1]}</td>
+      <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>`,
 
         "future-plans": () => `
   ${ctx("IR + infinitivo — the main way to express future plans at A1/A2. Conjugate IR, then add the infinitive unchanged.", "This structure replaces the formal future tense at A1/A2 level. It is used constantly in everyday speech: Vou fazer… / Vais ver…", "Core Verbs — IR conjugation; Days, Time & Seasons — time expressions for planning")}
@@ -20603,7 +20998,39 @@
     </tr>`,
       )
       .join("")}</tbody>
-  </table></div>`,
+  </table></div>
+
+  <h3 class="sub-heading">&#128221; Organização da descrição escrita</h3>
+  ${infoBox(D_DESCRIPTION.writingTips.linguistico)}
+  <div style="margin-bottom:16px">${D_DESCRIPTION.writingTips.principles
+    .map(
+      (p, i) => `
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+      <span style="font-weight:800;color:var(--primary);min-width:20px">${i + 1}.</span>
+      <span style="font-size:13px">${p}</span>
+    </div>`,
+    )
+    .join("")}
+  </div>
+
+  <h3 class="sub-heading">&#128100; Guia de descrição detalhada</h3>
+  ${warnBox(D_DESCRIPTION.descricaoDetalhada.sensitivity)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+    ${D_DESCRIPTION.descricaoDetalhada.steps
+      .map(
+        (
+          s,
+        ) => `<div class="card-sm" style="border-left:3px solid var(--primary)">
+      <div style="font-weight:800;color:var(--primary);font-size:13px;margin-bottom:4px">${s.step}</div>
+      <div style="font-size:12px;color:var(--text-2)">${s.tip}</div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">&#9940; Defeitos — character flaws (nouns)</h3>
+  ${infoBox('These are abstract nouns, not adjectives — they cannot directly modify a noun. Usage: "É uma pessoa com muito egoísmo." / "Tem tendência para a apatia." Contrast with adjectives: egoísta, apático/a.')}
+  ${vocabGrid(D_DESCRIPTION.defeitos)}`,
 
         money: () => `
   ${ctx("Euro, céntimos, reading prices aloud, Multibanco, and key money phrases.", "Prices in Portuguese use a comma for decimals: 1,50€ = um euro e cinquenta. You need this vocabulary every day in shops.", "Payments & Documents — payment methods; Banking — bank vocabulary; Shopping — store expressions")}
@@ -20933,7 +21360,21 @@
         .join("")}</tbody>
     </table></div>
   </div>`,
-  ).join("")}`,
+  ).join("")}
+  <a href="https://youtu.be/rBKVu46J-Hc" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--primary);margin-top:20px;cursor:pointer">
+      <div style="font-size:18px;margin-bottom:4px">&#9654;&#65039;</div>
+      <div style="font-weight:800;color:var(--primary)">Stop Giving Basic Answers in Portuguese</div>
+      <div style="font-size:12px;color:var(--text-2)">Expand beyond sim/não/bem — varied expressions for natural conversation.</div>
+    </div>
+  </a>
+  <a href="https://www.instagram.com/portuguesedictionary" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid #E1306C;margin-top:12px;cursor:pointer">
+      <div style="font-size:18px;margin-bottom:4px">&#128247;</div>
+      <div style="font-weight:800;color:#E1306C">@portuguesedictionary</div>
+      <div style="font-size:12px;color:var(--text-2)">Instagram vocabulary reference — useful for exploring new words and expressions in context.</div>
+    </div>
+  </a>`,
 
         survival: () => `
   ${ctx("Essential phrases for first contact: greetings, classroom language, politeness. The minimum you need to start.", "These phrases get you through any first encounter. Memorise them before anything else.", "Expressions — broader conversation vocabulary; Fórmulas de Cortesia — polite requests")}
@@ -21723,7 +22164,14 @@
     </tr>`,
       )
       .join("")}</tbody>
-  </table></div>`,
+  </table></div>
+  <a href="https://youtu.be/7mRTVgOpglg" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="card" style="border-left:4px solid var(--primary);margin-top:20px;cursor:pointer">
+      <div style="font-size:18px;margin-bottom:4px">&#9654;&#65039;</div>
+      <div style="font-weight:800;color:var(--primary)">Past tense in Portuguese: Simple Past Indicative</div>
+      <div style="font-size:12px;color:var(--text-2)">UFCD 6456 S1 — covers regular and irregular PPS verb forms with examples.</div>
+    </div>
+  </a>`,
 
         trabalho: () => `
   ${ctx("Employment vocabulary for Portugal — salary structures, taxes, subsidies, work organisation, rights, and job search. Portuguese employment context: 72.1% services, 14th-month Christmas bonus mandatory, SNM set annually.", "A2 core topic. Immigrants have full labour rights regardless of documentation status. Understanding the payslip (recibo), tax IDs (IRS/IRC/IVA), and mandatory benefits (subsídio de férias, subsídio de Natal) is essential.", "Money & Prices — currency; Banking — bank account; Autorização de Residência — documents for legal work")}
@@ -22270,8 +22718,8 @@
   </div>`,
 
         adverbios: () => `
-  ${ctx("Time adverbs and adverbial expressions — past, present, future and habitual. Invariable in gender and number.", "Time adverbs are the trigger words that tell you which tense to use. Ontem/anteontem → PPS. Habitualmente/sempre → presente. Ultimamente/nos últimos tempos → presente perfeito composto.", "Pretérito Perfeito Simples — ontem/anteontem/na semana passada trigger PPS; Pretérito Imperfeito — antigamente/dantes trigger imperfeito")}
-  ${sectionHead("Advérbios de Tempo", "UFCD 6455 Session 4", "Time adverbs — invariable words that modify verbs and sentences. Grouped by time reference.")}
+  ${ctx("Adverbs and adverbial phrases — invariable words that modify verbs, adjectives and sentences. Categories: tempo, modo, lugar, quantidade, conectivos, afirmação/negação, interrogativos.", "Time adverbs are the trigger words that tell you which tense to use: Ontem → PPS; Antigamente → Imperfeito. Modo adverbs (-mente) are formed from adjectives. Conectivos are essential for A2+ writing.", "Pretérito Perfeito Simples — ontem/anteontem trigger PPS; Pretérito Imperfeito — antigamente/dantes trigger imperfeito; Advérbios de Modo — devagar/depressa/rapidamente")}
+  ${sectionHead("Advérbios", "UFCD 6455 S4 & UFCD 6456 S2", "Adverbs and adverbial phrases — time, manner, place, quantity, discourse connectors. All adverbs are invariable in gender and number.")}
   ${infoBox(D_ADVERBIOS.note)}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
     <div>
@@ -22341,7 +22789,160 @@
     </tr>`,
       )
       .join("")}</tbody>
-  </table></div>`,
+  </table></div>
+
+  <h3 class="sub-heading">&#128400; Modo — Manner (COMO?)</h3>
+  ${infoBox(D_ADVERBIOS.modo.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+    <div>
+      <div style="font-weight:700;font-size:12px;color:var(--text-2);margin-bottom:8px">ADVÉRBIOS</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Adverb</th><th>English</th><th>Example</th></tr></thead>
+        <tbody>${D_ADVERBIOS.modo.advs
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en" style="font-size:12px">${r.en}</td>
+          <td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:12px;color:var(--text-2);margin-bottom:8px">LOCUÇÕES ADVERBIAIS</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Locução</th><th>English</th><th>Example</th></tr></thead>
+        <tbody>${D_ADVERBIOS.modo.locs
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td class="pt" style="font-weight:800">${r.pt}</td>
+          <td class="en" style="font-size:12px">${r.en}</td>
+          <td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <h3 class="sub-heading">&#128205; Lugar — Place (ONDE?)</h3>
+  ${infoBox(D_ADVERBIOS.lugar.note)}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+    <div>
+      <div style="font-weight:700;font-size:12px;color:var(--text-2);margin-bottom:8px">ADVÉRBIOS</div>
+      ${(() => {
+        const rows = D_ADVERBIOS.lugar.advs;
+        return `<div class="tbl-wrap"><table><tbody>${rows.map((r, i) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en" style="font-size:12px">${r.en}</td><td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td></tr>`).join("")}</tbody></table></div>`;
+      })()}
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:12px;color:var(--text-2);margin-bottom:8px">LOCUÇÕES</div>
+      ${(() => {
+        const rows = D_ADVERBIOS.lugar.locs;
+        return `<div class="tbl-wrap"><table><tbody>${rows.map((r, i) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en" style="font-size:12px">${r.en}</td><td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td></tr>`).join("")}</tbody></table></div>`;
+      })()}
+    </div>
+  </div>
+
+  <h3 class="sub-heading">&#9878; Quantidade e Grau — Quantity & Degree (QUANTO?)</h3>
+  ${infoBox(D_ADVERBIOS.quantidade.note)}
+  ${(() => {
+    const rows = D_ADVERBIOS.quantidade.advs;
+    return `<div class="tbl-wrap"><table><thead><tr><th>Adverb</th><th>English</th><th>Example</th></tr></thead><tbody>${rows.map((r, i) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en" style="font-size:12px">${r.en}</td><td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td></tr>`).join("")}</tbody></table></div>`;
+  })()}
+
+  <h3 class="sub-heading">&#128279; Conectivos — Discourse connectors</h3>
+  ${infoBox(D_ADVERBIOS.conectivos.note)}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Relação</th><th>Advérbios</th><th>Locuções adverbiais</th></tr></thead>
+    <tbody>${D_ADVERBIOS.conectivos.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary);font-size:13px">${r.tipo}</td>
+      <td class="pt" style="font-size:13px">${r.advs}</td>
+      <td class="pt" style="font-size:13px">${r.locs}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+    <div>
+      <h3 class="sub-heading">&#10003; Afirmação / &#10007; Negação</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Tipo</th><th>Advérbio</th><th>English</th></tr></thead>
+        <tbody>
+          ${D_ADVERBIOS.afirmacaoNegacao.afirm
+            .map(
+              (
+                r,
+                i,
+              ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+            <td style="font-size:11px;color:var(--green)">afirm.</td>
+            <td class="pt" style="font-weight:800">${r.pt}</td>
+            <td class="en" style="font-size:12px">${r.en}</td>
+          </tr>`,
+            )
+            .join("")}
+          ${D_ADVERBIOS.afirmacaoNegacao.afirmLocs
+            .map(
+              (r, i) => `<tr style="background:var(--surface-2)">
+            <td style="font-size:11px;color:var(--text-3)">loc.afirm.</td>
+            <td class="pt" style="font-weight:800">${r.pt}</td>
+            <td class="en" style="font-size:12px">${r.en}</td>
+          </tr>`,
+            )
+            .join("")}
+          ${D_ADVERBIOS.afirmacaoNegacao.neg
+            .map(
+              (r, i) => `<tr style="background:var(--surface)">
+            <td style="font-size:11px;color:var(--accent)">neg.</td>
+            <td class="pt" style="font-weight:800">${r.pt}</td>
+            <td class="en" style="font-size:12px">${r.en}</td>
+          </tr>`,
+            )
+            .join("")}
+          ${D_ADVERBIOS.afirmacaoNegacao.negLocs
+            .map(
+              (r, i) => `<tr style="background:var(--surface-2)">
+            <td style="font-size:11px;color:var(--text-3)">loc.neg.</td>
+            <td class="pt" style="font-weight:800">${r.pt}</td>
+            <td class="en" style="font-size:12px">${r.en}</td>
+          </tr>`,
+            )
+            .join("")}
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="sub-heading">&#43; Inclusão / &#8722; Exclusão</h3>
+      <div style="font-weight:700;font-size:12px;color:var(--green);margin-bottom:4px">Inclusão</div>
+      ${(() => {
+        const rows = D_ADVERBIOS.inclusaoExclusao.inclusao;
+        return `<div class="tbl-wrap"><table><tbody>${rows.map((r, i) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en" style="font-size:12px">${r.en}</td><td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td></tr>`).join("")}</tbody></table></div>`;
+      })()}
+      <div style="font-weight:700;font-size:12px;color:var(--accent);margin-top:10px;margin-bottom:4px">Exclusão</div>
+      ${(() => {
+        const rows = D_ADVERBIOS.inclusaoExclusao.exclusao;
+        return `<div class="tbl-wrap"><table><tbody>${rows.map((r, i) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en" style="font-size:12px">${r.en}</td><td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td></tr>`).join("")}</tbody></table></div>`;
+      })()}
+      <h3 class="sub-heading" style="margin-top:14px">&#10067; Interrogativos</h3>
+      ${(() => {
+        const rows = D_ADVERBIOS.interrogativos;
+        return `<div class="tbl-wrap"><table><thead><tr><th>Word</th><th>English</th><th>Example</th></tr></thead><tbody>${rows.map((r, i) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:800">${r.pt}</td><td class="en" style="font-size:12px">${r.en}</td><td class="pt" style="font-size:11px;color:var(--text-3)">${r.ex}</td></tr>`).join("")}</tbody></table></div>`;
+      })()}
+    </div>
+  </div>`,
 
         escritorio: () => `
   ${ctx("Office vocabulary — tasks, tools and a dialogue. Key profession: Secretária/o.", "Office skills appear directly on CVs and in job interviews. The verb+noun combinations (tirar fotocópias, marcar uma reunião) are fixed collocations that must be learned as units.", "Mundo do Trabalho — employment vocabulary; Ao Telefone — phone call in office context")}
