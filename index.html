@@ -20948,6 +20948,7 @@
   </div>`,
     )
     .join("")}
+</div>
 
   <h3 class="sub-heading">&#9888; SAIR &amp; CAIR &#8212; Imperfeito special case</h3>
   ${warnBox("SAIR and CAIR follow the regular -IR imperfeito pattern, but the <strong>&#237; is always accented</strong> in every form (sa&#237;a, ca&#237;a, etc.). The accent marks a hiatus between two separate vowel sounds &#8212; removing it would change pronunciation.")}
@@ -20974,26 +20975,41 @@
 
   <h3 class="sub-heading">COSTUMAR (imperfeito) + infinitivo — used to</h3>
   ${infoBox(D_IMPERFEITO.costumava.note)}
-  <div style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:8px;padding:12px 16px;font-size:15px;font-weight:800;text-align:center;margin-bottom:16px;color:var(--primary);font-family:var(--mono)">${D_IMPERFEITO.costumava.formula}</div>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Pessoa</th><th><span style="background:var(--primary);color:#fff;padding:3px 8px;border-radius:4px">COSTUMAR</span></th><th>Exemplo completo</th><th>English</th></tr></thead>
-    <tbody>${D_IMPERFEITO.costumava.conj
-      .map((r, i) => {
-        const ex = D_IMPERFEITO.costumava.ex[i] || [
-          r[0] + " costumava...",
-          "",
-          "",
-        ];
-        return `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
-        <td style="font-size:12px;color:var(--text-3);white-space:nowrap">${r[0]}</td>
-        <td class="pt" style="font-weight:800;color:var(--primary);white-space:nowrap">${r[1]}</td>
-        <td class="pt" style="font-size:12px">${ex[0]}${ex[2] ? ` <em style="color:var(--text-3);font-size:11px">${ex[2]}</em>` : ""}</td>
-        <td class="en" style="font-size:12px">${ex[1]}</td>
-      </tr>`;
-      })
+  <div style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:8px;padding:10px 16px;font-size:14px;font-weight:800;text-align:center;margin-bottom:16px;color:var(--primary);font-family:var(--mono)">${D_IMPERFEITO.costumava.formula}</div>
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:0;margin-bottom:16px">
+    <div style="min-width:0">
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pessoa</th><th style="color:var(--primary)">COSTUMAR</th></tr></thead>
+        <tbody>${D_IMPERFEITO.costumava.conj
+          .map(
+            (
+              r,
+              i,
+            ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+          <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+          <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+        </tr>`,
+          )
+          .join("")}</tbody>
+      </table></div>
+    </div>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:16px"><table>
+    <thead><tr><th colspan="2">Exemplos — COSTUMAR + infinitivo</th></tr>
+      <tr><th>Português</th><th>English</th></tr></thead>
+    <tbody>${D_IMPERFEITO.costumava.ex
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-size:13px">${r[0]}${r[2] ? ` <em style="color:var(--text-3);font-size:11px">${r[2]}</em>` : ""}</td>
+      <td class="en" style="font-size:12px">${r[1]}</td>
+    </tr>`,
+      )
       .join("")}</tbody>
   </table></div>
-  <div class="tbl-wrap" style="margin-top:12px"><table>
+  <div class="tbl-wrap"><table>
     <thead><tr><th colspan="3">&#128260; Costuma (present habit) vs Costumava (past habit)</th></tr></thead>
     <tbody>${D_IMPERFEITO.costumava.contrast
       .map(
@@ -21007,58 +21023,7 @@
     </tr>`,
       )
       .join("")}</tbody>
-  </table></div>
-
-  <h3 class="sub-heading">Session 4 — PPS in work contexts</h3>
-  ${infoBox("These are the high-frequency irregular verbs SER/IR, FAZER, ESTAR and TER used in work situations. Note: SER (to be) and IR (to go) share the same PPS forms — context tells them apart.")}
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
-    ${[
-      { title: "SER/IR a", data: D_IMPERFEITO.session4.serIrEx },
-      { title: "FAZER", data: D_IMPERFEITO.session4.fazerEx },
-      { title: "ESTAR em", data: D_IMPERFEITO.session4.estarEx },
-      { title: "TER", data: D_IMPERFEITO.session4.terEx },
-    ]
-      .map(
-        (grp) => `<div class="card">
-      <div style="font-weight:800;color:var(--primary);margin-bottom:8px">${grp.title}</div>
-      <div class="tbl-wrap"><table><tbody>${grp.data
-        .map(
-          (
-            r,
-            i,
-          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
-        <td class="pt" style="font-size:12px">${r[0]}</td>
-        <td class="en" style="font-size:11px">${r[1]}</td>
-      </tr>`,
-        )
-        .join("")}</tbody></table></div>
-    </div>`,
-      )
-      .join("")}
-  </div>
-  <h3 class="sub-heading">QUERER / SABER / PODER — PPS</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Verb</th><th>EU</th><th>TU</th><th>ELE/VOCÊ</th><th>NÓS</th><th>ELES/VOCÊS</th></tr></thead>
-    <tbody>${D_IMPERFEITO.session4.quererSaberPoderPPS
-      .map(
-        (
-          r,
-          i,
-        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
-      <td style="font-weight:800;color:var(--primary)">${r.inf}</td>
-      <td class="pt" style="font-weight:800">${r.eu}</td>
-      <td class="pt">${r.tu}</td>
-      <td class="pt">${r.ele}</td>
-      <td class="pt">${r.nos}</td>
-      <td class="pt">${r.eles}</td>
-    </tr>`,
-      )
-      .join("")}</tbody>
-  </table></div>
-  <div style="margin-top:8px;margin-bottom:16px">
-    <div style="font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:6px">Time markers for PPS:</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px">${D_IMPERFEITO.session4.timeMarkers.map((m) => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:12px;font-family:var(--mono);color:var(--primary)">${m}</span>`).join("")}</div>
-  </div>`,
+  </table></div>`,
 
         "future-plans": () => `
   ${ctx("IR + infinitivo — the main way to express future plans at A1/A2. Conjugate IR, then add the infinitive unchanged.", "This structure replaces the formal future tense at A1/A2 level. It is used constantly in everyday speech: Vou fazer… / Vais ver…", "Core Verbs — IR conjugation; Days, Time & Seasons — time expressions for planning")}
@@ -22612,7 +22577,58 @@
       <div style="font-weight:800;color:var(--primary)">Past tense in Portuguese: Simple Past Indicative</div>
       <div style="font-size:12px;color:var(--text-2)">UFCD 6456 S1 — covers regular and irregular PPS verb forms with examples.</div>
     </div>
-  </a>`,
+  </a>
+
+  <h3 class="sub-heading">Session 4 — PPS in work contexts</h3>
+  ${infoBox("High-frequency irregular verbs SER/IR, FAZER, ESTAR and TER in professional contexts. SER (to be) and IR (to go) share identical PPS forms — context distinguishes them.")}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    ${[
+      { title: "SER / IR a", data: D_IMPERFEITO.session4.serIrEx },
+      { title: "FAZER", data: D_IMPERFEITO.session4.fazerEx },
+      { title: "ESTAR em", data: D_IMPERFEITO.session4.estarEx },
+      { title: "TER", data: D_IMPERFEITO.session4.terEx },
+    ]
+      .map(
+        (grp) => `<div class="card">
+      <div style="font-weight:800;color:var(--primary);margin-bottom:8px">${grp.title}</div>
+      <div class="tbl-wrap"><table><tbody>${grp.data
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td class="pt" style="font-size:12px">${r[0]}</td>
+        <td class="en" style="font-size:11px">${r[1]}</td>
+      </tr>`,
+        )
+        .join("")}</tbody></table></div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">QUERER / SABER / PODER — PPS</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Verb</th><th>EU</th><th>TU</th><th>ELE/VOCÊ</th><th>NÓS</th><th>ELES/VOCÊS</th></tr></thead>
+    <tbody>${D_IMPERFEITO.session4.quererSaberPoderPPS
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-weight:800;color:var(--primary)">${r.inf}</td>
+      <td class="pt" style="font-weight:800">${r.eu}</td>
+      <td class="pt">${r.tu}</td>
+      <td class="pt">${r.ele}</td>
+      <td class="pt">${r.nos}</td>
+      <td class="pt">${r.eles}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  <div style="margin-top:8px;margin-bottom:4px">
+    <div style="font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:6px">Time markers for PPS:</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">${D_IMPERFEITO.session4.timeMarkers.map((m) => `<span style="background:var(--surface-2);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:12px;font-family:var(--mono);color:var(--primary)">${m}</span>`).join("")}</div>
+  </div>`,
 
         infinitivo: () => `
   ${ctx("The infinitive is the base form of the verb. Modo indicativo covers three main tenses: presente, pretérito imperfeito, and pretérito perfeito simples.", "Understanding when to use PPS vs imperfeito is one of the key challenges at A2. PPS = completed action; imperfeito = ongoing/habitual/descriptive past.", "Pretérito Imperfeito — habitual and descriptive past; Pretérito Perfeito Simples — completed past; Ser vs Estar — both appear in all three tenses")}
