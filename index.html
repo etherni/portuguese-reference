@@ -10166,6 +10166,74 @@
             en: "What is your favourite colour?",
           },
         ],
+        preferir: {
+          note: "PREFERIR is irregular (stem change E→I in most forms). It is transitive direct AND indirect: it needs a direct object (no preposition) and an indirect object (with 'a'). Never use with MAIS: 'Prefiro mais X' is WRONG.",
+          conjugation: [
+            ["Eu", "prefiro"],
+            ["Tu", "preferes"],
+            ["Ele/Ela/Você", "prefere"],
+            ["Nós", "preferimos"],
+            ["Eles/Elas/Vocês", "preferem"],
+          ],
+          structure: [
+            {
+              label: "Two-item comparison",
+              formula: "Prefiro [X] a [Y]",
+              note: "X = objeto direto (no preposition). Y = objeto indireto (with 'a').",
+            },
+            {
+              label: "Single complement",
+              formula: "Prefiro + infinitivo/nome",
+              note: "When only one option is stated, no 'a' needed.",
+            },
+            {
+              label: "WRONG — no mais",
+              formula: "❌ Prefiro mais X a Y",
+              note: "PREFERIR already means 'more'. Adding mais is incorrect.",
+            },
+          ],
+          ex: [
+            [
+              "Eu prefiro praia a campo.",
+              "I prefer the beach to the countryside.",
+              "praia = OD (sem preposição), campo = OI (com 'a')",
+            ],
+            ["Prefiro chá a café.", "I prefer tea to coffee.", ""],
+            [
+              "Ela prefere ouvir música a ver televisão.",
+              "She prefers listening to music to watching TV.",
+              "",
+            ],
+            [
+              "Eles preferem acampar nas montanhas.",
+              "They prefer camping in the mountains.",
+              "single complement, no second term",
+            ],
+            ["Nós preferimos acordar tarde.", "We prefer to wake up late.", ""],
+          ],
+          vs_gostar: [
+            [
+              "Gostam de acampar nas montanhas.",
+              "They like camping in the mountains.",
+              "GOSTAR: mandatory DE",
+            ],
+            [
+              "Preferem acampar nas montanhas.",
+              "They prefer camping in the mountains.",
+              "PREFERIR: no preposition",
+            ],
+          ],
+          videos: [
+            {
+              title: "Verbo PREFERIR em Português",
+              url: "https://youtu.be/buo0tmS8iCM",
+            },
+            {
+              title: "Como usar PREFERIR — European Portuguese",
+              url: "https://youtu.be/rGZpZWr7atY",
+            },
+          ],
+        },
       };
 
       const D_PRECISAR_DEVER = {
@@ -17007,6 +17075,17 @@
           ],
           vs_simples:
             "PPS (pretérito perfeito simples) = single completed event in the past: 'Ontem comi uma pizza.' | Composto = ongoing/repeated from past to now: 'Ultimamente tenho comido muita pizza.'",
+          timeExpressions: [
+            "Ultimamente",
+            "Nestes últimos dias / meses / anos",
+            "Neste período / nestes últimos tempos",
+            "Este ano / este mês / esta semana",
+            "Desde que + frase no Pretérito Perfeito Simples",
+          ],
+          video: {
+            title: "Pretérito Perfeito Composto — quando usar?",
+            url: "https://youtu.be/AHOJO5nxUvY",
+          },
         },
         vozPassiva: {
           note: "Voz passiva de ação: SER (conjugated) + Particípio Passado (agrees in gender/number with the subject). The active subject becomes the agent: pelo / pela / pelos / pelas.",
@@ -18588,18 +18667,28 @@
           ],
         },
         {
-          cat: "💭 Expressing Opinions",
+          cat: "💭 Expressar opinião — giving opinions",
           items: [
-            ["Acho que…", "[A-shoo kɐ]", "I think that…"],
+            ["Acho que…", "[A-shoo kɐ]", "I think that… (most common)"],
             [
-              "Na minha opinião…",
+              "Na minha opinião,…",
               "[nɐ MEEN-yɐ oh-peen-YOWNG]",
-              "In my opinion…",
+              "In my opinion,…",
             ],
-            ["Para mim…", "[PA-rɐ meeng]", "For me…"],
+            [
+              "Penso que…",
+              "[PAYN-soo kɐ]",
+              "I think that… (slightly more formal)",
+            ],
+            ["Acredito que…", "[ɐ-krɐ-DEE-too kɐ]", "I believe that…"],
+            ["Julgo que…", "[ZHOOL-goo kɐ]", "I judge / reckon that…"],
             ["Parece-me que…", "[pɐ-RES-mɐ kɐ]", "It seems to me that…"],
-            ["Não sei", "[nowng say]", "I don't know"],
+            ["Para mim,…", "[PA-rɐ meeng]", "For me,…"],
+            ["Acho que sim.", "[A-shoo kɐ seeng]", "I think so."],
+            ["Acho que não.", "[A-shoo kɐ nowng]", "I don't think so."],
+            ["O que acha?", "[oo kɐ A-shɐ]", "What do you think?"],
             ["Tenho a certeza", "[TAYN-yoo ɐ ser-TEH-zɐ]", "I'm certain"],
+            ["Não sei", "[nowng say]", "I don't know"],
           ],
         },
         {
@@ -21312,7 +21401,28 @@
     </tr>`,
       )
       .join("")}</tbody>
-  </table></div>`,
+  </table></div>
+
+  <h3 class="sub-heading">&#128197; Imperativo na prática — identifica os verbos</h3>
+  ${infoBox("Identify all the imperative verb forms in Maria&#39;s message to Pedro.")}
+  <div class="card" style="border-left:4px solid var(--primary);font-size:14px;line-height:1.8">
+    <div style="margin-bottom:4px;font-size:11px;font-weight:700;color:var(--text-3)">Mensagem da Maria ao Pedro:</div>
+    Ol&#225;, Pedro. Est&#225;s preparado para a viagem?<br>
+    <strong style="color:var(--primary)">Vem</strong> de comboio, porque &#233; mais confort&#225;vel. <strong style="color:var(--primary)">Compra</strong> um bilhete de ida e volta e <strong style="color:var(--primary)">pede</strong> desconto de estudante.<br>
+    <strong style="color:var(--primary)">Viaja</strong> durante o dia, para veres a paisagem.<br>
+    Quando chegares ao Porto, <strong style="color:var(--accent)">n&#227;o apanhes</strong> um t&#225;xi. <strong style="color:var(--primary)">Telefona</strong> ao Marco porque ele tem carro e leva-te a minha casa.<br>
+    Como vamos andar muito, <strong style="color:var(--primary)">traz</strong> sapatos confort&#225;veis.
+  </div>
+  <div style="font-size:12px;color:var(--text-2);margin-top:8px;margin-bottom:20px">
+    <span style="font-weight:700">Afirmativo (TU):</span> <span class="pt" style="color:var(--primary)">Vem, Compra, pede, Viaja, Telefona, traz</span>
+    &nbsp;&nbsp;<span style="font-weight:700">Negativo (TU):</span> <span class="pt" style="color:var(--accent)">n&#227;o apanhes</span>
+  </div>
+
+  <h3 class="sub-heading">&#127919; Hora de treinar</h3>
+  <div class="card-grid">
+    <a href="https://wordwall.net/play/10543/280/330" target="_blank" rel="noopener" style="text-decoration:none"><div class="card-sm" style="border-left:3px solid var(--primary);cursor:pointer"><div style="font-weight:800;color:var(--primary);font-size:13px">Imperativo &#8212; pr&#225;tica 1</div><div style="font-size:11px;color:var(--text-2)">Wordwall practice</div></div></a>
+    <a href="https://wordwall.net/play/10544/650/700" target="_blank" rel="noopener" style="text-decoration:none"><div class="card-sm" style="border-left:3px solid var(--primary);cursor:pointer"><div style="font-weight:800;color:var(--primary);font-size:13px">Imperativo &#8212; pr&#225;tica 2</div><div style="font-size:11px;color:var(--text-2)">Wordwall practice</div></div></a>
+  </div>`,
 
         imperfeito: () => `
   ${ctx("The imperfect past tense — used for habitual past actions, past descriptions, and polite requests (imperfeito de cortesia).", "QUERIA and PODIA as polite request forms are extremely high frequency in spoken Portuguese. Regular -AR verbs get -ava endings; -ER/-IR get -ia.", "Ser vs Estar — past forms; Imperativo — imperfeito de cortesia comparison; Future Plans — contrasting past habits vs future plans")}
