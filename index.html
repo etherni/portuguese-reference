@@ -1104,6 +1104,7 @@
             { id: "enfatica", title: "Forma Enfática" },
             { id: "desde-ha", title: "Desde / Há" },
             { id: "infinitivo", title: "Infinitivo & Tempos Verbais" },
+            { id: "participio", title: "Particípio Passado" },
           ],
         },
         {
@@ -1140,6 +1141,7 @@
             { id: "body", title: "Corpo Humano & Sentidos" },
             { id: "description", title: "Descrição Física" },
             { id: "saude", title: "Saúde & Serviços" },
+            { id: "sentimentos", title: "Sentimentos & Emoções" },
             { id: "money", title: "Money & Prices" },
             { id: "payments", title: "Payments & Documents" },
             { id: "measurements", title: "Units of Measure" },
@@ -16659,6 +16661,426 @@
         ],
       };
 
+      const D_SENTIMENTOS = {
+        saudade: {
+          note: "Saudade is one of the defining concepts of Portuguese culture. It is untranslatable. It combines nostalgia, longing, love, and a sweet sadness for something absent.",
+          definition:
+            "Sentimento de mágoa, nostalgia e incompletude causado pela ausência, distância ou privação de pessoas, épocas, lugares ou coisas a que se esteve afetiva e ditosamente ligado.",
+          usage: [
+            [
+              "Tenho saudades de ti.",
+              "I miss you. (lit. I have longings for you)",
+            ],
+            [
+              "Estou com saudades. = Tenho saudades.",
+              "I am missing someone/something.",
+            ],
+            ["Morrer de saudades", "to miss someone/something terribly"],
+            [
+              "Manda saudades à tua família.",
+              "Send my regards to your family.",
+            ],
+          ],
+        },
+        states: [
+          {
+            pt: "feliz",
+            pron: "[fɐ-LEESH]",
+            en: "happy",
+            verb: "ESTAR",
+            ex: "Estou feliz.",
+          },
+          {
+            pt: "triste",
+            pron: "[TREESH-t]",
+            en: "sad",
+            verb: "ESTAR",
+            ex: "Ela está triste.",
+          },
+          {
+            pt: "cansado/a",
+            pron: "[kan-SAH-doo]",
+            en: "tired",
+            verb: "ESTAR",
+            ex: "Estou cansado/a.",
+          },
+          {
+            pt: "tranquilo/a",
+            pron: "[trang-KEEL-oo]",
+            en: "calm / relaxed",
+            verb: "ESTAR",
+            ex: "Estou tranquilo/a.",
+          },
+          {
+            pt: "preocupado/a",
+            pron: "[pre-oo-koo-PA-doo]",
+            en: "worried",
+            verb: "ESTAR",
+            ex: "Está preocupado/a.",
+          },
+          {
+            pt: "ansioso/a",
+            pron: "[ang-SYOH-zoo]",
+            en: "anxious",
+            verb: "ESTAR",
+            ex: "Estou ansioso/a.",
+          },
+          {
+            pt: "brabo/a",
+            pron: "[BRA-boo]",
+            en: "angry (EU informal)",
+            verb: "ESTAR",
+            ex: "Ele está brabo.",
+          },
+          {
+            pt: "nervoso/a",
+            pron: "[ner-VOH-zoo]",
+            en: "nervous",
+            verb: "ESTAR",
+            ex: "Estou nervoso/a.",
+          },
+          {
+            pt: "com medo",
+            pron: "[kong MEH-doo]",
+            en: "afraid / scared",
+            verb: "ESTAR/TER",
+            ex: "Estou com medo. = Tenho medo.",
+          },
+          {
+            pt: "com saudade(s)",
+            pron: "[kong sow-DA-dɐsh]",
+            en: "missing (sb/sth)",
+            verb: "ESTAR/TER",
+            ex: "Estou com saudades. = Tenho saudades.",
+          },
+          {
+            pt: "com vergonha",
+            pron: "[kong vɐr-GON-yɐ]",
+            en: "embarrassed / ashamed",
+            verb: "ESTAR/TER",
+            ex: "Está com vergonha.",
+          },
+          {
+            pt: "com ciúmes",
+            pron: "[kong SYOO-mɐsh]",
+            en: "jealous",
+            verb: "ESTAR/TER",
+            ex: "Tem ciúmes dela.",
+          },
+          {
+            pt: "com dor",
+            pron: "[kong dor]",
+            en: "in pain",
+            verb: "ESTAR/TER",
+            ex: "Estou com dor. = Tenho dores.",
+          },
+          {
+            pt: "com fome",
+            pron: "[kong FOH-m]",
+            en: "hungry",
+            verb: "ESTAR/TER",
+            ex: "Estou com fome. = Tenho fome.",
+          },
+          {
+            pt: "com sede",
+            pron: "[kong SEH-d]",
+            en: "thirsty",
+            verb: "ESTAR/TER",
+            ex: "Estou com sede. = Tenho sede.",
+          },
+          {
+            pt: "com sono",
+            pron: "[kong SOH-noo]",
+            en: "sleepy",
+            verb: "ESTAR/TER",
+            ex: "Estou com sono. = Tenho sono.",
+          },
+          {
+            pt: "com calor",
+            pron: "[kong kɐ-LOR]",
+            en: "hot / warm",
+            verb: "ESTAR/TER",
+            ex: "Estou com calor. = Tenho calor.",
+          },
+          {
+            pt: "com frio",
+            pron: "[kong FREE-oo]",
+            en: "cold",
+            verb: "ESTAR/TER",
+            ex: "Estou com frio. = Tenho frio.",
+          },
+        ],
+        grammar: [
+          {
+            rule: "ESTAR + adjetivo",
+            note: "State that is temporary or has recently changed. Agrees in gender and number.",
+            ex: [
+              ["Estou feliz.", "I am happy."],
+              ["Estão cansados.", "They are tired."],
+            ],
+          },
+          {
+            rule: "ESTAR COM + nome",
+            note: "Feeling expressed as a physical state you are 'with'. Invariable noun.",
+            ex: [
+              ["Estou com fome.", "I am hungry."],
+              ["Está com medo.", "He/she is afraid."],
+            ],
+          },
+          {
+            rule: "TER + nome",
+            note: "Equivalent to ESTAR COM. Both forms are correct and interchangeable.",
+            ex: [
+              ["Tenho fome.", "I am hungry."],
+              ["Tem medo.", "He/she is afraid."],
+            ],
+          },
+          {
+            rule: "SER + adjetivo",
+            note: "Permanent character trait, not a passing state.",
+            ex: [
+              ["Ela é feliz.", "She is a happy person."],
+              ["É nervoso.", "He is a nervous person."],
+            ],
+          },
+        ],
+        wordwall: [
+          {
+            title: "Emoções e Sentimentos",
+            url: "https://wordwall.net/pt/resource/2952693",
+          },
+          {
+            title: "Emoções — nomes, sinais físicos, imagem",
+            url: "https://wordwall.net/pt/resource/33619863",
+          },
+          {
+            title: "Emoções — descrição",
+            url: "https://wordwall.net/pt/resource/2507691",
+          },
+        ],
+      };
+
+      const D_PARTICIPIO = {
+        note: "O Particípio Passado (PP) is a verb form. It is INVARIÁVEL (does not change for gender/number) when used with TER in compound tenses, but it AGREES in gender and number when used with SER/ESTAR in the passive voice.",
+        regular: {
+          note: "Regular formation: remove the infinitive ending and add the participio suffix.",
+          rows: [
+            {
+              conj: "-AR",
+              suffix: "-ado",
+              ex: [
+                ["comprar", "comprado"],
+                ["falar", "falado"],
+                ["trabalhar", "trabalhado"],
+                ["cozinhar", "cozinhado"],
+                ["andar", "andado"],
+                ["gastar", "gastado"],
+                ["assinalar", "assinalado"],
+                ["consultar", "consultado"],
+              ],
+            },
+            {
+              conj: "-ER",
+              suffix: "-ido",
+              ex: [
+                ["comer", "comido"],
+                ["beber", "bebido"],
+                ["entender", "entendido"],
+                ["saber", "sabido"],
+              ],
+            },
+            {
+              conj: "-IR",
+              suffix: "-ido",
+              ex: [
+                ["partir", "partido"],
+                ["discutir", "discutido"],
+                ["assistir", "assistido"],
+                ["pedir", "pedido"],
+                ["corrigir", "corrigido"],
+                ["medir", "medido"],
+                ["ler", "lido"],
+              ],
+            },
+          ],
+        },
+        irregular: [
+          { inf: "abrir", pp: "aberto", en: "to open / opened" },
+          { inf: "dizer", pp: "dito", en: "to say / said" },
+          { inf: "escrever", pp: "escrito", en: "to write / written" },
+          { inf: "fazer", pp: "feito", en: "to do/make / done" },
+          { inf: "pôr", pp: "posto", en: "to put / put" },
+          { inf: "ver", pp: "visto", en: "to see / seen" },
+          { inf: "vir", pp: "vindo", en: "to come / come" },
+          { inf: "ter", pp: "tido", en: "to have / had" },
+        ],
+        duplos: {
+          note: "Verbos abundantes (double participios): some verbs have two past participle forms. The REGULAR form is used with TER in compound tenses. The IRREGULAR form is used with SER/ESTAR in the passive voice or as an adjective.",
+          rule: "TER → participio REGULAR (invariável). SER / ESTAR → participio IRREGULAR (concorda em género e número).",
+          rows: [
+            {
+              inf: "aceitar",
+              regular: "aceitado",
+              irregular: "aceite",
+              ex_ter: "A polícia tem aceitado pedidos.",
+              ex_ser: "O pedido foi aceite pela polícia.",
+            },
+            {
+              inf: "acender",
+              regular: "acendido",
+              irregular: "aceso",
+              ex_ter: "Tenho acendido a luz.",
+              ex_ser: "A luz está acesa.",
+            },
+            {
+              inf: "entregar",
+              regular: "entregado",
+              irregular: "entregue",
+              ex_ter: "Tenho entregado os documentos.",
+              ex_ser: "Os documentos foram entregues.",
+            },
+            {
+              inf: "matar",
+              regular: "matado",
+              irregular: "morto",
+              ex_ter: "Têm matado muitos animais.",
+              ex_ser: "O animal foi morto.",
+            },
+            {
+              inf: "prender",
+              regular: "prendido",
+              irregular: "preso",
+              ex_ter: "A polícia tem prendido criminosos.",
+              ex_ser: "O ladrão está preso.",
+            },
+            {
+              inf: "salvar",
+              regular: "salvado",
+              irregular: "salvo",
+              ex_ter: "Têm salvado vidas.",
+              ex_ser: "Muitas vidas foram salvas.",
+            },
+            {
+              inf: "gastar",
+              regular: "gastado",
+              irregular: "gasto",
+              ex_ter: "Tenho gastado muito.",
+              ex_ser: "O dinheiro foi gasto.",
+            },
+          ],
+        },
+        composto: {
+          note: "Pretérito Perfeito Composto do Indicativo = TER (presente) + Particípio Passado. Used for actions that STARTED in the past and CONTINUE to the present (or recently repeated). Key trigger words: ultimamente, nos últimos tempos, nas últimas semanas, desde que.",
+          formula: "TER (presente) + Particípio Passado (invariável)",
+          conj: [
+            ["Eu", "tenho"],
+            ["Tu", "tens"],
+            ["Ele/Ela/Você", "tem"],
+            ["Nós", "temos"],
+            ["Eles/Elas/Vocês", "têm"],
+          ],
+          ex: [
+            [
+              "Ultimamente ele tem frequentado as aulas de Português.",
+              "Lately he has been attending Portuguese classes.",
+            ],
+            [
+              "Nas últimas semanas, elas têm feito muitas reuniões.",
+              "In recent weeks, they have been having many meetings.",
+            ],
+            [
+              "Desde que fomos para Paris, temos visitado muitos monumentos.",
+              "Since we went to Paris, we have been visiting many monuments.",
+            ],
+            [
+              "Eles têm cozinhado muitos pratos asiáticos aos domingos.",
+              "They have been cooking many Asian dishes on Sundays.",
+            ],
+            [
+              "Ela tem tocado viola nos últimos tempos.",
+              "She has been playing viola recently.",
+            ],
+            [
+              "Os alunos têm tido muitos exames nas últimas semanas.",
+              "The students have had many exams in recent weeks.",
+            ],
+          ],
+          vs_simples:
+            "PPS (pretérito perfeito simples) = single completed event in the past: 'Ontem comi uma pizza.' | Composto = ongoing/repeated from past to now: 'Ultimamente tenho comido muita pizza.'",
+        },
+        vozPassiva: {
+          note: "Voz passiva de ação: SER (conjugated) + Particípio Passado (agrees in gender/number with the subject). The active subject becomes the agent: pelo / pela / pelos / pelas.",
+          formula:
+            "SER (tempo do verbo ativo) + Particípio Passado (concorda com sujeito)",
+          rules: [
+            "O sujeito da voz ativa passa para agente da passiva (com 'pelo/pela').",
+            "O complemento direto na voz ativa passa para sujeito da passiva.",
+            "O tempo verbal da voz ativa mantém-se na voz passiva.",
+            "O particípio concorda em género e número com o novo sujeito.",
+          ],
+          rows: [
+            {
+              tense: "Presente do Indicativo",
+              ativa: "O João pinta a sala.",
+              passiva: "A sala é pintada pelo João.",
+            },
+            {
+              tense: "Pretérito Perfeito Simples",
+              ativa: "O João lavou o carro.",
+              passiva: "O carro foi lavado pelo João.",
+            },
+            {
+              tense: "Pretérito Imperfeito",
+              ativa: "A Ana lia os livros.",
+              passiva: "Os livros eram lidos pela Ana.",
+            },
+          ],
+          ex: [
+            [
+              "O cão do vizinho mordeu o João.",
+              "O João foi mordido pelo cão do vizinho.",
+              "subject of active → agent of passive",
+            ],
+          ],
+        },
+        passivaSe: {
+          note: "Passiva com -se (pronome apassivante): used when the agent is unknown or irrelevant. Very common in spoken and written Portuguese, especially with DIZER and CONTAR.",
+          ex: [
+            [
+              "Vendem-se apartamentos.",
+              "Apartments for sale. / Apartments are sold.",
+            ],
+            ["Arrenda-se casa.", "House for rent. / House is rented out."],
+            [
+              "Diz-se que o azeite é bom para a saúde.",
+              "It is said that olive oil is good for health.",
+            ],
+            [
+              "Conta-se que o homem encontrou um tesouro.",
+              "It is said that the man found a treasure.",
+            ],
+          ],
+        },
+        wordwall: [
+          {
+            title: "Particípio Passado",
+            url: "https://wordwall.net/pt/resource/23066596",
+          },
+          {
+            title: "Particípio",
+            url: "https://wordwall.net/pt/resource/22000164",
+          },
+          {
+            title: "FP U5 S4 — Particípio Passado",
+            url: "https://wordwall.net/pt/resource/66695819",
+          },
+          {
+            title: "Verbos Abundantes — Particípio Passado",
+            url: "https://wordwall.net/pt/resource/19766115",
+          },
+        ],
+      };
+
       const D_CELEBRATIONS = {
         annual: [
           {
@@ -22155,6 +22577,69 @@
       .join("")}
   </div>`,
 
+        sentimentos: () => `
+  ${ctx(
+    "Expressing feelings and emotions. Three main constructions: ESTAR + adjetivo, ESTAR COM / TER + nome. SAUDADE is a uniquely Portuguese concept with no direct translation.",
+    "ESTAR and TER are interchangeable for physical/emotional states with nouns (fome, medo, calor). Use ESTAR + adjetivo for emotional states that are temporary. Use SER + adjetivo for permanent character traits.",
+    "Estar Patterns — ESTAR+COM patterns; Descrição Física — personality adjectives; Saúde — health and physical states",
+  )}
+  ${sectionHead("Sentimentos & Emoções", "UFCD 6456 S6", "Emotional states and feelings. SAUDADE — the uniquely Portuguese concept. ESTAR+adj, ESTAR/TER+COM+nome.")}
+
+  <h3 class="sub-heading">Saudade — a uniquely Portuguese word</h3>
+  <div class="card" style="border-left:4px solid var(--purple);margin-bottom:16px">
+    <div style="font-weight:800;font-size:15px;color:var(--purple);margin-bottom:8px">saudade (f.)</div>
+    <div style="font-size:13px;color:var(--text-2);margin-bottom:10px;font-style:italic">${D_SENTIMENTOS.saudade.definition}</div>
+    <div style="font-size:12px;color:var(--text-3);margin-bottom:10px">${D_SENTIMENTOS.saudade.note}</div>
+    <div class="tbl-wrap"><table><tbody>${D_SENTIMENTOS.saudade.usage
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-size:13px">${r[0]}</td>
+      <td class="en" style="font-size:12px">${r[1]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody></table></div>
+  </div>
+
+  <h3 class="sub-heading">Grammar: expressing feelings</h3>
+  <div class="card-grid">
+    ${D_SENTIMENTOS.grammar
+      .map(
+        (g) => `<div class="card" style="border-top:4px solid var(--primary)">
+      <div style="font-weight:800;color:var(--primary);font-family:var(--mono);margin-bottom:6px">${g.rule}</div>
+      <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">${g.note}</div>
+      ${g.ex.map((e) => `<div class="pt" style="font-size:12px">${e[0]} <span class="en">${e[1]}</span></div>`).join("")}
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Emotional states</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Português</th><th>Pronúncia</th><th>English</th><th>Verb pattern</th><th>Exemplo</th></tr></thead>
+    <tbody>${D_SENTIMENTOS.states
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.pt}</td>
+      <td style="font-size:11px;color:var(--text-3)">${pr(r.pron)}</td>
+      <td class="en">${r.en}</td>
+      <td><span style="background:${r.verb.includes("/") ? "var(--accent)" : "var(--primary)"};color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;font-weight:700">${r.verb}</span></td>
+      <td class="pt" style="font-size:12px;color:var(--text-2)">${r.ex}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">&#127919; Hora de treinar</h3>
+  <div class="card-grid">
+    ${D_SENTIMENTOS.wordwall.map((w) => `<a href="${w.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card-sm" style="border-left:3px solid var(--purple);cursor:pointer"><div style="font-weight:800;color:var(--purple);font-size:13px">${w.title}</div><div style="font-size:11px;color:var(--text-2)">Wordwall practice</div></div></a>`).join("")}
+  </div>`,
+
         saude: () => `
   ${ctx("SNS health system, number of utente, triagem de Manchester (colour-coded urgency), symptoms, at the doctor / pharmacy dialogues, and full list of medical specialties.", "Healthcare vocabulary is essential for daily life in Portugal. The SNS is public and free but requires a número de utente. Knowing the triagem colours prevents unnecessary panic in A&E waiting times.", "Body — partes do corpo e sentidos; Survival Phrases — emergency phrases; Autorização de Residência — documents needed to register for SNS")}
   ${sectionHead("Saúde & Serviços", "UFCD 6454 Session 6", "Serviço Nacional de Saúde (SNS), serviços de saúde, sintomas, no médico, na farmácia, especialidades médicas. Triagem de Manchester. YouTube resources linked below.")}
@@ -22727,6 +23212,150 @@
   <h3 class="sub-heading">&#127919; Hora de treinar</h3>
   <div class="card-grid">
     ${D_INFINITIVO.wordwall.map((w) => `<a href="${w.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card-sm" style="border-left:3px solid var(--primary);cursor:pointer"><div style="font-weight:800;color:var(--primary);font-size:13px">${w.title}</div><div style="font-size:11px;color:var(--text-2)">Wordwall practice</div></div></a>`).join("")}
+  </div>`,
+
+        participio: () => `
+  ${ctx(
+    "Particípio Passado — invariável with TER (compound tenses); agrees with subject with SER/ESTAR (passive voice).",
+    "The distinction between the regular form (with TER) and irregular form (with SER/ESTAR) in verbos abundantes is a high-frequency error. The Pretérito Perfeito Composto is key for talking about recent or ongoing past actions.",
+    "Pretérito Perfeito Simples — single completed event vs Composto — ongoing from past to present; Irregular Verbs — many irregular PP forms; Reflexive Verbs — reflexive PP in compound tenses",
+  )}
+  ${sectionHead("Particípio Passado", "UFCD 6456 S6", "Regular -ado/-ido; irregular forms; duplos; Pretérito Perfeito Composto (TER+PP); Voz Passiva (SER+PP); Passiva com -se.")}
+  ${infoBox(D_PARTICIPIO.note)}
+
+  <h3 class="sub-heading">Regular formation</h3>
+  <div class="card-grid">
+    ${D_PARTICIPIO.regular.rows
+      .map(
+        (r) => `<div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <span style="background:var(--primary);color:#fff;padding:3px 10px;border-radius:4px;font-weight:800;font-family:var(--mono)">${r.conj}</span>
+        <span style="font-size:18px;color:var(--text-3)">→</span>
+        <span style="background:var(--green);color:#fff;padding:3px 10px;border-radius:4px;font-weight:800;font-family:var(--mono)">${r.suffix}</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        ${r.ex.map((e) => `<span style="font-size:12px"><span class="pt" style="font-weight:700">${e[0]}</span> → <span class="pt" style="color:var(--primary)">${e[1]}</span></span>`).join("")}
+      </div>
+    </div>`,
+      )
+      .join("")}
+  </div>
+
+  <h3 class="sub-heading">Formas irregulares</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Infinitivo</th><th style="color:var(--primary)">Particípio Passado</th><th>English</th></tr></thead>
+    <tbody>${D_PARTICIPIO.irregular
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.inf}</td>
+      <td class="pt" style="font-weight:800;color:var(--primary);font-size:15px">${r.pp}</td>
+      <td class="en" style="font-size:12px">${r.en}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Particípios duplos (verbos abundantes)</h3>
+  ${infoBox(D_PARTICIPIO.duplos.note)}
+  <div style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:8px;padding:10px 16px;text-align:center;font-weight:800;font-size:14px;margin-bottom:16px;color:var(--primary)">
+    ${D_PARTICIPIO.duplos.rule}
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Infinitivo</th><th><span style="background:var(--primary);color:#fff;padding:2px 8px;border-radius:3px">TER</span> (regular)</th><th><span style="background:var(--accent);color:#fff;padding:2px 8px;border-radius:3px">SER / ESTAR</span> (irregular)</th></tr></thead>
+    <tbody>${D_PARTICIPIO.duplos.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-weight:800">${r.inf}</td>
+      <td class="pt" style="color:var(--primary)">${r.regular}</td>
+      <td class="pt" style="color:var(--accent);font-weight:700">${r.irregular}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Pretérito Perfeito Composto — TER + Particípio Passado</h3>
+  ${infoBox(D_PARTICIPIO.composto.note)}
+  <div style="background:var(--primary-lt);border:1px solid var(--primary);border-radius:8px;padding:10px 16px;text-align:center;font-weight:800;font-size:14px;margin-bottom:16px;color:var(--primary);font-family:var(--mono)">${D_PARTICIPIO.composto.formula}</div>
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:0;margin-bottom:16px">
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pessoa</th><th style="color:var(--primary)">TER</th></tr></thead>
+      <tbody>${D_PARTICIPIO.composto.conj
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="font-size:12px;color:var(--text-3)">${r[0]}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+      </tr>`,
+        )
+        .join("")}</tbody>
+    </table></div>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:16px"><table>
+    <thead><tr><th colspan="2">Exemplos — TER + Particípio Passado</th></tr>
+      <tr><th>Português</th><th>English</th></tr></thead>
+    <tbody>${D_PARTICIPIO.composto.ex
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt" style="font-size:13px">${r[0]}</td>
+      <td class="en" style="font-size:12px">${r[1]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+  ${infoBox(D_PARTICIPIO.composto.vs_simples)}
+
+  <h3 class="sub-heading">Voz Passiva — SER + Particípio Passado</h3>
+  ${infoBox(D_PARTICIPIO.vozPassiva.note)}
+  <div style="background:var(--surface-2);border-radius:8px;padding:12px 16px;margin-bottom:12px">
+    ${D_PARTICIPIO.vozPassiva.rules.map((r, i) => `<div style="padding:4px 0;border-bottom:1px solid var(--border);font-size:13px"><span style="font-weight:800;color:var(--primary);margin-right:6px">${i + 1}.</span>${r}</div>`).join("")}
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:12px"><table>
+    <thead><tr><th>Tempo verbal</th><th>Voz Ativa</th><th>Voz Passiva</th></tr></thead>
+    <tbody>${D_PARTICIPIO.vozPassiva.rows
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td style="font-size:12px;font-weight:700;color:var(--primary)">${r.tense}</td>
+      <td class="pt" style="font-size:12px">${r.ativa}</td>
+      <td class="pt" style="font-size:12px;color:var(--accent)">${r.passiva}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">Passiva com -se (pronome apassivante)</h3>
+  ${infoBox(D_PARTICIPIO.passivaSe.note)}
+  <div class="tbl-wrap" style="margin-bottom:16px"><table>
+    <thead><tr><th>Português</th><th>English</th></tr></thead>
+    <tbody>${D_PARTICIPIO.passivaSe.ex
+      .map(
+        (
+          r,
+          i,
+        ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      <td class="pt">${r[0]}</td>
+      <td class="en" style="font-size:12px">${r[1]}</td>
+    </tr>`,
+      )
+      .join("")}</tbody>
+  </table></div>
+
+  <h3 class="sub-heading">&#127919; Hora de treinar</h3>
+  <div class="card-grid">
+    ${D_PARTICIPIO.wordwall.map((w) => `<a href="${w.url}" target="_blank" rel="noopener" style="text-decoration:none"><div class="card-sm" style="border-left:3px solid var(--primary);cursor:pointer"><div style="font-weight:800;color:var(--primary);font-size:13px">${w.title}</div><div style="font-size:11px;color:var(--text-2)">Wordwall practice</div></div></a>`).join("")}
   </div>`,
 
         trabalho: () => `
