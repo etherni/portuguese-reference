@@ -1167,6 +1167,29 @@
             { id: "social-etiquette", title: "Social Etiquette" },
           ],
         },
+        {
+          group: "🗣 A2 — Comunicação & Sociedade",
+          tabs: [
+            { id: "ufcd6457-s1", title: "UFCD 6457 — S1 (pending)" },
+            { id: "ufcd6457-s2", title: "UFCD 6457 — S2 (pending)" },
+            { id: "ufcd6457-s3", title: "UFCD 6457 — S3 (pending)" },
+            { id: "ufcd6457-s4", title: "UFCD 6457 — S4 (pending)" },
+            { id: "ufcd6457-s5", title: "UFCD 6457 — S5 (pending)" },
+            { id: "ufcd6457-s6", title: "UFCD 6457 — S6 (pending)" },
+            { id: "ufcd6457-s7", title: "UFCD 6457 — S7 (pending)" },
+            { id: "ufcd6457-s8", title: "UFCD 6457 — S8 (pending)" },
+          ],
+        },
+        {
+          group: "📅 Study Mode",
+          tabs: [
+            { id: "study-dashboard", title: "Dashboard" },
+            { id: "study-bysession", title: "By Session (order)" },
+            { id: "study-listen", title: "Listen-only Player" },
+            { id: "study-drill", title: "Recall Drill" },
+            { id: "changelog", title: "Changelog" },
+          ],
+        },
         { group: "✏️ Practice", tabs: [{ id: "practice", title: "Practice" }] },
       ];
 
@@ -1189,7 +1212,46 @@
         return `<div class="warn-box">${text}</div>`;
       }
       function ctx(what, why, connects) {
-        return `<div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--purple);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.7"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:16px">📖</span><span style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--purple)">Context &amp; Purpose</span></div><div style="display:grid;gap:6px"><div><span style="font-weight:800;color:var(--text)">What it is: </span><span style="color:var(--text-2)">${what}</span></div><div><span style="font-weight:800;color:var(--text)">Why it matters: </span><span style="color:var(--text-2)">${why}</span></div>${connects ? `<div><span style="font-weight:800;color:var(--text)">Related to: </span><span style="color:var(--purple);font-style:italic">${connects}</span></div>` : ""}</div></div>`;
+        // Build a title→id map from NAV once (cached on the function)
+        if (!ctx._titleToId) {
+          ctx._titleToId = {};
+          NAV.forEach((g) =>
+            g.tabs.forEach((t) => {
+              ctx._titleToId[t.title.toLowerCase().trim()] = t.id;
+              // Also map a stripped form (e.g. "Future Plans (IR + inf.)" → "future plans")
+              const stripped = t.title
+                .replace(/\s*\(.*?\)\s*/g, "")
+                .toLowerCase()
+                .trim();
+              if (stripped !== t.title.toLowerCase().trim())
+                ctx._titleToId[stripped] = t.id;
+            }),
+          );
+        }
+        let connectsHtml = "";
+        if (connects) {
+          const parts = connects
+            .split(";")
+            .map((s) => s.trim())
+            .filter(Boolean);
+          const rendered = parts
+            .map((part) => {
+              // Split on em-dash (— or --). Title is before, description after.
+              const m = part.match(/^([^—–-]+?)\s*[—–-]\s*(.+)$/);
+              if (!m)
+                return `<span style="color:var(--purple);font-style:italic">${part}</span>`;
+              const title = m[1].trim();
+              const desc = m[2].trim();
+              const id = ctx._titleToId[title.toLowerCase()];
+              if (id) {
+                return `<span style="display:inline-block;margin:2px 4px 2px 0"><button class="xref-btn" onclick="navigate('${id}')" style="background:var(--purple-lt);color:var(--purple);border:1px solid var(--purple);border-radius:12px;padding:2px 10px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit">${title} →</button> <span style="color:var(--text-3);font-size:12px;font-style:italic">${desc}</span></span>`;
+              }
+              return `<span style="color:var(--purple);font-style:italic;margin-right:8px">${title} — ${desc}</span>`;
+            })
+            .join(" ");
+          connectsHtml = `<div style="margin-top:4px"><span style="font-weight:800;color:var(--text)">Related to: </span>${rendered}</div>`;
+        }
+        return `<div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--purple);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.7"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:16px">📖</span><span style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--purple)">Context &amp; Purpose</span></div><div style="display:grid;gap:6px"><div><span style="font-weight:800;color:var(--text)">What it is: </span><span style="color:var(--text-2)">${what}</span></div><div><span style="font-weight:800;color:var(--text)">Why it matters: </span><span style="color:var(--text-2)">${why}</span></div>${connectsHtml}</div></div>`;
       }
       function tag(text, type) {
         return `<span class="tag tag-${type}">${text}</span>`;
@@ -12252,7 +12314,7 @@
         ],
         onde: {
           current:
-            "AIMA — Agência para a Integração, Migrações e Asilo. Replaced SEF in 2023. Appointments via agendamento prévio (prior booking required).",
+            "AIMA — Agência para a Integração, Migrações e Asilo. Replaced SEF on 29 October 2023. Appointments via agendamento prévio (prior booking required). <a class='src-cite' href='https://www2.gov.pt/noticias/agencia-para-a-integracao-migracoes-e-asilo-aima-inicia-funcoes' target='_blank' rel='noopener'>gov.pt</a>",
           quem: "O interessado ou o seu representante legal. Pode ser extensivo aos menores a cargo do requerente.",
           url: "https://www.aima.gov.pt",
         },
@@ -12441,7 +12503,7 @@
             },
           ],
           inspection: {
-            note: "A inspeção periódica automóvel (IPO) é obrigatória em Portugal e em toda a UE. A periodicidade varia conforme a idade do veículo. Falta da inspeção = infração grave = multa de 250€ a 1.500€ + possível apreensão do veículo.",
+            note: "A inspeção periódica automóvel (IPO) é obrigatória em Portugal e em toda a UE. A periodicidade varia conforme a idade do veículo. Falta da inspeção = infração grave = multa de 250€ a 1.250€ (Artigo 116, Código da Estrada) + possível apreensão do veículo. <a class='src-cite' href='https://dre.pt/dre/legislacao-consolidada/decreto-lei/1994-65987128-50018400' target='_blank' rel='noopener'>Código da Estrada</a>",
             steps: [
               "Leve no seu veículo um par de luvas resistentes.",
               "Coloque o triângulo na estrada, bem visível — deve estar a 30 passos do seu carro.",
@@ -12741,7 +12803,7 @@
           ],
         },
         triagem: {
-          note: "Triagem de Manchester — sistema de classificação de doentes nas urgências hospitalares em Portugal. Cada cor corresponde a um nível de urgência e a um tempo máximo de espera.",
+          note: "Triagem de Manchester — sistema de classificação de doentes nas urgências hospitalares em Portugal. Cada cor corresponde a um nível de urgência e a um tempo máximo de espera. <a class='src-cite' href='https://www.cuf.pt/mais-saude/triagem-de-manchester-o-que-e-e-como-funciona' target='_blank' rel='noopener'>src</a>",
           levels: [
             {
               color: "#CC0000",
@@ -20925,7 +20987,7 @@
     .join("")}`,
 
         "car-maintenance": () => `
-  ${ctx("Car parts vocabulary, three types of car maintenance, mandatory inspection rules, and how to change a flat tyre safely.", "Real-life survival vocabulary for driving in Portugal. The IPO inspection is obligatory — fines range from 250€ to 1,500€. Knowing maintenance types helps you understand what a mechanic is telling you.", "Transport — public transport vocabulary; Survival Phrases — emergencies")}
+  ${ctx("Car parts vocabulary, three types of car maintenance, mandatory inspection rules, and how to change a flat tyre safely.", "Real-life survival vocabulary for driving in Portugal. The IPO inspection is obligatory — fines range from 250€ to 1,250€ (Article 116, Código da Estrada). Knowing maintenance types helps you understand what a mechanic is telling you.", "Transport — public transport vocabulary; Survival Phrases — emergencies")}
   ${sectionHead("Carro & Manutenção", "UFCD 6454 Session 4", "Vocabulário do automóvel. Tipos de manutenção: preventiva, preditiva, corretiva. Inspeção periódica (IPO). Como trocar um pneu furado.")}
   <h3 class="sub-heading">🚗 Partes do carro — car parts</h3>
   <div class="tbl-wrap"><table>
@@ -24701,6 +24763,12 @@
         currentSection = id;
         document.getElementById("content-area").innerHTML = RENDERERS[id]();
         addSpeakButtons();
+        if (window.__afterNavigate)
+          try {
+            window.__afterNavigate(id);
+          } catch (e) {
+            console.warn("afterNavigate hook failed", e);
+          }
         document
           .querySelectorAll(".nav-btn")
           .forEach((b) => b.classList.remove("active"));
@@ -24770,6 +24838,12 @@
         }
         document.getElementById("content-area").innerHTML = html;
         addSpeakButtons();
+        if (window.__afterSearch)
+          try {
+            window.__afterSearch(q);
+          } catch (e) {
+            console.warn("afterSearch hook failed", e);
+          }
         document
           .querySelectorAll(".nav-btn")
           .forEach((b) => b.classList.remove("active"));
@@ -24858,6 +24932,1696 @@
         });
       });
     </script>
+    <style>
+      /* ── Reverse mode (hide PT until tap) ── */
+      body[data-reverse="1"] .pt:not(.revealed) {
+        position: relative;
+        color: transparent !important;
+        background: repeating-linear-gradient(
+          45deg,
+          var(--surface-2),
+          var(--surface-2) 4px,
+          var(--border) 4px,
+          var(--border) 8px
+        ) !important;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+      }
+      body[data-reverse="1"] .pt:not(.revealed) .speak-btn,
+      body[data-reverse="1"] .pt:not(.revealed) .state-btn,
+      body[data-reverse="1"] .pt:not(.revealed) .rec-btn {
+        display: none;
+      }
+      body[data-reverse="1"] .pt:not(.revealed)::after {
+        content: "tap to reveal";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-3);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* ── Hide-known mode (collapse rows the user marked known) ── */
+      body[data-hide-known="1"] [data-state="known"] {
+        display: none !important;
+      }
+
+      /* ── State toggle button ── */
+      .state-btn {
+        display: inline-block;
+        margin-left: 6px;
+        padding: 1px 7px;
+        border-radius: 10px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-3);
+        cursor: pointer;
+        font-family: inherit;
+        vertical-align: middle;
+      }
+      .state-btn[data-status="new"] {
+        background: var(--surface);
+        color: var(--text-3);
+        border-color: var(--border);
+      }
+      .state-btn[data-status="learning"] {
+        background: var(--gold-lt);
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+      .state-btn[data-status="known"] {
+        background: var(--green-lt);
+        color: var(--green);
+        border-color: var(--green);
+      }
+
+      /* ── Record-and-compare button ── */
+      .rec-btn {
+        display: inline-block;
+        margin-left: 4px;
+        padding: 0 6px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--accent);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 13px;
+        width: 24px;
+        height: 24px;
+        line-height: 22px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .rec-btn.listening {
+        background: var(--accent);
+        color: #fff;
+        animation: rec-pulse 0.8s infinite;
+      }
+      @keyframes rec-pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .rec-result {
+        margin-top: 4px;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        border-left: 3px solid var(--border);
+        background: var(--surface-2);
+      }
+      .rec-result.match {
+        border-left-color: var(--green);
+        background: var(--green-lt);
+        color: var(--green);
+      }
+      .rec-result.partial {
+        border-left-color: var(--gold);
+        background: var(--gold-lt);
+        color: var(--gold);
+      }
+      .rec-result.mismatch {
+        border-left-color: var(--accent);
+        background: var(--accent-lt);
+        color: var(--accent);
+      }
+
+      /* ── Item highlight (from deep link) ── */
+      .pt.item-flash {
+        animation: item-flash 1.6s ease-out;
+      }
+      @keyframes item-flash {
+        0% {
+          background: var(--gold);
+          box-shadow: 0 0 0 4px var(--gold-lt);
+        }
+        100% {
+          background: transparent;
+          box-shadow: 0 0 0 0 transparent;
+        }
+      }
+
+      /* ── Toolbar above content ── */
+      .study-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        padding: 8px 12px;
+        margin: 0 0 16px 0;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 12px;
+      }
+      .study-toolbar .tb-label {
+        font-weight: 800;
+        color: var(--text-3);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-right: 4px;
+      }
+      .study-toolbar button {
+        padding: 4px 10px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-2);
+        font-weight: 700;
+        font-size: 11px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .study-toolbar button:hover {
+        background: var(--primary-lt);
+        color: var(--primary);
+      }
+      .study-toolbar button[aria-pressed="true"] {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+      .study-toolbar .tb-spacer {
+        flex: 1;
+      }
+      .study-toolbar .tb-counts {
+        display: flex;
+        gap: 8px;
+        font-size: 11px;
+      }
+      .study-toolbar .tb-counts span b {
+        font-weight: 800;
+      }
+      .study-toolbar .tb-counts .c-new {
+        color: var(--text-3);
+      }
+      .study-toolbar .tb-counts .c-learning {
+        color: var(--gold);
+      }
+      .study-toolbar .tb-counts .c-known {
+        color: var(--green);
+      }
+
+      /* ── Nav badges ── */
+      .nav-btn {
+        position: relative;
+      }
+      .nav-badge {
+        display: inline-block;
+        margin-left: auto;
+        padding: 0 5px;
+        border-radius: 8px;
+        font-size: 9px;
+        font-weight: 800;
+        vertical-align: middle;
+      }
+      .nav-badge .b-l {
+        color: var(--gold);
+      }
+      .nav-badge .b-k {
+        color: var(--green);
+      }
+      .nav-badge .b-sep {
+        color: var(--text-3);
+        margin: 0 2px;
+      }
+
+      /* ── Playback bar ── */
+      .playback-bar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--primary-dk);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .playback-bar button {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 12px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .playback-bar button:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+      .playback-bar .pb-progress {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+      .playback-bar .pb-current {
+        font-weight: 700;
+        font-style: italic;
+      }
+      .playback-bar select {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: none;
+        padding: 5px 8px;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 12px;
+      }
+      .playback-bar select option {
+        background: var(--primary-dk);
+        color: #fff;
+      }
+
+      /* ── Cloze drill ── */
+      .cloze-cell input {
+        width: 100%;
+        padding: 4px 6px;
+        border: 1px dashed var(--accent);
+        border-radius: 4px;
+        background: var(--accent-lt);
+        color: var(--text);
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .cloze-cell.correct input {
+        border-color: var(--green);
+        background: var(--green-lt);
+        color: var(--green);
+      }
+      .cloze-cell.wrong input {
+        border-color: var(--accent);
+        background: var(--accent-lt);
+        color: var(--accent);
+      }
+
+      /* ── Source citation footnote ── */
+      .src-cite {
+        display: inline-block;
+        margin-left: 4px;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+        border: 1px solid var(--primary);
+        border-radius: 8px;
+        padding: 0 5px;
+        vertical-align: super;
+      }
+      .src-cite:hover {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      /* ── Mobile tweaks ── */
+      @media (max-width: 640px) {
+        .study-toolbar {
+          padding: 6px 8px;
+          gap: 4px;
+        }
+        .study-toolbar button {
+          padding: 3px 8px;
+          font-size: 10px;
+        }
+        .playback-bar {
+          padding: 6px 8px;
+          gap: 6px;
+        }
+        .speak-btn,
+        .state-btn,
+        .rec-btn {
+          font-size: 13px;
+        }
+      }
+    </style>
+
+    <script>
+      // ════════════════════════════════════════════════════════════════════
+      // NEW FEATURE MODULES — appended after the original script
+      // ════════════════════════════════════════════════════════════════════
+      (function () {
+        "use strict";
+
+        // ─────────────────────────────────────────────────────────────────
+        // STATE — per-item flashcard status persisted in localStorage
+        // itemKey shape: "<sectionId>::<normalizedPtText>"
+        // status: "new" | "learning" | "known"
+        // ─────────────────────────────────────────────────────────────────
+        const STATE_KEY = "pt-ref-state-v1";
+        const PREFS_KEY = "pt-ref-prefs-v1";
+
+        function loadState() {
+          try {
+            return JSON.parse(localStorage.getItem(STATE_KEY) || "{}");
+          } catch (e) {
+            return {};
+          }
+        }
+        function saveState(s) {
+          try {
+            localStorage.setItem(STATE_KEY, JSON.stringify(s));
+          } catch (e) {
+            console.warn("State save failed", e);
+          }
+        }
+        let STATE = loadState();
+
+        function loadPrefs() {
+          try {
+            return JSON.parse(localStorage.getItem(PREFS_KEY) || "{}");
+          } catch (e) {
+            return {};
+          }
+        }
+        function savePrefs() {
+          try {
+            localStorage.setItem(PREFS_KEY, JSON.stringify(PREFS));
+          } catch (e) {}
+        }
+        const PREFS = Object.assign(
+          {
+            reverseMode: false,
+            hideKnown: false,
+            rowsAugmented: true,
+            playbackPause: 1500,
+            playbackOrder: "sequential",
+          },
+          loadPrefs(),
+        );
+
+        // Normalize PT text for stable keying — lowercase, strip pron brackets,
+        // collapse whitespace, take first 120 chars.
+        function normalizePt(text) {
+          return (text || "")
+            .replace(/\[.*?\]/g, "") // pronunciation brackets
+            .replace(/\(.*?\)/g, "") // parenthetical notes
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase()
+            .slice(0, 120);
+        }
+        function itemKey(section, ptText) {
+          return section + "::" + normalizePt(ptText);
+        }
+        function getStatus(section, ptText) {
+          return (STATE[itemKey(section, ptText)] || {}).status || "new";
+        }
+        function setStatus(section, ptText, status) {
+          const k = itemKey(section, ptText);
+          if (status === "new") {
+            delete STATE[k];
+          } else {
+            STATE[k] = { status: status, t: Date.now() };
+          }
+          saveState(STATE);
+        }
+        function cycleStatus(cur) {
+          return cur === "new"
+            ? "learning"
+            : cur === "learning"
+              ? "known"
+              : "new";
+        }
+
+        // Section counts derived from SEARCH_INDEX (built by buildIndex())
+        function sectionItems(secId) {
+          if (!(typeof SEARCH_INDEX !== "undefined" ? SEARCH_INDEX : null))
+            return [];
+          return SEARCH_INDEX.filter((x) => x.section === secId);
+        }
+        function sectionCounts(secId) {
+          const items = sectionItems(secId);
+          let learning = 0,
+            known = 0;
+          items.forEach((it) => {
+            const s = getStatus(secId, it.pt);
+            if (s === "learning") learning++;
+            else if (s === "known") known++;
+          });
+          return {
+            total: items.length,
+            learning: learning,
+            known: known,
+            n: items.length - learning - known,
+          };
+        }
+        function totalCounts() {
+          let total = 0,
+            learning = 0,
+            known = 0;
+          Object.keys(STATE).forEach((k) => {
+            total++;
+            if (STATE[k].status === "learning") learning++;
+            else if (STATE[k].status === "known") known++;
+          });
+          return { tracked: total, learning: learning, known: known };
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // ANCHOR — add data-item-id and data-state to every .pt element
+        // Runs after each render. Enables deep linking and CSS-driven modes.
+        // ─────────────────────────────────────────────────────────────────
+        function attachItemAnchors() {
+          const area = document.getElementById("content-area");
+          if (!area) return;
+          const sec =
+            typeof currentSection !== "undefined" ? currentSection : null;
+          if (!sec) return;
+          area.querySelectorAll(".pt").forEach((el) => {
+            // Clone strip speak-btn etc to get clean text
+            const c = el.cloneNode(true);
+            c.querySelectorAll(
+              ".speak-btn,.state-btn,.rec-btn,.rec-result",
+            ).forEach((b) => b.remove());
+            const text = c.textContent.trim();
+            if (!text) return;
+            const norm = normalizePt(text);
+            el.setAttribute("data-item-id", norm);
+            el.setAttribute("data-state", getStatus(sec, text));
+          });
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // ROW AUGMENT — add state-toggle + record-compare buttons per .pt
+        // ─────────────────────────────────────────────────────────────────
+        function augmentRows() {
+          if (!PREFS.rowsAugmented) return;
+          const area = document.getElementById("content-area");
+          if (!area) return;
+          const sec =
+            typeof currentSection !== "undefined" ? currentSection : null;
+          area.querySelectorAll(".pt").forEach((el) => {
+            if (el.querySelector(".state-btn")) return;
+            // Get clean PT text (without any nested controls)
+            const c = el.cloneNode(true);
+            c.querySelectorAll(
+              ".speak-btn,.state-btn,.rec-btn,.rec-result",
+            ).forEach((b) => b.remove());
+            const text = c.textContent.trim();
+            if (text.length < 2) return;
+
+            // State toggle
+            const status = getStatus(sec, text);
+            const btn = document.createElement("button");
+            btn.className = "state-btn";
+            btn.setAttribute("data-status", status);
+            btn.title = "Cycle: new → learning → known → new";
+            btn.textContent =
+              status === "new" ? "•" : status === "learning" ? "↻" : "✓";
+            btn.onclick = (e) => {
+              e.stopPropagation();
+              const cur = btn.getAttribute("data-status");
+              const next = cycleStatus(cur);
+              setStatus(sec, text, next);
+              btn.setAttribute("data-status", next);
+              btn.textContent =
+                next === "new" ? "•" : next === "learning" ? "↻" : "✓";
+              el.setAttribute("data-state", next);
+              updateToolbarCounts();
+              updateNavBadges();
+            };
+            el.appendChild(btn);
+
+            // Record-and-compare (if SpeechRecognition available)
+            if (RECOGNITION.available) {
+              const recBtn = document.createElement("button");
+              recBtn.className = "rec-btn";
+              recBtn.title = "Record yourself and compare to target";
+              recBtn.innerHTML = "🎙";
+              recBtn.onclick = (e) => {
+                e.stopPropagation();
+                RECOGNITION.compareTo(text, recBtn, el);
+              };
+              el.appendChild(recBtn);
+            }
+          });
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // REVERSE MODE — hide .pt text until tapped; user recalls from EN
+        // ─────────────────────────────────────────────────────────────────
+        function applyReverseMode() {
+          document.body.setAttribute(
+            "data-reverse",
+            PREFS.reverseMode ? "1" : "0",
+          );
+          // Bind reveal handler once
+          if (!applyReverseMode._bound) {
+            document.addEventListener(
+              "click",
+              (e) => {
+                if (!PREFS.reverseMode) return;
+                const t = e.target.closest(".pt");
+                if (t && !t.classList.contains("revealed")) {
+                  t.classList.add("revealed");
+                  e.preventDefault();
+                  e.stopPropagation();
+                }
+              },
+              true,
+            );
+            applyReverseMode._bound = true;
+          }
+        }
+        function applyHideKnown() {
+          document.body.setAttribute(
+            "data-hide-known",
+            PREFS.hideKnown ? "1" : "0",
+          );
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // RECOGNITION — Web Speech API compare-pronunciation
+        // ─────────────────────────────────────────────────────────────────
+        const RECOGNITION = (function () {
+          const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+          if (!SR) return { available: false };
+          const obj = { available: true, current: null };
+          obj.compareTo = function (targetText, btn, ptEl) {
+            if (obj.current) {
+              obj.current.abort();
+              obj.current = null;
+            }
+            // Clean target (strip pron, parens)
+            const cleanTarget = normalizePt(targetText);
+            if (!cleanTarget) return;
+            const rec = new SR();
+            rec.lang = "pt-PT";
+            rec.interimResults = false;
+            rec.maxAlternatives = 3;
+            obj.current = rec;
+            btn.classList.add("listening");
+
+            // Remove any prior result
+            const oldRes =
+              ptEl.parentElement &&
+              ptEl.parentElement.querySelector(":scope > .rec-result");
+            if (oldRes) oldRes.remove();
+
+            rec.onresult = (ev) => {
+              const alts = [];
+              for (let i = 0; i < ev.results[0].length; i++)
+                alts.push(ev.results[0][i].transcript);
+              const best = alts[0] || "";
+              const sim = similarity(
+                stripAccents(cleanTarget),
+                stripAccents(best.toLowerCase()),
+              );
+              const klass =
+                sim > 0.85 ? "match" : sim > 0.55 ? "partial" : "mismatch";
+              const verdict =
+                sim > 0.85 ? "Match" : sim > 0.55 ? "Close" : "Mismatch";
+              const res = document.createElement("div");
+              res.className = "rec-result " + klass;
+              res.innerHTML = `<strong>${verdict}</strong> (${Math.round(sim * 100)}%) — heard: <em>${best}</em>`;
+              if (ptEl.parentElement) {
+                ptEl.parentElement.insertBefore(res, ptEl.nextSibling);
+              } else {
+                ptEl.appendChild(res);
+              }
+            };
+            rec.onerror = (ev) => {
+              console.warn("Recognition error", ev.error);
+              const res = document.createElement("div");
+              res.className = "rec-result mismatch";
+              res.textContent =
+                "Recognition error: " +
+                ev.error +
+                ". Allow microphone access and try again.";
+              if (ptEl.parentElement)
+                ptEl.parentElement.insertBefore(res, ptEl.nextSibling);
+            };
+            rec.onend = () => {
+              btn.classList.remove("listening");
+              obj.current = null;
+            };
+            try {
+              rec.start();
+            } catch (e) {
+              btn.classList.remove("listening");
+              console.warn("Could not start recognition", e);
+            }
+          };
+          return obj;
+        })();
+
+        function stripAccents(s) {
+          return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+        // Levenshtein-based similarity 0..1
+        function similarity(a, b) {
+          if (!a && !b) return 1;
+          if (!a || !b) return 0;
+          const len = Math.max(a.length, b.length);
+          return 1 - levenshtein(a, b) / len;
+        }
+        function levenshtein(a, b) {
+          const m = a.length,
+            n = b.length;
+          if (!m) return n;
+          if (!n) return m;
+          const prev = new Array(n + 1);
+          const curr = new Array(n + 1);
+          for (let j = 0; j <= n; j++) prev[j] = j;
+          for (let i = 1; i <= m; i++) {
+            curr[0] = i;
+            for (let j = 1; j <= n; j++) {
+              const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+              curr[j] = Math.min(
+                curr[j - 1] + 1,
+                prev[j] + 1,
+                prev[j - 1] + cost,
+              );
+            }
+            for (let j = 0; j <= n; j++) prev[j] = curr[j];
+          }
+          return prev[n];
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // PLAYBACK — sequential TTS through all .pt items in current view
+        // ─────────────────────────────────────────────────────────────────
+        const PLAYBACK = {
+          playing: false,
+          idx: 0,
+          list: [],
+          timer: null,
+          start: function (items) {
+            if (this.playing) this.stop();
+            this.list = items || this.collectFromContent();
+            if (!this.list.length) return;
+            this.idx = 0;
+            this.playing = true;
+            this.next();
+            this.renderBar();
+          },
+          stop: function () {
+            this.playing = false;
+            if (this.timer) {
+              clearTimeout(this.timer);
+              this.timer = null;
+            }
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            this.renderBar();
+          },
+          skip: function (delta) {
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            if (this.timer) {
+              clearTimeout(this.timer);
+              this.timer = null;
+            }
+            this.idx = Math.max(
+              0,
+              Math.min(this.list.length - 1, this.idx + delta),
+            );
+            if (this.playing) this.next();
+            this.renderBar();
+          },
+          next: function () {
+            if (!this.playing) return;
+            if (this.idx >= this.list.length) {
+              this.stop();
+              return;
+            }
+            const item = this.list[this.idx];
+            this.scrollTo(item);
+            const text = (item.text || "").trim();
+            this.renderBar();
+            if (!text || !window.speechSynthesis) {
+              this.timer = setTimeout(() => {
+                this.idx++;
+                this.next();
+              }, 500);
+              return;
+            }
+            const clean = (
+              typeof cleanForSpeech !== "undefined" ? cleanForSpeech : null
+            )
+              ? (typeof cleanForSpeech !== "undefined" ? cleanForSpeech : null)(
+                  text,
+                )
+              : text;
+            if (!clean) {
+              this.timer = setTimeout(() => {
+                this.idx++;
+                this.next();
+              }, 500);
+              return;
+            }
+            const u = new SpeechSynthesisUtterance(clean);
+            if (typeof ttsVoice !== "undefined" ? ttsVoice : null)
+              u.voice = typeof ttsVoice !== "undefined" ? ttsVoice : null;
+            u.lang =
+              ((typeof ttsVoice !== "undefined" ? ttsVoice : null) &&
+                (typeof ttsVoice !== "undefined" ? ttsVoice : null).lang) ||
+              "pt-PT";
+            u.rate = 0.95;
+            u.onend = () => {
+              if (!this.playing) return;
+              this.timer = setTimeout(() => {
+                this.idx++;
+                this.next();
+              }, PREFS.playbackPause);
+            };
+            u.onerror = () => {
+              this.timer = setTimeout(() => {
+                this.idx++;
+                this.next();
+              }, 300);
+            };
+            window.speechSynthesis.speak(u);
+          },
+          scrollTo: function (item) {
+            if (item.el && item.el.scrollIntoView) {
+              item.el.scrollIntoView({ block: "center", behavior: "smooth" });
+              item.el.classList.add("item-flash");
+              setTimeout(() => item.el.classList.remove("item-flash"), 1600);
+            }
+          },
+          collectFromContent: function () {
+            const area = document.getElementById("content-area");
+            if (!area) return [];
+            const out = [];
+            area.querySelectorAll(".pt").forEach((el) => {
+              const c = el.cloneNode(true);
+              c.querySelectorAll(
+                ".speak-btn,.state-btn,.rec-btn,.rec-result",
+              ).forEach((b) => b.remove());
+              const text = c.textContent.trim();
+              if (text.length >= 2) out.push({ text: text, el: el });
+            });
+            return out;
+          },
+          renderBar: function () {
+            const bar = document.getElementById("playback-bar");
+            if (!bar) return;
+            if (!this.list.length) {
+              bar.style.display = "none";
+              return;
+            }
+            bar.style.display = "flex";
+            const cur = this.list[this.idx] || { text: "" };
+            bar.innerHTML = `
+            <button onclick="window.PLAYBACK.skip(-1)" title="Previous">◀</button>
+            <button onclick="window.PLAYBACK.playing ? window.PLAYBACK.stop() : window.PLAYBACK.start()">
+              ${this.playing ? "⏸ Pause" : "▶ Play"}
+            </button>
+            <button onclick="window.PLAYBACK.skip(1)" title="Next">▶</button>
+            <span class="pb-progress">${this.idx + 1} / ${this.list.length}</span>
+            <span class="pb-current">${(cur.text || "").slice(0, 60)}</span>
+            <span style="flex:1"></span>
+            <label style="font-size:11px;opacity:0.8">Pause</label>
+            <select onchange="window.PLAYBACK.setPause(parseInt(this.value, 10))">
+              <option value="500" ${PREFS.playbackPause === 500 ? "selected" : ""}>0.5s</option>
+              <option value="1000" ${PREFS.playbackPause === 1000 ? "selected" : ""}>1s</option>
+              <option value="1500" ${PREFS.playbackPause === 1500 ? "selected" : ""}>1.5s</option>
+              <option value="2500" ${PREFS.playbackPause === 2500 ? "selected" : ""}>2.5s</option>
+              <option value="4000" ${PREFS.playbackPause === 4000 ? "selected" : ""}>4s (shadow)</option>
+            </select>
+            <button onclick="window.PLAYBACK.stop();document.getElementById('playback-bar').style.display='none'">✕</button>
+          `;
+          },
+          setPause: function (ms) {
+            PREFS.playbackPause = ms;
+            savePrefs();
+          },
+        };
+        window.PLAYBACK = PLAYBACK;
+
+        // ─────────────────────────────────────────────────────────────────
+        // CLOZE — hide N random .conj-form cells, accept typed input
+        // ─────────────────────────────────────────────────────────────────
+        const CLOZE = {
+          active: false,
+          enable: function () {
+            this.active = true;
+            const area = document.getElementById("content-area");
+            if (!area) return;
+            const cells = Array.from(area.querySelectorAll(".conj-form"));
+            if (!cells.length) {
+              alert("No conjugation table on this page.");
+              this.active = false;
+              return;
+            }
+            // Hide ~30% of cells
+            const n = Math.max(1, Math.floor(cells.length * 0.3));
+            const picked = this.pickN(cells, n);
+            picked.forEach((cell) => {
+              const c = cell.cloneNode(true);
+              c.querySelectorAll(".speak-btn,.state-btn,.rec-btn").forEach(
+                (b) => b.remove(),
+              );
+              const target = c.textContent.trim().toLowerCase();
+              cell.setAttribute("data-cloze-answer", target);
+              cell.classList.add("cloze-cell");
+              cell.innerHTML = `<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="?">`;
+              const input = cell.querySelector("input");
+              input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") this.checkCell(cell, input);
+              });
+              input.addEventListener("blur", () => this.checkCell(cell, input));
+            });
+          },
+          checkCell: function (cell, input) {
+            const target = cell.getAttribute("data-cloze-answer") || "";
+            const got = stripAccents((input.value || "").trim().toLowerCase());
+            const want = stripAccents(target);
+            if (got === want && got.length > 0) {
+              cell.classList.remove("wrong");
+              cell.classList.add("correct");
+            } else if (got.length > 0) {
+              cell.classList.remove("correct");
+              cell.classList.add("wrong");
+              input.title = "Expected: " + target;
+            }
+          },
+          pickN: function (arr, n) {
+            const a = arr.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a.slice(0, n);
+          },
+          disable: function () {
+            this.active = false;
+            if (
+              (typeof navigate !== "undefined" ? navigate : null) &&
+              (typeof currentSection !== "undefined" ? currentSection : null)
+            )
+              navigate(
+                typeof currentSection !== "undefined" ? currentSection : null,
+              );
+          },
+        };
+        window.CLOZE = CLOZE;
+
+        // ─────────────────────────────────────────────────────────────────
+        // EXPORT — Anki-compatible CSV from current section
+        // Format: front (PT) | back (EN + pronunciation) | tags
+        // ─────────────────────────────────────────────────────────────────
+        function exportSection(secId) {
+          if (!(typeof SEARCH_INDEX !== "undefined" ? SEARCH_INDEX : null))
+            return;
+          const items = SEARCH_INDEX.filter((x) => x.section === secId);
+          if (!items.length) {
+            alert("Nothing to export from this section.");
+            return;
+          }
+          const esc = (s) => '"' + String(s || "").replace(/"/g, '""') + '"';
+          const rows = items.map((it) => {
+            const back = [it.en, it.pron, it.extra].filter(Boolean).join(" — ");
+            return [esc(it.pt), esc(back), esc(secId + " UFCD")].join(",");
+          });
+          const header = "Front,Back,Tags";
+          const csv = "\uFEFF" + header + "\n" + rows.join("\n");
+          const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "pt-ref-" + secId + ".csv";
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+          }, 100);
+        }
+        window.exportSection = exportSection;
+
+        // ─────────────────────────────────────────────────────────────────
+        // DEEP LINK — scroll to specific item-id within section, flash it
+        // URL form: #<sectionId>?item=<normalized-pt>
+        // ─────────────────────────────────────────────────────────────────
+        function scrollToItem(itemId) {
+          const area = document.getElementById("content-area");
+          if (!area || !itemId) return;
+          const el = area.querySelector(
+            '.pt[data-item-id="' + cssEsc(itemId) + '"]',
+          );
+          if (!el) return;
+          el.scrollIntoView({ block: "center", behavior: "smooth" });
+          el.classList.add("item-flash");
+          setTimeout(() => el.classList.remove("item-flash"), 1600);
+        }
+        function cssEsc(s) {
+          return window.CSS && CSS.escape
+            ? CSS.escape(s)
+            : String(s).replace(/"/g, '\\"');
+        }
+
+        function navigateWithItem(sectionId, itemId) {
+          navigate(sectionId);
+          setTimeout(() => scrollToItem(itemId), 50);
+        }
+        window.navigateWithItem = navigateWithItem;
+
+        // Override hashchange to support #section?item=...
+        window.addEventListener("hashchange", () => {
+          const h = location.hash.slice(1);
+          const m = h.match(/^([^?]+)(?:\?item=(.+))?$/);
+          if (!m) return;
+          const id = m[1],
+            item = m[2] ? decodeURIComponent(m[2]) : null;
+          if (
+            id &&
+            (typeof RENDERERS !== "undefined" ? RENDERERS : null) &&
+            RENDERERS[id]
+          ) {
+            if (
+              id !==
+              (typeof currentSection !== "undefined" ? currentSection : null)
+            )
+              navigate(id);
+            if (item) setTimeout(() => scrollToItem(item), 50);
+          }
+        });
+
+        // ─────────────────────────────────────────────────────────────────
+        // TOOLBAR — mode switches + counts at top of every section
+        // ─────────────────────────────────────────────────────────────────
+        function renderToolbar() {
+          const area = document.getElementById("content-area");
+          if (!area) return;
+          // Don't show toolbar on study/system pages
+          const sec =
+            typeof currentSection !== "undefined" ? currentSection : null;
+          const skip = [
+            "study-dashboard",
+            "study-bysession",
+            "study-listen",
+            "study-drill",
+            "changelog",
+          ];
+          if (skip.indexOf(sec) !== -1) return;
+          // Remove existing
+          const old = area.querySelector(".study-toolbar");
+          if (old) old.remove();
+          const playbackOld = area.querySelector("#playback-bar");
+          if (playbackOld) playbackOld.remove();
+
+          const counts = sectionCounts(sec);
+          const tb = document.createElement("div");
+          tb.className = "study-toolbar";
+          tb.innerHTML = `
+          <span class="tb-label">Mode</span>
+          <button id="tb-reverse" aria-pressed="${PREFS.reverseMode}" title="Hide Portuguese until tapped — recall from English">↔ Reverse</button>
+          <button id="tb-hidekn" aria-pressed="${PREFS.hideKnown}" title="Hide rows you marked Known">⊘ Hide known</button>
+          <button id="tb-play" title="Listen to all PT items in order">▶ Listen all</button>
+          <button id="tb-cloze" title="Hide ~30% of conjugation cells and fill them in">✎ Cloze drill</button>
+          <button id="tb-export" title="Download this section as Anki CSV">⬇ Anki CSV</button>
+          <span class="tb-spacer"></span>
+          <span class="tb-counts">
+            <span class="c-new">new <b>${counts.n}</b></span>
+            <span class="c-learning">learning <b>${counts.learning}</b></span>
+            <span class="c-known">known <b>${counts.known}</b></span>
+            <span style="color:var(--text-3)">/ ${counts.total}</span>
+          </span>
+        `;
+          area.insertBefore(tb, area.firstChild);
+          // Placeholder for playback bar
+          const pb = document.createElement("div");
+          pb.id = "playback-bar";
+          pb.className = "playback-bar";
+          pb.style.display = "none";
+          area.insertBefore(pb, tb.nextSibling);
+
+          document.getElementById("tb-reverse").onclick = () => {
+            PREFS.reverseMode = !PREFS.reverseMode;
+            savePrefs();
+            applyReverseMode();
+            // Refresh toolbar visual
+            document
+              .getElementById("tb-reverse")
+              .setAttribute("aria-pressed", PREFS.reverseMode);
+          };
+          document.getElementById("tb-hidekn").onclick = () => {
+            PREFS.hideKnown = !PREFS.hideKnown;
+            savePrefs();
+            applyHideKnown();
+            document
+              .getElementById("tb-hidekn")
+              .setAttribute("aria-pressed", PREFS.hideKnown);
+          };
+          document.getElementById("tb-play").onclick = () => {
+            if (PLAYBACK.playing) PLAYBACK.stop();
+            else PLAYBACK.start();
+          };
+          document.getElementById("tb-cloze").onclick = () => CLOZE.enable();
+          document.getElementById("tb-export").onclick = () =>
+            exportSection(sec);
+        }
+        function updateToolbarCounts() {
+          const tb = document.querySelector(".study-toolbar .tb-counts");
+          if (
+            !tb ||
+            !(typeof currentSection !== "undefined" ? currentSection : null)
+          )
+            return;
+          const c = sectionCounts(
+            typeof currentSection !== "undefined" ? currentSection : null,
+          );
+          tb.innerHTML = `
+          <span class="c-new">new <b>${c.n}</b></span>
+          <span class="c-learning">learning <b>${c.learning}</b></span>
+          <span class="c-known">known <b>${c.known}</b></span>
+          <span style="color:var(--text-3)">/ ${c.total}</span>
+        `;
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // NAV BADGES — show learning/known counts per section
+        // ─────────────────────────────────────────────────────────────────
+        function updateNavBadges() {
+          document.querySelectorAll(".nav-btn").forEach((b) => {
+            const id = b.id.replace(/^nav_/, "");
+            const c = sectionCounts(id);
+            let badge = b.querySelector(".nav-badge");
+            if (c.learning === 0 && c.known === 0) {
+              if (badge) badge.remove();
+              return;
+            }
+            if (!badge) {
+              badge = document.createElement("span");
+              badge.className = "nav-badge";
+              b.appendChild(badge);
+            }
+            let html = "";
+            if (c.learning) html += `<span class="b-l">${c.learning}</span>`;
+            if (c.learning && c.known) html += `<span class="b-sep">·</span>`;
+            if (c.known) html += `<span class="b-k">${c.known}</span>`;
+            badge.innerHTML = html;
+          });
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // STUDY RENDERERS — Dashboard, By Session, Listen Player, Drill, Changelog
+        // ─────────────────────────────────────────────────────────────────
+
+        function studyDashboard() {
+          const t = totalCounts();
+          // Top sections by learning count
+          const perSection = [];
+          NAV.forEach((g) =>
+            g.tabs.forEach((tab) => {
+              const c = sectionCounts(tab.id);
+              if (c.learning || c.known)
+                perSection.push({
+                  id: tab.id,
+                  title: tab.title,
+                  group: g.group,
+                  ...c,
+                });
+            }),
+          );
+          perSection.sort(
+            (a, b) => b.learning + b.known - (a.learning + a.known),
+          );
+          const top = perSection.slice(0, 20);
+          const learningRows = top
+            .map(
+              (s) => `
+          <tr style="cursor:pointer" onclick="navigate('${s.id}')">
+            <td style="font-size:11px;color:var(--text-3)">${s.group}</td>
+            <td style="font-weight:700">${s.title}</td>
+            <td style="color:var(--gold);font-weight:800;text-align:center">${s.learning}</td>
+            <td style="color:var(--green);font-weight:800;text-align:center">${s.known}</td>
+            <td style="color:var(--text-3);text-align:center">${s.total}</td>
+          </tr>`,
+            )
+            .join("");
+
+          return `
+          <h1 style="margin-bottom:8px">Dashboard</h1>
+          <p style="color:var(--text-2);margin-bottom:18px">Active recall state across all sections. Click any row to jump in.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);font-weight:800">Tracked items</div>
+              <div style="font-size:32px;font-weight:800;color:var(--primary);margin-top:4px">${t.tracked}</div>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);font-weight:800">Learning</div>
+              <div style="font-size:32px;font-weight:800;color:var(--gold);margin-top:4px">${t.learning}</div>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);font-weight:800">Known</div>
+              <div style="font-size:32px;font-weight:800;color:var(--green);margin-top:4px">${t.known}</div>
+            </div>
+          </div>
+
+          <h3 class="sub-heading">Recently active sections</h3>
+          ${
+            perSection.length === 0
+              ? '<div class="rule-box">Nothing tracked yet. Open any section, tap the small <strong>•</strong> button next to any Portuguese phrase to mark it as <em>learning</em> (↻) or <em>known</em> (✓). Counts appear here and in the sidebar.</div>'
+              : `<div class="tbl-wrap"><table>
+                 <thead><tr><th>Group</th><th>Section</th><th style="text-align:center">Learning</th><th style="text-align:center">Known</th><th style="text-align:center">Total</th></tr></thead>
+                 <tbody>${learningRows}</tbody>
+               </table></div>`
+          }
+
+          <h3 class="sub-heading" style="margin-top:24px">How recall works here</h3>
+          <ul style="line-height:1.8;color:var(--text-2);padding-left:20px">
+            <li>Every Portuguese phrase has a small <strong>•</strong> button. Tap once → <strong>↻ learning</strong>. Tap again → <strong>✓ known</strong>. Tap a third time → back to new.</li>
+            <li>Enable <strong>↔ Reverse</strong> mode to hide all Portuguese until you tap to reveal — forces recall from the English meaning.</li>
+            <li>Enable <strong>⊘ Hide known</strong> to collapse rows you have mastered.</li>
+            <li>Use <strong>▶ Listen all</strong> to hear every PT item in the current section sequentially, with a pause between for shadowing.</li>
+            <li>On verb pages, <strong>✎ Cloze drill</strong> hides ~30% of conjugation cells and asks you to type them in.</li>
+            <li>Use <strong>⬇ Anki CSV</strong> to download the section as a flashcard deck for Anki / Quizlet.</li>
+            <li>State is saved in your browser's localStorage (key: <code>pt-ref-state-v1</code>). Clearing your browser data will reset it.</li>
+          </ul>
+
+          <h3 class="sub-heading" style="margin-top:24px">Maintenance</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button onclick="window.exportAllState()" style="background:var(--primary);color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">⬇ Export state JSON</button>
+            <button onclick="window.importStateUI()" style="background:var(--surface);color:var(--text);border:1px solid var(--border);padding:6px 14px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">⬆ Import state JSON</button>
+            <button onclick="window.resetState()" style="background:var(--accent-lt);color:var(--accent);border:1px solid var(--accent);padding:6px 14px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">⌫ Reset all state</button>
+          </div>
+        `;
+        }
+
+        // By Session — flat ordered list using UFCD/session attribution
+        function studyBySession() {
+          // Parse session strings from SEARCH_INDEX entries. The "section" field maps to section IDs.
+          // The pedagogical ordering is by NIALP session number / UFCD progression.
+          // We approximate ordering using NAV order, since the README documents that as the intended order.
+          // Build a sectioned list: NIALP S1 → S8, UFCD 6453 → 6456 → 6457, then vocabulary catch-all.
+          const groups = [
+            {
+              label: "NIALP — base sessions (Sessions 1–8)",
+              filter: (id) =>
+                [
+                  "alphabet",
+                  "pronunciation",
+                  "pronouns",
+                  "articles",
+                  "gender",
+                  "plurals",
+                  "questions",
+                  "numbers",
+                  "days",
+                  "identity",
+                  "family",
+                  "verb-patterns",
+                  "core-verbs",
+                  "ser-estar",
+                  "estar-patterns",
+                  "possessives",
+                  "demonstratives",
+                  "house",
+                  "food",
+                  "weather",
+                  "money",
+                  "measurements",
+                  "transport",
+                  "leisure",
+                  "sports",
+                  "expressions",
+                  "survival",
+                  "idioms",
+                  "reflexive-verbs",
+                  "irregular-verbs",
+                  "food-containers",
+                  "celebrations",
+                  "location",
+                ].indexOf(id) !== -1,
+            },
+            {
+              label: "UFCD 6453 — Português em Sociedade",
+              filter: (id) =>
+                [
+                  "muito-pouco",
+                  "comparatives",
+                  "com-pronomes",
+                  "future-plans",
+                  "imperativo",
+                  "imperfeito",
+                  "adverbios",
+                  "regencia",
+                  "enfatica",
+                ].indexOf(id) !== -1,
+            },
+            {
+              label: "UFCD 6454 — Eu e o Mundo",
+              filter: (id) =>
+                [
+                  "clothing",
+                  "colors",
+                  "stationery",
+                  "shopping",
+                  "correios",
+                  "banking",
+                  "convites",
+                  "residencia",
+                  "car-maintenance",
+                  "directions",
+                  "body",
+                  "description",
+                  "saude",
+                  "doer",
+                ].indexOf(id) !== -1,
+            },
+            {
+              label: "UFCD 6455 — Eu e o Mundo do Trabalho",
+              filter: (id) =>
+                [
+                  "perfeito",
+                  "desde-ha",
+                  "trabalho",
+                  "cabeleireiro",
+                  "cozinha-accoes",
+                  "limpeza",
+                  "hospital-proc",
+                  "telefone",
+                  "construcao",
+                  "agricultura",
+                  "escritorio",
+                  "educacao",
+                  "curriculo",
+                  "carta-apresentacao",
+                  "entrevista",
+                ].indexOf(id) !== -1,
+            },
+            {
+              label: "UFCD 6456 — Eu e os Outros",
+              filter: (id) =>
+                [
+                  "sentimentos",
+                  "gostos-preferencias",
+                  "precisar-dever",
+                  "pronomes-complemento",
+                  "infinitivo",
+                  "participio",
+                  "festividades",
+                  "formulas-cortesia",
+                  "typical-dishes",
+                  "kitchen-utensils",
+                  "social-etiquette",
+                  "payments",
+                ].indexOf(id) !== -1,
+            },
+            {
+              label: "UFCD 6457 — Comunicação e Vida em Sociedade (pending)",
+              filter: (id) => /^ufcd6457/.test(id),
+            },
+          ];
+
+          const allTabs = [];
+          NAV.forEach((g) => g.tabs.forEach((t) => allTabs.push(t)));
+          const used = {};
+          let html = `
+          <h1 style="margin-bottom:8px">By Session</h1>
+          <p style="color:var(--text-2);margin-bottom:18px">Suggested study order matching the NIALP / UFCD progression. Click a section to open it.</p>
+        `;
+          groups.forEach((g) => {
+            const tabs = allTabs.filter((t) => g.filter(t.id));
+            tabs.forEach((t) => (used[t.id] = true));
+            if (!tabs.length) return;
+            html += `<h3 class="sub-heading" style="margin-top:20px">${g.label}</h3>`;
+            html += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:8px">`;
+            tabs.forEach((t) => {
+              const c = sectionCounts(t.id);
+              html += `<button onclick="navigate('${t.id}')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;cursor:pointer;font-family:inherit">
+              <div style="font-weight:700;color:var(--primary);font-size:13px">${t.title}</div>
+              <div style="font-size:11px;color:var(--text-3);margin-top:2px">
+                ${c.total} items
+                ${c.learning ? ` · <span style="color:var(--gold)">${c.learning} learning</span>` : ""}
+                ${c.known ? ` · <span style="color:var(--green)">${c.known} known</span>` : ""}
+              </div>
+            </button>`;
+            });
+            html += `</div>`;
+          });
+          // Other tabs not classified
+          const rest = allTabs.filter(
+            (t) =>
+              !used[t.id] &&
+              t.id !== "practice" &&
+              !/^study-|^changelog$/.test(t.id),
+          );
+          if (rest.length) {
+            html += `<h3 class="sub-heading" style="margin-top:20px">Other / general vocabulary</h3>`;
+            html += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">`;
+            rest.forEach((t) => {
+              const c = sectionCounts(t.id);
+              html += `<button onclick="navigate('${t.id}')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;cursor:pointer;font-family:inherit">
+              <div style="font-weight:700;color:var(--primary);font-size:13px">${t.title}</div>
+              <div style="font-size:11px;color:var(--text-3);margin-top:2px">${c.total} items</div>
+            </button>`;
+            });
+            html += `</div>`;
+          }
+          return html;
+        }
+
+        // Listen-only Player — pick a section, hands-free continuous play
+        function studyListen() {
+          const allTabs = [];
+          NAV.forEach((g) =>
+            g.tabs.forEach((t) => {
+              if (/^study-|^changelog$|^practice$|^ufcd6457/.test(t.id)) return;
+              allTabs.push(t);
+            }),
+          );
+          return `
+          <h1 style="margin-bottom:8px">Listen-only Player</h1>
+          <p style="color:var(--text-2);margin-bottom:18px">Hands-free mode for commute / chores. Picks all Portuguese items from the chosen section and plays them sequentially with adjustable pauses.</p>
+          ${(typeof ttsVoice !== "undefined" ? ttsVoice : null) ? "" : '<div class="warn-box">No Portuguese voice detected. Install a Portuguese (Portugal) language pack in your system settings to enable audio.</div>'}
+          <h3 class="sub-heading">Pick a section</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
+            ${allTabs
+              .map((t) => {
+                const c = sectionCounts(t.id);
+                return `<button onclick="window.startListenSection('${t.id}')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;cursor:pointer;font-family:inherit">
+                <div style="font-weight:700;color:var(--primary);font-size:13px">${t.title}</div>
+                <div style="font-size:11px;color:var(--text-3);margin-top:2px">${c.total} items</div>
+              </button>`;
+              })
+              .join("")}
+          </div>
+          <h3 class="sub-heading" style="margin-top:20px">Or play only items you marked Learning</h3>
+          <button onclick="window.startListenLearning()" style="background:var(--gold);color:#fff;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit;font-size:14px">▶ Play all Learning items</button>
+        `;
+        }
+        window.startListenSection = function (secId) {
+          navigate(secId);
+          setTimeout(() => PLAYBACK.start(), 300);
+        };
+        window.startListenLearning = function () {
+          const list = [];
+          Object.keys(STATE).forEach((k) => {
+            if (STATE[k].status !== "learning") return;
+            const parts = k.split("::");
+            const sec = parts[0],
+              norm = parts[1];
+            if (!SEARCH_INDEX) return;
+            const item = SEARCH_INDEX.find(
+              (x) => x.section === sec && normalizePt(x.pt) === norm,
+            );
+            if (item) list.push({ text: item.pt, el: null });
+          });
+          if (!list.length) {
+            alert(
+              "No items marked Learning yet. Mark some first by tapping the • button next to any Portuguese phrase.",
+            );
+            return;
+          }
+          navigate("study-listen");
+          setTimeout(() => PLAYBACK.start(list), 300);
+        };
+
+        // Recall Drill — quick PT→EN or EN→PT challenge across all learning items
+        function studyDrill() {
+          const learning = [];
+          Object.keys(STATE).forEach((k) => {
+            if (STATE[k].status !== "learning") return;
+            const parts = k.split("::");
+            const sec = parts[0],
+              norm = parts[1];
+            const item =
+              SEARCH_INDEX &&
+              SEARCH_INDEX.find(
+                (x) => x.section === sec && normalizePt(x.pt) === norm,
+              );
+            if (item) learning.push(item);
+          });
+          if (!learning.length) {
+            return `
+            <h1 style="margin-bottom:8px">Recall Drill</h1>
+            <div class="warn-box">Nothing to drill yet. Mark some items as <em>Learning</em> by tapping the small <strong>•</strong> button next to any Portuguese phrase. Then come back here.</div>
+          `;
+          }
+          // Pick one random
+          const item = learning[Math.floor(Math.random() * learning.length)];
+          const dir = Math.random() < 0.5 ? "pt2en" : "en2pt";
+          // Stash item globally so onclick handlers don't need to escape PT text through HTML attrs
+          window.__drillCurrent = { section: item.section, pt: item.pt };
+          return `
+          <h1 style="margin-bottom:8px">Recall Drill</h1>
+          <p style="color:var(--text-2);margin-bottom:18px">${learning.length} item${learning.length === 1 ? "" : "s"} in your Learning pile. One random card at a time.</p>
+          <div id="drill-card" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:30px 24px;text-align:center;min-height:160px;display:flex;flex-direction:column;justify-content:center;gap:14px">
+            ${
+              dir === "pt2en"
+                ? `<div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3)">What does this mean?</div>
+                 <div class="pt" style="font-size:24px;font-weight:800;color:var(--primary)">${item.pt}</div>
+                 ${item.pron ? `<div class="pron" style="font-size:14px;color:var(--text-3)">${item.pron}</div>` : ""}
+                 <div id="drill-answer" style="display:none;font-size:18px;color:var(--text-2);margin-top:8px"><strong>${item.en}</strong>${item.extra ? `<br><span style="font-size:13px;color:var(--text-3)">${item.extra}</span>` : ""}</div>`
+                : `<div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-3)">Say in Portuguese</div>
+                 <div style="font-size:24px;font-weight:800;color:var(--primary)">${item.en}</div>
+                 <div id="drill-answer" style="display:none;font-size:18px;margin-top:8px">
+                   <div class="pt" style="font-weight:800;color:var(--primary)">${item.pt}</div>
+                   ${item.pron ? `<div class="pron" style="font-size:13px;color:var(--text-3);margin-top:4px">${item.pron}</div>` : ""}
+                 </div>`
+            }
+          </div>
+          <div style="display:flex;gap:8px;margin-top:16px;justify-content:center;flex-wrap:wrap">
+            <button onclick="document.getElementById('drill-answer').style.display='block'" style="background:var(--primary);color:#fff;border:none;padding:8px 18px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">Show answer</button>
+            <button onclick="window.drillVerdict('known')" style="background:var(--green-lt);color:var(--green);border:1px solid var(--green);padding:8px 18px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">✓ I knew it</button>
+            <button onclick="window.drillVerdict('learning')" style="background:var(--gold-lt);color:var(--gold);border:1px solid var(--gold);padding:8px 18px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">↻ Still learning</button>
+            <button onclick="navigate('study-drill')" style="background:var(--surface);color:var(--text);border:1px solid var(--border);padding:8px 18px;border-radius:6px;cursor:pointer;font-weight:700;font-family:inherit">→ Next</button>
+          </div>
+          <p style="text-align:center;margin-top:12px;font-size:12px;color:var(--text-3)">From section: <a href="#" onclick="navigate('${item.section}');return false" style="color:var(--primary)">${item.sectionTitle}</a></p>
+        `;
+        }
+        window.drillVerdict = function (status) {
+          const d = window.__drillCurrent;
+          if (!d) {
+            navigate("study-drill");
+            return;
+          }
+          setStatus(d.section, d.pt, status);
+          updateNavBadges();
+          navigate("study-drill");
+        };
+
+        // Changelog
+        function studyChangelog() {
+          return `
+          <h1 style="margin-bottom:8px">Changelog</h1>
+          <p style="color:var(--text-2);margin-bottom:20px">Material added per session, plus structural changes to the reference itself.</p>
+
+          <h3 class="sub-heading">Structural — v2 (current)</h3>
+          <div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:14px 18px;margin-bottom:14px">
+            <ul style="line-height:1.8;color:var(--text-2);padding-left:18px;margin:0">
+              <li>Active-recall state (new / learning / known) per item, stored in browser localStorage</li>
+              <li>Reverse mode — hide Portuguese until tapped, forces recall from English</li>
+              <li>Hide-known mode — collapse mastered rows</li>
+              <li>Listen-all sequential playback with adjustable pause for shadowing</li>
+              <li>Speech-recognition compare (Chromium browsers, pt-PT)</li>
+              <li>Cloze drill on conjugation tables</li>
+              <li>Per-section Anki CSV export</li>
+              <li>Clickable cross-references in Context cards</li>
+              <li>Deep-linking to individual items via URL hash</li>
+              <li>Dashboard, By-Session, Listen-only Player, Recall Drill pages</li>
+              <li>UFCD 6457 stub sections added (placeholders pending material)</li>
+              <li>Source citations on contested facts (Manchester triage, AIMA, IPO fines)</li>
+              <li>Corrected: IPO fine range 250€–1,250€ (was 1,500€) per Article 116, Código da Estrada</li>
+            </ul>
+          </div>
+
+          <h3 class="sub-heading">Content additions — by UFCD/session</h3>
+          <p style="color:var(--text-3);font-size:13px">A full per-session changelog will be auto-generated from the README "S5 additions" / "S8 additions" markers in a later revision. For now the current state of every section is documented in <a href="https://github.com/etherni/portuguese-reference" target="_blank" rel="noopener" style="color:var(--primary)">the README on GitHub</a>.</p>
+        `;
+        }
+
+        // UFCD 6457 stubs
+        function ufcd6457Stub(sessionNum) {
+          return function () {
+            return `
+            ${ctx(
+              "Pending material — UFCD 6457 (Comunicação e vida em sociedade), Session " +
+                sessionNum +
+                ".",
+              "Slot reserved so this missing material is visible instead of silently absent. Material will be added once class notes are captured.",
+              "By Session (order) — full UFCD progression",
+            )}
+            <h1 style="margin-bottom:8px">UFCD 6457 — Sessão ${sessionNum}</h1>
+            <p style="color:var(--text-2)">Material for this session has not been added yet.</p>
+            <div class="rule-box" style="margin-top:14px">
+              Source course page (SEFO): <a href="https://formacao.sefo.pt/course/view.php?id=285#section-9" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">formacao.sefo.pt — course 285, section 9</a>
+            </div>
+            <h3 class="sub-heading" style="margin-top:20px">Likely topics (per UFCD title)</h3>
+            <p style="color:var(--text-2);line-height:1.8">
+              "Comunicação e vida em sociedade" typically covers: acts of communication and register (formal vs informal),
+              participation in civic life (institutions, public services, voting), media literacy,
+              intercultural communication, and discourse markers for opinion / agreement / disagreement.
+              The precise scope depends on the trainer's syllabus — refer to the SEFO page above.
+            </p>
+            <h3 class="sub-heading" style="margin-top:20px">Add content here</h3>
+            <p style="color:var(--text-3);font-size:13px">
+              When material is captured, edit <code>index.html</code> in
+              <a href="https://github.com/etherni/portuguese-reference" target="_blank" rel="noopener" style="color:var(--primary)">the GitHub repo</a>:
+              add a data block (e.g. <code>D_UFCD6457_S${sessionNum}</code>) and replace this stub renderer with a full one
+              (use UFCD 6456 sessions as template).
+            </p>
+          `;
+          };
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // STATE EXPORT / IMPORT / RESET
+        // ─────────────────────────────────────────────────────────────────
+        window.exportAllState = function () {
+          const blob = new Blob(
+            [
+              JSON.stringify(
+                {
+                  state: STATE,
+                  prefs: PREFS,
+                  exported: new Date().toISOString(),
+                },
+                null,
+                2,
+              ),
+            ],
+            { type: "application/json" },
+          );
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download =
+            "pt-ref-state-" + new Date().toISOString().slice(0, 10) + ".json";
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+          }, 100);
+        };
+        window.importStateUI = function () {
+          const input = document.createElement("input");
+          input.type = "file";
+          input.accept = "application/json,.json";
+          input.onchange = (e) => {
+            const f = e.target.files[0];
+            if (!f) return;
+            const r = new FileReader();
+            r.onload = () => {
+              try {
+                const data = JSON.parse(r.result);
+                if (data.state) {
+                  STATE = data.state;
+                  saveState(STATE);
+                }
+                if (data.prefs) Object.assign(PREFS, data.prefs);
+                savePrefs();
+                alert("Imported. Refreshing view.");
+                updateNavBadges();
+                if (
+                  typeof currentSection !== "undefined" ? currentSection : null
+                )
+                  navigate(
+                    typeof currentSection !== "undefined"
+                      ? currentSection
+                      : null,
+                  );
+              } catch (err) {
+                alert("Import failed: " + err.message);
+              }
+            };
+            r.readAsText(f);
+          };
+          input.click();
+        };
+        window.resetState = function () {
+          if (!confirm("This will delete all learning/known marks. Continue?"))
+            return;
+          STATE = {};
+          saveState(STATE);
+          updateNavBadges();
+          if (typeof currentSection !== "undefined" ? currentSection : null)
+            navigate(
+              typeof currentSection !== "undefined" ? currentSection : null,
+            );
+        };
+
+        // ─────────────────────────────────────────────────────────────────
+        // WIRE UP
+        // ─────────────────────────────────────────────────────────────────
+        function init() {
+          // Register study renderers and UFCD 6457 stubs onto the global RENDERERS object
+          if (!(typeof RENDERERS !== "undefined" ? RENDERERS : null)) {
+            // Should not happen; the existing script declares RENDERERS at top level
+            console.warn("RENDERERS not yet declared at init time");
+            setTimeout(init, 50);
+            return;
+          }
+          RENDERERS["study-dashboard"] = studyDashboard;
+          RENDERERS["study-bysession"] = studyBySession;
+          RENDERERS["study-listen"] = studyListen;
+          RENDERERS["study-drill"] = studyDrill;
+          RENDERERS["changelog"] = studyChangelog;
+          for (let i = 1; i <= 8; i++)
+            RENDERERS["ufcd6457-s" + i] = ufcd6457Stub(i);
+
+          // Hooks — called from patched navigate() and doSearch()
+          window.__afterNavigate = function (id) {
+            renderToolbar();
+            attachItemAnchors();
+            augmentRows();
+            applyReverseMode();
+            applyHideKnown();
+            updateNavBadges();
+          };
+          window.__afterSearch = function (q) {
+            attachItemAnchors();
+            augmentRows();
+            applyReverseMode();
+            applyHideKnown();
+          };
+
+          // If a section is already rendered (DOMContentLoaded ran the initial navigate before us
+          // could happen on slow scripts), retrofit it now.
+          if (typeof currentSection !== "undefined" ? currentSection : null) {
+            try {
+              window.__afterNavigate(
+                typeof currentSection !== "undefined" ? currentSection : null,
+              );
+            } catch (e) {}
+          }
+          updateNavBadges();
+        }
+
+        // Run when DOM ready (or immediately if already ready)
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+
+        // Expose for debugging
+        window.PT_REF = {
+          STATE: () => STATE,
+          PREFS: PREFS,
+          counts: sectionCounts,
+          totalCounts: totalCounts,
+        };
+      })();
+    </script>
+
     <div class="voice-banner" id="voice-banner">
       <button
         onclick="document.getElementById('voice-banner').style.display = 'none'"
