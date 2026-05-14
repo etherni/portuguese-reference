@@ -1081,6 +1081,8 @@
             { id: "muito-pouco", title: "Muito / Pouco" },
             { id: "com-pronomes", title: "COM + Pronomes" },
             { id: "pronomes-complemento", title: "Pronomes Complemento" },
+            { id: "pronomes-relativos", title: "Pronomes Relativos" },
+            { id: "pronomes-indefinidos", title: "Pronomes Indefinidos" },
             { id: "gostos-preferencias", title: "Gostos & Preferências" },
             { id: "precisar-dever", title: "Precisar / Ter de / Dever" },
           ],
@@ -1105,6 +1107,8 @@
             { id: "desde-ha", title: "Desde / Há" },
             { id: "infinitivo", title: "Infinitivo & Tempos Verbais" },
             { id: "participio", title: "Particípio Passado" },
+            { id: "voz-passiva", title: "Voz Passiva" },
+            { id: "passar-a", title: "Passar a + Infinitivo" },
           ],
         },
         {
@@ -1123,6 +1127,8 @@
             { id: "curriculo", title: "Currículo & Experiência" },
             { id: "carta-apresentacao", title: "Carta de Apresentação" },
             { id: "entrevista", title: "Entrevista de Trabalho" },
+            { id: "noticias-jornal", title: "Notícias de Jornal" },
+            { id: "tipos-textos", title: "Tipos de Textos Escritos" },
           ],
         },
         {
@@ -1165,19 +1171,6 @@
             { id: "convites", title: "Convites" },
             { id: "residencia", title: "Autorização de Residência" },
             { id: "social-etiquette", title: "Social Etiquette" },
-          ],
-        },
-        {
-          group: "🗣 A2 — Comunicação & Sociedade",
-          tabs: [
-            { id: "ufcd6457-s1", title: "UFCD 6457 — S1 (pending)" },
-            { id: "ufcd6457-s2", title: "UFCD 6457 — S2 (pending)" },
-            { id: "ufcd6457-s3", title: "UFCD 6457 — S3 (pending)" },
-            { id: "ufcd6457-s4", title: "UFCD 6457 — S4 (pending)" },
-            { id: "ufcd6457-s5", title: "UFCD 6457 — S5 (pending)" },
-            { id: "ufcd6457-s6", title: "UFCD 6457 — S6 (pending)" },
-            { id: "ufcd6457-s7", title: "UFCD 6457 — S7 (pending)" },
-            { id: "ufcd6457-s8", title: "UFCD 6457 — S8 (pending)" },
           ],
         },
         {
@@ -24615,6 +24608,449 @@
       )
       .join("")}</tbody>
   </table></div>`,
+
+        // ── Pronomes Relativos ──────────────────────────────────────────
+        "pronomes-relativos": () => `
+  ${ctx("Relative pronouns que / quem / onde link a clause to a preceding noun (person, thing, or place).", "Relative clauses let you add detail without starting a new sentence: 'A senhora que está ali…' instead of 'A senhora está ali. Ela é professora.' The choice of pronoun depends on what comes before it.", "Pronomes Complemento — personal pronouns; Pronomes Indefinidos — also invariable pronoun forms")}
+  ${sectionHead("Pronomes Relativos", "UFCD 6457 S2", "Three invariable relative pronouns. The choice is determined by the antecedent — what the pronoun refers back to.")}
+  ${warnBox("<strong>Quick rule:</strong> <em>que</em> = people or things · <em>quem</em> = people only, especially after a preposition · <em>onde</em> = places")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Antecedente</th><th>Pronome</th><th>Exemplo</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td>Pessoas e/ou coisas</td><td><strong class="pt">que</strong></td><td><em>Os empregados <strong>que</strong> nos serviram eram simpáticos.</em></td><td>who / that / which</td></tr>
+      <tr style="background:var(--surface-2)"><td>Pessoas (após preposição)</td><td><strong class="pt">quem</strong></td><td><em>O dono com <strong>quem</strong> falei deu-nos o cartão.</em></td><td>who(m)</td></tr>
+      <tr><td>Lugares</td><td><strong class="pt">onde</strong></td><td><em>O restaurante <strong>onde</strong> almoçámos era excelente.</em></td><td>where</td></tr>
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">Exercícios resolvidos</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Frase</th><th>Pronome</th><th>Porquê</th></tr></thead>
+    <tbody>
+      ${[
+        [
+          "A senhora ___ está ali é a minha professora.",
+          "que",
+          "refers to a person as subject of the clause",
+        ],
+        [
+          "Os vizinhos ___ mudaram para o 1.º andar são simpáticos.",
+          "que",
+          "refers to people as subject",
+        ],
+        [
+          "A senhora com ___ falei é da Ucrânia.",
+          "quem",
+          "after preposition com, refers to a person",
+        ],
+        [
+          "O senhor de ___ te falei é nosso vizinho.",
+          "quem",
+          "after preposition de, refers to a person",
+        ],
+        ["Gosto muito do bairro ___ moro.", "onde", "refers to a place"],
+        [
+          "Portugal é um país ___ nos sentimos seguros.",
+          "onde",
+          "refers to a place",
+        ],
+        ["Leste a carta ___ eu escrevi?", "que", "refers to a thing (a carta)"],
+      ]
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td style="font-size:13px">${r[0]}</td>
+        <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
+        <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
+      </tr>`,
+        )
+        .join("")}
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      ["https://wordwall.net/pt/resource/19669370", "Pronomes relativos — 1"],
+      ["https://wordwall.net/pt/resource/24576800", "Pronomes relativos — 2"],
+      ["https://wordwall.net/pt/resource/30097881", "Pronome relativo — 3"],
+      ["https://wordwall.net/pt/resource/4966390", "Pronome relativo — 4"],
+      ["https://wordwall.net/pt/resource/16931284", "Pronome relativo — 5"],
+    ]
+      .map(
+        ([u, l]) =>
+          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
+      )
+      .join("")}
+  </div>`,
+
+        // ── Pronomes Indefinidos ────────────────────────────────────────
+        "pronomes-indefinidos": () => `
+  ${ctx("Indefinite pronouns and determiners refer to unspecified quantities or people. Variable ones agree in gender and number; invariable ones never change.", "You already know muito/pouco. This section extends the full set: algum, nenhum, todo, outro, tanto, vários, qualquer, bastante — plus the five invariable forms.", "Muito / Pouco — the two most common variable indefinites; Pronomes Relativos — also invariable pronoun group")}
+  ${sectionHead("Pronomes Indefinidos", "UFCD 6457 S2", "Two groups: <strong>variáveis</strong> (change for gender and number) and <strong>invariáveis</strong> (never change form).")}
+  <h3 class="sub-heading">Variáveis — agree in gender and number</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>M. sing.</th><th>F. sing.</th><th>M. pl.</th><th>F. pl.</th><th>Exemplo</th></tr></thead>
+    <tbody>
+      ${[
+        [
+          "algum",
+          "alguma",
+          "alguns",
+          "algumas",
+          "Eu vou à escola com <strong>algumas</strong> colegas.",
+        ],
+        [
+          "nenhum",
+          "nenhuma",
+          "nenhuns",
+          "nenhumas",
+          "Ela não conhece <strong>nenhum</strong> português.",
+        ],
+        [
+          "muito",
+          "muita",
+          "muitos",
+          "muitas",
+          "Lisboa tem <strong>muitos</strong> restaurantes.",
+        ],
+        [
+          "pouco",
+          "pouca",
+          "poucos",
+          "poucas",
+          "O Oleg tem <strong>pouco</strong> tempo livre.",
+        ],
+        [
+          "tanto",
+          "tanta",
+          "tantos",
+          "tantas",
+          "A Ana tem <strong>tantos</strong> livros.",
+        ],
+        [
+          "todo",
+          "toda",
+          "todos",
+          "todas",
+          "<strong>Todos</strong> os imigrantes devem legalizar-se.",
+        ],
+        [
+          "outro",
+          "outra",
+          "outros",
+          "outras",
+          "Tens <strong>outro</strong> professor?",
+        ],
+        [
+          "—",
+          "—",
+          "vários",
+          "várias",
+          "Tenho <strong>vários</strong> amigos em Portugal.",
+        ],
+        [
+          "qualquer",
+          "—",
+          "quaisquer",
+          "—",
+          "Escolheu uma <strong>qualquer</strong>.",
+        ],
+        [
+          "bastante",
+          "—",
+          "bastantes",
+          "—",
+          "Havia <strong>bastantes</strong> à escolha.",
+        ],
+      ]
+        .map(
+          (
+            r,
+            i,
+          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <td class="pt" style="font-weight:800;color:var(--primary)">${r[0]}</td>
+        <td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td>
+        <td style="font-size:13px">${r[4]}</td>
+      </tr>`,
+        )
+        .join("")}
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">Invariáveis — never change form</h3>
+  <div class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
+    ${[
+      ["alguém", "someone"],
+      ["ninguém", "nobody"],
+      ["tudo", "everything"],
+      ["nada", "nothing"],
+      ["algo", "something"],
+      ["outrem", "another (literary)"],
+    ]
+      .map(
+        ([pt, en]) =>
+          `<div class="card-sm"><div class="pt">${pt}</div><div class="en">${en}</div></div>`,
+      )
+      .join("")}
+  </div>
+  ${infoBox("<strong>Exemplos invariáveis:</strong> <em>Alguém</em> sabe onde fica o ACM? · <em>Ninguém</em> deve estar ilegal. · Tenho <em>tudo</em> preparado. · Não quero comprar <em>nada</em>.")}
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      [
+        "https://wordwall.net/pt/resource/37806335",
+        "Pronomes relativos e indefinidos (UFCD 6457)",
+      ],
+      ["https://wordwall.net/pt/resource/17796686", "Pronomes indefinidos — 2"],
+      ["https://wordwall.net/pt/resource/18641971", "Pronomes indefinidos — 3"],
+      ["https://wordwall.net/pt/resource/19153443", "Pronomes indefinidos — 4"],
+      ["https://wordwall.net/pt/resource/20352659", "Pronomes indefinidos — 5"],
+    ]
+      .map(
+        ([u, l]) =>
+          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
+      )
+      .join("")}
+  </div>`,
+
+        // ── Voz Passiva ─────────────────────────────────────────────────
+        "voz-passiva": () => `
+  ${ctx("Passive voice: the action is done to the subject rather than by the subject. Formed with SER + past participle.", "Passive is everywhere in news, formal letters, and official texts — 'O banco foi assaltado.' You must also convert active↔passive in exams.", "Particípio Passado — the passive always uses this form; Pronomes Relativos — often appear in passive sentences")}
+  ${sectionHead("Voz Passiva", "UFCD 6457 S2", "Active voice highlights who acts. Passive voice highlights what was done. Construction: <strong>SER</strong> (same tense as the active verb) + <strong>Particípio Passado</strong> (agrees with new subject) + <strong>por/pelo/pela…</strong> + agent.")}
+  ${warnBox("<strong>Formula:</strong> sujeito + <em>ser</em> + particípio passado + <em>por/pelo/pela/pelos/pelas</em> + agente<br><br><strong>Key rule:</strong> SER must be in the same tense as the main verb of the active sentence. The past participle must agree in gender and number with the new subject.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Tempo</th><th>Voz Ativa</th><th>Voz Passiva</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Presente</strong></td><td>A Olga limpa a casa.</td><td>A casa <strong>é limpa</strong> pela Olga.</td></tr>
+      <tr style="background:var(--surface-2)"><td><strong>Pretérito Perfeito</strong></td><td>A Ana escreveu uma carta.</td><td>A carta <strong>foi escrita</strong> pela Ana.</td></tr>
+      <tr><td><strong>Futuro</strong></td><td>A empresa vai organizar uma festa.</td><td>Uma festa <strong>vai ser organizada</strong> pela empresa.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card" style="margin-bottom:16px">
+    <div style="font-weight:800;margin-bottom:10px">Contrações com <em>por</em></div>
+    <div class="card-grid" style="grid-template-columns:repeat(4,1fr)">
+      ${[
+        ["por + o", "pelo"],
+        ["por + a", "pela"],
+        ["por + os", "pelos"],
+        ["por + as", "pelas"],
+      ]
+        .map(
+          ([f, t]) =>
+            `<div class="card-sm" style="text-align:center"><div style="font-size:11px;color:var(--text-3)">${f}</div><div class="pt" style="font-size:18px">${t}</div></div>`,
+        )
+        .join("")}
+    </div>
+  </div>
+  <h3 class="sub-heading">Passiva sem agente</h3>
+  ${infoBox("When the agent is unknown or irrelevant, it is omitted. The passive still works:<br><em>Assaltaram o banco. → <strong>O banco foi assaltado</strong> ontem de manhã.</em><br><em>Vão construir novas casas. → <strong>Novas casas vão ser construídas.</strong></em>")}
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      [
+        "https://wordwall.net/pt/resource/37806968",
+        "Voz ativa e voz passiva (UFCD 6457)",
+      ],
+      [
+        "https://wordwall.net/pt/resource/24434515",
+        "Bora praticar a voz passiva",
+      ],
+      ["https://wordwall.net/pt/resource/28519184", "Voz passiva — 3"],
+      ["https://wordwall.net/pt/resource/5974484", "Voz ativa ou voz passiva?"],
+      ["https://wordwall.net/pt/resource/39130704", "Port — voz passiva"],
+    ]
+      .map(
+        ([u, l]) =>
+          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
+      )
+      .join("")}
+  </div>`,
+
+        // ── Passar a + Infinitivo ───────────────────────────────────────
+        "passar-a": () => `
+  ${ctx("Verbal aspect complex: passar a + infinitive signals the start of a new habitual action. Contrast with deixar de + infinitive (stopping a habit).", "These verbal complexes express how an action changes over time — essential for talking about life changes and new routines at A2.", "Voz Passiva — also uses SER as auxiliary; Infinitivo & Tempos Verbais — infinitive patterns")}
+  ${sectionHead("Passar a + Infinitivo", "UFCD 6457 S2", "Aspectual verbal complex. <em>Passar a + inf.</em> = to start doing something habitually. Contrast: <em>deixar de + inf.</em> = to stop doing something habitually.")}
+  ${warnBox("<strong>Complexos verbais de aspeto:</strong><br>• <em>Deixar de + infinitivo</em> → pôr fim a uma ação habitual (stop doing something)<br>• <em>Passar a + infinitivo</em> → iniciar uma ação habitual (start doing something)")}
+  <h3 class="sub-heading">Conjugação de PASSAR — Presente do Indicativo</h3>
+  <div class="conj-grid" style="grid-template-columns:1fr">
+    <div class="conj-box">
+      <div class="conj-header" style="background:var(--primary)">passar a + infinitivo</div>
+      ${[
+        ["eu", "passo", "Logo, passo a saber a resposta."],
+        ["tu", "passas", "Passas a conhecer o caminho para a escola."],
+        ["ele / ela", "passa", "Passa a viver com mais alegria."],
+        [
+          "nós",
+          "passamos",
+          "Passamos a conviver mais desde que nos conhecemos.",
+        ],
+        ["vós", "passais", "(archaic)"],
+        ["eles / elas", "passam", "Passam a ter um motivo para regressarem."],
+      ]
+        .map(
+          (r, i) => `
+      <div class="conj-row" style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        <span class="conj-pronoun">${r[0]}</span>
+        <span class="conj-form pt">${r[1]} a …</span>
+        <span style="font-size:12px;color:var(--text-3);grid-column:1/-1;padding-top:2px">${r[2]}</span>
+      </div>`,
+        )
+        .join("")}
+    </div>
+  </div>
+  <div class="card" style="border-left:4px solid var(--primary);margin-bottom:16px">
+    <div style="font-weight:800;margin-bottom:6px">📌 Nota: Subida do clítico</div>
+    <div style="font-size:13px;color:var(--text-2);line-height:1.8">
+      With <em>passar a</em>, a clitic pronoun can either stay on the infinitive or climb to the auxiliary. Both are grammatically valid:<br>
+      <em>«passou a incluir-<strong>se</strong> os novos dados»</em> — stays on infinitive<br>
+      <em>«passou-<strong>se</strong> a incluir os novos dados»</em> — climbs to auxiliary<br>
+      Note: <em>por</em> does <strong>not</strong> allow clitic climbing, e.g. «O objetivo passou por dar-<strong>lhe</strong> a novidade» (only option).
+    </div>
+  </div>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    <div style="font-weight:800;color:var(--gold);margin-bottom:6px">📹 Vídeos de apoio</div>
+    ${[
+      ["https://youtu.be/ckl5f-FjGyo", "Passar a + Infinitivo — vídeo 1"],
+      [
+        "https://youtu.be/Nni4O28jB6E",
+        "Complexos verbais (Deixar de / Passar a) — vídeo 2",
+      ],
+    ]
+      .map(
+        ([u, l]) =>
+          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
+      )
+      .join("")}
+  </div>`,
+
+        // ── Notícias de Jornal ──────────────────────────────────────────
+        "noticias-jornal": () => `
+  ${ctx("News article structure: title, lead (who/what/when/where), body (why/how). What makes something newsworthy.", "Media literacy is part of A2 civic communication. Understanding news structure helps reading comprehension and teaches formal written register.", "Tipos de Textos Escritos — other formal text types; Voz Passiva — passive voice is common in news")}
+  ${sectionHead("Notícias de Jornal", "UFCD 6457 S1", "A news article is a short factual narrative about a current event of general interest. It always reports something new — routine events are not news.")}
+  ${infoBox("<strong>O que é uma notícia?</strong> Uma narrativa curta, oral ou escrita, de um acontecimento <em>atual</em> e com interesse geral. A notícia contém sempre uma novidade — o que se repete normalmente não é objeto de notícia.")}
+  <h3 class="sub-heading">Estrutura da notícia</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Parte</th><th>Perguntas respondidas</th><th>Função</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Título</strong></td><td>—</td><td>Capta a atenção; resume o acontecimento</td></tr>
+      <tr style="background:var(--surface-2)"><td><strong>Lead</strong> <span class="note">(parágrafo-guia / cabeça)</span></td><td><em>Quem? O quê? Quando? Onde?</em></td><td>Responde às quatro perguntas essenciais no primeiro parágrafo</td></tr>
+      <tr><td><strong>Corpo</strong> <span class="note">(desenvolvimento)</span></td><td><em>Porquê? Como?</em></td><td>Contextualiza, aprofunda detalhes e consequências</td></tr>
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      ["https://wordwall.net/pt/resource/10403093", "Notícia — exercício 1"],
+      ["https://wordwall.net/pt/resource/10569420", "Notícia — exercício 2"],
+      ["https://wordwall.net/pt/resource/68919208", "Notícia — exercício 3"],
+      ["https://wordwall.net/pt/resource/18079158", "Notícia — exercício 4"],
+      ["https://wordwall.net/pt/resource/25790721", "A notícia — exercício 5"],
+    ]
+      .map(
+        ([u, l]) =>
+          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
+      )
+      .join("")}
+  </div>`,
+
+        // ── Tipos de Textos Escritos ────────────────────────────────────
+        "tipos-textos": () => `
+  ${ctx("Written text types at A2: formal and informal letters, emails, cover letters, complaint letters, recipes. Each has a fixed register and structural conventions.", "Knowing the conventions lets you produce correct writing for exam tasks and real-life situations. The formal/informal contrast is tested directly in UFCD 6457.", "Correios & Carta — postal vocabulary and basic letter structure; Carta de Apresentação — full cover letter guide")}
+  ${sectionHead("Tipos de Textos Escritos", "UFCD 6457 S1", "Each text type has a fixed structure and register. The formal/informal contrast is fundamental — a wrong greeting or closing marks a writing task as failed.")}
+  <h3 class="sub-heading">✉️ Carta formal vs Carta informal</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Elemento</th><th>Carta Informal</th><th>Carta Formal</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cabeçalho</strong></td><td>Local e data (à direita)</td><td>Local e data (à direita)</td></tr>
+      <tr style="background:var(--surface-2)"><td><strong>Saudação</strong></td><td>Caro amigo, / Querido/a…, / Olá, Maria!</td><td>Exmo. Sr. / Exma. Sr.ª / Exmos. Srs.</td></tr>
+      <tr><td><strong>Corpo</strong></td><td>Linguagem informal</td><td>Linguagem formal</td></tr>
+      <tr style="background:var(--surface-2)"><td><strong>Despedida</strong></td><td>Um abraço, / Um beijo do/da… / Até breve!</td><td>Atenciosamente, / Atentamente, / Com os meus melhores cumprimentos,</td></tr>
+      <tr><td><strong>Assinatura</strong></td><td>Primeiro nome ou alcunha (à direita)</td><td>Nome completo (à direita)</td></tr>
+      <tr style="background:var(--surface-2)"><td><strong>P.S.</strong></td><td colspan="2">Aquilo que nos esquecemos de escrever no corpo. Do latim <em>Post Scriptum</em> — «depois do que foi escrito».</td></tr>
+    </tbody>
+  </table></div>
+  <h3 class="sub-heading">📋 Estrutura da carta informal (sequência)</h3>
+  <div class="card-grid">
+    ${["Local e data", "Saudação", "Introdução", "Desenvolvimento", "Conclusão", "Despedida", "Assinatura"].map((s, i) => `<div class="card-sm" style="display:flex;align-items:center;gap:10px"><span style="font-size:20px;font-weight:800;color:var(--primary-dk);opacity:0.25">${i + 1}</span><span class="pt" style="font-size:14px">${s}</span></div>`).join("")}
+  </div>
+  <h3 class="sub-heading">📬 O envelope</h3>
+  <div class="card-grid">
+    ${[
+      ["o remetente", "[rɨ'mɨtẽtɨ]", "the sender"],
+      ["o destinatário", "[dɨʃtinɐ'tarju]", "the recipient"],
+      ["o selo", "['selu]", "the stamp"],
+    ]
+      .map(
+        ([pt, pron, en]) =>
+          `<div class="card-sm"><div class="pt">${pt}</div><div style="margin:3px 0">${pr(pron)}</div><div class="en">${en}</div></div>`,
+      )
+      .join("")}
+  </div>
+  <h3 class="sub-heading">📝 Outros tipos de texto</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Tipo de texto</th><th>English</th><th>Registo</th><th>Nota</th></tr></thead>
+    <tbody>
+      ${[
+        [
+          "receita de culinária",
+          "recipe",
+          "informal",
+          "Instructions for preparing a dish; imperative mood",
+        ],
+        [
+          "correio eletrónico",
+          "email",
+          "semi-formal",
+          "Shorter than a letter; adapted subject line + greeting",
+        ],
+        [
+          "mensagem",
+          "message / text",
+          "informal",
+          "Short; no full structure required",
+        ],
+        [
+          "carta de apresentação",
+          "cover letter",
+          "formal",
+          "Introduces yourself for a job — see dedicated section",
+        ],
+        [
+          "carta de reclamação",
+          "complaint letter",
+          "formal",
+          "Reports a problem to a business; often formal + assertive",
+        ],
+      ]
+        .map(
+          (r, i) =>
+            `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:700">${r[0]}</td><td class="en">${r[1]}</td><td style="font-size:12px">${r[2]}</td><td style="font-size:12px;color:var(--text-3)">${r[3]}</td></tr>`,
+        )
+        .join("")}
+    </tbody>
+  </table></div>
+  ${infoBox("<strong>Livro de Reclamações:</strong> Every business in Portugal must have a complaints book. Two forms: <strong>físico</strong> (physical book on-site) and <strong>eletrónico</strong> (online at livroreclamacoes.pt).")}
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      ["https://wordwall.net/pt/resource/75164814", "Tipos de textos — 1"],
+      [
+        "https://wordwall.net/pt/resource/25778557",
+        "Quiz géneros textuais — 2",
+      ],
+      ["https://wordwall.net/pt/resource/4058026", "Géneros textuais — 3"],
+      [
+        "https://wordwall.net/pt/resource/20159033",
+        "Quiz géneros textuais — 4",
+      ],
+      ["https://wordwall.net/pt/resource/1848914", "Organização de texto — 5"],
+    ]
+      .map(
+        ([u, l]) =>
+          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
+      )
+      .join("")}
+  </div>`,
       };
 
       // ─────────────────────────────────────────────
@@ -26448,40 +26884,6 @@
         `;
         }
 
-        // UFCD 6457 stubs
-        function ufcd6457Stub(sessionNum) {
-          return function () {
-            return `
-            ${ctx(
-              "Pending material — UFCD 6457 (Comunicação e vida em sociedade), Session " +
-                sessionNum +
-                ".",
-              "Slot reserved so this missing material is visible instead of silently absent. Material will be added once class notes are captured.",
-              "By Session (order) — full UFCD progression",
-            )}
-            <h1 style="margin-bottom:8px">UFCD 6457 — Sessão ${sessionNum}</h1>
-            <p style="color:var(--text-2)">Material for this session has not been added yet.</p>
-            <div class="rule-box" style="margin-top:14px">
-              Source course page (SEFO): <a href="https://formacao.sefo.pt/course/view.php?id=285#section-9" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">formacao.sefo.pt — course 285, section 9</a>
-            </div>
-            <h3 class="sub-heading" style="margin-top:20px">Likely topics (per UFCD title)</h3>
-            <p style="color:var(--text-2);line-height:1.8">
-              "Comunicação e vida em sociedade" typically covers: acts of communication and register (formal vs informal),
-              participation in civic life (institutions, public services, voting), media literacy,
-              intercultural communication, and discourse markers for opinion / agreement / disagreement.
-              The precise scope depends on the trainer's syllabus — refer to the SEFO page above.
-            </p>
-            <h3 class="sub-heading" style="margin-top:20px">Add content here</h3>
-            <p style="color:var(--text-3);font-size:13px">
-              When material is captured, edit <code>index.html</code> in
-              <a href="https://github.com/etherni/portuguese-reference" target="_blank" rel="noopener" style="color:var(--primary)">the GitHub repo</a>:
-              add a data block (e.g. <code>D_UFCD6457_S${sessionNum}</code>) and replace this stub renderer with a full one
-              (use UFCD 6456 sessions as template).
-            </p>
-          `;
-          };
-        }
-
         // ─────────────────────────────────────────────────────────────────
         // STATE EXPORT / IMPORT / RESET
         // ─────────────────────────────────────────────────────────────────
@@ -26574,9 +26976,6 @@
           RENDERERS["study-listen"] = studyListen;
           RENDERERS["study-drill"] = studyDrill;
           RENDERERS["changelog"] = studyChangelog;
-          for (let i = 1; i <= 8; i++)
-            RENDERERS["ufcd6457-s" + i] = ufcd6457Stub(i);
-
           // Hooks — called from patched navigate() and doSearch()
           window.__afterNavigate = function (id) {
             renderToolbar();
