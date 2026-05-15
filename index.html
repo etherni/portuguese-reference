@@ -1109,6 +1109,7 @@
             { id: "participio", title: "Particípio Passado" },
             { id: "voz-passiva", title: "Voz Passiva" },
             { id: "passar-a", title: "Passar a + Infinitivo" },
+            { id: "infinitivo-pessoal", title: "Infinitivo Pessoal vs Impessoal" },
           ],
         },
         {
@@ -1129,6 +1130,10 @@
             { id: "entrevista", title: "Entrevista de Trabalho" },
             { id: "noticias-jornal", title: "Notícias de Jornal" },
             { id: "tipos-textos", title: "Tipos de Textos Escritos" },
+            { id: "cidadania-diversidade", title: "Cidadania & Diversidade Cultural" },
+            { id: "estereotipos", title: "Estereótipos & Preconceito" },
+            { id: "instituicoes-imigrantes", title: "Instituições de Apoio" },
+            { id: "legalizacao-imigracao", title: "Legalização & Imigração" },
           ],
         },
         {
@@ -24627,61 +24632,23 @@
     <thead><tr><th>Frase</th><th>Pronome</th><th>Porquê</th></tr></thead>
     <tbody>
       ${[
-        [
-          "A senhora ___ está ali é a minha professora.",
-          "que",
-          "refers to a person as subject of the clause",
-        ],
-        [
-          "Os vizinhos ___ mudaram para o 1.º andar são simpáticos.",
-          "que",
-          "refers to people as subject",
-        ],
-        [
-          "A senhora com ___ falei é da Ucrânia.",
-          "quem",
-          "after preposition com, refers to a person",
-        ],
-        [
-          "O senhor de ___ te falei é nosso vizinho.",
-          "quem",
-          "after preposition de, refers to a person",
-        ],
-        ["Gosto muito do bairro ___ moro.", "onde", "refers to a place"],
-        [
-          "Portugal é um país ___ nos sentimos seguros.",
-          "onde",
-          "refers to a place",
-        ],
-        ["Leste a carta ___ eu escrevi?", "que", "refers to a thing (a carta)"],
-      ]
-        .map(
-          (
-            r,
-            i,
-          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        ["A senhora ___ está ali é a minha professora.","que","refers to a person as subject of the clause"],
+        ["Os vizinhos ___ mudaram para o 1.º andar são simpáticos.","que","refers to people as subject"],
+        ["A senhora com ___ falei é da Ucrânia.","quem","after preposition com, refers to a person"],
+        ["O senhor de ___ te falei é nosso vizinho.","quem","after preposition de, refers to a person"],
+        ["Gosto muito do bairro ___ moro.","onde","refers to a place"],
+        ["Portugal é um país ___ nos sentimos seguros.","onde","refers to a place"],
+        ["Leste a carta ___ eu escrevi?","que","refers to a thing (a carta)"],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}">
         <td style="font-size:13px">${r[0]}</td>
         <td class="pt" style="font-weight:800;color:var(--primary)">${r[1]}</td>
         <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
-      </tr>`,
-        )
-        .join("")}
+      </tr>`).join("")}
     </tbody>
   </table></div>
   <h3 class="sub-heading">🏋️ Hora de treinar</h3>
   <div class="card" style="border-left:4px solid var(--gold)">
-    ${[
-      ["https://wordwall.net/pt/resource/19669370", "Pronomes relativos — 1"],
-      ["https://wordwall.net/pt/resource/24576800", "Pronomes relativos — 2"],
-      ["https://wordwall.net/pt/resource/30097881", "Pronome relativo — 3"],
-      ["https://wordwall.net/pt/resource/4966390", "Pronome relativo — 4"],
-      ["https://wordwall.net/pt/resource/16931284", "Pronome relativo — 5"],
-    ]
-      .map(
-        ([u, l]) =>
-          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
-      )
-      .join("")}
+    ${[["https://wordwall.net/pt/resource/19669370","Pronomes relativos — 1"],["https://wordwall.net/pt/resource/24576800","Pronomes relativos — 2"],["https://wordwall.net/pt/resource/30097881","Pronome relativo — 3"],["https://wordwall.net/pt/resource/4966390","Pronome relativo — 4"],["https://wordwall.net/pt/resource/16931284","Pronome relativo — 5"]].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
   </div>`,
 
         // ── Pronomes Indefinidos ────────────────────────────────────────
@@ -24693,124 +24660,31 @@
     <thead><tr><th>M. sing.</th><th>F. sing.</th><th>M. pl.</th><th>F. pl.</th><th>Exemplo</th></tr></thead>
     <tbody>
       ${[
-        [
-          "algum",
-          "alguma",
-          "alguns",
-          "algumas",
-          "Eu vou à escola com <strong>algumas</strong> colegas.",
-        ],
-        [
-          "nenhum",
-          "nenhuma",
-          "nenhuns",
-          "nenhumas",
-          "Ela não conhece <strong>nenhum</strong> português.",
-        ],
-        [
-          "muito",
-          "muita",
-          "muitos",
-          "muitas",
-          "Lisboa tem <strong>muitos</strong> restaurantes.",
-        ],
-        [
-          "pouco",
-          "pouca",
-          "poucos",
-          "poucas",
-          "O Oleg tem <strong>pouco</strong> tempo livre.",
-        ],
-        [
-          "tanto",
-          "tanta",
-          "tantos",
-          "tantas",
-          "A Ana tem <strong>tantos</strong> livros.",
-        ],
-        [
-          "todo",
-          "toda",
-          "todos",
-          "todas",
-          "<strong>Todos</strong> os imigrantes devem legalizar-se.",
-        ],
-        [
-          "outro",
-          "outra",
-          "outros",
-          "outras",
-          "Tens <strong>outro</strong> professor?",
-        ],
-        [
-          "—",
-          "—",
-          "vários",
-          "várias",
-          "Tenho <strong>vários</strong> amigos em Portugal.",
-        ],
-        [
-          "qualquer",
-          "—",
-          "quaisquer",
-          "—",
-          "Escolheu uma <strong>qualquer</strong>.",
-        ],
-        [
-          "bastante",
-          "—",
-          "bastantes",
-          "—",
-          "Havia <strong>bastantes</strong> à escolha.",
-        ],
-      ]
-        .map(
-          (
-            r,
-            i,
-          ) => `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+        ["algum","alguma","alguns","algumas","Eu vou à escola com <strong>algumas</strong> colegas."],
+        ["nenhum","nenhuma","nenhuns","nenhumas","Ela não conhece <strong>nenhum</strong> português."],
+        ["muito","muita","muitos","muitas","Lisboa tem <strong>muitos</strong> restaurantes."],
+        ["pouco","pouca","poucos","poucas","O Oleg tem <strong>pouco</strong> tempo livre."],
+        ["tanto","tanta","tantos","tantas","A Ana tem <strong>tantos</strong> livros."],
+        ["todo","toda","todos","todas","<strong>Todos</strong> os imigrantes devem legalizar-se."],
+        ["outro","outra","outros","outras","Tens <strong>outro</strong> professor?"],
+        ["—","—","vários","várias","Tenho <strong>vários</strong> amigos em Portugal."],
+        ["qualquer","—","quaisquer","—","Escolheu uma <strong>qualquer</strong>."],
+        ["bastante","—","bastantes","—","Havia <strong>bastantes</strong> à escolha."],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}">
         <td class="pt" style="font-weight:800;color:var(--primary)">${r[0]}</td>
         <td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td>
         <td style="font-size:13px">${r[4]}</td>
-      </tr>`,
-        )
-        .join("")}
+      </tr>`).join("")}
     </tbody>
   </table></div>
   <h3 class="sub-heading">Invariáveis — never change form</h3>
   <div class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
-    ${[
-      ["alguém", "someone"],
-      ["ninguém", "nobody"],
-      ["tudo", "everything"],
-      ["nada", "nothing"],
-      ["algo", "something"],
-      ["outrem", "another (literary)"],
-    ]
-      .map(
-        ([pt, en]) =>
-          `<div class="card-sm"><div class="pt">${pt}</div><div class="en">${en}</div></div>`,
-      )
-      .join("")}
+    ${[["alguém","someone"],["ninguém","nobody"],["tudo","everything"],["nada","nothing"],["algo","something"],["outrem","another (literary)"]].map(([pt,en])=>`<div class="card-sm"><div class="pt">${pt}</div><div class="en">${en}</div></div>`).join("")}
   </div>
   ${infoBox("<strong>Exemplos invariáveis:</strong> <em>Alguém</em> sabe onde fica o ACM? · <em>Ninguém</em> deve estar ilegal. · Tenho <em>tudo</em> preparado. · Não quero comprar <em>nada</em>.")}
   <h3 class="sub-heading">🏋️ Hora de treinar</h3>
   <div class="card" style="border-left:4px solid var(--gold)">
-    ${[
-      [
-        "https://wordwall.net/pt/resource/37806335",
-        "Pronomes relativos e indefinidos (UFCD 6457)",
-      ],
-      ["https://wordwall.net/pt/resource/17796686", "Pronomes indefinidos — 2"],
-      ["https://wordwall.net/pt/resource/18641971", "Pronomes indefinidos — 3"],
-      ["https://wordwall.net/pt/resource/19153443", "Pronomes indefinidos — 4"],
-      ["https://wordwall.net/pt/resource/20352659", "Pronomes indefinidos — 5"],
-    ]
-      .map(
-        ([u, l]) =>
-          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
-      )
-      .join("")}
+    ${[["https://wordwall.net/pt/resource/37806335","Pronomes relativos e indefinidos (UFCD 6457)"],["https://wordwall.net/pt/resource/17796686","Pronomes indefinidos — 2"],["https://wordwall.net/pt/resource/18641971","Pronomes indefinidos — 3"],["https://wordwall.net/pt/resource/19153443","Pronomes indefinidos — 4"],["https://wordwall.net/pt/resource/20352659","Pronomes indefinidos — 5"]].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
   </div>`,
 
         // ── Voz Passiva ─────────────────────────────────────────────────
@@ -24829,41 +24703,14 @@
   <div class="card" style="margin-bottom:16px">
     <div style="font-weight:800;margin-bottom:10px">Contrações com <em>por</em></div>
     <div class="card-grid" style="grid-template-columns:repeat(4,1fr)">
-      ${[
-        ["por + o", "pelo"],
-        ["por + a", "pela"],
-        ["por + os", "pelos"],
-        ["por + as", "pelas"],
-      ]
-        .map(
-          ([f, t]) =>
-            `<div class="card-sm" style="text-align:center"><div style="font-size:11px;color:var(--text-3)">${f}</div><div class="pt" style="font-size:18px">${t}</div></div>`,
-        )
-        .join("")}
+      ${[["por + o","pelo"],["por + a","pela"],["por + os","pelos"],["por + as","pelas"]].map(([f,t])=>`<div class="card-sm" style="text-align:center"><div style="font-size:11px;color:var(--text-3)">${f}</div><div class="pt" style="font-size:18px">${t}</div></div>`).join("")}
     </div>
   </div>
   <h3 class="sub-heading">Passiva sem agente</h3>
   ${infoBox("When the agent is unknown or irrelevant, it is omitted. The passive still works:<br><em>Assaltaram o banco. → <strong>O banco foi assaltado</strong> ontem de manhã.</em><br><em>Vão construir novas casas. → <strong>Novas casas vão ser construídas.</strong></em>")}
   <h3 class="sub-heading">🏋️ Hora de treinar</h3>
   <div class="card" style="border-left:4px solid var(--gold)">
-    ${[
-      [
-        "https://wordwall.net/pt/resource/37806968",
-        "Voz ativa e voz passiva (UFCD 6457)",
-      ],
-      [
-        "https://wordwall.net/pt/resource/24434515",
-        "Bora praticar a voz passiva",
-      ],
-      ["https://wordwall.net/pt/resource/28519184", "Voz passiva — 3"],
-      ["https://wordwall.net/pt/resource/5974484", "Voz ativa ou voz passiva?"],
-      ["https://wordwall.net/pt/resource/39130704", "Port — voz passiva"],
-    ]
-      .map(
-        ([u, l]) =>
-          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
-      )
-      .join("")}
+    ${[["https://wordwall.net/pt/resource/37806968","Voz ativa e voz passiva (UFCD 6457)"],["https://wordwall.net/pt/resource/24434515","Bora praticar a voz passiva"],["https://wordwall.net/pt/resource/28519184","Voz passiva — 3"],["https://wordwall.net/pt/resource/5974484","Voz ativa ou voz passiva?"],["https://wordwall.net/pt/resource/39130704","Port — voz passiva"]].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
   </div>`,
 
         // ── Passar a + Infinitivo ───────────────────────────────────────
@@ -24875,27 +24722,12 @@
   <div class="conj-grid" style="grid-template-columns:1fr">
     <div class="conj-box">
       <div class="conj-header" style="background:var(--primary)">passar a + infinitivo</div>
-      ${[
-        ["eu", "passo", "Logo, passo a saber a resposta."],
-        ["tu", "passas", "Passas a conhecer o caminho para a escola."],
-        ["ele / ela", "passa", "Passa a viver com mais alegria."],
-        [
-          "nós",
-          "passamos",
-          "Passamos a conviver mais desde que nos conhecemos.",
-        ],
-        ["vós", "passais", "(archaic)"],
-        ["eles / elas", "passam", "Passam a ter um motivo para regressarem."],
-      ]
-        .map(
-          (r, i) => `
-      <div class="conj-row" style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}">
+      ${[["eu","passo","Logo, passo a saber a resposta."],["tu","passas","Passas a conhecer o caminho para a escola."],["ele / ela","passa","Passa a viver com mais alegria."],["nós","passamos","Passamos a conviver mais desde que nos conhecemos."],["vós","passais","(archaic)"],["eles / elas","passam","Passam a ter um motivo para regressarem."]].map((r,i)=>`
+      <div class="conj-row" style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}">
         <span class="conj-pronoun">${r[0]}</span>
         <span class="conj-form pt">${r[1]} a …</span>
         <span style="font-size:12px;color:var(--text-3);grid-column:1/-1;padding-top:2px">${r[2]}</span>
-      </div>`,
-        )
-        .join("")}
+      </div>`).join("")}
     </div>
   </div>
   <div class="card" style="border-left:4px solid var(--primary);margin-bottom:16px">
@@ -24909,18 +24741,7 @@
   </div>
   <div class="card" style="border-left:4px solid var(--gold)">
     <div style="font-weight:800;color:var(--gold);margin-bottom:6px">📹 Vídeos de apoio</div>
-    ${[
-      ["https://youtu.be/ckl5f-FjGyo", "Passar a + Infinitivo — vídeo 1"],
-      [
-        "https://youtu.be/Nni4O28jB6E",
-        "Complexos verbais (Deixar de / Passar a) — vídeo 2",
-      ],
-    ]
-      .map(
-        ([u, l]) =>
-          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
-      )
-      .join("")}
+    ${[["https://youtu.be/ckl5f-FjGyo","Passar a + Infinitivo — vídeo 1"],["https://youtu.be/Nni4O28jB6E","Complexos verbais (Deixar de / Passar a) — vídeo 2"]].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
   </div>`,
 
         // ── Notícias de Jornal ──────────────────────────────────────────
@@ -24939,18 +24760,7 @@
   </table></div>
   <h3 class="sub-heading">🏋️ Hora de treinar</h3>
   <div class="card" style="border-left:4px solid var(--gold)">
-    ${[
-      ["https://wordwall.net/pt/resource/10403093", "Notícia — exercício 1"],
-      ["https://wordwall.net/pt/resource/10569420", "Notícia — exercício 2"],
-      ["https://wordwall.net/pt/resource/68919208", "Notícia — exercício 3"],
-      ["https://wordwall.net/pt/resource/18079158", "Notícia — exercício 4"],
-      ["https://wordwall.net/pt/resource/25790721", "A notícia — exercício 5"],
-    ]
-      .map(
-        ([u, l]) =>
-          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
-      )
-      .join("")}
+    ${[["https://wordwall.net/pt/resource/10403093","Notícia — exercício 1"],["https://wordwall.net/pt/resource/10569420","Notícia — exercício 2"],["https://wordwall.net/pt/resource/68919208","Notícia — exercício 3"],["https://wordwall.net/pt/resource/18079158","Notícia — exercício 4"],["https://wordwall.net/pt/resource/25790721","A notícia — exercício 5"]].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
   </div>`,
 
         // ── Tipos de Textos Escritos ────────────────────────────────────
@@ -24971,86 +24781,369 @@
   </table></div>
   <h3 class="sub-heading">📋 Estrutura da carta informal (sequência)</h3>
   <div class="card-grid">
-    ${["Local e data", "Saudação", "Introdução", "Desenvolvimento", "Conclusão", "Despedida", "Assinatura"].map((s, i) => `<div class="card-sm" style="display:flex;align-items:center;gap:10px"><span style="font-size:20px;font-weight:800;color:var(--primary-dk);opacity:0.25">${i + 1}</span><span class="pt" style="font-size:14px">${s}</span></div>`).join("")}
+    ${["Local e data","Saudação","Introdução","Desenvolvimento","Conclusão","Despedida","Assinatura"].map((s,i)=>`<div class="card-sm" style="display:flex;align-items:center;gap:10px"><span style="font-size:20px;font-weight:800;color:var(--primary-dk);opacity:0.25">${i+1}</span><span class="pt" style="font-size:14px">${s}</span></div>`).join("")}
   </div>
   <h3 class="sub-heading">📬 O envelope</h3>
   <div class="card-grid">
-    ${[
-      ["o remetente", "[rɨ'mɨtẽtɨ]", "the sender"],
-      ["o destinatário", "[dɨʃtinɐ'tarju]", "the recipient"],
-      ["o selo", "['selu]", "the stamp"],
-    ]
-      .map(
-        ([pt, pron, en]) =>
-          `<div class="card-sm"><div class="pt">${pt}</div><div style="margin:3px 0">${pr(pron)}</div><div class="en">${en}</div></div>`,
-      )
-      .join("")}
+    ${[["o remetente","[rɨ'mɨtẽtɨ]","the sender"],["o destinatário","[dɨʃtinɐ'tarju]","the recipient"],["o selo","['selu]","the stamp"]].map(([pt,pron,en])=>`<div class="card-sm"><div class="pt">${pt}</div><div style="margin:3px 0">${pr(pron)}</div><div class="en">${en}</div></div>`).join("")}
   </div>
   <h3 class="sub-heading">📝 Outros tipos de texto</h3>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Tipo de texto</th><th>English</th><th>Registo</th><th>Nota</th></tr></thead>
     <tbody>
       ${[
-        [
-          "receita de culinária",
-          "recipe",
-          "informal",
-          "Instructions for preparing a dish; imperative mood",
-        ],
-        [
-          "correio eletrónico",
-          "email",
-          "semi-formal",
-          "Shorter than a letter; adapted subject line + greeting",
-        ],
-        [
-          "mensagem",
-          "message / text",
-          "informal",
-          "Short; no full structure required",
-        ],
-        [
-          "carta de apresentação",
-          "cover letter",
-          "formal",
-          "Introduces yourself for a job — see dedicated section",
-        ],
-        [
-          "carta de reclamação",
-          "complaint letter",
-          "formal",
-          "Reports a problem to a business; often formal + assertive",
-        ],
-      ]
-        .map(
-          (r, i) =>
-            `<tr style="background:${i % 2 === 0 ? "var(--surface)" : "var(--surface-2)"}"><td class="pt" style="font-weight:700">${r[0]}</td><td class="en">${r[1]}</td><td style="font-size:12px">${r[2]}</td><td style="font-size:12px;color:var(--text-3)">${r[3]}</td></tr>`,
-        )
-        .join("")}
+        ["receita de culinária","recipe","informal","Instructions for preparing a dish; imperative mood"],
+        ["correio eletrónico","email","semi-formal","Shorter than a letter; adapted subject line + greeting"],
+        ["mensagem","message / text","informal","Short; no full structure required"],
+        ["carta de apresentação","cover letter","formal","Introduces yourself for a job — see dedicated section"],
+        ["carta de reclamação","complaint letter","formal","Reports a problem to a business; often formal + assertive"],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}"><td class="pt" style="font-weight:700">${r[0]}</td><td class="en">${r[1]}</td><td style="font-size:12px">${r[2]}</td><td style="font-size:12px;color:var(--text-3)">${r[3]}</td></tr>`).join("")}
     </tbody>
   </table></div>
   ${infoBox("<strong>Livro de Reclamações:</strong> Every business in Portugal must have a complaints book. Two forms: <strong>físico</strong> (physical book on-site) and <strong>eletrónico</strong> (online at livroreclamacoes.pt).")}
   <h3 class="sub-heading">🏋️ Hora de treinar</h3>
   <div class="card" style="border-left:4px solid var(--gold)">
-    ${[
-      ["https://wordwall.net/pt/resource/75164814", "Tipos de textos — 1"],
-      [
-        "https://wordwall.net/pt/resource/25778557",
-        "Quiz géneros textuais — 2",
-      ],
-      ["https://wordwall.net/pt/resource/4058026", "Géneros textuais — 3"],
-      [
-        "https://wordwall.net/pt/resource/20159033",
-        "Quiz géneros textuais — 4",
-      ],
-      ["https://wordwall.net/pt/resource/1848914", "Organização de texto — 5"],
-    ]
-      .map(
-        ([u, l]) =>
-          `<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`,
-      )
-      .join("")}
+    ${[["https://wordwall.net/pt/resource/75164814","Tipos de textos — 1"],["https://wordwall.net/pt/resource/25778557","Quiz géneros textuais — 2"],["https://wordwall.net/pt/resource/4058026","Géneros textuais — 3"],["https://wordwall.net/pt/resource/20159033","Quiz géneros textuais — 4"],["https://wordwall.net/pt/resource/1848914","Organização de texto — 5"]].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
   </div>`,
+
+        // ── Infinitivo Pessoal vs Impessoal ────────────────────────────
+        "infinitivo-pessoal": () => `
+  ${ctx("The personal infinitive (infinitivo pessoal) is unique to Portuguese — the infinitive conjugated for a specific subject. The impersonal infinitive is the base verb form used when there is no expressed subject.", "This is one of the most distinctively Portuguese grammar features. It is required after specific prepositions and expressions when the subject differs from the main clause.", "Infinitivo & Tempos Verbais — infinitive patterns; Voz Passiva — impersonal infinitive in passiva com -se")}
+  ${sectionHead("Infinitivo Pessoal vs Impessoal", "UFCD 6457 S6 & S8", "Portuguese has two infinitive forms. The <em>impessoal</em> is invariable (no subject expressed). The <em>pessoal</em> conjugates to show who does the action.")}
+
+  <h3 class="sub-heading">Infinitivo Impessoal — invariável</h3>
+  ${warnBox("Used when: <strong>(1)</strong> no subject is clearly expressed · <strong>(2)</strong> imperative value (signs, instructions) · <strong>(3)</strong> after <em>estar a / andar a / começar a / ficar a</em><br><br>Verb ends in <strong>-ar, -er, -ir</strong> or <strong>-or</strong>. Never changes form.")}
+  <div class="card-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:12px">
+    ${[
+      ["Não fumar.","No smoking. (sign — imperative value, no subject)"],
+      ["É preciso arrumar esta roupa.","No subject specified — anyone could do it"],
+      ["Nós estamos a fazer o jantar.","After <em>estar a</em> — continuous action"],
+    ].map(([pt,note])=>`<div class="card-sm"><div class="pt" style="font-weight:700">${pt}</div><div class="note" style="margin-top:4px;font-size:12px">${note}</div></div>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">Infinitivo Pessoal — conjugado</h3>
+  ${infoBox("Used when the subject of the infinitive clause is <strong>different from</strong> the subject of the main clause, or when clarity requires marking who performs the action.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Pronome</th><th>falar (-AR)</th><th>ver (-ER)</th><th>abrir (-IR)</th></tr></thead>
+    <tbody>
+      ${[
+        ["eu","falar","ver","abrir","same as impessoal"],
+        ["tu","falares","veres","abrires","+es"],
+        ["ele/ela/você","falar","ver","abrir","same as impessoal"],
+        ["nós","falarmos","vermos","abrirmos","+mos"],
+        ["vocês/eles/elas","falarem","verem","abrirem","+em"],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}">
+        <td class="conj-pronoun">${r[0]}</td>
+        <td class="pt" style="font-weight:${r[4]==="same as impessoal"?"400":"800"}">${r[1]}</td>
+        <td class="pt" style="font-weight:${r[4]==="same as impessoal"?"400":"800"}">${r[2]}</td>
+        <td class="pt" style="font-weight:${r[4]==="same as impessoal"?"400":"800"}">${r[3]}</td>
+        <td style="font-size:11px;color:var(--text-3)">${r[4]}</td>
+      </tr>`).join("")}
+    </tbody>
+  </table></div>
+  ${warnBox("<strong>Note:</strong> eu and ele/ela/você forms are identical to the impessoal. Only tu (+es), nós (+mos) and vocês/eles/elas (+em) show distinct endings.")}
+
+  <h3 class="sub-heading">Triggers — when to use the personal infinitive</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Trigger</th><th>Exemplo</th><th>English</th></tr></thead>
+    <tbody>
+      ${[
+        ["para","É preciso <strong>termos</strong> um certificado.","In order for us to have a certificate."],
+        ["por","Foram sancionados por <strong>chegarem</strong> tarde.","They were penalised for arriving late."],
+        ["sem","Saíram sem <strong>dizerem</strong> nada.","They left without saying anything."],
+        ["até","Ficaram até <strong>terminarem</strong> o trabalho.","They stayed until they finished the work."],
+        ["a","Ajudei-os a <strong>resolverem</strong> o problema.","I helped them solve the problem."],
+        ["em","Foram os primeiros em <strong>chegarem</strong>.","They were the first to arrive."],
+        ["apesar de","Apesar de <strong>estarem</strong> cansados, continuaram.","Despite being tired, they continued."],
+        ["no caso de","No caso de <strong>precisarem</strong> de ajuda, liguem.","In case they need help, call."],
+        ["antes de","Antes de <strong>saírem</strong>, verifiquem tudo.","Before leaving, check everything."],
+        ["depois de","Depois de <strong>chegarem</strong>, descansem.","After arriving, rest."],
+        ["é melhor / é preciso / é agradável","É melhor <strong>fazermos</strong> isso agora.","It is better for us to do that now."],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}">
+        <td class="pt" style="font-weight:700;color:var(--primary)">${r[0]}</td>
+        <td style="font-size:13px">${r[1]}</td>
+        <td class="en" style="font-size:12px">${r[2]}</td>
+      </tr>`).join("")}
+    </tbody>
+  </table></div>
+  ${infoBox("<strong>Worked examples from class:</strong><br>Por vezes, os imigrantes têm dificuldades para <strong>alugarem</strong> casas. (eles = different subject)<br>É preciso <strong>termos</strong> um Certificado de Português Básico. (nós = specified subject)")}
+
+  <div class="card" style="border-left:4px solid var(--gold)">
+    <div style="font-weight:800;color:var(--gold);margin-bottom:6px">📹 Vídeos & Hora de treinar</div>
+    ${[
+      ["https://youtu.be/J6uXus6Uc0U","20 Sentences — Infinitivo Pessoal (YouTube)"],
+      ["https://youtu.be/aXb2MDAlCnw","Infinitivo pessoal e impessoal explicado (YouTube)"],
+      ["https://wordwall.net/resource/62218796","Infinitivo pessoal — 1"],
+      ["https://wordwall.net/resource/39425870","Infinitivo pessoal — exercícios 2"],
+      ["https://wordwall.net/resource/71567541","Infinitivo pessoal — 3"],
+      ["https://wordwall.net/pt/resource/60824007","Infinitivo pessoal — treinamento 4"],
+      ["https://wordwall.net/pt/resource/19471380","Emprego do infinitivo — 5"],
+      ["https://wordwall.net/pt/resource/24504429","Verbos no infinitivo e imperativo"],
+      ["https://quizizz.com/admin/quiz/65a930e245319e7ee6bac42e","Quizizz — Infinitivo impessoal vs pessoal"],
+    ].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
+  </div>`,
+
+        // ── Cidadania & Diversidade Cultural ───────────────────────────
+        "cidadania-diversidade": () => `
+  ${ctx("Citizenship (cidadania) defines rights and duties toward state and society. Cultural diversity covers how different peoples coexist. European citizenship added rights beyond national citizenship since 1992.", "Essential civic vocabulary for A2. These topics appear in reading comprehension tasks and in the integration/life-in-Portugal theme of UFCD 6457.", "Estereótipos & Preconceito — related civic theme; Instituições de Apoio — practical institutions that support this integration")}
+  ${sectionHead("Cidadania & Diversidade Cultural", "UFCD 6457 S3 & S6", "Civic concepts: what it means to be a citizen, rights and duties, cultural diversity, and European citizenship.")}
+
+  <h3 class="sub-heading">🏛️ Conceitos fundamentais</h3>
+  <div class="card-grid">
+    ${[
+      ["Cidadão","An individual enjoying the civil and political rights of a free state."],
+      ["Nacionalidade","The legal public-law bond between a person and a State."],
+      ["Cidadania","The political bond between citizens and the State — a set of rights and duties."],
+    ].map(([pt,en])=>`<div class="card-sm"><div class="pt" style="font-weight:800">${pt}</div><div class="note" style="margin-top:4px;font-size:13px">${en}</div></div>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">⚖️ Direitos dos cidadãos em Portugal</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Direito</th></tr></thead>
+    <tbody>
+      ${["Direito à vida","Direito à vida privada","Liberdade de imprensa, expressão e manifestação","Direito à liberdade e à segurança","Direito de residência permanente no território nacional","Assistência jurídica","Direito de propriedade","Direito ao trabalho e à greve","Sufrágio universal (poder político)","Direito à educação","Direito à saúde","Liberdade de criação cultural (científica, técnica, literária e artística)","Direito à assistência na invalidez e na terceira idade"].map((d,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}"><td class="pt">${d}</td></tr>`).join("")}
+    </tbody>
+  </table></div>
+
+  <h3 class="sub-heading">📋 Deveres dos cidadãos</h3>
+  <div class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+    ${["Cumprir as leis","Respeitar os direitos de outros","Prover o próprio sustento com trabalho","Alimentar parentes próximos incapazes","Educar e proteger os semelhantes","Proteger a natureza e o património público","Colaborar com as autoridades"].map(d=>`<div class="card-sm" style="font-size:13px">${d}</div>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">🌍 Diversidade cultural — conceitos</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Conceito</th><th>Definição</th></tr></thead>
+    <tbody>
+      ${[
+        ["Cultura","Conjunto de tradições, modos de vida, técnicas e instituições que caracterizam um grupo humano."],
+        ["Etnia","Grupo de indivíduos que partilha da mesma tradição cultural (língua, costumes, religião)."],
+        ["Língua","Elemento de identificação de um povo e fator diferenciador. Mais de 6500 idiomas no mundo; maior concentração na Ásia; mandarim tem o maior número de falantes."],
+        ["Religião","Grande variedade no mundo; o Cristianismo tem maior número de crentes. Influencia modos de vida e mentalidade."],
+        ["Globalização","Fenómeno multifacetado com dimensões económicas, sociais, políticas, culturais, religiosas e jurídicas interligadas."],
+        ["Multiculturalismo","Coexistência de várias culturas num mesmo país ou região."],
+        ["Aculturação","Processo de adaptação de um indivíduo a uma nova cultura."],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}"><td class="pt" style="font-weight:700;color:var(--primary)">${r[0]}</td><td style="font-size:13px">${r[1]}</td></tr>`).join("")}
+    </tbody>
+  </table></div>
+  ${infoBox("<strong>Fatores de identidade cultural:</strong> Religião · Costumes · Etnia · Língua · Usos · Técnicas → dão origem a diferentes culturas")}
+
+  <h3 class="sub-heading">🇪🇺 Cidadania Europeia</h3>
+  ${warnBox("Since the <strong>Tratado de Maastricht (1992)</strong>, European citizenship exists alongside national citizenship. Any national of an EU member state is automatically also an EU citizen.")}
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Direito dos cidadãos europeus</th></tr></thead>
+    <tbody>
+      ${[
+        "Circular e residir livremente em qualquer Estado-membro da UE",
+        "Votar e ser eleito nas eleições europeias e municipais do Estado em que reside",
+        "Proteção diplomática e consular de outro Estado-membro em países terceiros onde o seu Estado não está representado",
+        "Petição ao Parlamento Europeu e queixa junto do Provedor de Justiça Europeu",
+        "Estudar, trabalhar, receber cuidados médicos e transferir direitos de segurança social em todo o espaço europeu",
+      ].map((d,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}"><td style="font-size:13px">${d}</td></tr>`).join("")}
+    </tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      ["https://wordwall.net/pt/resource/7978139","Cidadania — 1"],
+      ["https://wordwall.net/pt/resource/18295785","Cidadania — 2"],
+      ["https://wordwall.net/pt/resource/6713772","Cidadania — 3"],
+      ["https://wordwall.net/pt/resource/30599389","Os direitos — 4"],
+      ["https://wordwall.net/pt/resource/6335989","Diversidade cultural — 1"],
+      ["https://wordwall.net/pt/resource/20116658","Diversidade cultural — 2"],
+      ["https://wordwall.net/pt/resource/4582294","Diversidade religiosa — 3"],
+      ["https://wordwall.net/pt/resource/17956072","Diversidade cultural — 4"],
+      ["https://wordwall.net/pt/resource/12526071","Diversidade cultural — 5"],
+      ["https://wordwall.net/pt/resource/11558279","Direitos e deveres — 1"],
+      ["https://wordwall.net/pt/resource/813058","Direitos humanos — 2"],
+      ["https://wordwall.net/pt/resource/6585007","Direitos humanos — 3"],
+      ["https://wordwall.net/pt/resource/57780536","Direitos humanos — 4"],
+      ["https://wordwall.net/pt/resource/16485708","Ética e cidadania — 1"],
+      ["https://wordwall.net/pt/resource/27097803","Democracia e cidadania — 2"],
+      ["https://wordwall.net/pt/resource/13865131","Cidadania digital — 3"],
+      ["https://wordwall.net/pt/resource/25962717","Cidadania (sociologia) — 4"],
+      ["https://wordwall.net/pt/resource/22431762","Cidadania 5.º ano — 5"],
+      ["https://wordwall.net/pt/resource/11504969","Comportamentos — 1"],
+      ["https://wordwall.net/pt/resource/22607859","Regras sociais — 2"],
+    ].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
+  </div>`,
+
+        // ── Estereótipos & Preconceito ──────────────────────────────────
+        "estereotipos": () => `
+  ${ctx("Stereotypes are socially constructed generalised images. Prejudice uses stereotypes to form value judgements without factual basis.", "Intercultural awareness is part of the UFCD 6457 civic theme. Understanding these concepts is essential for discussions about integration and diversity.", "Cidadania & Diversidade Cultural — broader context; Instituições de Apoio — practical support for those facing discrimination")}
+  ${sectionHead("Estereótipos & Preconceito", "UFCD 6457 S4", "Two key concepts in intercultural communication: the socially constructed image (estereótipo) and the value judgement built on it (preconceito).")}
+
+  <div class="card-grid">
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">Estereótipo</div>
+      <div style="margin-top:8px;font-size:13px;line-height:1.7">
+        A socially constructed image — an idea or judgement that is widespread in a society and shared by many of its members.<br><br>
+        Characteristics: <strong>based on generalisations</strong> · difficult to change · often negative.
+      </div>
+    </div>
+    <div class="card-sm">
+      <div class="pt" style="font-weight:800;font-size:16px;color:var(--primary)">Preconceito</div>
+      <div style="margin-top:8px;font-size:13px;line-height:1.7">
+        The formation of a value judgement.<br><br>
+        Based on the use of stereotypes — not on real or proven facts — without taking into account the individual behaviour of people.
+      </div>
+    </div>
+  </div>
+  ${warnBox("<strong>Key distinction:</strong> A stereotype is the generalised image itself. Prejudice is the act of applying that image as a judgement about an individual, without evidence.")}
+
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    ${[
+      ["https://wordwall.net/pt/resource/27984416","Estereótipos de género — questionário"],
+      ["https://wordwall.net/pt/resource/27849986","Estereótipos — influência da média e estética corporal"],
+      ["https://wordwall.net/resource/54376466","Estereótipo de género — 3"],
+      ["https://wordwall.net/pt/resource/31048070","Estereótipos dos brinquedos — 4"],
+    ].map(([u,l])=>`<div style="margin-bottom:5px">▶ <a href="${u}" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">${l}</a></div>`).join("")}
+  </div>`,
+
+        // ── Instituições de Apoio aos Imigrantes ───────────────────────
+        "instituicoes-imigrantes": () => `
+  ${ctx("Four main institutions that support immigrants in Portugal: ACM, CNAI, CLAII, and immigrant associations.", "Knowing where to go for help is essential practical knowledge for daily life in Portugal. These institutions offer free, confidential support across all integration domains.", "Legalização & Imigração — documents and process; Autorização de Residência — permit types")}
+  ${sectionHead("Instituições de Apoio aos Imigrantes", "UFCD 6457 S5", "Portugal has a structured network of support institutions for immigrants. All services listed below are free and confidential.")}
+
+  <div class="card-grid" style="grid-template-columns:1fr">
+    ${[
+      {
+        sig:"ACM",
+        full:"Alto Comissariado para as Migrações",
+        type:"Instituto público",
+        desc:"Collaborates in public policies for immigrant integration and promotes intercultural dialogue.",
+        note:"National-level body; sets policy framework."
+      },
+      {
+        sig:"CNAI",
+        full:"Centros Nacionais de Apoio ao Imigrante",
+        type:"Multi-service centres",
+        desc:"Bring together different services, institutions and support offices for migrant citizens in one location.",
+        note:"Locations: <strong>Lisboa, Porto</strong> and <strong>Faro</strong>."
+      },
+      {
+        sig:"CLAII",
+        full:"Centro Local de Apoio à Integração de Imigrantes",
+        type:"Local service",
+        desc:"Supports immigrants across multiple areas: regularização da situação legal, trabalho, reagrupamento familiar, nacionalidade, retorno voluntário, educação, saúde, segurança social, consumo.",
+        note:"Service is <strong>confidential and free</strong> (<em>confidencial e gratuito</em>)."
+      },
+      {
+        sig:"Associação de Imigrantes",
+        full:"",
+        type:"Non-profit group",
+        desc:"A group of people with specific goals. Immigrant associations aim to protect the rights and interests of immigrants in Portugal.",
+        note:"Many local associations exist; ACM can help find the right one."
+      },
+    ].map(inst=>`
+    <div class="card-sm" style="margin-bottom:8px">
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px">
+        <span class="pt" style="font-size:18px;font-weight:800;color:var(--primary)">${inst.sig}</span>
+        ${inst.full?`<span style="font-size:13px;color:var(--text-3)">${inst.full}</span>`:""}
+        <span style="font-size:11px;background:var(--primary-lt);color:var(--primary-dk);padding:2px 6px;border-radius:4px;margin-left:auto">${inst.type}</span>
+      </div>
+      <div style="font-size:13px;color:var(--text-2);margin-bottom:4px">${inst.desc}</div>
+      <div style="font-size:12px;color:var(--text-3)">${inst.note}</div>
+    </div>`).join("")}
+  </div>
+
+  <h3 class="sub-heading">🏋️ Hora de treinar</h3>
+  <div class="card" style="border-left:4px solid var(--gold)">
+    <div style="margin-bottom:5px">▶ <a href="https://wordwall.net/pt/resource/19856132" target="_blank" rel="noopener" style="color:var(--primary);font-weight:700">Imigrantes — exercício</a></div>
+  </div>`,
+
+        // ── Legalização & Imigração ─────────────────────────────────────
+        "legalizacao-imigracao": () => `
+  ${ctx("The legalisation process in Portugal: required documents, step-by-step procedure, academic and professional recognition, and integration pathways.", "Critical practical reference for any immigrant in Portugal. Covers all main document types, the AIMA process, and where to get academic qualifications recognised.", "Instituições de Apoio — where to get help; Autorização de Residência — permit types (UFCD 6454 S3); Cidadania & Diversidade Cultural — civic context")}
+  ${sectionHead("Legalização & Imigração", "UFCD 6457 S7", "Documents, process steps, common challenges, and pathways for academic/professional recognition in Portugal.")}
+
+  <h3 class="sub-heading">📄 Documentos essenciais</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Documento</th><th>Descrição</th><th>Onde obter</th></tr></thead>
+    <tbody>
+      ${[
+        ["Passaporte válido","Essential for entering and leaving. Minimum 6 months validity required.","Country of origin"],
+        ["Visto de Residência","Required to enter Portugal with the purpose of living, working or studying.","Portuguese consulate in country of origin"],
+        ["Autorização de Residência","Allows legal residence in Portugal.","AIMA (formerly SEF) in Portugal"],
+        ["NIF — Número de Identificação Fiscal","Required for all tax matters in Portugal.","Repartição das Finanças / Finanças online"],
+        ["Segurança Social","Registration gives access to social rights.","Centro de Segurança Social local"],
+        ["Registo Criminal","Proves no criminal record. Required for various permit types.","Country of origin; may need Apostila de Haia"],
+        ["Comprovativo de Morada","Proof of address — rental contract or carta de acolhimento.","Landlord / hosting institution"],
+        ["Seguro de Saúde","Covers medical expenses; required until SNS enrollment confirmed.","Private insurer or SNS"],
+        ["Prova de Meios de Subsistência","Demonstrates financial resources — work contract, bank statements.","Employer / bank"],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}">
+        <td class="pt" style="font-weight:700">${r[0]}</td>
+        <td style="font-size:12px">${r[1]}</td>
+        <td style="font-size:12px;color:var(--text-3)">${r[2]}</td>
+      </tr>`).join("")}
+    </tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🔢 Processo de Legalização — passo a passo</h3>
+  <div class="card-grid" style="grid-template-columns:1fr">
+    ${[
+      ["1","Entrada no país","Arrive with a valid visa. Documents checked at the border."],
+      ["2","Agendamento na AIMA","Schedule an interview for the residency permit — online or by phone."],
+      ["3","Preparar documentação","Gather all required documents before the appointment."],
+      ["4","Entrevista / submissão","Attend the appointment; submit documents."],
+      ["5","Renovação","Renew the authorisation before it expires; same procedure applies."],
+    ].map(([n,title,desc])=>`
+    <div class="card-sm" style="display:flex;gap:12px;align-items:flex-start;margin-bottom:6px">
+      <span style="font-size:22px;font-weight:800;color:var(--primary);opacity:0.3;min-width:24px">${n}</span>
+      <div><div style="font-weight:700">${title}</div><div style="font-size:13px;color:var(--text-2)">${desc}</div></div>
+    </div>`).join("")}
+  </div>
+  ${infoBox("<strong>Dicas práticas:</strong> Prepare all documents in advance · Keep physical and digital copies · Verify current requirements at <strong>aima.gov.pt</strong> and the Portuguese consulate website.")}
+
+  <h3 class="sub-heading">⚠️ Problemas comuns na imigração</h3>
+  <div class="card-grid">
+    <div class="card-sm"><div class="pt" style="font-weight:700">Burocracia</div><div style="font-size:13px;color:var(--text-2);margin-top:4px">Immigration processes are often long and complex, with many required documents and steps to follow.</div></div>
+    <div class="card-sm"><div class="pt" style="font-weight:700">Desinformação</div><div style="font-size:13px;color:var(--text-2);margin-top:4px">Many immigrants face difficulties due to lack of knowledge about their rights and obligations in the new country.</div></div>
+  </div>
+
+  <h3 class="sub-heading">🎓 Reconhecimento Académico</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Tipo</th><th>Descrição</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Automático</strong></td><td>For degrees from recognised institutions in certain countries</td></tr>
+      <tr style="background:var(--surface-2)"><td><strong>De Nível</strong></td><td>Compares the foreign degree to a corresponding Portuguese degree</td></tr>
+      <tr><td><strong>Específico</strong></td><td>Recognition for a specific purpose (e.g. exercising a regulated profession)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card-grid" style="grid-template-columns:1fr 1fr;margin-bottom:10px">
+    <div class="card-sm">
+      <div style="font-weight:700;margin-bottom:6px">DGES</div>
+      <div style="font-size:13px;color:var(--text-2)">Direção-Geral do Ensino Superior — responsible for recognition of foreign degrees and diplomas. Process available online.</div>
+    </div>
+    <div class="card-sm">
+      <div style="font-weight:700;margin-bottom:6px">Rede NARIC</div>
+      <div style="font-size:13px;color:var(--text-2)">European network facilitating academic recognition. Portugal's NARIC centre is part of DGES.</div>
+    </div>
+  </div>
+  ${warnBox("<strong>Documentação necessária:</strong> diploma, histórico académico, programas das disciplinas, certificado de competências.<br><strong>Apostila de Haia</strong> required for legalising foreign documents. Non-Hague-convention countries may need additional notarisation.")}
+
+  <h3 class="sub-heading">👔 Reconhecimento Profissional</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Profissão</th><th>Ordem responsável</th><th>Website</th></tr></thead>
+    <tbody>
+      ${[
+        ["Médicos","Ordem dos Médicos","ordemdosmedicos.pt"],
+        ["Engenheiros","Ordem dos Engenheiros","ordemengenheiros.pt"],
+        ["Enfermeiros","Ordem dos Enfermeiros","ordemenfermeiros.pt"],
+      ].map((r,i)=>`<tr style="background:${i%2===0?"var(--surface)":"var(--surface-2)"}"><td class="pt">${r[0]}</td><td>${r[1]}</td><td><a href="https://www.${r[2]}" target="_blank" rel="noopener" style="color:var(--primary)">${r[2]}</a></td></tr>`).join("")}
+    </tbody>
+  </table></div>
+
+  <h3 class="sub-heading">🤝 Integração</h3>
+  <div class="card-grid" style="grid-template-columns:repeat(3,1fr)">
+    ${[
+      ["🗣️ Língua","Mastering the local language is crucial for social and professional integration. Many free courses available (PLA, CLAII)."],
+      ["🌐 Social","Participating in community activities, volunteering and social events helps adaptation and builds a support network."],
+      ["🎭 Educação & Cultura","Understanding and respecting local culture while sharing your own facilitates integration and promotes harmonious coexistence."],
+    ].map(([title,desc])=>`<div class="card-sm"><div style="font-size:16px;margin-bottom:6px">${title}</div><div style="font-size:13px;color:var(--text-2)">${desc}</div></div>`).join("")}
+  </div>`,
+
       };
 
       // ─────────────────────────────────────────────
